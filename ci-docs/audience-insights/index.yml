@@ -1,0 +1,79 @@
+### YamlMime:Landing
+title: Funktioner i målgruppen Insights i Dynamics 365 Customer Insights
+summary: Indtagelse, samling og organisering af kundedata fra flere kilder. Oprette og administrer kundeprofiler og segmenter i realtid. Integrere kundedata med andre systemer for at gøre dem endnu mere handlingsrettede.
+metadata:
+  title: Dokumentation i målgruppen Insights
+  description: hjælp-hub med nøglelinks til målgruppen Insights.
+  ms.service: customer-insights
+  ms.subservice: audience-insights
+  ms.topic: landing-page
+  author: m-hartmann
+  ms.author: mhart
+  ms.date: 10/16/2020
+  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.translationtype: HT
+  ms.contentlocale: da-DK
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4405444"
+landingContent:
+- title: Om målgruppen Insights
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Produktoversigt
+      url: overview.md
+    - text: Nye og opdaterede funktioner
+      url: whats-new-audience-insights.md
+    - text: Community-websted
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+- title: 'Indtag datakilder '
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tilføj datakilder
+      url: data-sources.md
+    - text: Trinvis opdatering
+      url: incremental-refresh-data-sources.md
+    - text: Forstå enheder
+      url: entities.md
+- title: Saml data
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Tilknytning
+      url: map-entities.md
+    - text: Resultat
+      url: match-entities.md
+    - text: Fletning
+      url: merge-entities.md
+- title: Forfine kundeprofiler
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurer relationer
+      url: relationships.md
+    - text: Angiv kundeaktiviteter
+      url: activities.md
+    - text: Brug dine egne modeller til maskinel indlæring
+      url: custom-models.md
+- title: Eksportere kundedata
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurer eksportdestinationer
+      url: export-destinations.md
+    - text: Kundekort i Dynamics 365-apps
+      url: customer-card-add-in.md
+    - text: Power BI-connector
+      url: export-power-bi.md
+- title: Administrere appen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurere systemet
+      url: system.md
+    - text: Angiv brugertilladelser
+      url: permissions.md
+    - text: Administrere flere miljøer
+      url: manage-environments.md
