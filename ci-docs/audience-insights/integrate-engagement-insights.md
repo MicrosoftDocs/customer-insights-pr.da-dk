@@ -1,0 +1,102 @@
+---
+title: Integrere webdata fra engagementsindsigt med målgruppeindsigt
+description: Få weboplysninger om kunder fra engagementsindsigt til målgruppeindsigt.
+ms.date: 12/17/2020
+ms.service: customer-insights
+ms.subservice: audience-insights
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: mukeshpo
+manager: shellyha
+ms.openlocfilehash: ba1cf6c7e85b8fe90baf34018f1309095573adf1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267669"
+---
+# <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a><span data-ttu-id="03651-103">Integrere webdata fra engagementsindsigt med målgruppeindsigt</span><span class="sxs-lookup"><span data-stu-id="03651-103">Integrate web data from engagement insights with audience insights</span></span>
+
+<span data-ttu-id="03651-104">Kunder foretager ofte deres daglige transaktioner online ved hjælp af websteder.</span><span class="sxs-lookup"><span data-stu-id="03651-104">Customers often do their day to day transactions online using web sites.</span></span> <span data-ttu-id="03651-105">Funktionen engagementsindsigt i Dynamics 365 Customer Insights er en praktisk løsning, hvor webdata integreres som en kilde.</span><span class="sxs-lookup"><span data-stu-id="03651-105">The engagement insights capability in Dynamics 365 Customer Insights is a handy solution to integrate web data as a source.</span></span> <span data-ttu-id="03651-106">Ud over transaktions-, demografi- eller adfærdsdata kan vi se aktiviteter på internettet i samlede kundeprofiler.</span><span class="sxs-lookup"><span data-stu-id="03651-106">In addition to transactional, demographic, or behavioral data we can see activities on the web in unified customer profiles.</span></span> <span data-ttu-id="03651-107">Vi kan bruge denne profil til at få yderligere indsigt, f.eks. segmenter, mål eller forudsigelser for målgruppeaktivering.</span><span class="sxs-lookup"><span data-stu-id="03651-107">We can use this profile to gain additional insights like segments, measures, or predictions for audience activation.</span></span>
+
+<span data-ttu-id="03651-108">I denne artikel beskrives trinnene til at hente dine kunders webaktivitetsdata fra engagementsindsigt ind i dit målgruppeindsigtsmiljø.</span><span class="sxs-lookup"><span data-stu-id="03651-108">This article describes the steps to bring your customers’ web activity data from engagement insights into your existing audience insights environment.</span></span>
+
+<span data-ttu-id="03651-109">I dette eksempel antages det, at der er et miljø, der indeholder samlede kundeprofiler.</span><span class="sxs-lookup"><span data-stu-id="03651-109">In this example, we assume an environment that contains unified customer profiles.</span></span> <span data-ttu-id="03651-110">Profilerne blev samlet med kilder fra undersøgelser, detailsalg og et billetsystem.</span><span class="sxs-lookup"><span data-stu-id="03651-110">The profiles were unified with sources from surveys, retail sales, and a ticketing system.</span></span> <span data-ttu-id="03651-111">Den viser også kundernes relaterede aktiviteter.</span><span class="sxs-lookup"><span data-stu-id="03651-111">It also shows the related activities of the customers.</span></span> 
+
+<span data-ttu-id="03651-112">Vi vil nu vide, om en kunde besøger vores webegenskaber og forstår deres aktiviteter.</span><span class="sxs-lookup"><span data-stu-id="03651-112">We now want to know if a customer visits our web properties and understand their activities.</span></span> <span data-ttu-id="03651-113">Aktiviteter omfatter f.eks. besøgte websteder eller viste produktsider fra et link, der modtages i en e-mail.</span><span class="sxs-lookup"><span data-stu-id="03651-113">Activities include, for example, visited websites or viewed product pages from a link received in an email.</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="03651-114">Forudsætninger</span><span class="sxs-lookup"><span data-stu-id="03651-114">Prerequisites</span></span>
+
+<span data-ttu-id="03651-115">Hvis du vil integrere data fra engagementsindsigt, skal nogle få forudsætninger opfyldes:</span><span class="sxs-lookup"><span data-stu-id="03651-115">To integrate data from engagement insights, a few prerequisites need to be met:</span></span> 
+
+- <span data-ttu-id="03651-116">Integrer SDK med engagementsindsigt med dit websted.</span><span class="sxs-lookup"><span data-stu-id="03651-116">Integrate the engagement insights SDK with your website.</span></span> <span data-ttu-id="03651-117">Du finder flere oplysninger under [Kom i gang med web-SDK](../engagement-insights/instrument-website.md).</span><span class="sxs-lookup"><span data-stu-id="03651-117">For more information, see [Get started with the web SDK](../engagement-insights/instrument-website.md).</span></span>
+- <span data-ttu-id="03651-118">Eksport af webhændelser fra engagementsindsigt kræver adgang til en ADLS Gen 2-lagerkonto, der bruges til at udnytte de webhændelsesdata, der skal bruges til at målgruppeindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-118">Exporting web events from engagement insights requires access to an ADLS Gen 2 storage account that will be used to ingest the web events data to audience insights.</span></span> <span data-ttu-id="03651-119">Du kan finde flere oplysninger under [Eksport af hændelser](../engagement-insights/export-events.md).</span><span class="sxs-lookup"><span data-stu-id="03651-119">For more information, see [Export events](../engagement-insights/export-events.md).</span></span>
+
+## <a name="configure-refined-events-in-engagement-insights"></a><span data-ttu-id="03651-120">Konfigurere hændelser, der hjælper med engagementsindsigt</span><span class="sxs-lookup"><span data-stu-id="03651-120">Configure refined events in engagement insights</span></span>
+
+<span data-ttu-id="03651-121">Når en administrator planlægger et websted med engagementsindsigt-SDK, indsamles *basishændelser*, når en bruger får vist eller klikker på en webside.</span><span class="sxs-lookup"><span data-stu-id="03651-121">After an administrator instrumented a website with the engagement insights SDK, *base events* are gathered when a user views a web page or clicks somewhere.</span></span> <span data-ttu-id="03651-122">Basishændelser med mange detaljer.</span><span class="sxs-lookup"><span data-stu-id="03651-122">Base events tend to contain numerous details.</span></span> <span data-ttu-id="03651-123">Afhængigt af din use case skal du kun bruge et delsæt af data i en basishændelse.</span><span class="sxs-lookup"><span data-stu-id="03651-123">Depending on your use case, you only need a subset of the data in a base event.</span></span> <span data-ttu-id="03651-124">Engagementsindsigt giver dig mulighed for at oprette *raffinerede hændelser*, der kun indeholder egenskaberne for en basishændelse, du vælger.</span><span class="sxs-lookup"><span data-stu-id="03651-124">Engagement insights let you create *refined events* that contain only the properties of a base event that you select.</span></span>     
+
+<span data-ttu-id="03651-125">Du kan finde flere oplysninger under [Oprette og ændre raffinerede hændelser](../engagement-insights/refined-events.md).</span><span class="sxs-lookup"><span data-stu-id="03651-125">For more information, see [Create and modify refined events](../engagement-insights/refined-events.md).</span></span>
+
+<span data-ttu-id="03651-126">Overvejelser, når arrangementer oprettes:</span><span class="sxs-lookup"><span data-stu-id="03651-126">Considerations when creating refined events:</span></span> 
+
+- <span data-ttu-id="03651-127">Angiv et navn, der giver mening, til den raffinerede hændelse.</span><span class="sxs-lookup"><span data-stu-id="03651-127">Provide a meaningful name for the refined event.</span></span> <span data-ttu-id="03651-128">Det bruges som et aktivitetsnavn i en målgruppeindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-128">It's be used as an activity name in audience insights.</span></span>
+- <span data-ttu-id="03651-129">Vælg som minimum følgende egenskaber for at oprette en aktivitet i målgruppeindsigt:</span><span class="sxs-lookup"><span data-stu-id="03651-129">Select at least the following properties to create an activity in audience insights:</span></span> 
+    - <span data-ttu-id="03651-130">Signal.Action.Name – angivelse af aktivitetsdetaljer</span><span class="sxs-lookup"><span data-stu-id="03651-130">Signal.Action.Name - indicating the activity details</span></span>
+    - <span data-ttu-id="03651-131">Signal.User.Id – bruges til tilknytning med kunde-id</span><span class="sxs-lookup"><span data-stu-id="03651-131">Signal.User.Id - used to map with the customer ID</span></span>
+    - <span data-ttu-id="03651-132">Signal.View.Uri – bruges som webadresse som udgangspunkt for segmenter eller mål</span><span class="sxs-lookup"><span data-stu-id="03651-132">Signal.View.Uri - used as a web address as a basis for segments or measures</span></span>
+    - <span data-ttu-id="03651-133">Signal.Export.Id – bruges som primær nøgle til hændelser</span><span class="sxs-lookup"><span data-stu-id="03651-133">Signal.Export.Id - to use as a primary key for events</span></span> <!-- system generated, do we need to list?-->
+    - <span data-ttu-id="03651-134">Signal.Timestamp – til bestemmelse af dato og klokkeslæt for aktiviteten</span><span class="sxs-lookup"><span data-stu-id="03651-134">Signal.Timestamp - to determine the date and time for the activity</span></span>
+
+<span data-ttu-id="03651-135">Vælg filtrene for at fokusere på de hændelser og sider, der betyder noget for din use case.</span><span class="sxs-lookup"><span data-stu-id="03651-135">Select the filters to focus on the events and pages that matter for your use case.</span></span> <span data-ttu-id="03651-136">I dette eksempel bruger vi handlingsnavnet "Kampagne via mail".</span><span class="sxs-lookup"><span data-stu-id="03651-136">In this example, we'll use the "Email promotion" action name.</span></span>
+
+## <a name="export-the-refined-web-events"></a><span data-ttu-id="03651-137">Eksportere de raffinerede webhændelser</span><span class="sxs-lookup"><span data-stu-id="03651-137">Export the Refined Web Events</span></span> 
+
+<span data-ttu-id="03651-138">Når du har defineret den raffinerede hændelse, skal du konfigurere eksporten af hændelsesdata til en Azure Data Lake Storage, der kan angives som en datakilde for indtagelse i målgruppeindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-138">After defining the refined event is defined, you have to configure the export of the event data to an Azure Data Lake Storage, that can be set as a data source for ingestion in audience insights.</span></span> <span data-ttu-id="03651-139">Eksporter sker konstant, mens hændelserne strømmer fra webegenskaben.</span><span class="sxs-lookup"><span data-stu-id="03651-139">Exports happen constantly as the events flow from the web property.</span></span>
+
+<span data-ttu-id="03651-140">Du kan finde flere oplysninger under [Eksport af hændelser](../engagement-insights/export-events.md).</span><span class="sxs-lookup"><span data-stu-id="03651-140">For more information, see [Export events](../engagement-insights/export-events.md).</span></span>
+
+## <a name="ingest-event-data-to-audience-insights"></a><span data-ttu-id="03651-141">Indtag hændelsesdata til målgruppeindsigt</span><span class="sxs-lookup"><span data-stu-id="03651-141">Ingest event data to audience insights</span></span>
+
+<span data-ttu-id="03651-142">Nu, hvor du har defineret den raffinerede hændelse og konfigureret eksporten, går vi videre til at indtage data til målgruppeindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-142">Now that you have defined the refined event and configured its export, we move on to ingesting the data to audience insights.</span></span> <span data-ttu-id="03651-143">Du skal oprette en ny datakilde baseret på mappen Common Data Model.</span><span class="sxs-lookup"><span data-stu-id="03651-143">You need to create a new data source based on a Common Data Model folder.</span></span> <span data-ttu-id="03651-144">Angiv oplysninger om den lagerkonto, du eksporterer hændelserne til.</span><span class="sxs-lookup"><span data-stu-id="03651-144">Enter the details for the storage account you export the events to.</span></span> <span data-ttu-id="03651-145">I filen *default.cdm.json* skal du vælge den hændelse, hvor objektet indtages og oprette objektet målgruppeindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-145">In the *default.cdm.json* file, select the refined event to ingest and create the entity in audience insights.</span></span>
+
+<span data-ttu-id="03651-146">Du kan finde flere oplysninger i [Oprette forbindelse til en Common Data Model-mappe ved hjælp af en Azure Data Lake-konto](connect-common-data-model.md)</span><span class="sxs-lookup"><span data-stu-id="03651-146">For more information, see [Connect to a Common Data Model folder using an Azure Data Lake account](connect-common-data-model.md)</span></span>
+
+
+## <a name="relate-refined-event-data-as-an-activity-of-a-customer-profile"></a><span data-ttu-id="03651-147">Relatere hændelsesdata som en aktivitet i en kundeprofil</span><span class="sxs-lookup"><span data-stu-id="03651-147">Relate refined event data as an activity of a customer profile</span></span>
+
+<span data-ttu-id="03651-148">Når objektet er indtaget, kan du konfigurere aktiviteten for kundeprofilen.</span><span class="sxs-lookup"><span data-stu-id="03651-148">After completing the entity ingestion, you can configure the activity for the customer profile.</span></span>
+
+<span data-ttu-id="03651-149">Du kan finde flere oplysninger under [Kundeaktiviteter](activities.md).</span><span class="sxs-lookup"><span data-stu-id="03651-149">For more information, see [Customer activities](activities.md).</span></span>
+
+:::image type="content" source="media/web-event-activity.png" alt-text="Aktiviteter-siden med udvidet redigeringsaktivitetsrude og udfyldte felter.":::
+
+<span data-ttu-id="03651-151">Konfigurere den nye aktivitet ved hjælp af følgende tilknytning:</span><span class="sxs-lookup"><span data-stu-id="03651-151">Configure the new activity with the following mapping:</span></span> 
+
+- <span data-ttu-id="03651-152">**Primær nøgle:** Signal.Export.Id, et entydigt id, der er tilgængeligt for alle hændelsesposter i engagementsindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-152">**Primary Key:** Signal.Export.Id, a unique ID that is available for every event record in engagement insights.</span></span> <span data-ttu-id="03651-153">Denne egenskab genereres automatisk.</span><span class="sxs-lookup"><span data-stu-id="03651-153">This property is automatically generated.</span></span>
+
+- <span data-ttu-id="03651-154">**Tidsstempel:** Signal.Timestamp i hændelsesegenskaben.</span><span class="sxs-lookup"><span data-stu-id="03651-154">**Timestamp:** Signal.Timestamp in the event property.</span></span>
+
+- <span data-ttu-id="03651-155">**Hændelse:** Signal.Name, det hændelsesnavn, du vil spore.</span><span class="sxs-lookup"><span data-stu-id="03651-155">**Event:** Signal.Name, the event name that you want to track.</span></span>
+
+- <span data-ttu-id="03651-156">**Webadresse:** Signal.View.Uri refererer til uri'en for den side, der oprettede hændelsen.</span><span class="sxs-lookup"><span data-stu-id="03651-156">**Web address:** Signal.View.Uri referring to the uri of the page that created the event.</span></span>
+
+- <span data-ttu-id="03651-157">**Detaljer:** Signal.Action.Name til at repræsentere de oplysninger, der skal knyttes til hændelsen.</span><span class="sxs-lookup"><span data-stu-id="03651-157">**Details:** Signal.Action.Name to represent the information to associate with the event.</span></span> <span data-ttu-id="03651-158">Den valgte egenskab i dette tilfælde indikerer, at hændelsen er til e-mailkampagne.</span><span class="sxs-lookup"><span data-stu-id="03651-158">The selected property in this case indicates that the event is for email promotion.</span></span>
+
+- <span data-ttu-id="03651-159">**Aktivitetstype:** I dette eksempel vælger vi den eksisterende aktivitetstype WebLog.</span><span class="sxs-lookup"><span data-stu-id="03651-159">**Activity type:** In this example, we choose the exsting activity type WebLog.</span></span> <span data-ttu-id="03651-160">Denne indstilling er en nyttig filterindstilling til kørsel af forudsigelsesmodeller eller oprettelse af segmenter baseret på denne aktivitetstype.</span><span class="sxs-lookup"><span data-stu-id="03651-160">This selection is a useful filter option to run prediction models or create segments based on this activity type.</span></span>
+
+- <span data-ttu-id="03651-161">**Opret relation:** Denne vigtige indstilling gør aktiviteten gældende i forhold til eksisterende kundeprofiler.</span><span class="sxs-lookup"><span data-stu-id="03651-161">**Set up relationship:** This important setting ties the activity to existing customer profiles.</span></span> <span data-ttu-id="03651-162">**Signal.User.Id** er det id, der konfigureres i SDK til indsamling, og som er relateret til bruger-id i andre datakilder, der er konfigureret i målgruppeindsigt.</span><span class="sxs-lookup"><span data-stu-id="03651-162">**Signal.User.Id** is the identifier configured in the SDK to be collected and that relates to the user ID in other data sources that are configured in audience insights.</span></span> <span data-ttu-id="03651-163">I dette eksempel konfigurerer vi relationen mellem Signal.User.Id og RetailCustomers:CustomerRetailId, som er den primære nøgle, der blev defineret i tilknytningstrinnet i processen til samling af data.</span><span class="sxs-lookup"><span data-stu-id="03651-163">In this example, we configure the relationship between Signal.User.Id and RetailCustomers:CustomerRetailId, which is the primary key that was deinfed in the map step of the data unification process.</span></span>
+
+
+<span data-ttu-id="03651-164">Når du har behandlet aktiviteterne, kan du gennemse kundeposter og åbne et kundekort for at se aktiviteter fra engagementsindsigt på tidslinjen.</span><span class="sxs-lookup"><span data-stu-id="03651-164">After processing the activities, you can review customer records and open a customer card to see activities from engagement insights in the timeline.</span></span> 
+
+> [!TIP]
+> <span data-ttu-id="03651-165">Hvis du vil finde et kunde-id, der har en engagementsindsigtsaktivitet, skal du gå til **Enheder** og gennemse dataene for objektet UnifiedActivity.</span><span class="sxs-lookup"><span data-stu-id="03651-165">To find a customer id that has an engagement insights activity, go to **Entities** and preview the data for the UnifiedActivity entity.</span></span> <span data-ttu-id="03651-166">ActivityTypeDisplay = WebLog indeholder den engagementsindsigtsaktivitet, der er konfigureret i eksemplet ovenfor.</span><span class="sxs-lookup"><span data-stu-id="03651-166">ActivityTypeDisplay = WebLog contain the engagement insights activity configured in the example above.</span></span> <span data-ttu-id="03651-167">Kopiér kunde-id for en af disse poster og for det pågældende id på siden **Kunder**.</span><span class="sxs-lookup"><span data-stu-id="03651-167">Copy the customer ID for one of those records and for that ID on the **Customers** page.</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="03651-168">Næste trin</span><span class="sxs-lookup"><span data-stu-id="03651-168">Next Steps</span></span>
+
+<span data-ttu-id="03651-169">Du kan nu oprette [segmenter](segments.md), [mål](measures.md) og [forudsigelser](predictions.md) for at skabe en meningsfuld forbindelse til kunderne.</span><span class="sxs-lookup"><span data-stu-id="03651-169">You can now create [segments](segments.md), [measures](measures.md), and [predictions](predictions.md) to make a meaningful connection with your customers.</span></span>
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

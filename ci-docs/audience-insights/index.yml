@@ -6,16 +6,16 @@ metadata:
   description: hjælp-hub med nøglelinks til målgruppen Insights.
   ms.service: customer-insights
   ms.subservice: audience-insights
-  ms.topic: landing-page
+  ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
   ms.date: 10/16/2020
-  ms.openlocfilehash: 9dcbbecf793cca2ef1d79d6fad7f3b420f5a8806
-  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+  ms.openlocfilehash: ba5229067c7c338b4f8d0503aaf80f25b6c4002c
+  ms.sourcegitcommit: a8f7d5d0008b2d7d0ff0daeb746126abfc82c253
   ms.translationtype: HT
   ms.contentlocale: da-DK
-  ms.lasthandoff: 11/03/2020
-  ms.locfileid: "4405444"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "4745714"
 landingContent:
 - title: Om målgruppen Insights
   linkLists:
@@ -27,36 +27,36 @@ landingContent:
       url: whats-new-audience-insights.md
     - text: Community-websted
       url: https://go.microsoft.com/fwlink/?linkid=2073991
-- title: 'Indtag datakilder '
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Tilføj datakilder
-      url: data-sources.md
-    - text: Trinvis opdatering
-      url: incremental-refresh-data-sources.md
-    - text: Forstå enheder
-      url: entities.md
 - title: Saml data
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Tilknytning
-      url: map-entities.md
-    - text: Resultat
-      url: match-entities.md
-    - text: Fletning
-      url: merge-entities.md
-- title: Forfine kundeprofiler
+    - text: Oversigt over datakilder
+      url: data-sources.md
+    - text: Samlingsoversigt
+      url: data-unification.md
+    - text: Forstå enheder
+      url: entities.md
+- title: Forbedre og opdatere data
   linkLists:
   - linkListType: how-to-guide
     links:
+    - text: Forbedre kundeprofiler
+      url: enrichment-hub.md
     - text: Konfigurer relationer
       url: relationships.md
     - text: Angiv kundeaktiviteter
       url: activities.md
-    - text: Brug dine egne modeller til maskinel indlæring
-      url: custom-models.md
+- title: Få indsigt
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Oprette segmenter
+      url: segments.md
+    - text: Oprette målinger
+      url: measures.md
+    - text: Komplet data med forudsigelser
+      url: predictions.md
 - title: Eksportere kundedata
   linkLists:
   - linkListType: how-to-guide
