@@ -1,7 +1,7 @@
 ---
 title: Systemkonfiguration i målgruppen Insights
 description: Få mere at vide om systemindstillinger i Dynamics 365 Customer Insights-funktionen i målgruppen Insights.
-ms.date: 06/02/2020
+ms.date: 02/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,25 +9,30 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: nimagen
 manager: shellyha
-ms.openlocfilehash: 7dd72e6512cd87ac70235d21667399298408db21
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a9c9e258da49b8f452550794539962d48b856829
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405452"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267333"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
 
-Siden **System** indeholder fire faner: **Status**, **Planlæg**, **Om** og **Generelt**.
+Siden **System** indeholder følgende faner:
+- [Status](#status-tab)
+- [Planlæg](#schedule-tab)
+- [API-anvendelse](#api-usage-tab)
+- [Om](#about-tab)
+- [Generelt](#general-tab)
 
 > [!div class="mx-imgBorder"]
 > ![Systemside](media/system-tabs.png "Systemside")
 
 ## <a name="status-tab"></a>Fanen Status
 
-Fanen **Status** giver dig mulighed for at spore status for dataindtagelse, dataeksporter og flere vigtige produktprocesser. Gennemse oplysningerne under denne fane for at sikre, at aktive processer er komplette.
+Under fanen **Status** kan du spore status for dataindtag, dataeksport og flere andre vigtige produktprocesser. Gennemse oplysningerne under denne fane for at sikre, at aktive processer er komplette.
 
-Denne fane indeholder statustabeller for **Datakilder**, **Systemprocesser** og **Dataforberedelse**. I hver tabel registreres **navnet** på opgaven og dens tilsvarende objekt, **Status** for den seneste kørsel, og hvornår den blev **Sidst opdateret**.
+Denne fane indeholder tabeller med status og behandlingsoplysninger til forskellige processer. I hver tabel registreres **navnet** på opgaven og dens tilsvarende objekt, **Status** for den seneste kørsel, og hvornår den blev **Sidst opdateret**.
 
 Du kan se detaljerne om opgavens sidste mange kørsler at vælge dens navn.
 
@@ -40,7 +45,7 @@ Der er seks typer status for opgaver. Følgende statustyper vises også på side
 - **Sprunget over:** Opgaven blev sprunget over. En eller flere af de downstream-processer, som denne opgave afhænger af, er mislykket eller er blevet sprunget over.
 - **Mislykket:** Der opstod fejl under behandlingen af opgaven.
 - **Annulleret:** Behandlingen blev annulleret af brugeren, før den var fuldført.
-- **Sat i kø:** Behandlingen er sat i kø og starter, når alle downstream-opgaver er fuldført. Du kan finde flere oplysninger i [Opdateringspolitikker](#refresh-policies).
+- **I kø:** Behandling sættes i kø og startes, når alle upstream-opgaver er fuldført. Du kan finde flere oplysninger i [Opdateringspolitikker](#refresh-policies).
 
 ### <a name="refresh-policies"></a>Opdateringspolitikker
 
@@ -89,4 +94,17 @@ Vælg **Gem** for at bekræfte dine valg.
 
 ## <a name="api-usage-tab"></a>Fanen API-forbrug
 
-Find oplysninger om API-forbruget i realtid, og se, hvilke hændelser der er sket inden for et givent tidsinterval. Du kan finde flere oplysninger under [Dataindtagelse i realtid](real-time-data-ingestion.md).
+Find detaljer om brugen af API i realtid, og se, hvilke hændelser der er sket i en bestemt tidsramme. Vælg en tidsramme i rullemenuen **Vælg en tidsramme**. 
+
+**API-brug** indeholder tre sektioner: 
+- **API-kald** - et diagram, der visualiserer det samlede antal kald til API'en i den valgte tidsramme.
+
+- **Dataoverførsel** - et diagram, der viser den mængde data, der er overført via API'en i den valgte tidsramme.
+
+-  **Handlinger** - en tabel med rækker for hver tilgængelig API-handling og oplysninger om brugen af handlingerne. Du kan vælge et handlingsnavn for at gå til [API-referencen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
+
+   Handlinger, der bruger [dataindtag i realtid](real-time-data-ingestion.md), indeholder en knap med et kikkert-symbol for at få vist brugen af API i realtid. Vælg knappen for at åbne en siderude med detaljer om forbrug for API-anvendelsen i realtid i det aktuelle miljø.   
+   Brug feltet **Gruppe efter** i ruden til **Brug af realtids-API** for at vælge, hvordan dine interaktioner i realtid skal vises bedst. Du kan gruppere dataene efter API-metode, kvalificeret navn på objekt (indtaget objekt), oprettet af (kilden for hændelsen), resultat (vellykket eller mislykket) eller fejlkoder. Dataene er tilgængelige som et historikdiagram og en tabel.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

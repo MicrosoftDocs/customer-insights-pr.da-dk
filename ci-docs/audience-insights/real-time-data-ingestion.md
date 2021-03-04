@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
-ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
+ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "4689168"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270273"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (prøveversion)
 
@@ -83,6 +83,7 @@ Du kan finde oplysninger om denne API, herunder parametre og svar, i afsnittet *
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå dit realtidsforbrug med telemetri
 
-Få et overblik over omfanget af anmodninger til API i realtid og oplysninger om de problemer, der kan opstå i systemet. Du kan få [adgang til realtidstelemetri](system.md#api-usage-tab) ved at gå til **Admin** > **System** > **API-forbrug**. I tabellen **Handlinger** indeholder rækkerne for API-handlinger, som bruger realtidsmetoderne, en knap til at få vist API-forbrug i realtid. Knappen er visuel og har et kikkert-symbol. Vælg knappen for at åbne en siderude med detaljer om forbrug for API-anvendelsen i realtid i det aktuelle miljø.
+Få et overblik over omfanget af anmodninger til API i realtid og oplysninger om de problemer, der kan opstå i systemet. Du kan få [adgang til telemetri i realtid](system.md#api-usage-tab). 
 
-Brug vælgeren **Grupper efter** til at vælge, hvordan du bedst kan præsentere dine interaktioner i realtid på en tidslinje lige fra de seneste 24 timer til de seneste 30 dage. Du kan gruppere dataene efter API-metode, kvalificeret navn på objekt (indtaget objekt), oprettet af (kilden for hændelsen), resultat (vellykket eller mislykket) eller fejlkoder. Dataene er tilgængelige som et historikdiagram og en tabel.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

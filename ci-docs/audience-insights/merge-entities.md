@@ -4,17 +4,17 @@ description: Flet objekter for at oprette samlede kundeprofiler.
 ms.date: 04/16/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 045fd8d8f65161b91caabed2ac52494dc4fb3910
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5d5ff4c6f091d1b50d0f6c8366bbe4f0e6428dac
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405448"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268495"
 ---
 # <a name="merge-entities"></a>Flet objekter
 
@@ -88,3 +88,6 @@ Konfigurer [aktiviteter](activities.md), [forbedring](enrichment-microsoft-graph
 Hvis du allerede har konfigureret aktiviteter, forbedring eller relationer, eller hvis du har defineret segmenter, behandles de automatisk, så de anvender de nyeste kundedata.
 
 
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

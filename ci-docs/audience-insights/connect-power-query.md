@@ -5,16 +5,16 @@ ms.date: 09/29/2020
 ms.reviewer: adkuppa
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405432"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267761"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
@@ -28,7 +28,10 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
 
 1. Vælg metoden **Importér data**, og vælg **Næste**.
 
-1. Angiv et **Navn** til datakilde, og vælg **Næste** for at oprette datakilden.
+1. Angiv et **Navn** til datakilde, og vælg **Næste** for at oprette datakilden. Navneretningslinjer: 
+   - Start med et bogstav.
+   - Brug kun bogstaver og tal. Specialtegn og mellemrum er ikke tilladt.
+   - Brug mellem 3 og 64 tegn.
 
 1. Vælg en af de [tilgængelige connectorer](#available-power-query-data-sources). I dette eksempel skal du vælge **Text/CSV** som connector.
 
@@ -77,3 +80,6 @@ Connectorer med markering i kolonnen **Customer Insights (dataflows)** er tilgæ
 3. Anvend ændringerne og transformationerne i dialogboksen **Power Query – rediger forespørgsler** som beskrevet i afsnittet [Oprette en ny datakilde](#create-a-new-data-source).
 
 4. Vælg **Gem** i Power Query, når du har fuldført redigeringen, for at gemme ændringerne.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

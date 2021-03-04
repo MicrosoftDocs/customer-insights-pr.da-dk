@@ -1,30 +1,26 @@
 ---
-title: Funktioner i målgruppen Insights
-description: Oversigt over funktioner i målgruppen Insights i Dynamics 365 Customer Insights.
-ms.date: 02/05/2020
+title: Målgruppeindsigt for Dynamics 365 Customer Insights-oversigt
+description: Oversigt over målgruppeindsigt for Dynamics 365 Customer Insights.
+ms.date: 01/18/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 82763b294484cca4a3982f4ebef6f914a02f5cca
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405442"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5476988"
 ---
-# <a name="dynamics-365-customer-insights-audience-insights-capability"></a>Dynamics 365 Customer Insights-funktioner i målgruppen Insights
+# <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppeindsigt for Dynamics 365 Customer Insights-oversigt
 
-Kundeerfaring er vigtig for alle organisationers ambitioner om digital transformation. For at konkurrere i det moderne marked har organisationer behov for at opbygge meningsfulde relationer med kunderne på et personligt niveau. Effektiv personlig tilpasning i større omfang kræver en komplet, samlet visning af kunderne.
+Målgruppen Insights hjælper dig med at skabe dybere kendskab til dine kunder. Forbind data fra forskellige transaktions-, adfærds- og overvågningskilder for at få en 360-graders kundevisning. Brug disse indsigter til at skabe kundebaserede oplevelser og processer. Du kan samle og forstå kundedata og udnytte dem til intelligent indsigt og handlinger.
 
-Målgruppen Insights hjælper dig med at skabe dybere kendskab til dine kunder. Forbind data fra forskellige transaktions-, adfærds- og overvågningskilder for at få en 360-graders kundevisning. Brug disse indsigter til at skabe kundebaserede oplevelser og processer.
-
-**Du kan samle og forstå kundedata og udnytte dem til intelligent indsigt og handlinger.**
-
-Med målgruppen Insights kan organisationer gøre følgende:  
+## <a name="main-benefits"></a>Hovedfordele 
 
 - **Undgå datasiloer og samle kundedata**
 
@@ -33,15 +29,15 @@ Med målgruppen Insights kan organisationer gøre følgende:
 
 - **Forbedre data med målgruppeintelligens, der findes i Microsoft Graph**
 
-  - Opbyg mere avancerede kundeprofiler ved at inkorporere målgruppeintelligens, der findes i Microsoft Graph.  
+  - Opbyg mere avancerede kundeprofiler ved at [inkorporere målgruppeintelligens, der findes i Microsoft Graph](enrichment-microsoft-graph.md).  
 
 - **Styrke dine forretningsprocesser og personligt tilpassede kundeerfaringer**
 
   - Skab personligt tilpasset engagement på tværs af kanaler – giv marketing-, salgs- og servicemedarbejdere kontekstbestemt kundeindsigt og skræddersyede kundeprofilkort, der er indbygget i de virksomhedsprogrammer, de allerede bruger hver dag
   - Automatiser kundebaserede erfaringer og processer ud fra profiler, forretningsmålinger og segmenter, der kan tilpasses.
-  - Aktivere og udvide de brancheerfaringer, der bygger på Microsoft Power Platform. Hurtigt udvikle programmer med integreret indsigt ved hjælp af en kraftfuld fremgangsmåde med lidt kode fra PowerApps.  
+  - Aktivér og udvid de brancheerfaringer, der bygger på [Microsoft Power Platform](https://powerplatform.microsoft.com/). Hurtigt udvikle programmer med integreret indsigt ved hjælp af en kraftfuld fremgangsmåde med lidt kode fra PowerApps.  
 
-Målgruppen Insights omfatter funktioner for følgende nøglebrugere:
+## <a name="key-audiences"></a>Nøglemålgrupper
 
 - **Dataanalytikere/administratorer:**
 
@@ -58,5 +54,8 @@ Målgruppen Insights omfatter funktioner for følgende nøglebrugere:
 
 - **Forretningsanalytikere:**
 
-  - Opbyg profiler, der kan tilpasses, definer målpunkter, og opret segmenter for at få en 360-graders visning af din kunde, der er specifik for din organisation.  
-  - Brug out-of-Box-forbindelser til PowerApps eller Microsoft Power BI eller API'er til at overføre overfladeindsigt i virksomhedens programmer eller BI-løsninger.  
+  - Opbyg profiler, der kan tilpasses, definer målpunkter, og opret segmenter, og få fordel af forudsigende analyse for at få en 360-graders visning af din kunde, der er specifik for din organisation.  
+  - Brug connectorer, der er klar til brug, til flere Microsoft- og tredjepartsprogrammer eller API'er for at behandle indsigten yderligere.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -1,20 +1,20 @@
 ---
 title: Eksportér Customer Insights-data til SFTP-værter
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen til en SFTP-vært.
-ms.date: 06/05/2020
+ms.date: 01/27/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: c2529744d7a26a06324b79cad6a8001d75903545
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: ddba55b3ca159c0095371e46385dcf1d3ed4a63d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643496"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267991"
 ---
 # <a name="connector-for-sftp-preview"></a>Connector til SFTP (prøveversion)
 
@@ -22,9 +22,9 @@ Brug dine kundedata i tredjepartsprogrammer ved at eksportere dem til en SFTP-v�
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-- Tilgængelighed af en SFTP-vært og tilhørende legitimationsoplysninger.
+- Tilgængeligheden af en SFTP-vært og de tilhørende legitimationsoplysninger.
 
-## <a name="connect-to-sftp"></a>Forbindelse til SFTP
+## <a name="connect-to-sftp"></a>Opret forbindelse til SFTP
 
 1. Gå til **Adminstration** > **Eksportdestinationer**.
 
@@ -32,23 +32,22 @@ Brug dine kundedata i tredjepartsprogrammer ved at eksportere dem til en SFTP-v�
 
 1. Giv din destination et genkendeligt navn i feltet **Vist navn**.
 
-1. Angiv et **Brugernavn**, en **adgangskode** og et **værtsnavn** til din SFTP-konto. Eksempel: Hvis SFTP-serverens rodmappe er/root/mappe, og du vil have, at dataene skal eksporteres til/root/mappe/ci_export_destination_folder, skal værten være sftp://<server_address>/ci_export_destination_folder".
+1. Angiv et **Brugernavn**, **Adgangskode**, **Værtsnavn** og **Eksportmappe** til din SFTP-konto.
 
 1. Vælg **Bekræft** for at teste forbindelsen.
 
-1. Når bekræftelsen er fuldført, skal du vælge, om du vil eksportere dataene **Pakket** eller **Ikke-pakket** og vælge **feltseparator** for de eksporterede filer.
+1. Når verifikationen er fuldført, skal du vælge, om du vil eksportere dataene **Gzipped** eller **Udpakket** , og vælge **feltseparator** for de eksporterede filer.
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
 
 1. Vælg **Næste** for at begynde at konfigurere eksporten.
 
-## <a name="configure-the-connection"></a>Konfigurere forbindelsen
+## <a name="configure-the-export"></a>konfigurere eksporten
 
-1. Vælg de **kundeattributter**, der skal eksporteres. Du kan eksportere en eller flere attributter.
+1. Markér de objekter, f.eks. segmenter, du vil eksportere.
 
-1. Vælg **Næste**.
-
-1. Vælg de segmenter, du vil eksportere.
+   > [!NOTE]
+   > Hvert valgt objekt vil være på op til fem outputfiler, når de eksporteres. 
 
 1. Vælg **Gem**.
 
@@ -56,7 +55,15 @@ Brug dine kundedata i tredjepartsprogrammer ved at eksportere dem til en SFTP-v�
 
 Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
 
+## <a name="known-limitations"></a>Kendte begrænsninger
+
+- Kørslen af en eksport afhænger af systemets ydeevne. Vi anbefaler to CPU-kerner og 1 GB hukommelse som minimal konfiguration af serveren. 
+- Det kan tage 90 minutter at eksportere objekter med op til 100 millioner kundeprofiler, når du bruger den anbefalede minimale konfiguration af to CPU-kerner og 1 GB hukommelse. 
+
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 
 Når du aktiverer Dynamics 365 Customer Insights for at overføre data via SFTP, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at eksportdestinationen overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne eksportdestination for at afslutte brugen af denne funktionalitet.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

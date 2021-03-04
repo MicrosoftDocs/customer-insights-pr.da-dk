@@ -5,16 +5,16 @@ ms.date: 04/21/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 45ea23fbefe5f1d44c3961183b76d2cc5c45355e
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 03299610fd41a7e142e3c9723fad56ce7f90e083
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405441"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267945"
 ---
 # <a name="teams-bot-for-dynamics-365-customer-insights-preview"></a>Teams-robot til Dynamics 365 Customer Insights (prøveversion)
 
@@ -52,3 +52,6 @@ Botten leverer opslagsmuligheder for samlede kundeprofiler.
 - Hvis din organisation vedligeholder flere Customer Insights-miljøer i samme organisation, kan du angive **switchinstance** for at vælge, hvilket miljø en robot skal knyttes til.
 
 - Skriv **Hjælp** for at få vist en liste over tilgængelige kommandoer for botten.  
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

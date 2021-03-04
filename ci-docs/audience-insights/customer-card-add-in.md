@@ -1,7 +1,7 @@
 ---
 title: Installer og konfigurér tilføjelsesprogrammet Kundekort.
 description: Installer og konfigurer tilføjelsesprogrammet Kundekort til Dynamics 365 Customer Insights.
-ms.date: 08/04/2020
+ms.date: 01/20/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: aab5deaf89b4b019f6688a1bca950ec2277ad5fb
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a6d5b49380ed129cf147698a16f5f3f597bf7fbc
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644036"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268037"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
@@ -28,7 +28,7 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Få vist de
 - Kundeprofiler, [der er overført fra Dynamics 365-appen ved hjælp af Common Data Service](connect-power-query.md).
 - Brugere af tilføjelsesprogrammet kundekort skal [tilføjes som brugere](permissions.md) i målgruppeindsigt.
 - [Konfigurerede søge- og filtreringsfunktioner](search-filter-index.md).
-- Demografisk kontrolelement: Demografiske felter, f. eks. alder eller køn, er tilgængelige i den samlede kundeprofil.
+- Demografisk kontrolelement: Demografiske felter (f.eks. alder eller køn) er tilgængelige i den samlede kundeprofil.
 - Forbedringskontrol: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler.
 - Intelligent kontrol: Kræver data, der er genereret ved hjælp af Azure Machine Learning ([Forudsigelser](predictions.md) eller [Brugerdefinerede modeller](custom-models.md))
 - Målingskontrol: Kræver [konfigurerede målinger](measures.md).
@@ -92,10 +92,26 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 
 1. Fjern markeringen i afkrydsningsfeltet **Vis etiket på formularen**, i dialogboksen **Feltegenskaber**.
 
-1. Vælg indstillingen **Internet** for kontrolelementet. Vælg den type forbedring, du vil have vist, ved at konfigurere feltet **Forbedring**. Du skal tilføje en separat forbedringskontrol for hver type forbedring.
+1. Vælg indstillingen **Internet** for kontrolelementet. Vælg den type forbedring, du vil have vist, ved at konfigurere feltet **Forbedring**. Tilføj et særskilt forbedringskontrolelement for hver forbedringstype.
 
 1. Vælg **Gem** og **Publicer** for at publicere den opdaterede kontaktpersonformular.
 
 1. Gå til den publicerede kontaktformular. Du kan se det netop tilføjede kontrolelement. Det kan være nødvendigt at logge på, første gang du bruger det.
 
 1. Hvis du vil tilpasse det, du vil have vist på det brugerdefinerede kontrolelement, skal du vælge knappen Rediger i øverste højre hjørne.
+
+## <a name="upgrade-customer-card-add-in"></a>Opgradere tilføjelsesprogrammet Kundekort
+Tilføjelsesprogrammet Kundekort opgraderes ikke automatisk. Hvis du vil opgradere til den nyeste version, skal du følge denne procedure i den Dynamics 365-app, hvor tilføjelsesprogrammet er installeret.
+
+1. Gå til **Indstillinger** > **Tilpasning** og vælg **Løsninger** i Dynamics 365-appen.
+
+1. I tabellen over tilføjelsesprogrammer skal du kigge efter **CustomerInsightsCustomerCard** og markere rækken.
+
+1. Vælg **Anvend løsningsopgradering** på handlingslinjen.
+
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Opgradere løsningen i området Tilpasning i Dynamics 365-apps":::
+
+1. Når du har startet opgraderingsprocessen, kan du se en indlæsningsindikator, indtil opgraderingen er fuldført. Hvis der ikke findes en nyere version, vises der en fejlmeddelelse i opgraderingen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

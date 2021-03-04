@@ -4,17 +4,17 @@ description: Opret segmenter med kunder for at gruppere dem på baggrund af fors
 ms.date: 10/15/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: jimsonc
 manager: shellyha
-ms.openlocfilehash: 6931110c2ae93cd2792d319aa5a34f0df3088552
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: a1308f07ac3ba7d4b09931bab3d19b6dfaf479ee
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405460"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270349"
 ---
 # <a name="create-and-manage-segments"></a>Oprette og administrere segmenter
 
@@ -222,3 +222,6 @@ I forbindelse med følgende situationer anbefaler vi, at du bruger segmentgenera
 ## <a name="next-steps"></a>Næste trin
 
 [Eksportere et segment](export-destinations.md) og udforske [kundekort](customer-card-add-in.md) og [connectorer](export-power-bi.md) for at få indsigt i kundeniveauet.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

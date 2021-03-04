@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1c95cba333266a73959de0a3afe1c8677130a3ec
-ms.sourcegitcommit: 334633cbd58f5659d20b4f87252c1a10cc7130db
+ms.openlocfilehash: dcef8f0547009e1488f1abe91423fa0bf5b061de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4667222"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267425"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -44,13 +44,13 @@ Datakilderne inkluderer objekter med transaktions- og aktivitetsdata fra flere d
 
 1. I sektionen **Konfigurer relation** skal du konfigurere detaljerne for at oprette forbindelse mellem aktivitetsdataene og den tilsvarende kunde.
 
-   > [!div class="mx-imgBorder"]
-   > ![Definere objektrelationen](media/activities-entities-define.png "Definere objektrelationen")
-
     - **Aktivitetsobjektfelt**: Vælg det felt i det aktivitetsobjekt, der skal bruges til at oprette en relation til et andet objekt.
     - **Kundeobjekt**: Vælg det tilsvarende kildekundeobjekt, som aktivitetsobjektet skal have en relation til. Du kan kun oprette forbindelse til de kildekundeobjekter, der bruges i datasamlingsprocessen.
     - **Kundeobjektfelt**: I dette felt vises den primære nøgle for kildekundeobjektet, som det er valgt i tilknytningsprocessen. Dette primære nøglefelt i kildekundeobjektet bruges til at oprette en relation til aktivitetsobjektet.
     - **Navn**: Hvis der allerede findes en relation mellem dette aktivitetsobjekt og det valgte kildekundeobjekt, vil navnet på relationen være i skrivebeskyttet tilstand. Hvis der ikke findes en sådan relation, oprettes der en ny relation med det navn, der angives her.
+   
+   > [!div class="mx-imgBorder"]
+   > ![Definere objektrelationen](media/activities-entities-define.png "Definere objektrelationen")
 
 1. Vælg **Gem** for at anvende dine ændringer.
 
@@ -82,3 +82,6 @@ Datakilderne inkluderer objekter med transaktions- og aktivitetsdata fra flere d
 3. Vælg ikonet **Slet**.
 
 4. Bekræft sletningen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

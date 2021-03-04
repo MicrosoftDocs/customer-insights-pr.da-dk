@@ -1,20 +1,20 @@
 ---
 title: Opret forbindelse til en Azure Data Lake Storage Gen2-konto med en tjenestekonto
 description: Brug en Azure-tjenestekonto til at få målgruppeindsigt for at oprette forbindelse til dine egen Data Lake, når du vedhæfter den til målgruppeindsigt.
-ms.date: 11/24/2020
+ms.date: 02/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c2fae278d34fa02b9168ac70dfa8dd351653245e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644081"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267715"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Opret forbindelse til en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekonto for at få målgruppeindsigt
 
@@ -22,7 +22,9 @@ Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begræns
 
 Du kan bruge tjenestekontoen til at [tilføje eller redigere en Common Data Model-mappe på en sikker måde som datakilde](connect-common-data-model.md) eller [oprette nye eller opdatere et eksisterende miljø](manage-environments.md#create-an-environment-in-an-existing-organization).
 
-Du skal have administratorrettigheder til dit Azure-abonnement for at oprette tjenestekonto.
+> [!IMPORTANT]
+> - Azure Data Lake Gen2-lagerkontoen, hvor tjenestens hovednavn skal bruges, skal have [aktiveret HNS (hierarkisk navneplads)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Du skal have administratorrettigheder til dit Azure-abonnement for at oprette tjenestekonto.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Opret Azure-tjenestekonto til målgruppeindsigt
 
@@ -83,7 +85,7 @@ Vedhæft en Azure Data Lake-lagerkonto i målgruppeindsigter for at [gemme outpu
 
 Følg nedenstående fremgangsmåde for at angive de nødvendige oplysninger om den valgte fremgangsmåde.
 
-### <a name="resounce-based-storage-account-connection"></a>Resourcebaseret forbindelse til lagerkonto
+### <a name="resource-based-storage-account-connection"></a>Ressourcebaseret forbindelse til lagerkonto
 
 1. Gå til [Azure Admin-portalen](https://portal.azure.com), log på dit abonnement, og åbn lagerkontoen.
 
@@ -108,7 +110,8 @@ Følg nedenstående fremgangsmåde for at angive de nødvendige oplysninger om d
 1. Gennemse **Abonnement**, **Ressourcegruppe** og **Navn** på lagerkontoen for at sikre dig, at du vælger de rigtige værdier i målgruppeindsigt.
 
 1. I målgruppeindsigt kan du vælge værdier eller for de tilsvarende felter, når du tilknytter lagerkontoen.
-
-   :::image type="content" source="media/ADLS-SP-SubscriptionConnection.png" alt-text="Angiv oplysninger om ressource-ID for lagerkontoen.":::
    
 1. Fortsæt med de resterende trin i målgruppeindsigt for at tilknytte lagerkontoen.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

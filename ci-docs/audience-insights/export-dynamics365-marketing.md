@@ -1,20 +1,20 @@
 ---
 title: Eksportér Customer Insights-data til Dynamics 365 Marketing
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Dynamics 365 Marketing.
-ms.date: 08/21/2020
+ms.date: 02/01/2021
 ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 163387779b64bd78ef08e2d96a5f1c9615062f28
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a06920b8ff25d7102ccd14ae68cf42fe91fa1ee6
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643766"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269047"
 ---
 # <a name="connector-for-dynamics-365-marketing-preview"></a>Opret forbindelse til Dynamics 365 Marketing (forhåndsvisning)
 
@@ -24,7 +24,10 @@ Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte gru
 
 ## <a name="prerequisite"></a>Forudsætning
 
-Kontaktpersonposter [fra Dynamics 365 Marketing, der tilføres ved hjælp af Common Data Service](connect-power-query.md).
+- Kontaktposter skal være til stede i Dynamics 365 Marketing, før du kan eksportere et segment fra Customer Insights til Marketing. Læs mere om, hvordan du kontakter i [Dynamics 365 Marketing ved hjælp af Common Data Services](connect-power-query.md).
+
+  > [!NOTE]
+  > Hvis du eksporterer målgruppeindsigt til marketing, oprettes der ikke nye kontaktposter i marketingforekomsterne. Kontaktpersonposterne fra Marketing skal være direkte målgruppeindsigt og bruges som en datakilde. De skal også inkluderes i den samlede brugerdefinerede enhed for at knytte kunde-ID'er til kontakt-ID'er, før segmenter kan eksporteres.
 
 ## <a name="configure-the-connector-for-marketing"></a>Konfigurer forbindelsen til Marketing
 
@@ -49,3 +52,6 @@ Kontaktpersonposter [fra Dynamics 365 Marketing, der tilføres ved hjælp af Com
 ## <a name="export-the-data"></a>Eksportér dataene
 
 Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

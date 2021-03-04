@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 295c372bb452e7c40aa950506dc494d4a2de1108
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 292da986faa7f62d8aa73ed7214075612178e2e1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405454"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269865"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellem objekter
 
@@ -28,8 +28,8 @@ Under match- og fletteprocesserne oprettes systemrelationer i baggrunden baseret
 > ![Oprettelse af relation](media/relationships-entities-merge.png "Oprettelse af relation")
 
 - ***CustomerToContact*-relationen** blev oprettet mellem kundeobjektet og kontaktobjektet. Kundeobjektet får nøglefeltet **Contact_contactId** til at relatere til nøglefeltet **contactId** for kontaktobjektet.
-- **_CustomerToAccount_-relationen** blev oprettet mellem kundeobjektet og kontoobjektet. Kundeobjektet får nøglefeltet **Account_accountId** til at relatere til nøglefeltet **accountId** for kontoobjektet.
-- **_CustomerToWebAccount_-relationen** blev oprettet mellem kundeobjektet og webkontoobjektet. Kundeobjektet får nøglefeltet **WebAccount_webaccountId** til at relatere til nøglefeltet **webaccountId** for webkontoobjektet.
+- ***CustomerToAccount*-relationen** blev oprettet mellem kundeobjektet og kontoobjektet. Kundeobjektet får nøglefeltet **Account_accountId** til at relatere til nøglefeltet **accountId** for kontoobjektet.
+- ***CustomerToWebAccount*-relationen** blev oprettet mellem kundeobjektet og webkontoobjektet. Kundeobjektet får nøglefeltet **WebAccount_webaccountId** til at relatere til nøglefeltet **webaccountId** for webkontoobjektet.
 
 ## <a name="create-a-relationship"></a>Oprette en relation
 
@@ -69,3 +69,6 @@ Definer tilpassede relationer på siden **Relationer**. Hver relation består af
 ## <a name="next-step"></a>Næste trin
 
 System- og brugerdefinerede relationer bruges til at oprette segmenter baseret på flere datakilder, der ikke længere er i silo. Du kan finde flere oplysninger under [Segmenter](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

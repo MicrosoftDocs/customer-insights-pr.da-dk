@@ -5,16 +5,16 @@ ms.date: 09/21/2020
 ms.reviewer: sthe
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d497ca779a337c512a7254524f597cff226bcb45
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 0607a4644ac7d7beb19e4faecf012efcd197d48c
+ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405413"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "5477081"
 ---
 # <a name="connector-for-power-bi-preview"></a>Connector til Power BI (prøve)
 
@@ -31,7 +31,7 @@ Opret visualiseringer for dataene ved hjælp af Power BI Desktop. Generer yderli
 
 1. Vælg **Se mere**, og søg efter **Dynamics 365 Customer Insights**
 
-1. Vælg resultatet, og vælg **Opret forbindelse**.
+1. Vælg **Opret forbindelse**.
 
 1. **Log på** med den samme organisationskonto, som du bruger til Customer Insights, og vælg **Opret forbindelse**.
    > [!NOTE]
@@ -52,3 +52,22 @@ Customer Insights-connectoren for Power BI er udviklet til at fungere for datas�
 ### <a name="work-with-a-subset-of-data"></a>Arbejde med et delsæt af data
 
 Overvej at arbejde med et delsæt af dine data. Du kan f. eks. oprette [segmenter](segments.md) i stedet for at eksportere alle kundeposter til Power BI.
+
+## <a name="troubleshooting"></a>Fejlfinding
+
+### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>Customer Insights-miljøet vises ikke i Power BI
+
+Miljøer, hvor der er defineret mere end én [relation](relationships.md) mellem to identiske objekter i målgruppeindsigt, er ikke tilgængelige i Power BI-connector.
+
+Du kan identificere og fjerne de kopierede relationer.
+
+1. I målgruppeindsigt, skal du gå til **Data** > **Relationer** vedrørende det miljø, du mangler i Power BI.
+2. Identificere kopierede Relationer:
+   - Kontrollér, om der er defineret mere end én relation mellem de samme to objekter.
+   - Kontrollér, om der er oprettet en relation mellem to objekter, som begge er medtaget i samlingsprocessen. Der er defineret en implicit relation mellem alle objekter, der er inkluderet i samlingsprocessen.
+3. Fjern eventuelle kopier af identificerede relationer.
+
+Når du har fjernet de kopierede relationer, skal du prøve at konfigurere Power BI-connector igen. Miljøet skulle nu være tilgængeligt.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
+

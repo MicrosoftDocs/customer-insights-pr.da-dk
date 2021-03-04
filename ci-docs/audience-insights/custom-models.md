@@ -4,16 +4,16 @@ description: Arbejde med brugerdefinerede modeller fra Azure Machine Learning i 
 ms.date: 11/19/2020
 ms.reviewer: zacook
 ms.service: dynamics-365-ai
-ms.topic: article
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: ef248086b30b870359970529a7bfb37792be62d5
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668896"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267227"
 ---
 # <a name="custom-machine-learning-models"></a>Brugerdefinerede maskinelle indlæringsmodeller
 
@@ -46,15 +46,15 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 
 1. Vælg Machine Learning Studio (klassisk)-webtjeneste eller Azure Machine Learning-pipeline i rullelisten **Webtjeneste, der indeholder din model**. Vælg derefter **Næste**.
    - Få mere at vide om at [udgive en webtjeneste i Machine Learning Studio (klassisk)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Få mere at vide om, hvordan du [udgiver en pipeline i Azure Machine Learning ved hjælp af designeren](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). 
-     > [!NOTE]
-     > Din pipeline skal udgives under et [pipeline-slutpunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Få mere at vide om, hvordan du [udgiver en pipeline i Azure Machine Learning ved hjælp af designeren](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline skal udgives under et [pipeline-slutpunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. For hvert **Webtjenesteinput** skal du vælge det tilsvarende **Objekt** fra målgruppeindsigter og vælge **Næste**.
+   > [!NOTE]
+   > Den brugerdefinerede modelarbejdsproces anvender heuristik til at knytte inputfelterne i webtjenesten til objektattributterne baseret på feltets navn og datatype. Du får vist en fejlmeddelelse, hvis et webtjenestefelt ikke kan knyttes til et objekt.
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurere en arbejdsproces](media/intelligence-screen2-updated.png "Konfigurere en arbejdsproces")
-
+   
 1. Angiv følgende egenskaber i **Modeloutputparametre**-trinnet:
    - Machine Learning Studio (klassisk)
       1. Angiv det output **Objektnavn**, som flow for webtjenesteoutputresultater.
@@ -112,3 +112,6 @@ Arbejdsprocessen kører også automatisk sammen med alle planlagte opdateringer.
 1. Vælg **Slet**, og bekræft sletningen.
 
 Din arbejdsproces bliver slettet. Det [objekt](entities.md), der blev oprettet, da du oprettede arbejdsprocessen, bevares, og du kan få det vist på siden **Objekter**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

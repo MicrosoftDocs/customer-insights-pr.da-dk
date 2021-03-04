@@ -4,17 +4,17 @@ description: Arbejd med Common Data Model-data ved hjælp af Azure Data Lake Sto
 ms.date: 05/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 25de23e615704a72f6b41d98ae9418beb338e77e
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 247e4d9c47ff2373065ebf3c6d554323e45a120b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643451"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267853"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Tilknyt en Common Data Model med en Azure Data Lake-konto
 
@@ -38,17 +38,25 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 
 1. Vælg **Tilføj datakilde**.
 
-1. Vælg **Opret forbindelse til Common Data model-mappe**, angiv et **Navn** for datakilde, og vælg **Næste**.
+1. Vælg **Opret forbindelse til Common Data model-mappe**, angiv et **Navn** for datakilde, og vælg **Næste**. Navneretningslinjer: 
+   - Start med et bogstav.
+   - Brug kun bogstaver og tal. Specialtegn og mellemrum er ikke tilladt.
+   - Brug mellem 3 og 64 tegn.
 
 1. Du kan vælge mellem at bruge en ressourcebaseret indstilling og en abonnementsbaseret indstilling til godkendelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Angiv oplysninger om **Objektbeholder**, og vælg **Næste**.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboksen til angivelse af forbindelsesoplysninger for Azure Data Lake](media/enter-new-storage-details.png)
-
-1. I dialogboksen **Vælg en Common Data Model-mappe** skal du vælge den model.json-fil, du vil importere data fra, og vælg **Næste**.
+   > ![Dialogboks, hvor du kan angive nye forbindelsesdetaljer for Azure Data Lake](media/enter-new-storage-details.png)
    > [!NOTE]
-   > Alle model.json-filer, der er knyttet til andre datakilder i miljøet, vises ikke på listen.
+   > Du skal bruge en af følgende roller i enten beholderen eller lagerkontoen, der er nævnt ovenfor, for at du kan oprette forbindelse til og oprette en datakilde:
+   >  - Lager for Blob-datalæser
+   >  - Lager for Blob-dataejer
+   >  - Lager for Blob Data-bidragyder
 
-1. Du får vist en liste over tilgængelige objekter i den valgte model.json-fil. Du kan se og foretage valg på listen med tilgængelige objekter og vælge **Gem**. Alle de valgte objekter hentes fra den nye datakilde.
+1. I dialogboksen **Vælg en Common Data Model-mappe** skal du vælge den model.json- eller manifest.json-fil, du vil importere data fra, og vælg **Næste**.
+   > [!NOTE]
+   > Alle model.json- eller manifest.json-filer, der er knyttet til andre datakilder i miljøet, vises ikke på listen.
+
+1. Du får vist en liste over tilgængelige objekter i den valgte model.json- eller manifest.json-fil. Du kan se og foretage valg på listen med tilgængelige objekter og vælge **Gem**. Alle de valgte objekter hentes fra den nye datakilde.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks, der viser en liste over objekter fra en model.json-fil](media/review-entities.png)
 
@@ -59,11 +67,11 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 9. Når du har gemt dine valg, åbnes siden **Datakilder**. Du bør nu kunne se Common Data Model-mappeforbindelsen som en datakilde.
 
 > [!NOTE]
-> En model.json-fil kan kun knyttes til én datakilde i det samme miljø. Men den samme model.json-fil kan bruges til datakilder i flere miljøer.
+> En model.json- eller manifest.json-fil kan kun knyttes til én datakilde i det samme miljø. Men den samme model.json- eller manifest.json-fil kan bruges til datakilder i flere miljøer.
 
 ## <a name="edit-a-common-data-model-folder-data-source"></a>Redigere en datakilde til en Common Data Model-mappe
 
-Du kan opdatere adgangsnøglen til den lagerkonto, der indeholder Common Data Model-mappen. Du kan også ændre model.json-filen. Hvis du vil oprette forbindelse til en anden objektbeholder fra lagerkontoen eller ændre kontonavnet, skal du [oprette en ny datakildeforbindelse](#connect-to-a-common-data-model-folder).
+Du kan opdatere adgangsnøglen til den lagerkonto, der indeholder Common Data Model-mappen. Du kan også ændre model.json- eller manifest.json-filen. Hvis du vil oprette forbindelse til en anden objektbeholder fra lagerkontoen eller ændre kontonavnet, skal du [oprette en ny datakildeforbindelse](#connect-to-a-common-data-model-folder).
 
 1. Gå til **Data** > **Datakilder** i målgruppen Insights.
 
@@ -77,13 +85,24 @@ Du kan opdatere adgangsnøglen til den lagerkonto, der indeholder Common Data Mo
 
 5. Du kan også vælge at opdatere fra en kontonøgleforbindelse til en ressourcebaseret eller en abonnementsbaseret forbindelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Du kan ikke ændre **objektbeholder**-oplysninger, når du opdaterer forbindelsen.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboksen til angivelse af forbindelsesoplysninger for Azure Data Lake](media/enter-existing-storage-details.png)
 
-6. Du kan også vælge en anden model.json-fil med et andet sæt objekter fra beholderen.
+   > ![Dialogboks, hvor du kan angive forbindelsesdetaljer for Azure Data Lake til en eksisterende lagerkonto](media/enter-existing-storage-details.png)
+
+   > [!NOTE]
+   > Du skal bruge en af følgende roller i enten beholderen eller lagerkontoen, der er nævnt ovenfor, for at du kan oprette forbindelse til og oprette en datakilde:
+   >  - Lager for Blob-datalæser
+   >  - Lager for Blob-dataejer
+   >  - Lager for Blob Data-bidragyder
+
+
+6. Du kan også vælge en anden model.json- eller manifest.json-fil med et andet sæt objekter fra beholderen.
 
 7. Du kan også vælge yderligere objekter, der skal indsættes. Du kan også fjerne eventuelle objekter, der allerede er valgt, hvis der ikke er afhængigheder.
 
    > [!IMPORTANT]
-   > Hvis der er afhængigheder i den eksisterende model.json-fil og i sættet af objekter, får du vist en fejlmeddelelse, og du kan ikke vælge en anden model.json-fil. Fjern disse afhængigheder, før du ændrer model.json-filen, eller opret en ny datakilde med den model.json-fil, du vil bruge, for at undgå at fjerne afhængighederne.
+   > Hvis der er afhængigheder i den eksisterende model.json- eller manifest.json-fil og i sættet af objekter, vises der en fejlmeddelelse, og du kan ikke vælge en anden model.json- eller manifest.json-fil. Fjern disse afhængigheder, før du ændrer filen model.json eller manifest.json eller opretter en ny datakilde med den model.json- eller manifest.json-fil, du vil bruge for at undgå at fjerne afhængighederne.
 
 8. Alternativt kan du vælge yderligere attributter eller objekter for at aktivere dataprofilering eller deaktivere allerede markerede.   
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

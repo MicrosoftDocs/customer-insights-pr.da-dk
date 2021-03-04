@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 24321e9e11f9fd4e800526673726e5146ed33674
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 44f97696ec91dc488dd6a7528e186abb99c8288b
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405416"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269645"
 ---
-# <a name="data-unification"></a>Datasamling
+# <a name="data-unification-overview"></a>Oversigt over datasamling
 
 Når du har [konfigureret datakilderne](data-sources.md), kan du samle dataene. Datasamling inkluderer tre trin: **Tilknyt**, **Match** og **Flet**.
 
@@ -31,3 +31,6 @@ Når du har fuldført datasamlingen, kan du også vælge at
 - [konfigurér relationer mellem objekter](relationships.md) for at oprette avancerede segmenter
 - [forbedr dine data](enrichment-hub.md) for at få mere uddybende indsigt i dine kunder
 - [definer aktiviteter](activities.md) ud fra nogle af de attributter, der er indsat
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

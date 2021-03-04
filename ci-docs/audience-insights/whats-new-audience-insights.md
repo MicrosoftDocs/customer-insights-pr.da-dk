@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funktioner
 description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 11/02/2020
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 07b4bee0445f9cd7d53a37cd405af839feb07ae3
-ms.sourcegitcommit: 4004eadac7a65e50e0a409cb925958523c2b6348
+ms.openlocfilehash: 9183c8af4fb9f9f08ac63d8d0cd37c6868bba310
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "4649997"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270425"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheder i målgruppen Insights-funktioner i Dynamics 365 Customer Insights
 
@@ -30,6 +30,77 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="january-2021-updates"></a>Opdatering fra januar 2021
+
+Opdateringerne fra januar 2021 indeholder flere funktioner, opgraderinger af ydeevnen og fejlrettelser.
+
+#### <a name="extensibility"></a>Udvidelse
+
+- **Udvidet funktionalitet og forbedret ydeevne ved eksport af SFTP** Du kan nu eksportere alle outputobjekter fra Customer Insights til en SFTP-vært. Tidligere var eksport begrænset til segmentobjekter. Ydeevnen af eksporten af SFTP giver desuden mulighed for mere datamængde på mindre tid, afhængigt af SFTP-værtsydeevnen.    
+  Du kan finde flere oplysninger i [Connector til SFTP (prøveversion)](export-sftp.md).  
+
+#### <a name="segments"></a>Segmenter
+
+- **Maskinel indlæring foreslåede segmenter for at forbedre målinger** Der er en ny måde at opdage og oprette segmenter på. Systemet bruger en AI-model til at foreslå segmenter, der kan være med til at forbedre et nøgletal (måling), du allerede sporer. Vi viser omfanget af den indflydelse, som attributter, du vælger på en måleenhed eller en anden primær attribut, er. Oplysningerne hjælper dig med at finde potentielle segmenter, der indeholder salgsmuligheder.    
+  Du kan finde flere oplysninger i [Foreslåede segmenter (prøveversion)](suggested-segments.md).
+
+#### <a name="data-unification"></a>Datasamling
+
+- **Forbedret matchoplevelse** I området til datasamlinger blev matchoplevelsen opdateret. Det giver dig mulighed for at konfigurere og få vist matchregler, herunder detaljeret statistik for yderligere at forklare, hvordan matchning fungerer. Der er indstillinger, som deaktiverer en matchregel, så den ikke længere er aktiv, samtidig med at konfigurationen, træk og slip-reglerne og meget mere bevares.
+  Du kan finde flere oplysninger under [Match objekter](match-entities.md).
+
+- **Deduplikering af output fra overensstemmelsesprocessen er tilgængelig som et objekt** Output fra deduplikeringsprocessen fra matchprocessen skrives nu til et separat objekt, så det kan analyseres yderligere. Dette objekt består af de felter, der bruges i deduplikeringsprocessen, og vinderposten og de tilsvarende alternative poster, der flettes med vinderposten.
+  Du kan finde flere oplysninger i [Deduplikering af output som et objekt](match-entities.md#deduplication-output-as-an-entity).
+
+#### <a name="system-administration"></a>Systemadministration
+
+- **Problemfri deling af data med Microsoft Dataverse** Du kan nu dele Customer Insights-output med Microsoft Dataverse-programmer ved hjælp af Microsoft Dataverse Managed Data Lake. Når du knytter et Dataverse-miljø til Customer Insights, får du mulighed for at aktivere datadeling.
+  Du kan finde flere oplysninger under [Administrere miljøer](manage-environments.md).
+
+
+## <a name="december-2020-updates"></a>Opdatering fra december 2020
+
+Opdateringerne i december 2020 indeholder flere funktioner, opgraderinger af ydeevnen og fejlrettelser.
+
+### <a name="new-and-updated-features-in-december-2020"></a>Nye og opdaterede funktioner i december 2020
+
+#### <a name="data-enrichment"></a>Dataforbedring
+
+- **Forbedret tilhørsforhold til mærke og interesse**
+  
+  Vi har forenklet vores tilhørsforholdspointtal, så de bliver nemmere at forstå og bruge. Du kan nu hurtigt identificere kunder baseret på, hvor meget tilhørsforhold de har til et bestemt mærke eller en bestemt interesse.
+
+  Derudover har vi tilføjet nye konfigurationsindstillinger for bedre at styre, hvordan dine kundeprofiler skal beriges. 
+
+  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md).
+
+- **Kontrol af, hvilke profiler der skal forbedres**
+
+  Du kan nu kun forbedre et delsæt af kundeprofilerne med indstillingen til valg af et segmentobjekt i stedet for standardkundeobjektet. Opret et segment med de kundeprofiler, du vil forbedre og vælge i konfigurationen af kundedata.
+  Denne funktion er i øjeblikket kun tilgængelig for funktioner, der leveres af Experian og HERE Technologies. Vi vil snart gøre det muligt for denne funktion at gøre brug af flere funktioner.
+
+  Du kan finde flere oplysninger under [Forbedring af kundeprofiler med demografi fra Experian](enrichment-experian.md) eller [Forbedring af kundeprofiler med HERE Technologies](enrichment-here.md).
+
+#### <a name="extensibility"></a>Udvidelse
+
+- **Aktivér dine segmenter via Autopilot**
+
+  Eksportér segmenter til Autopilot, og brug dem til marketingformål. Du kan finde flere oplysninger i [Connector til Autopilot (prøveversion)](export-autopilot.md).
+
+- **Aktivér dine segmenter via SendGrid**
+
+  Eksportér segmenter til SendGrid, og brug dem til marketingformål. Du kan finde flere oplysninger i [Connector til SendGrid](export-sendgrid.md).
+
+#### <a name="system-administration"></a>Systemadministration
+
+- **Opdateret oplevelse af miljøstyring**
+  
+  Du kan nu oprette, redigere, slette og nulstille miljøer direkte fra miljøvælgeren i app-overskriften. 
+  
+  Derudover fastgøres det miljø, du bruger, øverst i miljøpanelet, så du ikke længere behøver at søge efter det.
+
+  Du kan finde flere oplysninger under [Administrere miljøer](manage-environments.md).
 
 ## <a name="november-2020-updates"></a>Opdatering fra november 2020
 
@@ -165,7 +236,7 @@ Du kan finde flere oplysninger under [Forbedre kundeprofiler med demografi fra E
 Ruden med opgavedetaljer giver dig mulighed for at se detaljer om de opgaver, systemet kører. Det er en praktisk måde at identificere problemer i forbindelse med konfiguration og søgning efter løsninger.
 Gennemse fejlmeddelelserne, og få mere at vide om, hvordan du løser potentielle problemer.
  
-- **Behandling af oplysninger, der er tilføjet på flere sider**
+- **Behandling af oplysninger, der er føjet til flere sider**
 
 Denne forbedring tilføjer oplysninger om status for objekterne på siderne **Objekter** og **Kunder**.
  
@@ -202,9 +273,9 @@ Opdateringerne fra august 2020 indeholder flere funktioner, ydeevneopgraderinger
 
 #### <a name="enrichment"></a>Forbedring
 
-- **Forbedring af interessetilhørsforhold gøres tilgængelig på flere markeder**
+- **Interessegrupper er tilgængelige på flere markeder**
 
-  Vi er ved at udvide tilgængeligheden af de forbedrede interessetilhørsforhold ud over USA til fem ekstra markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med yderligere interesser, der gælder for disse markeder. Vi har også forbedret de kundeprofiler, der er placeret på disse markeder, ved hjælp af lokale, beskyttede data fra Microsoft Graph.
+  Vi udvider tilgængeligheden af interessegrupper uden for USA til fem andre markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med flere interesser, der gælder for disse markeder. Vi har også forbedret de kundeprofiler, der er placeret på disse markeder, ved hjælp af lokale, beskyttede data fra Microsoft Graph.
   Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md)
 
 
@@ -223,9 +294,9 @@ Opdateringerne fra juli 2020 indeholder flere funktioner, opgraderinger af ydeev
 
 #### <a name="enrichment"></a>Forbedring
 
-- **Forbedring af mærketilhørsforhold er tilgængelig på flere markeder**
+- **Mærketilhørsforhold er tilgængelige på flere markeder**
 
-  Vi er ved at udvide tilgængeligheden af forbedringen af mærketilhørsforhold ud over USA til fem supplerende markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med lokale mærker på disse markeder. Vi har også forbedret de kundeprofiler, der er placeret på disse markeder, ved hjælp af lokale, beskyttede data fra Microsoft Graph.
+  Vi udvider tilgængeligheden af mærketilhørsforhold uden for USA til fem andre markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med lokale mærker på disse markeder. Vi har også forbedret de kundeprofiler, der er placeret på disse markeder, ved hjælp af lokale, beskyttede data fra Microsoft Graph.
   Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md)
 
 ## <a name="june-2020-updates"></a>Opdateringringer i juni 2020
@@ -238,7 +309,7 @@ Opdateringerne fra juni 2020 indeholder flere funktioner, opgraderinger af ydeev
 
 - **Forbedring med virksomhedsdata fra Leadspace**
   
-  Definer de felter i samlede kundeprofiler, der bruges til at søge efter relaterede firmadata i Leadspace. Når du har kørt forbedringen, er B2B-profiler udvidet med ekstra attributter, herunder virksomheds størrelse, placering, branche og meget mere.    
+  Definer de felter i samlede kundeprofiler, der bruges til at søge efter relaterede firmadata i Leadspace. Når B2B-profilerne er kørt, beriges de med flere attributter, herunder virksomhedens størrelse, placering, branche og meget mere.    
   Dette samarbejde gør det muligt forbedre kvaliteten af dine data med input fra tredjepartstjenester. Hvis du vil bruge denne forbedring, skal du have en licens fra Leadspace for at få adgang til sine B2B-virksomhedsdata. Systemet bruger den pågældende licens til løbende at holde dine data beskrivende.    
   Du kan finde flere oplysninger under [Forbedring af virksomhedsprofiler med Leadspace](enrichment-leadspace.md).
 
@@ -295,12 +366,12 @@ Opdateringerne fra juni 2020 indeholder flere funktioner, opgraderinger af ydeev
   
   Find lignende kunder i kundebasen ved hjælp af kunstig intelligens. En binær klassificeringsmodel baseret på maskinel indlæring tildeler en lighedsscore til kunder i den udvidede målgruppe. Scoren er baseret på lighed med kunderne i kildesegmentet. Afhængigt af lighedsscoren føjes kundeprofiler til en nyoprettet målgruppe.
 
-  Dette kaldes nogle gange lookalike-modellering inden for digital marketing, idet der anvendes en AI-model til at finde de kunder, som svarer til en anden målgruppe af kunder, ved at indregne flere attributter. Det gør det ikke kun muligt at vælge attributterne, men du kan også angive det maksimale antal kunder, der skal indgå i den nye målgruppe. AI-modellen beregner derefter lighedsscoren for hver enkelt kunde ud fra de valgte attributter og søger efter kunder med den højeste gennemsnitlige lighedsscore. Den resulterende målgruppe indeholder de kunder, der ligner kunden i det oprindelige segment.    
+  Nogle gange kaldes kopimodeller i digital marketing en AI-model, der hjælper med at finde kunder, der ligner et andet segment af dine kunder, ved at angive flere attributter. Det gør det ikke kun muligt at vælge attributterne, men du kan også angive det maksimale antal kunder, der skal indgå i den nye målgruppe. AI-modellen beregner derefter lighedsscoren for hver enkelt kunde ud fra de valgte attributter og søger efter kunder med den højeste gennemsnitlige lighedsscore. Den resulterende målgruppe indeholder de kunder, der ligner kunden i det oprindelige segment.    
   Se [Lignende kunder](find-similar-customer-segments.md) for at få flere oplysninger.
 
 - **Overlapning og differentiering af målgrupper**
 
-  Gennem målgruppers overlapning kan du se, hvor mange og hvilke kunder der er fælles for to eller flere målgrupper. F.eks. hvordan målgruppen for kunder med stort forbrug overlapper en målgruppe af kunder med stor tilfredshed, eller hvordan en målgruppe for mistede kunder overlapper en målgruppe med lav tilfredshed. Derudover kan du analysere, hvordan overlapningen ændrer sig ud fra de attributter, du vælger.
+  Gennem målgruppers overlapning kan du se, hvor mange og hvilke kunder der er fælles for to eller flere målgrupper. F.eks. hvordan målgruppen for kunder med stort forbrug overlapper en målgruppe af kunder med stor tilfredshed, eller hvordan en målgruppe for mistede kunder overlapper en målgruppe med lav tilfredshed. Derudover kan du analysere, hvordan overlapningen ændres, baseret på en ekstra attribut efter eget valg.
 
   Differentiering af målgrupper afslører, hvad der adskiller én målgruppe fra de øvrige kunder eller en anden målgruppe. Det eneste, du skal gøre, er at identificere en målgruppe, så vil systemet identificere de profilattributter og målinger, der kendetegner målgruppen, i form af en sorteret liste over differentieringer – fra den mest markante differentiator til den mindst markante.    
   Du kan finde flere oplysninger under [Indsigt i målgrupper (eksempel)](segment-insights.md).
@@ -333,7 +404,7 @@ Opdateringerne fra maj 2020 indeholder flere funktioner, ydeevneopgraderinger og
 
 - **Opdateret tidslinje og sideinddeling på tilføjelsesprogrammet Kundekort**
 
-  Tidslinjen for tilføjelsesprogram løsningen for kundekort stemmer overens med tidslinjen for aktiviteten. Sideinddelingen af tidslinjen er forbedret og viser op til 50 aktiviteter på én gang. Den gør det også muligt at indlæse flere aktiviteter på tidslinjen.    
+  Tidslinjen for tilføjelsesprogram løsningen for kundekort stemmer overens med tidslinjen for aktiviteten. Sideinddelingen af tidslinjen er forbedret og viser op til 50 aktiviteter på én gang. Det er også muligt at indlæse flere aktiviteter på tidslinjen.    
   Du kan finde flere oplysninger under [Tilføjelsesprogrammet Kundekort](customer-card-add-in.md).
 
 - **Power Automate-udløser for segmentændringer**
@@ -412,7 +483,7 @@ Opdateringerne fra april 2020 indeholder flere funktioner, ydeevneopgraderinger 
 
 - **Eksport til LiveRamp**
 
-  Aktivér dine data i LiveRamp® for at oprette forbindelse til mere end 500 platforme på tværs af digitale, sociale og TV-økosystemer. Udnyt dine data i LiveRamp til målretning, udeladelse og tilpasning af reklamekampagner.    
+  Aktivér dine data i LiveRamp® for at oprette forbindelse til mere end 500 platforme på tværs af digitale, sociale og TV-økosystemer. Brug dine data i LiveRamp til at målrette, skjule og tilpasse reklamekampagner.    
   Du kan finde flere oplysninger under [LiveRamp&reg;-connector](export-liveramp.md).
 
 - **Tilføjelsesprogrammet Teams til Customer Insights**
@@ -433,7 +504,7 @@ Opdateringerne fra april 2020 indeholder flere funktioner, ydeevneopgraderinger 
 
 #### <a name="segments"></a>Segmenter
 
-- **Ekstra operator**
+- **En anden operator**
   
   In-set-operatoren gør det muligt for kunder at segmentere efter flere forskellige strengværdier. Før denne operator blev tilføjet, skulle du oprette sådanne segmenter med flere eller OR-betingelser. In-set-operatoren giver dig mulighed for at gøre det med en enkelt betingelse.    
   Du kan finde flere oplysninger under [Oprette og administrere segmenter](segments.md).
@@ -444,3 +515,6 @@ Opdateringerne fra april 2020 indeholder flere funktioner, ydeevneopgraderinger 
   
   Kopier din konfiguration fra et miljø til et andet. Når du opretter et nyt miljø, kan du vælge et eksisterende miljø, som du vil kopiere konfigurationen fra. Vi understøtter i øjeblikket datakilder, datasamling, relationer, målinger og segmenter til kopiering. Datakilders legitimationsoplysninger og faktiske data kopieres ikke.    
   Du kan finde flere oplysninger under [Administrere miljøer](manage-environments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

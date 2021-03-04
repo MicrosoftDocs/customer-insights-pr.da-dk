@@ -4,17 +4,17 @@ description: Sammenlign objekter for at oprette samlede kundeprofiler.
 ms.date: 10/14/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: adkuppa
 manager: shellyha
-ms.openlocfilehash: 78549037f9c9e59329f5423c36eeb058128802c0
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405449"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267471"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -22,7 +22,7 @@ Når du har fuldført tilknytningsfasen, er du klar til at matche objekterne. Ma
 
 ## <a name="specify-the-match-order"></a>Angive matchrækkefølgen
 
-Gå til **Saml** > **Match**, og vælg **Angiv rækkefølge** for at starte matchfasen.
+Gå til **Data** > **Saml** > **Match**, og vælg **Angiv rækkefølge** for at starte fasen.
 
 Hvert match samler to eller flere objekter i et enkelt objekt, mens alle entydige kundeposter bevares. I følgende eksempel har vi valgt tre objekter: **ContactCSV: TestData** som det **primære** objekt, **WebAccountCSV: TestData** som **Objekt 2** og **CallRecordSmall: TestData** som **Objekt 3**. Diagrammet over valgene illustrerer, hvordan den matchende rækkefølge udføres.
 
@@ -136,7 +136,7 @@ Når en ikke-duplikeret post er identificeret, bruges den pågældende post i de
 
 1. Når du kører processen Sammenlign nu, grupperes posterne på baggrund af de betingelser, der er defineret i reglerne for deduplikering. Efter gruppering af posterne anvendes flettepolitikken til at identificere vinderposten.
 
-1. Denne vinderpost sendes derefter videre til det krydsobjekt, der matcher.
+1. Denne vinderpost overføres derefter til match på tværs af objekter sammen med de poster, der ikke er vindere (f.eks. alternative id'er), for at forbedre matchkvaliteten.
 
 1. Alle brugerdefinerede matchregler, der er defineret for altid at matche, og som ikke matcher, tilsidesætter deduplikeringsregler. Hvis en deduplikeringsregel identificerer matchende poster, og en brugerdefineret matchregel er angivet til aldrig at matche disse poster, kan disse to poster ikke blive matchet.
 
@@ -157,6 +157,17 @@ Den første matchproces medfører, at der oprettes et samlet masterobjekt. Alle 
 
 > [!TIP]
 > Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+
+## <a name="deduplication-output-as-an-entity"></a>Deduplikere output som et objekt
+Ud over det samlede masterobjekt, der er oprettet som en del af et match på tværs af objekter, oprettes der også et nyt objekt for hvert objekt ud fra matchrækkefølgen for at identificere de duplikerede poster. Disse objekter findes sammen med **ConflationMatchPairs:CustomerInsights** i afsnittet **System** på siden **Objekter** med navnet **Deduplication_Datasource_Entity**.
+
+Et deduplikeret outputobjekt indeholder følgende oplysninger:
+- Id'er / nøgler
+  - Feltet Primær nøgle og dets alternative id-felt. Det alternative id-felt består af alle de alternative id'er, der er identificeret for en post.
+  - Deduplication_GroupId-felt vises den gruppe eller klynge, der er identificeret i et objekt, og som grupperer alle lignende poster på baggrund af de angivne felter med deduplikering. Dette bruges til systembehandlingsformål. Hvis der ikke er angivet nogen regler for manuel deduplikering, og der gælder systemdefinerede regler for deduplikering, kan feltet muligvis ikke findes i outputobjektet.
+  - Deduplication_WinnerId: Dette felt indeholder vinder-id fra de identificerede grupper eller klynger. Hvis Deduplication_WinnerId er den samme som værdien for den primære nøgle for en post, betyder det, at posten er vinderposten.
+- Felter, der bruges til at definere reglerne for deduplikering.
+- Felterne Regel og Resultat angiver, hvilke af de duplikeringsregler der blev anvendt, og det antal point, der returneres af den tilsvarende algoritme.
 
 ## <a name="review-and-validate-your-matches"></a>Gennemgå og validere dine matches
 
@@ -200,6 +211,11 @@ Forøg kvaliteten ved at omkonfigurere nogle af dine matchparametre:
   > [!div class="mx-imgBorder"]
   > ![Duplikere en regel](media/configure-data-duplicate-rule.png "Duplikere en regel")
 
+- **Deaktiver en regel** for at bevare en overensstemmelsesregel, samtidig med at den udelukkes fra matchprocessen.
+
+  > [!div class="mx-imgBorder"]
+  > ![Deaktiver en regel](media/configure-data-deactivate-rule.png "Deaktiver en regel")
+
 - **Rediger reglerne** ved at vælge **Rediger**-symbolet. Du kan anvende følgende ændringer:
 
   - Ændre attributter for en betingelse: Vælg nye attributter i den specifikke betingelsesrække.
@@ -229,6 +245,8 @@ Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal 
     - Entity2Key: 34567
 
    Den samme skabelonfil kan angive brugerdefinerede matchposter fra flere objekter.
+   
+   Hvis du vil angive brugerdefineret matchning for deduplikering for et objekt, skal du angive det samme objekt som både Objekt1 og Objekt2 og angive de forskellige værdier for primære nøgler.
 
 5. Gem skabelonfilen, når du har tilføjet alle de tilsidesættelser, du vil anvende.
 
@@ -250,3 +268,6 @@ Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal 
 ## <a name="next-step"></a>Næste trin
 
 Når du har fuldført matchprocessen for mindst ét matchpar, kan du løse mulige modstridende data ved at gennemgå emnet [**Flet**](merge-entities.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

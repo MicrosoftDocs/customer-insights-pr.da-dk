@@ -1,7 +1,7 @@
 ---
-title: Opret og rediger målinger
-description: Definer kunderelaterede målinger for at analysere og afspejle ydeevnen af bestemte forretningsområder.
-ms.date: 10/15/2020
+title: Oprette og administrere målinger
+description: Definer foranstaltninger, der skal analysere og afspejle ydeevnen i virksomheden.
+ms.date: 02/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,105 +9,111 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: wameng
 manager: shellyha
-ms.openlocfilehash: 0e214a6eb66abd27f7292db3ce2c2a6e16a8ff33
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405451"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269921"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere målinger
 
-**Målinger** repræsenterer nøgletal (KPI'er), der afspejler ydeevnen og tilstanden af bestemte forretningsområder. Målgruppen Insights giver en intuitiv oplevelse til opbygning af forskellige typer målpunkter ved hjælp af en forespørgselsgenerator, der ikke kræver, at du koder eller validerer dine målpunkter manuelt. Du kan spore dine forretningsmålinger på **startsiden**, se målinger for bestemte kunder på **Kundekort** og bruge målinger til at definere kundesegmenter på siden **Segmenter**.
+Foranstaltninger hjælper dig med at få en bedre forståelse af kundeadfærd og virksomhedens ydeevne ved at hente relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå den enkelte kundes købshistorik. Du kan også måle *firmaets samlede* salg for at få en forståelse af den samlede omsætning i hele virksomheden.  
+
+Målinger oprettes ved hjælp af målegeneratoren, en platform til dataforespørgsel med forskellige operatorer og simple tilknytningsindstillinger. Du kan filtrere dataene, gruppere resultater, registrere [objektrelationsstier](relationships.md) og gennemse outputtet.
+
+Brug målegeneratoren til at planlægge forretningsaktiviteter ved at forespørge om kundedata og udtrække indsigt. Hvis du f.eks. opretter et mål for det *samlede forbrug pr. kunde* og det *samlede afkast pr. kunde*, kan du identificere en gruppe kunder med et højt forbrug, men et højt afkast. Du kan [oprette et segment](segments.md) for at opnå de bedste handlinger. 
 
 ## <a name="create-a-measure"></a>Oprette en måling
 
-I dette afsnit gennemgås, hvordan du opretter en måling fra bunden. Du kan oprette målinger med data fra flere datakilder, der er forbundet via kundeobjektet. Der gælder nogle [tjenestebegrænsninger](service-limits.md).
+Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra bunden. Du kan oprette en måling med dataattributter fra dataobjekter, der har en relation konfigureret til at oprette forbindelse til objektet Kunde. 
 
 1. Gå til **Målinger** i målgruppen Insights.
 
-2. Vælg **Ny måling**.
+1. Vælg **Ny**.
 
-3. Vælg målingen **Type**:
-
-   - **Kundeattribut**: Et enkelt felt pr. kunde, der afspejler en score, værdi eller tilstand for kunden. Kundeattributter oprettes som attributter i et nyt systemgenereret objekt, der kaldes **Customer_Measure**.
-
-   - **Kundemåling**: Indsigt i kundeadfærd med fordeling efter valgte dimensioner. Der oprettes et nyt objekt for hver måling, der muligvis har flere poster pr. kunde.
-
-   - **Forretningsmæssig måling**: Sporer din virksomheds præstationer og tilstand. Forretningsmæssige målinger kan have to forskellige output: Et numerisk output, der vises på **Startside**, eller et nyt objekt, som du finder på siden **Objekter**.
-
-4. Angiv et **Navn** og et valgfrit **Vist navn**, og vælg derefter **Næste**.
-
-5. I sektionen **Objekt** skal du vælge det første objekt på rullelisten. På dette tidspunkt skal du finde ud af, om der skal bruges yderligere objekter som en del af din målingsdefinition.
-
-   > [!div class="mx-imgBorder"]
-   > ![Definition af måling](media/measure-definition.png "Definition af måling")
-
-   Hvis du vil tilføje flere objekter, skal du vælge **Tilføj objekt** og vælge de objekter, du vil bruge til målingen.
-
+1. Vælg **Rediger navn**, og angiv et **Navn** til målingen. 
    > [!NOTE]
-   > Du kan kun vælge objekter, der har en relation til dit startobjekt. Du kan finde flere oplysninger om definition af relationer under [Relationer](relationships.md).
+   > Hvis konfigurationen af den nye måleenhed kun indeholder to felter, f.eks. CustomerID og én beregning, føjes outputtet som en ny kolonne til det systemgenererede objekt, der kaldes Customer_Measure. Du kan også se målingens værdi i den samlede kundeprofil. Andre foranstaltninger opretter deres egne objekter.
 
-6. Du kan også konfigurere variabler. Vælg **Ny variabel** i sektionen **Variabler**.
+1. Vælg aggregeringsfunktionen i rullemenuen **Vælg funktion** i konfigurationsområdet. Aggregeringsfunktionerne omfatter: 
+   - **Sum**
+   - **Gennemsnitlig**
+   - **Tælling**
+   - **Antal entydige**
+   - **Maks.**
+   - **Min**
+   - **Først**: Tager den første værdi af dataposten
+   - **Sidste**: Tager den sidste værdi, der er tilføjet dataposten
 
-   Variabler er beregninger, der er foretaget på de valgte poster. F.eks. opsummering af POS og onlinesalg for hver af dine kunders poster.
+   :::image type="content" source="media/measure-operators.png" alt-text="Operatorer til måleberegninger.":::
 
-7. Angiv et **Navn** til variablen.
+1. Vælg **Tilføj attribut** for at vælge de data, du skal bruge for at oprette denne måling.
+   
+   1. Vælg fanen **Attributter**. 
+   1. Dataobjekt: Vælg det objekt, der indeholder den attribut, du vil måle. 
+   1. Dataattribut: Vælg den attribut, du vil bruge i aggregeringsfunktionen for at beregne målingen. Du kan kun vælge én attribut ad gangen.
+   1. Du kan også vælge en dataattribut fra en eksisterende måleenhed ved at vælge fanen **Mål**. Du kan også søge efter navnet på et objekt eller en måleenhed. 
+   1. Vælg **Tilføj** for at føje den valgte attribut til målingen.
 
-8. Vælg et felt i området **Udtryk**, hvor du vil begynde at foretage beregningen.
+   :::image type="content" source="media/measure-attribute-selection.png" alt-text="Vælg en attribut, der skal bruges i beregninger.":::
 
-9. Skriv et udtryk i området **Udtryk**, mens du vælger flere felter, der skal inkluderes i beregningen.
+1. Hvis du vil oprette mere komplekse målinger, kan du tilføje flere attributter eller bruge matematikoperatorer på målfunktionen.
 
-   > [!NOTE]
-   > I øjeblikket understøttes kun matematiske udtryk. Variabel beregning understøttes heller ikke for objekter fra forskellige [objektstier](relationships.md).
+   :::image type="content" source="media/measure-math-operators.png" alt-text="Opret en kompleks måling med matematikoperatorer.":::
 
-10. Vælg **Udført**.
+1. Hvis du vil tilføje filtre, skal du vælge **Filter** i konfigurationsområdet. 
+  
+   1. Vælg den attribut, du vil bruge til at oprette filtre, i sektionen **Tilføj attribut** i ruden **Filtre**.
+   1. Angiv filteroperatørerne for at definere filteret for alle valgte attributter.
+   1. Vælg **Tilføj** for at tilføje filtrene til målingen.
 
-11. I sektionen **Definition af måling** kan du definere, hvordan de valgte objekter og beregnede variabler skal samles i et nyt målingsobjekt eller en ny attribut.
+1. Hvis du vil tilføje dimensioner, skal du vælge **Dimension** i konfigurationsområdet. Dimensionerne vises som kolonner i objektet til måling af output.
+   1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn. Som standard vælges dimensionen *CustomerID* for at oprette *mål på kundeniveau*. Du kan fjerne standarddimensionen, hvis du vil oprette *mål på virksomhedsniveau*.
+   1. Vælg **Gennemført** for at tilføje dimensioner til målingen.
 
-12. Vælg **Ny dimension**. Du kan betragte en dimension som en *gruppér efter*-funktion. Dataoutputtet for målingsobjektet eller attributten grupperes efter alle de definerede dimensioner.
+1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet Kunde, skal du vælge en af de identificerede [objektrelationsstier](relationships.md) Måleresultater kan variere, afhængigt af den valgte sti.
+   1. Vælg **Dataindstillinger**, og vælg den objektsti, der skal bruges til at identificere din måling.
+   1. Vælg **Udført** for at anvende det valgte. 
 
-    > [!div class="mx-imgBorder"]
-    > ![Vælge aggregatcyklus](media/measures-businessreport-measure-definition2.png "Vælge aggregatcyklus")
+   :::image type="content" source="media/measures-data-preferences.png" alt-text="Vælg objektsti til målingen.":::
 
-    Vælg eller angiv følgende oplysninger som en del af dimensionens definition:
+1. Hvis du vil tilføje flere beregninger for målingen, skal du vælge **Ny beregning**. Du kan kun bruge objekter på samme objektsti til nye beregninger. Flere beregninger vises som nye kolonner i objektet til måling af output.
 
-    - **Objekt**: Hvis du definerer et målingsobjekt, skal det inkludere mindst én attribut. Hvis du definerer en målingsattribut, medtages der som standard kun én attribut. Denne indstilling bruges til at vælge det objekt, der indeholder den pågældende attribut.
-    - **Felt**: Vælg den specifikke attribut, der skal inkluderes, enten i målingsenheden eller -attributten.
-    - **Bucket**: Vælg, om du vil samle data på en daglig, månedlig eller årlig basis. Det er kun nødvendigt at bruge feltet, hvis du har valgt en Datotype-attribut.
-    - **Som**: Definerer navnet på det nye felt.
-    - **Vist navn**: Definerer feltets viste navn.
+1. Vælg **...** i beregningen at **Dupliker**, **Omdøb** eller **Fjern** for en beregning fra en måleenhed.
 
-    > [!NOTE]
-    > Din forretningsmåling gemmes som et objekt med et enkelt nummer og vises på **Startsiden**, medmindre du føjer flere dimensioner til målingen. Når der er tilføjet flere dimensioner, vises målingen *ikke* på **Startsiden**.
+1. I området **Prøveversion** kan du se dataskemaet for outputobjektet for måleenheden, herunder filtre og dimensioner. Prøveversionen reagerer dynamisk på ændringer i konfigurationen.
 
-13. Du kan også vælge at tilføje sammenlægningsfunktioner. Enhver sammenlægning, du opretter, resulterer i en ny værdi i målingsobjektet eller -attributten. Understøttede sammenlægningsfunktioner er: **Min.**, **Maks.**, **Gennemsnit**, **Median**, **Sum**, **Antal entydige**, **Første** (tager den første post i en dimensionsværdi) og **Sidste** (tager den sidste post, der er føjet til en dimensionsværdi).
+1. Vælg **Kør** for at beregne resultaterne for det konfigurerede mål. Vælg **Gem og luk**, hvis du vil bevare den aktuelle konfiguration og køre målingen senere.
 
-14. Vælg **Gem** for at gemme dine ændringer af målingen.
+1. Gå til **Målinger** for at se den måling, du netop har oprettet, på listen.
 
 ## <a name="manage-your-measures"></a>Administrere dine målinger
 
-Når du har oprettet mindst ét mål, kan du se en liste over mål på siden **Mål**.
+Efter at [oprette en måling](#create-a-measure) vises en liste over målinger på siden **Målinger**.
 
-Du kan finde oplysninger om målingstype, forfatter, oprettelsesdato og -klokkeslæt, sidste redigeringsdato og -klokkeslæt, status (om målingen er aktiv, inaktiv eller mislykket) og dato og klokkeslæt for seneste opdatering. Når du vælger en måling på listen, kan du få vist et eksempel på outputtet.
+Du kan finde oplysninger om målingstype, oprettelsesdato, status og tilstand. Når du vælger en måling på listen, kan du gennemse outputtet og hente en .CSV-fil.
 
 Hvis du vil opdatere alle dine målinger på én gang, skal du vælge **Opdater alle** uden at vælge en bestemt måling.
 
 > [!div class="mx-imgBorder"]
 > ![Handlinger til administration af enkelte målinger](media/measure-actions.png "Handlinger til administration af enkelte målinger")
 
-Du kan også vælge en måling på listen og udføre en af følgende handlinger:
+Vælg en måling på listen for følgende indstillinger:
 
 - Vælg målingens navn for at se detaljer om den.
 - **Rediger** konfigurationen af målingen.
+- **Opdater** målingen på baggrund af de seneste data.
 - **Omdøb** målingen.
 - **Slet** målingen.
-- Vælg ellipsen (...), og vælg **Opdater** for at starte opdateringsprocessen for målingen.
-- Vælg ellipsen (...), og **Hent** for at hente en. CSV-fil for målingen.
+- **Aktivere** eller **deaktivere**. Inaktive målinger opdateres ikke under en [planlagt opdatering](system.md#schedule-tab).
 
 > [!TIP]
 > Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
 
 ## <a name="next-step"></a>Næste trin
 
-Du kan bruge eksisterende målinger til at oprette dit første kundesegment på siden **Segmenter**. Du kan finde flere oplysninger under [Segmenter](segments.md).
+Du kan benytte eksisterende foranstaltninger til at oprette [et kundesegment](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

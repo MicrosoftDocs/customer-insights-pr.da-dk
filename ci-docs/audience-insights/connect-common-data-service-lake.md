@@ -4,17 +4,17 @@ description: Importere data fra en Common Data Service-administreret datasø.
 ms.date: 09/29/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
 ms.reviewer: adkuppa
-ms.openlocfilehash: 029857e2bbb5f6357a5c01138ceaad78887b7518
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 18b6cd3fdaf5b738877a73b520b91dbc6ded40de
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643391"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5267806"
 ---
 # <a name="connect-to-data-in-a-common-data-service-managed-data-lake"></a>Oprette forbindelse til data i en Common Data Service-administreret datasø
 
@@ -34,7 +34,10 @@ Data, der gemmes i onlinetjenester, f.eks. Azure Data Lake Storage, gemmes på e
 
 3. Vælg **Opret forbindelse til Common Data Service**, og vælg **Næste**.
 
-4. Angiv et **Navn** til datakilden, og vælg derefter **Næste**.
+4. Angiv et **Navn** til datakilden, og vælg derefter **Næste**. Navneretningslinjer: 
+   - Start med et bogstav.
+   - Brug kun bogstaver og tal. Specialtegn og mellemrum er ikke tilladt.
+   - Brug mellem 3 og 64 tegn.
 
 5. Angiv **Serveradressen** for din Common Data Service-organisation, og vælg **Log på**.
 
@@ -65,3 +68,6 @@ Hvis du vil oprette forbindelse til en anden Common Data Service, [skal du opret
 3. Vælg indstillingen **Rediger** på listen.
 
 4. Vælg yderligere objekter på listen med tilgængelige objekter, og vælg **Gem**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

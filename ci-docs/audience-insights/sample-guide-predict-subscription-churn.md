@@ -5,16 +5,16 @@ ms.date: 11/19/2020
 ms.reviewer: digranad
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2537cfb5dde0d1ce1af16f585f0bf91d15ea1870
-ms.sourcegitcommit: a6e7df90d61450e00886753eb5db116f2f35bb6c
+ms.openlocfilehash: 3f1019ace424f89320c5a0d5058e928f4cbc7e62
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "4653973"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269829"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse af abonnementsafgang (prøveversion)
 
@@ -46,10 +46,9 @@ Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af da
    - **DateOfBirth**: Dato
    - **CreatedOn**: Dato/Klokkeslæt/Zone
 
-   [!div class="mx-imgBorder"]
-   ![Omdan DoB til dato](media/ecommerce-dob-date.PNG "transformer fødselsdato til dato")
+   :::image type="content" source="media/ecommerce-dob-date.PNG" alt-text="Transformere fødselsdato til dato.":::
 
-1. Omdøb datakilde fra **Forespørgsel** til **eCommerceContacts** i feltet 'Navn' i ruden til højre.
+1. Omdøb datakilde fra **Forespørgsel** til **eCommerceContactsQuery** i feltet **Navn** i ruden til højre
 
 1. Gem datakilden.
 
@@ -67,7 +66,7 @@ Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af da
    - **RewardsPoints**: Heltal
    - **CreatedOn**: Dato/Klokkeslæt
 
-1. Omdøb datakilde fra **Forespørgsel** til **loyCustomers** i feltet 'Navn' i ruden til højre.
+1. Omdøb datakilde fra **Forespørgsel** til **loyCustomers** i feltet **Navn** i ruden til højre.
 
 1. Gem datakilden.
 
@@ -90,7 +89,7 @@ Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af da
    - **Is_auto_renew**: Sand/Falsk
    - **RecurringFrequencyInMonths**: Heltal
 
-1. Omdøb datakilde fra **Forespørgsel** til **SubscriptionHistory** i feltet 'Navn' i ruden til højre.
+1. Omdøb datakilde fra **Forespørgsel** til **SubscriptionHistory** i feltet **Navn** i ruden til højre.
 
 1. Gem datakilden.
 
@@ -230,3 +229,6 @@ Du kan oprette et nyt segment baseret på det objekt, der er oprettet af modelle
 Du har nu et segment, der opdateres dynamisk, og som identificerer de mange kunder med høj risiko for afgang til denne abonnementsforretning.
 
 Du kan finde flere oplysninger under [Oprette og administrere segmenter](segments.md).
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

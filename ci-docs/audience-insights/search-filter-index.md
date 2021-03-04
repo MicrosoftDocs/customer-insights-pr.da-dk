@@ -1,7 +1,7 @@
 ---
 title: Søg og filtrér kundeprofiler
 description: Find hurtigt oplysninger om samlede kundeprofiler, og filtrer efter angivne attributter.
-ms.date: 04/16/2020
+ms.date: 01/19/2021
 ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1842ad333c23bb155abc89167556163ae79cdd34
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: d675738c43cbdb5f9b478d53d6124db38ba3004d
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405455"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5270059"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Indeks for søgning og filtrering
 
@@ -28,14 +28,6 @@ Resultatet af at samle dine kundedata er et kundeprofilobjekt, der giver en fæl
 Hvis det er første gang, du definerer attributter, der kan søges efter, som administrator, skal du definere indekserede felter først. Det anbefales, at du vælger alle attributterne, som brugerne kan benytte til at søge efter og filtrere kunder på siden **Kunder**. Du kan kun angive attributter, der findes i det kundeprofilobjekt, du har oprettet under datasamlingsprocessen.
 
 1. Åbn siden **Kunder**, og vælg **Indeks for søgning og filtrering**.
-
-> [!NOTE]
-> Du skal oprette en standardkonfiguration for søgeindeks på de tilgængelige attributter i kundeobjektet fra følgende semantiske typer, der er defineret på siden Tilknyt.
-> - Personens Fornavn, Mellemnavn, Efternavn, Fulde navn
-> - Organisationsnavn
-> - E-mail-adresse
-> - Telefonnummer
-> - Adresseoplysninger
 
 2. Vælg **+ Tilføj** for at angive de indekserede felter.
 
@@ -65,3 +57,10 @@ Menuen **Filter** på siden **Kunder** kan indeholde et varierende antal attribu
 2. Vælg **Gem** for at anvende dine ændringer.
 
 3. Vælg **Kør**, når du er klar til at anvende dine indstillinger.
+
+## <a name="next-steps"></a>Næste trin
+
+Gå til siden **Kunder** for at søge efter kundeprofiler eller bruge de indekserede felter til at se et undersæt af alle kundeprofiler.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

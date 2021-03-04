@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 2cf01029ef6b64fe566022d09ce65bca3603189c
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: 9e7a6e944d37d25f4c25846644278b39b3ddd08e
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643901"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269277"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Objektskema i Common Data Model
 
@@ -45,3 +45,6 @@ Du kan finde flere oplysninger i dokumentationen til [Customer Insights-objektsk
 Du kan få vist objekter i [Common Data Model-objektnavigatør](https://microsoft.github.io/CDM/). Vælg knappen **Indlæs fra GitHub!**, og naviger til **foundationCommon** > **crmCommon** > **løsninger** > **customerInsights**, hvor du kan finde listen over Customer Insights-objekter og definitioner af dem.
 > [!div class="mx-imgBorder"]
 > ![CDM Entity Navigator, der viser CustomerActivity-objekt](media/CDM-entity-navigator.png "CDM Entity Navigator, der viser CustomerActivity-objekt")
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

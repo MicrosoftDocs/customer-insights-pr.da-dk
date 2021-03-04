@@ -1,20 +1,20 @@
 ---
 title: Tilsætning af tredjeparts forbedringer fra Experian
 description: Generelle oplysninger om Experian-forbedring fra tredjepart.
-ms.date: 09/17/2020
+ms.date: 12/10/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 60fc49734e54740e83b47a7028be216a0eb81e49
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: baf3cc58a233b70c48fb94ac4a543d162f91bdd1
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668800"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269553"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Forbedre kundeprofiler med demografi fra Experian (forbedre)
 
@@ -41,7 +41,9 @@ Hvis du vil konfigurere Experian, skal følgende forudsætninger være opfyldt:
 
 ## <a name="map-your-fields"></a>Tilknyt dine felter
 
-1. Vælg **Tilføj data**, og vælg dine nøgle-id'er fra **Navn og adresse**, **Mail** eller **Telefon**, der skal sendes til Experian for identitetsfortolkning.
+1.  Vælg **Tilføj data**, og vælg det **Kundedatasæt**, du vil forbedre med demografiske data fra Experian. Du kan vælge objektet **Kunde** for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+
+1. Vælg nøgle-id'erne fra **Navn og adresse**, **E-mail** eller **Telefon**, der skal sendes til Experian med henblik på identitetsløsning.
 
    > [!TIP]
    > Flere nøgle-id-attributter, der sendes til Experian, giver sandsynligvis større sammenfald.
@@ -52,8 +54,8 @@ Hvis du vil konfigurere Experian, skal følgende forudsætninger være opfyldt:
 
 1.  Vælg **Gem** for at fuldføre felttilknytningen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Experian-felttilknytning](media/experian-field-mapping.png "Experian-felttilknytning")
+    > [!div class="mx-imgBorder"]
+    > ![Experian-felttilknytning](media/experian-field-mapping.png "Experian-felttilknytning")
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 
@@ -71,3 +73,6 @@ Byg oven over dine forbedrede kundedata. Du kan oprette [segmenter](segments.md)
 
 Når du aktiverer Dynamics 365 Customer Insights for at overføre data til Experian, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at Experian overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

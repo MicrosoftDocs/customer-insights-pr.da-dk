@@ -5,16 +5,16 @@ ms.date: 11/12/2020
 ms.reviewer: zacook
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: f3cbbf99a6cecba2aab2cf85428d53e5df8346e4
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: af461d290c69687fb47bacfcff446a0c62978383
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4644396"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5268311"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaktionsrelateret forudsigelse om afgang
 
@@ -96,6 +96,8 @@ Transaktionsrelateret forudsigelse om afgang er med til at forudsige, om en kund
 1. Du kan også vælge **Tilføj data** til **Kundeaktiviteter**. Vælg det objekt, der indeholder oplysninger om kundeaktiviteten, som beskrevet i forudsætningerne.
 
 1. Tilknyt de semantiske felter til attributter i objektet kundeaktivitet, og vælg **Næste**. Du kan finde beskrivelser af felterne under [forudsætningerne](#prerequisites).
+
+   :::image type="content" source="media/map-transaction-data-fields.png" alt-text="Tilknyt kundefelter til transaktionsdata.":::
 
 1. Vælg en aktivitetstype, der svarer til den type kundeaktivitet, du konfigurerer. Vælg **Opret ny**, og vælg en tilgængelig aktivitetstype, eller opret en ny type.
 
@@ -185,3 +187,6 @@ Hvis du sletter en forudsigelse, fjernes outputenheden også.
 1. Vælg de lodrette ellipser ud for den forudsigelse, du vil slette.
 
 1. Vælg **Slet**.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

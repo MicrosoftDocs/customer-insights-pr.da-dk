@@ -5,16 +5,16 @@ ms.date: 11/24/2020
 ms.reviewer: kishorem
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 1b5c6e46e8e424df83e855d81fc4dd7ecb394e3c
-ms.sourcegitcommit: a9b2cf598f256d07a48bba8617347ee90024a1dd
+ms.openlocfilehash: 12eed91a7ca4ef7fde0d53cca4a1dfd398b4634f
+ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "4668716"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "5269415"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Forbedring af virksomhedsprofiler med Leadspace (prøveversion)
 
@@ -38,7 +38,11 @@ Hvis du vil konfigurere Leadspace, skal følgende forudsætninger være opfyldt:
 
 1. Vælg **Start her**, og angiv derefter et aktivt **Leadspace-token** (permanent nøgle). Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**. Bekræft begge input ved at vælge **Opret forbindelse til Leadspace**.
 
-1. Vælg **Tilknyt data**, og definer, hvilke felter fra dine samlede profiler der skal bruges til at søge efter de tilsvarende virksomhedsdata fra Leadspace. Feltet **Firmanavn** er obligatorisk. Hvis du vil opnå en større overensstemmelse, kan du tilføje op til to andre felter, **Virksomheds-websteder** og **Virksomhedsplacering**.
+1. Vælg **Tilknyt data** , og vælg det datasæt, du vil forbedre med firmadata fra Leadspace. Du kan vælge objektet *Kunde* for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+
+   :::image type="content" source="media/enrichment-leadspace-select-segment.png" alt-text="Vælg mellem kundeprofil og forbedring af segment.":::
+
+1. Klik på **Næste**, og definer, hvilke felter fra dine samlede profiler der skal bruges til at søge efter de tilsvarende virksomhedsdata fra Leadspace. Feltet **Firmanavn** er obligatorisk. Hvis du vil opnå en større overensstemmelse, kan du tilføje op til to andre felter, **Virksomheds-websteder** og **Virksomhedsplacering**.
 
    :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-felttilknytningsruden.":::
    
@@ -62,3 +66,6 @@ Byg oven over dine forbedrede kundedata. Du kan oprette [segmenter](segments.md)
 
 Når du aktiverer Dynamics 365 Customer Insights for at overføre data til Leadspace, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at Leadspace overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
+
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]
