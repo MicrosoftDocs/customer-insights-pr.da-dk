@@ -2,52 +2,52 @@
 title: Eksportér Customer Insights-data til et Azure Blob-lager
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Azure Blob Storage.
 ms.date: 09/18/2020
-ms.reviewer: philk
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: phkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ecacf20365e78ced8859dfa54b1b16cb923c00eb
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 0986ee5caf5fa079994ca584fb2c4d9294ddb80b
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269185"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596170"
 ---
-# <a name="connector-for-azure-blob-storage-preview"></a><span data-ttu-id="c36d3-103">Connector til Azure Blob Storage (forhåndsvisning)</span><span class="sxs-lookup"><span data-stu-id="c36d3-103">Connector for Azure Blob storage (preview)</span></span>
+# <a name="connector-for-azure-blob-storage-preview"></a><span data-ttu-id="97686-103">Connector til Azure Blob Storage (forhåndsvisning)</span><span class="sxs-lookup"><span data-stu-id="97686-103">Connector for Azure Blob storage (preview)</span></span>
 
-<span data-ttu-id="c36d3-104">Gem dine Customer Insights-data i et Azure Blob-lager, eller brug dem til at overføre dine data til andre programmer.</span><span class="sxs-lookup"><span data-stu-id="c36d3-104">Store your Customer Insights data in an Azure Blob storage or use it to transfer your data to other applications.</span></span>
+<span data-ttu-id="97686-104">Gem dine Customer Insights-data i et Azure Blob-lager, eller brug dem til at overføre dine data til andre programmer.</span><span class="sxs-lookup"><span data-stu-id="97686-104">Store your Customer Insights data in an Azure Blob storage or use it to transfer your data to other applications.</span></span>
 
-## <a name="configure-the-connector-for-azure-blob-storage"></a><span data-ttu-id="c36d3-105">Konfigurer connector til Azure Blob Storage</span><span class="sxs-lookup"><span data-stu-id="c36d3-105">Configure the connector for Azure Blob storage</span></span>
+## <a name="configure-the-connector-for-azure-blob-storage"></a><span data-ttu-id="97686-105">Konfigurer connector til Azure Blob Storage</span><span class="sxs-lookup"><span data-stu-id="97686-105">Configure the connector for Azure Blob storage</span></span>
 
-1. <span data-ttu-id="c36d3-106">Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.</span><span class="sxs-lookup"><span data-stu-id="c36d3-106">In audience insights, go to **Admin** > **Export destinations**.</span></span>
+1. <span data-ttu-id="97686-106">Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.</span><span class="sxs-lookup"><span data-stu-id="97686-106">In audience insights, go to **Admin** > **Export destinations**.</span></span>
 
-1. <span data-ttu-id="c36d3-107">Under **Azure Blob Storage** vælg **Konfigurer**.</span><span class="sxs-lookup"><span data-stu-id="c36d3-107">Under **Azure Blob Storage**, select **Set up**.</span></span>
+1. <span data-ttu-id="97686-107">Under **Azure Blob Storage** vælg **Konfigurer**.</span><span class="sxs-lookup"><span data-stu-id="97686-107">Under **Azure Blob Storage**, select **Set up**.</span></span>
 
-1. <span data-ttu-id="c36d3-108">Angiv **Firmanavn**, **Kontonøgle** og **Beholder** til din Azure Blob Storage-konto.</span><span class="sxs-lookup"><span data-stu-id="c36d3-108">Enter **Account name**, **Account key**, and **Container** for your Azure Blob storage account.</span></span>
-    - <span data-ttu-id="c36d3-109">Du kan få mere at vide om, hvordan du finder navnet på og kontonøglen til Azure Blob Storage-kontoen, under [Administrere indstillinger for lagerkonto i Azure-portalen](https://docs.microsoft.com/azure/storage/common/storage-account-manage).</span><span class="sxs-lookup"><span data-stu-id="c36d3-109">To learn more about how to find the Azure Blob storage account name and account key, see [Manage storage account settings in the Azure portal](https://docs.microsoft.com/azure/storage/common/storage-account-manage).</span></span>
-    - <span data-ttu-id="c36d3-110">Du kan få mere at vide om, hvordan du opretter en objektbeholder, i [Oprette en objektbeholder](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).</span><span class="sxs-lookup"><span data-stu-id="c36d3-110">To learn how to create a container, see [Create a container](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).</span></span>
+1. <span data-ttu-id="97686-108">Angiv **Firmanavn**, **Kontonøgle** og **Beholder** til din Azure Blob Storage-konto.</span><span class="sxs-lookup"><span data-stu-id="97686-108">Enter **Account name**, **Account key**, and **Container** for your Azure Blob storage account.</span></span>
+    - <span data-ttu-id="97686-109">Du kan få mere at vide om, hvordan du finder navnet på og kontonøglen til Azure Blob Storage-kontoen, under [Administrere indstillinger for lagerkonto i Azure-portalen](/azure/storage/common/storage-account-manage).</span><span class="sxs-lookup"><span data-stu-id="97686-109">To learn more about how to find the Azure Blob storage account name and account key, see [Manage storage account settings in the Azure portal](/azure/storage/common/storage-account-manage).</span></span>
+    - <span data-ttu-id="97686-110">Du kan få mere at vide om, hvordan du opretter en objektbeholder, i [Oprette en objektbeholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).</span><span class="sxs-lookup"><span data-stu-id="97686-110">To learn how to create a container, see [Create a container](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).</span></span>
 
-1. <span data-ttu-id="c36d3-111">Giv din destination et genkendeligt navn i feltet **Vist navn**.</span><span class="sxs-lookup"><span data-stu-id="c36d3-111">Give your destination a recognizable name in the **Display name** field.</span></span>
+1. <span data-ttu-id="97686-111">Giv din destination et genkendeligt navn i feltet **Vist navn**.</span><span class="sxs-lookup"><span data-stu-id="97686-111">Give your destination a recognizable name in the **Display name** field.</span></span>
 
-1. <span data-ttu-id="c36d3-112">Vælg **Næste**.</span><span class="sxs-lookup"><span data-stu-id="c36d3-112">Select **Next**.</span></span>
+1. <span data-ttu-id="97686-112">Vælg **Næste**.</span><span class="sxs-lookup"><span data-stu-id="97686-112">Select **Next**.</span></span>
 
-1. <span data-ttu-id="c36d3-113">Markér afkrydsningsfeltet ud for hvert af de objekter, du vil eksportere til denne destination.</span><span class="sxs-lookup"><span data-stu-id="c36d3-113">Select the box next to each of the entities you want to export to this destination.</span></span>
+1. <span data-ttu-id="97686-113">Markér afkrydsningsfeltet ud for hvert af de objekter, du vil eksportere til denne destination.</span><span class="sxs-lookup"><span data-stu-id="97686-113">Select the box next to each of the entities you want to export to this destination.</span></span>
 
-1. <span data-ttu-id="c36d3-114">Vælg **Gem**.</span><span class="sxs-lookup"><span data-stu-id="c36d3-114">Select **Save**.</span></span>
+1. <span data-ttu-id="97686-114">Vælg **Gem**.</span><span class="sxs-lookup"><span data-stu-id="97686-114">Select **Save**.</span></span>
 
-<span data-ttu-id="c36d3-115">Eksporterede data gemmes i den Azure Blob Storage-beholder, du har konfigureret.</span><span class="sxs-lookup"><span data-stu-id="c36d3-115">Exported data is stored in the Azure Blob storage container you configured.</span></span> <span data-ttu-id="c36d3-116">Følgende mappestier oprettes automatisk i objektbeholderen:</span><span class="sxs-lookup"><span data-stu-id="c36d3-116">The following folder paths are automatically created in your container:</span></span>
+<span data-ttu-id="97686-115">Eksporterede data gemmes i den Azure Blob Storage-beholder, du har konfigureret.</span><span class="sxs-lookup"><span data-stu-id="97686-115">Exported data is stored in the Azure Blob storage container you configured.</span></span> <span data-ttu-id="97686-116">Følgende mappestier oprettes automatisk i objektbeholderen:</span><span class="sxs-lookup"><span data-stu-id="97686-116">The following folder paths are automatically created in your container:</span></span>
 
-- <span data-ttu-id="c36d3-117">For kildeobjekter og objekter, der er oprettet af systemet: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`</span><span class="sxs-lookup"><span data-stu-id="c36d3-117">For source entities and entities generated by the system: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`</span></span>
-  - <span data-ttu-id="c36d3-118">Eksempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`</span><span class="sxs-lookup"><span data-stu-id="c36d3-118">Example: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`</span></span>
-- <span data-ttu-id="c36d3-119">De eksporterede objekters model.json er placeret på %ExportDestinationName%-niveau</span><span class="sxs-lookup"><span data-stu-id="c36d3-119">The model.json for the exported entities will reside at the %ExportDestinationName% level</span></span>
-  - <span data-ttu-id="c36d3-120">Eksempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`</span><span class="sxs-lookup"><span data-stu-id="c36d3-120">Example: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`</span></span>
+- <span data-ttu-id="97686-117">For kildeobjekter og objekter, der er oprettet af systemet: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`</span><span class="sxs-lookup"><span data-stu-id="97686-117">For source entities and entities generated by the system: `%ContainerName%/CustomerInsights_%instanceID%/%ExportDestinationName%/%EntityName%/%Year%/%Month%/%Day%/%HHMM%/%EntityName%_%PartitionId%.csv`</span></span>
+  - <span data-ttu-id="97686-118">Eksempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`</span><span class="sxs-lookup"><span data-stu-id="97686-118">Example: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/HighValueSegment/2020/08/24/1433/HighValueSegment_1.csv`</span></span>
+- <span data-ttu-id="97686-119">Filen model.json for de eksporterede objekter findes på %ExportDestinationName%-niveau</span><span class="sxs-lookup"><span data-stu-id="97686-119">The model.json for the exported entities will reside at the %ExportDestinationName% level</span></span>
+  - <span data-ttu-id="97686-120">Eksempel: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`</span><span class="sxs-lookup"><span data-stu-id="97686-120">Example: `Dynamics365CustomerInsights/CustomerInsights_abcd1234-4312-11f4-93dc-24f72f43e7d5/BlobExport/model.json`</span></span>
 
-## <a name="export-the-data"></a><span data-ttu-id="c36d3-121">Eksportér dataene</span><span class="sxs-lookup"><span data-stu-id="c36d3-121">Export the data</span></span>
+## <a name="export-the-data"></a><span data-ttu-id="97686-121">Eksportér dataene</span><span class="sxs-lookup"><span data-stu-id="97686-121">Export the data</span></span>
 
-<span data-ttu-id="c36d3-122">Du kan [eksportere data efter behov](export-destinations.md#export-data-on-demand).</span><span class="sxs-lookup"><span data-stu-id="c36d3-122">You can [export data on demand](export-destinations.md#export-data-on-demand).</span></span> <span data-ttu-id="c36d3-123">Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).</span><span class="sxs-lookup"><span data-stu-id="c36d3-123">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span>
+<span data-ttu-id="97686-122">Du kan [eksportere data efter behov](export-destinations.md#export-data-on-demand).</span><span class="sxs-lookup"><span data-stu-id="97686-122">You can [export data on demand](export-destinations.md#export-data-on-demand).</span></span> <span data-ttu-id="97686-123">Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).</span><span class="sxs-lookup"><span data-stu-id="97686-123">The export will also run with every [scheduled refresh](system.md#schedule-tab).</span></span>
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
