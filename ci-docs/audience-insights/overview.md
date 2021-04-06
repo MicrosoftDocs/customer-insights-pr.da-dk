@@ -2,19 +2,19 @@
 title: Målgruppeindsigt for Dynamics 365 Customer Insights-oversigt
 description: Oversigt over målgruppeindsigt for Dynamics 365 Customer Insights.
 ms.date: 01/18/2021
-ms.reviewer: nimagen
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: overview
-author: m-hartmann
-ms.author: mhart
+author: NimrodMagen
+ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 735aae12abebd2d6d9b6aedb5835164834f480c0
-ms.sourcegitcommit: 0260ed244b97c2fd0be5e9a084c4c489358e8d4f
+ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "5476988"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598623"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppeindsigt for Dynamics 365 Customer Insights-oversigt
 
@@ -25,7 +25,7 @@ Målgruppen Insights hjælper dig med at skabe dybere kendskab til dine kunder. 
 - **Undgå datasiloer og samle kundedata**
 
   - Forbind og saml dine data med lethed – indlæs data fra transaktioner, observationer og adfærd fra populære [datakilder ved at udnytte færdige connectorer](data-sources.md).
-  - Transformer kundedata på intelligent vis – opbyg samlede kundeprofiler, der er i overensstemmelse med [Common Data Model](https://docs.microsoft.com/common-data-model/). Du kan få kundeidentiteter med AI-eller ML-baserede anbefalinger.
+  - Transformer kundedata på intelligent vis – opbyg samlede kundeprofiler, der er i overensstemmelse med [Common Data Model](/common-data-model/). Du kan få kundeidentiteter med AI-eller ML-baserede anbefalinger.
 
 - **Forbedre data med målgruppeintelligens, der findes i Microsoft Graph**
 
@@ -42,7 +42,7 @@ Målgruppen Insights hjælper dig med at skabe dybere kendskab til dine kunder. 
 - **Dataanalytikere/administratorer:**
 
   - Adgang til en stor samling af connectorer, der indsætter alle dine kundedata.
-  - Mulighed for at samle kundedata og transformere dem til [Common Data Model](https://docs.microsoft.com/common-data-model/)-format.
+  - Mulighed for at samle kundedata og transformere dem til [Common Data Model](/common-data-model/)-format.
   - Du kan forbedre kundeoplysningerne med indsigt fra målgruppeintelligens, der findes i Microsoft Graph, f.eks. mærketilhørsforhold og interesser.
   - "Klik-ikke-kode"-konfiguration og fejlfindingsfunktioner, der gør det nemt at konfigurere målgruppen Insights og identificere potentielle problemer.
   - Rydde op i og standardisere kundedata på tværs af forskellige kilder med AI-baserede anbefalinger.  

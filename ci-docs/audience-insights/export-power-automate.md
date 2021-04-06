@@ -2,19 +2,19 @@
 title: Power Automate-connector | Microsoft Docs
 description: Oprette flows i Microsoft Power Automate fra Dynamics 365 Customer Insights.
 ms.date: 01/20/2021
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: phkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: fb1df4e9ab1f78300b8ec1f8dfdfbfbac0e71447
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: e973bb11b31c9e70b695ebec8aa2700fdaa5e44f
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268817"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597918"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-connector (prøveversion)
 
@@ -34,7 +34,7 @@ Brug udløsere til at oprette skystrømme og automatisere tilbagevendende opgave
 [Konfigurere dine udløsere i Power Automate](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/).
 
 ## <a name="power-automate-actions"></a>Power Automate-handlinger
-Power Automate-connectoren giver andre handlinger end de tilgængelige udløsere. Se [Dynamics 365 Customer Insights Connector](https://docs.microsoft.com/connectors/customerinsights/), hvis du vil have flere oplysninger.
+Power Automate-connectoren giver andre handlinger end de tilgængelige udløsere. Se [Dynamics 365 Customer Insights Connector](/connectors/customerinsights/), hvis du vil have flere oplysninger.
 
 ## <a name="create-a-power-automate-flow"></a>Oprette et Power Automate-flow
 
@@ -44,7 +44,7 @@ Power Automate-connectoren giver andre handlinger end de tilgængelige udløsere
 
 1. Customer Insights-connector (prøveversion) i Power Automate åbnes. **Log på** Power Automate.
 
-1. Vælg en af de tilgængelige udløsere, og tilføj flere trin i det nye flow. Du kan finde flere oplysninger under [Oprettelse af et skyflow i Power Automate](https://docs.microsoft.com/power-automate/get-started-logic-flow).
+1. Vælg en af de tilgængelige udløsere, og tilføj flere trin i det nye flow. Du kan finde flere oplysninger under [Oprettelse af et skyflow i Power Automate](/power-automate/get-started-logic-flow).
 
 Eksempler på, hvordan du bruger flow: 
 - Sende en meddelelse til en Microsoft Teams-kanal, hvis en datakilde ikke kan opdateres. 

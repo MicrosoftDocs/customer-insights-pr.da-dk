@@ -1,20 +1,20 @@
 ---
 title: Oprette og administrere segmenter
 description: Opret segmenter med kunder for at gruppere dem på baggrund af forskellige attributter.
-ms.date: 10/15/2020
+ms.date: 03/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: jimsonc
+author: JimsonChalissery
+ms.author: jimsonc
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: a1308f07ac3ba7d4b09931bab3d19b6dfaf479ee
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 4a6e8a3216a2c0738d60247054afa9fc18412f55
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270349"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597044"
 ---
 # <a name="create-and-manage-segments"></a>Oprette og administrere segmenter
 
@@ -35,19 +35,19 @@ Segmenter administreres på siden **Segmenter**.
 
 1. Gå siden **Segmenter** i målgruppen Insights.
 
-2. Vælg **Ny** > **Tomt segment**.
+1. Vælg **Ny** > **Tomt segment**.
 
-3. Vælg en segmenttype i ruden **Nyt segment**, og angiv et **Navn**.
+1. Vælg en segmenttype i ruden **Nyt segment**, og angiv et **Navn**.
 
    Du kan også angive et vist navn og en beskrivelse, der hjælper med at identificere segmentet.
 
-4. Vælg **Næste** for at gå til siden **Segmentgenerator**, hvor du definerer en gruppe. En gruppe er et sæt kunder.
+1. Vælg **Næste** for at gå til siden **Segmentgenerator**, hvor du definerer en gruppe. En gruppe er et sæt kunder.
 
-5. Vælg det objekt, der indeholder den attribut, du vil segmentere efter.
+1. Vælg det objekt, der indeholder den attribut, du vil segmentere efter.
 
-6. Vælg den attribut, der skal segmenteres efter. Denne attribut kan have en af fire værdityper: numerisk, streng, dato eller boolesk.
+1. Vælg den attribut, der skal segmenteres efter. Denne attribut kan have en af fire værdityper: numerisk, streng, dato eller boolesk.
 
-7. Vælg en operator og en værdi for den valgte attribut.
+1. Vælg en operator og en værdi for den valgte attribut.
 
    > [!div class="mx-imgBorder"]
    > ![Brugerdefineret gruppefilter](media/customer-group-numbers.png "Kundegruppefilter")
@@ -64,9 +64,14 @@ Segmenter administreres på siden **Segmenter**.
    > [!div class="mx-imgBorder"]
    > ![Relationsstien under oprettelse af segmenter](media/segments-multiple-relationships.png "Relationsstien under oprettelse af segmenter")
 
-9. Vælg **Gem** for at gemme dit segment. Dit segment gemmes og behandles, hvis alle krav valideres. Ellers gemmes det som en kladde.
+1. Som standard opretter segmenter et outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet.  
 
-10. Vælg **Tilbage til segmenter** for at gå tilbage til siden **Segmenter**.
+   
+   Eksempel: Et segment er baseret på et objekt, der indeholder kundeaktivitetsdata, som er relateret til objektet *Kunde*. Segmentet søger efter alle kunder, der har ringet til Helpdesk inden for de seneste 60 dage. Du kan vælge at føje varigheden af opkaldet og antallet af opkald til alle tilsvarende kundeposter i outputobjektet. Disse oplysninger kan være nyttige, hvis du vil sende en mail med nyttige links til artikler i onlinehjælp og ofte stillede spørgsmål til kunder, der ofte har ringet.
+
+1. Vælg **Gem** for at gemme dit segment. Dit segment gemmes og behandles, hvis alle krav valideres. Ellers gemmes det som en kladde.
+
+1. Vælg **Tilbage til segmenter** for at gå tilbage til siden **Segmenter**.
 
 ## <a name="manage-existing-segments"></a>Administrere eksisterende segmenter
 
@@ -85,6 +90,7 @@ Følgende handlinger er tilgængelige, når du vælger et segment:
 
 - **Vis** segmentoplysningerne, herunder tendensen for antal medlemmer, et eksempel på segmentmedlemmer.
 - **Rediger** segmentet for at ændre dets egenskaber.
+- **Opret en dublet** af et segment. Du kan vælge at redigere egenskaberne med det samme eller ganske enkelt gemme dubletten.
 - **Opdater** segmentet, så det indeholder de seneste data.
 - **Aktivér** eller **Deaktiver** segmentet. Segmenter har to mulige tilstande - aktiv og inaktiv. Disse tilstande er praktiske, når du redigerer et segment. I forbindelse med inaktive segmenter findes der en definition af segmentet, men den indeholder ikke nogen kunder endnu. Når du aktiverer et segment, ændres dets tilstand fra 'inaktiv' til "aktiv", og der starter en søgning efter de kunder, der opfylder segmentdefinitionen. Hvis der er konfigureret en [planlagt opdatering](system.md#schedule-tab), har vises **Status** for inaktive segmenter som **Sprunget over** som tegn på, at en opdatering ikke er forsøgt udført. Når et inaktivt segment aktiveres, opdateres det og inkluderes i de planlagte opdateringer.
   Du kan også bruge **Planlæg senere** i rullemenuen **Aktivér/deaktiver** til at angive fremtidig dato og klokkeslæt for aktivering og deaktivering af et bestemt segment.

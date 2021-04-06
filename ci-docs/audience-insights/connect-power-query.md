@@ -2,23 +2,23 @@
 title: Indsættelse af data via en Power Query forbindelse
 description: Connectorer til datakilder, der er baseret på Power Query.
 ms.date: 09/29/2020
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d51a7efa5fd9f7336d1662500eb804a674738493
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: b9a1b30e37c3792aa7bdfcfc177da9e8a32c324d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267761"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596906"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
-Power Query tilbyder en lang række connectorer til indtagelse af data. De fleste af disse connectorer understøttes af Dynamics 365 Customer Insights. Hvis du tilføjer datakilder, der er baseret på Power Query-connectorer, følger normalt de trin, der beskrives i næste afsnit. Men afhængigt af den connector, du bruger, er der brug for forskellige oplysninger. Du kan finde flere oplysninger i dokumentationen om de enkelte connectorer i [Power Query-connector-referencen](https://docs.microsoft.com/power-query/connectors/).
+Power Query tilbyder en lang række connectorer til indtagelse af data. De fleste af disse connectorer understøttes af Dynamics 365 Customer Insights. Hvis du tilføjer datakilder, der er baseret på Power Query-connectorer, følger normalt de trin, der beskrives i næste afsnit. Men afhængigt af den connector, du bruger, er der brug for forskellige oplysninger. Du kan finde flere oplysninger i dokumentationen om de enkelte connectorer i [Power Query-connector-referencen](/power-query/connectors/).
 
 ## <a name="create-a-new-data-source"></a>Oprette en ny datakilde
 
@@ -44,7 +44,7 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
    > [!div class="mx-imgBorder"]
    > ![Dialogboksen Rediger forespørgsler](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger forespørgsler")
 
-1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. Hver transformation er vist under **Anvendte trin**. Power Query indeholder mange standardindstillinger for transformation. Du kan finde flere oplysninger i [Power Query-transformationer](https://docs.microsoft.com/power-query/power-query-what-is-power-query#transformations).
+1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. Hver transformation er vist under **Anvendte trin**. Power Query indeholder mange standardindstillinger for transformation. Du kan finde flere oplysninger i [Power Query-transformationer](/power-query/power-query-what-is-power-query#transformations).
 
 1. Du kan føje flere objekter til datakilden ved at vælge **Hent data** i dialogboksen **Rediger forespørgsler**.
 
@@ -59,7 +59,7 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
 
 ## <a name="available-power-query-data-sources"></a>Tilgængelige Power Query-datakilder
 
-Se [Power Query-connector-referencen](https://docs.microsoft.com/power-query/connectors/) for at få en opdateret liste over connectorer, som du kan vælge for at importere data til Customer Insights. 
+Se [Power Query-connector-referencen](/power-query/connectors/) for at få en opdateret liste over connectorer, som du kan vælge for at importere data til Customer Insights. 
 
 Connectorer med markering i kolonnen **Customer Insights (dataflows)** er tilgængelige for oprettelse af nye datakilder, der er baseret på Power Query. Gennemgå dokumentationen til en bestemt connector for at lære mere om dens forudsætninger, begrænsninger og andre detaljer.
 

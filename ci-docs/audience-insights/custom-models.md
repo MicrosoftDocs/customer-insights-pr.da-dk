@@ -1,19 +1,20 @@
 ---
 title: Brugerdefinerede maskinelle indlæringsmodeller | Microsoft Docs
 description: Arbejde med brugerdefinerede modeller fra Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 11/19/2020
-ms.reviewer: zacook
-ms.service: dynamics-365-ai
+ms.date: 03/22/2021
+ms.reviewer: mhart
+ms.service: customer-insights
+ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
+author: zacookmsft
+ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 34489faaecc5da1ce3dd68d799b3e0e0d9672ab7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
+ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267227"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "5700661"
 ---
 # <a name="custom-machine-learning-models"></a>Brugerdefinerede maskinelle indlæringsmodeller
 
@@ -21,13 +22,18 @@ ms.locfileid: "5267227"
 
 ## <a name="responsible-ai"></a>Ansvarlig AI
 
-Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, forbedring af virksomhedsfunktioner og omsætningsstrømme. Det anbefales på det kraftigste, at du balancerer værdien af forudsigelse i forhold til den effekt, den har, og vurderer, at det introduceres på en etisk måde. Få mere at vide om, hvordan Microsoft [adresserer ansvarlig AI](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også få mere at vide om [teknikker og processer til maskinel indlæring](https://docs.microsoft.com/azure/machine-learning/concept-responsible-ml), der er specifikke for Azure Machine Learning.
+Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, forbedring af virksomhedsfunktioner og omsætningsstrømme. Det anbefales på det kraftigste, at du balancerer værdien af forudsigelse i forhold til den effekt, den har, og vurderer, at det introduceres på en etisk måde. Få mere at vide om, hvordan Microsoft [adresserer ansvarlig AI](https://www.microsoft.com/ai/responsible-ai?activetab=pivot1%3aprimaryr6). Du kan også få mere at vide om [teknikker og processer til maskinel indlæring](/azure/machine-learning/concept-responsible-ml), der er specifikke for Azure Machine Learning.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-- I øjeblikket understøtter denne funktion webtjenester, der publiceres via [Machine Learning Studio (klassisk)](https://studio.azureml.net) og [Azure Machine Learning-batch pipelines](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines).
+- I øjeblikket understøtter denne funktion webtjenester, der publiceres via [Machine Learning Studio (klassisk)](https://studio.azureml.net) og [Azure Machine Learning-batch pipelines](/azure/machine-learning/concept-ml-pipelines).
 
-- Du skal have en Azure Data Lake Gen2-lagerkonto, der er knyttet til din Azure Studio-forekomst, for at kunne bruge denne funktion. Du kan finde flere oplysninger under [Oprette en Azure Data Lake Storage Gen2-lagerkonto](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-account)
+- Du skal have en Azure Data Lake Gen2-lagerkonto, der er knyttet til din Azure Studio-forekomst, for at kunne bruge denne funktion. Du kan finde flere oplysninger under [Oprette en Azure Data Lake Storage Gen2-lagerkonto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
+
+- I forbindelse med Azure Machine Learning-arbejdsområder med pipelines skal du have administratortilladelser med ejer- eller brugeradgang til arbejdsområdet Azure Machine Learning.
+
+   > [!NOTE]
+   > Data overføres mellem dine Customer Insights-forekomster og de valgte Azure-webtjenester eller pipelines i arbejdsprocessen. Når du overfører data til en Azure-service, skal du sikre, at servicen er konfigureret til at behandle data på den måde og placering, der er nødvendig for at overholde eventuelle juridiske eller administrative krav for disse data for din organisation.
 
 ## <a name="add-a-new-workflow"></a>Tilføje en ny arbejdsproces
 
@@ -45,8 +51,8 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 1. Vælg de **Arbejdsområder**, der er knyttet til din webtjeneste. Der er angivet to sektioner: En til Azure Machine Learning v1 (Machine Learning Studio (klassisk)) og Azure Machine Learning v2 (Azure Machine Learning ). Hvis du ikke er sikker på, hvilket arbejdsområde der er den rigtige til din Machine Learning Studio (klassisk)-webtjeneste, skal du vælge **Vilkårlig**.
 
 1. Vælg Machine Learning Studio (klassisk)-webtjeneste eller Azure Machine Learning-pipeline i rullelisten **Webtjeneste, der indeholder din model**. Vælg derefter **Næste**.
-   - Få mere at vide om at [udgive en webtjeneste i Machine Learning Studio (klassisk)](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Få mere at vide om, hvordan du [udgiver en pipeline i Azure Machine Learning ved hjælp af designeren](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](https://docs.microsoft.com/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline skal udgives under et [pipeline-slutpunkt](https://docs.microsoft.com/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+   - Få mere at vide om at [udgive en webtjeneste i Machine Learning Studio (klassisk)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
+   - Få mere at vide om, hvordan du [udgiver en pipeline i Azure Machine Learning ved hjælp af designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline skal udgives under et [pipeline-slutpunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. For hvert **Webtjenesteinput** skal du vælge det tilsvarende **Objekt** fra målgruppeindsigter og vælge **Næste**.
    > [!NOTE]
@@ -54,7 +60,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 
    > [!div class="mx-imgBorder"]
    > ![Konfigurere en arbejdsproces](media/intelligence-screen2-updated.png "Konfigurere en arbejdsproces")
-   
+
 1. Angiv følgende egenskaber i **Modeloutputparametre**-trinnet:
    - Machine Learning Studio (klassisk)
       1. Angiv det output **Objektnavn**, som flow for webtjenesteoutputresultater.
@@ -62,12 +68,12 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
       1. Angiv det output **Objektnavn**, som flow for pipeline-outputresultater.
       1. Vælg **Navn på outputdatalagerparameter** i batch pipeline på rullelisten.
       1. Vælg **Navn på outputstiparameter** i batch pipeline på rullelisten.
-      
+
       > [!div class="mx-imgBorder"]
       > ![Modeloutputparameter-panel](media/intelligence-screen3-outputparameters.png "Modeloutputparameter-panel")
 
 1. Vælg den tilsvarende attribut på rullelisten **Kunde-id i resultater**, der identificerer kunder, og vælg **Gem**.
-   
+
    > [!div class="mx-imgBorder"]
    > ![Relater resultater til Kundedata-panel](media/intelligence-screen4-relatetocustomer.png "Relater resultater til Kundedata-panel")
 
@@ -95,7 +101,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
       1. Vælg **Navn på outputstiparameter** for test-pipeline.
 
 1. Vælg den tilsvarende attribut på rullelisten **Kunde-id i resultater**, der identificerer kunder, og vælg **Gem**.
-   Du skal vælge en attribut fra udledningsoutputtet med værdier, der svarer til kolonnen Kunde-ID i kundeobjektet. Hvis der ikke findes en sådan kolonne i datasættet, skal du vælge en attribut, der entydigt identificerer rækken.
+   Vælg en attribut fra udledningsoutputtet med værdier, der svarer til kolonnen Kunde-id i kundeobjektet. Hvis der ikke findes en sådan kolonne i datasættet, skal du vælge en attribut, der entydigt identificerer rækken.
 
 ## <a name="run-a-workflow"></a>Kørsel af en arbejdsproces
 
@@ -113,5 +119,28 @@ Arbejdsprocessen kører også automatisk sammen med alle planlagte opdateringer.
 
 Din arbejdsproces bliver slettet. Det [objekt](entities.md), der blev oprettet, da du oprettede arbejdsprocessen, bevares, og du kan få det vist på siden **Objekter**.
 
+## <a name="results"></a>Resultater
+
+Resultater fra en arbejdsproces gemmes i det objekt, der er konfigureret i fasen Modeloutputparameter. Du kan få adgang til disse data fra [objektsiden](entities.md) eller med [API-adgang](apis.md).
+
+### <a name="api-access"></a>API-adgang
+
+Hvis den specifikke OData-forespørgsel skal hente data fra et brugerdefineret modelobjekt, skal du bruge følgende format:
+
+`https://api.ci.ai.dynamics.com/v1/instances/<your instance id>/data/<custom model output entity name>%3Ffilter%3DCustomerId%20eq%20'<guid value>'`
+
+1. Erstat `<your instance id>` med id'et for dit Customer Insights-miljø, som du finder på adresselinjen i din browser ved adgang til Customer Insights.
+
+1. Erstat `<custom model output entity>` med det objektnavn, du har angivet i trinnet Modeloutputparametre i konfigurationen af den brugerdefinerede model.
+
+1. Erstat `<guid value>` med kunde-id'et for den kunde, som du vil have adgang til posten for. Du kan som regel finde dette id på [siden kundeprofiler](customer-profiles.md) i feltet CustomerID.
+
+## <a name="frequently-asked-questions"></a>Ofte stillede spørgsmål
+
+- Hvorfor kan jeg ikke se min pipeline, når jeg konfigurerer en brugerdefineret modelarbejdsproces?    
+  Dette problem skyldes ofte et konfigurationsproblem i pipelinen. Sørg for, at [inputparameteren er konfigureret](azure-machine-learning-experiments.md#dataset-configuration), og at [outputdataene og stiparametrene](azure-machine-learning-experiments.md#import-pipeline-data-into-customer-insights) også er konfigureret.
+
+- Hvad betyder fejlen "Intelligensarbejdsprocessen kunne ikke gemmes"?    
+  Brugernefår som regel denne fejlmeddelelse, hvis de ikke har administratorrettigheder som Ejer eller Brugeradgang til arbejdsområdet. Brugeren skal have et højere tilladelsesniveau for at få Customer Insights til at behandle arbejdsprocessen som en tjeneste i stedet for brugerlegitimationsoplysningerne til efterfølgende kørsler af arbejdsprocessen.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

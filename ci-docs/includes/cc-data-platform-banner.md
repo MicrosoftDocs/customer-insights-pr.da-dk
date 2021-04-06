@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 133555881fcbb0bcecb0749343d0aef970405af2
-ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
+ms.openlocfilehash: a953b35b7299500471457d826332563e007a28e3
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "4643346"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595603"
 ---
 > [!NOTE]
-> Gælder fra november 2020:
-> - Common Data Service er omdøbt til Microsoft Dataverse. [Få mere at vide](https://aka.ms/PAuAppBlog)
-> - En bestemt terminologi i Microsoft Dataverse er blevet opdateret. F. eks. er *objekt* nu *tabel*, og *felt* er nu *kolonne*. [Få mere at vide](https://go.microsoft.com/fwlink/?linkid=2147247)
+> Fra og med november 2020:
+> - Common Data Service er blevet omdøbt til Microsoft Dataverse. [Få mere at vide](https://aka.ms/PAuAppBlog)
+> - Noget af terminologien i Microsoft Dataverse er blevet opdateret. Eksempelvis er *objekt* nu *tabel*, og *felt* er nu *kolonne*. [Få mere at vide](/powerapps/maker/data-platform/data-platform-intro)
 >
-> Denne artikel opdateres hurtigst muligt, så den afspejler den seneste terminologi.
+> Denne artikel opdateres snart, så det afspejler den seneste terminologi.

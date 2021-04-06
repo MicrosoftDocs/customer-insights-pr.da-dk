@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eebbac1370a847869d98beaf70db49b809d762e7
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: c670b0065a2833a6dc311d9e86d2b351140382ce
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267715"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596492"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-gen2-account-with-an-azure-service-principal-for-audience-insights"></a>Opret forbindelse til en Azure Data Lake Storage Gen2-konto med en Azure-tjenestekonto for at få målgruppeindsigt
 
@@ -23,7 +23,7 @@ Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begræns
 Du kan bruge tjenestekontoen til at [tilføje eller redigere en Common Data Model-mappe på en sikker måde som datakilde](connect-common-data-model.md) eller [oprette nye eller opdatere et eksisterende miljø](manage-environments.md#create-an-environment-in-an-existing-organization).
 
 > [!IMPORTANT]
-> - Azure Data Lake Gen2-lagerkontoen, hvor tjenestens hovednavn skal bruges, skal have [aktiveret HNS (hierarkisk navneplads)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace).
+> - Azure Data Lake Gen2-lagerkontoen, hvor tjenestens hovednavn skal bruges, skal have [aktiveret HNS (hierarkisk navneplads)](/azure/storage/blobs/data-lake-storage-namespace).
 > - Du skal have administratorrettigheder til dit Azure-abonnement for at oprette tjenestekonto.
 
 ## <a name="create-azure-service-principal-for-audience-insights"></a>Opret Azure-tjenestekonto til målgruppeindsigt
@@ -48,7 +48,7 @@ Før du opretter en ny tjenestekonto til målgruppeindsigt, skal du kontrollere,
 
 ### <a name="create-a-new-service-principal"></a>Opret en ny tjenestekonto
 
-1. Installer den nyeste version af **Azure Active Directory PowerShell til Graph**. Du kan finde flere oplysninger i [Installation af Azure Active Directory PowerShell for Graph](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1. Installer den nyeste version af **Azure Active Directory PowerShell til Graph**. Du kan finde flere oplysninger i [Installation af Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
    - Vælg Windows-tasten på tastaturet i din PC, og søg efter **Windows PowerShell**, og **Kør som administrator**.
    
    - I det PowerShell-vindue, der åbnes, skal du skrive `Install-Module AzureAD`.

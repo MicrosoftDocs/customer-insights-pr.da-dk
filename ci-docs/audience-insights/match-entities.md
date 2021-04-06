@@ -1,133 +1,137 @@
 ---
 title: Match objekter til datasamling
 description: Sammenlign objekter for at oprette samlede kundeprofiler.
-ms.date: 10/14/2020
+ms.date: 02/23/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: adkuppa
+author: adkuppa
+ms.author: adkuppa
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 05afd17b7f1b34f7f24a8fa8cb2dc32c1649d40f
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267471"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595557"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
-Når du har fuldført tilknytningsfasen, er du klar til at matche objekterne. Matchfasen angiver, hvordan du kan kombinere dine datasæt i et samlet kundeprofildatasæt. Matchfasen kræver mindst [to tilknyttede objekter](map-entities.md).
+Matchfasen angiver, hvordan du kan kombinere dine datasæt i et samlet kundeprofildatasæt. Når du har fuldført [tilknytningstrinnet](map-entities.md) i processen til samling af data, er du klar til at matche dine objekter. Matchfasen kræver mindst to tilknyttede objekter.
+
+Matchsiden består af tre sektioner: 
+- Nøglemålepunkter, der opsummerer antallet af matchede poster
+- Matchrækkefølge og regler for matchning på tværs af objekter
+- Regler for deduplikering af matchobjekter
 
 ## <a name="specify-the-match-order"></a>Angive matchrækkefølgen
 
 Gå til **Data** > **Saml** > **Match**, og vælg **Angiv rækkefølge** for at starte fasen.
 
-Hvert match samler to eller flere objekter i et enkelt objekt, mens alle entydige kundeposter bevares. I følgende eksempel har vi valgt tre objekter: **ContactCSV: TestData** som det **primære** objekt, **WebAccountCSV: TestData** som **Objekt 2** og **CallRecordSmall: TestData** som **Objekt 3**. Diagrammet over valgene illustrerer, hvordan den matchende rækkefølge udføres.
+Hvert match samler to eller flere objekter i ét samlet konsolideret objekt. Samtidig opbevares de entydige kundeposter. Vi har f.eks. valgt to objekter: **eCommerce:eCommerceContacts** som det primære objekt og **LoyaltyScheme:loyCustomers** som andet objekt. Rækkefølgen af objekterne angiver, i hvilken rækkefølge systemet skal forsøge at matche posterne.
 
-> [!div class="mx-imgBorder"]
-> ![Redigere data i matchrækkefølge](media/configure-data-match-order-edit-page.png "Redigere data i matchrækkefølge")
+:::image type="content" source="media/match-page.png" alt-text="Skærmbillede af matchsiden i området Saml af datasamlingsprocessen.":::
   
-Det **primære** objekt matches med **Objekt 2**. Det datasæt, der er resultatet af det første match, matches med **Objekt 3**.
-I dette eksempel har vi kun valgt to matches, men systemet understøtter flere.
+Det primære objekt *eCommerce:eCommerceContacts* matches med det næste objekt *LoyaltyScheme:loyCustomers*. Det datasæt, der er resultatet af første matchtrin, matches med følgende objekt, hvis du har mere end to objekter.
 
 > [!IMPORTANT]
-> Det objekt, du vælger som **primært** objekt, tjener som udgangspunkt for det samlede masterdatasæt. Flere objekter, der er valgt under matchfasen, føjes til dette objekt. Det betyder samtidig ikke, at det samlede objekt indeholder *alle* de data, der er indeholdt i dette objekt.
+> Det objekt, du vælger som primært objekt, tjener som udgangspunkt for det samlede profildatasæt. Flere objekter, der er valgt under matchfasen, føjes til dette objekt. Det betyder ikke, at det samlede objekt indeholder *alle* de data, der findes i dette objekt.
 >
 > Der er to overvejelser, der kan hjælpe dig med at vælge hierarkiet for objekterne:
 >
-> - Hvilket objekt, mener du har de mest fuldstændige og pålidelige data om kunderne?
-> - Indeholder det objekt, du lige har identificeret, attributter, der også deles med andre objekter (f.eks. navn, telefonnummer eller mailadresse)? Hvis det ikke er tilfældet, skal du vælge det næstmest pålidelige objekt.
+> - Vælg det objekt, der har de mest fuldstændige og pålidelige profildata om kunderne, som det primære objekt.
+> - Vælg det objekt, der har flere attributter til fælles med andre objekter (f.eks. navn, telefonnummer eller mailadresse) som primært objekt.
 
-Vælg **Udført** for at gemme matchrækkefølgen.
+Når du har angivet matchrækkefølgen, kan du se de definerede matchpar i afsnittet **Oplysninger om matchede poster** i **Data** > **Saml** > **Match**. Nøglemålepunkterne er tomme, indtil matchprocessen er fuldført.
 
-## <a name="define-rules-for-your-first-match-pair"></a>Definere regler for dit første matchpar
+## <a name="define-rules-for-match-pairs"></a>Definere regler for matchpar
 
-Når du har angivet matchrækkefølgen, kan du se de definerede matches på siden **Match**. Felterne øverst på skærmen er tomme, indtil du kører matchrækkefølgen.
+Matchregler angiver den logik, som et bestemt par af objekter skal matches efter.
 
-> [!div class="mx-imgBorder"]
-> ![Definere regler](media/configure-data-match-need-rules.png "Definere regler")
+Advarslen **Behøver regler** ud for et objektnavn indikerer, at der ikke er defineret en matchregel for et matchpar. 
 
-Advarslen **Behøver regler** regler antyder, at der ikke er defineret nogen matchregler for et matchpar. Matchregler angiver den logik, som et bestemt par af objekter skal matches efter.
+:::image type="content" source="media/match-rule-add.png" alt-text="Skærmbillede af sektionen Oplysninger om matchet post med kontrolelement for at tilføje regler fremhævet.":::
 
-1. Du kan definere den første regel ved at åbne ruden **Regeldefinition** ved at vælge den tilsvarende matchrække i tabellen (1) og derefter vælge **Opret ny regel** (2).
+1. Vælg **Tilføj regler** under et objekt i sektionen **Detaljer om matchede poster** for at definere matchregler.
 
-   > [!div class="mx-imgBorder"]
-   > ![Oprette ny regel](media/configure-data-match-new-rule2.png "Opret ny regel")
+1. Konfigurer betingelserne for reglen i ruden **Opret regel**.
 
-2. Konfigurer betingelserne for den pågældende regel i ruden **Rediger regel**. De enkelte betingelser repræsenteres af to rækker, som indeholder obligatoriske valg.
+   :::image type="content" source="media/match-rule-conditions.png" alt-text="Skærmbillede af en åben matchregel med tilføjede betingelser.":::
 
-   > [!div class="mx-imgBorder"]
-   > ![Ruden Ny regel](media/configure-data-match-new-rule-condition.png "Ruden Ny regel")
+   - **Objekt/felt (første række)**: Vælg et relateret objekt og en attribut for at angive en postegenskab, der sandsynligvis er entydig for en kunde. Et eksempel er et telefonnummer eller en mailadresse. Undgå matchning efter aktivitetstypeattributter. Et købs-id vil f.eks. højst sandsynligt ikke findes i andre posttyper.
 
-   Objekt/felt (først) - En attribut, der skal bruges til matchning fra det første matchpar-objekt. Af eksempler kan nævnes et telefonnummer eller en mailadresse. Vælg en attribut, der sandsynligvis er entydig for kunden.
+   - **Objekt/felt (anden række)**: Vælg en attribut, der er relateret til attributten for det objekt, der er angivet i første række.
 
-   > [!TIP]
-   > Undgå at matche på basis af aktivitetstypeattributter. Hvis en attribut f.eks. er en aktivitet, kan det være et dårligt kriterium at matche efter.  
+   - **Normaliser**: Vælg mellem følgende normaliseringsindstillinger for de valgte attributter. 
+     - Blanktegn: Fjerner alle mellemrum. *Hej   verden* bliver til *Hejverden*.
+     - Symboler: Fjerner alle symboler og specialtegn. *Head&Shoulder* bliver til *HeadShoulder*.
+     - Tekst til små bogstaver: Konverterer alle tegn til små bogstaver. *ALL CAPS og Titel, små/store bogstaver* bliver til *all caps og titel, små/store bogstaver*.
+     - Unicode til ASCII: Konverter Unicode-format til ASCII-tegn. */u00B2* bliver til *2*.
+     - Tal: Konverterer andre talsystemer, f.eks. romertal, til arabertal. *VIII* bliver til *8*.
+     - Semantiske typer: Standardiserer navne, titler, telefonnumre, adresser osv. 
 
-   Objekt/felt (andet) - En attribut, der skal bruges til matchning fra det andet matchpar-objekt.
+   - **Præcision** : Angiv det præcisionsniveau, der skal gælde for denne betingelse. 
+     - **Grundlæggende**: Vælg mellem *Lav*, *Mellem*, *Høj* og *Nøjagtig*. Vælg **Nøjagtig** for kun at matche poster, der matcher 100 procent. Vælg et af de andre niveauer for at matche poster, der ikke er 100 procent identiske.
+     - **Brugerdefineret** : Angiv en procentdel, som posterne skal matche. Systemet vil kun matche poster, der opfylder denne grænse.
 
-   Normaliser - **Normaliserings metode**: De forskellige normaliseringsindstillinger er tilgængelige for de valgte attributter. F.eks. fjernelse af tegnsætning eller fjernelse af mellemrum
+1. Angiv et **Navn** til reglen.
 
-   I forbindelse med normalisering af organisationsnavn (prøveversion) kan du også vælge **Type (telefon, navn, organisation)**
+1. [Tilføj flere betingelser](#add-conditions-to-a-rule), eller vælg **Udført** for at færdiggøre reglen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Normalisering-B2B](media/match-normalization-b2b.png "Normalisering-B2B")
+1. Du kan også [tilføje flere regler](#add-rules-to-a-match-pair).
 
-   Præcisionsniveau – Det præcisionsniveau, der bruges til denne betingelse. Angivelse af et præcisionsniveau for en matchbetingelse kan have to typer **Grundlæggende** og **Brugerdefineret**.  
-   - Grundlæggende: Giver dig fire muligheder at vælge mellem: Lav, Mellem, Høj og Nøjagtig. Vælg **Nøjagtig** for kun at matche poster, der matcher 100 procent. Vælg et af de andre niveauer for at matche poster, der ikke er 100 procent identiske.
-   - Brugerdefineret: Brug skyderen til at definere den brugerdefinerede procent, som posterne skal matche med, eller angiv en værdi i feltet **Brugerdefineret**. Systemet matcher kun poster, der overtiger denne tærskel, som sammensmeltede matchpar. Værdierne i skyderen ligger mellem 0 og 1. Så 0,64 repræsenterer 64 procent.
+1. Vælg **Gem** for at anvende dine ændringer.
 
-3. Vælg **Udført** for at gemme reglen.
+### <a name="add-conditions-to-a-rule"></a>Tilføje betingelser i en regel
 
-### <a name="add-multiple-conditions"></a>Tilføje flere betingelser
+Hvis du kun vil matche objekter, hvis attributterne overholder flere betingelser, skal du føje flere betingelser til en matchregel. Betingelser er knyttet til en logisk AND-operator og køres derfor kun, hvis alle betingelser er opfyldt.
 
-Hvis du kun vil matche objekterne, når flere betingelser er opfyldt, kan du tilføje flere betingelser, der er tilknyttet via en OG-operator.
+1. Gå til **Data** > **Saml** > **Match**, og vælg **Rediger** på den regel, du vil føje betingelser til.
 
-1. Vælg **Tilføj betingelse** i ruden **Rediger regel**. Du kan også slette betingelser ved at vælge knappen Fjern ud for en eksisterende betingelse.
+1. Vælg **Tilføj betingelse** i ruden **Rediger regel**.
 
-2. Vælg **Udført** for at gemme reglen.
+1. Vælg **Udført** for at gemme reglen.
 
-## <a name="add-multiple-rules"></a>Tilføje flere regler
+### <a name="add-rules-to-a-match-pair"></a>Føje regler til et matchpar
 
-De enkelte betingelser gælder for et enkelt par attributter, mens regler repræsenterer sæt af betingelser. Hvis du vil have objekterne matchet af forskellige sæt attributter, kan du tilføje flere regler.
+Matchregler repræsenterer sæt af betingelser. Hvis du vil matche objekter efter betingelser ud fra flere attributter, skal du tilføje flere regler
 
-1. Gå til **Data** > **Saml** > **Match** i målgruppen Insights.
+1.  Gå til **Data** > **Saml** > **Match**, og vælg **Tilføj regel** på det objekt, du vil føje regler til.
 
-2. Vælg det objekt, du vil opdatere, og vælg **Tilføj regler**.
-
-3. Følg fremgangsmåden i [Definere regler for dit første matchpar](#define-rules-for-your-first-match-pair).
+2. Følg trinnene under [Definer regler for matchpar](#define-rules-for-match-pairs).
 
 > [!NOTE]
-> Regelrækkefølgen spiller en rolle. Matchningsalgoritmen forsøger at matche på basis af den første regel og fortsætter kun til den anden regel, hvis der ikke blev identificeret noget match under den første regel.
+> Rækkefølgen af regler er vigtig. Den matchende algoritme forsøger at matche på baggrund af din første regel og fortsætter kun til den anden regel, hvis der ikke blev identificeret nogen match med den første regel.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Definer deduplikering for et match-objekt
 
-Sammen med angivelse af regler for matchning af krydsobjekter, der beskrives i de ovennævnte afsnit, kan du også angive deduplikeringsregler. *Deduplikering* er en proces. Der identificeres dubletposter, der flettes sammen til én post, og alle kildeposterne sammenkædes med de alternative id'er for den flettede post.
+Ud over [matchregler på tværs af objekter](#define-rules-for-match-pairs) kan du også angive regler for deduplikering. *Deduplikering* er en anden proces, når poster matches. Den identificerer dubletposter og fletter dem til én post. Kildeposter knyttes til den flettede post med alternative id'er.
 
-Når en ikke-duplikeret post er identificeret, bruges den pågældende post i den krydsobjekt sammenligningsproces. Deduplikering er implementeret på objektniveau og kan anvendes på alle de objekter, der bruges i overensstemmelsesprocessen.
+Deduplikerede poster anvendes i processen med match af krydsobjektet. Deduplikering sker på individuelle objekter og kan konfigureres for alle objekter, der bruges i matchpar.
+
+Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der ikke er konfigureret sådanne regler, anvendes de systemdefinerede regler. De kombinerer alle poster i en enkelt post, før de overfører objektdataene til matchning på tværs af objekter med forbedret ydeevne.
 
 ### <a name="add-deduplication-rules"></a>Tilføj regler for deduplikering
 
-1. Gå til **Data** > **Saml** > **Match** i målgruppen Insights.
+1. Gå til **Data** > **Saml** > **Match**.
 
-1. Vælg **Angiv objekter** i sektionen **Flettede dubletter**.
+1. Vælg **Angiv objekter** i sektionen **Flettede dubletter**. Hvis der allerede er oprettet regler for deduplikering, skal du vælge **Rediger**.
 
-1. I afsnittet **Indstillinger for fletninger** skal du markere de objekter, du vil anvende deduplikering på.
+1. I ruden **Indstillinger for fletninger** skal du vælge de objekter, du vil køre deduplikering på.
 
-1. Angiv, hvordan dubletposterne skal flettes, og vælg en af de tre fletteindstillinger:
-   - *Flest udfyldte*: Identificerer posten med de fleste udfyldte attributter som vinderposten. Dette er standardfletteindstillingen.
-   - *Nyeste*: Identificerer vinderposten baseret på de nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
-   - *Mindst nyeste*: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
+1. Angiv, hvordan dubletposterne skal kombineres, og vælg en af de tre indstillinger:
+   - **Flest udfyldte**: Identificerer posten med de fleste udfyldte attributfelter som vinderposten. Dette er standardfletteindstillingen.
+   - **Nyeste**: Identificerer vinderposten baseret på de nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
+   - **Mindst nyeste**: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
  
    > [!div class="mx-imgBorder"]
    > ![Regler for deduplikering trin 1](media/match-selfconflation.png "Regler for deduplikering trin 1")
  
-1. Når objekterne er valgt, og de flettede indstillinger er angivet, skal du vælge **Opret ny regel** for at definere reglerne for fjernelse på et objektniveau.
-   - **Vælg felt** viser alle tilgængelige felter fra det objekt, du vil fjerne duplikerede kildedata til.
-   - Angiv normaliserings- og præcisionsindstillingerne på samme måde som angivet i det krydsobjekt, der matcher.
-   - Du kan definere yderligere betingelser ved at vælge **Tilføj betingelse**.
+1. Når objekterne er valgt, og de flettede indstillinger er angivet, skal du vælge **Tilføj regel** for at definere reglerne for deduplikering på et objektniveau.
+   - **Vælg felt** lister alle de tilgængelige felter fra objektet. Vælg det felt, du vil kontrollere for dubletter. Vælg felter, der sandsynligvis er entydige for hver enkelt kunde. Det kan f.eks. være en mailadresse eller en kombination af navn, by og telefonnummer.
+   - Angiv indstillingerne for normalisering og præcision.
+   - Definer flere betingelser ved at vælge **Tilføj betingelse**.
  
    > [!div class="mx-imgBorder"]
    > ![Regler for deduplikering trin 2](media/match-selfconflation-rules.png "Regler for deduplikering trin 2")
@@ -138,107 +142,86 @@ Når en ikke-duplikeret post er identificeret, bruges den pågældende post i de
 
 1. Denne vinderpost overføres derefter til match på tværs af objekter sammen med de poster, der ikke er vindere (f.eks. alternative id'er), for at forbedre matchkvaliteten.
 
-1. Alle brugerdefinerede matchregler, der er defineret for altid at matche, og som ikke matcher, tilsidesætter deduplikeringsregler. Hvis en deduplikeringsregel identificerer matchende poster, og en brugerdefineret matchregel er angivet til aldrig at matche disse poster, kan disse to poster ikke blive matchet.
+1. Alle brugerdefinerede matchregler, der er defineret, overskriver deduplikeringsregler. Hvis en deduplikeringsregel identificerer matchende poster, og en brugerdefineret matchregel er angivet til aldrig at matche disse poster, kan disse to poster ikke blive matchet.
 
-1. Når du har kørt matchprocessen, kan du se deduplikeringsstatistikken.
-   
-> [!NOTE]
-> Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der ikke er konfigureret sådanne regler, anvendes de systemdefinerede regler. De skjuler alle poster, der deler den samme værdikombination (nøjagtigt match) fra den primære nøgle, og de felter, der opfylder kriterierne til en enkelt post, inden objektdataene overføres til match på tværs af objekter for at opnå forbedret ydeevne og systemsikkerhed.
+1. Når du har [kørt matchprocessen](#run-the-match-process), kan du se deduplikeringsstatistikken i felter med nøglemålepunkter.
 
-## <a name="run-your-match-order"></a>Køre matchrækkefølgen
+### <a name="deduplication-output-as-an-entity"></a>Deduplikere output som et objekt
 
-Når du har defineret de matchende regler, herunder regler for matchning og deduplikering på tværs af objekter, kan du køre matchrækkefølgen. Vælg **Kør** på siden **Match** for at starte processen. Det kan tage et stykke tid at fuldføre matchningsalgoritmen. Du kan ikke ændre egenskaber på siden **Match**, før den matchende proces er fuldført. Du kan finde det samlede kundeprofilobjekt, der blev oprettet, på siden **Objekter**. Dit samlede kundeobjekt kaldes **ConflationMatchPairs: CustomerInsights**.
-
-Hvis du vil foretage yderligere ændringer og køre trinnet igen, kan du annullere et igangværende match. Vælg teksten **Opdaterer...**, og vælg **Annuller job** nederst i den siderude, der vises.
-
-Når matchprocessen er fuldført, ændres teksten **Opdaterer...** til **Gennemført**, og derefter kan du bruge alle funktionerne på siden igen.
-
-Den første matchproces medfører, at der oprettes et samlet masterobjekt. Alle efterfølgende matchkørsler medfører udvidelse af dette objekt.
-
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
-
-## <a name="deduplication-output-as-an-entity"></a>Deduplikere output som et objekt
-Ud over det samlede masterobjekt, der er oprettet som en del af et match på tværs af objekter, oprettes der også et nyt objekt for hvert objekt ud fra matchrækkefølgen for at identificere de duplikerede poster. Disse objekter findes sammen med **ConflationMatchPairs:CustomerInsights** i afsnittet **System** på siden **Objekter** med navnet **Deduplication_Datasource_Entity**.
+Under duplikeringsprocessen oprettes der et nyt objekt for hvert objekt ud fra matchparrene for at identificere de deduplikerede poster. Disse objekter findes sammen med **ConflationMatchPairs:CustomerInsights** i afsnittet **System** på siden **Objekter** med navnet **Deduplication_DataSource_Entity**.
 
 Et deduplikeret outputobjekt indeholder følgende oplysninger:
 - Id'er / nøgler
   - Feltet Primær nøgle og dets alternative id-felt. Det alternative id-felt består af alle de alternative id'er, der er identificeret for en post.
-  - Deduplication_GroupId-felt vises den gruppe eller klynge, der er identificeret i et objekt, og som grupperer alle lignende poster på baggrund af de angivne felter med deduplikering. Dette bruges til systembehandlingsformål. Hvis der ikke er angivet nogen regler for manuel deduplikering, og der gælder systemdefinerede regler for deduplikering, kan feltet muligvis ikke findes i outputobjektet.
+  - Deduplication_GroupId-felt vises den gruppe eller klynge, der er identificeret i et objekt, og som grupperer alle lignende poster på baggrund af de angivne felter med deduplikering. Det bruges til systembehandlingsformål. Hvis der ikke er angivet nogen regler for manuel deduplikering, og der gælder systemdefinerede regler for deduplikering, kan feltet muligvis ikke findes i outputobjektet.
   - Deduplication_WinnerId: Dette felt indeholder vinder-id fra de identificerede grupper eller klynger. Hvis Deduplication_WinnerId er den samme som værdien for den primære nøgle for en post, betyder det, at posten er vinderposten.
 - Felter, der bruges til at definere reglerne for deduplikering.
 - Felterne Regel og Resultat angiver, hvilke af de duplikeringsregler der blev anvendt, og det antal point, der returneres af den tilsvarende algoritme.
+   
+## <a name="run-the-match-process"></a>Køre matchprocessen
+
+Med konfigurerede matchregler, herunder regler for matchning og deduplikering på tværs af objekter, kan du køre matchprocessen. 
+
+Gå til **Data** > **Saml** > **Match**, og vælg **Kør** for at starte processen. Det tager tid at fuldføre matchalgoritmen, og du kan ikke ændre konfigurationen, før den er fuldført. Du kan foretage ændringer ved at annullere kørslen. Vælg jobbets status, og vælg **Annuller job** i ruden **Statusdetaljer**.
+
+Du kan se resultatet af en vellykket kørsel, det samlede kundeprofilobjekt, på siden **Objekter**. Dit samlede kundeobjekt kaldes **Kunder** i sektionen **Profiler**. Ved den første vellykkede matchkørsel oprettes det samlede objekt *Kunde*. Enhver efterfølgende match udvider objektet.
+
+> [!TIP]
+> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
 
 ## <a name="review-and-validate-your-matches"></a>Gennemgå og validere dine matches
 
-Evaluere kvaliteten af dine matchpar og finjustere den:
+Gå til **Data** > **Saml** > **Match** for at evaluere kvaliteten af matchparrene og finjustere dem, hvis det er nødvendigt.
 
-- På siden **Match** kan du finde to felter, der viser indledende indsigt i dine data.
+Felterne øverst på siden viser nøglemålepunkter og opsummerer antallet af matchede poster og dubletter.
 
-  - **Entydige kunder**: Viser det antal entydige profiler, der identificeres i systemet.
-  - **Matchede poster**: Viser antallet af matches på tværs af alle dine matchpar.
+:::image type="content" source="media/match-KPIs.png" alt-text="Beskåret skærmbillede af nøglemålepunkter på siden Match med tal og detaljer.":::
 
-- I tabellen **Match ordre** kan du vurdere resultaterne af de enkelte matchpar ved at sammenligne det antal poster, der kommer fra dette matchpars objekt, i forhold til procentdelen af vellykkede matchede poster.
+- **Entydige kildeposter** viser antallet af individuelle kildeposter, der blev behandlet i sidste matchkørsel.
+- **Matchede og ikke-matchede poster** fremhæver, hvor mange entydige poster der er tilbage efter behandling af matchreglerne.
+- **Kun matchede poster** viser kun antallet af matches på tværs af alle dine matchpar.
 
-- I sektionen **Regler** for et objekt i tabellen **Match ordre** kan du finde procentdelen af vellykket matchede poster på regelniveau. Hvis du vælger tabelsymbolet ud for en regel, kan du få vist alle disse poster på regelniveau. Det anbefales, at du gennemgår et undersæt af posterne for at bekræfte, at de blev matchet korrekt.
+Du kan vurdere resultaterne af hvert matchpar og dets regler i tabellen **Oplysninger om matchede poster**. Sammenlign antallet af poster, der kommer fra et matchpar, med procentdelen af fuldførte matchede poster.
 
-- Eksperimentér med forskellige præcisionstærskler for dine betingelser for at identificere den optimale værdi.
+Gennemgå reglerne for et matchpar for at se procentdelen af fuldførte matchede poster på regelniveau. Vælg ellipsen (...), og vælg derefter **Forhåndsvisning af match** for at få vist alle disse poster på regelniveau. Det anbefales, at du kigger på nogle poster for at kontrollere, at de blev matchet korrekt.
 
-  1. Vælg ellipsen (...) for matchpar-reglen, som du vil eksperimentere med, og vælg **Rediger**.
+Prøv at bruge forskellige præcisionstærskelværdier på betingelser for at finde den optimale værdi.
 
-  2. Vælg den betingelse, du vil eksperimentere med. De enkelte kriterier repræsenteres ved en række i ruden **Matchregel**.
+  1. Vælg ellipsen (...) for den regel, du vil eksperimentere med, og vælg **Rediger**.
 
-  3. Det, du kan se på siden **Kriterier for eksempel**, afhænger af det præcisionsniveau, du har valgt til en betingelse. Find antallet af matchede og ikke-matchede poster for den valgte betingelse.
+  2. Rediger præcisionsværdierne i de betingelser, du vil revidere.
 
-     Opnå dyb forståelse af virkningerne af forskellige tærskelværdier. Du kan sammenligne, hvor mange poster der skal matches under hvert af tærskelniveauerne, og få vist posterne under de enkelte indstillinger. Vælg de enkelte felter, og gennemse dataene i tabelafsnittet.
+  3. Vælg **Vis eksempel** for at se antallet af matchede og ikke-matchede poster for den valgte betingelse.
 
-## <a name="optimize-your-matches"></a>Optimere dine matches
+## <a name="manage-match-rules"></a>Administrere matchregler
 
-Forøg kvaliteten ved at omkonfigurere nogle af dine matchparametre:
+Du kan omkonfigurere og finjustere de fleste af matchparametrene.
 
-- **Ændre matchrækkefølgen** ved at vælge **Rediger** og ændre felterne i matchrækkefølgen.
+:::image type="content" source="media/match-rules-management.png" alt-text="Skærmbillede af rullemenuen med indstillinger for matchregel.":::
 
-  > [!div class="mx-imgBorder"]
-  > ![Redigere matchrækkefølge for data](media/configure-data-match-order-edit.png "Redigere matchrækkefølge for data")
+- **Du kan ændre rækkefølgen af reglerne**, hvis du har defineret flere regler. Du kan omarrangere matchreglerne ved at vælge indstillingerne **Flyt op** og **Flyt ned** eller ved at trække og slippe.
 
-- **Du kan ændre rækkefølgen af reglerne**, hvis du har defineret flere regler. Du kan omarrangere matchreglerne ved at vælge indstillingerne **Flyt op** og **Flyt ned** i gitteret med matchregler.
-
-  > [!div class="mx-imgBorder"]
-  > ![Ændre regelrækkefølge](media/configure-data-change-rule-order.png "Ændre regelrækkefølge")
-
-- **Dupliker dine regler**, hvis du har defineret en matchregel, og du vil oprette en lignende regel med ændringer. Gør det ved at vælge **Dupliker**.
-
-  > [!div class="mx-imgBorder"]
-  > ![Duplikere en regel](media/configure-data-duplicate-rule.png "Duplikere en regel")
+- **Rediger regelbetingelser** ved at vælge **Rediger** og vælge andre felter.
 
 - **Deaktiver en regel** for at bevare en overensstemmelsesregel, samtidig med at den udelukkes fra matchprocessen.
 
-  > [!div class="mx-imgBorder"]
-  > ![Deaktiver en regel](media/configure-data-deactivate-rule.png "Deaktiver en regel")
+- **Dupliker reglerne**, hvis du har defineret en matchregel og vil oprette en lignende regel med ændringer, ved at vælge **Dupliker**.
 
-- **Rediger reglerne** ved at vælge **Rediger**-symbolet. Du kan anvende følgende ændringer:
+- **Slet en regel** ved at vælge symbolet **Slet**.
 
-  - Ændre attributter for en betingelse: Vælg nye attributter i den specifikke betingelsesrække.
-  - Ændre grænsen for en betingelse: Juster præcisionsskyderen.
-  - Skifte normaliseringsmetode for en betingelse: Opdater normaliseringsmetoden.
+## <a name="specify-custom-match-conditions"></a>Angive brugerdefinerede matchbetingelser
 
-## <a name="specify-your-custom-match-records"></a>Angive dine brugerdefinerede matchposter
+Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal matche. Disse regler kan overføres for at tilsidesætte standardmatchprocessen. Hvis der f.eks. findes John Doe I og John Doe II i vores poster, kan systemet matche dem som én person. Med brugerdefinerede matchregler kan du angive, at deres profiler refererer til forskellige personer. 
 
-Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal matche. Disse regler kan masseoverføres til matchprocessen.
+1. Gå til **Data** > **Saml** > **Match**, og vælg **Brugerdefineret match** i sektionen **Oplysninger om matchede poster**.
 
-1. Vælg indstillingen **Brugerdefineret match** på skærmen **Match ordre**.
+  :::image type="content" source="media/custom-match-create.png" alt-text="Skærmbillede af sektionen med matchregler og kontrolelement for brugerdefineret match fremhævet.":::
 
-   > [!div class="mx-imgBorder"]
-   > ![Oprette et brugerdefineret match](media/custom-match-create.png "Oprette et brugerdefineret match")
+1. Hvis der ikke er angivet brugerdefinerede matchregler, kan du se en ny **Brugerdefineret match**-rude med flere detaljer.
 
-2. Hvis du ikke har overførte objekter, kan du se dialogboksen **Brugerdefineret match**, der kræver, at du udfylder nogle detaljer. Hvis du tidligere har angivet disse detaljer, kan du gå til trin 8.
+1. Vælg **Udfyld skabelonen** for at hente en skabelonfil, der kan angive, hvilke poster fra hvilke objekter der altid skal matche eller aldrig matche. Du skal separat udfylde posterne af typen "match altid " og "match aldrig " i to forskellige filer.
 
-   > [!div class="mx-imgBorder"]
-   > ![Ny dialogboks Brugerdefineret match](media/custom-match-new-dialog-box.png "Ny dialogboks Brugerdefineret match")
-
-3. Vælg **Udfyld skabelonen** for at hente en skabelonfil, der kan angive, hvilke poster fra hvilke objekter der altid skal matche eller aldrig matche. Du skal separat udfylde posterne af typen "match altid " og "match aldrig " i to forskellige filer.
-
-4. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis primær nøgle 12345 fra salgsobjektet altid skal matche med den primære nøgle 34567 fra objektet Kontakt, skal du angive følgende:
+1. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
     - Entity1: Salg
     - Entity1Key: 12345
     - Entity2: Kontakt
@@ -248,22 +231,22 @@ Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal 
    
    Hvis du vil angive brugerdefineret matchning for deduplikering for et objekt, skal du angive det samme objekt som både Objekt1 og Objekt2 og angive de forskellige værdier for primære nøgler.
 
-5. Gem skabelonfilen, når du har tilføjet alle de tilsidesættelser, du vil anvende.
+1. Gem skabelonfilen, når du har tilføjet alle de tilsidesættelser, du vil anvende.
 
-6. Gå til **Data** > **Datakilder**, og indsæt skabelonfilerne som nye objekter. Når de er indtaget, kan du bruge dem til at angive matchkonfigurationen.
+1. Gå til **Data** > **Datakilder**, og indsæt skabelonfilerne som nye objekter. Når de er indtaget, kan du bruge dem til at angive matchkonfigurationen.
 
-7. Når du har overført filerne, og objekterne er tilgængelige, skal du vælge indstillingen **Brugerdefineret match** igen. Du kan se indstillinger for at angive de objekter, du vil inkludere. Vælg de påkrævede objekter i rullemenuen.
+1. Når du har overført filerne, og objekterne er tilgængelige, skal du vælge indstillingen **Brugerdefineret match** igen. Du kan se indstillinger for at angive de objekter, du vil inkludere. Vælg de påkrævede objekter i rullemenuen.
 
-   > [!div class="mx-imgBorder"]
-   > ![Tilsidesættelser af brugerdefineret match](media/custom-match-overrides.png "Tilsidesættelser af brugerdefineret match")
+   :::image type="content" source="media/custom-match-overrides.png" alt-text="Skærmbillede af dialogboksen til valg af tilsidesættelser for et brugerdefineret matchscenario.":::
 
-8. Vælg de objekter, du vil bruge til **Match altid** og **Match aldrig**, og vælg **Udført**.
+1. Vælg de objekter, du vil bruge til **Match altid** og **Match aldrig**, og vælg **Udført**.
 
-9. Vælg **Gem** på siden **Match** for den brugerdefinerede matchkonfiguration, du lige har konfigureret.
+1. Vælg **Gem** på siden **Match** for at anvende den brugerdefinerede matchkonfiguration.
 
-10. Vælg **Kør** på siden **Match** for at starte matchprocessen, så den brugerdefinerede matchkonfiguration vil blive anvendt. Alle systemmatchede regler tilsidesættes af konfigurationssættet.
+1. Vælg **Kør** på siden **Match** for at starte matchprocessen. Andre angivne matchregler tilsidesættes af den brugerdefinerede matchkonfiguration.
 
-11. Når matchningen er fuldført, kan du kontrollere objektet **ConflationMatchPair** for at bekræfte, at tilsidesættelserne er anvendt i sammenblandingsmatches.
+> [!TIP]
+> Gå til **Data** > **Objekter**, og gennemgå objektet **ConflationMatchPair** for at bekræfte, at tilsidesættelserne er anvendt.
 
 ## <a name="next-step"></a>Næste trin
 

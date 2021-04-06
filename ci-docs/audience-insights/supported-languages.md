@@ -1,31 +1,31 @@
 ---
 title: Understøttede sprog for målgruppen Insights
 description: Forstå og konfigurer understøttelse af sprog.
-ms.date: 04/27/2020
+ms.date: 02/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
-ms.reviewer: philk
+author: pkieffer
+ms.author: philk
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 84c4011e61058729a0ed0b7123df8a9227b0f083
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: cbf37b55ea6c54d912200a1f7167126925b35443
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268173"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595465"
 ---
 # <a name="supported-languages-for-audience-insights-capability"></a>Understøttede sprog for funktionen i målgruppen Insights
 
-Dynamics 365 Customer Insights-funktionen i målgruppen Insights understøtter en række sprog. Dette emne indeholder en liste over de tilgængelige sprog og understøtter skifte mellem dem og en oversigt over, hvilket indhold der oversættes.
+Målgruppeindsigt for Dynamics 365 Customer Insights er oversat til mange sprog. Følgende liste indeholder tilgængelige sprog og oplysninger om, hvad der er oversat. Du kan også få mere at vide om, hvordan du ændrer sprogindstillingerne. 
 
 ## <a name="languages"></a>Sprog
 
 | Sprognavn (Engelsk)|  Sprognavn (oprindeligt sprog) |
 | ------------- | ------------- |
 | Baskisk | euskara |
-| Bulgarsk | Български |
+| Bulgarsk | български |
 | Katalansk | català |
 | Kinesisk (forenklet) | 中文(简体) |
 | Kinesisk (traditionelt) | 中文(繁體) |
@@ -42,22 +42,22 @@ Dynamics 365 Customer Insights-funktionen i målgruppen Insights understøtter e
 | Græsk | Ελληνικά |
 | Hindi | हिंदी |
 | Ungarsk | magyar |
-| Indonesisk | Bahasa Indonesia |
+| Indonesisk | Indonesien |
 | Italiensk | italiano |
 | Japansk | 日本語 |
-| Kasakhisk | Қазақ |
+| Kasakhisk | қазақ тілі |
 | Koreansk | 한국어 |
 | Lettisk | latviešu |
 | Litauisk | lietuvių |
-| Malaysisk | Bahasa Melayu |
-| Norsk (bokmål) | norsk (bokmål) |
-| Polsk | Polski |
+| Malaysisk | Melayu |
+| Norsk (bokmål) | norsk bokmål |
+| Polsk | polski |
 | Portugisisk (Brasilien) | português |
 | Portugisisk (Portugal) | português |
 | Rumænsk | română |
-| Russisk | Русский |
+| Russisk | pусский |
 | Serbisk (kyrillisk) | српски |
-| Serbisk (latinsk) | srpski |
+| Serbisk (latin) | srpski |
 | Slovakisk | slovenčina |
 | Slovensk | slovenski |
 | Spansk | español |

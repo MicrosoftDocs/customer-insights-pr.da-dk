@@ -2,19 +2,19 @@
 title: Trinvis opdatering af Power Query-baserede datakilder
 description: Opdater nye og opdaterede data for store datakilder baseret på Power Query.
 ms.date: 09/28/2020
-ms.reviewer: adkuppa
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: m-hartmann
-ms.author: mhart
+author: adkuppa
+ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d4b01be75d25fa0e120904924a193171eefec579
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 03f76bcfc7336d8430146e8a26ffa649c6a17db0
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268541"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5596814"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinvis opdatering af datakilder, der er baseret på Power Query
 

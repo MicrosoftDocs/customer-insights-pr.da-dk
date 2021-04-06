@@ -2,19 +2,19 @@
 title: Forudsigelse af kundens levetidsværdi (CLV)
 description: Indtægtskilde for aktive kunder i fremtiden.
 ms.date: 02/05/2021
-ms.reviewer: wameng
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
-ms.author: mhart
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 363a46c81b5bb737d274998f9a699dc662e38d7c
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5268587"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5595795"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Kundens levetidsværdi (CLV) forudsigelse (prøveversion)
 
@@ -194,11 +194,11 @@ Der findes tre primære sektioner med data på resultatsiden.
   
   - **Succesfrekvens, der spår kunder med stor værdi**
 
-  Se forskellen i, hvordan kunder med høj værdi bruger AI-modellen i forhold til den oprindelige model. En succesrate på 84 % betyder f.eks., at AI-modellen kunne registrere 84 % nøjagtigt ud af alle kunder i uddannelsesdataene. Derefter sammenlignes denne succesrate med succesprocenten for den oprindelige model for at rapportere den relative ændring. Denne værdi bruges til at tildele modellen en vurdering.
+    Se forskellen i, hvordan kunder med høj værdi bruger AI-modellen i forhold til den oprindelige model. En succesrate på 84 % betyder f.eks., at AI-modellen kunne registrere 84 % nøjagtigt ud af alle kunder i uddannelsesdataene. Derefter sammenlignes denne succesrate med succesprocenten for den oprindelige model for at rapportere den relative ændring. Denne værdi bruges til at tildele modellen en vurdering.
 
   - **Fejlmetrikværdier**
     
-  En anden metrikværdi giver dig mulighed for at gennemgå modellens overordnede ydeevne med hensyn til fejl i forbindelse med fremtidigt arbejde. Vi bruger den overordnede måling (Root Mean Squared Error) til at vurdere denne fejl. RMSE er en standardmåde at måle fejlen i en model på, når data, der skal anvendes, anvendes. AI-modellens RMSE sammenlignes med den RMSE i basismodellen, og den relative forskel rapporteres.
+    En anden metrikværdi giver dig mulighed for at gennemgå modellens overordnede ydeevne med hensyn til fejl i forbindelse med fremtidigt arbejde. Vi bruger den overordnede måling (Root Mean Squared Error) til at vurdere denne fejl. RMSE er en standardmåde at måle fejlen i en model på, når data, der skal anvendes, anvendes. AI-modellens RMSE sammenlignes med den RMSE i basismodellen, og den relative forskel rapporteres.
 
   AI-modellen prioriterer den nøjagtige rangering af kunder efter den værdi, de tilfører din virksomhed. Så kun succesprocenten for kunder med høj værdi bruges til at opnå den endelige modelkvalitet. RMSE-målingen er følsom over for afvigende værdier. I scenarier, hvor du har en lille procentdel af kunder med utroligt høje indkøbsværdier, giver den overordnede RMSE-måling måske ikke det fulde billede af modelydeevnen.   
 

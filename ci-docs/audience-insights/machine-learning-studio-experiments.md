@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: ameetj
+ms.author: ameetj
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8a861d62bdfee6a3a82468fe1ab4a3fbbdad43d4
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 71881f7e1f9448fe0a7d6d92b8102b8b42de7c2a
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270197"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598332"
 ---
 # <a name="use-models-based-on-azure-machine-learning-studio-classic"></a>Brug modeller baseret på Azure Machine Learning Studio (klassisk)
 
@@ -37,7 +37,7 @@ I første trin skal vi oprette et arbejdsområde, som Machine Learning Studio (c
 
 1. Søg i **Machine Learning Studio-arbejdsområde**, og vælg **Opret**.
 
-1. Angiv de nødvendige detaljer for at [oprette arbejdsområdet](https://docs.microsoft.com/azure/machine-learning/studio/create-workspace). Vælg **Prissætningsniveau for webtjenesteplan** baseret på den mængde data, du vil importere. Du opnår den bedste ydeevne, hvis du vælger den **Placering**, der er geografisk nærmest.
+1. Angiv de nødvendige detaljer for at [oprette arbejdsområdet](/azure/machine-learning/studio/create-workspace). Vælg **Prissætningsniveau for webtjenesteplan** baseret på den mængde data, du vil importere. Du opnår den bedste ydeevne, hvis du vælger den **Placering**, der er geografisk nærmest.
 
 1. Når ressourcen er oprettet, vises dashboardet i arbejdsområdet for Machine Learning Studio. Vælg **Start Machine Learning Studio**.
 
@@ -65,7 +65,7 @@ Du kan nu oprette et nyt eksperiment eller importere en fra en eksisterende eksp
 
    ![Konfigurere en webtjeneste til forudsigelse](media/predictive-webservice-control.png)
 
-1. Når forudsigelseseksperimentet på webtjenesten er vellykket udført, kan du implementere det til automatisk planlægning. Hvis webtjenesten skal fungere sammen med Customer Insights, skal du vælge **Installer webtjeneste** > **Installer prøveversion af webtjeneste [ny]**. [Få mere at vide om installation af webtjeneste](https://docs.microsoft.com/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
+1. Når forudsigelseseksperimentet på webtjenesten er vellykket udført, kan du implementere det til automatisk planlægning. Hvis webtjenesten skal fungere sammen med Customer Insights, skal du vælge **Installer webtjeneste** > **Installer prøveversion af webtjeneste [ny]**. [Få mere at vide om installation af webtjeneste](/azure/machine-learning/studio/deploy-a-machine-learning-web-service).
 
    ![Installere en webtjeneste til forudsigelse](media/predictive-webservice-deploy.png)
 
@@ -116,7 +116,7 @@ Følgende billede viser modeloplæringen og evalueringspipelinen fra Azure Machi
 
 ![Afgangsmodel i Azure Machine Learning Studio](media/azure-machine-learning-model.png)
 
-Vi anvender også en teknik, der kaldes **Permutation af funktioners vigtighed**, et vigtigt aspekt i forbindelse med modeloptimering. Indbyggede modeller har kun lidt eller ingen indsigt i en bestemt funktions indflydelse på den endelige forudsigelse. Ved beregning af vigtigheden af funktioner bruges en brugerdefineret algoritme til at beregne de enkelte funktioners indflydelse på resultatet for en bestemt model. Vigtigheden af funktionen normaliseres mellem + 1 og -1. En negativ indflydelse betyder, at den tilsvarende funktion har en kontraintuitiv indvirkning på resultatet og bør fjernes fra modellen. En positiv indflydelse indikerer, at funktionen i høj grad bidrager til at opfylde forudsigelsen. Disse værdier er ikke korrelationskoefficienter, da de er forskellige målepunkter. Du kan finde flere oplysninger i [Permutation af funktioners vigtighed](https://docs.microsoft.com/azure/machine-learning/studio-module-reference/permutation-feature-importance).
+Vi anvender også en teknik, der kaldes **Permutation af funktioners vigtighed**, et vigtigt aspekt i forbindelse med modeloptimering. Indbyggede modeller har kun lidt eller ingen indsigt i en bestemt funktions indflydelse på den endelige forudsigelse. Ved beregning af vigtigheden af funktioner bruges en brugerdefineret algoritme til at beregne de enkelte funktioners indflydelse på resultatet for en bestemt model. Vigtigheden af funktionen normaliseres mellem + 1 og -1. En negativ indflydelse betyder, at den tilsvarende funktion har en kontraintuitiv indvirkning på resultatet og bør fjernes fra modellen. En positiv indflydelse indikerer, at funktionen i høj grad bidrager til at opfylde forudsigelsen. Disse værdier er ikke korrelationskoefficienter, da de er forskellige målepunkter. Du kan finde flere oplysninger i [Permutation af funktioners vigtighed](/azure/machine-learning/studio-module-reference/permutation-feature-importance).
 
 Hele [afgangseksperimentet er tilgængeligt i Azure AI Gallery](https://gallery.azure.ai/Experiment/Hotel-Churn-Predictive-Exp).
 
@@ -168,7 +168,7 @@ Du kan få adgang til hele [produktanbefalingseksperimentet i Azure AI Gallery.]
 
 ## <a name="integrate-custom-models"></a>Integrer brugerdefinerede modeller
 
-Hvis du vil bruge disse forudsigelser i Customer Insights, skal du **eksportere** forudsigelserne sammen med kunde-id'er. [Eksportér dem til den samme Azure Blob-lagerplacering](https://docs.microsoft.com/azure/storage/common/storage-import-export-data-from-blobs), som du eksporterer kildedataene til. Webtjenesten til forudsigelse kan planlægges til at køre jævnligt og opdatere resultaterne.
+Hvis du vil bruge disse forudsigelser i Customer Insights, skal du **eksportere** forudsigelserne sammen med kunde-id'er. [Eksportér dem til den samme Azure Blob-lagerplacering](/azure/storage/common/storage-import-export-data-from-blobs), som du eksporterer kildedataene til. Webtjenesten til forudsigelse kan planlægges til at køre jævnligt og opdatere resultaterne.
 
 Data, der genereres af den brugerdefinerede model, kan bruges til yderligere at forbedre dine kundedata. Du kan finde flere oplysninger i [Tilpasse modeller til maskinel indlæring](custom-models.md).
 

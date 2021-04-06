@@ -2,19 +2,19 @@
 title: Dataindsættelse og begrænsninger i realtid
 description: Generelle oplysninger om realtidsfunktioner i målgruppen Insights.
 ms.date: 10/27/2020
-ms.reviewer: nikeller
+ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: 7421ed9d2cb399d546815b2d1b0ea5ec51ca6b6d
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 3c84cfe7441eb026c1fd45eda1f72421388d01d7
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5270273"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5598562"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (prøveversion)
 
@@ -54,7 +54,7 @@ I realtids-API kan du udgive en ny aktivitet fra kildesystemet (en enkelt kildep
 
 Der er to måder at oprette forbindelse til en realtids-API på:
 
-- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjælp af [Dynamics 365 Customer Insights-connectoren](https://docs.microsoft.com/connectors/customerinsights/)
+- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjælp af [Dynamics 365 Customer Insights-connectoren](/connectors/customerinsights/)
 - [direkte](#connect-directly-to-the-real-time-api) med kode
 
 Der gælder følgende forudsætninger for begge måder:
@@ -66,13 +66,13 @@ Der gælder følgende forudsætninger for begge måder:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Forbindelse via Dynamics 365 Customer Insights-connectoren
 
-I realtids-API kan du indtage data fra en dedikeret Power Platform-connector, [Dynamics 365 Customer Insights-connectoren](https://docs.microsoft.com/connectors/customerinsights/) uden at skulle skrive og installere nogen kode.    
-Connectoren kan udføre de samme realtidshandlinger som API'en. Du skal have en gyldig licens til premium connectorer. Du kan finde flere oplysninger under [Ofte stillede spørgsmål til Power Apps- og Power Automate-licenser](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
+I realtids-API kan du indtage data fra en dedikeret Power Platform-connector, [Dynamics 365 Customer Insights-connectoren](/connectors/customerinsights/) uden at skulle skrive og installere nogen kode.    
+Connectoren kan udføre de samme realtidshandlinger som API'en. Du skal have en gyldig licens til premium connectorer. Du kan finde flere oplysninger under [Ofte stillede spørgsmål til Power Apps- og Power Automate-licenser](/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps og/eller Power Automate](https://docs.microsoft.com/connectors/)
-- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
+- Power Platform [Power Apps og/eller Power Automate](/connectors/)
+- Azure [Logic Apps](/azure/connectors/apis-list)
 
-Du kan finde flere oplysninger om oprettelse af flow i [dokumentationen til Power Automate](https://docs.microsoft.com/power-automate/).
+Du kan finde flere oplysninger om oprettelse af flow i [dokumentationen til Power Automate](/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Oprette direkte forbindelse til API i realtid
 

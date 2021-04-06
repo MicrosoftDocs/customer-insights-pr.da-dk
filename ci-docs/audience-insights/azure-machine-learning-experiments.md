@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: naravill
-ms.author: mhart
-ms.reviewer: m-hartmann
+ms.author: naravill
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c166015b92596da0c6097e3d25e89579a5186ce0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
+ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267899"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "5597412"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Brug Azure Machine Learning-baserede modeller
 
@@ -29,9 +29,9 @@ De samlede data i Dynamics 365 Customer Insights er en kilde til opbygning af ma
 
 ## <a name="set-up-azure-machine-learning-workspace"></a>Konfigurer Azure Machine Learning-arbejdsområde
 
-1. Se [opret et arbejdsområde i Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/concept-workspace#-create-a-workspace) for at få vist forskellige indstillinger for oprettelse af arbejdsområdet. Du opnår den bedste ydeevne, hvis du opretter arbejdsområdet i et Azure-område, der er nærmest dit Customer Insights-miljø.
+1. Se [opret et arbejdsområde i Azure Machine Learning](/azure/machine-learning/concept-workspace#-create-a-workspace) for at få vist forskellige indstillinger for oprettelse af arbejdsområdet. Du opnår den bedste ydeevne, hvis du opretter arbejdsområdet i et Azure-område, der er nærmest dit Customer Insights-miljø.
 
-1. Få adgang til dit arbejdsområde via [Azure Machine Learning Studio](https://ml.azure.com/). Du kan kommunikere [interaktivt](https://docs.microsoft.com/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) med dit arbejdsområde på flere måder.
+1. Få adgang til dit arbejdsområde via [Azure Machine Learning Studio](https://ml.azure.com/). Du kan kommunikere [interaktivt](/azure/machine-learning/concept-workspace#tools-for-workspace-interaction) med dit arbejdsområde på flere måder.
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbejd med Azure Machine Learning-designer
 
@@ -39,13 +39,13 @@ Azure Machine Learning-designer indeholder et visuelt lærred, hvor du kan træk
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbejd med Azure Machine Learning SDK
 
-Datateknikere og AI-udviklere bruger [Azure Machine Learning SDK](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py&preserve-view=true) til at oprette maskinelle indlæringsprocesser. I øjeblikket kan modeller, der oplæres ved hjælp af SDK, ikke integreres direkte med Customer Insights. Der kræves en batch pipeline med udledning til den pågældende model for at kunne integrere med Customer Insights.
+Datateknikere og AI-udviklere bruger [Azure Machine Learning SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) til at oprette maskinelle indlæringsprocesser. I øjeblikket kan modeller, der oplæres ved hjælp af SDK, ikke integreres direkte med Customer Insights. Der kræves en batch pipeline med udledning til den pågældende model for at kunne integrere med Customer Insights.
 
 ## <a name="batch-pipeline-requirements-to-integrate-with-customer-insights"></a>Krav til batch pipeline, der skal integreres med Customer Insights
 
 ### <a name="dataset-configuration"></a>Konfiguration af datasæt
 
-Du skal oprette datasæt for at bruge objektdata fra Customer Insights i en batch pipeline med udledning. Disse datasæt skal registreres i arbejdsområdet. I øjeblikket understøtter vi kun [tabeldatasæt](https://docs.microsoft.com/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. De datasæt, der er knyttet til objektdata, skal have parametre som en pipeline-parameter.
+Du skal oprette datasæt for at bruge objektdata fra Customer Insights i en batch pipeline med udledning. Disse datasæt skal registreres i arbejdsområdet. I øjeblikket understøtter vi kun [tabeldatasæt](/azure/machine-learning/how-to-create-register-datasets#tabulardataset) i .csv-format. De datasæt, der er knyttet til objektdata, skal have parametre som en pipeline-parameter.
    
 * Datasætparametre i Designer
    
@@ -76,7 +76,7 @@ Du skal oprette datasæt for at bruge objektdata fra Customer Insights i en batc
 
 ### <a name="import-pipeline-data-into-customer-insights"></a>Import af pipeline-data til Customer Insights
 
-* Designeren indeholder [Eksportér Data-modulet](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/export-data), der gør det muligt at eksportere output fra en pipeline til Azure-lageret. I øjeblikket skal modulet bruge datalagertypen **Azure Blob Storage** og angive parametre for **Datalager** og eventuel **Sti**. Customer Insights tilsidesætter både disse parametre under kørsel af pipeline med et datalager og en sti, der er tilgængelig for produktet.
+* Designeren indeholder [Eksportér Data-modulet](/azure/machine-learning/algorithm-module-reference/export-data), der gør det muligt at eksportere output fra en pipeline til Azure-lageret. I øjeblikket skal modulet bruge datalagertypen **Azure Blob Storage** og angive parametre for **Datalager** og eventuel **Sti**. Customer Insights tilsidesætter både disse parametre under kørsel af pipeline med et datalager og en sti, der er tilgængelig for produktet.
    > [!div class="mx-imgBorder"]
    > ![Eksport af Data Module Configuration](media/intelligence-designer-importdata.png "Eksport af Data Module Configuration")
    

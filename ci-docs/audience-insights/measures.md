@@ -6,15 +6,15 @@ ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
-ms.author: mhart
-ms.reviewer: wameng
+ms.author: wameng
+ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5bcee3b4c51880740715575b18fd7a4dbf87e6d0
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
+ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5269921"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "5654725"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere målinger
 
@@ -72,8 +72,8 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
    1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn. Som standard vælges dimensionen *CustomerID* for at oprette *mål på kundeniveau*. Du kan fjerne standarddimensionen, hvis du vil oprette *mål på virksomhedsniveau*.
    1. Vælg **Gennemført** for at tilføje dimensioner til målingen.
 
-1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet Kunde, skal du vælge en af de identificerede [objektrelationsstier](relationships.md) Måleresultater kan variere, afhængigt af den valgte sti.
-   1. Vælg **Dataindstillinger**, og vælg den objektsti, der skal bruges til at identificere din måling.
+1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti. 
+   1. Vælg **Dataindstillinger**, og vælg den objektsti, der skal bruges til at identificere din måling. Hvis der kun er en enkelt sti til objektet *Kunde*, vises dette kontrolelement ikke.
    1. Vælg **Udført** for at anvende det valgte. 
 
    :::image type="content" source="media/measures-data-preferences.png" alt-text="Vælg objektsti til målingen.":::

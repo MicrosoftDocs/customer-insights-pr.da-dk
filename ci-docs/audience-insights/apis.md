@@ -1,20 +1,20 @@
 ---
 title: Arbejde med API'er
 description: Brug af API'er og forstå begrænsningerne.
-ms.date: 12/04/2020
+ms.date: 03/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
-ms.author: mhart
+ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 966db1a22e7dece1bcd89733880bce059151157f
-ms.sourcegitcommit: 139548f8a2d0f24d54c4a6c404a743eeeb8ef8e0
+ms.openlocfilehash: 011fa700563c53534554a6b73e87c2391bfdf714
+ms.sourcegitcommit: a872f59e6febe4d4bd678ddd0b60a1660acca0f3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "5267517"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "5710453"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbejd med Customer Insights API'er
 
@@ -36,7 +36,7 @@ I denne artikel er der en vejledning i, hvordan du får adgang til Customer Insi
 
    :::image type="content" source="media/enable-apis.gif" alt-text="Aktivér Customer Insights API'er":::
 
-1. Vælg **Undersøg vores API'er** for at afprøve API'er.
+1. Vælg **Undersøg vores API'er** for at [afprøve API'er](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
 1. Vælg en API-handling, og vælg **Prøv den**.
 
@@ -47,6 +47,9 @@ I denne artikel er der en vejledning i, hvordan du får adgang til Customer Insi
 1. Rul ned til bunden af sideruden, og vælg **Send**.
 
 HTTP-svaret vil snart blive vist nedenfor.
+
+
+   :::image type="content" source="media/try-apis.gif" alt-text="Animeret gif-fil, der viser, hvordan du vælger at teste API'er.":::
 
 ## <a name="create-a-new-app-registration-in-the-azure-portal"></a>Opret en ny app-registrering på Azure-portalen
 
@@ -61,6 +64,8 @@ Denne fremgangsmåde hjælper dig med at komme i gang med at bruge API'er til Cu
 
 1. Gå til **API-tilladelser** på den nye app-registrering.
 
+   :::image type="content" source="media/app-registration-1.gif" alt-text="Animeret gif-fil om at indstille API-tilladelse i appregistrering.":::
+
 1. Vælg **Tilføj en tilladelse**, og vælg **Customer Insights** i sideruden.
 
 1. Vælg **Tilladelsestype** for **Delegerende tilladelser**, og vælg tilladelse til **user_impersonation**.
@@ -71,9 +76,11 @@ Denne fremgangsmåde hjælper dig med at komme i gang med at bruge API'er til Cu
 
 Du kan bruge program/klient-id'et til denne app-registrering sammen med Microsoft-godkendelsesbiblioteket (MSAL) til at hente ihændehavertoken, der skal sendes sammen med din anmodning til API.
 
+:::image type="content" source="media/grant-admin-consent.gif" alt-text="Animeret gif-fil om at give administratorsamtykke.":::
+
 Du kan finde flere oplysninger om MSAL under [Oversigt over Microsoft-godkendelsesbibliotek (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview).
 
-Du kan finde flere oplysninger om app-registrering i Azure under [Den nye Azure Portal-appregistreringsoplevelse](https://docs.microsoft.com/azure/active-directory/develop/app-registration-portal-training-guide).
+Du kan finde flere oplysninger om app-registrering i Azure under [Den nye Azure Portal-appregistreringsoplevelse](/azure/active-directory/develop/app-registration-portal-training-guide).
 
 Du kan finde oplysninger om, hvordan du bruger API'er til vores klientbiblioteker, under [Customer Insights i klientbiblioteker](#customer-insights-client-libraries).
 
@@ -101,6 +108,8 @@ Du kan finde oplysninger om, hvordan du bruger API'er til vores klientbiblioteke
 
 1. Vælg **Tildel administratorsamtykke til...** for at fuldføre app-registreringen.
 
+   :::image type="content" source="media/grant-admin-consent.gif" alt-text="Animeret gif-fil om at give administratorsamtykke.":::
+
 1. Hvis du vil afslutte, skal du tilføje navnet på app-registreringen som en bruger i Customer Insights.    
    Åbn Customer Insights, gå til **Admin** > **Tilladelser**, og vælg **Tilføj bruger**.
 
@@ -108,7 +117,7 @@ Du kan finde oplysninger om, hvordan du bruger API'er til vores klientbiblioteke
 
 ## <a name="customer-insights-client-libraries"></a>Customer Insights-klientbiblioteker
 
-Dette afsnit hjælper dig med at komme i gang med at bruge de klientbiblioteker, der er tilgængelige for API'er til Customer Insights.
+Dette afsnit hjælper dig med at komme i gang med at bruge de klientbiblioteker, der er tilgængelige for API'er til Customer Insights. Alle bibliotekskildekoder og eksempelprogrammer findes på [Customer Insights GitHub-siden](https://github.com/microsoft/Dynamics365-CustomerInsights-Client-Libraries). 
 
 ### <a name="c-nuget"></a>C# NuGet
 
@@ -127,7 +136,7 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
 
 #### <a name="use-the-c-client-library"></a>Brug af klientbiblioteket C#
 
-1. Brug [Microsoft-godkendelsesbiblioteket (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) til at hente en `AccessToken` ved hjælp af en eksisterende [Azure-app-registrering](#create-a-new-app-registration-in-the-azure-portal).
+1. Brug [Microsoft-godkendelsesbiblioteket (MSAL)](/azure/active-directory/develop/msal-overview) til at hente en `AccessToken` ved hjælp af en eksisterende [Azure-app-registrering](#create-a-new-app-registration-in-the-azure-portal).
 
 1. Når du har fuldført godkendelse og hentning af et token, skal du oprette en ny eller bruge et eksisterende `HttpClient` med ekstra **DefaultRequestHeaders-"Authorization"**, der er angivet til **Ihændehaver <access token>** og **Ocp-Apim-Subscription-Key** er indstillet til [**abonnementsnøglen** fra Customer Insights-miljø](#get-started-trying-the-customer-insights-apis).    
    Nulstil overskriften **Godkendelse**, hvis det er relevant. Når tokenet f. eks. er udløbet.
@@ -141,5 +150,12 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
 1. Svaret vil sandsynligvis være typen `object`, fordi metoden kan returnere flere typer (f. eks `IList<InstanceInfo>` og `ApiErrorResult`). Hvis du vil kontrollere returtypen, kan du sikkert konvertere objekterne til de responstyper, der er angivet på siden [API-detaljer](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) for den pågældende handling.    
    Hvis der er behov for flere oplysninger om anmodningen, kan du bruge **http-meddelelsesmetoderne** til at få adgang til RAW-svarobjektet.
 
+### <a name="nodejs-package"></a>NodeJS-pakke
+
+Brug de NodeJS-klientbiblioteker, der er tilgængelige gennem NPM: https://www.npmjs.com/package/@microsoft/customerinsights
+
+### <a name="python-package"></a>Python-pakke
+
+Brug de Python-klientbiblioteker, der er tilgængelige gennem PyPi: https://pypi.org/project/customerinsights/
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
