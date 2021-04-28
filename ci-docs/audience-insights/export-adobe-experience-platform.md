@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Adobe Experience Platform
 description: Få at vide, hvordan du kan bruge målgruppeindsigtssegmenter i Adobe Experience Platform.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: d1856861562be55c6d1d051050fe965560fa42f8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596262"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760094"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Bruge Customer Insights-segmenter i Adobe Experience Platform (forhåndsversion)
 
@@ -51,21 +51,36 @@ Den mail med tilbud, du vil sende, indeholder kundens fornavn, efternavn og slut
 
 Når målgruppen er identificeret, kan vi konfigurere eksporten fra målgruppeindsigt til en Azure Blob Storage-konto.
 
-1. Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.
+### <a name="configure-a-connection"></a>Konfiguration af en forbindelse
 
-1. Vælg **Konfigurer** i feltet **Azure Blob Storage**.
+1. Gå til **Administrator** > **Forbindelser**.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Konfigurationsfelt til Azure Blob Storage.":::
+1. Vælg **Tilføj forbindelse**, og vælg **Azure Blob Storage**, eller vælg **Konfigurer** i **Azure Blob Storage**-feltet:
 
-1. Angiv et **vist navn** til denne nye eksportdestination, og angiv derefter **Firmanavn**, **Kontonøgle** og **Objektbeholder** for den Azure Blob Storage-konto, du vil eksportere segmentet til.  
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Konfigurationsfelt til Azure Blob Storage."::: sådan konfigurerer du forbindelsen.
+
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
+
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Angiv **Firmanavn**, **Firmanøgle** og **Beholder** for den Blob-lagerkonto, du vil eksportere segmentet til.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Skærmbillede af lagerkontoens konfiguration. "::: 
+   
+    - Du kan få mere at vide om, hvordan du finder Blob storage-kontonavnet og kontonøglen, under [Administration af indstillinger for lagerkonti i Azure-portalen](/azure/storage/common/storage-account-manage).
+    - Du kan få mere at vide om, hvordan du opretter en objektbeholder, i [Oprette en objektbeholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-   - Du kan få mere at vide om, hvordan du finder navnet på og kontonøglen til Azure Blob Storage-kontoen, under [Administrere indstillinger for lagerkonto i Azure-portalen](/azure/storage/common/storage-account-manage).
+1. Vælg **Gem** for at fuldføre forbindelsen. 
 
-   - Du kan få mere at vide om, hvordan du opretter en objektbeholder, i [Oprette en objektbeholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
+### <a name="configure-an-export"></a>Konfigurere en eksport
 
-1. Vælg **Næste**.
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Hvis du vil oprette en ny eksport, skal du vælge **Tilføj eksport**.
+
+1. Vælg en forbindelse i sektionen Azure Blob Storage i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
 1. Vælg det segment, du vil eksportere. I dette eksempel er det **ChurnProneCustomers**.
 
@@ -73,11 +88,9 @@ Når målgruppen er identificeret, kan vi konfigurere eksporten fra målgruppein
 
 1. Vælg **Gem**.
 
-Når du har gemt eksportdestinationen, finder du den under **Administrator** > **Eksporter** > **Mine eksportdestinationer**.
+Når du har gemt eksportdestinationen, finder du den under **Data** > **Eksport**.
 
-:::image type="content" source="media/export-destination-azure-blob-storage.png" alt-text="Skærmbillede med en liste over eksporter og eksempelsegment fremhævet.":::
-
-Du kan nu [eksportere segmentet efter behov](export-destinations.md#export-data-on-demand). Eksporten vil også køre med alle [planlagte opdateringer](system.md).
+Du kan nu [eksportere segmentet efter behov](export-destinations.md#run-exports-on-demand). Eksporten vil også køre med alle [planlagte opdateringer](system.md).
 
 > [!NOTE]
 > Sørg for, at antallet af poster i det eksporterede segment ligger inden for den tilladte grænse for din Adobe Campaign Standard-licens.

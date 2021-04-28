@@ -1,7 +1,7 @@
 ---
 title: LiveRamp-connector
-description: Få mere at vide om, hvordan du eksporterer data til LiveRamp.
-ms.date: 12/02/2020
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporten til LiveRamp.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,29 +9,31 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 6ef4388b0e8ba8bc5866807765d8a872d41c9c14
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 987457966fe1fc034d9e3cd2a1ce33902c7a84f4
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597550"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760320"
 ---
-# <a name="liverampreg-connector-preview"></a>LiveRamp&reg;-forbindelse (forhåndsvisning)
+# <a name="export-segments-to-liverampreg-preview"></a>Eksportér segmenter til LiveRamp&reg; (forhåndsversion)
 
-Aktivér dine data i LiveRamp for at oprette forbindelse til mere end 500 platforme på tværs af digitale, sociale og TV-økosystemer. Arbejd med dine data i LiveRamp for at målrette, undertrykke og tilpasse reklamekampagner.
+Aktivér dine data i LiveRamp for at oprette forbindelse til over 500 platforme på tværs af digitale, sociale og tv-medier. Arbejd med dine data i LiveRamp for at målrette, undertrykke og tilpasse reklamekampagner.
 
-## <a name="prerequisites"></a>Forudsætninger
+## <a name="prerequisites-for-a-connection"></a>Forudsætninger for en forbindelse
 
 - Du skal have et LiveRamp-abonnement for at kunne bruge denne connector.
 - Hvis du vil have et abonnement, skal du [kontakte LiveRamp](https://liveramp.com/contact/) direkte. [Få mere at vide om LiveRamp-onboarding](https://liveramp.com/our-platform/data-onboarding/).
 
-## <a name="connect-to-liveramp"></a>Oprette forbindelse til LiveRamp
+## <a name="set-up-connection-to-liveramp"></a>Konfigurer forbindelsen til LiveRamp
 
-1. Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.
+1. Gå til **Administrator** > **Forbindelser**.
 
-1. Vælg **Konfigurer** i feltet **LiveRamp**.
+1. Vælg **Tilføj forbindelse**, og vælg **LiveRamp** for at konfigurere forbindelsen.
 
-1. Giv din destination et genkendeligt navn i feltet **Vist navn**.
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
+
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Angiv et **Brugernavn** og en **Adgangskode** til din LiveRamp Secure FTP (SFTP)-konto.
 Disse legitimationsoplysninger kan være forskellige fra dine legitimationsoplysninger for LiveRamp-onboarding.
@@ -40,15 +42,25 @@ Disse legitimationsoplysninger kan være forskellige fra dine legitimationsoplys
 
 1. Når bekræftelsen er fuldført, skal du give dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**.
 
-1. Vælg **Næste** for at konfigurere LiveRamp Connector.
+1. Vælg **Gem** for at fuldføre forbindelsen.
 
-## <a name="configure-the-connector"></a>Konfigurer connectoren
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Vælg **Tilføj destination** for at oprette en ny eksport.
+
+1. Vælg en forbindelse i sektionen LiveRamp i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
 1. I feltet **Vælg din nøgle-identifikator** vælg **Email**, **Navn og adresse** eller **Telefon** som du vil sende til LiveRamp i forbindelse med identifikation.
+   > [!div class="mx-imgBorder"]
+   > ![LiveRamp connector med attributtilknytning](media/export-liveramp-segments.png "LiveRamp connector med attributtilknytning")
 
 1. Tilknyt de tilsvarende attributter fra det samlede kundeobjekt til den valgte nøgle-identifikator.
 
-1. Vælg **Tilføj attribut** for at tilknytte yderligere attributter, der skal sendes til LiveRamp.
+1. Vælg **Tilføj attribut** for at tilknytte flere attributter, der skal sendes til LiveRamp.
 
    > [!TIP]
    > Hvis du sender flere nøgle-identifikatorattributter til LiveRamp, får du sandsynligvis en højere match-rate.
@@ -57,13 +69,10 @@ Disse legitimationsoplysninger kan være forskellige fra dine legitimationsoplys
 
 1. Vælg **Gem**.
 
-> [!div class="mx-imgBorder"]
-> ![LiveRamp connector med attributtilknytning](media/export-liveramp-segments.png "LiveRamp connector med attributtilknytning")
+Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-## <a name="export-the-data"></a>Eksportér dataene
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
-Eksporten starter kort tid efter, hvis alle forudsætninger for eksport er opfyldt. Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
-Når eksporten er fuldført, kan du logge på LiveRamp-onboarding for at aktivere og distribuere dine data.
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

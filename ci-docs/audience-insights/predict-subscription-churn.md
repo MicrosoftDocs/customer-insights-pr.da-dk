@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 75f5f9f8f56a33b2a43a605595a463ca2e937c6b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595649"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906895"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forudsigelse af abonnementsafgang (prøveversion)
 
@@ -49,6 +49,12 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
         - **Tidsstempel:** Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle.
         - **Hændelse:** Navnet på den hændelse, du vil bruge. Et felt kaldes f.eks. "UserAction" i en videostreamingsservice med værdien "Set".
         - **Detaljer:** Detaljerede oplysninger om hændelsen. Et felt kaldes f.eks. "ShowTitle" i en videostreamingsservice med værdien af en video, som en kunde har set.
+- Forslåede datakarakteristika:
+    - Tilstrækkelige historiske data: Abonnementsdata for mindst det dobbelte af det valgte tidsvindue. Helst to til tre års abonnementsdata.
+    - Abonnementsstatus: Data omfatter aktive og inaktive abonnementer for hver kunde, så der er flere poster pr. kunde-id.
+    - Antal kunder: Mindst 10 kundeprofiler, helst mere end 1.000 entydige kunder. Modellen kan ikke bruges af færre end 10 kunder og med utilstrækkelige historiske data.
+    - Datafuldførelse: Mindre end 20 % af de manglende værdier i datafeltet for det angivne objekt.
+   
    > [!NOTE]
    > Du skal bruge mindst to aktivitetsposter på 50 % af de kunder, du vil beregne kundeafgang for.
 
@@ -67,7 +73,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 ### <a name="define-customer-churn"></a>Definer kundeafgang
 
 1. Angiv antallet af **Dage, siden abonnement sluttede**, som din virksomhed betragter som en kunde, der ikke længere er kunde. Denne periode er typisk velegnet til forretningsaktiviteter som tilbud eller andre marketingtiltag, der forsøger at forhindre tab af kunden.
-1. Angiv det antal **Dage, der skal undersøges for at forudsige kundeafgang** for at angive et interval, hvor kundeafgang skal forudsiges. F.eks. for at forudsige risikoen for kundeafgang i løbet af de næste 90 dage for at justere din marketingindsats. Hvis der forudses risiko for kundeafgang for længere eller kortere perioder, kan det være sværere at håndtere faktorerne i risikoprofilen for kundeafgang, men dette er afhængigt af dine specifikke virksomhedsbehov. Vælge **Næste** for at fortsætte
+1. Angiv det antal **Dage, der skal undersøges for at forudsige kundeafgang** for at angive et interval, hvor kundeafgang skal forudsiges. F.eks. for at forudsige risikoen for kundeafgang i løbet af de næste 90 dage for at justere din marketingindsats. Forudsigelse af afgangsrisiko i kortere eller længere perioder kan gøre det mere problematisk at adressere faktorer i din afgangsrisikoprofil, afhængigt at dine specifikke forretningskrav. Vælge **Næste** for at fortsætte
    >[!TIP]
    > Du kan til enhver tid vælge **Gem og Luk** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
 
@@ -113,7 +119,8 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 1. Vælg den forudsigelse, du vil gennemse.
    - **Forudsigelsesnavn:** Navnet på forudsigelsen, der blev angivet under oprettelsen.
    - **Forudsigelsestype:** Den type model, der bruges til forudsigelsen
-   - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.
+   - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.    
+     I outputobjektet er *ChurnScore* den anslåede sandsynlighed for kundeafgang, og *IsChurn* er en binær etiket baseret på *ChurnScore* med en tærskelværdi på 0,5. Standardgrænsen fungerer muligvis ikke i dit scenarie. [Opret et nyt segment](segments.md#create-a-new-segment) med din foretrukne grænseværdi.
    - **Forudsagt felt:** Dette felt udfyldes kun for visse typer forudsigelser og bruges ikke i abonnementets afgangsforudsigelse.
    - **Status:** Den aktuelle status for forudsigelsens kørsel.
         - **Sat i kø:** Forudsigelsen venter i øjeblikket på, at andre processer skal køre.

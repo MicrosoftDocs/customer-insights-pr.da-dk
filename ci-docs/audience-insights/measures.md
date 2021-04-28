@@ -1,7 +1,7 @@
 ---
 title: Oprette og administrere målinger
 description: Definer foranstaltninger, der skal analysere og afspejle ydeevnen i virksomheden.
-ms.date: 02/02/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,28 +9,28 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 202ea22d290be04e54ce9676b6b693162354607f
-ms.sourcegitcommit: d3eb07dcc72624a2d5cfc95c7ea9faaa2c1b6001
+ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "5654725"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887933"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere målinger
 
-Foranstaltninger hjælper dig med at få en bedre forståelse af kundeadfærd og virksomhedens ydeevne ved at hente relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå den enkelte kundes købshistorik. Du kan også måle *firmaets samlede* salg for at få en forståelse af den samlede omsætning i hele virksomheden.  
+Foranstaltninger hjælper dig med at få en bedre forståelse af kundernes adfærd og virksomhedens præstation. De ser på relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå den enkelte kundes købsoversigt eller måle *firmaets samlede salg* for at forstå den samlede omsætning i hele virksomheden.  
 
 Målinger oprettes ved hjælp af målegeneratoren, en platform til dataforespørgsel med forskellige operatorer og simple tilknytningsindstillinger. Du kan filtrere dataene, gruppere resultater, registrere [objektrelationsstier](relationships.md) og gennemse outputtet.
 
 Brug målegeneratoren til at planlægge forretningsaktiviteter ved at forespørge om kundedata og udtrække indsigt. Hvis du f.eks. opretter et mål for det *samlede forbrug pr. kunde* og det *samlede afkast pr. kunde*, kan du identificere en gruppe kunder med et højt forbrug, men et højt afkast. Du kan [oprette et segment](segments.md) for at opnå de bedste handlinger. 
 
-## <a name="create-a-measure"></a>Oprette en måling
+## <a name="build-your-own-measure-from-scratch"></a>Opret din egen måling fra bunden
 
 Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra bunden. Du kan oprette en måling med dataattributter fra dataobjekter, der har en relation konfigureret til at oprette forbindelse til objektet Kunde. 
 
 1. Gå til **Målinger** i målgruppen Insights.
 
-1. Vælg **Ny**.
+1. Vælg **Ny**, og vælg **Opret din egen**.
 
 1. Vælg **Rediger navn**, og angiv et **Navn** til målingen. 
    > [!NOTE]
@@ -72,6 +72,8 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
    1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn. Som standard vælges dimensionen *CustomerID* for at oprette *mål på kundeniveau*. Du kan fjerne standarddimensionen, hvis du vil oprette *mål på virksomhedsniveau*.
    1. Vælg **Gennemført** for at tilføje dimensioner til målingen.
 
+1. Hvis der er værdier i dataene, som skal erstattes af et heltal, f.eks. erstat *null* med *0*, skal du vælge **Regler**. Konfigurer reglen, og sørg for kun at vælge hele tal som erstatninger.
+
 1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti. 
    1. Vælg **Dataindstillinger**, og vælg den objektsti, der skal bruges til at identificere din måling. Hvis der kun er en enkelt sti til objektet *Kunde*, vises dette kontrolelement ikke.
    1. Vælg **Udført** for at anvende det valgte. 
@@ -88,9 +90,57 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
 
 1. Gå til **Målinger** for at se den måling, du netop har oprettet, på listen.
 
+## <a name="use-a-template-to-build-a-measure"></a>Bruge en skabelon til at oprette en måleenhed
+
+Du kan bruge foruddefinerede skabeloner med almindeligt anvendte foranstaltninger til at oprette dem. Detaljerede beskrivelser af skabelonerne og en styret oplevelse hjælper dig med at oprette effektive måleenheder. Skabeloner bygger på tilknyttede data fra objektet *Unified Activity*. Sørg derfor for, at du har konfigureret [kundeaktiviteter](activities.md), før du opretter en måleenhed ud fra en skabelon.
+
+Tilgængelige måleskabeloner. 
+- Gennemsnitlig transaktionsværdi (ATV)
+- Samlet transaktionsværdi
+- Gennemsnitlig dagsomsætning
+- Gennemsnitlig åromsætning
+- Antal transaktioner
+- Optjente loyalitetspoint
+- Indløste loyalitetspoint
+- Saldo for loyalitetspoint
+- Aktiv kundelevetid
+- Varighed af medlemskab for loyalitetskunde
+- Tid siden seneste køb
+
+I følgende procedure beskrives trinnene til opbygning af en ny måleenhed ved hjælp af en skabelon.
+
+1. Gå til **Målinger** i målgruppen Insights.
+
+1. Vælg **Ny**, og vælg **Vælg en skabelon**.
+
+   :::image type="content" source="media/measure-use-template.png" alt-text="Skærmbillede af rullemenuen, når du opretter en ny måling med fremhævelse på skabelon.":::
+
+1. Find den skabelon, der passer til dine behov, og vælg **Vælg skabelon**.
+
+1. Gennemse de nødvendige data, og vælg **Start her**, hvis alle dataene er på plads.
+
+1. Angiv navnet på målingen og outputobjektet i ruden **Rediger navn**. 
+
+1. Vælg **Udført**.
+
+1. Definer tidsrammen for de data, der skal bruges i **Angiv tidsperiode**. Vælg, om den nye måling skal dække hele datasættet, ved at vælge **Hele tiden**. Eller hvis målingen skal fokusere på en **Bestemt tidsperiode**.
+
+   :::image type="content" source="media/measure-set-time-period.png" alt-text="Skærmbillede, der viser sektionen tidsperiode, når du konfigurerer en måling ud fra en skabelon.":::
+
+1. I næste afsnit skal du vælge **Tilføj data** for at vælge aktiviteterne og tilknytte de tilhørende data fra objektet *Unified Activity*.
+
+    1. Trin 1 af 2: Vælg den type objekt, du vil bruge under **Aktivitetstype**. I forbindelse med **Aktiviteter** skal du markere de objekter, du vil tilknytte.
+    1. Trin 2 af 2: Vælg attributten fra objektet *Unified Activity* for den komponent, der kræves af formlen. I forbindelse med gennemsnitlig transaktionsværdi er det f.eks. den attribut, der repræsenterer transaktionsværdien. I forbindelse med **Aktivitetstidsstempel** skal du vælge attributten fra objektet Unified Activity, der repræsenterer dato og klokkeslæt for aktiviteten.
+   
+1. Når datatilknytningen er vellykket, kan du se status som **Fuldført** og navnet på de tilknyttede aktiviteter og attributter.
+
+   :::image type="content" source="media/measure-template-configured.png" alt-text="Skærmbillede af konfigurationen af skabelonen til en fuldført måling.":::
+
+1. Du kan nu vælge **Kør** for at beregne resultaterne af målingen. Hvis du vil finjustere den senere, skal du vælge **Gem kladde**.
+
 ## <a name="manage-your-measures"></a>Administrere dine målinger
 
-Efter at [oprette en måling](#create-a-measure) vises en liste over målinger på siden **Målinger**.
+Du kan finde listen over mål på siden **Målinger**.
 
 Du kan finde oplysninger om målingstype, oprettelsesdato, status og tilstand. Når du vælger en måling på listen, kan du gennemse outputtet og hente en .CSV-fil.
 

@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Azure Data Lake Storage Gen2
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Azure Data Lake Storage Gen2.
-ms.date: 02/04/2021
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,35 +9,47 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 7c0eef575f745efa6312d7141a6dd96607f9797e
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: f431b707e1d65ffe47f8b3aa1c52abaa964e871a
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596630"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760044"
 ---
-# <a name="connector-for-azure-data-lake-storage-gen2-preview"></a>Connector til Azure Data Lake Storage Gen2
+# <a name="set-up-the-connection-to-azure-data-lake-storage-gen2-preview"></a>Konfigurer forbindelsen til Azure Data Lake Storage Gen 2 (forhåndsversion)
 
-Gem dine Customer Insights-data i Azure Data Lake Storage Gen2, eller brug dem til at overføre dine data til andre programmer.
+1. Gå til **Administrator** > **Forbindelser**.
 
-## <a name="configure-the-connector-for-azure-data-lake-storage-gen2"></a>Konfiguration af connectoren til Azure Data Lake Storage Gen2
+1. Vælg **Tilføj forbindelse**, og vælg **Azure Data Lake Gen 2** for at konfigurere forbindelsen.
 
-1. Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
 
-1. Under **Azure Data Lake Storage Gen2** skal du vælge **Konfigurer**.
-
-1. Giv din destination et genkendeligt navn i feltet **Vist navn**.
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Angiv **Firmanavn**, **Firmanøgle** og **Beholder** til Din Azure Data Lake Storage Gen2.
     - Du kan få mere at vide om, hvordan du opretter en lagerkonto, der skal bruges sammen med Azure Data Lake Storage Gen2, under [Oprette lagerkonto](/azure/storage/blobs/create-data-lake-storage-account). 
-    - Du kan få mere at vide om, hvordan du finder Azure Data Lake Gen2-lagerkontonavnet og kontonøglen, under [Administrere indstillinger for lagerkonti i Azure-portalen](/azure/storage/common/storage-account-manage).
+    - Du kan få mere at vide om Azure Data Lake Gen2-lagerkontonavnet og kontonøglen i [Administration af indstillinger for lagerkonti i Azure-portalen](/azure/storage/common/storage-account-manage).
 
-1. Vælg **Næste**.
+1. Vælg **Gem** for at fuldføre forbindelsen. 
+
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Hvis du vil oprette en ny eksport, skal du vælge **Tilføj eksport**.
+
+1. I feltet **Forbindelse til eksport** skal du vælge en forbindelse fra sektionen i sektionen **Azure Data Lake**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
 1. Markér afkrydsningsfeltet ud for hvert af de objekter, du vil eksportere til denne destination.
 
 1. Vælg **Gem**.
 
-## <a name="export-the-data"></a>Eksportér dataene
+Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Du kan [eksportere data efter behov](export-destinations.md#export-data-on-demand). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
+
+Eksporterede data lagres i den Azure Data Lake Gen 2-lagerbeholder, du har konfigureret. 
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

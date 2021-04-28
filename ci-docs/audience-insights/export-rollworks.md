@@ -1,6 +1,6 @@
 ---
-title: Eksportere Customer Insights-data til AdRoll
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til AdRoll.
+title: Eksport af Customer Insights-data til RollWorks
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til RollWorks.
 ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,36 +9,36 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e8f4d4ee6b2c6cdec513b700641db568fa16076d
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 4979f0147dea2270f11342c1bb6b0693f3c24aea
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5895952"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760503"
 ---
-# <a name="export-segment-lists-to-adroll-preview"></a>Eksport af segmentlister til AdRoll (forhåndsversion)
+# <a name="export-segment-lists-to-rollworks-preview"></a>Eksport af segmentlister til RollWorks (forhåndsversion)
 
-Eksportér segmenter med ensartede kundeprofiler til AdRoll, og brug dem til reklamer. 
+Eksportér segmenter med ensartede kundeprofiler til RollWorks, og brug dem til marketing. 
 
 ## <a name="prerequisites-for-a-connection"></a>Forudsætninger for en forbindelse
 
--   Du har en [AdRoll-konto](https://www.adroll.com/) og tilsvarende administratorlegitimationsoplysninger.
+-   Du har en [RollWorks-konto](https://www.rollworks.com/) og tilsvarende administratorlegitimationsoplysninger.
 -   Du har [konfigureret segmenter](segments.md)-tilladelser i målgruppen Insights.
 -   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 250.000 profiler pr. eksport til AdRoll.
-- Du kan ikke eksportere segmenter med færre end 100 profiler til AdRoll. 
-- Eksport til AdRoll er begrænset til segmenter.
-- Det kan tage op til 10 minutter at eksportere op til 250.000 profiler til AdRoll. 
-- Antallet af profiler, du kan eksportere til AdRoll, er afhængige og begrænsede i kontrakten med AdRoll.
+- Du kan eksportere op til 250.000 profiler pr. eksport til RollWorks.
+- Du kan ikke eksportere segmenter med færre end 100 profiler til RollWorks. 
+- Eksport til RollWorks er begrænset til segmenter.
+- Det kan tage op til 10 minutter at eksportere op til 250.000 profiler til RollWorks. 
+- Det antal profiler, du kan eksportere til RollWorks, er afhængigt af og begrænset af kontrakten med RollWorks.
 
-## <a name="set-up-connection-to-adroll"></a>Konfigurer forbindelsen til AdRoll
+## <a name="set-up-connection-to-rollworks"></a>Konfigurer forbindelsen til RollWorks
 
 1. Gå til **Administrator** > **Forbindelser**.
 
-1. Vælg **Tilføj forbindelse**, og vælg **AdRoll** for at konfigurere forbindelsen.
+1. Vælg **Tilføj forbindelse**, og vælg **RollWorks** for at konfigurere forbindelsen.
 
 1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
 
@@ -46,9 +46,9 @@ Eksportér segmenter med ensartede kundeprofiler til AdRoll, og brug dem til rek
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
 
-1. Vælg **Opret forbindelse** for at initialisere forbindelsen til AdRoll.
+1. Vælg **Opret forbindelse** for at initialisere forbindelsen til RollWorks.
 
-1. Vælg **Godkendelse med AdRoll**, og angiv dine administratorlegitimationsoplysninger for AdRoll. 
+1. Vælg **Autentificer med RollWorks**, og angiv administratoroplysningerne for RollWorks.
 
 1. Vælg **Tilføj dig selv som eksport bruger**, og giv din Customer Insights-legitimationsoplysninger.
 
@@ -62,11 +62,11 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg **Tilføj destination** for at oprette en ny eksport.
 
-1. Vælg en forbindelse i sektionen AdRoll i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+1. Vælg en forbindelse i sektionen RollWorks i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
-1. Angiv dit **AdRoll Advertiser-id** for at få flere oplysninger under [AdRoll Adviser-profiler](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
+1. Angiv dit **RollWorks Advertiser-id** [RollWorks Advertisable](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Den kræves for at eksportere segmenter til AdRoll.
+3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det er obligatorisk at eksportere segmenter til RollWorks.
 
 1. Vælg de segmenter, du vil eksportere. Vælg et segment med mindst 100 medlemmer. Du kan ikke eksportere mindre segmenter. Derudover er maksimumstørrelsen på et segment, der skal eksporteres, 250.000 medlemmer pr. eksport. 
 
@@ -79,6 +79,6 @@ Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du k
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 
-Når du aktiverer Dynamics 365 Customer Insights for at overføre data til AdRoll, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at AdRoll overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
+Når du gør det muligt for Dynamics 365 Customer Insights at overføre data til RollWorks, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder følsomme data som f.eks. personlige data. Microsoft overfører sådanne data efter din instruktion, men du er ansvarlig for at sikre, at RollWorks overholder eventuelle forpligtelser til beskyttelse af personlige oplysninger eller sikkerhed, du måtte have. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
 
 Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne eksportdestination for at afslutte brugen af denne funktionalitet.

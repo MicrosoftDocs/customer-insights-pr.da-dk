@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funktioner
 description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 03/08/2021
+ms.date: 04/07/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 96c0b871eeaaf0976e5c718f37f883f4410977dc
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2159481f9355de738a7b457dcf0849a45c3e08db
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598424"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896228"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheder i målgruppen Insights-funktioner i Dynamics 365 Customer Insights
 
@@ -22,14 +22,51 @@ ms.locfileid: "5598424"
 
 Vi er glade for at kunne fortælle om vores nyeste opdateringer! Denne artikel indeholder en oversigt over funktionerne i offentlig prøveversion, forbedring af generel tilgængelighed og funktionsopdateringer. Hvis du vil have vist de langsigtede funktionsplaner, skal du kigge i [frigivelsesplanerne for Dynamics 365 og Power Platform](/dynamics365/release-plans/).
 
-Du kan også se følgende video for at få mere at vide om de funktioner, der er planlagt for de sidste seks måneder.
-
-> [!VIDEO https://www.youtube.com/embed/jQh-7pscH30]
-
 Vi udruller opdateringerne område for område. Så visse geografiske områder kan se funktioner før andre. Medmindre andet er angivet, behøver du ikke at foretage dig noget, og vi opdaterer automatisk appen uden nedetid.
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="march-2021-updates"></a>Marts 2021-opdateringer
+
+Opdateringerne i marts 2021 indeholder flere funktioner, ydelsesopgraderinger og fejlrettelser.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Guiden Aktivitet og semantiske typer** Vi har forbedret og opdateret vores oplevelse med aktivitetstilknytning, så det bliver nemmere at oprette aktivitetstilknytning. I denne nye oplevelse får brugerne en styret oplevelse, der kan hjælpe dem med at fuldføre hvert trin i processen. På aktivitetstilknytningstrinnet kan brugeren vælge at tilknytte data for *Abonnement* og/eller *SalesOrderLine* til branchestandardskemaer, der kan bruges til downstreamforbrug.    
+  Du kan finde flere oplysninger under [Kundeaktiviteter](activities.md).
+
+### <a name="data-ingestion"></a>Dataindtagelse
+
+- **Opret forbindelse til det lokale miljø datakilder ved hjælp af Power Platform-dataflows og gateways** Vi er klar til at annoncere forhåndsversionen af Power Platform-dataflows og de lokale forbindelser ved hjælp af gateways i Customer Insights med et tilknyttet Power Platform- eller Dataverse-miljø. Alle nye datakilder, der oprettes i et Customer Insights-miljø med et tilknyttet Dataverse-miljø, bruger som standard Power Platform-dataflows i forbindelse med de lokale dataforbindelser og mange forbindelsessæt med connectorer og transformeringsfunktioner.
+
+### <a name="extensibility"></a>Udvidelse
+
+- **Eksporter organiseret i forbindelser og eksport** Vi har ændret navnet på siden **Eksportdestinationer** til **Forbindelser** og tilføjet en separat side for **Eksporter**. Som en del af denne opdatering vil vi overflytte eksisterende eksporter til forbindelsespar og til en eksport ved hjælp af den pågældende forbindelse. Administratorer har nu større klarhed over udgående data på siden **Forbindelser**. Alle brugerroller har adgang til siden **Eksporter**, men det er kun administratorer, der kan vælge at give bidragydere tilladelse til at redigere bestemte eksporter med delte forbindelser.     
+  Du kan finde flere oplysninger i [Oversigt over forbindelser](connections.md) og [Oversigt over eksporter](export-destinations.md).
+
+- **Eksportér segmenter til Kampagneovervågning** Vi har udvidet vores eksportmål til at omfatte Kampagneovervågning. Du kan nu eksportere målgrupper fra Customer Insights til kampagneovervågningslister og bruge dem som udgangspunkt for marketingkampagner.    
+   Du kan finde flere oplysninger i [Eksportere til Kampagneovervågning](export-campaign-monitor.md).
+
+- **Eksportér segmenter til Constant Contact** Vi har udvidet vores eksportdestinationer til at omfatte Constant Contact. Du kan nu eksportere segmenter fra Customer Insights til Constant Contact-lister og bruge dem som udgangspunkt for marketingkampagner.   
+   Du kan finde flere oplysninger i [Eksportere til Constant Contact](export-constant-contact.md).
+
+- **Eksportér segmenter til RollWorks** Vi har udvidet vores eksportdestinationer til at omfatte RollWorks. Du kan nu eksportere segmenter fra Customer Insights til RollWorks-målgrupper og bruge dem som udgangspunkt for B2B-marketing.    
+   Du kan finde flere oplysninger i [Eksportere til RollWorks ](export-rollworks.md).
+
+- **Eksportér segmenter til Snapchat** Vi har udvidet vores eksportdestinationer til at omfatte Snapchat. Du kan nu eksportere segmenter fra Customer Insights til Snapchat-målgrupper og bruge dem som udgangspunkt for marketing.     
+   Du kan finde flere oplysninger i [Eksportere til Snapchat](export-snapchat.md).
+
+### <a name="predictions"></a>Forudsigelser
+
+- **Brug produktfiltre i produktanbefalinger til forudsigelse** Vi har tilføjet muligheden for at bruge produktfiltre i vores produktanbefalingsmodel. Du kan nu oprette en forudsigelse, der kun bruger en delmængde af produkterne.    
+   Du kan finde flere oplysninger under [Konfiguration af produktfiltre](predict-product-recommendation.md#configure-product-filters).
+
+- **Opret segmenter ud fra modelforudsigelser** Vi har tilføjet en hurtig måde at oprette segmenter på ved hjælp af resultaterne af en forudsigelsesmodel. På siden med modelresultater kan du nemt oprette et nyt segment ved at vælge den nye indstilling **Opret segment**.    
+  Du kan finde flere oplysninger i [Oprette et segment baseret på en forudsigelsesmodel](prediction-based-segment.md).
+
+- **Forklaringer til produktanbefalinger** Vi har tilføjet oplysninger, der forklarer de nøglefaktorer, AI-modellen har lært, for at generere produktanbefalinger og i hvor høj grad disse faktorer bidrager til produktanbefalingerne. Disse oplysninger føjes til skærmbilledet med modelresultater.    
+   Du kan finde flere oplysninger under [Gennemse en forudsigelsesstatus og resultater](predict-product-recommendation.md#review-a-prediction-status-and-results).
 
 ## <a name="february-2021-updates"></a>Februar 2021-opdateringer
 
@@ -107,7 +144,7 @@ Opdateringerne i december 2020 indeholder flere funktioner, opgraderinger af yde
 
   Derudover har vi tilføjet nye konfigurationsindstillinger for bedre at styre, hvordan dine kundeprofiler skal beriges. 
 
-  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md).
+  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md).
 
 - **Kontrol af, hvilke profiler der skal forbedres**
 
@@ -309,8 +346,8 @@ Opdateringerne fra august 2020 indeholder flere funktioner, ydeevneopgraderinger
 
 - **Interessegrupper er tilgængelige på flere markeder**
 
-  Vi udvider tilgængeligheden af interessegrupper uden for USA til fem andre markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med flere interesser, der gælder for disse markeder. Vi har også forbedret de kundeprofiler, der er placeret på disse markeder, ved hjælp af lokale, beskyttede data fra Microsoft Graph.
-  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md)
+  Vi udvider tilgængeligheden af interessegrupper uden for USA til fem andre markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med flere interesser, der gælder for disse markeder. Vi vil også forbedre dine kundeprofiler, der findes på disse markeder, ved hjælp af lokale beskyttede data fra Microsoft.
+  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md)
 
 
 ## <a name="july-2020-updates"></a>Opdateringer i juli 2020
@@ -330,8 +367,8 @@ Opdateringerne fra juli 2020 indeholder flere funktioner, opgraderinger af ydeev
 
 - **Mærketilhørsforhold er tilgængelige på flere markeder**
 
-  Vi udvider tilgængeligheden af mærketilhørsforhold uden for USA til fem andre markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med lokale mærker på disse markeder. Vi har også forbedret de kundeprofiler, der er placeret på disse markeder, ved hjælp af lokale, beskyttede data fra Microsoft Graph.
-  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md)
+  Vi udvider tilgængeligheden af mærketilhørsforhold uden for USA til fem andre markeder: Canada, Australien, Storbritannien, Frankrig og Tyskland. Med denne udvidelse kan du forbedre dine kundedata med lokale mærker på disse markeder. Vi vil også forbedre dine kundeprofiler, der findes på disse markeder, ved hjælp af lokale beskyttede data fra Microsoft.
+  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md)
 
 ## <a name="june-2020-updates"></a>Opdateringringer i juni 2020
 
@@ -355,7 +392,7 @@ Opdateringerne fra juni 2020 indeholder flere funktioner, opgraderinger af ydeev
 - **Separat forbedring med mærketilhørsforhold og interesser**
 
   Mærketilhørsforhold og interesser er nu tilgængelige som to uafhængige forbedringer. Adskilte forbedringer gør konfigurationen og administrationen fleksibel, så de kan tilpasses virksomhedens krav eller behov.    
-  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md).
+  Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md).
 
 #### <a name="extensibility"></a>Mulighed for udvidelse
 

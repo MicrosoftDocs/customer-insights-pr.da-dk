@@ -1,7 +1,7 @@
 ---
 title: Tilsætning af tredjeparts forbedringer fra Experian
 description: Generelle oplysninger om Experian-forbedring fra tredjepart.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 4d4723e8f793ee857c4f5204a42be8338c71d4c3
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 9cf2a7fa18ecc022ea67f6829f52381ad59f3172
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597780"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896366"
 ---
 # <a name="enrich-customer-profiles-with-demographics-from-experian-preview"></a>Forbedre kundeprofiler med demografi fra Experian (forbedre)
 
@@ -25,10 +25,10 @@ Experian er en global leder i forbruger- og virksomhedskreditrapportering og mar
 Hvis du vil konfigurere Experian, skal følgende forudsætninger være opfyldt:
 
 - Du har et aktivt Experian-abonnement. Hvis du vil have et abonnement, skal du [kontakte Experian](https://www.experian.com/marketing-services/contact) direkte. [Få mere at vide om Experian-dataforbedring](https://www.experian.com/marketing-services/microsoft?cmpid=ems_web_mci_cdppage).
-- Du har et bruger-id, part-id og modelnummer til din SSH-konto (Secure Transport), som Experian har oprettet for dig.
-- Du har [Administrator](permissions.md#administrator)-tilladelser i målgruppeindsigt.
 
-## <a name="configuration"></a>Konfiguration
+- En Experian-forbindelse er allerede konfigureret af en administrator *eller* du har [administratortilladelser](permissions.md#administrator). Du skal også bruge bruger-id, part-id og modelnummer for den SSH-aktiverede ST-konto (Secure Transport), som Experian har oprettet for dig.
+
+## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
 1. Gå til **Data** > **Forbedring**, og vælg fanen **Opdag**.
 
@@ -36,26 +36,46 @@ Hvis du vil konfigurere Experian, skal følgende forudsætninger være opfyldt:
 
    > [!div class="mx-imgBorder"]
    > ![Experian-felt](media/experian-tile.png "Experian-felt")
+   > 
 
-1. Vælg **Start her**, og angiv bruger-id, part-id og modelnummer for din Experian-konto til Secure Transport. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**. Bekræft alle input ved at vælge **Anvend**.
+1. Vælg en [forbindelse](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette en forbindelse ved at vælge **Tilføj forbindelse** og vælge Experian på rullelisten. 
 
-## <a name="map-your-fields"></a>Tilknyt dine felter
+1. Vælg **Opret forbindelse til Experian** for at bekræfte den valgte forbindelse.
 
-1.  Vælg **Tilføj data**, og vælg det **Kundedatasæt**, du vil forbedre med demografiske data fra Experian. Du kan vælge objektet **Kunde** for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+1.  Vælg **Næste**, og angiv de **Kundedatasæt**, du vil forbedre med demografidata fra Experian. Du kan vælge objektet **Kunde** for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
 
-1. Vælg nøgle-id'erne fra **Navn og adresse**, **E-mail** eller **Telefon**, der skal sendes til Experian med henblik på identitetsløsning.
+    :::image type="content" source="media/enrichment-Experian-configuration-customer-data-set.png" alt-text="Skærmbillede, når du vælger kundedatasættet.":::
 
-   > [!TIP]
-   > Flere nøgle-id-attributter, der sendes til Experian, giver sandsynligvis større sammenfald.
+1. Vælg **Næste**, og definer, hvilke felter fra dine samlede profiler der bruges til at søge efter tilsvarende demografidata fra Experian. Mindst ét af felterne **Navn og adresse**, **Telefon** eller **E-mail** er obligatorisk. Du kan opnå en mere nøjagtig overensstemmelse ved at tilføje op til to andre felter. Denne indstilling påvirker de tilknytningsfelter, du har adgang til i næste trin.
 
-1. Vælg **Næste**, og knyt de tilsvarende attributter fra det samlede kundeobjekt for de valgte nøgle-id-felter.
+    > [!TIP]
+    > Flere nøgle-id-attributter, der sendes til Experian, giver sandsynligvis større sammenfald.
 
-1. Vælg **Tilføj attribut** for at tilknytte eventuelle yderligere attributter, du vil sende til Experian.
+1. Start felttilknytningen ved at vælge **Næste**.
 
-1.  Vælg **Gem** for at fuldføre felttilknytningen.
+1. Definer, hvilke felter fra dine samlede profiler der bruges til at søge efter tilsvarende demografidata fra Experian. Obligatoriske felter er markeret.
 
-    > [!div class="mx-imgBorder"]
-    > ![Experian-felttilknytning](media/experian-field-mapping.png "Experian-felttilknytning")
+1. Angiv et navn, der viser forbedringen og et navn på outputobjektet.
+
+1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg.
+
+## <a name="configure-the-connection-for-experian"></a>Konfiguration af forbindelsen til Experian 
+
+Du skal være en administrator for at konfigurere forbindelser. Vælg **Tilføj forbindelse**, når du konfigurerer en konfiguration, *eller* gå til **Admin** > **Forbindelser**, og vælg **Konfigurer** i feltet Experian.
+
+1. Vælg **Introduktion**.
+
+1. Angiv et navn til forbindelsen i feltet **Vis navn**.
+
+1. Angiv gyldigt bruger-id, part-id og modelnummer for din Experian Secure Transport-konto.
+
+1. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**
+
+1. Vælg **Kontroller** for at validere konfigurationen.
+
+1. Vælg **Gem**, når verifikationen er fuldført.
+   
+   :::image type="content" source="media/enrichment-Experian-connection.png" alt-text="Side til konfiguration af Experian-forbindelse.":::
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 

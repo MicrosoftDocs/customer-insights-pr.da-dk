@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Adobe Campaign Standard
 description: Få at vide, hvordan du kan bruge målgruppeindsigtssegmenter i Adobe Campaign Standard.
-ms.date: 02/26/2021
+ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: a5d0154c3d7c473dcba03fac0847bafcf97de2f2
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b6c010d84119c2fa8b3ef99017c65f9939bf28c4
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596308"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5760274"
 ---
 # <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Bruge Customer Insights-segmenter i Adobe Campaign Standard (forhåndsversion)
 
@@ -48,15 +48,21 @@ Den mail med tilbud, du vil sende, indeholder kundens fornavn, efternavn og slut
 
 ## <a name="export-your-target-audience"></a>Eksportere din målgruppe
 
+### <a name="configure-a-connection"></a>Konfiguration af en forbindelse
+
 Når målgruppen er identificeret, kan vi konfigurere eksporten fra målgruppeindsigt til en Azure Blob Storage-konto.
 
-1. Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.
+1. I målgruppeindsigt skal du gå til **Administrator** > **Forbindelser**.
 
-1. Vælg **Konfigurer** i feltet **Adobe Campaign**.
+1. Vælg **Tilføj forbindelse**, og vælg **Adobe-kampagne** for at konfigurere forbindelsen, eller vælg **Konfigurer** i feltet **Adobe-kampagne**
 
    :::image type="content" source="media/adobe-campaign-standard-tile.png" alt-text="Konfigurationsfelt til Adobe Campaign Standard.":::
 
-1. Angiv et **vist navn** til denne nye eksportdestination, og angiv derefter **Firmanavn**, **Kontonøgle** og **Objektbeholder** for den Azure Blob Storage-konto, du vil eksportere segmentet til.  
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
+
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Angiv **Firmanavn**, **Firmanøgle** og **Beholder** for den Azure Blob-lagerkonto, du vil eksportere segmentet til.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Skærmbillede af lagerkontoens konfiguration. "::: 
 
@@ -64,7 +70,17 @@ Når målgruppen er identificeret, kan vi konfigurere eksporten fra målgruppein
 
    - Du kan få mere at vide om, hvordan du opretter en objektbeholder, i [Oprette en objektbeholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
-1. Vælg **Næste**.
+1. Vælg **Gem** for at fuldføre forbindelsen.
+
+### <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Hvis du vil oprette en ny eksport, skal du vælge **Tilføj eksport**.
+
+1. Vælg en forbindelse i sektionen Adobe Campaign i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
 1. Vælg det segment, du vil eksportere. I dette eksempel er det **ChurnProneCustomers**.
 
@@ -83,11 +99,9 @@ Når målgruppen er identificeret, kan vi konfigurere eksporten fra målgruppein
 
 1. Vælg **Gem**.
 
-Når du har gemt eksportdestinationen, finder du den under **Administrator** > **Eksporter** > **Mine eksportdestinationer**.
+Når du har gemt eksportdestinationen, finder du den under **Data** > **Eksport**.
 
-:::image type="content" source="media/export-destination-adobe-campaign-standard.png" alt-text="Skærmbillede med en liste over eksporter og eksempelsegment fremhævet.":::
-
-Du kan nu [eksportere segmentet efter behov](export-destinations.md#export-data-on-demand). Eksporten vil også køre med alle [planlagte opdateringer](system.md).
+Du kan nu [eksportere segmentet efter behov](export-destinations.md#run-exports-on-demand). Eksporten vil også køre med alle [planlagte opdateringer](system.md).
 
 > [!NOTE]
 > Sørg for, at antallet af poster i det eksporterede segment ligger inden for den tilladte grænse for din Adobe Campaign Standard-licens.

@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til Dynamics 365 Marketing
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Dynamics 365 Marketing.
-ms.date: 02/01/2021
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Dynamics 365 Marketing.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,33 +9,35 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 892aff643872f11307a2c43e5670edab657d7848
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a13f6f81f5e2570d3302d88c02755f1d86321a01
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597596"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759602"
 ---
-# <a name="connector-for-dynamics-365-marketing-preview"></a>Opret forbindelse til Dynamics 365 Marketing (forhåndsvisning)
+# <a name="use-segments-in-dynamics-365-marketing-preview"></a>Brug segmenter i Dynamics 365 Marketing (forhåndsversion)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte grupper af kunder sammen med Dynamics 365 Marketing. Du kan finde flere oplysninger under [Bruge segmenter fra Dynamics 365 Customer Insights sammen med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments)
 
-## <a name="prerequisite"></a>Forudsætning
+## <a name="prerequisite-for-a-connection"></a>Forudsætning for en forbindelse
 
 - Kontaktposter skal være til stede i Dynamics 365 Marketing, før du kan eksportere et segment fra Customer Insights til Marketing. Læs mere om, hvordan du kontakter i [Dynamics 365 Marketing ved hjælp af Common Data Services](connect-power-query.md).
 
   > [!NOTE]
   > Hvis du eksporterer målgruppeindsigt til marketing, oprettes der ikke nye kontaktposter i marketingforekomsterne. Kontaktpersonposterne fra Marketing skal være direkte målgruppeindsigt og bruges som en datakilde. De skal også inkluderes i den samlede brugerdefinerede enhed for at knytte kunde-ID'er til kontakt-ID'er, før segmenter kan eksporteres.
 
-## <a name="configure-the-connector-for-marketing"></a>Konfigurer forbindelsen til Marketing
+## <a name="set-up-connection-to-marketing"></a>Konfigurer forbindelsen til Marketing.
 
-1. Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.
+1. Gå til **Administrator** > **Forbindelser**.
 
-1. Under **Dynamics 365 Marketing** vælg **Konfigurer**.
+1. Vælg **Tilføj forbindelse**, og vælg **Dynamics 365 Marketing** for at konfigurere forbindelsen.
 
-1. Giv din eksportdestination et genkendeligt navn ifeltet **Vist navn**.
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
+
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Angiv din organisationens URL-adresse for marketing i feltet **Serveradresse**.
 
@@ -43,15 +45,24 @@ Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte gru
 
 1. Knyt et kunde-ID-felt til Dynamics 365-kontakt-id.
 
-1. Vælg **Næste**.
+1. Vælg **Gem** for at fuldføre forbindelsen. 
+
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Vælg **Tilføj destination** for at oprette en ny eksport.
+
+1. Vælg en forbindelse i sektionen Dynamics 365 Marketing i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
 1. Vælg en eller flere segmenter.
 
 1. Vælg **Gem**.
 
-## <a name="export-the-data"></a>Eksportér dataene
+Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
-
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

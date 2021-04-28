@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til SendGrid
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen til SendGrid.
-ms.date: 12/08/2020
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til SendGrid.
+ms.date: 03/03/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,57 +9,23 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 1a1f679fa42d47d524ebfdd6e931ae2822565f77
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a4c64cf77c682e07f3d0759c43355336b5806fc8
+ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597274"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "5759758"
 ---
-# <a name="connector-for-sendgrid-preview"></a>Connector til SendGrid (prøveversion)
+# <a name="export-segments-to-sendgrid-preview"></a>Eksportér segmenter til SendGrid (forhåndsversion)
 
 Eksportér segmenter med ensartede kundeprofiler til SendGrid-kontaktlister, og brug dem til kampagner og mailmarketing i SendGrid. 
 
-## <a name="prerequisites"></a>Forudsætninger
+## <a name="prerequisites-for-a-connection"></a>Forudsætninger for en forbindelse
 
 -   Du har en [SendGrid-konto](https://sendgrid.com/) og tilsvarende administratorlegitimationsoplysninger.
 -   Der findes eksisterende kontaktlister i SendGrid og de tilsvarende id'er. Du kan finde flere oplysninger [i SendGrid – Administrere kontakter](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts).
 -   Du har [konfigureret segmenter](segments.md)-tilladelser i målgruppen Insights.
 -   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
-
-## <a name="connect-to-sendgrid"></a>Oprette forbindelse til SendGrid
-
-1. Gå til **Adminstration** > **Eksportdestinationer**.
-
-1. Under **SendGrid** skal du vælge **Konfigurer**.
-
-1. Giv din eksportdestination et genkendeligt navn ifeltet **Vist navn**.
-
-   :::image type="content" source="media/export-sendgrid.PNG" alt-text="Ruden SendGrid-eksportkonfiguration.":::
-
-1. Angiv **SendGrid API-nøglen** [SendGrid API-nøgle](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).
-
-1. Angiv dit **[SendGrid-liste-id](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**
-
-1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
-
-1. Vælg **Opret forbindelse** for at initialisere forbindelsen til SendGrid.
-
-1. Vælg **Tilføj dig selv som eksport bruger**, og giv din Customer Insights-legitimationsoplysninger.
-
-1. Vælg **Næste** for at konfigurere eksporten.
-
-## <a name="configure-the-connector"></a>Konfigurer connectoren
-
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Gentag de samme trin for andre valgfrie felter, f.eks.. **Fornavn**, **Efternavn**, **Land/Område**, **Stat**, **By** og **Postnummer**.
-
-1. Vælg de segmenter, du vil eksportere. Det **anbefales ikke at eksportere mere end 100.000 kundeprofiler i alt** til SendGrid. 
-
-1. Vælg **Gem**.
-
-## <a name="export-the-data"></a>Eksportér dataene
-
-Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
@@ -67,6 +33,48 @@ Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil ogs�
 - Eksport til SendGrid er begrænset til segmenter.
 - Det kan tage op til et par timer at eksportere op til 100.000 profiler til SendGrid. 
 - Antallet af profiler, du kan eksportere til SendGrid, er afhængige og begrænsede i kontrakten med SendGrid.
+
+## <a name="set-up-connection-to-sendgrid"></a>Konfigurer forbindelsen til SendGrid
+
+1. Gå til **Administrator** > **Forbindelser**.
+
+1. Vælg **Tilføj forbindelse**, og vælg **SendGrid** for at konfigurere forbindelsen.
+
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
+
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+
+1. Angiv **SendGrid API-nøglen** [SendGrid API-nøgle](https://sendgrid.com/docs/ui/account-and-settings/api-keys/).
+
+1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
+
+1. Vælg **Opret forbindelse** for at initialisere forbindelsen til SendGrid.
+
+1. Vælg **Tilføj dig selv som eksport bruger**, og giv din Customer Insights-legitimationsoplysninger.
+
+1. Vælg **Gem** for at fuldføre forbindelsen.
+
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Vælg **Tilføj destination** for at oprette en ny eksport.
+
+1. Vælg en forbindelse i sektionen SendGrid i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+
+1. Angiv dit **[SendGrid-liste-id](https://sendgrid.com/docs/ui/managing-contacts/create-and-manage-contacts/#manage-contacts)**
+
+1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Gentag de samme trin for andre valgfrie felter, f.eks.. **Fornavn**, **Efternavn**, **Land/Område**, **Stat**, **By** og **Postnummer**.
+
+1. Vælg de segmenter, du vil eksportere. Det **anbefales ikke at eksportere mere end 100.000 kundeprofiler i alt** til SendGrid. 
+
+1. Vælg **Gem**.
+
+Når du gemmer en eksport, køres eksporten ikke med det samme.
+
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

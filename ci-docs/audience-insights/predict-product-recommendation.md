@@ -1,7 +1,7 @@
 ---
 title: Forudsige produktanbefalinger
 description: Forudsige de produkter, en kunde køber eller kommunikerer med.
-ms.date: 02/15/2021
+ms.date: 03/17/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,20 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 5ae78b6bbc51fd8a25bc408050a23479698a1414
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598056"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906757"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Forudsige produktanbefalinger (prøveversion)
 
 Produktanbefalingsmodellen opretter produktanbefalinger for forudsigelse. Anbefalinger er baseret på tidligere købsmåder og kunder med lignende købsmønstre. Du kan oprette forudsigelser om nye produktanbefalinger siden **Intelligens** > **Forudsigelse**. Vælg **Mine forudsigelser** for at få vist andre forudsigelser, du har oprettet.
 
-Produktanbefalinger kan være underlagt lokale love og regler samt kundernes forventninger, som modellen ikke er udviklet til specifikt at tage højde for.  Som bruger af denne gode funktion **skal du gennemgå anbefalingerne, inden du leverer dem til dine kunder**, for at sikre, at du overholder alle gældende love eller regler samt kundernes forventninger til det, du kan anbefales. 
+Produktanbefalinger kan være underlagt lokale love og regler og kundernes forventninger, som modellen ikke er udviklet til specifikt at tage højde for.  Som bruger af denne gode funktion **skal du gennemgå anbefalingerne, inden de leveres til dine kunder**, for at sikre, at du overholder alle gældende love eller regler samt kundernes forventninger til det, du kan anbefale. 
 
-Derudover vil outputtet fra denne model give dig anbefalinger baseret på produkt-id. Din leveringsmekanisme skal tage produkt-id'er og knytte dem til det relevante indhold, som dine kunder har adgang til, for at tage højde for lokalisering, billedindhold og andet forretningsspecifikt indhold eller forretningsspecifikt indhold.
+Derudover vil outputtet fra denne model give dig anbefalinger baseret på produkt-id. Leveringsmekanismen skal knytte de oversatte produkt-id'er til det relevante indhold, som dine kunder skal tage højde for lokalisering, billedindhold og andet forretningsspecifikt indhold eller adfærd.
 
 ## <a name="sample-guide"></a>Eksempelvejledning
 
@@ -31,19 +31,31 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 ## <a name="prerequisites"></a>Forudsætninger
 
 - Mindst [bidragydertilladelser](permissions.md) i Customer Insights.
+
 - Forretningsviden om at forstå forskellige typer produkter i virksomheden, og hvordan kunderne kommunikerer med dem. Vi anbefaler produkter, der tidligere er købt af dine kunder, eller anbefalinger til nye produkter.
+
 - Data om dine transaktioner, køb og deres oversigt:
     - Transaktions-id'er for at skelne mellem køb og transaktioner.
     - Kunde-id'er til tilknytning af transaktioner til dine kunder.
     - Datoer for posteringshændelser, som definerer de datoer, transaktionen forekom i.
-    - (Valgfrit) Produkt-id-oplysninger for transaktionen.
+    - Oplysninger om produkt-id for transaktionen.
+    - (Valgfrit) Et produktkatalogdataobjekt til brug af et produktfilter.
     - (Valgfrit) Hvis en transaktion er en returnering eller ej.
     - Semantisk dataskema kræver følgende oplysninger:
         - **Transaktions-id:** Et entydigt id for et køb eller en transaktion.
-        - **Transaktionsdato:** Datoen for købet eller transaktionen.
+        - **Transaktionsdato:** Købs- eller transaktionsdato.
         - **Værdi for transaktion:** Den numeriske værdi for købet eller transaktionen.
         - **Entydigt produkt-id:** Id for det produkt eller den tjeneste, du har købt, hvis dataene befinder sig på linjeelementniveau.
-        - (Valgfrit) **Køb eller returnering:** Et sandt/falsk-felt, der identificerer, om posteringen var en returvare eller ej. Hvis **Værdi for transaktion** er negativ, bruger vi også disse oplysninger til at udlede et returvare.
+        - (Valgfrit) **Køb eller returnering:** Et boolesk felt, hvor værdien *sand* identificerer, at en transaktion var en returnering. Hvis dataene for Køb eller Retur ikke leveres som model, og **værdien af transaktionen** er negativ, bruger vi også disse oplysninger til at udlede en returnering.
+- Forslåede datakarakteristika:
+    - Tilstrækkelige historiske data: Mindst et år med transaktionsdata, helst to til tre år for at medtage en vis grad af sårbarhed.
+    - Flere køb pr. kunde: Tre eller flere transaktioner pr. kunde-id
+    - Antal kunder: Mindst 100 kunder, helst mere end 10.000 kunder. Modellen kan ikke bruges af færre end 100 kunder.
+
+> [!NOTE]
+> - Modellen kræver kundernes transaktionsoversigt. Definitionen af en transaktion er ret fleksibel. Alle data, der beskriver en brugerproduktinteraktion, kan fungere som et input. Det kan f.eks. være at købe et produkt, tage en klasse eller deltage i et arrangement.
+> - Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købsobjekter, skal du oprette en ny Power Query inden dataindtag.
+> - Hvis ordren og ordredetaljer er forskellige objekter, kan du samle dem, før du bruger den i modellen. Modellen fungerer ikke kun med et ordre-id eller et kvitterings-id i et objekt.
 
 
 ## <a name="create-a-product-recommendation-prediction"></a>Oprette forudsigelse om produktanbefalinger
@@ -71,7 +83,7 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 1. Vælg, om du ønsker at **Foreslå produkter, som kunder har købt for nylig**.
 
-1. Hvis du har valgt *ikke* at anbefale produkter, du har købt for nylig, skal du indstille **tilbagebliksvinduet**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Du kan f.eks. angive, at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
+1. Hvis du har valgt *ikke* at anbefale produkter, du har købt for nylig, skal du indstille **tilbagebliksvinduet**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Angiv f.eks., at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
 
 1. Vælg **Næste** 
 
@@ -95,7 +107,31 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 1. Vælg **Næste**.
 
-### <a name="set-schedule-and-review-configuration"></a>Angive konfiguration for planlægning og evaluering
+### <a name="configure-product-filters"></a>Konfigurere produktfiltre
+
+Undertiden er det kun visse produkter, der er gode eller passende for den type forudsigelse du bygger. Produktfiltre gør det muligt at identificere en delmængde af produkter med bestemte egenskaber, som kan anbefales til dine kunder. I modellen bruges alle tilgængelige produkter til at lære mønstre, men kun bruge de produkter, der svarer til produktfilteret i outputtet.
+
+1. Tilføj produktkataloget med oplysninger om hvert produkt i trinnet **Tilføj produktoplysninger**. Tilknyt de nødvendige oplysninger i vælg **Næste**.
+
+3. Vælg mellem følgende indstillinger i trinnet **Produktfiltre**.
+
+   * **Ingen filtre**: Brug alle produkter i produktanbefalingens forudsigelse.
+
+   * **Definer specifikke produktfiltre**: Brug bestemte produkter i produktanbefalingernes forudsigelse.
+
+1. Vælg **Næste**.
+
+1. Hvis du vælger at definere et produktfilter, skal du definere det nu. Vælg de attributter fra objektet **Produktkatalog**, som du vil inkludere i filteret, i ruden *Produktkatalogattributter*.
+
+   :::image type="content" source="media/product-filters-sidepane.png" alt-text="Sideruden, der viser, hvordan produktkatalogobjektet skal vælges til produktfiltre.":::
+
+1. Vælg, om produktfilteret skal bruge **og** eller **eller** connectors skal kombinere det valgte udvalg af attributter fra produktkataloget på en logisk måde.
+   
+   :::image type="content" source="media/product-filters-sample.png" alt-text="Eksempelkonfiguration af produktfiltre kombineret med logiske AND-connectors.":::
+
+1. Vælg **Næste**.
+
+### <a name="set-update-schedule-and-review-configuration"></a>Angive tidsplan for opdatering og gennemgang af konfigurationen
 
 1. Angiv en hyppighed for at omskole modellen. Denne indstilling er vigtig, hvis du vil opdatere nøjagtigheden af forudsigelser, efterhånden som nye data importeres til Customer Insights. De fleste virksomheder kan omskole én gang om måneden og opnå en god præcision af deres forudsigelse.
 
@@ -114,8 +150,9 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 1. Vælg den forudsigelse, du vil gennemse.
    - **Forudsigelsesnavn:** Navnet på forudsigelsen, der blev angivet under oprettelsen.
    - **Forudsigelsestype:** Den type model, der bruges til forudsigelsen
-   - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.
-   - **Forventet felt:** Dette felt udfyldes kun i forbindelse med visse typer forudsigelser og bruges ikke i afgang af forudsigelse.
+   - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.    
+      *Score* i outputobjektet er et mål for anbefalingen. Modellen anbefaler produkter med en højere score i forhold til produkter med en lavere score.
+   - **Forudsagt felt**: Dette felt udfyldes kun for visse typer forudsigelser og bruges ikke i produktanbefalingsforudsigelse.
    - **Status:** Den aktuelle status for forudsigelsens kørsel.
         - **Sat i kø:** Forudsigelsen venter i øjeblikket på, at andre processer skal køre.
         - **Opdaterer:** Forudsigelse kører i øjeblikket "score"-fasen i behandlingen af de resultater, der vil blive overført til outputenheden.
@@ -128,7 +165,7 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
    > [!div class="mx-imgBorder"]
    > ![Visning af indstillinger i menuen med lodrette ellipser for en forudsigelse, herunder redigering, opdatering, visning, logfiler og sletning](media/product-recommendation-verticalellipses.PNG "Visning af indstillinger i menuen med lodrette ellipser for en forudsigelse, herunder redigering, opdatering, visning, logfiler og sletning")
 
-1. Der findes tre primære sektioner med data på resultatsiden:
+1. Der findes fem primære dataafsnit på resultatsiden:
     1. **Træningsmodellens ydeevne:** A, B eller C er mulige scorer. Denne score ydeevnen af forudsigelsen og kan hjælpe dig med at træffe beslutningen om at bruge de resultater, der er gemt i outputobjektet.
         - Scorer bestemmes ud fra følgende regler:
             - **A** Modellen betragtes som **A**-kvalitet, hvis målingen "Succes @ K" er mindst 10 % mere end basislinjen. 
@@ -140,11 +177,31 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
             - **Basislinje**: Modellen tager de mest anbefalede produkter ved køb på tværs af alle kunder, og den bruger lærde regler, der identificeres af modellen, til at oprette et sæt anbefalinger til kunderne. Forudsigelserne sammenlignes derefter med de øverste produkter som beregnet ud fra antallet af kunder, der har købt produktet. Hvis en kunde har mindst ét produkt i sine anbefalede produkter, der også blev set i de mest købte produkter, betragtes de som en del af udgangspunktet. Hvis der var 10 af disse kunder, hvor der var købt et anbefalet produkt ud af 100 samlede kunder, ville udgangsværdien være 10 %.
             - **Succes @ K**: Ved hjælp af et valideringssæt med transaktioner oprettes der anbefalinger for alle kunder og sammenlignes med valideringssættet for transaktioner. I en periode på 12 måneder kan der f.eks. blive afsat 12 måneder som et valideringssæt af data. Hvis modellen bygger på mindst én ting, du ville købe i måned 12 på baggrund af det, den har lært af de foregående 11 måneder, vil kunden øge målingen "Succes @ K".
     
-    1. **De fleste forslag til produkter (med stemmer):** De fem vigtigste produkter, der blev foretrukne for dine kunder.
+    1. **De fleste forslag til produkter (med sammentælling):** De fem vigtigste produkter, der blev foretrukket for dine kunder.
        > [!div class="mx-imgBorder"]
        > ![Graf, der viser de fem mest anbefalede produkter](media/product-recommendation-topproducts.PNG "Graf, der viser de fem mest anbefalede produkter")
     
-    1. **Produktanbefalinger med høj sikkerhed:** Et eksempel på anbefalinger, der kommer til dine kunder, og som efter modellens mening sandsynligvis vil blive købt af kunden.
+    1. **Vigtige anbefalingsfaktorer:** Modellen bruger kundernes transaktionsoversigt til at komme med produktanbefalinger. Den lærer mønstre på baggrund af tidligere køb, og der findes ligheder mellem kunder og produkter. Disse ligheder bruges derefter til at oprette produktanbefalinger.
+    Følgende faktorer kan påvirke en produktanbefaling genereret af modellen. 
+        - **Tidligere transaktioner**: Tidligere indkøbsmønstre blev brugt af modellen til at oprette produktanbefalinger. Modellen kan f.eks. anbefale en _Surface Arc Mouse_, hvis en person for nylig har købt en _Surface Book 3_ og en _Surface Pen_. Modellen har lært, at mange kunder historisk har købt en _Surface Arc Mouse_, efter at de har købt en _Surface Book 3_ og en _Surface Pen_.
+        - **Kundelighed**: Et anbefalet produkt er historisk købt af andre kunder, der har et lignende købsmønstre. John blev f.eks. anbefalet _Surface Headphones 2_ fordi Jennifer og Brad for nylig har købt _Surface Headphones 2_. Modellen mener, at John ligner Jennifer og Brad, fordi de historisk har haft lignende købsmønstre.
+        - **Produktlighed**: Et anbefalet produkt svarer til andre produkter, som kunden tidligere har købt. Modellen anser to produkter for at være ens, hvis de ligner hinanden eller af lignende kunder. En person får f.eks. en anbefaling af et _USB-lagerdrev_, fordi de tidligere har købt et _USB-C til USB-adapter_, og modellen antager, at _USB Storage Drive_ svarer til _USB-C til USB-adapter_ baseret på historiske købsmønstre.
+
+        Enhver produktanbefaling anbefales af en eller flere af disse faktorer. Procentdelen af anbefalinger, hvor hver enkelt faktor spillede en rolle, vises i et diagram. I følgende eksempel var 100 % af anbefalingerne baseret på tidligere transaktioner, 60 % efter kundelighed og 22 % efter produktlighed. Hold musen hen over søjlerne i diagrammet for at se den nøjagtige procentdel, hvor de faktorer, der virkede som faktorer, har indflydelse.
+
+        > [!div class="mx-imgBorder"]
+        > ![Nøgleanbefalingsfaktorer](media/product-recommendation-keyrecommendationfactors.png "Vigtige anbefalingsfaktorer, der læres af modellen for at generere produktanbefalinger")
+       
+     
+   1. **Datastatistik**: Leverer en oversigt over antallet af transaktioner, kunder og produkter den pågældende model. Den er baseret på de inputdata, der blev brugt til at lære mønstre og generere produktanbefalinger.
+
+      > [!div class="mx-imgBorder"]
+      > ![Datastatistik](media/product-recommendation-datastatistics.png "Datastatistik angående inout-data, der bruges af modellen til at lære mønstre")
+
+      I dette afsnit vises statistikker over de datapunkter, der blev brugt af modellen for at lære mønstre og generere produktanbefalinger. Filtrering som konfigureret i modelkonfigurationen anvendes på det output, der genereres af modellen. Men i modellen bruges alle tilgængelige data til at lære mønstre. Hvis du bruger produktfiltrering i modelkonfigurationen, vises det samlede antal produkter, som modellen analyseres for at lære mønstre, som kan adskille sig fra antallet af produkter, der opfylder de definerede filtreringskriterier.
+
+   1. **Produktanbefalinger med høj sikkerhed:** Et eksempel på anbefalinger, der kommer til dine kunder, og som efter modellens mening sandsynligvis vil blive købt af kunden.    
+      Hvis der tilføjes et produktkatalog, erstattes produkt-id'er med produktnavne. Produktnavne giver mere handlingsbare og intuitive oplysninger om forudsigelserne.
        > [!div class="mx-imgBorder"]
        > ![Liste med forslag med stor sikkerhed til udvalgte individuelle kunder](media/product-recommendation-highconfidence.PNG "Liste med forslag med stor sikkerhed til udvalgte individuelle kunder")
 
@@ -154,7 +211,7 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 1. Vælg den forudsigelse, som du vil have vist fejllogfiler for, og vælg **Logge**.
 
-1. Gennemgå alle fejlene. Der er flere typer fejl, der kan opstå, og som beskriver, hvilken betingelse der forårsagede fejlen. En fejlmeddelelse om, at der ikke er nok data til præcist at forudsige noget, løses typisk ved at indlæse yderligere data i Customer Insights.
+1. Gennemgå alle fejlene. Der er flere typer fejl, der kan opstå, og som beskriver, hvilken betingelse der forårsagede fejlen. En fejl, der f.eks. er, at der ikke er data nok til at fortolke dataene nøjagtigt, løses typisk ved at indlæse flere data i Customer Insights.
 
 ## <a name="refresh-a-prediction"></a>Opdatere en forudsigelse
 

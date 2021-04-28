@@ -9,12 +9,12 @@ ms.topic: overview
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 146994b739748c615ca002add4e64216da6c1dea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8fdfe16d609fbebd53703b56f4e0252125bedf8f
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598623"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896458"
 ---
 # <a name="audience-insights-for-dynamics-365-customer-insights-overview"></a>Målgruppeindsigt for Dynamics 365 Customer Insights-oversigt
 
@@ -27,9 +27,9 @@ Målgruppen Insights hjælper dig med at skabe dybere kendskab til dine kunder. 
   - Forbind og saml dine data med lethed – indlæs data fra transaktioner, observationer og adfærd fra populære [datakilder ved at udnytte færdige connectorer](data-sources.md).
   - Transformer kundedata på intelligent vis – opbyg samlede kundeprofiler, der er i overensstemmelse med [Common Data Model](/common-data-model/). Du kan få kundeidentiteter med AI-eller ML-baserede anbefalinger.
 
-- **Forbedre data med målgruppeintelligens, der findes i Microsoft Graph**
+- **Forbedring med målgruppeintelligens**
 
-  - Opbyg mere avancerede kundeprofiler ved at [inkorporere målgruppeintelligens, der findes i Microsoft Graph](enrichment-microsoft-graph.md).  
+  - Opret forbedrede kundeprofiler ved at [indarbejde forbedrede data](enrichment-hub.md).  
 
 - **Styrke dine forretningsprocesser og personligt tilpassede kundeerfaringer**
 
@@ -43,7 +43,7 @@ Målgruppen Insights hjælper dig med at skabe dybere kendskab til dine kunder. 
 
   - Adgang til en stor samling af connectorer, der indsætter alle dine kundedata.
   - Mulighed for at samle kundedata og transformere dem til [Common Data Model](/common-data-model/)-format.
-  - Du kan forbedre kundeoplysningerne med indsigt fra målgruppeintelligens, der findes i Microsoft Graph, f.eks. mærketilhørsforhold og interesser.
+  - Du kan forbedre kundeoplysningerne med indsigt fra målgruppeintelligens, f.eks. mærketilhørsforhold og interesser.
   - "Klik-ikke-kode"-konfiguration og fejlfindingsfunktioner, der gør det nemt at konfigurere målgruppen Insights og identificere potentielle problemer.
   - Rydde op i og standardisere kundedata på tværs af forskellige kilder med AI-baserede anbefalinger.  
 

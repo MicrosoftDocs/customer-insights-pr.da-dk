@@ -1,7 +1,7 @@
 ---
 title: Oprette og administrere miljøer
 description: Få mere at vide om, hvordan du tilmelder dig tjenesten, og hvordan du administrerer miljøer.
-ms.date: 02/01/2021
+ms.date: 03/26/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 1c2dfdd2889b5cb6c5285b4d7cc7f52a3d6de4d1
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 8cc1401251ed7c45c598bd4a8fb33a9709fabbc8
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5598286"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887979"
 ---
 # <a name="manage-environments"></a>Administrere miljøer
 
@@ -44,6 +44,9 @@ I denne artikel forklares det, hvordan du kan oprette en ny organisation, og hvo
 
 Du kan oprette et nyt miljø på to måder. Du kan enten angive en helt ny konfiguration, eller du kan kopiere nogle konfigurationsindstillinger fra et eksisterende miljø.
 
+> [!NOTE]
+> Organisationer kan oprette *to* miljøer for alle Customer Insights-licenser. Hvis din organisation køber licenser mere end én gang, skal du [kontakte vores supporttteam](https://go.microsoft.com/fwlink/?linkid=2079641) for at få flere tilgængelige miljøer. Du kan finde flere oplysninger om kapacitet og kapacitet til tilføjelsesprogrammet ved at hente [Dynamics 365-licensvejledningen](https://go.microsoft.com/fwlink/?LinkId=866544).
+
 Sådan opretter du et miljø:
 
 1. Vælg **Miljø**-vælgeren i appens overskrift.
@@ -55,14 +58,14 @@ Sådan opretter du et miljø:
 
 1. Vælg **Nyt miljø** i dialogboksen **Opret nyt miljø**.
 
-   Hvis du vil [kopiere data fra det aktuelle miljø](#additional-considerations-for-copy-configuration-preview), skal du vælge **Kopiér fra eksisterende miljø**. Du får vist en liste over alle tilgængelige miljøer i din organisation, som du kan kopiere data fra.
+   Hvis du vil [kopiere data fra det aktuelle miljø](#considerations-for-copy-configuration-preview), skal du vælge **Kopiér fra eksisterende miljø**. Du får vist en liste over alle tilgængelige miljøer i din organisation, som du kan kopiere data fra.
 
 1. Angiv følgende oplysninger:
    - **Navn**: Navnet på dette miljø. Dette felt er allerede udfyldt, hvis du har kopieret et eksisterende miljø, men du kan ændre det.
    - **Område**: Det område, hvor tjenesten er installeret og har sin vært.
    - **Type**: Vælg, om du vil oprette et produktions- eller sandkassemiljø.
 
-2. Du kan også vælge **Avancerede indstillinger**:
+1. Du kan også vælge **Avancerede indstillinger**:
 
    - **Gem alle data i**: Angiver, hvor du vil gemme de outputdata, der er genereret fra Customer Insights. Du har to muligheder: **Customer Insights-lager** (en Azure Data Lake, der administreres af Customer Insights-teamet) og **Azure Data Lake Storage Gen2** (dit eget Azure Data Lake Storage). Som standard er indstillingen Customer Insights-lager valgt.
 
@@ -75,20 +78,20 @@ Sådan opretter du et miljø:
 
    - For Azure Data Lake Storage Gen2 kan du vælge mellem at bruge en ressourcebaseret indstilling og en abonnementsbaseret indstilling til godkendelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Navnet på **Beholder** kan ikke ændres og vil være "customerinsights".
    
-   - Hvis du vil bruge [forudsigelser](predictions.md) eller konfigurere datadeling med programmer og løsninger baseret på Microsoft Dataverse, skal du angive Microsoft Dataverse URL-adressen til miljøet under **Konfigurere datadeling med Microsoft Dataverse og aktivere yderligere funktioner**. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Microsoft Dataverse-administreret Data Lake.
+   - Hvis du vil bruge [forudsigelser](predictions.md), konfigurere deling af data med programmer og løsninger baseret på Microsoft Dataverse eller aktivere data-indtagelse fra de lokale datakilder, skal du angive Microsoft Dataverse-miljøet til URL-adressen under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funktioner**. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Microsoft Dataverse-administreret Data Lake.
 
      > [!NOTE]
      > - Datadeling med Microsoft Dataverse Administreret Data Lake understøttes ikke i øjeblikket, når du gemmer alle data i din egen Azure Data Lake Storage.
      > - [Forudsigelse af manglende værdier i et objekt](predictions.md) understøttes ikke i øjeblikket, når du aktiverer datadeling med Microsoft Dataverse Administreret Data Lake.
 
      > [!div class="mx-imgBorder"]
-     > ![Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse](media/Datasharing-with-DataverseMDL.png)
+     > ![Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse](media/datasharing-with-DataverseMDL.png)
 
    Når du kører processer, f. eks. dataindsættelse eller segmentoprettelse, oprettes der tilsvarende mapper i den lagerkonto, du har angivet ovenfor. Datafiler og model.json-filer oprettes og føjes til de respektive undermapper, afhængigt af den proces du kører.
 
    Hvis du opretter flere miljøer med Customer Insights og vælger at gemme outputenhederne fra de pågældende miljøer i lagerkontoen, oprettes der separate mapper for hvert miljø med ci_<environmentid> i beholderen.
 
-### <a name="additional-considerations-for-copy-configuration-preview"></a>Flere overvejelser i forbindelse med kopieringskonfiguration (eksempel)
+### <a name="considerations-for-copy-configuration-preview"></a>Overvejelser om konfiguration af kopi (forhåndsversion)
 
 Følgende konfigurationsindstillinger er kopieret:
 
@@ -136,6 +139,18 @@ Du kan redigere nogle af oplysningerne i eksisterende miljøer.
 4. Hvis et miljø er konfigureret til at lagre data i Azure Data Lake Storage Gen2, kan du opdatere **Kontonøgle**. Du kan dog ikke ændre **Kontonavn** eller navnet på **Objektbeholder**.
 
 5. Du kan også vælge at opdatere fra en kontonøglebaseret forbindelse til en ressourcebaseret eller en abonnementsbaseret forbindelse. Når det er opgraderet, kan du ikke vende tilbage til kontonøglen efter opdateringen. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Du kan ikke ændre **objektbeholder**-oplysninger, når du opdaterer forbindelsen.
+
+6. Du kan også angive en Microsoft Dataverse URL-adresse til miljøet under **Konfiguration af datadeling med Microsoft Dataverse og aktivering af flere funktioner**. Disse funktioner omfatter datadeling med programmer og løsninger baseret på Microsoft Dataverse, data indtagelse fra de lokale datakilder eller brug af [forudsigelser](predictions.md). Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Microsoft Dataverse -administreret Data Lake.
+
+   > [!NOTE]
+   > - Datadeling med Microsoft Dataverse Administreret Data Lake understøttes ikke i øjeblikket, når du gemmer alle data i din egen Azure Data Lake Storage.
+   > - [Forudsigelse manglende værdier i et objekt](predictions.md) understøttes i øjeblikket ikke, når du aktiverer datadeling med Microsoft Dataverse Administreret Data Lake.
+
+   Når du aktiverer datadeling med Microsoft Dataverse, udløses en fuldstændig opdatering af dine datakilder og andre processer. Hvis processer kører og er i kø, kan du ikke se indstillingen til aktivering af datadeling med Microsoft Dataverse. Du kan vente på, at disse processer fuldføres eller annulleres, for at du kan dele data. 
+   
+   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.":::
+   
+   Når du kører processer, f. eks. dataindsættelse eller segmentoprettelse, oprettes der tilsvarende mapper i den lagerkonto, du har angivet ovenfor. Datafiler og model.json-filer oprettes og føjes til de respektive undermapper, afhængigt af den proces du kører.
 
 ## <a name="reset-an-existing-environment"></a>Nulstil et eksisterende miljø
 

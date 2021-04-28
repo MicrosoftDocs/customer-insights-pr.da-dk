@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til Facebook Ads Manager
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Facebook Annonceadministrator.
-ms.date: 06/05/2020
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Facebook Ads Manager.
+ms.date: 04/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,64 +9,83 @@ ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3e2b52fe743563e4bf61d870cbf1718e6c752a67
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ca32906a98bc734639fb369d6f5a92e8888fd850
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596675"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906803"
 ---
-# <a name="connector-for-facebook-ads-manager-preview"></a>Connector til Facebook Annonceadministrator (prøveversion)
+# <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Eksport af segmentliste til Facebook Ads Manager (forhåndsversion)
 
 Eksportér segmenter af samlede kundeprofiler til Facebook Annonceadministrator for at oprette kampagner på Facebook og Instagram.
 
-## <a name="prerequisites"></a>Forudsætninger
+## <a name="prerequisites-for-connection"></a>Forudsætninger for forbindelse
 
-- Du skal have en [**Facebook-reklamekonto**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), der indeholder en [**Facebook-forretningskonto**](https://business.facebook.com/).
+- Du skal have en [**Facebook-reklamekonto**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), der omfatter en [**Facebook-forretningskonto**](https://business.facebook.com/).
 - Du skal være administrator for [**Facebook-reklamekonto**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
 
-## <a name="connect-to-facebook-ads-manager"></a>Opret forbindelse til Facebook Annonceadministrator
+## <a name="known-limitations"></a>Kendte begrænsninger
 
-1. Gå til **Adminstration** > **Eksportdestinationer**.
+- Op til 10 millioner kundeprofiler pr. eksport til Facebook Ads Manager.
+- Eksport til Facebook Ads Manager er begrænset til segmenter.
+- Opret eller opdater kun brugerdefinerede målgrupper Facebook af typen *kundeliste*.
+- Eksport af segmenter med i alt 10 millioner profiler kan tage op til 90 minutter at fuldføre.
 
-1. Vælg **Konfigurer** under **Facebook Annonceadministrator**.
+## <a name="set-up-connection-to-facebook-ads-manager"></a>Konfigurer forbindelse til Facebook Ads Manager
 
-1. Giv din eksportdestination et genkendeligt navn ifeltet **Vist navn**.
+Før brugere kan oprette en eksport, skal administrator konfigurere forbindelsen til tjenesten og tillade bidragydere at bruge forbindelsen.
 
-1. Vælg **Fortsæt med Facebook** for at logge på din Facebook-annoncekonto.
+1. Gå til **Administrator** > **Forbindelser**.
 
-1. Tillad **ads_management**-tilladelsen, efter at de er godkendt i Facebook.
+1. Vælg **Tilføj forbindelse**, og vælg **Facebook Ads Manager** for at konfigurere forbindelsen.
 
-1. Vælg den **Facebook-annoncekonto**, du vil arbejde med.
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
 
-1. Vælg en **Eksisterende brugerdefineret målgruppe** på rullelisten, eller opret en **Ny brugerdefineret målgruppe**. Du kan finde flere oplysninger under [**Målgrupper i Facebook Annonceadministrator**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden **Administratorer**. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
+1. Godkend med Facebook Ads: 
 
-1. Vælg **Næste** for at konfigurere eksporten.
+   1. Vælg **Fortsæt med Facebook** for at logge på din Facebook-annoncekonto.
 
-## <a name="configure-the-connector"></a>Konfigurer connectoren
+   1. Tillad **ads_management**-tilladelsen, efter at de er godkendt i Facebook.
 
-1. Brug feltet **Vælg din nøgleidentifikator** til at vælge **Mail**, **Navn og adresse** eller **Telefon**, du vil sende til Facebook Annonceadministrator.
+   1. Vælg den **Facebook-annoncekonto**, du vil arbejde med.
+
+   1. Vælg en **Eksisterende brugerdefineret målgruppe** på rullelisten, eller opret en **Ny brugerdefineret målgruppe**. Du kan finde flere oplysninger under [**Målgrupper i Facebook Annonceadministrator**](https://www.facebook.com/business/help/744354708981227?id=2469097953376494).
+      > [!NOTE]
+      > Du kan kun oprette eller opdatere brugerdefinerede målgrupper for Facebook med typen *kundeliste*, der har denne eksport. I visse tilfælde kan du se brugerdefinerede målgrupper af forskellige typer på rullelisten. Hvis du vælger en anden type *kundeliste*, lykkes eksporten ikke. 
+
+1. Gennemse **Beskyttelse af personlige data og overholdelse af angivne standarder**, og vælg **Jeg accepterer**.
+
+1. Vælg **Gem** for at fuldføre forbindelsen.
+
+## <a name="configure-an-export"></a>Konfigurere en eksport
+
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+
+1. Gå til **Data** > **Eksport**.
+
+1. Vælg **Tilføj destination** for at oprette en ny eksport. 
+
+1. Vælg i **Forbindelse til eksport** en forbindelse i sektionen **Facebook Ads Manager**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+
+1. Brug feltet **Vælg din nøgleidentifikator** til at vælge **Mail**, **Navn og adresse** eller **Telefon**, du vil sende til Facebook Annonceadministrator. 
+
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**.
 
 1. Tilknyt de tilsvarende attributter fra det samlede kundeobjekt til den valgte nøgle-identifikator.
    > [TIP] De bedste chancer for et match sker, hvis du vælger **Mail** som nøgleidentifikator. Tilføjelse af flere identifikatorer kan forbedre matchningen.
 
-1. Vælg **Tilføj attribut** for at tilknytte flere attributter, der skal sendes til Facebook Annonceadministrator. Attributter fra Facebook Annonceadministrator tilknyttes følgende brugervenlige navne: **FN** = **Fornavn**, **LN** = **Efternavn**, **FI** = **Første initial**, **PHONE** = **Telefon**, **GEN** = **Køn**, **DOB** = **Fødselsdato**, **ST** = **Stat**, **CT** = **By**, **ZIP** = **Postnummer**, **COUNTRY** = **Land/område**
+1. Vælg **Tilføj attribut** for at tilknytte flere attributter, der skal sendes til Facebook Ads Manager. Attributter fra Facebook Ads Manager tilknyttes følgende brugervenlige navne: **FN** = **Fornavn**, **LN** = **Efternavn**, **FI** = **Første initial**, **PHONE** = **Telefon**, **GEN** = **Køn**, **DOB** = **Fødselsdato**, **ST** = **Stat**, **CT** = **By**, **ZIP** = **Postnummer**, **COUNTRY** = **Land/område**
 
 1. Vælg de segmenter, du vil eksportere.
 
 1. Vælg **Gem**.
 
-## <a name="export-the-data"></a>Eksportér dataene
+Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
-
-## <a name="known-limitations"></a>Kendte begrænsninger
-
-- Op til 10 millioner kundeprofiler pr. eksport til Facebook Ads Manager 
-- Eksport til Facebook Ads Manager er begrænset til segmenter.
-- Eksport af segmenter med i alt 10 millioner profiler kan tage op til 90 minutter at fuldføre
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

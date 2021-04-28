@@ -1,7 +1,7 @@
 ---
 title: Tilsætning af tredjeparts forbedringer fra HERE Technologies
 description: Generelle oplysninger om HERE Technologies-forbedringer.
-ms.date: 12/10/2020
+ms.date: 04/09/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 8e8d6bfea4e0df54682501f60759c24c893444af
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 5d1f037377010153045c9255d2d01f98ebf1fdfd
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597734"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896044"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Tilsætning af kundeprofiler ved hjælp af HERE Technologies (prøveversion)
 
@@ -26,35 +26,54 @@ Følgende forudsætninger skal være opfyldt, hvis du vil konfigurere HERE Techn
 
 - Du skal have et aktivt HERE Technologies-abonnement. Hvis du vil have et abonnement, kan du [tilmelde dig her](https://developer.here.com/sign-up?utm_medium=referral&utm_source=Microsoft-Dynamics-CI&create=Freemium-Basic) eller [kontakte HERE Technologies](https://developer.here.com/help?utm_medium=referral&utm_source=Microsoft-Dynamics-CI#how-can-we-help-you) direkte. [Få mere at vide om HERE Technologies Forbedring af placeringsdata.](https://developer.here.com/location-enrichment?cid=Dev-MicrosoftDynamics-DB-0-Dev-&utm_source=MicrosoftDynamics&utm_medium=referral&utm_campaign=Online_Dev_ReferralMicrosoft)
 
-- Du har API-nøglen til HERE Technologies.
+- Der er en HERE-[forbindelse](connections.md) tilgængelig *eller* du har [administrator](permissions.md#administrator)-tilladelser og HERE Technologies API-nøglen.
 
-- Du har [Administrator](permissions.md#administrator)-tilladelser.
+## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
-## <a name="configuration"></a>Konfiguration
+1. Gå til **Data** > **Forbedring**. 
 
-1. Gå til **Data** > **Forbedring**.
-
-1. Vælg **Forbedring af dine data** på feltet HERE Technologies.
+1. Vælg **Forbedr mine data** i feltet HERE Technologies, og vælg **Start her**.
 
    > [!div class="mx-imgBorder"]
    > ![HERE Technologies-felt](media/HERE-tile.png "HERE Technologies-felt")
 
-1. Angiv en aktiv **HERE Technologies-API-nøgle**. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**. 
+1. Vælg en [forbindelse](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette en forbindelse ved at vælge **Tilføj forbindelse**. Vælg **HERE Technologies** på rullelisten. 
 
-1. Bekræft begge input ved at vælge **Opret forbindelse til HERE**.
+1. Vælg **Opret forbindelse til HERE Technologies** for at bekræfte valget.
 
-1.  Vælg **Tilføj data**, og vælg det **kundedatasæt**, du vil forbedre med lokationsdata fra HERE Technologies. Du kan vælge objektet **Kunde** for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+1.  Vælg **Næste**, og angiv de **Kundedatasæt**, du vil forbedre med lokationsdata fra HERE Technologies. Du kan vælge objektet **Kunde** for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
 
     :::image type="content" source="media/enrichment-HERE-configuration-customer-data-set.png" alt-text="Skærmbillede, når du vælger kundedatasættet.":::
 
-1. Vælg, om du vil knytte felter til den primære og/eller sekundære adresse. Du kan angive en felttilknytning for begge adresser (f. eks. privat-og firmaadresse) og forbedre profilerne for begge adresser separat. Vælg **Næste**.
+1. Vælg, om du vil knytte felter til den primære og/eller sekundære adresse. Du kan angive en felttilknytning for begge adresser og forbedre profilerne for begge adresser separat. Hvis der f.eks. er en privatadresse og en forretningsadresse. Vælg **Næste**.
 
 1. Definér, hvilke felter fra dine samlede profiler der skal bruges til at søge efter de tilsvarende placeringsdata fra HERE Technologies. Felterne **Gade 1** og **postnummer** er obligatoriske for den valgte primære og/eller sekundære adresse. Hvis du vil opnå en større overensstemmelse, kan du tilføje flere felter.
 
    > [!div class="mx-imgBorder"]
    > ![HERE Technologies forbedret konfigurationsside](media/enrichment-HERE-configuration.png "HERE Technologies forbedret konfigurationsside")
 
-1. Vælg **Anvend** for at fuldføre felttilknytningen.
+1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
+
+1. Angiv et Navn til forbedringen. 
+
+1.Vælg **Gem forbedring**, når du har gennemset dine valg.
+
+## <a name="configure-the-connection-for-here-technologies"></a>Konfiguration af forbindelsen til HERE Technologies 
+
+Du skal være en administrator for at konfigurere forbindelser. Vælg **Tilføj forbindelse**, når du konfigurerer en konfiguration, *eller* gå til **Admin** > **Forbindelser**, og vælg **Konfigurer** i feltet HERE Technologies.
+
+1. Angiv et navn til forbindelsen i feltet **Vis navn**.
+
+1. Angiv en gyldig API-nøgle til HERE Technologies.
+
+1. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**
+
+1. Vælg **Kontroller** for at validere konfigurationen.
+
+1. Vælg **Gem**, når verifikationen er fuldført.
+
+> [!div class="mx-imgBorder"]
+   > ![HERE Technologies-forbindelsens konfigurationsside](media/enrichment-HERE-connection.png "HERE Technologies-forbindelsens konfigurationsside")
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 

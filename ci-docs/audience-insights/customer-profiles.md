@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: d6a9e7872a488b6d68afce35b547f93cc4a7c652
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
+ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596860"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "5896320"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -59,7 +59,7 @@ Kundeoplysninger indeholder:
 
 -   **Felt til kundeprofil:** Dette felt vises de forskellige værdier fra objektet Kundeprofil. Disse oplysninger kan være e-mailadresse, navn, by osv. 
 
--   **Potentielle interesser, potentielle mærker:** Viser, om du har konfigureret en opgørelse fra en oprindeligt leverandør. Den repræsenterer potentielle interesser og tilhørsforhold for mærker, som en kunde med en profil, der ligner denne kunde, kan have. Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft-graph.md).
+-   **Potentielle interesser, potentielle mærker:** Viser, om du har konfigureret en opgørelse fra en oprindeligt leverandør. Den repræsenterer potentielle interesser og tilhørsforhold for mærker, som en kunde med en profil, der ligner denne kunde, kan have. Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md).
 
 -   **Mål:** Viser, hvis du har konfigureret et eller flere mål for en bestemt type: Målpunkter for kundeattribut. De indeholder beregnede nøgletal omkring dine kunder på de enkelte kundeniveauer. Du kan finde flere oplysninger under [Definér, og administrer målpunkter](measures.md).
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f120e9e3cf8d40d913c7fa6a81fbf9facd045e3c
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
+ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597182"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "5906849"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaktionsrelateret forudsigelse om afgang
 
@@ -46,6 +46,14 @@ Transaktionsrelateret forudsigelse om afgang er med til at forudsige, om en kund
         - **Tidsstempel:** Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle.
         - **Hændelse:** Navnet på den hændelse, du vil bruge. Et felt, der kaldes "UserAction" i en forretning, kan f. eks. være en kupon, der bruges af kunden.
         - **Detaljer:** Detaljerede oplysninger om hændelsen. Et felt, der kaldes "CouponValue" i en forretning, kan f. eks. være valutaværdien af en kupon.
+- Forslåede datakarakteristika:
+    - Tilstrækkelige historiske data: Transaktionsdata for mindst det dobbelte af det valgte tidsvindue. Helst to til tre års abonnementsdata. 
+    - Flere køb pr. kunde: Ideelt mindst to transaktioner pr. kunde.
+    - Antal kunder: Mindst 10 kundeprofiler, helst mere end 1.000 entydige kunder. Modellen kan ikke bruges af færre end 10 kunder og med utilstrækkelige historiske data.
+    - Datafuldførelse: Mindre end 20 % af de manglende værdier i datafeltet for det angivne objekt.
+
+> [!NOTE]
+> For en virksomhed med mange kunders indkøbshyppighed (med få ugers mellemrum) anbefales det, at du vælger et kortere forudsigelsesvindue og afgangsdefinition. Hvis du har lav indkøbshyppighed (med få måneder mellemrum eller én gang om året), skal du vælge et længere forudsigelsesvindue og afgangsdefinition.
 
 ## <a name="create-a-transactional-churn-prediction"></a>Opret transaktionsrelateret forudsigelse om afgang
 
@@ -129,7 +137,9 @@ Transaktionsrelateret forudsigelse om afgang er med til at forudsige, om en kund
 1. Vælg den forudsigelse, du vil gennemse.
    - **Forudsigelsesnavn:** Navnet på den forudsigelse, der blev angivet under oprettelsen.
    - **Forudsigelsestype:** Den modeltype, der bruges til forudsigelse
-   - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.
+   - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.    
+     I outputobjektet er *ChurnScore* den anslåede sandsynlighed for kundeafgang, og *IsChurn* er en binær etiket baseret på *ChurnScore* med en tærskelværdi på 0,5. Standardgrænsen fungerer muligvis ikke i dit scenarie. [Opret et nyt segment](segments.md#create-a-new-segment) med din foretrukne grænseværdi.
+     Ikke alle kunder er nødvendigvis aktive kunder. Nogle af dem har måske ikke haft nogen aktivitet i lang tid og betragtes som allerede som afgåede baseret på din afgangsdefinition. Det er ikke brugbart at forudsige risikoen for kundeafgang for kunder, der allerede er afgået, fordi de ikke er en relevant målgruppe.
    - **Forventet felt:** Dette felt udfyldes kun i forbindelse med visse typer forudsigelser og bruges ikke i afgang af forudsigelse.
    - **Status:** Status for forudsigelseskørslen
         - **I kø:** Forudsigelse venter på, at andre processer køres.
