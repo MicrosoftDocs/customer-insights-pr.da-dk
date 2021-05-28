@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2eb84c44aa530346a73ba720106734d705a45f23
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595557"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085615"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -103,6 +103,18 @@ Matchregler repræsenterer sæt af betingelser. Hvis du vil matche objekter efte
 
 > [!NOTE]
 > Rækkefølgen af regler er vigtig. Den matchende algoritme forsøger at matche på baggrund af din første regel og fortsætter kun til den anden regel, hvis der ikke blev identificeret nogen match med den første regel.
+
+### <a name="change-the-entity-order-in-match-rules"></a>Ændre objektrækkefølgen i matchregler
+
+Du kan omarrangere objekter for matchregler for at ændre den rækkefølge, de behandles i. Regler, der er i konflikt på grund af en ændret rækkefølge, fjernes. Du skal genoprette fjernede regler med en opdateret konfiguration.
+
+1. Gå til **Data** > **Saml** > **Match**, og vælg **Rediger**.
+
+1. Vælg kontrolelementet **Flyt op/ned** i ruden **Rediger regel**, eller træk og slip objekter for at ændre rækkefølgen.
+
+   :::image type="content" source="media/reorder-match-rules.png" alt-text="Indstillinger, som ændrer den rækkefølge, som ordreobjekter behandles i i matchfasen.":::
+
+1. Vælg **Udført** for at gemme reglen.
 
 ## <a name="define-deduplication-on-a-match-entity"></a>Definer deduplikering for et match-objekt
 

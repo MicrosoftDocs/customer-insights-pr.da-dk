@@ -1,7 +1,7 @@
 ---
 title: Arbejde med API'er
 description: Brug af API'er og forstå begrænsningerne.
-ms.date: 03/10/2021
+ms.date: 05/10/2021
 ms.reviewer: wimohabb
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 59161456914df84d7e72402ed1f5faf70a5119ba
-ms.sourcegitcommit: a39e00a50ad3eda820fd756c5611081f0ca04662
+ms.openlocfilehash: 4d41d7d328dfa6699b5f5e992d3a5bf3179490d8
+ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "5873655"
+ms.lasthandoff: 05/10/2021
+ms.locfileid: "6016585"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbejd med Customer Insights API'er
 
@@ -90,19 +90,13 @@ Du kan finde oplysninger om, hvordan du bruger API'er til vores klientbiblioteke
 
 1. Gå til **API-tilladelser** i din app-registrering i Azure-portalen.
 
-1. Vælg **Tilføj en tilladelse**, og vælg **Customer Insights** i sideruden.
+1. Vælg **Tilføj en tilladelse**. 
+
+1. Vælg fanen **API'er, min organisation bruger**, og vælg **Dynamics 365 AI for Customer Insights** på listen. 
 
 1. Vælg **Tilladelsestype** for **Programtilladelser**, og vælg tilladelse til **CustomerInsights.Api.All**.
 
 1. Vælg **Tilføj tilladelser**.
-
-1. Hvis du vil give administrator samtykke til denne programtilladelse, skal du tilføje en primær tjeneste.
-
-   1. Installer Azure Active Directory (AD) PowerShell-modulet: `Install-Module -Name AzureAD -AllowClobber -Scope AllUsers`
-   1. Opret forbindelse til din AD-konto: `Connect-AzureAD -TenantId <your tenant id>`. Du kan finde dit lejer-ID i **Oversigt** > **Azure Active Directory**.
-   1. Kør følgende kommando for at tilføje en Azure AD-primær tjeneste: `New-AzureADServicePrincipal -AppId "38c77d00-5fcb-4cce-9d93-af4738258e3c" -DisplayName "Microsoft Dynamics 365 Customer Insights"` Parameteren AppID gælder for det API-app til Customer Insights.
-
-   :::image type="content" source="media/azureAD-service-principal.png" alt-text="Primær tjeneste, eksempel":::
 
 1. Gå tilbage til **API-tilladelser** for din app-registrering.
 

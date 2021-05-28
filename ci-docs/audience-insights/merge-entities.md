@@ -1,7 +1,7 @@
 ---
 title: Flet objekter i datasamling
 description: Flet objekter for at oprette samlede kundeprofiler.
-ms.date: 04/16/2020
+ms.date: 05/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,61 +9,100 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4ad06a0baf57e612fc0e0214dfd23d28e7d2b6be
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 2cab702509596dd87c0c9b9769d1af8ba8387f9d
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896504"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085569"
 ---
 # <a name="merge-entities"></a>Flet objekter
 
 Flettefasen er den sidste fase i datasamlingsprocessen. Dens formål er at afstemme data, der er i konflikt. Af eksempler på data, der er i konflikt, kan nævnes et kundenavn, der findes i to af dine datasæt, men som vises en smule anderledes i hvert sæt ("Claus Madsen" i forhold til "Klaus Madsen") eller et telefonnummer, der adskiller sig i formatet (617-803-091X i forhold til 617803091X). Fletning af disse datapunkter, der er i konflikt, sker på attribut for attribut-basis.
 
+:::image type="content" source="media/merge-fields-page.png" alt-text="Siden Flet i processen til datasamling, der viser en tabel med flettede felter, der definerer den samlede kundeprofil.":::
+
 Når du har fuldført [matchfasen](match-entities.md), starter du flettefasen ved at vælge feltet **Flet** på siden **Saml**.
 
 ## <a name="review-system-recommendations"></a>Gennemgå systemanbefalinger
 
-På siden **Flet** vælger og udelader du de attributter, der skal flettes i det samlede kundeprofilobjekt (resultatet af konfigurationsprocessen). Nogle attributter flettes automatisk af systemet.
+I **Data** > **Saml** > **Flet** skal du vælge og udelade attributter, der skal flettes i objektet med den samlede kundeprofil. Den samlede kundeprofil er resultatet af processen til samling af data. Nogle attributter flettes automatisk af systemet.
 
-### <a name="view-merged-attributes"></a>Se flettede attributter
+Hvis du vil have vist de attributter, der er inkluderet i en af dine automatisk flettede attributter, skal du vælge den flettede attribut under fanen **Kundefelter** i tabellen. De attributter, der udgør den flettede attribut, vises i to nye rækker under den flettede attribut.
 
-Hvis du vil have vist de attributter, der er inkluderet i en af de automatisk flettede attributter, skal du vælge den flettede attribut. De to attributter, der udgør den flettede attribut, vises i to nye rækker under den flettede attribut.
+## <a name="separate-rename-exclude-and-edit-merged-fields"></a>Adskille, omdøbe, udelade og redigere flettede felter
 
-> [!div class="mx-imgBorder"]
-> ![Vælge flettet attribut](media/configure-data-merge-profile-attributes.png "Vælge flettet attribut")
+Du kan ændre, hvordan flettede attributter skal behandles i systemet for at oprette den samlede kundeprofil. Vælg **Vis mere**, og vælg, hvad du vil ændre.
 
-### <a name="separate-merged-attributes"></a>Adskille flettede attributter
+:::image type="content" source="media/manage-merged-attributes.png" alt-text="Indstillinger i rullemenuen Vis mere til at administrere flettede attributter.":::
 
-Hvis du vil adskille eller ophæve fletning af en af de automatisk flettede attributter, skal du finde attributten i tabellen **Profilattributter**.
+Der er flere oplysninger i følgende afsnit.
 
-1. Vælg ellipseknappen ( ... ).
+## <a name="separate-merged-fields"></a>Adskille flettede felter
+
+Hvis du vil adskille flettede felter, skal du søge efter attributten i tabellen. Adskilte felter vises som individuelle datapunkter i den samlede kundeprofil. 
+
+1. Vælg det flettede felt.
   
-2. Vælg **Separate felter** på rullelisten.
+1. Vælg **Vis flere**, og vælg **Separate felter**.
+ 
+1. Bekræft separationen.
 
-### <a name="remove-merged-attributes"></a>Fjerne flettede attributter
+1. Vælg **Gem** og **Kør** for at behandle ændringerne.
 
-Hvis du vil udelade en attribut fra det endelige kundeprofilobjekt , skal du finde den i tabellen **Profilattributter**.
+## <a name="rename-merged-fields"></a>Omdøbe flettede felter
 
-1. Vælg ellipseknappen ( ... ).
+Omdøb det viste navn på flettede attributter. Du kan ikke ændre navnet på outputobjektet.
+
+1. Vælg det flettede felt.
   
-2. Vælg **Flet ikke** på rullelisten.
+1. Vælg **Vis flere**, og vælg **Omdøb**.
 
-   Attributten flyttes til sektionen **Fjernet fra kundepost**.
+1. Bekræft det ændrede viste navn. 
 
-## <a name="manually-add-a-merged-attribute"></a>Manuelt tilføje en flettet attribut
+1. Vælg **Gem** og **Kør** for at behandle ændringerne.
 
-Hvis du vil tilføje en flettet attribut, skal du gå til siden **Flet**.
+## <a name="exclude-merged-fields"></a>Udelade flettede felter
 
-1. Vælg **Tilføj flettet attribut**.
+Udelad en attribut fra den samlede kundeprofil. Hvis feltet bruges i andre processer, f.eks. i et segment, skal du fjerne det fra disse processer, før det udelades i kundeprofilen. 
 
-2. Angiv et **Navn**, der identificerer den på siden **Flet** senere.
+1. Vælg det flettede felt.
+  
+1. Vælg **Vis flere**, og vælg **Udelad**.
 
-3. Du kan også angive et **Vist navn**, der skal vises i det samlede kundeprofilobjekt.
+1. Bekræft udeladelsen.
 
-4. Konfigurer **Vælg duplikerede attributter** for at vælge de attributter, du vil flette fra de matchede objekter. Du kan også søge efter attributter.
+1. Vælg **Gem** og **Kør** for at behandle ændringerne. 
 
-5. Angiv **Ranger efter vigtighed** for at prioritere den ene attribut over de andre. Hvis objektet *WebAccountCSV* f.eks. indeholder de mest præcise data om attributten *Fulde navn*, kan du prioritere dette objekt højere end *ContactCSV* ved at vælge *WebAccountCSV*. Resultatet medfører, at *WebAccountCSV* flyttes til første prioritet, mens *ContactCSV* flyttes til anden prioritet, når der udtrækkes værdier til attributten *Fulde navn*.
+Vælg **Udeladte felter** på siden **Flet** for at se listen over alle udeladte felter. Med denne rude kan du tilføje udeladte felter igen.
+
+## <a name="manually-combine-fields"></a>Kombinere felter manuelt
+
+Angiv en flettet attribut manuelt. 
+
+1. Vælg **Kombiner felter** på siden **Flet**.
+
+1. Angiv et **Navn** og et **Navn på outputfelt**.
+
+1. Vælg et felt, der skal tilføjes. Vælg **Tilføj felter** for at kombinere flere felter.
+
+1. Bekræft udeladelsen.
+
+1. Vælg **Gem** og **Kør** for at behandle ændringerne. 
+
+## <a name="change-the-order-of-fields"></a>Ændre rækkefølgen for felter
+
+Nogle objekter indeholder flere detaljer end andre. Hvis et objekt indeholder de nyeste data om et felt, kan du prioritere det frem for andre objekter, når du fletter værdier.
+
+1. Vælg det flettede felt.
+  
+1. Vælg **Vis flere**, og vælg **Rediger**.
+
+1. Vælg **Flyt op/ned** i ruden **Kombiner felter** for at angive rækkefølgen, eller træk og slip dem til den ønskede placering.
+
+1. Bekræft ændringen.
+
+1. Vælg **Gem** og **Kør** for at behandle ændringerne.
 
 ## <a name="run-your-merge"></a>Køre fletningen
 
@@ -72,11 +111,11 @@ Uanset om du fletter attributter manuelt eller lader systemet flette dem, kan du
 > [!div class="mx-imgBorder"]
 > ![Gemme og køre datafletning](media/configure-data-merge-save-run.png "Gemme og køre datafletning")
 
-Hvis du vil foretage yderligere ændringer og køre trinnet igen, kan du annullere en igangværende fletning. Vælg **Opdaterer...**, og vælg **Annuller job** i den siderude, der vises.
+Vælg **Kør kun fletning**, hvis du kun vil se outputtet afspejlet i det samlede kundeobjekt. Downstream-processer opdateres som [defineret i opdateringsplanen](system.md#schedule-tab).
 
-Når teksten **Opdaterer ...** er ændret til **Gennemført**, er fletningen fuldført, og uoverensstemmelser i dine data i henhold til de politikker, du har defineret, er løst. Flettede og ikke-flettede attributter inkluderes i objektet for den samlede profil. Udeladte attributter inkluderes ikke i objektet for den samlede profil.
+Vælg **Kør flettede og downstream-processer** for at opdatere systemet med ændringerne. Alle processer, herunder forbedringer, segmenter og målinger, køres automatisk igen. Når alle downstream-processer er fuldført, afspejler kundeprofilerne eventuelle ændringer, du har foretaget.
 
-Hvis det ikke var første gang, du fuldførte en fletning, køres alle downstream-processer, herunder forbedring, segmentering og målinger, automatisk. Når alle downstream-processer er kørt igen, afspejler kundeprofilerne eventuelle ændringer, du har foretaget.
+Hvis du vil foretage flere ændringer og køre trinnet igen, kan du annullere en igangværende fletning. Vælg **Opdaterer...**, og vælg **Annuller job** i den siderude, der vises.
 
 > [!TIP]
 > Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
@@ -85,9 +124,6 @@ Hvis det ikke var første gang, du fuldførte en fletning, køres alle downstrea
 
 Konfigurer [aktiviteter](activities.md), [forbedring](enrichment-hub.md) eller [relationer](relationships.md) for at få mere indsigt i dine kunder.
 
-Hvis du allerede har konfigureret aktiviteter, forbedring eller relationer, eller hvis du har defineret segmenter, behandles de automatisk, så de anvender de nyeste kundedata.
-
-
-
+Hvis du allerede har konfigureret aktiviteter, forbedringer eller segmenter, behandles de automatisk til at bruge de nyeste kundedata.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

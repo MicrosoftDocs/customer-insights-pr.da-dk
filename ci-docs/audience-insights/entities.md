@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 383523bad5105e08e57758838e90a49e805b5f9b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
+ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596400"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049387"
 ---
 # <a name="entities-in-audience-insights"></a>Objekter i målgruppeindsigt
 
@@ -35,14 +35,14 @@ På siden **Objekter** vises objekter, og der findes flere kolonner:
 Vælg et objekt for at udforske de forskellige felter og poster, der findes i det pågældende objekt.
 
 > [!div class="mx-imgBorder"]
-> ![Vælge et objekt](media/data-manager-entities-data.png "Vælge et objekt")
+> ![Vælg et objekt](media/data-manager-entities-data.png "Vælge et objekt")
 
-- Fanen **Data** er valgt som standard, og der vises en tabel over detaljer om de enkelte poster for objektet.
+- Under fanen **Data** vises en tabel med oplysninger om individuelle poster i objektet.
 
 > [!div class="mx-imgBorder"]
 > ![Tabellen Felter](media/data-manager-entities-fields.PNG "Tabellen Felter")
 
-- Fanen **Felter** viser en tabel, hvor du kan se detaljer om det valgte objekt, f.eks. feltnavne, datatyper og typer. Kolonnen **Type** viser tilknyttede Common Data Model-typer, som enten identificeres automatisk af systemet eller [tilknyttes manuelt](map-entities.md) af brugere. Disse er semantiske typer, der kan være forskellige fra datatyperne for attributter – f.eks. har feltet *Email* herunder datatypen *Tekst*, men dets (semantiske) Common Data Model -type kan f.eks. være *Email* eller *EmailAddress*.
+- Fanen **Attributter** er valgt som standard, og der vises en tabel, hvor du kan gennemse detaljer om det valgte objekt, f.eks. feltnavne, datatyper og typer. Kolonnen **Type** viser tilknyttede Common Data Model-typer, som enten identificeres automatisk af systemet eller [tilknyttes manuelt](map-entities.md) af brugere. Disse er semantiske typer, der kan være forskellige fra datatyperne for attributter – f.eks. har feltet *Email* herunder datatypen *Tekst*, men dets (semantiske) Common Data Model -type kan f.eks. være *Email* eller *EmailAddress*.
 
 > [!NOTE]
 > I begge tabeller vises der kun et eksempel på objektets data. Hvis du vil have vist det komplette datasæt, skal du gå til siden **Datakilder**, vælge et objekt, vælge **Rediger** og derefter få vist dette objekts data med Power Query-editoren som forklaret under [Datakilder](data-sources.md).

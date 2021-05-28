@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 3c0b4690e18285aa37eef481b3cfac951884ead6
+ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887887"
+ms.lasthandoff: 05/20/2021
+ms.locfileid: "6085523"
 ---
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
@@ -36,11 +36,9 @@ Du kan tilføje en datakilde på tre primære måder:
 
 Data fra de lokale datakilder i målgruppeindsigt understøttes på basis af Power Platform-dataflows. Dataflows kan aktiveres i Customer Insights ved at [angive Microsoft Dataverse URL-adressen til miljøet](manage-environments.md#create-an-environment-in-an-existing-organization) under konfiguration af miljøet.
 
-Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med Customer Insights, bruger som standard [Power Platform-dataflows](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Dataflows understøtter forbindelse forud for brug ved hjælp af data gateways. Fjern og genskab datakilder, der fandtes, før et Dataverse-miljø blev knyttet til at bruge de lokale datagateways.
+Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med Customer Insights, bruger som standard [Power Platform-dataflows](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Dataflows understøtter forbindelser i det lokale miljø ved hjælp af datagateway. Fjern og genskab datakilder, der fandtes, før et Dataverse-miljø blev knyttet til at [bruge de lokale datagateways](/powerapps/maker/data-platform/using-dataflows-with-on-premises-data.md).
 
 Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, og du kan genbruge dem i Customer Insights. På siden med datakilder vises links til at gå Power Platform-miljøet, hvor du kan få vist og konfigurere de lokale datagateways.
-
-:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Skærmbillede af siden med datakilder, der viser links, der peger på Power Platform-miljøet.":::
 
 ## <a name="review-ingested-data"></a>Gennemgå indtagede data
 

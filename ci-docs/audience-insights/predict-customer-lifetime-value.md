@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 835a9f3371a8c1b1a10d5c6901c03e1df5379d3d
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
+ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595795"
+ms.lasthandoff: 04/28/2021
+ms.locfileid: "5954572"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Kundens levetidsværdi (CLV) forudsigelse (prøveversion)
 
@@ -38,11 +38,11 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
 - Kunde-id: Entydigt id, der skal svare til transaktioner med en enkelt kunde
 
 - Transaktionshistorik: Historisk transaktionslog med nedenstående semantiske dataskema
-    - Transaktions-id: Entydigt id for hver transaktion.
-    - Transaktionsdato: Dato og helst et tidsstempel for hver transaktion
-    - Transaktionsbeløb: Pengeværdi (f.eks. omsætning eller avance) for hver transaktion
-    - Etiket, der er tildelt til returneringer (valgfrit): Boolesk værdi, der angiver, om transaktionen er en returvare 
-    - Produkt-id (valgfrit): Produkt-id for det produkt, der er involveret i transaktionen
+    - **Transaktions-id**: Entydigt id for hver transaktion
+    - **Transaktionsdato**: Dato og helst et tidsstempel for hver transaktion
+    - **Transaktionsbeløb**: Pengeværdi (f.eks. omsætning eller avance) for hver transaktion
+    - **Etiket, der er tildelt til returneringer** (valgfrit): Boolesk værdi, der angiver, om transaktionen er en returvare 
+    - **Produkt-id** (valgfrit): Produkt-id for det produkt, der er involveret i transaktionen
 
 - Yderligere data (valgfrit), f.eks.
     - Webaktiviteter: oversigt over besøg på websted, e-mail-oversigt
@@ -53,10 +53,20 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
     - Kunde-id'er, der knytter aktiviteter til dine kunder
     - Aktivitetsoplysninger, der indeholder navnet på og datoen for aktiviteten
     - Det semantiske dataskema for aktiviteter omfatter: 
-        - Primær nøgle: Et entydigt id for en aktivitet
-        - Tidsstempel: Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle
-        - Arrangement (aktivitetsnavn): Navnet på den hændelse, du vil bruge
-        - Detaljer (beløb eller værdi): Detaljer om kundeaktiviteten
+        - **Primær nøgle**: Et entydigt id for en aktivitet
+        - **Tidsstempel**: Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle
+        - **Hændelse (aktivitetsnavn)**: Navnet på den hændelse, du vil bruge
+        - **Detaljer (beløb eller værdi)**: Detaljer om kundeaktiviteten
+
+- Forslåede datakarakteristika:
+    - Tilstrækkelige historiske data: Mindst et års transaktionsdata. Helst to til tre års transaktionsdata for at forudsige CLV i et år.
+    - Flere køb pr. kunde: Ideelt set mindst to til tre transaktioner pr. kunde-id, helst på tværs af flere datoer.
+    - Antal kunder: Mindst 100 forskellige kunder, helst mere end 10.000 kunder. Modellen kan ikke bruges af færre end 100 kunder og med utilstrækkelige historiske data
+    - Datafuldstændighed: Mindre end 20 % manglende værdier i obligatoriske felter i inputdataene   
+
+> [!NOTE]
+> - Modellen kræver kundernes transaktionsoversigt. Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købs-/transaktionsobjekter, kan du samle dem i Power Query inden dataindtagelse.
+> - Hvis du vil have flere kundeaktivitetsdata (valgfrit), kan du dog tilføje lige så mange kundeaktivitetsobjekter, som du ønsker, til overvejelse af modellen.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Oprette kundens levetidsværdi (CLV) forudsigelse
 
@@ -76,14 +86,14 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
    Enheden angives som standard som måneder. Du kan ændre det til år, så du kommer længere ud i fremtiden.
 
    > [!TIP]
-   > Hvis du vil sammenligne CLV nøjagtigt for den tidsperiode, du angiver, skal du have en tilsvarende periode med historiske data. Hvis du f.eks. vil have de næste 12 måneder, anbefales det, at du har mindst 18-24 måneders historiske data.
+   > Hvis du vil sammenligne CLV nøjagtigt for den tidsperiode, du angiver, skal du have en tilsvarende periode med historiske data. Hvis du f.eks. vil forudsige CLV for de næste 12 måneder, anbefales det, at du har mindst 18-24 måneders historiske data.
 
 1. Angiv, hvad **Aktive kunder** betyder for virksomheden. Angiv den tidsramme, hvor en kunde skal have haft mindst én transaktion, for at blive fundet aktiv. Modellen ønsker kun at bruge CLV til aktive kunder. 
    - **Lad model beregne købsinterval (anbefales)**: I modellen analyseres dataene, og en tidsperiode bestemmes på baggrund af historiske køb.
    - **Angiv intervallet manuelt**: Hvis du har en bestemt forretningsdefinition for en aktiv kunde, skal du vælge denne indstilling og angive tidsperiode efter behov.
 
 1. Definer percentil for **Kunder af høj værdi** for at aktivere modellen til at levere resultater, der svarer til virksomhedens definition.
-    - **Modelberegning (anbefales)**: I modellen analyseres dine data, og det bestemmes, hvad en kunde med høj værdi kan have for virksomheden på baggrund af kundernes transaktionsoversigt. I modellen bruges en heuristikregel (der er inspireret af reglen 80/20 eller pareto-princippet) til at finde proportionen med kunder af høj værdi. Den procentdel af kunderne, der har givet en samlet omsætning på 80 % for virksomheden i den historiske periode, betragtes som kunder af høj værdi. Mindre end 30-40 % af kunderne bidrager som regel til en samlet omsætning på 80 %. Dette antal kan dog variere, afhængigt af virksomhed og branche.    
+    - **Modelberegning (anbefales)**: I modellen analyseres dine data, og det bestemmes, hvad en kunde med høj værdi kan have for virksomheden på baggrund af kundernes transaktionsoversigt. I modellen bruges en heuristikregel (der er inspireret af reglen 80/20 eller pareto-princippet) til at finde proportionen med kunder af høj værdi. Den procentdel af kunderne, der har givet en samlet omsætning på 80 % for virksomheden i den historiske periode, betragtes som kunder af høj værdi. Mindre end 30-40 procent af kunderne bidrager som regel til en samlet omsætning på procent. Dette antal kan dog variere, afhængigt af virksomhed og branche.    
     - **Procent af aktive kunder i top**: Definer kunder af høj værdi for virksomheden som en percentil af de mest aktive betalende kunder. Du kan f.eks. bruge denne indstilling til at definere kunder af høj værdi som de øverste 20 % af de fremtidige betalende kunder.
 
     Hvis virksomheden definerer kunder af høj værdi på en anden måde, skal du [fortælle os det, som vi gerne vil høre](https://go.microsoft.com/fwlink/?linkid=2074172).
@@ -181,20 +191,20 @@ Der findes tre primære sektioner med data på resultatsiden.
   Ved hjælp af definitionen af kunder med høj værdi, der blev leveret, mens forudsigelse konfigureres, vurderer systemet, hvordan AI-modellen præsterede i forhold til en basismodel.    
 
   Vurderingerne bestemmes ud fra følgende regler:
-  - A når hvor modellen nøje sammenlignes med mindst 5 % flere kunder med høj værdi i forhold til den oprindelige model.
-  - B når modellen nøje sammenlignes med 0-5 % flere kunder med høj værdi i forhold til den oprindelige model.
-  - C når hvor modellen nøje sammenlignes med færre kunder med høj værdi i forhold til den oprindelige model.
+  - **A** når modellen nøjagtigt har forudsagt mindst 5 % flere kunder med høj værdi i forhold til den oprindelige model.
+  - **B** når modellen nøjagtigt har forudsagt 0-5 % flere kunder med høj værdi i forhold til den oprindelige model.
+  - **C** når modellen nøjagtigt har forudsagt færre kunder med høj værdi i forhold til den oprindelige model.
 
   I ruden **Bedømmelse** vises flere detaljer om AI-modelydeevnen og den grundlæggende model. I den grundlæggende model bruges en ikke-AI-baseret metode til at beregne kundens levetidsværdi, primært på baggrund af historiske indkøb foretaget af kunder.     
   Den standardformel, der bruges til at beregne CLV efter basismodellen:    
 
-  *CLV for hver kunde = Gennemsnitlig månedligt køb foretaget af kunden i vinduet med aktive kunder * Antal måneder i CLV-forudsigelse perioden * Samlet tilbageholdelseshastighed for alle kunder*
+  _**CLV for hver kunde** = Gennemsnitlig månedligt køb foretaget af kunden i vinduet med aktive kunder *Antal måneder i CLV-forudsigelse perioden* Samlet tilbageholdelseshastighed for alle kunder*_
 
   AI-modellen sammenlignes med den oprindelige model, der er baseret på to modelydeevnemetrikværdier.
   
   - **Succesfrekvens, der spår kunder med stor værdi**
 
-    Se forskellen i, hvordan kunder med høj værdi bruger AI-modellen i forhold til den oprindelige model. En succesrate på 84 % betyder f.eks., at AI-modellen kunne registrere 84 % nøjagtigt ud af alle kunder i uddannelsesdataene. Derefter sammenlignes denne succesrate med succesprocenten for den oprindelige model for at rapportere den relative ændring. Denne værdi bruges til at tildele modellen en vurdering.
+    Se forskellen i, hvordan kunder med høj værdi bruger AI-modellen i forhold til den oprindelige model. En succesrate på 84 procent betyder f.eks., at AI-modellen kunne registrere 84 procent nøjagtigt ud af alle kunder i uddannelsesdataene. Derefter sammenlignes denne succesrate med succesprocenten for den oprindelige model for at rapportere den relative ændring. Denne værdi bruges til at tildele modellen en vurdering.
 
   - **Fejlmetrikværdier**
     

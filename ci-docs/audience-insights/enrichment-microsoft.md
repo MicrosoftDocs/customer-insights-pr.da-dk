@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 6f19033236190547f68d2b91ec6b32074bf7912a
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: be042dd139607849b795c903fa58da2edb9ff589
+ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896595"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "6064884"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Forbedre kundeprofiler med brand- og interessetilhørsforhold (eksempel)
 
@@ -31,7 +31,7 @@ Hvis du vil konfigurere forbedring af interessetilhørsforhold, skal du gå til 
 
 ## <a name="how-we-determine-affinities"></a>Sådan afgør vi tilhørsforhold
 
-Vi bruger Microsofts onlinesøgningsdata til at finde tilhørsforhold til og interesser på tværs af forskellige demografiske segmenter (defineret efter alder, køn eller lokation). Antal søgninger online for et brand eller en interesse bestemmer, hvor stærkt tilhørsforholdet til et demografisk segment er for det pågældende brand eller den pågældende interesse i forhold til andre segmenter. mærke eller interesse.
+Vi bruger Microsofts onlinesøgningsdata til at finde tilhørsforhold til og interesser på tværs af forskellige demografiske segmenter (defineret efter alder, køn eller lokation). Antal søgninger online for et brand eller en interesse bestemmer, hvor stærkt tilhørsforholdet til et demografisk segment er for det pågældende brand eller den pågældende interesse i forhold til andre segmenter.
 
 ## <a name="affinity-level-and-score"></a>Tilhørsniveau og point
 

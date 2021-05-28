@@ -6,15 +6,15 @@ ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01290d5fae7af1737b73373d75e334ae1ed67d37
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: b5a644e286bd44d4ebf7d1837255326c005b48d6
+ms.sourcegitcommit: 74cd4fa9cbb784d9dff174c0eec7b4dcb408d66b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5759814"
+ms.lasthandoff: 05/18/2021
+ms.locfileid: "6059309"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Eksportér segmenter til Marketo (forhåndsversion)
 
@@ -44,7 +44,7 @@ Eksportér segmenter fra de samlede brugerprofiler til at generere kampagner, le
 
 1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Angiv dit **[Marketo-klient-ID, klientens hemmelige og resterende værtsnavnsslutpunkt](https://developers.marketo.com/rest-api/authentication/)**.
+1. Angiv dit **[Marketo-klient-ID, klientens hemmelige og resterende værtsnavnsslutpunkt](https://developers.marketo.com/rest-api/authentication/)**. Værtsnavn for REST-slutpunkt er kun værtsnavnet uden `https://`. Eksempel: `xyz-abc-123.mktorest.com`. 
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og kompatibilitet**, og vælg **Opret forbindelse** for at initialisere forbindelsen til Marketo.
 
@@ -62,7 +62,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg en forbindelse i sektionen Marketo i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
-1. Angiv dit **[Marketo-liste-id](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)** 
+1. Angiv dit **[Marketo-liste-id](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Liste-id'et er en rent numerisk værdi. Hvis f.eks. Marketo-liste-id'et er ST12345A7, skal du fjerne tegnet før og efter tallene og angive `12345`. 
 
 1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. 
 
@@ -74,7 +74,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). I Marketo kan du nu finde dine segmenter under [Marketo-lister](ttps://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). I Marketo kan du nu finde dine segmenter under [Marketo-lister](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists).
 
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder

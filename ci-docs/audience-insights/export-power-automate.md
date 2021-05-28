@@ -6,15 +6,15 @@ ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: phkieffer
+author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e973bb11b31c9e70b695ebec8aa2700fdaa5e44f
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: ce2477d957a1792e0436a0dfc15a33621b1c89a9
+ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597918"
+ms.lasthandoff: 05/04/2021
+ms.locfileid: "5976081"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-connector (prøveversion)
 
@@ -27,7 +27,7 @@ Brug udløsere til at oprette skystrømme og automatisere tilbagevendende opgave
 - Udløses, når en opdatering af datakilde mislykkes. 
 - Udløses, når en opdatering af datakilde lykkes.
 - Udløses, når en tærskel krydses i et segment. Udløseren er begrænset til krydsning over grænsen.
-- Udløses, når en tærskel krydses i en forretningsmæssig måling. Udløseren er begrænset til krydsning over grænsen.
+- Udløses, når en tærskel krydses i en forretningsmæssig måling. Det er kun forretningsmålinger uden en dimension, der understøttes. Udløseren er begrænset til krydsning over grænsen.
 - Udløser, når en fuld opdatering af (datakilder, segmenter, målinger....) er fuldført.
 - Udløser, når en opdatering af samlingsprocessen (tilknytning, match, fletning) er fuldført.
 

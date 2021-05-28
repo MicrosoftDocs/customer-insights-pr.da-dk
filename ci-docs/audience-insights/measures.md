@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 9a94a32a04f2a8beb661c27271fe96f23d998722
-ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
+ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
+ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "5887933"
+ms.lasthandoff: 05/17/2021
+ms.locfileid: "6049243"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere målinger
 
@@ -34,7 +34,7 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
 
 1. Vælg **Rediger navn**, og angiv et **Navn** til målingen. 
    > [!NOTE]
-   > Hvis konfigurationen af den nye måleenhed kun indeholder to felter, f.eks. CustomerID og én beregning, føjes outputtet som en ny kolonne til det systemgenererede objekt, der kaldes Customer_Measure. Du kan også se målingens værdi i den samlede kundeprofil. Andre foranstaltninger opretter deres egne objekter.
+   > Hvis konfigurationen af den nye måling kun indeholder to felter, f.eks. CustomerID og én beregning, tilføjes outputtet som en ny kolonne i det systemgenererede objekt, der kaldes Customer_Measure. Du kan også se målingens værdi i den samlede kundeprofil. Andre foranstaltninger opretter deres egne objekter.
 
 1. Vælg aggregeringsfunktionen i rullemenuen **Vælg funktion** i konfigurationsområdet. Aggregeringsfunktionerne omfatter: 
    - **Sum**
