@@ -96,30 +96,40 @@
           href: audience-insights/measures.md
     - name: Forudsigelser
       items:
-        - name: Udfylde data ved hjælp af værdiforudsigelser
-          href: audience-insights/predictions.md
-        - name: Forudsige abonnementsafgang
-          href: audience-insights/predict-subscription-churn.md
-        - name: Eksempelvejledning til forudsigelse af abonnementsafgang
-          href: audience-insights/sample-guide-predict-subscription-churn.md
-        - name: Transaktionsrelateret forudsigelse af afgang
-          href: audience-insights/predict-transactional-churn.md
-        - name: Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
-          href: audience-insights/sample-guide-predict-transactional-churn.md
-        - name: Forudsige kundens levetidsværdi (CLV)
-          href: audience-insights/predict-customer-lifetime-value.md
-        - name: Forudsige produktanbefalinger
-          href: audience-insights/predict-product-recommendation.md
-        - name: Eksempelvejledning til forudsigelse til produktanbefaling
-          href: audience-insights/sample-guide-predict-product-recommendation.md
+        - name: Forudsige data ved hjælp af AI
+          items:
+            - name: Oversigt over forudsigelsesmodeller
+              href: audience-insights/predictions-overview.md
+            - name: Forudsige kundens levetidsværdi (CLV)
+              href: audience-insights/predict-customer-lifetime-value.md
+            - name: Forudsige produktanbefalinger
+              href: audience-insights/predict-product-recommendation.md
+            - name: Forudsige abonnementsafgang
+              href: audience-insights/predict-subscription-churn.md
+            - name: Transaktionsrelateret forudsigelse af afgang
+              href: audience-insights/predict-transactional-churn.md
+            - name: Brug brugerdefinerede modeller fra Azure Machine Learning
+              href: audience-insights/custom-models.md
+            - name: Fuldfør delvist manglende data
+              href: audience-insights/predictions.md
+        - name: Eksempel på guides
+          items:
+            - name: Eksempelguide til CLV-forudsigelse
+              href: audience-insights/sample-guide-predict-clv.md
+            - name: Eksempelvejledning til forudsigelse af abonnementsafgang
+              href: audience-insights/sample-guide-predict-subscription-churn.md
+            - name: Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
+              href: audience-insights/sample-guide-predict-transactional-churn.md
+            - name: Eksempelvejledning til forudsigelse til produktanbefaling
+              href: audience-insights/sample-guide-predict-product-recommendation.md
+            - name: Eksperimenter med Azure Machine Learning
+              href: audience-insights/azure-machine-learning-experiments.md
+            - name: Eksperimenter i Azure Machine Learning Studio
+              href: audience-insights/machine-learning-studio-experiments.md
+        - name: Administrere forudsigelser
+          href: audience-insights/manage-predictions.md
         - name: Opret segmenter baseret på forudsigelser
           href: audience-insights/prediction-based-segment.md
-        - name: Implementer brugerdefinerede modeller for maskinel indlæring
-          href: audience-insights/custom-models.md
-        - name: Eksperimenter med Azure Machine Learning
-          href: audience-insights/azure-machine-learning-experiments.md
-        - name: Eksperimenter i Azure Machine Learning Studio
-          href: audience-insights/machine-learning-studio-experiments.md
     - name: Eksportere indstillinger
       items:
         - name: Eksport
@@ -154,12 +164,18 @@
               href: audience-insights/export-facebook.md
             - name: Google Ads
               href: audience-insights/export-google-ads.md
+            - name: LinkedIn Ads
+              href: audience-insights/export-linkedin-ads.md
             - name: LiveRamp
               href: audience-insights/export-liveramp.md
             - name: Mailchimp
               href: audience-insights/export-mailchimp.md
             - name: Marketo
               href: audience-insights/export-marketo.md
+            - name: Microsoft Advertising
+              href: audience-insights/export-microsoft-advertising.md
+            - name: Omnisend
+              href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
             - name: SendGrid
@@ -200,6 +216,8 @@
           href: audience-insights/integrate-engagement-insights.md
         - name: Gennemgå objektskemaer i Common Data Model
           href: audience-insights/entity-schemas.md
+        - name: Customer Insights-data i Dataverse
+          href: audience-insights/customer-insights-dataverse.md
         - name: Arbejde med API'er
           href: audience-insights/apis.md
         - name: API-referencer
@@ -240,6 +258,12 @@
           href: engagement-insights/custom-reports.md
         - name: Opret samlede profilrapporter
           href: engagement-insights/profile-reports.md
+        - name: Få vist og opret dimensioner
+          href: engagement-insights/dimensions.md
+        - name: Få vist og opret målepunkter
+          href: engagement-insights/metrics.md
+        - name: Få vist og opret segmenter
+          href: engagement-insights/segments.md
     - name: Analyse af rejse
       items:
         - name: 'Opret, og administrer tragtrapporter'

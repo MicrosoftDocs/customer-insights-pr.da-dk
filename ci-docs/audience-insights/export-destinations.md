@@ -1,7 +1,7 @@
 ---
 title: Eksportere data fra Customer Insights
 description: Administrer dataeksport til at dele data.
-ms.date: 03/25/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c1078ed0ba259a6e9cde3c7ede3570890ae48e67
-ms.sourcegitcommit: 33a8e21b3bf6521bdb8346f81f79fce88091ddfd
+ms.openlocfilehash: 6e7793fa99f8431d9d420529b39e0b5b5dbf6748
+ms.sourcegitcommit: 0689e7ed4265855d1f76745d68af390f8f4af8a0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/10/2021
-ms.locfileid: "6016607"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6253033"
 ---
 # <a name="exports-preview-overview"></a>Eksportoversigt (forhåndsversion)
 
@@ -26,26 +26,40 @@ Gå til **Data** > **Eksport** for at få vist eksportsiden. Alle brugerroller h
 
 Hvis du vil konfigurere eller redigere en eksport, skal du have tilgængelige forbindelser. Forbindelser afhænger af [brugerrollen](permissions.md):
 - Administratorer har adgang til alle forbindelser. De kan også oprette nye forbindelser, når en eksport konfigureres.
-- Bidragydere kan have adgang til bestemte forbindelser. De er afhængige af administratorer, når de skal konfigurere og dele forbindelser. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+- Bidragydere kan have adgang til bestemte forbindelser. De er afhængige af administratorer, når de skal konfigurere og dele forbindelser. Eksportlisten viser bidragydere, om de kan redigere eller kun få vist en eksport i kolonnen **Dine tilladelser**. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 - Fremvisere kan kun få vist eksisterende eksporter, men ikke oprette dem.
+
+### <a name="define-a-new-export"></a>Definer en ny eksport
 
 1. Gå til **Data** > **Eksport**.
 
-1. Vælg **Tilføj eksport** for at oprette en ny eksport destination.
+1. Vælg **Tilføj eksport** for at oprette en ny eksport.
 
 1. Vælg, hvilken forbindelse du vil bruge, i ruden **Konfigurer eksport**. [Forbindelser](connections.md) administreres af administratorer. 
 
 1. Angiv de nødvendige oplysninger, og vælg **Gem** for at oprette eksporten.
 
+### <a name="define-a-new-export-based-on-an-existing-export"></a>Definer en ny eksport baseret på en eksisterende eksport
+
+1. Gå til **Data** > **Eksport**.
+
+1. Vælg den eksport, som du vil duplikere, på eksportlisten.
+
+1. Vælg **Opret dublet** på kommandolinjen for at åbne ruden **Konfigurer eksport** med oplysninger om den valgte eksport.
+
+1. Gennemse, og tilpas eksporten, og vælg **Gem** for at oprette en ny eksport.
+
 ### <a name="edit-an-export"></a>Rediger en eksport
 
-1. Vælg den lodrette ellipse for den eksportdestination, du vil redigere.
+1. Gå til **Data** > **Eksport**.
 
-1. Vælg **Rediger** fra rullemenuen.
+1. Vælg den eksport, som du vil redigere, på eksportlisten.
+
+1. Vælg **Rediger** på kommandolinjen.
 
 1. Opdatér de værdier, du vil opdatere, og vælg **Gem**.
 
-## <a name="view-exports-and-export-details"></a>Få vist eksport- og eksportdetaljer
+## <a name="view-exports-and-export-details"></a>Få vist eksport og eksportdetaljer
 
 Når du har oprettet eksportmål, vises de under **Data** > **Eksport**. Alle brugere kan se, hvilke data der deles, og den seneste status.
 
@@ -53,24 +67,48 @@ Når du har oprettet eksportmål, vises de under **Data** > **Eksport**. Alle br
 
 1. Brugere uden redigeringstilladelser vælger **Vis** i stedet for **Rediger**, og se eksportdetaljerne.
 
-1. I denne siderude vises opsætningen af denne eksport. Uden redigeringstilladelser kan du ikke ændre værdier. Vælg **Luk** for at vende tilbage til eksportsiden.
+1. I sideruden vises konfigurationen af en eksport. Uden redigeringstilladelser kan du ikke ændre værdier. Vælg **Luk** for at vende tilbage til eksportsiden.
 
-## <a name="run-exports-on-demand"></a>Kør eksporter efter behov
+## <a name="schedule-and-run-exports"></a>Planlæg, og kør eksport
 
-Når du har konfigureret en eksport, køres den med alle [planlagte opdateringer](system.md#schedule-tab), så længe den har en arbejdsforbindelse.
+Hver eksport, du konfigurerer, har en opdateringsplan. Under en opdatering søger systemet efter nye eller opdaterede data, der skal medtages i en eksport. Eksport køres som standard som del af alle [planlagte systemopdateringer](system.md#schedule-tab). Du kan tilpasse opdateringsplanen, eller slå den fra for at køre eksporten manuelt.
 
-Hvis du vil eksportere data uden at vente på en planlagt opdatering, skal du gå til **Data** > **Eksport**. Du har to muligheder:
+Eksportplaner afhænger af miljøets tilstand. Hvis der er køres opdateringer om [afhængigheder](system.md#refresh-policies), når en planlagt eksport skal starte, fuldfører systemet først afhængighederne og kører derefter eksporten. Du kan få vist, hvornår en eksport sidst blev opdateret i kolonnen **Opdateret**.
 
-- Hvis du vil køre alle eksporter, skal du vælge **Kør alle** på kommandolinjen. 
-- Hvis du vil køre en enkelt eksport, skal du vælge ellipsen (...) på et listeelement og derefter vælge **Kør**.
+### <a name="schedule-exports"></a>Planlæg eksport
+
+Du kan definere brugerdefinerede opdateringsplaner for individuelle eksporter eller flere eksporter på én gang. Den aktuelt definerede tidsplan vises i kolonnen **Tidsplan** på eksportlisten. Tilladelsen til at ændre tidsplanen er den samme som for [redigering og definition af eksporter](export-destinations.md#set-up-a-new-export). 
+
+1. Gå til **Data** > **Eksport**.
+
+1. Vælg den eksport, du vil planlægge.
+
+1. Vælg **Planlæg** på kommandolinjen.
+
+1. Angiv **Planlæg kørsel** til **Til** i ruden **Planlæg eksport** for at køre eksporten automatisk. Indstil den til **Fra** for at opdatere den manuelt.
+
+1. Ved automatisk opdaterede eksporter skal du vælge en værdi for **Gentagelse** og angive detaljerne for den. Den definerede tid gælder for alle forekomster af en gentagelse. Det er det tidspunkt, hvor en eksport skal begynde at opdatere.
+
+1. Anvend og aktivér ændringerne ved at vælge **Gem**.
+
+Når du redigerer tidsplanen for flere eksporter, skal du foretage et valg under **Behold eller tilsidesætte tidsplaner**:
+- **Bevar individuelle tidsplaner**: Bevar den tidligere definerede tidsplan for de valgte eksporter, og deaktiver eller aktiver dem kun.
+- **Definer ny tidsplan for alle valgte eksporter**: Tilsidesæt de eksisterende tidsplaner for de valgte eksporter.
+
+### <a name="run-exports-on-demand"></a>Kør eksporter efter behov
+
+Hvis du vil eksportere data uden at vente på en planlagt opdatering, skal du gå til **Data** > **Eksport**.
+
+- Hvis du vil køre alle eksporter, skal du vælge **Kør alle** på kommandolinjen. Denne handling kører kun eksporter, der har en aktiv tidsplan.
+- Hvis du vil køre en enkelt eksport, skal du markere den på listen og vælge **Kør** på kommandolinjen. Det er sådan, du kører eksporter uden aktiv tidsplan. 
 
 ## <a name="remove-an-export"></a>Fjerne en eksport
 
 1. Gå til **Data** > **Eksport**.
 
-1. Vælg den lodrette ellipse for den eksportdestination, du vil fjerne.
+1. Markér den eksport, du vil fjerne.
 
-1. Vælg **Fjern** på rullelisten.
+1. Vælg **Fjern** på kommandolinjen.
 
 1. Bekræft fjernelsen ved at vælge **Fjern** på bekræftelsesskærmen.
 

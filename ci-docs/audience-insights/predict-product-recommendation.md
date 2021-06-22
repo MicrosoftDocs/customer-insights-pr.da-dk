@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e46e31131a2dd5235af8221eafcd2e1d1394f3d4
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 01704f78cfe1f6ceeee19ff825fc65150894d4ed
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906757"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095549"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Forudsige produktanbefalinger (prøveversion)
 
@@ -85,7 +85,7 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 1. Hvis du har valgt *ikke* at anbefale produkter, du har købt for nylig, skal du indstille **tilbagebliksvinduet**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Angiv f.eks., at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
 
-1. Vælg **Næste** 
+1. Vælg **Næste**
 
 ### <a name="add-required-data"></a>Tilføj påkrævede data
 
@@ -205,33 +205,9 @@ Undertiden er det kun visse produkter, der er gode eller passende for den type f
        > [!div class="mx-imgBorder"]
        > ![Liste med forslag med stor sikkerhed til udvalgte individuelle kunder](media/product-recommendation-highconfidence.PNG "Liste med forslag med stor sikkerhed til udvalgte individuelle kunder")
 
-## <a name="fix-a-failed-prediction"></a>Rette en mislykket forudsigelse
+## <a name="manage-predictions"></a>Administrere forudsigelser
 
-1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
-
-1. Vælg den forudsigelse, som du vil have vist fejllogfiler for, og vælg **Logge**.
-
-1. Gennemgå alle fejlene. Der er flere typer fejl, der kan opstå, og som beskriver, hvilken betingelse der forårsagede fejlen. En fejl, der f.eks. er, at der ikke er data nok til at fortolke dataene nøjagtigt, løses typisk ved at indlæse flere data i Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Opdatere en forudsigelse
-
-Forudsigelser opdateres automatisk efter samme [tidsplan, som dataene opdateres](system.md#schedule-tab), som konfigureret i indstillingerne.
-
-1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
-
-1. Vælg de lodrette ellipser ud for den forudsigelse,, du vil opdatere.
-
-1. Vælg **Opdater**.
-
-## <a name="delete-a-prediction"></a>Slette en forudsigelse
-
-Hvis du sletter en forudsigelse, fjernes outputobjektet også.
-
-1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
-
-1. Vælg de lodrette ellipser ud for den forudsigelse, du vil slette.
-
-1. Vælg **Slet**.
+Det er muligt at optimere, foretage fejlfinding, opdatere eller slette forudsigelser. Gennemgå en rapport om dataanvendelighed for at finde ud af, hvordan du gør en forudsigelse hurtigere og mere pålidelig. Du kan finde flere oplysninger under [Administrere forudsigelser](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

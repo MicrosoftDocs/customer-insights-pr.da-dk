@@ -9,14 +9,14 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7fd6af37b40e21d030a1ace0cd5f8fcc7861c3fa
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 091a3197dc0c19ff78f0419fb4e88868e0f78359
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760502"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124174"
 ---
-# <a name="export-segment-lists-to-campaign-monitor-preview"></a>Eksport af segmentlister til kampagneovervågning (forhåndsversion)
+# <a name="export-segments-to-campaign-monitor-preview"></a>Eksport segmenter til kampagneovervågning (forhåndsversion)
 
 Eksportér segmenter med ensartede kundeprofiler til Kampagneovervågning, og brug dem til marketingaktiviteter.
 
@@ -33,7 +33,7 @@ Eksportér segmenter med ensartede kundeprofiler til Kampagneovervågning, og br
 - Det kan tage op til 20 minutter at eksportere op til 1 millioner profiler til Kampagneovervågning. 
 - Det antal profiler, du kan eksportere til Kampagneovervågning, er afhængigt af og begrænset af kontrakten med Kampagneovervågning.
 
-## <a name="set-up-connection-to-campaign-monitor"></a>Konfigurer forbindelse til Kampagneovervågning 
+## <a name="set-up-connection-to-campaign-monitor"></a>Konfigurer forbindelse til Kampagneovervågning
 
 1. Gå til **Administrator** > **Forbindelser**.
 

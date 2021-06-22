@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b6bf4f715768b18d69be3bea4085acd96933e8da
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906895"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095641"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forudsigelse af abonnementsafgang (prøveversion)
 
@@ -147,30 +147,9 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
        > [!div class="mx-imgBorder"]
        > ![Liste, der viser indflydelsesrige faktorer og deres betydning ved forudsigelse af afgangsresultatet](media/subscription-churn-influentialfactors.PNG "Liste, der viser indflydelsesrige faktorer og deres betydning ved forudsigelse af afgangsresultatet")
 
-## <a name="fix-a-failed-prediction"></a>Rette en mislykket forudsigelse
+## <a name="manage-predictions"></a>Administrere forudsigelser
 
-1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
-1. Vælg den forudsigelse, som du vil have vist fejllogfiler for, og vælg **Logge**.
-   > [!div class="mx-imgBorder"]
-   > ![Menulinjen med resultater, herunder knapperne Luk, Rediger model og Logge](media/subscription-churn-logsbutton.PNG "Menulinjen med resultater, herunder knapperne Luk, Rediger model og Logge")
-1. Gennemgå alle fejlene. Der er flere typer fejl, der kan opstå, og som beskriver, hvilken betingelse der forårsagede fejlen. En fejlmeddelelse om, at der ikke er nok data til præcis forudsigelse løses f. eks., hvis du indlæser flere data.
-
-## <a name="refresh-a-prediction"></a>Opdatere en forudsigelse
-
-Forudsigelser opdateres automatisk efter den samme [tidsplan, som dataene opdateres i](system.md#schedule-tab), som de er konfigureret i indstillinger.
-
-1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
-1. Vælg de lodrette ellipser ud for den forudsigelse,, du vil opdatere.
-1. Vælg **Opdater**.
-
-## <a name="delete-a-prediction"></a>Slette en forudsigelse
-
-1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
-1. Vælg de lodrette ellipser ud for den forudsigelse, du vil slette.
-1. Vælg **Slet**.
-
-> [!NOTE]
-> Hvis du sletter en forudsigelse, fjernes dens outputenhed.
+Det er muligt at optimere, foretage fejlfinding, opdatere eller slette forudsigelser. Gennemgå en rapport om dataanvendelighed for at finde ud af, hvordan du gør en forudsigelse hurtigere og mere pålidelig. Du kan finde flere oplysninger under [Administrere forudsigelser](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

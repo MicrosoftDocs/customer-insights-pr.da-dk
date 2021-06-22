@@ -1,7 +1,7 @@
 ---
 title: Forbedre kundeprofiler med data fra Microsoft
 description: Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold til varemærker og interesse.
-ms.date: 04/09/2021
+ms.date: 06/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: be042dd139607849b795c903fa58da2edb9ff589
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
+ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064884"
+ms.lasthandoff: 06/14/2021
+ms.locfileid: "6245700"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Forbedre kundeprofiler med brand- og interessetilhørsforhold (eksempel)
 
@@ -69,12 +69,10 @@ En styret oplevelse hjælper dig gennem konfigurationen af forbedringerne.
 
 ### <a name="define-your-brands-or-interests"></a>Definer dine mærker eller interesser
 
-Vælg en af følgende indstillinger:
+Vælg op til fem brands eller interesser ved hjælp af en eller begge af disse indstillinger:
 
-- **Branche**: Systemet identificerer de vigtigste mærker eller interesser, der er relevante for din branche, og forbedrer kundedataene med dem.
-- **Vælg din egen**: Vælg op til fem elementer på listen over de mærker og interesser, der er mest relevante for din organisation.
-
-Hvis du vil tilføje et brand eller en interesse, skal du angive det i inputområdet for at hente forslag på baggrund af matchende termer. Hvis du ikke kan se en liste over de brands eller interesser, du leder efter, kan du sende os feedback ved hjælp af linket **Forslag**.
+- **Branche**: Vælg din branche på rullelisten, og vælg derefter mellem de bedste brands eller interesser for den pågældende branche.
+- **Vælg dit eget**: Angiv et brand eller en interesse, der er relevant for din organisation, og vælg derefter mellem de matchende forslag. Hvis du ikke kan se en liste over de brands eller interesser, du leder efter, kan du sende os feedback ved hjælp af linket **Forslag**.
 
 ### <a name="review-enrichment-preferences"></a>Gennemse indstillinger for forbedring
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 04c4252aae374cf25c16b71415ee4a89b51b0040
-ms.sourcegitcommit: f9e2fa3f11ecf11a5d9cccc376fdeb1ecea54880
+ms.openlocfilehash: e2f92a64d01a443bcf3c1605621abe045b93ee5e
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/28/2021
-ms.locfileid: "5954572"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095503"
 ---
 # <a name="customer-lifetime-value-clv-prediction-preview"></a>Kundens levetidsværdi (CLV) forudsigelse (prøveversion)
 
@@ -149,7 +149,6 @@ Data, der afspejler vigtige kundeinteraktioner (f.eks. web-, kundeservice- og h�
 
 1. Vælg **Næste**.
 
-
 ### <a name="review-and-run-the-model-configuration"></a>Gennemse og kør modelkonfigurationen
 
 1. I trinnet **Gennemse modeldetaljer** skal du validere konfigurationen forudsigelse. Du kan gå tilbage til en hvilken som helst del af forudsigelseskonfigurationen ved at vælge **Rediger** under den viste værdi. Du kan også vælge et konfigurationstrin fra statusindikatoren.
@@ -170,11 +169,10 @@ Data, der afspejler vigtige kundeinteraktioner (f.eks. web-, kundeservice- og h�
 - **Status**: Status for forudsigelseskørslen
     - **I kø**: Forudsigelse venter på, at andre processer fuldføres.
     - **Opdatering**: Forudsigelse kører i øjeblikket for at producere resultater, der vil blive overført til outputenheden.
-    - **Mislykket**: Forudsigelse kunne ikke køres. Du kan finde flere oplysninger i [logfilerne](#troubleshoot-a-failed-prediction).
+    - **Mislykket**: Forudsigelse kunne ikke køres. Du kan finde flere oplysninger i [logfilerne](manage-predictions.md#troubleshoot-a-failed-prediction).
     - **Lykkedes**: Forudsigelse blev fuldført. Vælg **Vis** under de lodrette ellipser for at gennemse de forudsigelse resultater.
 - **Redigeret**: Den dato, hvor konfigurationen af forudsigelse blev ændret.
 - **Sidst opdateret**: Den dato, hvor forudsigelsen opdaterede resultater i outputenheden.
-
 
 ### <a name="review-prediction-results"></a>Gennemse forudsigelsesresultater
 
@@ -216,28 +214,8 @@ Der findes tre primære sektioner med data på resultatsiden.
 
 - **De fleste faktorer, der påvirker indflydelsen**: Der tages forskellige faktorer i betragtning, når du opretter forudsigelse CLV baseret på de inputdata, der leveres til AI-modellen. Hver af faktorerne får beregnet deres betydning for de samlede forudsigelser, som en model opretter. Du kan bruge disse faktorer til at validere dine forudsigelsesresultater. Disse faktorer giver også større indsigt i de faktorer, der gør det muligt at vælge CLV på tværs af alle dine kunder.
 
-## <a name="refresh-a-prediction"></a>Opdatere en forudsigelse
+## <a name="manage-predictions"></a>Administrere forudsigelser
 
-Forudsigelser opdateres automatisk efter samme [tidsplan, som dataene opdateres](system.md#schedule-tab), som konfigureret i indstillingerne. Du kan også opdatere dem manuelt.
-
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-2. Vælg de lodrette ellipser ud for den forudsigelse,, du vil opdatere.
-3. Vælg **Opdater**.
-
-## <a name="delete-a-prediction"></a>Slette en forudsigelse
-
-Hvis du sletter en forudsigelse, fjernes outputenheden også.
-
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-2. Vælg de lodrette ellipser ud for den forudsigelse, du vil slette.
-3. Vælg **Slet**.
-
-## <a name="troubleshoot-a-failed-prediction"></a>Fejlfinding i forbindelse med mislykkede forudsigelse
-
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-2. Vælg de lodrette ellipser ud for den forudsigelse, du vil have vist fejllogfiler for.
-3. Vælg **logfiler**.
-4. Gennemgå alle fejlene. Der er flere typer fejl, der kan opstå, og som beskriver, hvilken betingelse der forårsagede fejlen. En fejlmeddelelse om, at der ikke er nok data til præcis forudsigelse løses f.eks.., hvis du indlæser flere data i målgruppeindsigt.
-
+Det er muligt at optimere, foretage fejlfinding, opdatere eller slette forudsigelser. Gennemgå en rapport om dataanvendelighed for at finde ud af, hvordan du gør en forudsigelse hurtigere og mere pålidelig. Du kan finde flere oplysninger under [Administrere forudsigelser](manage-predictions.md).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 20072d14b160e54f5ad044adc1de6c079bf790e4
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
+ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595266"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6129892"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse til produktanbefaling (prøveversion)
 
@@ -22,7 +22,7 @@ Vi gennemgår fra start til slut et eksempel på forudsigelse af produktanbefali
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er et firma, der fremstiller kaffe og kaffemaskiner i høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at forstå, hvilke produkter der skal anbefales til tilbagevendende kunder. Hvis du ved, hvilke kunder der er **større sandsynlighed for at købe**, kan du hjælpe dem med at spare marketingindsatsen ved at fokusere på bestemte elementer.
+Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at forstå, hvilke produkter der skal anbefales til tilbagevendende kunder. Hvis du ved, hvilke kunder der er **større sandsynlighed for at købe**, kan du hjælpe dem med at spare marketingindsatsen ved at fokusere på bestemte elementer.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -65,7 +65,7 @@ Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af da
 
 1. Omdøb datakilde fra **Forespørgsel** til **eCommercePurchases** i feltet **Navn** i sideruden.
 
-1. Gem datakilden.
+1. **Gem** datakilden.
 
 
 ### <a name="ingest-customer-data-from-loyalty-schema"></a>Indsæt kundedata fra loyalitetsskemaet
@@ -83,11 +83,11 @@ Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af da
 
 1. Omdøb datakilde fra **Forespørgsel** til **loyCustomers** i feltet **Navn** i ruden til højre.
 
-1. Gem datakilden.
+1. **Gem** datakilden.
 
 ## <a name="task-2---data-unification"></a>Opgave 2 - Datasamling
 
-Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for at oprette en samlet kundeprofil. Du kan finde flere oplysninger i [Datasamling](data-unification.md).
+Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en samlet kundeprofil. Du kan finde flere oplysninger i [Datasamling](data-unification.md).
 
 ### <a name="map"></a>Tilknytning
 
@@ -156,7 +156,7 @@ Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abon
 
    - **Antal produkter**: Angiv denne værdi til **5**. Denne indstilling definerer, hvor mange produkter du vil anbefale til dine kunder.
 
-   - **Foreslå produkter, som kunderne har købt for nylig?**: Vælg **Ja** for at angive, at du vil inkludere produkter i den anbefaling, som kunderne har købt før.
+   - **Forventede gentagne køb**: Vælg **Ja** for at angive, at du vil medtage produkter i den anbefaling, som dine kunder tidligere har købt.
 
    - **Kig tilbage-vinduet:** Vælg mindst **365 dage**. Denne indstilling definerer, hvor langt tilbage modellen tjekker en kundens aktivitet som input til deres anbefalinger.
    

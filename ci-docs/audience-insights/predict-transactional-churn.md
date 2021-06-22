@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 43fcd37f8dd71e2890334a4cc53d49dae97d63c6
-ms.sourcegitcommit: 6d5dd572f75ba4c0303ec77c3b74e4318d52705c
+ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
+ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "5906849"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "6095595"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaktionsrelateret forudsigelse om afgang
 
@@ -144,7 +144,7 @@ Transaktionsrelateret forudsigelse om afgang er med til at forudsige, om en kund
    - **Status:** Status for forudsigelseskørslen
         - **I kø:** Forudsigelse venter på, at andre processer køres.
         - **Opdatering:** Forudsigelse kører i øjeblikket for at producere resultater, der vil blive overført til outputenheden.
-        - **Mislykket:** Forudsigelse kunne ikke køres. Du kan finde flere oplysninger i [logfilerne](#troubleshoot-a-failed-prediction).
+        - **Mislykket:** Forudsigelse kunne ikke køres. Du kan finde flere oplysninger i [logfilerne](manage-predictions.md#troubleshoot-a-failed-prediction).
         - **Lykkedes:** Forudsigelse blev fuldført. Vælg **Vis** under de lodrette ellipser for at gennemgå forudsigelse.
    - **Redigeret:** Den dato, hvor konfigurationen af forudsigelse blev ændret.
    - **Sidst opdateret:** Den dato, hvor forudsigelsen opdaterede resultater i outputenheden.
@@ -168,35 +168,9 @@ Transaktionsrelateret forudsigelse om afgang er med til at forudsige, om en kund
        
     1. **Mest indflydelsesrige faktorer:** Der er mange faktorer, som tages i betragtning ved oprettelsen af din forudsigelse. Hver af faktorerne er vigtig for de aggregerede forudsigelser, som en model opretter. Du kan bruge disse faktorer til at validere dine forudsigelsesresultater. Du kan også bruge oplysningerne senere til at [oprette segmenter](segments.md), der kan være med til at påvirke afgangsrisikoen for kunderne.
 
-## <a name="troubleshoot-a-failed-prediction"></a>Fejlfinding i forbindelse med mislykkede forudsigelse
+## <a name="manage-predictions"></a>Administrere forudsigelser
 
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-
-1. Vælg de lodrette ellipser ud for den forudsigelse, du vil have vist fejllogfiler for.
-
-1. Vælg **logfiler**.
-
-1. Gennemgå alle fejlene. Der er flere typer fejl, der kan opstå, og som beskriver, hvilken betingelse der forårsagede fejlen. En fejlmeddelelse om, at der ikke er nok data til præcist at forudsige noget, løses typisk ved at indlæse yderligere data i Customer Insights.
-
-## <a name="refresh-a-prediction"></a>Opdatere en forudsigelse
-
-Forudsigelser opdateres automatisk efter den samme [tidsplan, som dataene opdateres i](system.md#schedule-tab), som de er konfigureret i indstillinger. Du kan også opdatere dem manuelt.
-
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-
-1. Vælg de lodrette ellipser ud for den forudsigelse,, du vil opdatere.
-
-1. Vælg **Opdater**.
-
-## <a name="delete-a-prediction"></a>Slette en forudsigelse
-
-Hvis du sletter en forudsigelse, fjernes outputenheden også.
-
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-
-1. Vælg de lodrette ellipser ud for den forudsigelse, du vil slette.
-
-1. Vælg **Slet**.
+Det er muligt at optimere, foretage fejlfinding, opdatere eller slette forudsigelser. Gennemgå en rapport om dataanvendelighed for at finde ud af, hvordan du gør en forudsigelse hurtigere og mere pålidelig. Du kan finde flere oplysninger under [Administrere forudsigelser](manage-predictions.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
