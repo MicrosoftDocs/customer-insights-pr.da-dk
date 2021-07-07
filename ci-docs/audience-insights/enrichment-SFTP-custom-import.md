@@ -9,22 +9,22 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: a2d450635c19432bdd88db74b61c17febdeb568d
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: f92b36ac5364ea8586f9cbba7ba03178641555c0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896274"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304643"
 ---
 # <a name="enrich-customer-profiles-with-custom-data-preview"></a>Forbedring af kundeprofiler med brugerdefinerede data (prøveversion)
 
-Brugerdefineret import af SFTP (Secure File Transfer Protocol) giver dig mulighed for at importere data, der ikke behøver at gå gennem processen til samling af data. Det er en fleksibel, sikker og nem måde at samle dine data på. SFTP brugerdefineret import kan bruges sammen med [SFTP-eksport](export-sftp.md), der gør det muligt at eksportere de kundeprofildata, der er nødvendige for at opnå en forbedring. Dataene kan derefter behandles og forbedres, og SFTP-brugerdefineret import kan bruges til at få de forbedrede data tilbage til målgruppeindsigt i Dynamics 365 Customer Insights.
+SFTP (Secure File Transfer Protocol) brugerdefineret import giver dig mulighed for at importere data, der ikke er brug for til at gennemgå processen for datasamling. Det er en fleksibel, sikker og nem måde at samle dine data på. SFTP brugerdefineret import kan bruges sammen med [SFTP-eksport](export-sftp.md), der gør det muligt at eksportere de kundeprofildata, der er nødvendige for at opnå en forbedring. Dataene kan derefter behandles og beriges, og SFTP-brugerdefineret import kan bruges til at bringe de berigede data tilbage til publikum indsigtsfunktionen i Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
 Følgende forudsætninger skal være opfyldt, hvis du vil konfigurere SFTP-brugerdefineret import:
 
-- Du har filnavnet og placeringen (stien) til den fil, der skal importeres, på SFTP-værten.
+- Du har filnavnet og placeringen (stien) til den fil, der skal importeres på SFTP-værten.
 - Der findes en *model.json*-fil, der angiver [skemaet Common Data Model](/common-data-model/) for de data, der skal importeres. Denne fil skal være i samme mappe som den fil, der skal importeres.
 - En SFTP-forbindelse er allerede konfigureret af en administrator *eller* du har [administratortilladelser](permissions.md#administrator). Du skal bruge brugerlegitimationsoplysninger, URL-adresse og portnummer til den SFTP-placering, hvor du vil importere data fra.
 
@@ -37,11 +37,11 @@ Følgende forudsætninger skal være opfyldt, hvis du vil konfigurere SFTP-bruge
 
    :::image type="content" source="media/SFTP_Custom_Import_tile.png" alt-text="SFTP-brugerdefineret importfelt.":::
 
-1. Vælg en [forbindelse](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette en forbindelse ved at vælge **Tilføj forbindelse** og vælge **Brugerdefineret SFTP-import** på rullelisten.
+1. Vælg en [værdi](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette forbindelse ved at vælge **Tilføj forbindelse** og vælge **SFTP Brugerdefineret import** på rullelisten.
 
 1. Vælg **Opret forbindelse til brugerdefineret import** for at bekræfte den valgte forbindelse.
 
-1.  Vælg **Næste**, og angiv **filnavnet** og **stien** til den datafil, du vil importere.
+1.  Vælg **Næste**, og angiv **Sti** og **Filnavn** på den datafil, du vil importere.
 
     :::image type="content" source="media/enrichment-SFTP-path-and-filename.png" alt-text="Skærmbillede, når du angiver datalokation.":::
 
@@ -55,16 +55,16 @@ Du skal være en administrator for at konfigurere forbindelser. Vælg **Tilføj 
 
 1. Angiv et navn til forbindelsen i feltet **Vis navn**.
 
-1. Angiv et gyldigt brugernavn, en gyldig adgangskode og en gyldig værts-URL-adresse til STFP-server, som dataene skal importeres fra.
+1. Angiv et gyldigt brugernavn, en gyldig adgangskode og en gyldig værts-URL-adresse til den SFTP-server, som de data, der skal importeres, findes på.
 
 1. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**.
 
 1. Vælg **Kontroller** for at validere konfigurationen.
 
-1. Når verifikationen er fuldført, kan du gemme forbindelsen ved at klikke på **Gem**.
+1. Når bekræftelsen er fuldført, kan forbindelsen gemmes ved at vælge **Gem**.
 
-> [!div class="mx-imgBorder"]
-   > ![Side til konfiguration af Experian-forbindelse](media/enrichment-SFTP-connection.png "Side til konfiguration af Experian-forbindelse")
+   > [!div class="mx-imgBorder"]
+   > ![Experian forbindelseskonfigurationsside](media/enrichment-SFTP-connection.png "Experian-forbindelseskonfigurationsside")
 
 
 ## <a name="defining-field-mappings"></a>Definerer felttilknytninger 
@@ -123,6 +123,6 @@ Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at væ
 
 ## <a name="next-steps"></a>Næste trin
 
-Byg oven over dine forbedrede kundedata. Opret [segmenter](segments.md), [mål](measures.md), og [eksportér data](export-destinations.md) for at give kunderne personlige erfaringer.
+Byg oven over dine forbedrede kundedata. Opret [segmenter](segments.md) og [målpunkter](measures.md), og endda [eksporter dataene](export-destinations.md) for at levere personlige oplevelser til dine kunder.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b136084316da5ae17a8428236381f69e5c21f9ea
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: a85ee598ec747d0594755314e83a127ce0f2af95
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129892"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306159"
 ---
 # <a name="product-recommendation-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse til produktanbefaling (prøveversion)
 
@@ -105,9 +105,9 @@ Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en sam
 
 1. Gå til fanen **Match**, og vælg **Angiv rækkefølge**.
 
-2. Vælg **eCommerceContacts: eCommerce** som den primære kilde, og medtag alle poster i rullelisten **Primær**.
+2. På rullelisten **Primær** skal du vælge **eCommerceContacts: e-handel** som den primære kilde og inkludere alle poster.
 
-3. På rullelisten **Objekt 2** skal du vælge **loyCustomers: LoyaltyScheme** og inkludere alle poster.
+3. På rullelisten **Entity 2** skal du vælge **loyCustomers: LoyaltyScheme** og medtage alle poster.
 
    ![Saml og match eCommerce og Loyalty.](media/unify-match-order.png)
 
@@ -115,16 +115,16 @@ Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en sam
 
 5. Tilføj din første betingelse ved hjælp af FullName.
 
-   - For eCommerceContacts skal du vælge **FullName** på rullelisten.
-   - For loyCustomers skal du vælge **FullName** på rullelisten.
+   - I forbindelse med eCommerceContacts skal du vælge **Fuldt navn** på rullelisten.
+   - I forbindelse med loyCustomers skal du vælge **Fuldt navn** på rullelisten.
    - Vælg **Normaliser**-rullelisten, og vælg **Type (telefon, navn, adresse ...)**.
    - Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 
 6. Angiv navnet **FullName, e-mail** til den nye regel.
 
    - Tilføj endnu en betingelse for e-mailadressen ved at vælge **Tilføj betingelse**
-   - Vælg **E-mail** i rullelisten for objektet eCommerceContacts.
-   - Vælg **E-mail** i rullelisten for objektet loyCustomers.
+   - For enhed eCommerceContacts skal du vælge **E-mail** i rullelisten.
+   - For enhed loyCustomers skal du vælge **E-mail** i rullelisten.
    - Lad Normaliser være tom.
    - Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 

@@ -9,27 +9,26 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 73f3257a3ae6e8423f45410546535df5e3b400ce
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: c23c8b4e6758df08e04bf1e3ae0cba4dee06fe2b
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976311"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305333"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksport af segmenter til Google Ads (forhåndsversion)
 
-Eksportér segmenter af samlede kundeprofiler til Google Ads-målgruppelisten, og brug dem til at annoncere på Google Search, Gmail og YouTube og Google Display Network. 
+Eksporter segmenter af samlede kundeprofiler til en Liste over Google Ads-målgruppe, og brug dem til at annoncere på Google Søgning, Gmail, YouTube og Google Display Network. 
 
 ## <a name="prerequisites-for-connection"></a>Forudsætninger for forbindelse
 
 -   Du har en [Google Ads-konto](https://ads.google.com/) og tilsvarende administratorlegitimationsoplysninger.
--   Du har et [godkendt Google Ads-udviklertoken](https://developers.google.com/google-ads/api/docs/first-call/dev-token) 
--   Du opfylder kravene i [politikken for kundeoverensstemmelse](https://support.google.com/adspolicy/answer/6299717)
--   Du opfylder kravene til [listestørrelser for re-marketing](https://support.google.com/google-ads/answer/7558048) 
-
+-   Du har et [godkendt Google Ads-udviklertoken](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
+-   Du opfylder kravene i [Politik for kundematch](https://support.google.com/adspolicy/answer/6299717).
+-   Du opfylder kravene til [listestørrelser for re-marketing](https://support.google.com/google-ads/answer/7558048).
 -   Der findes eksisterende målgrupper i Google Ads og de tilsvarende id'er. Du kan finde flere oplysninger i [Google ads-målgrupper](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
--   Du har [konfigureret segmenter](segments.md)
--   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse, fornavn og efternavn
+-   Du har [konfigureret segmenter](segments.md).
+-   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse, fornavn og efternavn.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
@@ -68,7 +67,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg **Tilføj destination** for at oprette en ny eksport.
 
-1. Vælg en forbindelse i sektionen Google Ads i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+1. Vælg en forbindelse i sektionen Google Ads i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen tilgængelige forbindelser af denne type.
 
 1. Angiv dit **[Google Ads-målgruppe-id](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, og vælg **Opret forbindelse** for at initialisere forbindelsen til Google Ads.
 
@@ -78,7 +77,9 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). 
+
+Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

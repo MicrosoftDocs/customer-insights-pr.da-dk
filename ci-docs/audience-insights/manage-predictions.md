@@ -9,12 +9,12 @@ ms.topic: how-to
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: b935be08199f20e83bceb3317985b0e1dc120016
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: dccb8dcca8f65f64973e46fed9d83034d58282e2
+ms.sourcegitcommit: bcc47d15d4f0eacf008e4dbc09baac7f062b3ca8
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095698"
+ms.lasthandoff: 06/29/2021
+ms.locfileid: "6315871"
 ---
 # <a name="manage-predictions"></a>Administrere forudsigelser
 
@@ -35,9 +35,6 @@ I denne artikel beskrives nogle opgaver, som de fleste forudsigelsesscenarier de
 Rapporten om brugbarhed af inputdata giver en konsolideret visning af de fejl og advarsler, som dine køreklare forudsigelser kan generere. Den giver også anbefalinger til, hvordan man kan forbedre modellens ydeevne.
 
 Rapporten er tilgængelig, når en model har fuldført sin træningsproces. Den oprettes for hver model separat, uanset om det er fuldført.
-
-> [!NOTE]
-> I øjeblikket fungerer denne funktion kun til modellen for transaktionsafgang.
 
 ### <a name="view-the-input-data-usability-report"></a>Vis rapporten over inputdatas anvendelighed
 

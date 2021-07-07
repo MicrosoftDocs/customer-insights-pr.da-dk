@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 90ebcaab896c628b04e751ad9857e924749895e7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595327"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306067"
 ---
 # <a name="segment-insights-preview"></a>Segmentindsigter (prøveversion)
 
@@ -50,7 +50,7 @@ Vælg en indsigt for at få vist analyseresultaterne:
 
 - Antallet af medlemmer, der overlapper de segmenter, der er valgt til analyse.
 - Antallet af medlemmer, der er inkluderet i en af segmenterne, men ikke i resten af segmenterne.
-- Hvis du har valgt felter, mens du konfigurerede overlapningsanalysen, kan du finde dem under de tilhørende faner. Du kan bruge rullelisten med filter til at vælge et hvilket som helst attributniveau, så den nederste tabel indeholder de tilsvarende data.
+- Hvis du har valgt felter, mens du konfigurerede overlapningsanalysen, kan du finde dem under de tilhørende faner. Du kan bruge filter-rullelisten til at vælge et hvilket som helst attributniveau, og tabellen nederst viser de tilsvarende data.
 
 ## <a name="segment-differentiators"></a>Segmentdifferentieringer
 

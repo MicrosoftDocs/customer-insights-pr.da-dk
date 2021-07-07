@@ -9,16 +9,16 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: e92360bb886739cfe477ce1d2eb62219228a0292
-ms.sourcegitcommit: d4b4053f6ee8f60f1a214982c4726c9de84615ef
+ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/14/2021
-ms.locfileid: "6245700"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305149"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Forbedre kundeprofiler med brand- og interessetilhørsforhold (eksempel)
 
-Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold til varemærker og interesse. Disse tilhørsforhold bestemmes på baggrund af data fra personer med lignende demografi i forhold til dine kunder. Disse oplysninger hjælper dig med at få bedre indsigt i og segmentere dine kunder på baggrund af deres tilhørsforhold til specifikke mærker og interesser.
+Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold til varemærker og interesse. Disse tilhørsforhold er baseret på data fra personer i samme demografi som dine kunder. Disse oplysninger hjælper dig med at få bedre indsigt i og segmentere dine kunder på baggrund af deres tilhørsforhold til specifikke mærker og interesser.
 
 I målgruppeindsigt skal du gå til **Data** > **Forbedring** for at [konfigurere og få vist forbedring](enrichment-hub.md).
 
@@ -27,7 +27,7 @@ Hvis du vil konfigurere forbedring af mærketilhørsforhold, skal du gå til fan
 Hvis du vil konfigurere forbedring af interessetilhørsforhold, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Interesser**.
 
    > [!div class="mx-imgBorder"]
-   > ![Mærker og interesser-felter](media/BrandsInterest-tile-Hub.png "Mærker og interesser-felter")
+   > ![Brands og interesser-felter](media/BrandsInterest-tile-Hub.png "Brands og interesse-felter")
 
 ## <a name="how-we-determine-affinities"></a>Sådan afgør vi tilhørsforhold
 
@@ -53,7 +53,7 @@ Afhængigt af den granularitet, du vil måle tilhørsforholdet med, kan du enten
 
 I øjeblikket understøttes følgende lande-/områdeindstillinger: Australien, Canada (engelsk), Frankrig, Tyskland, Storbritannien og USA (engelsk).
 
-Hvis du vil vælge et land, skal du åbne **Brandforbedring** eller **Interesseudvidelse** og vælge **Skift** ud for **Land/område**. Vælg en indstilling i ruden **Indstillinger for land/område**, og vælg **Anvend**.
+Hvis du vil vælge et land eller område, skal du åbne **Brands-berigelse** eller **Interesseforbedring** og vælge **Skift** ud for **Land/område**. Vælg en indstilling i ruden **Indstillinger for land/område**, og vælg **Anvend**.
 
 ### <a name="implications-related-to-country-selection"></a>Implikationer i forbindelse med valg af land
 
@@ -61,7 +61,7 @@ Hvis du vil vælge et land, skal du åbne **Brandforbedring** eller **Interesseu
 
 - Når du [vælger en branche](#define-your-brands-or-interests), får du de mest relevante mærker eller oplysninger baseret på det valgte land eller område.
 
-- Ved [forbedring af profiler](#refresh-enrichment) forbedrer vi alle de kundeprofiler, vi får data fra til de valgte kundeprofiler og interesser. Herunder profiler, der ikke er i det valgte land eller område. Hvis du f.eks. har valgt Tyskland, forbedrer vi profiler i USA, hvis der er tilgængelige data for de valgte virksomheder og interesser i USA.
+- Når vi [forbedrer profiler](#refresh-enrichment), forbedrer vi alle kundeprofiler, som vi får data for de valgte brands og interesser, herunder profiler, der ikke er i det valgte land eller område. Hvis du f.eks. har valgt Tyskland, forbedrer vi profiler i USA, hvis der er tilgængelige data for de valgte virksomheder og interesser i USA.
 
 ## <a name="configure-enrichment"></a>Konfigurere forbedring
 
@@ -71,7 +71,7 @@ En styret oplevelse hjælper dig gennem konfigurationen af forbedringerne.
 
 Vælg op til fem brands eller interesser ved hjælp af en eller begge af disse indstillinger:
 
-- **Branche**: Vælg din branche på rullelisten, og vælg derefter mellem de bedste brands eller interesser for den pågældende branche.
+- **Branche**: Vælg din branche på rullelisten, og vælg derefter mellem de bedste mærker eller interesser for den pågældende branche.
 - **Vælg dit eget**: Angiv et brand eller en interesse, der er relevant for din organisation, og vælg derefter mellem de matchende forslag. Hvis du ikke kan se en liste over de brands eller interesser, du leder efter, kan du sende os feedback ved hjælp af linket **Forslag**.
 
 ### <a name="review-enrichment-preferences"></a>Gennemse indstillinger for forbedring
@@ -88,19 +88,19 @@ Vælg **Forbedret objekt**, og vælg det datasæt, du vil forbedre med virksomhe
 
 Tilknyt felter fra det samlede kundeobjekt for at definere det demografiske segment, som systemet skal bruge til forbedring af kundedata. Tilknyt land/område og som minimum attributterne Fødselsdato eller Køn. Du skal desuden tilknytte mindst én by (og område) eller et postnummer. Vælg **Rediger** for at definere tilknytningen af felterne, og vælg **Anvend**, når du er færdig. Vælg **Gem** for at fuldføre felttilknytningen.
 
-Følgende formater og værdier understøttes, og der skelnes ikke mellem store og små bogstaver i værdierne:
+Følgende formater og værdier understøttes (der skelnes ikke mellem store og små bogstaver i værdierne):
 
-- **Fødselsdato**: Vi anbefaler, at fødselsdato konverteres til typen DateTime under dataindtagelse. Alternativt kan det være en streng i [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)-formatet "åååå-MM-dd" eller "åååå-MM-ddTHH: mm:ssZ".
-- **Køn**: mand, kvinde, ukendt
-- **Postnummer**: Femcifrede postnumre til USA, standardpostnummer alle andre steder
-- **By**: Bynavn på engelsk
+- **Fødselsdato**: Vi anbefaler, at fødselsdato konverteres til typen DateTime under dataindtagelse. Alternativt kan det være en streng i [ISO 8601-format](https://www.iso.org/iso-8601-date-and-time-format.html) "yyyy-MM-dd" eller "yyyy-MM-ddTHH:mm:ss".
+- **Køn**: mand, kvinde, ukendt.
+- **Postnummer**: Femcifrede postnumre til USA, standardpostnummer alle andre steder.
+- **By**: Bynavn på engelsk.
 - **Område**: Forkortelse på to bogstaver for USA og Canada. Forkortelse på to eller tre bogstaver for Australien. Gælder ikke for Frankrig, Tyskland eller Storbritannien.
 - **Land/område**:
 
   - US: Amerikas Forenede Stater, Forenede Stater, USA, Amerika
   - CA: Canada, CA
   - GB: Storbritannien, UK, Det Forenede Kongerige, GB, Det Forenede Kongerige Storbritannien og Nordirland, Det Forenede Kongerige Storbritannien
-  - AU: Australien, AU, Australien
+  - AU: Australien, AU, Commonwealth of Australia
   - FR: Frankrig, FR, Den Franske Republik
   - DE: Tyskland, tysk, Deutschland, Allemagne, DE, Forbundsrepublikken Tyskland, Republikken Tyskland
 
@@ -113,10 +113,11 @@ Til sidst får du mulighed for at gennemse oplysningerne og angive et navn, der 
 ## <a name="refresh-enrichment"></a>Opdatere forbedring
 
 Kør forbedringen, når du har konfigureret brands, interesser og felttilknytningen for demografi. Start processen ved at vælge **Kør** på siden for mærke- eller interessekonfiguration. Derudover kan du gøre det muligt for systemet at køre forbedring automatisk som en del af en planlagt opdatering.
+
 Afhængigt af størrelsen på dine kundedata, kan det vare nogle minutter, før en forbedring kan fuldføres.
 
 > [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af jobbets opgaver, finder du yderligere oplysninger: behandlingstid, sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven.
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 
@@ -134,7 +135,7 @@ Det er også muligt at få vist tilhørsforhold til mærker og interesser på in
 
 ## <a name="next-steps"></a>Næste trin
 
-Byg oven over dine forbedrede kundedata. Du kan oprette [segmenter](segments.md), [målepunkter](measures.md) og endda [eksportere dataene](export-destinations.md) for at give kunderne personlige oplevelser.
+Byg oven over dine forbedrede kundedata. Opret [segmenter](segments.md) og [målpunkter](measures.md), og endda [eksporter dataene](export-destinations.md) for at levere personlige oplevelser til dine kunder.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

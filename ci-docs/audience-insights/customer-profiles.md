@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 433e6ceda0ec7827bd672cff40f895d7719561df
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: c9adb4d7db74573d0512ae7a68a0e7ab51c994a0
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896320"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304597"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -57,13 +57,13 @@ Vælg et af kundefelterne for at åbne siden **Kundeoplysninger**. Denne visning
 
 Kundeoplysninger indeholder:
 
--   **Felt til kundeprofil:** Dette felt vises de forskellige værdier fra objektet Kundeprofil. Disse oplysninger kan være e-mailadresse, navn, by osv. 
+-   **Felt til kundeprofil**: Dette felt vises de forskellige værdier fra objektet Kundeprofil. Disse oplysninger kan være e-mailadresse, navn, by osv. 
 
--   **Potentielle interesser, potentielle mærker:** Viser, om du har konfigureret en opgørelse fra en oprindeligt leverandør. Den repræsenterer potentielle interesser og tilhørsforhold for mærker, som en kunde med en profil, der ligner denne kunde, kan have. Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md).
+-   **Potentielle interesser, potentielle mærker**: Viser, om du har konfigureret en opgørelse fra en oprindeligt leverandør. Den repræsenterer potentielle interesser og tilhørsforhold for mærker, som en kunde med en profil, der ligner denne kunde, kan have. Du kan finde flere oplysninger i [Forbedre kundeprofiler med mærketilhørsforhold og interesser](enrichment-microsoft.md).
 
--   **Mål:** Viser, hvis du har konfigureret et eller flere mål for en bestemt type: Målpunkter for kundeattribut. De indeholder beregnede nøgletal omkring dine kunder på de enkelte kundeniveauer. Du kan finde flere oplysninger under [Definér, og administrer målpunkter](measures.md).
+-   **Mål**: Viser, hvis du har konfigureret et eller flere mål for en bestemt type: Målpunkter for kundeattribut. De indeholder beregnede nøgletal omkring dine kunder på de enkelte kundeniveauer. Du kan finde flere oplysninger under [Definér, og administrer målpunkter](measures.md).
 
--   **Tidslinje for aktivitet:** Viser, om du har konfigureret aktiviteter. Tidslinjevisningen indeholder de kronologiske sorteringsaktiviteter for denne kunde og starter med den seneste aktivitet. Du kan finde flere oplysninger under [Kundeaktiviteter](activities.md).
+-   **Tidslinje for aktivitet**: Viser, om du har konfigureret aktiviteter. Tidslinjevisningen indeholder de kronologiske sorteringsaktiviteter for denne kunde og starter med den seneste aktivitet. Du kan finde flere oplysninger under [Kundeaktiviteter](activities.md).
 
 Vælg **Tilbage til kunder** for at vende tilbage til kundens søgeside.
 

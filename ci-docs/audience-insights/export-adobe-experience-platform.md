@@ -1,6 +1,6 @@
 ---
 title: Eksportere Customer Insights-data til Adobe Experience Platform
-description: Få at vide, hvordan du kan bruge målgruppeindsigtssegmenter i Adobe Experience Platform.
+description: Få mere at vide om, hvordan publikum indsigtssegmenter i Adobe Experience Platform.
 ms.date: 03/29/2021
 ms.reviewer: mhart
 ms.service: customer-insights
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 884f4d30f354bed29909d57be84dce4c8e46965a
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 1045d0e373fd5ea8987684e51bd9a07b7b535ee3
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760094"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305517"
 ---
 # <a name="use-customer-insights-segments-in-adobe-experience-platform-preview"></a>Bruge Customer Insights-segmenter i Adobe Experience Platform (forhåndsversion)
 
-Som bruger af målgruppeindsigt for Dynamics 365 Customer Insights har du muligvis oprettet segmenter for at gøre marketingkampagnerne mere effektive ved at målrette relevante målgrupper. Hvis du vil bruge et segment målgruppeindsigt i Adobe Experience Platform og programmer som Adobe Campaign Standard, skal du følge et par trin, der beskrives i denne artikel.
+Som bruger af publikum indblik i Dynamics 365 Customer Insights har du muligvis oprettet segmenter for at gøre marketingkampagnerne mere effektive ved at målrette relevante målgrupper. Hvis du vil bruge et segment målgruppeindsigt i Adobe Experience Platform og programmer som Adobe Campaign Standard, skal du følge et par trin, der beskrives i denne artikel.
 
 :::image type="content" source="media/AEP-flow.png" alt-text="Procesdiagram over de trin, der beskrives i denne artikel.":::
 
@@ -55,19 +55,19 @@ Når målgruppen er identificeret, kan vi konfigurere eksporten fra målgruppein
 
 1. Gå til **Administrator** > **Forbindelser**.
 
-1. Vælg **Tilføj forbindelse**, og vælg **Azure Blob Storage**, eller vælg **Konfigurer** i **Azure Blob Storage**-feltet:
+1. Vælg **Tilføj forbindelse**, og vælg **Azure Blob Storage**, eller vælg **Konfigurer** i feltet **Azure Blob Storage**.
 
-   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Konfigurationsfelt til Azure Blob Storage."::: sådan konfigurerer du forbindelsen.
+   :::image type="content" source="media/export-azure-blob-storage-tile.png" alt-text="Konfigurationsfelt til Azure Blob Storage."::: 
 
 1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
 
 1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Angiv **Firmanavn**, **Firmanøgle** og **Beholder** for den Blob-lagerkonto, du vil eksportere segmentet til.  
+1. Angiv **Firmanavn**, **Firmanøgle** og **Beholder** for den Blob Storage-konto, du vil eksportere segmentet til.  
       
    :::image type="content" source="media/azure-blob-configuration.png" alt-text="Skærmbillede af lagerkontoens konfiguration. "::: 
    
-    - Du kan få mere at vide om, hvordan du finder Blob storage-kontonavnet og kontonøglen, under [Administration af indstillinger for lagerkonti i Azure-portalen](/azure/storage/common/storage-account-manage).
+    - Du kan få mere at vide om, hvordan du finder Blob Storage-kontonavnet og kontonøglen, under [Administration af indstillinger for lagerkonti i Azure-portalen](/azure/storage/common/storage-account-manage).
     - Du kan få mere at vide om, hvordan du opretter en objektbeholder, i [Oprette en objektbeholder](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container).
 
 1. Vælg **Gem** for at fuldføre forbindelsen. 
@@ -80,7 +80,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Hvis du vil oprette en ny eksport, skal du vælge **Tilføj eksport**.
 
-1. Vælg en forbindelse i sektionen Azure Blob Storage i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+1. Vælg en forbindelse i sektionen Azure Blob Storage i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen tilgængelige forbindelser af denne type.
 
 1. Vælg det segment, du vil eksportere. I dette eksempel er det **ChurnProneCustomers**.
 
@@ -121,9 +121,10 @@ Når du har defineret kildeforbindelsen, skal du [konfigurere et dataflow](https
 
 ## <a name="create-an-audience-in-adobe-campaign-standard"></a>Oprette en målgruppe i Adobe Campaign Standard
 
-Hvis du vil sende mailen for denne kampagne, skal du bruge Adobe Campaign Standard. Når dataene er importeret til Adobe Experience Platform, skal vi [oprette en målgruppe](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard ved hjælp af dataene på Adobe Experience Platform.
+Hvis du vil sende e-mailen til denne kampagne, bruger vi Adobe Campaign Standard. Når dataene er importeret til Adobe Experience Platform, skal vi [oprette en målgruppe](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/get-started-profiles-and-audiences.html#permission) i Adobe Campaign Standard ved hjælp af dataene på Adobe Experience Platform.
 
-Lær at [bruge segmentgeneratoren](https://experienceleague.adobe.com/docs/campaign-standard/using/profiles-and-audiences/working-with-adobe-experience-platform/aep-using-segment-builder.html#building-a-segment) i Adobe Campaign Standard til at definere en målgruppe baseret på dataene i Adobe Experience Platform.
+
+Lær at [bruge segmentgeneratoren](https://experienceleague.adobe.com/docs/campaign-standard/using/integrating-with-adobe-cloud/adobe-experience-platform/audience-destinations/aep-using-segment-builder.html) i Adobe Campaign Standard til at definere en målgruppe baseret på dataene i Adobe Experience Platform.
 
 ## <a name="create-and-send-the-email-using-adobe-campaign-standard"></a>Oprette og sende mailen ved hjælp af Adobe Campaign Standard
 

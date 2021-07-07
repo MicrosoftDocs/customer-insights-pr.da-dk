@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 402e5ef3515bce0e6f56788781b7bd909738aaa6
-ms.sourcegitcommit: b833e333745d321edeaf96d3ed14458cbce02ff1
+ms.openlocfilehash: a83caf2428f3dbd9791b9f746d00d370362a508c
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049243"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304782"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere målinger
 
-Foranstaltninger hjælper dig med at få en bedre forståelse af kundernes adfærd og virksomhedens præstation. De ser på relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå den enkelte kundes købsoversigt eller måle *firmaets samlede salg* for at forstå den samlede omsætning i hele virksomheden.  
+Foranstaltninger hjælper dig med at få en bedre forståelse af kundernes adfærd og virksomhedens præstation. De ser på relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå en enkelt kundes købsoversigt eller måle firmaets samlede salg for at forstå den *samlede omsætning i hele virksomheden*.  
 
 Målinger oprettes ved hjælp af målegeneratoren, en platform til dataforespørgsel med forskellige operatorer og simple tilknytningsindstillinger. Du kan filtrere dataene, gruppere resultater, registrere [objektrelationsstier](relationships.md) og gennemse outputtet.
 
@@ -69,12 +69,14 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
    1. Vælg **Tilføj** for at tilføje filtrene til målingen.
 
 1. Hvis du vil tilføje dimensioner, skal du vælge **Dimension** i konfigurationsområdet. Dimensionerne vises som kolonner i objektet til måling af output.
+ 
    1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn. Som standard vælges dimensionen *CustomerID* for at oprette *mål på kundeniveau*. Du kan fjerne standarddimensionen, hvis du vil oprette *mål på virksomhedsniveau*.
    1. Vælg **Gennemført** for at tilføje dimensioner til målingen.
 
 1. Hvis der er værdier i dataene, som skal erstattes af et heltal, f.eks. erstat *null* med *0*, skal du vælge **Regler**. Konfigurer reglen, og sørg for kun at vælge hele tal som erstatninger.
 
 1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti. 
+   
    1. Vælg **Dataindstillinger**, og vælg den objektsti, der skal bruges til at identificere din måling. Hvis der kun er en enkelt sti til objektet *Kunde*, vises dette kontrolelement ikke.
    1. Vælg **Udført** for at anvende det valgte. 
 
@@ -113,7 +115,7 @@ I følgende procedure beskrives trinnene til opbygning af en ny måleenhed ved h
 
 1. Vælg **Ny**, og vælg **Vælg en skabelon**.
 
-   :::image type="content" source="media/measure-use-template.png" alt-text="Skærmbillede af rullemenuen, når du opretter en ny måling med fremhævelse på skabelon.":::
+   :::image type="content" source="media/measure-use-template.png" alt-text="Skærmbillede af rullemenuen, når du opretter en ny måleenhed med fremhævning på skabelon.":::
 
 1. Find den skabelon, der passer til dine behov, og vælg **Vælg skabelon**.
 
@@ -123,7 +125,7 @@ I følgende procedure beskrives trinnene til opbygning af en ny måleenhed ved h
 
 1. Vælg **Udført**.
 
-1. Definer tidsrammen for de data, der skal bruges i **Angiv tidsperiode**. Vælg, om den nye måling skal dække hele datasættet, ved at vælge **Hele tiden**. Eller hvis målingen skal fokusere på en **Bestemt tidsperiode**.
+1. Definer tidsrammen for de data, der skal bruges i **Angiv tidsperiode**. Vælg, om den nye måleenhed skal dække hele datasæt, ved at vælge **Alle tider**, eller hvis målingen skal fokusere på en **Bestemt tidsperiode**.
 
    :::image type="content" source="media/measure-set-time-period.png" alt-text="Skærmbillede, der viser sektionen tidsperiode, når du konfigurerer en måling ud fra en skabelon.":::
 
@@ -142,12 +144,12 @@ I følgende procedure beskrives trinnene til opbygning af en ny måleenhed ved h
 
 Du kan finde listen over mål på siden **Målinger**.
 
-Du kan finde oplysninger om målingstype, oprettelsesdato, status og tilstand. Når du vælger en måling på listen, kan du gennemse outputtet og hente en .CSV-fil.
+Du kan finde oplysninger om målingstype, oprettelsesdato, status og tilstand. Når du vælger et mål på listen, kan du gennemse outputtet og hente en CSV-fil.
 
 Hvis du vil opdatere alle dine målinger på én gang, skal du vælge **Opdater alle** uden at vælge en bestemt måling.
 
 > [!div class="mx-imgBorder"]
-> ![Handlinger til administration af enkelte målinger](media/measure-actions.png "Handlinger til administration af enkelte målinger")
+> ![Handlinger til administration af enkelte målinger.](media/measure-actions.png "Handlinger til administration af enkelte målinger.")
 
 Vælg en måling på listen for følgende indstillinger:
 
@@ -159,11 +161,11 @@ Vælg en måling på listen for følgende indstillinger:
 - **Aktivere** eller **deaktivere**. Inaktive målinger opdateres ikke under en [planlagt opdatering](system.md#schedule-tab).
 
 > [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af jobbets opgaver, finder du yderligere oplysninger: behandlingstid, sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven.
 
 ## <a name="next-step"></a>Næste trin
 
-Du kan benytte eksisterende foranstaltninger til at oprette [et kundesegment](segments.md).
+Du kan bruge eksisterende mål til at oprette [et kundesegment](segments.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

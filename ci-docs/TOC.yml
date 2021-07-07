@@ -136,6 +136,8 @@
           items:
             - name: Eksportoversigt
               href: audience-insights/export-destinations.md
+            - name: Aktiv kampagne
+              href: audience-insights/export-active-campaign.md
             - name: AdRoll
               href: audience-insights/export-adroll.md
             - name: Autopilot
@@ -144,7 +146,7 @@
               href: audience-insights/export-azure-blob-storage.md
             - name: Azure Data Lake Storage Gen2
               href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Azure Synapse-analyser
+            - name: Azure Synapse Analytics
               href: audience-insights/export-azure-synapse-analytics.md
             - name: Adobe Campaign Standard
               href: audience-insights/export-adobe-campaign-standard.md
@@ -178,8 +180,12 @@
               href: audience-insights/export-omnisend.md
             - name: RollWorks
               href: audience-insights/export-rollworks.md
+            - name: Salesforce Marketing Cloud
+              href: audience-insights/export-salesforce.md
             - name: SendGrid
               href: audience-insights/export-sendgrid.md
+            - name: SendInBlue
+              href: audience-insights/export-sendinblue.md
             - name: Snapchat
               href: audience-insights/export-snapchat.md
             - name: SFTP
@@ -240,11 +246,11 @@
           href: engagement-insights/get-started.md
         - name: Opret et arbejdsområde
           href: engagement-insights/create-workspace.md
-        - name: Kontroller dit websted
-          href: engagement-insights/instrument-website.md
+        - name: Hent hændelser fra websteder og mobilapps
+          href: engagement-insights/developer-resources.md
         - name: Koncepter og terminologi
           href: engagement-insights/glossary.md
-    - name: Hændelser
+    - name: Arrangementer
       items:
         - name: Opret og opdatér begivenheder
           href: engagement-insights/refined-events.md
@@ -272,10 +278,18 @@
       items:
         - name: Oversigt over udviklerressourcer
           href: engagement-insights/developer-resources.md
-        - name: Web SDK-selvstudium
+        - name: Web SDK-vejledning
           href: engagement-insights/advanced-SDK-implementation.md
         - name: Web SDK-eksempel
           href: engagement-insights/websdk-sample.md
+        - name: Android SDK-selvstudium
+          href: engagement-insights/get-started-android.md
+        - name: Android SDK-eksempel
+          href: engagement-insights/androidsdk-sample.md
+        - name: iOS SDK-selvstudium
+          href: engagement-insights/get-started-ios.md
+        - name: iOS SDK-eksempel
+          href: engagement-insights/iossdk-sample.md
     - name: Administration
       items:
         - name: Roller og tilladelser

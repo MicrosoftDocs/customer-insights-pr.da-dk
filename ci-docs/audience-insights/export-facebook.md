@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 37d25aa038ea32b98f2d1850d7b42b701292438d
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: e20c7b7fd3989d7621cb7765f38b85c8ab4adfcb
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5976035"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305103"
 ---
 # <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Eksport af segmentliste til Facebook Ads Manager (forhåndsversion)
 
@@ -23,7 +23,7 @@ Eksportér segmenter af samlede kundeprofiler til Facebook Annonceadministrator 
 ## <a name="prerequisites-for-connection"></a>Forudsætninger for forbindelse
 
 - Du skal have en [**Facebook-reklamekonto**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), der omfatter en [**Facebook-forretningskonto**](https://business.facebook.com/).
-- Du skal være administrator for [**Facebook-reklamekonto**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Du skal være Administrator i [**Facebook-reklamekonto**](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
@@ -42,11 +42,11 @@ Før brugere kan oprette en eksport, skal administrator konfigurere forbindelsen
 
 1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
 
-1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden **Administratorer**. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Godkend med Facebook Ads: 
 
-   1. Vælg **Fortsæt med Facebook** for at logge på din Facebook-annoncekonto.
+   1. Vælg **Fortsæt med Facebook** for at logge på din Facebook Ads-konto.
 
    1. Tillad **ads_management**-tilladelsen, efter at de er godkendt i Facebook.
 
@@ -68,16 +68,17 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg **Tilføj destination** for at oprette en ny eksport. 
 
-1. Vælg i **Forbindelse til eksport** en forbindelse i sektionen **Facebook Ads Manager**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+1. Vælg i **Forbindelse til eksport** en forbindelse i sektionen **Facebook Ads Manager**. Hvis du ikke kan se dette sektionsnavn, er der ingen tilgængelige forbindelser af denne type.
 
 1. Brug feltet **Vælg din nøgleidentifikator** til at vælge **Mail**, **Navn og adresse** eller **Telefon**, du vil sende til Facebook Annonceadministrator. 
 
 1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**.
 
 1. Tilknyt de tilsvarende attributter fra det samlede kundeobjekt til den valgte nøgle-identifikator.
-   > [TIP] De bedste chancer for et match sker, hvis du vælger **Mail** som nøgleidentifikator. Tilføjelse af flere identifikatorer kan forbedre matchningen.
+   > [!TIP]
+   > De bedste chancer for et match sker, hvis du vælger **Mail** som nøgleidentifikator. Tilføjelse af flere identifikatorer kan forbedre matchningen.
 
-1. Vælg **Tilføj attribut** for at tilknytte flere attributter, der skal sendes til Facebook Ads Manager. Attributter fra Facebook Ads Manager tilknyttes følgende brugervenlige navne: **FN** = **Fornavn**, **LN** = **Efternavn**, **FI** = **Første initial**, **PHONE** = **Telefon**, **GEN** = **Køn**, **DOB** = **Fødselsdato**, **ST** = **Stat**, **CT** = **By**, **ZIP** = **Postnummer**, **COUNTRY** = **Land/område**
+1. Vælg **Tilføj attribut** for at tilknytte flere attributter, der skal sendes til Facebook Ads Manager. Attributter fra Facebook Ads Manager tilknyttes følgende brugervenlige navne: **FN** = **Fornavn**, **LN** = **Efternavn**, **FI** = **Første initial**, **PHONE** = **Telefon**, **GEN** = **Køn**, **DOB** = **Fødselsdato**, **ST** = **Stat**, **CT** = **By**, **ZIP** = **Postnummer**, **LAND** = **Land/område**
 
 1. Vælg de segmenter, du vil eksportere.
 
@@ -85,7 +86,9 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). 
+
+Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

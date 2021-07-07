@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 87fb517e9f0b380f9721f77470dceb3bcb7e5616
-ms.sourcegitcommit: 55c00ea61c78db7b3b54894c01afb3246dff31c8
+ms.openlocfilehash: 82f6f363497f8f1b45fa84acd49bcaed332e60e8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "5700661"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305619"
 ---
 # <a name="custom-machine-learning-models"></a>Brugerdefinerede maskinelle indlæringsmodeller
 
@@ -72,7 +72,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
       > [!div class="mx-imgBorder"]
       > ![Modeloutputparameter-panel](media/intelligence-screen3-outputparameters.png "Modeloutputparameter-panel")
 
-1. Vælg den tilsvarende attribut på rullelisten **Kunde-id i resultater**, der identificerer kunder, og vælg **Gem**.
+1. Vælg den tilsvarende attribut på rullelisten **Kunde-id i resultater**, der er knyttet til kunderne, og vælg **Gem**.
 
    > [!div class="mx-imgBorder"]
    > ![Relater resultater til Kundedata-panel](media/intelligence-screen4-relatetocustomer.png "Relater resultater til Kundedata-panel")
@@ -100,7 +100,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
       1. Vælg **Navn på outputdatalager-parameter** for test-pipeline.
       1. Vælg **Navn på outputstiparameter** for test-pipeline.
 
-1. Vælg den tilsvarende attribut på rullelisten **Kunde-id i resultater**, der identificerer kunder, og vælg **Gem**.
+1. Vælg den tilsvarende attribut på rullelisten **Kunde-id i resultater**, der er knyttet til kunderne, og vælg **Gem**.
    Vælg en attribut fra udledningsoutputtet med værdier, der svarer til kolonnen Kunde-id i kundeobjektet. Hvis der ikke findes en sådan kolonne i datasættet, skal du vælge en attribut, der entydigt identificerer rækken.
 
 ## <a name="run-a-workflow"></a>Kørsel af en arbejdsproces

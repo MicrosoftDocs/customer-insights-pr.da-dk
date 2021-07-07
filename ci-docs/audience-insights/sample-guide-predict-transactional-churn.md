@@ -9,20 +9,20 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 251bc26246cee16952e8e4cb08e2ed7aa4d18488
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595419"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306113"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse af transaktionsrelateret afgang (prøveversion)
 
-Denne vejledning vil gennemgå et eksempel på forudsigelse af transaktionsrelateret afgang i Customer Insights fra start til slut ved hjælp af de data, der er angivet nedenfor. Alle de data, der bruges i denne vejledning, er ikke virkelige kundedata og er en del af det Contoso-datasæt, der findes i *Demo*-miljøet i Customer Insights-abonnementet.
+Denne vejledning vil gennemgå et eksempel på forudsigelse af transaktionsrelateret afgang i Customer Insights fra start til slut ved hjælp af de data, der er angivet nedenfor. Alle data, der bruges i denne vejledning, er ikke rigtige kundedata og er en del af de Contoso-datasæt, der findes i *Demo*-miljøet i dit customer insights-abonnement.
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er et firma, der fremstiller kaffe og kaffemaskiner i høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at vide, hvilke kunder der jævnligt køber deres produkter, men som holder op med at være aktive kunder i de næste 60 dage. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
+Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at vide, hvilke kunder der jævnligt køber deres produkter, men som holder op med at være aktive kunder i de næste 60 dage. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -109,9 +109,9 @@ Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for
 
 1. Gå til fanen **Match**, og vælg **Angiv rækkefølge**.
 
-1. Vælg **eCommerceContacts: eCommerce** som den primære kilde, og medtag alle poster i rullelisten **Primær**.
+1. På rullelisten **Primær** skal du vælge **eCommerceContacts: e-handel** som den primære kilde og inkludere alle poster.
 
-1. På rullelisten **Objekt 2** skal du vælge **loyCustomers: LoyaltyScheme** og inkludere alle poster.
+1. På rullelisten **Entity 2** skal du vælge **loyCustomers: LoyaltyScheme** og medtage alle poster.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Saml og match eCommerce og Loyalty.":::
 
@@ -119,16 +119,16 @@ Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for
 
 1. Tilføj din første betingelse ved hjælp af FullName.
 
-   * For eCommerceContacts skal du vælge **FullName** på rullelisten.
-   * For loyCustomers skal du vælge **FullName** på rullelisten.
+   * I forbindelse med eCommerceContacts skal du vælge **Fuldt navn** på rullelisten.
+   * I forbindelse med loyCustomers skal du vælge **Fuldt navn** på rullelisten.
    * Vælg **Normaliser**-rullelisten, og vælg **Type (telefon, navn, adresse ...)**.
    * Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 
 1. Angiv navnet **FullName, e-mail** til den nye regel.
 
    * Tilføj endnu en betingelse for e-mailadressen ved at vælge **Tilføj betingelse**
-   * Vælg **E-mail** i rullelisten for objektet eCommerceContacts.
-   * Vælg **E-mail** i rullelisten for objektet loyCustomers. 
+   * For enhed eCommerceContacts skal du vælge **E-mail** i rullelisten.
+   * For enhed loyCustomers skal du vælge **E-mail** i rullelisten. 
    * Lad Normaliser være tom. 
    * Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 

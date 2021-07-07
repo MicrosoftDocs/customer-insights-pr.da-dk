@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 73d294a285b4ad706bec7fe925c1daa0b839ddd6
-ms.sourcegitcommit: 7b6189e47ed1f87e7ce35d40e4cf7a6730f31ef2
+ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6129938"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306342"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Vejledning til eksempel på forudsigelse af kundens levetidsværdi (CLV)
 
@@ -123,9 +123,9 @@ Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en sam
 
 1. Gå til fanen **Match**, og vælg **Angiv rækkefølge**.
 
-1. Vælg **eCommerceContacts: eCommerce** som den primære kilde, og medtag alle poster i rullelisten **Primær**.
+1. På rullelisten **Primær** skal du vælge **eCommerceContacts: e-handel** som den primære kilde og inkludere alle poster.
 
-1. På rullelisten **Objekt 2** skal du vælge **loyCustomers: LoyaltyScheme** og inkludere alle poster.
+1. På rullelisten **Entity 2** skal du vælge **loyCustomers: LoyaltyScheme** og medtage alle poster.
 
    ![Saml og match eCommerce og Loyalty.](media/unify-match-order.png)
 
@@ -133,16 +133,16 @@ Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en sam
 
 1. Tilføj din første betingelse ved hjælp af FullName.
 
-   - For eCommerceContacts skal du vælge **FullName** på rullelisten.
-   - For loyCustomers skal du vælge **FullName** på rullelisten.
-   - Vælg rullelisten **Normaliser**, og vælg **Type (telefon, navn, adresse, ...)**.
+   - I forbindelse med eCommerceContacts skal du vælge **Fuldt navn** på rullelisten.
+   - I forbindelse med loyCustomers skal du vælge **Fuldt navn** på rullelisten.
+   - Vælg rullelisten **Normaliser**, og vælg **Type (Telefon, Navn, Adresse, ...)**.
    - Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 
 1. Angiv navnet **FullName, e-mail** til den nye regel.
 
    - Tilføj endnu en betingelse for e-mailadressen ved at vælge **Tilføj betingelse**
-   - Vælg **E-mail** i rullelisten for objektet eCommerceContacts.
-   - Vælg **E-mail** i rullelisten for objektet loyCustomers.
+   - For enhed eCommerceContacts skal du vælge **E-mail** i rullelisten.
+   - For enhed loyCustomers skal du vælge **E-mail** i rullelisten.
    - Lad Normaliser være tom.
    - Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 

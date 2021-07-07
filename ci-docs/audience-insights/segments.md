@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6cb7bd62bf0f61e6dc5811b20e5011e4a086c743
-ms.sourcegitcommit: 84283d523a891298fca8aaf629d9f9ab2a1bc067
+ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/27/2021
-ms.locfileid: "6111380"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306250"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
@@ -38,7 +38,7 @@ Gå til siden **Segmenter** for at få vist alle dine gemte segmenter og adminis
 
 De enkelte segmenter repræsenteres af en række, der indeholder yderligere oplysninger om segmentet.
 
-:::image type="content" source="media/segments-selected-segment.png" alt-text="Markeret segment med rulleliste med indstillinger og tilgængelige indstillinger.":::
+:::image type="content" source="media/segments-selected-segment.png" alt-text="Valgt segment med rulleliste med indstillinger og tilgængelige indstillinger.":::
 
 Følgende handlinger er tilgængelige, når du vælger et segment:
 
@@ -68,7 +68,7 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
 
 1. Vælg **Vis mere [...]** for det segment, du vil eksportere.
 
-1. Vælg **Administrer eksporter** på rullelisten med handlinger.
+1. Vælg **Administrer eksport** fra rullelisten Handlinger.
 
 1. Siden **Eksporter (forhåndsversion) for segment** åbnes. Alle konfigurerede eksporter vises grupperet efter eksporter, der indeholder det aktuelle segment eller ikke indeholder det.
 

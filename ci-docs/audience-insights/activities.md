@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: 0c728fad4ed00d1bf085fed60057211861b3a195
-ms.sourcegitcommit: f0855bd7762b1f0a1d3dd5259e23c95e1b0a6a93
+ms.openlocfilehash: 342aeb33f652d5d60cd25e13969766954bf56370
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "5866400"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304919"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -45,7 +45,7 @@ Datakilderne kan inkludere objekter med transaktions- og aktivitetsdata fra fler
 
    - **Først**: Fremmed felt i aktivitetsobjektet, der bruges til at oprette en relation til et andet objekt.
    - **Andet**: Det tilsvarende kildekundeobjekt, som aktivitetsobjektet er i relation til. Du kan kun relatere til kildekundeobjekter, der bruges i processen til dataenheder.
-   - **Tredje**: Hvis der allerede findes en relation mellem dette aktivitetsobjekt og det valgte kildekundeobjekt, er relationsnavnet skrivebeskyttet. Hvis der ikke findes en sådan relation, oprettes der en ny relation med det navn, du angiver i dette felt.
+   - **Tredje**: Hvis der allerede findes en relation mellem dette aktivitetsobjekt og det valgte kildekundeobjekt, er relationsnavnet skrivebeskyttet. Hvis der ikke findes en sådan relation, oprettes der en ny relation med det navn, du angiver i denne boks.
 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definere objektrelationen.":::
 
@@ -53,23 +53,23 @@ Datakilderne kan inkludere objekter med transaktions- og aktivitetsdata fra fler
 
 1. I **Aktivitetsenhed**-trinnet skal du vælge aktivitetshændelsen og starttiden for aktiviteten. 
    - **Obligatoriske felter**
-      1. **Hændelsesaktivitet**: Det felt, der er begivenheden for denne aktivitet
-      2. **Tidsstempel**: Felt, der repræsenterer starttiderne for aktiviteten.
+      - **Hændelsesaktivitet**: Det felt, der er begivenheden for denne aktivitet.
+      - **Tidsstempel**: Felt, der repræsenterer starttiderne for aktiviteten.
 
    - **Valgfrie felter**
-      1. **Flere detaljer**: Felt med relevante oplysninger om aktiviteten.
-      2. **Ikon**: Det ikon, der bedst repræsenterer denne aktivitetstype.
-      3. **Webadresse**: Felt, der indeholder en URL-adresse med oplysninger om aktiviteten. For eksempel det transaktionssystem, der er kilde til aktiviteten. Denne URL-adresse kan være et hvilket som helst felt fra datakilden, eller den kan konstrueres som et nyt felt ved hjælp af en Power Query-transformation. URL-dataene gemmes i objektet *Unified Activity*, som kan forbruges downstream ved hjælp af [API'er](apis.md).
+      - **Flere detaljer**: Felt med relevante oplysninger om aktiviteten.
+      - **Ikon**: Det ikon, der bedst repræsenterer denne aktivitetstype.
+      - **Webadresse**: Felt, der indeholder en URL-adresse med oplysninger om aktiviteten. For eksempel det transaktionssystem, der er kilde til aktiviteten. Denne URL-adresse kan være et hvilket som helst felt fra datakilden, eller den kan konstrueres som et nyt felt ved hjælp af en Power Query-transformation. URL-dataene gemmes i objektet *Unified Activity*, som kan forbruges downstream ved hjælp af [API'er](apis.md).
    
    :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Angiv kundeaktivitetsdata i et Unified Activity-objekt.":::
 
 1. Vælg **Næste** for at gå til næste trin. Du kan vælge **Afslut og gennemse** for at gemme aktiviteten nu, hvor aktivitetstypen er angivet til **Andet**. 
 
-1. Vælg aktivitetstypen i trinnet **Aktivitetstype**, og vælg eventuelt, om du vil tilknytte nogle af aktivitetstyperne til brug i andre områder af Customer Insights. I øjeblikket kan aktivitetstyperne *Abonnement* & *SalesOrderLine* tilknyttes semantisk, når du har accepteret at tilknytte felterne. Hvis en aktivitetstype ikke er relevant for den nye aktivitet, kan du vælge *Andet* eller *Opret nyt* for en brugerdefineret aktivitetstype.
+1. Vælg aktivitetstypen i trinnet **Aktivitetstype**, og vælg eventuelt, om du vil tilknytte nogle af aktivitetstyperne til brug i andre områder af Customer Insights. I øjeblikket kan aktivitetstyperne *Abonnement* og *Salgsordrelinje* tilknyttes semantisk, når du har accepteret at tilknytte felterne. Hvis en aktivitetstype ikke er relevant for den nye aktivitet, kan du vælge *Andet* eller *Opret nyt* for en brugerdefineret aktivitetstype.
 
 1. Vælg **Næste** for at gå til næste trin. 
 
-1. Kontrollér de indstillinger, du har godkendt i **Gennemse**. Du går tilbage til et af de forrige trin og opdaterer oplysningerne, hvis det er nødvendigt.
+1. Kontrollér de indstillinger, du har godkendt i **Gennemse**. Gå tilbage til et af de forrige trin, og opdater oplysningerne, hvis det er nødvendigt.
 
    :::image type="content" source="media/Activity_Wizard5.PNG" alt-text="Gennemse de angivne felter for en aktivitet.":::
    

@@ -9,12 +9,12 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 324e5c19778230dd978b2f4e9156a2dd82b3d2bd
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595511"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306296"
 ---
 # <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse af abonnementsafgang (prøveversion)
 
@@ -22,7 +22,7 @@ Vi gennemgår fra start til slut et eksempel på forudsigelse af abonnementsafga
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er et firma, der fremstiller kaffe og kaffemaskiner i høj kvalitet, som de sælger via deres Contoso Coffee-websted. De har for nylig startet en abonnementsforretning for kunderne for at få kaffe på normal basis. Deres målsætning er at forstå, hvilke abonnementskunder kan opsige deres abonnement i løbet af de næste par måneder. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
+Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de sælger via deres Contoso Coffee-websted. De har for nylig startet en abonnementsforretning for kunderne for at få kaffe på normal basis. Deres målsætning er at forstå, hvilke abonnementskunder kan opsige deres abonnement i løbet af de næste par måneder. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -128,9 +128,9 @@ Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for
 
 1. Gå til fanen **Match**, og vælg **Angiv rækkefølge**.
 
-1. Vælg **eCommerceContacts: eCommerce** som den primære kilde, og medtag alle poster i rullelisten **Primær**.
+1. På rullelisten **Primær** skal du vælge **eCommerceContacts: e-handel** som den primære kilde og inkludere alle poster.
 
-1. På rullelisten **Objekt 2** skal du vælge **loyCustomers: LoyaltyScheme** og inkludere alle poster.
+1. På rullelisten **Entity 2** skal du vælge **loyCustomers: LoyaltyScheme** og medtage alle poster.
 
    :::image type="content" source="media/unify-match-order.PNG" alt-text="Saml og match eCommerce og Loyalty.":::
 
@@ -138,16 +138,16 @@ Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for
 
 1. Tilføj din første betingelse ved hjælp af FullName.
 
-   * For eCommerceContacts skal du vælge **FullName** på rullelisten.
-   * For loyCustomers skal du vælge **FullName** på rullelisten.
+   * I forbindelse med eCommerceContacts skal du vælge **Fuldt navn** på rullelisten.
+   * I forbindelse med loyCustomers skal du vælge **Fuldt navn** på rullelisten.
    * Vælg **Normaliser**-rullelisten, og vælg **Type (telefon, navn, adresse ...)**.
    * Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 
 1. Angiv navnet **FullName, e-mail** til den nye regel.
 
    * Tilføj endnu en betingelse for e-mailadressen ved at vælge **Tilføj betingelse**
-   * Vælg **E-mail** i rullelisten for objektet eCommerceContacts.
-   * Vælg **E-mail** i rullelisten for objektet loyCustomers. 
+   * For enhed eCommerceContacts skal du vælge **E-mail** i rullelisten.
+   * For enhed loyCustomers skal du vælge **E-mail** i rullelisten. 
    * Lad Normaliser være tom. 
    * Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
 

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2155042d86cda0cffee1588760a06d6c7eb7077e
-ms.sourcegitcommit: fcc94f55dc2dce84eae188d582801dc47696c9cc
+ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
+ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/20/2021
-ms.locfileid: "6085615"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6306021"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -209,7 +209,7 @@ Prøv at bruge forskellige præcisionstærskelværdier på betingelser for at fi
 
 Du kan omkonfigurere og finjustere de fleste af matchparametrene.
 
-:::image type="content" source="media/match-rules-management.png" alt-text="Skærmbillede af rullemenuen med indstillinger for matchregel.":::
+:::image type="content" source="media/match-rules-management.png" alt-text="Skærmbillede af rullemenuen med indstillinger for matchende regler.":::
 
 - **Du kan ændre rækkefølgen af reglerne**, hvis du har defineret flere regler. Du kan omarrangere matchreglerne ved at vælge indstillingerne **Flyt op** og **Flyt ned** eller ved at trække og slippe.
 
@@ -247,7 +247,7 @@ Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal 
 
 1. Gå til **Data** > **Datakilder**, og indsæt skabelonfilerne som nye objekter. Når de er indtaget, kan du bruge dem til at angive matchkonfigurationen.
 
-1. Når du har overført filerne, og objekterne er tilgængelige, skal du vælge indstillingen **Brugerdefineret match** igen. Du kan se indstillinger for at angive de objekter, du vil inkludere. Vælg de påkrævede objekter i rullemenuen.
+1. Når du har overført filerne, og objekterne er tilgængelige, skal du vælge indstillingen **Brugerdefineret match** igen. Du kan se indstillinger for at angive de objekter, du vil inkludere. Vælg de nødvendige enheder i rullemenuen.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skærmbillede af dialogboksen til valg af tilsidesættelser for et brugerdefineret matchscenario.":::
 

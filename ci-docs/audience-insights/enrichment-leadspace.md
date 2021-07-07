@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: ccf4f661ecffb281556a4545b1f26ee809c697cd
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 0496d10c994cd077a778a6e745e3774e316765ae
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5895906"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6305195"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Forbedring af virksomhedsprofiler med Leadspace (prøveversion)
 
@@ -36,7 +36,7 @@ Hvis du vil konfigurere Leadspace, skal følgende forudsætninger være opfyldt:
 
    :::image type="content" source="media/leadspace-tile.png" alt-text="Skærmbillede af Leadspace-feltet.":::
 
-1. Vælg en [forbindelse](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette en forbindelse ved at vælge **Tilføj forbindelse** og vælge **Leadspace**. 
+1. Vælg en [værdi](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette en forbindelse ved at vælge **Tilføj forbindelse** og vælge **Leadspace**. 
 
 1. Vælg **Opret forbindelse til Leadspace** for at bekræfte den valgte forbindelse.
 
@@ -57,13 +57,13 @@ Hvis du vil konfigurere Leadspace, skal følgende forudsætninger være opfyldt:
 
 Du skal være en administrator for at konfigurere forbindelser. Vælg **Tilføj forbindelse**, når du konfigurerer en konfiguration, *eller* gå til **Admin** > **Forbindelser**, og vælg **Konfigurer** i feltet Leadspace.
 
-1. Vælg **Start her** 
+1. Vælg **Introduktion**. 
 
 1. Angiv et navn til forbindelsen i feltet **Vis navn**.
 
 1. Angiv dit Leadspace-token
 
-1. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**
+1. Gennemse og giv dit samtykke til **Beskyttelse af personlige oplysninger og overholdelse af data** ved at vælge **Jeg accepterer**.
 
 1. Vælg **Kontroller** for at validere konfigurationen.
 
@@ -81,7 +81,7 @@ Du kan finde flere oplysninger under [Leadspace-API'er](https://support.leadspac
 
 ## <a name="next-steps"></a>Næste trin
 
-Byg oven over dine forbedrede kundedata. Du kan oprette [segmenter](segments.md), [målepunkter](measures.md) og endda [eksportere dataene](export-destinations.md) for at give kunderne personlige oplevelser.
+Byg oven over dine forbedrede kundedata. Opret [segmenter](segments.md) og [målpunkter](measures.md), og [eksporter endda dataene](export-destinations.md) for at levere personlige oplevelser til dine kunder.
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 106dbc26f95b309821d738e1484b1eaa79dd225b
-ms.sourcegitcommit: aaa275c60c0c77c88196277b266a91d653f8f759
+ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
+ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "5896090"
+ms.lasthandoff: 06/24/2021
+ms.locfileid: "6304965"
 ---
 # <a name="connections-preview-overview"></a>Oversigt over forbindelser (forhåndsversion)
 
@@ -42,7 +42,7 @@ Hvis du vil tilføje forbindelser, skal du have [administratortilladelser](permi
 
 1. Gå til fanen **Forbindelser**.
 
-1. Vælg **Tilføj forbindelse** for at oprette en ny forbindelse. Vælg den type forbindelse, du vil oprette, på rullemenuen.
+1. Vælg **Tilføj forbindelse** for at oprette en ny forbindelse. Vælg i rullemenuen, hvilken type forbindelse du vil oprette.
 
 1. Angiv de nødvendige oplysninger i ruden **Konfigurer forbindelse**. 
    1. **Visningsnavn** og forbindelsestype beskriver en forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for denne forbindelse.
@@ -74,7 +74,9 @@ Når du konfigurerer eller redigerer en eksportforbindelse, vælger du, hvilke b
 
 ## <a name="remove-a-connection"></a>Fjerne en forbindelse
 
-Hvis den forbindelse, du fjerner, bruges af produkter eller eksport, skal du først ophæve eller fjerne dem. Dialogboksen Fjern fører dig til relevante produktoversigter eller eksporter. Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved at føje endnu en forbindelse til dem på siden [Forbedringer](enrichment-hub.md) eller [Eksport](export-destinations.md).
+Hvis den forbindelse, du fjerner, bruges af produkter eller eksport, skal du først ophæve eller fjerne dem. Dialogboksen Fjern fører dig til relevante produktoversigter eller eksporter. 
+
+Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved at føje endnu en forbindelse til dem på siden [Forbedringer](enrichment-hub.md) eller [Eksport](export-destinations.md).
 
 1. Gå til **Administrator** > **Forbindelser** (forhåndsversion).
 
