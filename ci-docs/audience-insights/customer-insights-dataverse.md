@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 7157ad930f3cea17c12bd4f95028d291483329d3
-ms.sourcegitcommit: e5425f060c8d80f9510283dc610ce70a4e709b1e
+ms.openlocfilehash: 220e01a06711a5d35b8df09e265017a6d8fd0490
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/15/2021
-ms.locfileid: "6259184"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650035"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
@@ -24,11 +24,11 @@ Customer Insights giver mulighed for at gøre outputobjekter tilgængelige i [Mi
 
 **Organisationer med eksisterende Dataverse-miljøer**
 
-Organisationer, der allerede bruger Dataverse, kan bruge et af deres [eksisterende Dataverse-miljøer](manage-environments.md#create-an-environment-in-an-existing-organization), når en administrator konfigurerer målgruppeindsigt. Når du angiver URL-adressen til Dataverse-miljøet, knyttes den til deres nye målgruppeindsigtsmiljø. Customer Insights- og Dataverse-miljøer skal hostes i samme område for at sikre den bedst mulige ydeevne.
+Organisationer, der allerede bruger Dataverse, kan bruge et af deres [eksisterende Dataverse-miljøer](get-started-paid.md), når en administrator konfigurerer målgruppeindsigt. Når du angiver URL-adressen til Dataverse-miljøet, knyttes den til deres nye målgruppeindsigtsmiljø. Customer Insights- og Dataverse-miljøer skal hostes i samme område for at sikre den bedst mulige ydeevne.
 
 Hvis du vil tilknytte et Dataverse-miljø, skal du udvide **Avancerede indstillinger**, når du opretter målgruppeindsigtsmiljøet. Angiv **URL-adressen til Microsoft Dataverse-miljøet**, og markér afkrydsningsfeltet **Aktivér datadeling**.
 
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="alt":::
+:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="Alt.":::
 
 **Ny organisation**
 

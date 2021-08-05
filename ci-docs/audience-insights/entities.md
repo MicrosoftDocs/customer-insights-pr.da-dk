@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: f81128183b6e20e1078ad38c42c771d343909270
-ms.sourcegitcommit: c1841ab91fbef9ead9db0f63fbc669cc3af80c12
+ms.openlocfilehash: ac8b0671b20123091bef64e672fc53398fe8955a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/17/2021
-ms.locfileid: "6049387"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6553968"
 ---
 # <a name="entities-in-audience-insights"></a>Objekter i målgruppeindsigt
 
@@ -30,19 +30,19 @@ På siden **Objekter** vises objekter, og der findes flere kolonner:
 - **Senest opdateret**: Dato og klokkeslæt for seneste opdatering af objektet
 - **Seneste opdatering**: Dato og klokkeslæt for den seneste dataopdatering
 
-## <a name="exploring-a-specific-entitys-data"></a>Udforske et bestemt objekts data
+## <a name="explore-a-specific-entitys-data"></a>Udforske et bestemt objekts data
 
 Vælg et objekt for at udforske de forskellige felter og poster, der findes i det pågældende objekt.
 
 > [!div class="mx-imgBorder"]
-> ![Vælg et objekt](media/data-manager-entities-data.png "Vælge et objekt")
+> ![Vælg et objekt.](media/data-manager-entities-data.png "Vælg et objekt")
 
 - Under fanen **Data** vises en tabel med oplysninger om individuelle poster i objektet.
 
 > [!div class="mx-imgBorder"]
-> ![Tabellen Felter](media/data-manager-entities-fields.PNG "Tabellen Felter")
+> ![Tabellen Felter.](media/data-manager-entities-fields.PNG "Tabellen Felter")
 
-- Fanen **Attributter** er valgt som standard, og der vises en tabel, hvor du kan gennemse detaljer om det valgte objekt, f.eks. feltnavne, datatyper og typer. Kolonnen **Type** viser tilknyttede Common Data Model-typer, som enten identificeres automatisk af systemet eller [tilknyttes manuelt](map-entities.md) af brugere. Disse er semantiske typer, der kan være forskellige fra datatyperne for attributter – f.eks. har feltet *Email* herunder datatypen *Tekst*, men dets (semantiske) Common Data Model -type kan f.eks. være *Email* eller *EmailAddress*.
+- Fanen **Attributter** er valgt som standard, og der vises en tabel, hvor du kan gennemse detaljer om det valgte objekt, f.eks. feltnavne, datatyper og typer. Kolonnen **Type** viser tilknyttede Common Data Model-typer, som enten identificeres automatisk af systemet eller [tilknyttes manuelt](map-entities.md) af brugere. Disse typer er semantiske typer, der kan adskille sig fra attributters datatyper. Feltet *E-mail* nedenfor har f.eks. datatypen *Tekst*, men den (semantiske) Common Data Modeltype kan være *E-mail* eller *EmailAddress*.
 
 > [!NOTE]
 > I begge tabeller vises der kun et eksempel på objektets data. Hvis du vil have vist det komplette datasæt, skal du gå til siden **Datakilder**, vælge et objekt, vælge **Rediger** og derefter få vist dette objekts data med Power Query-editoren som forklaret under [Datakilder](data-sources.md).
@@ -52,11 +52,28 @@ Hvis du vil have mere at vide om de data, der indtages i objektet, kan du finde 
 Vælg ikonet for diagrammet for at få vist en oversigt over dataene.
 
 > [!div class="mx-imgBorder"]
-> ![Symbol for oversigt](media/data-manager-entities-summary.png "Dataoversigtstabel")
+> ![Symbol for oversigt.](media/data-manager-entities-summary.png "Dataoversigtstabel")
 
-### <a name="next-step"></a>Næste trin
+## <a name="entity-specific-information"></a>Objektspecifikke oplysninger
 
-Se emnet [Samle](data-unification.md) for at lære at *tilknytte*, *matche* og *flette* de data, der er indtaget.
+I følgende afsnit finder du oplysninger om nogle systemoprettede objekter.
+
+### <a name="corrupted-data-sources"></a>Beskadigede datakilder
+
+Felter fra en brugerdefineret datakilde kan indeholde beskadigede data. Poster med beskadigede felter vises i systemoprettede objekter. Hvis du kender til beskadigede poster, kan du nemmere identificere, hvilke data der skal gennemses og opdateres på kildesystemet. Efter den næste opdatering af datakilde overføres de korrigerede poster til Customer Insights og overføres til downstreamprocesser. 
+
+Datatypen er f.eks. angivet som 'dato' i kolonnen 'fødselsdag'. En kundepost har fødselsdag angivet som '01/01/1977'. Denne post markeres som beskadiget af systemet. Nogen kan nu ændre fødselsdagen i kildesystemet til '1977'. Efter en automatiseret opdatering af datakilder har feltet nu et gyldigt format, og posten fjernes fra det beskadigede objekt. 
+
+Gå til **Data** > **Objekter**, og søg efter de beskadigede objekter i sektionen **System**. Navngivningsskema for beskadigede objekter: 'DataSourceName_EntityName_corrupt'.
+
+I Customer Insights behandles stadig beskadigede poster. De kan dog give problemer, når du arbejder med de ensartede data.
+
+Følgende kontroller køres på de indtagne data for at få vist beskadigede poster: 
+
+- Værdien i et felt stemmer ikke overens med datatypen i kolonnen.
+- Felter indeholder tegn, der medfører, at kolonnerne ikke stemmer overens med det forventede skema. Eksempel: forkert formaterede anførselstegn, unescaped anførselstegn eller ny linje-tegn.
+- Hvis der er kolonner af samme dato/klokkeslæt, skal formatet angives i modellen, hvis standard-ISO-formatet ikke følges.
+
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

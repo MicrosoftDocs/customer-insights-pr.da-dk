@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 2856888d6ac64d5daabcc5a234f13bc6f88bb3df
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 0803be651662480ddf1fd22952f6a69ee1603001
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306067"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554978"
 ---
 # <a name="segment-insights-preview"></a>Segmentindsigter (prøveversion)
 
@@ -44,7 +44,7 @@ Du kan også analysere, hvordan overlapningen ændres for bestemte attributter.
 Når analysen er fuldført, kan du finde oplysninger om denne indsigt i **Segmenter** > **Indsigt (prøveversion)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Oplysninger om indsigt i segmentoverlapning":::
+> :::image type="content" source="media/segment-overlap.png" alt-text="Oplysninger om indsigt i segmentoverlapning.":::
 
 Vælg en indsigt for at få vist analyseresultaterne:
 
@@ -77,7 +77,7 @@ Segmentdifferentieringer hjælper dig med at finde ud af, hvad der adskiller et 
 Når analysen er fuldført, kan du finde oplysninger om denne indsigt i **Segmenter** > **Indsigt (prøveversion)**.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Oplysninger om indsigt i segmentdifferentiering":::
+> :::image type="content" source="media/segment-differentiators.png" alt-text="Oplysninger om indsigt i segmentdifferentiering.":::
 
 Vælg en indsigt for at få vist analyseresultaterne. En differentieringsanalyse indeholder to faner. Fanen **Attributter** indeholder en liste over profilattributter, der opfattes som en differentiering. Fanen **Målinger** viser differentieringer. Der findes følgende oplysninger under de enkelte faner:
 

@@ -1,7 +1,7 @@
 ---
 title: Oprette og administrere segmenter
 description: Opret segmenter med kunder for at gruppere dem på baggrund af forskellige attributter.
-ms.date: 05/03/2021
+ms.date: 07/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,14 +9,24 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
+ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064930"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "6685455"
 ---
 # <a name="create-and-manage-segments"></a>Oprette og administrere segmenter
+
+> [!IMPORTANT]
+> I september 2021 er der sket en række ændringer i forhold til oplevelse med oprettelse af segmenter: 
+> - Segmentgeneratoren ser lidt anderledes ud med redesignede elementer og et forbedret brugerflow.
+> - Nye dato/klokkeslætsoperatorer og en forbedret datovælger er aktiveret i segmentgeneratoren.
+> - Du kan tilføje eller fjerne betingelser og regler fra segmenter. 
+> - Indlejrede regler, der starter med en OR-betingelse, bliver tilgængelige. Du skal ikke længere bruge en AND-tilstand i det yderste lag.
+> - En siderude til valg af attributter er konstant tilgængelig.
+> - En indstilling til valg af objektrelationsstier.
+> Du kan prøve den nye segmentgenerator ved at sende en mail med emnet "Anmodning om at aktivere den nye segmentgenerator" for at hjælpe [at] microsoft.com. Inkluder navnet på din organisation og id'et for sandkassemiljøet.
 
 Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på. Segmenter administreres på siden **Segmenter**. 
 
@@ -50,7 +60,7 @@ Når du opretter et segment, kan du gemme en kladde. Den gemmes som et inaktivt 
 1. Vælg en operator og en værdi for den valgte attribut.
 
    > [!div class="mx-imgBorder"]
-   > ![Brugerdefineret gruppefilter](media/customer-group-numbers.png "Kundegruppefilter")
+   > ![Brugerdefineret gruppefilter.](media/customer-group-numbers.png "Kundegruppefilter")
 
    |Antal |Definition  |
    |---------|---------|
@@ -66,7 +76,7 @@ Når du opretter et segment, kan du gemme en kladde. Den gemmes som et inaktivt 
       - **ELLER**-operator: Den ene eller anden betingelse skal overholdes som en del af segmenteringsprocessen. Denne indstilling er mest nyttig, når du definerer flere betingelser for det samme objekt.
 
       > [!div class="mx-imgBorder"]
-      > ![ELLER-operator, hvor en af betingelserne skal overholdes](media/segmentation-either-condition.png "ELLER-operator, hvor en af betingelserne skal overholdes")
+      > ![ELLER-operator, hvor en af betingelserne skal overholdes.](media/segmentation-either-condition.png "ELLER-operator, hvor en af betingelserne skal overholdes")
 
       Det er aktuelt muligt at indlejre en **ELLER**-operator under en **OG**-operator, men ikke den anden vej rundt.
 
@@ -74,12 +84,12 @@ Når du opretter et segment, kan du gemme en kladde. Den gemmes som et inaktivt 
    Vælg **Tilføj gruppe**.
 
       > [!div class="mx-imgBorder"]
-      > ![Tilføje kundegruppe](media/customer-group-add-group.png "Tilføje kundegruppe")
+      > ![Tilføje kundegruppe.](media/customer-group-add-group.png "Tilføje kundegruppe")
 
    1. Vælg en af de indstillede operatorer: **Foreningsmængde**, **Overlapning** eller **Undtagen**.
 
    > [!div class="mx-imgBorder"]
-   > ![Tilføje foreningsmængde af kundegruppe](media/customer-group-union.png "Tilføje foreningsmængde af kundegruppe")
+   > ![Tilføje foreningsmængde af kundegruppe.](media/customer-group-union.png "Tilføje foreningsmængde af kundegruppe")
 
    - **Foreningsmængde** forener de to grupper.
 
@@ -90,7 +100,7 @@ Når du opretter et segment, kan du gemme en kladde. Den gemmes som et inaktivt 
 1. Hvis objektet er knyttet til det samlede kundeobjekt via [Relationer](relationships.md), skal du definere relationsstien for at oprette et gyldigt segment. Tilføj objekterne fra relationsstien, indtil du kan vælge objektet **Kunde: CustomerInsights** på rullelisten. Vælg derefter **Alle poster** for hvert trin.
 
    > [!div class="mx-imgBorder"]
-   > ![Relationsstien under oprettelse af segmenter](media/segments-multiple-relationships.png "Relationsstien under oprettelse af segmenter")
+   > ![Relationsstien under oprettelse af segmenter.](media/segments-multiple-relationships.png "Relationsstien under oprettelse af segmenter")
 
 1. Som standard opretter segmenter et outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet.  
   
@@ -127,7 +137,7 @@ Med hurtige segmenter kan du nemt oprette simple segmenter med en enkelt operato
 4. Systemet vil give dig en **Anslået segmentstørrelse**. Du kan vælge, om du vil oprette det segment, du har defineret, eller først vil gå til det igen for at få en anden segmentstørrelse.
 
     > [!div class="mx-imgBorder"]
-    > ![Navn og estimering for et hurtigt segment](media/quick-segment-name.png "Navn og estimering for et hurtigt segment")
+    > ![Navn og estimering for et hurtigt segment.](media/quick-segment-name.png "Navn og estimering for et hurtigt segment")
 
 5. Angiv et **Navn** til dit segment. Angiv eventuelt et **Vist navn**.
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 50c231070ff9930c1ea82971bf4f8541a89d5027
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: b37bb5dfeed2326784ef276a93a04bec626aaf6e
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305884"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554676"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
@@ -42,7 +42,7 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
 1. Dialogboksen **Power Query - rediger forespørgsler** giver dig mulighed for at gennemse og finpudse dataene. De objekter, som systemerne har identificeret i den valgte datakilde, vises i venstre rude.
 
    > [!div class="mx-imgBorder"]
-   > ![Dialogboksen Rediger forespørgsler](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger forespørgsler")
+   > ![Dialogboksen Rediger forespørgsler.](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger forespørgsler")
 
 1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. Hver transformation er vist under **Anvendte trin**. Power Query indeholder mange standardindstillinger for transformation. Du kan finde flere oplysninger i [Power Query-transformationer](/power-query/power-query-what-is-power-query#transformations).
 
@@ -75,7 +75,7 @@ Connectorer med markering i kolonnen **Customer Insights (dataflows)** er tilgæ
 2. Vælg den lodrette ellipse ud for den datakilde, du vil ændre, og vælg **Rediger** i rullemenuen.
 
    > [!div class="mx-imgBorder"]
-   > ![Indstillingen Rediger](media/edit-option-data-sources.png "Indstillingen Rediger")
+   > ![Indstillingen Rediger.](media/edit-option-data-sources.png "Indstillingen Rediger")
 
 3. Anvend ændringerne og transformationerne i dialogboksen **Power Query – rediger forespørgsler** som beskrevet i afsnittet [Oprette en ny datakilde](#create-a-new-data-source).
 

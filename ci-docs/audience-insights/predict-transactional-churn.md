@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: b0e587739f9f4d03942d70a72de4f9378822054d
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 28c89693239393d93b7a816535b8c3fffe353935
+ms.sourcegitcommit: e57d51ae3cc233f7b6185c074c66efd9800c02c1
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095595"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "6559398"
 ---
 # <a name="transactional-churn-prediction-preview"></a>Transaktionsrelateret forudsigelse om afgang
 
@@ -47,7 +47,7 @@ Transaktionsrelateret forudsigelse om afgang er med til at forudsige, om en kund
         - **Hændelse:** Navnet på den hændelse, du vil bruge. Et felt, der kaldes "UserAction" i en forretning, kan f. eks. være en kupon, der bruges af kunden.
         - **Detaljer:** Detaljerede oplysninger om hændelsen. Et felt, der kaldes "CouponValue" i en forretning, kan f. eks. være valutaværdien af en kupon.
 - Forslåede datakarakteristika:
-    - Tilstrækkelige historiske data: Transaktionsdata for mindst det dobbelte af det valgte tidsvindue. Helst to til tre års abonnementsdata. 
+    - Tilstrækkelige historiske data: Transaktionsdata for mindst det dobbelte af det valgte tidsvindue. Helst to til tre års transaktionshistorik. 
     - Flere køb pr. kunde: Ideelt mindst to transaktioner pr. kunde.
     - Antal kunder: Mindst 10 kundeprofiler, helst mere end 1.000 entydige kunder. Modellen kan ikke bruges af færre end 10 kunder og med utilstrækkelige historiske data.
     - Datafuldførelse: Mindre end 20 % af de manglende værdier i datafeltet for det angivne objekt.

@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50b11e7d6f62d7a25eb25a0f2b1c4ad7d859def1
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: de53927f7ed1f58176a7ba83f89be7c39064947c
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306021"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650311"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -138,7 +138,7 @@ Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der i
    - **Mindst nyeste**: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
  
    > [!div class="mx-imgBorder"]
-   > ![Regler for deduplikering trin 1](media/match-selfconflation.png "Regler for deduplikering trin 1")
+   > ![Regler for deduplikering trin 1.](media/match-selfconflation.png "Regler for deduplikering trin 1")
  
 1. Når objekterne er valgt, og de flettede indstillinger er angivet, skal du vælge **Tilføj regel** for at definere reglerne for deduplikering på et objektniveau.
    - **Vælg felt** lister alle de tilgængelige felter fra objektet. Vælg det felt, du vil kontrollere for dubletter. Vælg felter, der sandsynligvis er entydige for hver enkelt kunde. Det kan f.eks. være en mailadresse eller en kombination af navn, by og telefonnummer.
@@ -146,7 +146,7 @@ Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der i
    - Definer flere betingelser ved at vælge **Tilføj betingelse**.
  
    > [!div class="mx-imgBorder"]
-   > ![Regler for deduplikering trin 2](media/match-selfconflation-rules.png "Regler for deduplikering trin 2")
+   > ![Regler for deduplikering trin 2.](media/match-selfconflation-rules.png "Regler for deduplikering trin 2")
 
   Du kan oprette flere deduplikeringsregler for et objekt. 
 
@@ -179,7 +179,9 @@ Gå til **Data** > **Saml** > **Match**, og vælg **Kør** for at starte process
 Du kan se resultatet af en vellykket kørsel, det samlede kundeprofilobjekt, på siden **Objekter**. Dit samlede kundeobjekt kaldes **Kunder** i sektionen **Profiler**. Ved den første vellykkede matchkørsel oprettes det samlede objekt *Kunde*. Enhver efterfølgende match udvider objektet.
 
 > [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+> Når du har kørt matchprocessen, skal du vælge processtatus for at åbne ruden med **opgaveoplysninger**. Den giver et overblik over behandlingstiden, den sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven. Vælg **Se detaljer** for at se, hvilke objekter der deltog i matchprocessen, hvilke regler der blev anvendt på dem, og om opdateringerne blev udgivet korrekt.  
+> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Nedrulningssti for at få vist procesoplysninger fra linket til opgavestatus.":::
 
 ## <a name="review-and-validate-your-matches"></a>Gennemgå og validere dine matches
 

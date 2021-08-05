@@ -9,16 +9,16 @@ ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 49dad45c951f3c00d77ddd99faec48bfccada8b0
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 72f3bd1f32b813fef04dc14618331e3d707b5052
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306113"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556254"
 ---
 # <a name="transactional-churn-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse af transaktionsrelateret afgang (prøveversion)
 
-Denne vejledning vil gennemgå et eksempel på forudsigelse af transaktionsrelateret afgang i Customer Insights fra start til slut ved hjælp af de data, der er angivet nedenfor. Alle data, der bruges i denne vejledning, er ikke rigtige kundedata og er en del af de Contoso-datasæt, der findes i *Demo*-miljøet i dit customer insights-abonnement.
+Denne vejledning vil gennemgå et eksempel på forudsigelse af transaktionsrelateret afgang i Customer Insights fra start til slut ved hjælp af de data, der er angivet nedenfor. Alle data, der bruges i denne vejledning, er ikke rigtige kundedata og er en del af de Contoso-datasæt, der findes i *Demo*-miljøet i dit Customer Insights-abonnement.
 
 ## <a name="scenario"></a>Scenarie
 
@@ -47,7 +47,7 @@ Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af da
    - **CreatedOn**: Dato/Klokkeslæt/Zone
 
    [!div class="mx-imgBorder"]
-   ![Omdan DoB til dato](media/ecommerce-dob-date.PNG "transformer fødselsdato til dato")
+   ![Omdan DoB til dato.](media/ecommerce-dob-date.PNG "transformer fødselsdato til dato")
 
 1. Omdøb datakilde fra **Forespørgsel** til **eCommerceContactsQuery** i feltet **Navn** i ruden til højre
 

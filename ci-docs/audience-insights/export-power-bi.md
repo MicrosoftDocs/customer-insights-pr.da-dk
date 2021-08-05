@@ -1,7 +1,7 @@
 ---
 title: Power BI-connector
 description: Få at vide, hvordan du kan bruge Dynamics 365 Customer Insights-connectoren i Power BI.
-ms.date: 09/21/2020
+ms.date: 07/23/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e43e2f9dbc84ebfbf2154990a752740f973296cb
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: faeb95bd7d2fe3cb220308cdee559b3347c5af54
+ms.sourcegitcommit: f98b6b2058f384365f222d1f9ba0cc9ce801f09d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596032"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "6661095"
 ---
 # <a name="connector-for-power-bi-preview"></a>Connector til Power BI (prøve)
 
@@ -39,7 +39,7 @@ Opret visualiseringer for dataene ved hjælp af Power BI Desktop. Generer yderli
 
 1. I dialogboksen **Navigator**. der vises en liste om alle de miljøer, du har adgang til. Udvid et miljø, og åbn en af mapperne (objekter, målpunkter, segmenter, forbedringer). Du kan f.eks. åbne mappen **Objekter** for at få vist alle de objekter, du kan importere.
 
-   ![Power BI Connector Navigator](media/power-bi-navigator.png "Power BI Connector Navigator")
+   ![Power BI Connector Navigator.](media/power-bi-navigator.png "Power BI Connector Navigator")
 
 1. Markér afkrydsningsfelterne ud for de objekter, der skal inkluderes, og vælg **Indlæs**. Du kan vælge flere objekter fra flere miljøer.
 
@@ -68,5 +68,11 @@ Du kan identificere og fjerne de kopierede relationer.
 3. Fjern eventuelle kopier af identificerede relationer.
 
 Når du har fjernet de kopierede relationer, skal du prøve at konfigurere Power BI-connector igen. Miljøet skulle nu være tilgængeligt.
+
+### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Fejl i datofelter under indlæsning af objekter i Power BI Desktop
+
+Når du indlæser objekter, som indeholder felter med et datoformat, f.eks. DD/MM/ÅÅÅÅ, kan du støde på fejl på grund af uoverensstemmende landeformater. Denne uoverensstemmelse opstår, når Power BI Desktop-filen angives til en anden landestandard end engelsk (USA), da datofelter i målgruppeindsigt gemmes i amerikansk format.
+
+Filen Power BI Desktop har en enkelt indstilling for landeindstilling, som anvendes, når du henter data. Du kan få vist datofelterne korrekt ved at angive landestandard for .BPI-fil til engelsk (USA). [Flere oplysninger om, hvordan du ændrer landestandard for en Power BI Desktop-fil](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

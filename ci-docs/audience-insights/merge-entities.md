@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 86ab3cefa70e5fab4bdb27cde363adee26efee4c
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 24b523786158ff36c314601846ee25ea64cfabbe
+ms.sourcegitcommit: 5c9c54ffe045017c19f0042437ada2c101dcaa0f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305623"
+ms.lasthandoff: 07/22/2021
+ms.locfileid: "6650127"
 ---
 # <a name="merge-entities"></a>Flet objekter
 
@@ -109,7 +109,7 @@ Nogle objekter indeholder flere detaljer end andre. Hvis et objekt indeholder de
 Uanset om du fletter attributter manuelt eller lader systemet flette dem, kan du altid køre fletningen. Vælg **Kør** på siden **Flet** for at starte processen.
 
 > [!div class="mx-imgBorder"]
-> ![Gemme og køre datafletning](media/configure-data-merge-save-run.png "Gemme og køre datafletning")
+> ![Gemme og køre datafletning.](media/configure-data-merge-save-run.png "Gemme og køre datafletning")
 
 Vælg **Kør kun fletning**, hvis du kun vil se outputtet afspejlet i det samlede kundeobjekt. Downstream-processer opdateres som [defineret i opdateringsplanen](system.md#schedule-tab).
 
@@ -118,7 +118,9 @@ Vælg **Kør flettede og downstream-processer** for at opdatere systemet med æn
 Hvis du vil foretage flere ændringer og køre trinnet igen, kan du annullere en igangværende fletning. Vælg **Opdaterer...**, og vælg **Annuller job** i den siderude, der vises.
 
 > [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+> Når du har kørt fletteprocessen, skal du vælge processtatus for at åbne ruden med **opgaveoplysninger**. Den giver et overblik over behandlingstiden, den sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven. Vælg **Se detaljer** for at se, hvilke objekter der deltog i matchprocessen, hvis konfliktløsningen lykkedes, og om opdateringerne blev udgivet korrekt.  
+> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies).  
+> :::image type="content" source="media/process-detail-path.png" alt-text="Nedrulningssti for at få vist procesoplysninger fra linket til opgavestatus.":::
 
 ## <a name="next-step"></a>Næste trin
 

@@ -2,6 +2,8 @@
   href: index.yml
 - name: Produktoversigt
   href: overview.md
+- name: Opret ny prøveversion
+  href: audience-insights/get-started-trial.md
 - name: Få adgang til dit miljø
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Indsigt i målgruppe
@@ -10,12 +12,10 @@
       href: audience-insights/index.yml
     - name: Oversigt over funktioner
       href: audience-insights/overview.md
-    - name: Gratis prøveversion
-      href: 'https://dynamics.microsoft.com/get-started/?appname=customerinsights'
     - name: Nye og opdaterede funktioner
       href: audience-insights/whats-new-audience-insights.md
-    - name: Opret et miljø
-      href: audience-insights/home.md
+    - name: Opret et nyt miljø
+      href: audience-insights/get-started-paid.md
     - name: Få mere at vide om moduler
       items:
         - name: Indsættelse af data
@@ -34,8 +34,8 @@
           href: audience-insights/connect-power-query.md
         - name: Tilføj en Common Data Model-mappe som en datakilde
           href: audience-insights/connect-common-data-model.md
-        - name: Tilføje Common Data Service-administreret datasø
-          href: audience-insights/connect-common-data-service-lake.md
+        - name: Tilføje Dataverse-administreret data lake
+          href: audience-insights/connect-dataverse-managed-lake.md
         - name: Trinvis opdatering af datakilder
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Dataindtagelse i realtid
@@ -76,11 +76,11 @@
           href: audience-insights/enrichment-experian.md
         - name: Forbedring med SFTP-brugerdefineret import
           href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Segmenter og målinger
+    - name: Segmenter
       items:
         - name: Oversigter over segmenter
           href: audience-insights/segments.md
-        - name: Opret segmenter og kundegrupper
+        - name: Oprette segmenter
           href: audience-insights/segment-builder.md
         - name: Foreslåede segmenter baseret på målinger
           href: audience-insights/suggested-segments.md
@@ -254,6 +254,8 @@
       items:
         - name: Opret og opdatér begivenheder
           href: engagement-insights/refined-events.md
+        - name: Genkend webhændelser fra tidligere godkendte besøgende
+          href: engagement-insights/unknown-to-known.md
         - name: Eksportér hændelser
           href: engagement-insights/export-events.md
     - name: Rapporter
@@ -304,6 +306,8 @@
       items:
         - name: Slet og eksportér personlige data
           href: engagement-insights/delete-export-personal-data.md
+    - name: Regional tilgængelighed
+      href: engagement-insights/regional-availability.md
     - name: Tjenestebegrænsninger
       href: engagement-insights/quotas.md
 - name: Kontakt support

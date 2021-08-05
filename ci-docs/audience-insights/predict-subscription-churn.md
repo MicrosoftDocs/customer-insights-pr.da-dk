@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 4e7065b61940ef0d7b2a30f96f6225df29e30383
-ms.sourcegitcommit: 6b07c9c3102761be162e4842f3c9fbc19f948a9b
+ms.openlocfilehash: 9eb0593f93d713124e4113dcb62c588819f5b97b
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "6095641"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556300"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forudsigelse af abonnementsafgang (prøveversion)
 
@@ -63,7 +63,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 1. Gå til **Intelligens** > **Forudsigelser** i målgruppen insights.
 1. Vælg feltet **Model for abonnementsafgang (prøveversion)**, og vælg **Brug denne model**.
    > [!div class="mx-imgBorder"]
-   > ![Modelfelt for abonnementsafgang med knappen Brug denne model](media/subscription-churn-usethismodel.PNG "Modelfelt for abonnementsafgang med knappen Brug denne model")
+   > ![Modelfelt for abonnementsafgang med knappen Brug denne model.](media/subscription-churn-usethismodel.PNG "Modelfelt for abonnementsafgang med knappen Brug denne model")
 
 ### <a name="name-model"></a>Navngiv model
 
@@ -86,11 +86,11 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
     1. Vælg det **Kundeobjekt**, der stemmer overens med dit primære kundeobjekt.
     1. Angiv et navn, der beskriver relationen.
        > [!div class="mx-imgBorder"]
-       > ![Siden med abonnementshistorik, der viser oprettelsen af en relation til en kunde](media/subscription-churn-subscriptionhistoryrelationship.PNG "Siden med abonnementshistorik, der viser oprettelsen af en relation til en kunde")
+       > ![Siden med abonnementshistorik, der viser oprettelsen af en relation til en kunde.](media/subscription-churn-subscriptionhistoryrelationship.PNG "Siden med abonnementshistorik, der viser oprettelsen af en relation til en kunde")
 1. Vælg **Næste**.
 1. Knyt de semantiske felter til attributter i dit abonnementshistorikobjekt, og vælg **Gem**. Du kan finde beskrivelser af felterne under [forudsætningerne](#prerequisites).
    > [!div class="mx-imgBorder"]
-   > ![Siden med abonnementshistorik, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for abonnementshistorik](media/subscription-churn-subscriptionhistorymapping.PNG "Siden med abonnementshistorik, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for abonnementshistorik")
+   > ![Siden med abonnementshistorik, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for abonnementshistorik.](media/subscription-churn-subscriptionhistorymapping.PNG "Siden med abonnementshistorik, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for abonnementshistorik")
 1. Vælg **Tilføj data** for **Kundeaktiviteter**, og vælg det objekt, der indeholder de oplysninger om kundeaktiviteter, som er beskrevet i forudsætningerne.
 1. Vælg en aktivitetstype, der svarer til den type kundeaktivitet, du konfigurerer.  Vælg **Opret ny**, og angiv et navn, hvis du ikke kan se en indstilling, der svarer til den aktivitetstype, du har brug for.
 1. Du skal konfigurere relationen fra kundeaktivitetsobjektet til kundeobjektet.
@@ -101,7 +101,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 1. Knyt de semantiske felter til attributter i dit kundeaktivitetsobjekt, og vælg **Gem**. Du kan finde beskrivelser af felterne under [forudsætningerne](#prerequisites).
 1. (Valgfrit) Hvis du har andre kundeaktiviteter, som du vil medtage, skal du gentage trinnene ovenfor.
    > [!div class="mx-imgBorder"]
-   > ![Definere objektrelationen](media/subscription-churn-customeractivitiesmapping.PNG "Siden med kundeaktiviteter, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for kundeaktivitet")
+   > ![Definere objektrelationen.](media/subscription-churn-customeractivitiesmapping.PNG "Siden med kundeaktiviteter, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for kundeaktivitet")
 1. Vælg **Næste**.
 
 ### <a name="set-schedule-and-review-configuration"></a>Angive konfiguration for planlægning og evaluering
@@ -115,7 +115,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 
 1. Gå til fanen **Mine forudsigelser** i **Intelligens** > **forudsigelser**.
    > [!div class="mx-imgBorder"]
-   > ![Visning af siden Mine forudsigelser](media/subscription-churn-mypredictions.PNG "Visning af siden Mine forudsigelser")
+   > ![Visning af siden Mine forudsigelser.](media/subscription-churn-mypredictions.PNG "Visning af siden Mine forudsigelser")
 1. Vælg den forudsigelse, du vil gennemse.
    - **Forudsigelsesnavn:** Navnet på forudsigelsen, der blev angivet under oprettelsen.
    - **Forudsigelsestype:** Den type model, der bruges til forudsigelsen
@@ -131,7 +131,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
    - **Sidst opdateret:** Den dato, hvor forudsigelsen opdaterede resultater i outputenheden.
 1. Vælg de lodrette ellipser ud for den forudsigelse, du vil gennemgå resultaterne for, og vælg **Vis**.
    > [!div class="mx-imgBorder"]
-   > ![Visning af indstillinger i menuen med lodrette ellipser for en forudsigelse, herunder redigering, opdatering, visning, logfiler og sletning](media/subscription-churn-verticalellipses.PNG "Visning af indstillinger i menuen med lodrette ellipser for en forudsigelse, herunder redigering, opdatering, visning, logfiler og sletning")
+   > ![Visning af indstillinger i menuen med lodrette ellipser for en forudsigelse, herunder redigering, opdatering, visning, logfiler og sletning.](media/subscription-churn-verticalellipses.PNG "Visning af indstillinger i menuen med lodrette ellipser for en forudsigelse, herunder redigering, opdatering, visning, logfiler og sletning")
 1. Der findes tre primære sektioner med data på resultatsiden:
     1. **Træningsmodellens ydeevne:** A, B eller C er mulige scorer. Denne score ydeevnen af forudsigelsen og kan hjælpe dig med at træffe beslutningen om at bruge de resultater, der er gemt i outputobjektet.
         - Scorer bestemmes ud fra følgende regler:
@@ -139,13 +139,13 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
             - **B**, når modellen præcist har forudset mindst 50 % af det samlede antal forudsigelser, og når procentsatsen for præcise forudsigelser for kunder, der er mistet, er op til 10 % større end den historiske gennemsnitlige tabssats af den historiske gennemsnitlige tabssats.
             - **C** når modellen præcist har forudset mindre end 50 % af det samlede antal forudsigelser, eller når procentsatsen for præcise forudsigelser for kunder, der er mistet, er mindre end den historiske gennemsnitlige tabssats.
                > [!div class="mx-imgBorder"]
-               > ![Visning af modellens ydeevneresultat](media/subscription-churn-modelperformance.PNG "Visning af modellens ydeevneresultat")
+               > ![Visning af modellens ydeevneresultat.](media/subscription-churn-modelperformance.PNG "Visning af modellens ydeevneresultat")
     1. **Sandsynlighed for afgang (antal kunder):** Kundegrupper baseret på deres forudsagte risiko for afgang. Du kan senere bruge disse data, hvis du vil oprette et kundesegment med stor risiko for afgang. Sådanne segmenter hjælper dig med at forstå, hvor din grænse skal være for segmentmedlemskab.
        > [!div class="mx-imgBorder"]
-       > ![Graf, der viser fordelingen af afgangsresultater, opdelt i intervaller fra 0 - 100 %](media/subscription-churn-resultdistribution.PNG "Graf, der viser fordelingen af afgangsresultater, opdelt i intervaller fra 0 - 100 %")
+       > ![Graf, der viser fordelingen af afgangsresultater, opdelt i intervaller fra 0 - 100 %.](media/subscription-churn-resultdistribution.PNG "Graf, der viser fordelingen af afgangsresultater, opdelt i intervaller fra 0 - 100 %")
     1. **Mest indflydelsesrige faktorer:** Der er mange faktorer, som tages i betragtning ved oprettelsen af din forudsigelse. Hver af faktorerne får beregnet deres betydning for de samlede forudsigelser, som en model opretter. Du kan bruge disse faktorer til at validere dine forudsigelsesresultater. Du kan også bruge oplysningerne senere til at [oprette segmenter](segments.md), der kan være med til at påvirke afgangsrisikoen for kunderne.
        > [!div class="mx-imgBorder"]
-       > ![Liste, der viser indflydelsesrige faktorer og deres betydning ved forudsigelse af afgangsresultatet](media/subscription-churn-influentialfactors.PNG "Liste, der viser indflydelsesrige faktorer og deres betydning ved forudsigelse af afgangsresultatet")
+       > ![Liste, der viser indflydelsesrige faktorer og deres betydning ved forudsigelse af afgangsresultatet.](media/subscription-churn-influentialfactors.PNG "Liste, der viser indflydelsesrige faktorer og deres betydning ved forudsigelse af afgangsresultatet")
 
 ## <a name="manage-predictions"></a>Administrere forudsigelser
 

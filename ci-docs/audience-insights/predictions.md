@@ -9,12 +9,12 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 3342328b9eead9bdcb8b41f119a1d0a5823001c8
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 31b9b1b709540896c1dbc19f974df4ab056a7b8d
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5595894"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692520"
 ---
 # <a name="complete-your-partial-data-with-predictions"></a>Fuldføre delvise data med forudsigelser
 
@@ -31,11 +31,11 @@ Med forudsigelser kan du nemt oprette forventede værdier, der kan forbedre fors
 
 Før din organisation kan bruge funktionen til forudsigelser, skal følgende forudsætninger være opfyldt:
 
-1. Din organisation har en forekomst [opsat i Common Data Service](/ai-builder/build-model#prerequisites) og er i samme organisation som Customer Insights.
+1. Din organisation har en forekomst [konfigureret i Microsoft Dataverse](/ai-builder/build-model#prerequisites), og den er i samme organisation som Customer Insights.
 
-2. Dit miljø er knyttet til Common Data Service-forekomsten.
+2. Dit publikum indsigtsmiljø er knyttet til din Dataverse-instans.
 
-Hvis du [opretter det første miljø](manage-environments.md), skal du konfigurere det i dialogboksen **Opret et miljø** og vælge **Avanceret**. Hvis du allerede har oprettet et miljø, skal du gå til indstillingerne og vælge **Avanceret**. I begge tilfælde skal du i sektionen **Brug forudsigelser** angive den Common Data Service-forekomst for den URL-adresse, du vil tilknytte miljøet til.
+Hvis du [opretter det første miljø](get-started-paid.md), skal du konfigurere det i dialogboksen **Opret et miljø** og vælge **Avanceret**. Hvis du allerede har oprettet et miljø, skal du gå til indstillingerne og vælge **Avanceret**. I begge tilfælde skal du i sektionen **Brug forudsigelser** angive den Dataverse-forekomst for den URL-adresse, du vil tilknytte miljøet til.
 
 ## <a name="create-a-prediction-in-the-customer-entity"></a>Opret en forudsigelse i kundeobjektet
 
@@ -47,17 +47,17 @@ Hvis du [opretter det første miljø](manage-environments.md), skal du konfigure
 
 4. Find det attributnavn, du vil forudsige værdier for, og vælg derefter ikonet **Oversigt** i kolonnen **Oversigt**.
    > [!div class="mx-imgBorder"]
-   > ![Ikonet Oversigt](media/intelligence-overviewicon.png "Ikonet Oversigt")
+   > ![Ikonet Oversigt.](media/intelligence-overviewicon.png "Ikonet Oversigt")
 
 5. Hvis der er et stort antal manglende værdier for attributten, skal du vælge **Forudsige manglende værdier** for at fortsætte med din forudsigelse.
    > [!div class="mx-imgBorder"]
-   > ![Oversigtsstatus med knappen Forudsige manglende værdier vist](media/intelligence-overviewpredictmissingvalues.png "Oversigtsstatus med knappen Forudsige manglende værdier vist")
+   > ![Oversigtsstatus med knappen Forudsige manglende værdier vist.](media/intelligence-overviewpredictmissingvalues.png "Oversigtsstatus med knappen Forudsige manglende værdier vist")
 
 6. Angiv et **Vist navn** og et **Navn på outputobjekt** for resultaterne af forudsigelsen.
 
 7. En liste med indstillinger, der er udfyldt på forhånd, viser, hvor du kan knytte værdierne til en forudsagt kategori. I dette tilfælde er de eneste kategoriindstillinger 0 eller 1, da de knyttes til den sande/falske eller binære karakter for forudsigelse. I kolonnen Kategori skal du tilknytte de feltværdier, du vil have klassificeret som "0" i den endelige forudsigelse, til "0", og de elementer, du vil klassificere som "1" i den endelige forudsigelse, til "1".
    > [!div class="mx-imgBorder"]
-   > ![Eksempel, der viser tilknyttede feltværdier for kategorier](media/intelligence-categorymapping.png "Eksempel, der viser tilknyttede feltværdier for kategorier")
+   > ![Eksempel, der viser tilknyttede feltværdier for kategorier.](media/intelligence-categorymapping.png "Eksempel, der viser tilknyttede feltværdier for kategorier")
 
 8. Vælg **Udført**,så forudsigelsen vil blive behandlet. Behandlingen vil tage et stykke tid, afhængigt af datastørrelsen og kompleksiteten af dataene. Resultaterne vil være tilgængelige i et nyt objekt, der er baseret på det **Navn på outputobjekt** for forudsigelsen, du har oprettet.
 
@@ -77,7 +77,7 @@ Som en del af dette flow vælger du en bestemt attribut til at basere dit segmen
 
 5. Hvis det segment, du har oprettet, har ufuldstændige data i kildefeltet, kan du vælge at forudsige de manglende værdier.
    > [!div class="mx-imgBorder"]
-   > ![Knappen Forudsigelse](media/segments-predictoption.png "Knappen Forudsigelse")
+   > ![Knappen Forudsigelse.](media/segments-predictoption.png "Knappen Forudsigelse")
 
 6. Angiv et **Vist navn** og et **Navn på outputobjekt** for resultaterne af forudsigelsen.
 
@@ -93,7 +93,7 @@ Som en del af dette flow vælger du en bestemt attribut til at basere dit segmen
 
 4. Der vises en række datapunkter i visningen af din forudsigelse.
    > [!div class="mx-imgBorder"]
-   > ![Siden Forudsigelser](media/intelligence-predictionsviewpage.png "Siden Forudsigelser")
+   > ![Siden Forudsigelser.](media/intelligence-predictionsviewpage.png "Siden Forudsigelser")
 
    - **Forudsigelige værdier** viser den tilknytning, du har oprettet under tilknytningsfasen af feltværdien til kategori. Det er de værdier i dit datasæt, der er knyttet til en bestemt kategori.
    -**Bedste indflydelse** er de faktorer i dit datasæt, som mest sandsynligt vil have indflydelse på forudsigelsens konfidens til, at din feltværdi er knyttet til en bestemt kategori.
@@ -139,7 +139,7 @@ Den næste kørsel af forudsigelsen bruger den opdaterede model, du har oprettet
 
 ## <a name="troubleshooting"></a>Fejlfinding
 
-Hvis du ikke kan fuldføre Common Data Service-tilknytningsprocessen på grund af en fejl, kan du prøve at fuldføre processen manuelt. Der er to kendte problemer, der kan opstå i tilknytningsprocessen:
+Hvis du ikke kan fuldføre Dataverse-tilknytningsprocessen på grund af en fejl, kan du prøve at fuldføre processen manuelt. Der er to kendte problemer, der kan opstå i tilknytningsprocessen:
 
 - Løsningen til tilføjelsesprogrammet Customer Card er ikke installeret.
     1. Udfør instruktionerne for at [installere og konfigurere løsningen](customer-card-add-in.md).

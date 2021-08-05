@@ -9,12 +9,13 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54dd7b629d4b4e7f640b932b0f9246e0602f46bd
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.custom: intro-internal
+ms.openlocfilehash: 0a017a37777adaaf7de079cf481ec10c70c7adba
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304689"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692428"
 ---
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
@@ -30,26 +31,26 @@ Du kan tilføje en datakilde på tre primære måder:
 
 - [Via dusinvis af Power Query-connectorer](connect-power-query.md)
 - [Fra en Common Data Model-mappe](connect-common-data-model.md)
-- [Fra din egen Microsoft Dataverse-sø](connect-common-data-service-lake.md)
+- [Fra din egen Microsoft Dataverse-sø](connect-dataverse-managed-lake.md)
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Tilføje data fra de lokale datakilder
 
-Data fra de lokale datakilder i målgruppeindsigt understøttes på basis af Microsoft Power Platform-dataflows. Dataflows kan aktiveres i Customer Insights ved at [angive Microsoft Dataverse URL-adressen til miljøet](manage-environments.md#create-an-environment-in-an-existing-organization) under konfiguration af miljøet.
+Data fra de lokale datakilder i målgruppeindsigt understøttes på basis af Microsoft Power Platform-dataflows. Dataflows kan aktiveres i Customer Insights ved at [angive Microsoft Dataverse URL-adressen til miljøet](get-started-paid.md) under konfiguration af miljøet.
 
-Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med Customer Insights, bruger som standard [Power Platform-dataflows](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Dataflows understøtter forbindelser i det lokale miljø ved hjælp af datagateway. Fjern og genskab datakilder, der fandtes, før et Dataverse-miljø blev knyttet til at [bruge de lokale datagateways](/data-integration/gateway/service-gateway-app.md).
+Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med Customer Insights, bruger som standard [Power Platform-dataflows](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Dataflows understøtter forbindelser i det lokale miljø ved hjælp af datagateway. Fjern og genskab datakilder, der fandtes, før et Dataverse-miljø blev knyttet til at [bruge de lokale datagateways](/data-integration/gateway/service-gateway-app).
 
 Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, og du kan genbruge dem i Customer Insights. På siden med datakilder vises links til at gå til det Microsoft Power Platform-miljø, hvor du kan få vist og konfigurere det lokale miljøs datagateways.
 
-## <a name="review-ingested-data"></a>Gennemgå indtagede data
+## <a name="review-ingested-data"></a>Gennemgå indtagne data
 
 Du får vist navnet på hver indtagne datakilde, dens status, og hvornår dataene sidst blev opdateret for den pågældende kilde. Du kan sortere listen over datakilder efter alle kolonner.
 
 > [!div class="mx-imgBorder"]
-> ![Tilføjet datakilde](media/configure-data-datasource-added.png "Tilføjet datakilde")
+> ![Datakilde er tilføjet.](media/configure-data-datasource-added.png "Tilføjet datakilde")
 
 |Status  |Beskrivelse  |
 |---------|---------|
-|Fuldført   |Datakilde blev indregistreret, hvis der er angivet et tidspunkt i den **Opdaterede** kolonne.
+|Gennemført   |Datakilde blev indregistreret, hvis der er angivet et tidspunkt i den **Opdaterede** kolonne.
 |Ikke startet   |Datakilde har ingen data, der er indsat endnu, eller er stadig i kladdetilstand.         |
 |Opdaterer    |Dataindtagelse er i gang. Du kan annullere denne handling ved at vælge **Stop opdatering** i kolonnen **Handlinger**. Hvis du stopper opdateringen af en datakilde, gendannes den til den seneste opdateringstilstand.       |
 |Mislykket     |Der opstod fejl under indtagelse af data.         |

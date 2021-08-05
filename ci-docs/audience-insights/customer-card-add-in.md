@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 88492943ddbf9ae30c64d92b261433b74f34f682
-ms.sourcegitcommit: d74430270f1b754322287c4f045d7febdae35be2
+ms.openlocfilehash: 6a7137730ab8cc43bc93daf647d9d55d02d96cd8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/18/2021
-ms.locfileid: "6059581"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692198"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
@@ -25,7 +25,7 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
 ## <a name="prerequisites"></a>Forudsætninger
 
 - Tilføjelsesprogrammet fungerer kun med Dynamics 365-modelbaserede apps, f.eks. Sales eller Customer Service, version 9.0 og nyere.
-- Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, skal de [indtages fra Dynamics 365-appen ved hjælp af Common Data Service connectoren](connect-power-query.md).
+- Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, skal de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse connectoren](connect-power-query.md).
 - Alle Dynamics 365-brugere af Kundekort-tilføjelsesprogrammet skal [tilføjes som brugere](permissions.md) i målgruppeindsigt for at kunne se dataene.
 - [Konfigurerede søge- og filterfunktioner](search-filter-index.md) i målgruppeindsigt kræves for at få opslag af data til at fungere.
 - Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i målgruppeindsigt:
@@ -50,7 +50,7 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 1. Vælg linket **Vist navn** til løsningen **tilføjelsesprogrammet Kundekort til Dynamics 365 Customer Insights (eksempel)**.
 
    > [!div class="mx-imgBorder"]
-   > ![Vælge vist navn](media/select-display-name.png "Vælge vist navn")
+   > ![Vælge vist navn.](media/select-display-name.png "Vælge vist navn")
 
 1. Vælg **Log på**, og angiv legitimationsoplysningerne for den administratorkonto, du bruger til at konfigurere Customer Insights.
 
@@ -64,7 +64,7 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
    - Hvis du vil tilknytte en konto, skal du vælge det felt i kundeobjektet, der stemmer overens med id for dit kontoobjekt.
 
    > [!div class="mx-imgBorder"]
-   > ![Feltet Kontakt-id](media/contact-id-field.png "Feltet Kontakt-id")
+   > ![Feltet Kontakt-id.](media/contact-id-field.png "Feltet Kontakt-id")
 
 1. Vælg **Gem konfiguration** for at gemme indstillingerne.
 
@@ -83,7 +83,7 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 1. Vælg den kontaktformular, hvor du vil tilføje kontrolelementerne for kundekortet.
 
     > [!div class="mx-imgBorder"]
-    > ![Vælge formularen Kontakt](media/contact-active-forms.png "Vælge formularen Kontakt")
+    > ![Vælge formularen Kontakt.](media/contact-active-forms.png "Vælge formularen Kontakt")
 
 1. Hvis du vil tilføje et kontrolelement, skal du i formulareditoren trække et hvilket som helst felt fra **Feltoversigt** til det sted, hvor du vil placere kontrolelementet.
 
@@ -110,7 +110,7 @@ Tilføjelsesprogrammet Kundekort opgraderes ikke automatisk. Hvis du vil opgrade
 
 1. Vælg **Anvend løsningsopgradering** på handlingslinjen.
 
-   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Opgradere løsningen i området Tilpasning i Dynamics 365-apps":::
+   :::image type="content" source="media/customer-card-add-in-upgrade.png" alt-text="Opgradere løsningen i området Tilpasning i Dynamics 365-apps.":::
 
 1. Når du har startet opgraderingsprocessen, kan du se en indlæsningsindikator, indtil opgraderingen er fuldført. Hvis der ikke findes en nyere version, vises der en fejlmeddelelse i opgraderingen.
 

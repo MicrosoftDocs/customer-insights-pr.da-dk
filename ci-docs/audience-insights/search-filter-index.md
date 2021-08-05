@@ -9,19 +9,19 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: b6cc0ad1a47a6c00e3bf220271f42870fc53621b
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597136"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554014"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Indeks for søgning og filtrering
 
 Resultatet af at samle dine kundedata er et kundeprofilobjekt, der giver en fælles visning af den samlede kundebase. Hvis du hurtigt vil [finde oplysninger om en bestemt kunde eller gruppe af kunder](customer-profiles.md), kan du konfigurere **Søg**- og **Filter**-funktionerne på siden **Kunder**. Læs videre for at få mere at vide om, hvordan administratorer kan redigere attributterne på siden **Indeks for søgning og filtrering**, som er tilgængelig for brugere i forbindelse med søgning og filtrering.
 
 > [!div class="mx-imgBorder"]
-> ![Søgefilter](media/search-filter.png "Søgefilter")
+> ![Søgefilter.](media/search-filter.png "Søgefilter")
 
 ## <a name="add-fields-and-specify-attributes"></a>Tilføje felter og angive attributter
 

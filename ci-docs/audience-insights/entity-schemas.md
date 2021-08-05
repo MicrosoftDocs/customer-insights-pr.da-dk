@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6667e411a1b56e13105a6b59b7b5d249bc8141ea
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
+ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596354"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "6692298"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Objektskema i Common Data Model
 
@@ -24,7 +24,7 @@ ms.locfileid: "5596354"
 
 Denne delte datamodel gør det muligt for programmer og dataintegratorer at samarbejde mere effektivt ved at levere en samlet definition af data. Common Data Model indeholder et rigt metadatasystem med standardobjekter, relationer, hierarkier, egenskaber og meget mere. Det stammer fra Dynamics 365-apps og er open sourced på GitHub med over 260 standardobjekter. Et stort system af interne og eksterne partnere bidrager med branchespecifikke koncepter til Common Data Model.
 
-Flere systemer og platforme implementerer Common Data Model i dag, herunder Power BI-dataflows og Azure Data Services. Det understøttes allerede i Common Data Service, Dynamics 365, Power Apps, Power BI og kommende Azure Data Services – periodisering af værdier direkte til [Open Data Initiative](https://www.microsoft.com/open-data-initiative).
+Flere systemer og platforme implementerer i dag Common Data Model, herunder Power BI-dataflows og Azure Data Services. Det understøttes allerede i Microsoft Dataverse, Dynamics 365, Power Apps, Power BI og kommende Azure-datatjenester, og det akkumulerer værdien direkte mod [Åbn datainitiativ](https://www.microsoft.com/open-data-initiative).
 
 ## <a name="customer-insights-entity-schemas"></a>Customer Insights-objektskemaer
 
@@ -44,7 +44,7 @@ Du kan finde flere oplysninger i dokumentationen til [Customer Insights-objektsk
 
 Du kan få vist objekter i [Common Data Model-objektnavigatør](https://microsoft.github.io/CDM/). Vælg knappen **Indlæs fra GitHub!**, og naviger til **foundationCommon** > **crmCommon** > **løsninger** > **customerInsights**, hvor du kan finde listen over Customer Insights-objekter og definitioner af dem.
 > [!div class="mx-imgBorder"]
-> ![CDM Entity Navigator, der viser CustomerActivity-objekt](media/CDM-entity-navigator.png "CDM Entity Navigator, der viser CustomerActivity-objekt")
+> ![CDM Entity Navigator, der viser CustomerActivity-objekt.](media/CDM-entity-navigator.png "CDM Entity Navigator, der viser CustomerActivity-objekt")
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 03f76bcfc7336d8430146e8a26ffa649c6a17db0
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 1af2e4c42dc5890556c90bb3e5ef1aeb0621fda0
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596814"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554152"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinvis opdatering af datakilder, der er baseret på Power Query
 
@@ -45,7 +45,7 @@ Målgruppen Insights muliggør trinvis opdatering af datakilder, der importeres 
 1. I **Indstillinger for trinvis opdatering** konfigurerer du den trinvise opdatering for alle de objekter, du har valgt under oprettelsen af datakilden.
 
    > [!div class="mx-imgBorder"]
-   > ![Konfigurere objekter i en datakilde til trinvis opdatering](media/incremental-refresh-settings.png "Konfigurere objekter i en datakilde til trinvis opdatering")
+   > ![Konfigurere objekter i en datakilde til trinvis opdatering.](media/incremental-refresh-settings.png "Konfigurere objekter i en datakilde til trinvis opdatering")
 
 1. Vælg et objekt, og angiv følgende oplysninger:
 

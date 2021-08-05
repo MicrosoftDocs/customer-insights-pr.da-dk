@@ -9,12 +9,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 822082d661863e737ea3d3a749a6c878db766967
-ms.sourcegitcommit: e8e03309ba2515374a70c132d0758f3e1e1851d0
+ms.openlocfilehash: 7ee57aa9e86ebf9bd1989d88750642f0b01bd4bf
+ms.sourcegitcommit: f18635c29bb25d9e424a3f5825dc2696278450cf
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/04/2021
-ms.locfileid: "5977370"
+ms.lasthandoff: 06/30/2021
+ms.locfileid: "6327357"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksportere data til Azure Synapse Analytics (forhåndsversion)
 
@@ -74,8 +74,10 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 1. Angiv et genkendeligt **Vist navn** til eksport og et **Databasenavn**.
 
 1. Vælg, hvilke objekter du vil eksportere til Azure Synapse Analytics.
+   > [!NOTE]
+   > Datakilder, der er baseret på en [fælles datamodelmappe](connect-common-data-model.md), understøttes ikke.
 
-1. Vælg **Gem**.
+2. Vælg **Gem**.
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 

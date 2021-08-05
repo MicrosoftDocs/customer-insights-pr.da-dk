@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b3c1da0f541efb85b2ca9d87a2e3b97bbfb6ca7f
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 00be15367001a5f4342d60bb284726ef7154d05c
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305287"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555300"
 ---
 # <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Tilsætning af kundeprofiler ved hjælp af HERE Technologies (prøveversion)
 
@@ -35,7 +35,7 @@ Følgende forudsætninger skal være opfyldt, hvis du vil konfigurere HERE Techn
 1. Vælg **Forbedr mine data** i feltet HERE Technologies, og vælg **Start her**.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies-felt](media/HERE-tile.png "HERE Technologies-felt")
+   > ![HERE Technologies-felt.](media/HERE-tile.png "HERE Technologies-felt")
 
 1. Vælg en [værdi](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er administrator, kan du oprette en forbindelse ved at vælge **Tilføj forbindelse**. Vælg **HERE Technologies** på rullelisten. 
 
@@ -50,7 +50,7 @@ Følgende forudsætninger skal være opfyldt, hvis du vil konfigurere HERE Techn
 1. Definér, hvilke felter fra dine samlede profiler der skal bruges til at søge efter de tilsvarende placeringsdata fra HERE Technologies. Felterne **Gade 1** og **postnummer** er obligatoriske for den valgte primære og/eller sekundære adresse. Hvis du vil opnå en større overensstemmelse, kan du tilføje flere felter.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies forbedret konfigurationsside](media/enrichment-HERE-configuration.png "HERE Technologies forbedret konfigurationsside")
+   > ![HERE Technologies forbedret konfigurationsside.](media/enrichment-HERE-configuration.png "HERE Technologies forbedret konfigurationsside")
 
 1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
 
@@ -73,7 +73,7 @@ Du skal være en administrator for at konfigurere forbindelser. Vælg **Tilføj 
 1. Vælg **Gem**, når verifikationen er fuldført.
 
    > [!div class="mx-imgBorder"]
-   > ![HERE Technologies-forbindelsens konfigurationsside](media/enrichment-HERE-connection.png "HERE Technologies-forbindelsens konfigurationsside")
+   > ![HERE Technologies-forbindelsens konfigurationsside.](media/enrichment-HERE-connection.png "HERE Technologies-forbindelsens konfigurationsside")
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 

@@ -9,12 +9,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 09d449e51a3a47ec916ab3d017419c9d9be1ffcf
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: 32bb89b02947350c056c8ce8adbe37500d2099a1
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305703"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6556071"
 ---
 # <a name="system-configuration"></a>Systemkonfiguration
 
@@ -26,7 +26,7 @@ Siden **System** indeholder følgende faner:
 - [Generelt](#general-tab)
 
 > [!div class="mx-imgBorder"]
-> ![Systemside](media/system-tabs.png "Systemside")
+> ![Systemside.](media/system-tabs.png "Systemside")
 
 ## <a name="status-tab"></a>Fanen Status
 

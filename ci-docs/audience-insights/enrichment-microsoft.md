@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 1b11c325649b91ebb47cde924227eacedae64b7a
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 3b10fb23cca03ed918aa7fd46478b568d5ebbf1a
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305149"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6555484"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Forbedre kundeprofiler med brand- og interessetilhørsforhold (eksempel)
 
@@ -27,7 +27,7 @@ Hvis du vil konfigurere forbedring af mærketilhørsforhold, skal du gå til fan
 Hvis du vil konfigurere forbedring af interessetilhørsforhold, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Interesser**.
 
    > [!div class="mx-imgBorder"]
-   > ![Brands og interesser-felter](media/BrandsInterest-tile-Hub.png "Brands og interesse-felter")
+   > ![Brands og interesser-felter.](media/BrandsInterest-tile-Hub.png "Brands og interesse-felter")
 
 ## <a name="how-we-determine-affinities"></a>Sådan afgør vi tilhørsforhold
 
@@ -123,7 +123,7 @@ Afhængigt af størrelsen på dine kundedata, kan det vare nogle minutter, før 
 
 Når du har kørt forbedringen, skal du gå til **Mine forbedringer** for at gennemgå det samlede antal forbedrede kunder og en oversigt over mærker eller interesser i de forbedrede kundeprofiler.
 
-:::image type="content" source="media/my-enrichments.png" alt-text="Eksempel på resultater efter kørsel af en forbedringsproces":::
+:::image type="content" source="media/my-enrichments.png" alt-text="Eksempel på resultater efter kørsel af en forbedringsproces.":::
 
 Gennemse de forbedrede data ved at vælge **Vis forbedrede data** i diagrammet. Forbedrede data for brands sendes til objektet **BrandAffinityFromMicrosoft**. Data for interesser findes i objektet **InterestAffinityFromMicrosoft**. Du kan også finde disse objekter på listen i gruppen **Forbedring** i **Data** > **Objekter**.
 
@@ -131,7 +131,7 @@ Gennemse de forbedrede data ved at vælge **Vis forbedrede data** i diagrammet. 
 
 Det er også muligt at få vist tilhørsforhold til mærker og interesser på individuelle kundekort. Gå til **Kunder**, og vælg en kundeprofil. På kundekortet finder du diagrammer til de mærker eller interesser, som personer i den pågældende kundes demografiske profil har tilhørsforhold til.
 
-:::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundekort med forbedrede data":::
+:::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundekort med forbedrede data.":::
 
 ## <a name="next-steps"></a>Næste trin
 

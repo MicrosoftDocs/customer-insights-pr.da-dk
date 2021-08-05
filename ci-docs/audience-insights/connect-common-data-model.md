@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 385406b706890d741fec2694c190c0fada7809d7
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 49bab0605197912cd4b81ff193b914599a092792
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5596538"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554887"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Tilknyt en Common Data Model med en Azure Data Lake-konto
 
@@ -45,7 +45,7 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 
 1. Du kan vælge mellem at bruge en ressourcebaseret indstilling og en abonnementsbaseret indstilling til godkendelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Angiv oplysninger om **Objektbeholder**, og vælg **Næste**.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboks, hvor du kan angive nye forbindelsesdetaljer for Azure Data Lake](media/enter-new-storage-details.png)
+   > ![Dialogboks, hvor du kan angive nye forbindelsesdetaljer for Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
    > Du skal bruge en af følgende roller i enten beholderen eller lagerkontoen, der er nævnt ovenfor, for at du kan oprette forbindelse til og oprette en datakilde:
    >  - Lager for Blob-datalæser
@@ -58,11 +58,11 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 
 1. Du får vist en liste over tilgængelige objekter i den valgte model.json- eller manifest.json-fil. Du kan se og foretage valg på listen med tilgængelige objekter og vælge **Gem**. Alle de valgte objekter hentes fra den nye datakilde.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboks, der viser en liste over objekter fra en model.json-fil](media/review-entities.png)
+   > ![Dialogboks, der viser en liste over objekter fra en model.json-fil.](media/review-entities.png)
 
 8. Angiv, hvilke dataobjekter du vil aktivere dataprofilering for, og vælge **Gem**. Dataprofilering muliggør analyser og andre funktioner. Du kan vælge hele objektet, som vælger alle attributter fra objektet, eller selv vælge bestemte attributter. Som standard er intet objekt aktiveret for dataprofilering.
    > [!div class="mx-imgBorder"]
-   > ![Dialogboks, der viser en dataprofil](media/dataprofiling-entities.png)
+   > ![Dialogboks, der viser en dataprofil.](media/dataprofiling-entities.png)
 
 9. Når du har gemt dine valg, åbnes siden **Datakilder**. Du bør nu kunne se Common Data Model-mappeforbindelsen som en datakilde.
 
@@ -81,12 +81,12 @@ Du kan opdatere adgangsnøglen til den lagerkonto, der indeholder Common Data Mo
 
 4. Du kan også vælge at opdatere **Adgangsnøgle** og vælge **Næste**.
 
-   ![Dialogboks til redigering og opdatering af en adgangsnøgle til en eksisterende datakilde](media/edit-access-key.png)
+   ![Dialogboks til redigering og opdatering af en adgangsnøgle til en eksisterende datakilde.](media/edit-access-key.png)
 
 5. Du kan også vælge at opdatere fra en kontonøgleforbindelse til en ressourcebaseret eller en abonnementsbaseret forbindelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Du kan ikke ændre **objektbeholder**-oplysninger, når du opdaterer forbindelsen.
    > [!div class="mx-imgBorder"]
 
-   > ![Dialogboks, hvor du kan angive forbindelsesdetaljer for Azure Data Lake til en eksisterende lagerkonto](media/enter-existing-storage-details.png)
+   > ![Dialogboks, hvor du kan angive forbindelsesdetaljer for Azure Data Lake til en eksisterende lagerkonto.](media/enter-existing-storage-details.png)
 
    > [!NOTE]
    > Du skal bruge en af følgende roller i enten beholderen eller lagerkontoen, der er nævnt ovenfor, for at du kan oprette forbindelse til og oprette en datakilde:

@@ -1,7 +1,7 @@
 ---
 title: Oprette og administrere miljøer
 description: Få mere at vide om, hvordan du tilmelder dig tjenesten, og hvordan du administrerer miljøer.
-ms.date: 06/15/2021
+ms.date: 07/22/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,125 +9,24 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 904ce68336cba4b7a4d5a37692b72d091400559d
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: 2f115269b9d07dd118ec18cc48b55de8aea9b5bb
+ms.sourcegitcommit: 98267da3f3eddbdfbc89600a7f54e5e664a8f069
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304873"
+ms.lasthandoff: 07/28/2021
+ms.locfileid: "6683466"
 ---
 # <a name="manage-environments"></a>Administrere miljøer
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-I denne artikel forklares det, hvordan du kan oprette en ny organisation, og hvordan du kan klargøre et miljø.
+## <a name="switch-environments"></a>Skift miljøer
 
-## <a name="sign-up-and-create-an-organization"></a>Tilmelding og oprettelse af en organisation
+Vælg **Miljø**-kontrolelementet i øverste højre hjørne af siden for at skifte miljøer.
 
-1. Gå til [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/)-webstedet.
+:::image type="content" source="media/home-page-environment-switcher.png" alt-text="Skærmbillede af det kontrolelement, der skal ændre miljøer.":::
 
-2. Vælg **Introduktion**.
-
-3. Vælg dit foretrukne tilmeldingsscenario, og vælg det tilsvarende link.
-
-4. Accepter vilkår og betingelser, og vælg **Fortsæt** for at begynde at oprette organisationen.
-
-5. Når miljøet er oprettet, bliver du omdirigeret til [Customer Insights](https://home.ci.ai.dynamics.com).
-
-6. Brug demomiljøet til at udforske appen, eller opret et nyt miljø ved at udføre trinnene i næste afsnit.
-
-7. Når du har angivet miljøindstillingerne, skal du vælge **Opret**.
-
-8. Du bliver logget på, når du har oprettet miljøet.
-
-## <a name="create-an-environment-in-an-existing-organization"></a>Oprette et miljø i en eksisterende organisation
-
-Du kan oprette et nyt miljø på to måder. Du kan enten angive en helt ny konfiguration, eller du kan kopiere nogle konfigurationsindstillinger fra et eksisterende miljø.
-
-> [!NOTE]
-> Organisationer kan oprette *to* miljøer for alle Customer Insights-licenser. Hvis din organisation køber licenser mere end én gang, skal du [kontakte vores supporttteam](https://go.microsoft.com/fwlink/?linkid=2079641) for at få flere tilgængelige miljøer. Du kan finde flere oplysninger om kapacitet og kapacitet til tilføjelsesprogrammet ved at hente [Dynamics 365-licensvejledningen](https://go.microsoft.com/fwlink/?LinkId=866544).
-
-Sådan opretter du et miljø:
-
-1. Vælg **Miljø**-vælgeren i appens overskrift.
-
-1. Vælg **Ny**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Miljøindstillinger.](media/environment-settings-dialog.png)
-
-1. Vælg **Nyt miljø** i dialogboksen **Opret et miljø**.
-
-   Hvis du vil [kopiere data fra det aktuelle miljø](#considerations-for-copy-configuration-preview), skal du vælge **Kopiér fra eksisterende miljø**. Du får vist en liste over alle tilgængelige miljøer i din organisation, som du kan kopiere data fra.
-
-1. Angiv følgende oplysninger:
-   - **Navn**: Navnet på dette miljø. Dette felt er allerede udfyldt, hvis du har kopieret et eksisterende miljø, men du kan ændre det.
-   - **Type**: Vælg, om du vil oprette et produktions- eller sandkassemiljø.
-   - **Område**: Det område, hvor tjenesten er installeret og har sin vært.
-   
-1. Du kan også vælge **Avancerede indstillinger**:
-
-   - **Gem alle data i**: Angiver, hvor du vil gemme de outputdata, der er genereret fra Customer Insights. Du har to muligheder: **Customer Insights Storage** (et Azure Data Azure-område, der administreres af Customer Insights-teamet) og **Azure Data Lake Storage** (dit eget Azure Data Lake Storage). Som standard er indstillingen Customer Insights-lager valgt.
-
-     > [!NOTE]
-     > Når du gemmer data i Azure Data Lake Storage, accepterer du, at data overføres til og gemmes på den relevante geografiske placering for den pågældende Azure Storage-konto, som kan være forskellig fra den placering, hvor data gemmes i Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration.](https://www.microsoft.com/trust-center)
-     >
-     > I øjeblikket gemmes indtagede objekter altid i den styrede Data Lake i Customer Insights. 
-     > 
-     > Vi understøtter kun Azure Data Lake Storage-firmaer fra det samme Azure-område, som du valgte under oprettelsen af miljøet. 
-     > 
-     > Vi understøtter kun Azure Data Lake Storage-firmaer, hvor hierarkisk navneområde er aktiveret.
-
-
-   - Du kan vælge mellem en ressourcebaseret indstilling og en abonnementsbaseret indstilling for godkendelse for Azure Data Lake Storage-indstillingen. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Navnet **Beholder** kan ikke ændres og vil blive `customerinsights`.
-   
-   - Hvis du vil bruge [forudsigelser](predictions.md), konfigurere deling af data med Microsoft Dataverse eller aktivere dataindtagelse fra datakilder i det lokale miljø, skal du angive Microsoft Dataverse-miljøet til URL-adressen under **Konfigurere datadeling med Microsoft Dataverse og aktivere flere funktioner**. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Microsoft Dataverse-administreret Data Lake.
-
-     > [!NOTE]
-     > - Datadeling med Microsoft Dataverse Administreret Data Lake understøttes ikke i øjeblikket, når du gemmer alle data i din egen Azure Data Lake Storage.
-     > - [Forudsigelse af manglende værdier i et objekt](predictions.md) understøttes ikke i øjeblikket, når du aktiverer datadeling med Microsoft Dataverse Administreret Data Lake.
-
-     > [!div class="mx-imgBorder"]
-     > ![Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.](media/datasharing-with-DataverseMDL.png)
-
-   Når du kører processer, f. eks. dataindsættelse eller segmentoprettelse, oprettes der tilsvarende mapper i den lagerkonto, du har angivet ovenfor. Datafiler og model.json-filer oprettes og føjes til mapper baseret på procesnavnet.
-
-   Hvis du opretter flere miljøer med Customer Insights og vælger at gemme outputenhederne fra de pågældende miljøer i lagerkontoen, oprettes der separate mapper for hvert miljø med ci_<environmentid> i beholderen.
-
-### <a name="considerations-for-copy-configuration-preview"></a>Overvejelser om konfiguration af kopi (forhåndsversion)
-
-Følgende konfigurationsindstillinger er kopieret:
-
-- Funktionskonfigurationer
-- Indtagne eller importerede datakilder
-- Konfiguration af dataforening (tilknytte, matche, flette)
-- Segmenter
-- Målinger
-- Relationer
-- Aktiviteter
-- Indeks for søgning og filtrering
-- Eksportdestinationer
-- Planlagt opdatering
-- Forbedringer
-- Modeladministration
-- Rolletildelinger
-
-Følgende konfigurationsindstillinger er *ikke* kopieret:
-
-- Kundeprofiler.
-- Legitimationsoplysninger for datakilde. Du skal angive legitimationsoplysningerne for hver datakilde og opdatere datakilderne manuelt.
-- Datakilder fra mappen Common Data Model og Dataverse-administreret Data Lake. Du skal oprette disse datakilder manuelt med det samme navn som i kildemiljøet.
-
-Når du kopierer et miljø, får du vist en bekræftelsesmeddelelse om, at det nye miljø er blevet oprettet. Vælg **gå til datakilder** for at få vist listen over datakilder.
-
-Alle datakilderne viser en **Legitimationsoplysninger påkrævet** som status. Rediger datakilderne, og angiv legitimationsoplysninger for at opdatere dem.
-
-> [!div class="mx-imgBorder"]
-> ![Kopierede datakilder.](media/data-sources-copied.png)
-
-Når du har opdateret datakilderne, skal du gå til **Data** > **Saml**. Her kan du finde indstillinger fra kildemiljøet. Rediger dem efter behov, eller vælg **Kør**, for at starte datasamlingsprocessen og det samlede kundeobjekt.
-
-Når datasamlingen er fuldført, skal du gå til **Målinger** og **Segmenter** for at opdatere dem.
+Administratorer kan [oprette](get-started-paid.md) og administrer miljøer.
 
 ## <a name="edit-an-existing-environment"></a>Redigere et eksisterende miljø
 
@@ -147,13 +46,52 @@ Du kan redigere nogle af oplysningerne i eksisterende miljøer.
 
    > [!NOTE]
    > - Datadeling med Microsoft Dataverse Administreret Data Lake understøttes ikke i øjeblikket, når du gemmer alle data i din egen Azure Data Lake Storage.
-   > - [Forudsigelse manglende værdier i et objekt](predictions.md) understøttes i øjeblikket ikke, når du aktiverer datadeling med Microsoft Dataverse Administreret Data Lake.
+   > - [Forudsigelse af manglende værdier i et objekt](predictions.md) og PowerBI Embedded-rapporter i målgruppeindsigt (hvis de er aktiveret i dit miljø) understøttes i øjeblikket ikke, når du aktiverer datadeling med Microsoft Dataverse-administrerede data lake.
 
    Når du aktiverer datadeling med Microsoft Dataverse, starter en fuldstændig opdatering af dine datakilder og andre processer. Hvis processer kører, vises indstillingen til aktivering af datadeling med Microsoft Dataverse ikke. Vent på, at disse processer fuldføres eller annulleres, for at du kan dele data. 
    
    :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.":::
    
    Når du kører processer, f. eks. dataindsættelse eller segmentoprettelse, oprettes der tilsvarende mapper i den lagerkonto, du har angivet ovenfor. Datafiler og model.json-filer oprettes og føjes til de respektive undermapper, afhængigt af den proces du kører.
+
+## <a name="copy-the-environment-configuration"></a>Kopier miljøkonfiguration
+
+Når du opretter et nyt miljø, kan du vælge at kopiere konfigurationen fra et eksisterende miljø. 
+
+:::image type="content" source="media/environment-settings-dialog.png" alt-text="Skærmbillede af indstillingerne i miljøindstillingerne.":::
+
+Du får vist en liste over alle tilgængelige miljøer i din organisation, som du kan kopiere data fra.
+
+Følgende konfigurationsindstillinger er kopieret:
+
+- Indtagne eller importerede datakilder
+- Konfiguration af dataforening (tilknytte, matche, flette)
+- Segmenter
+- Målinger
+- Relationer
+- Aktiviteter
+- Indeks for søgning og filtrering
+- Eksportdestinationer
+- Planlagt opdatering
+- Forbedringer
+- Modeladministration
+- Rolletildelinger
+
+Følgende data kopieres *ikke*:
+
+- Kundeprofiler.
+- Legitimationsoplysninger for datakilde. Du skal angive legitimationsoplysningerne for hver datakilde og opdatere datakilderne manuelt.
+- Datakilder fra mappen Common Data Model og Dataverse-administreret Data Lake. Du skal oprette disse datakilder manuelt med det samme navn som i kildemiljøet.
+
+Når du kopierer et miljø, får du vist en bekræftelsesmeddelelse om, at det nye miljø er blevet oprettet. Vælg **gå til datakilder** for at få vist listen over datakilder.
+
+Alle datakilderne viser en **Legitimationsoplysninger påkrævet** som status. Rediger datakilderne, og angiv legitimationsoplysninger for at opdatere dem.
+
+:::image type="content" source="media/data-sources-copied.png" alt-text="Liste over datakilder, der er kopieret og skal godkendes.":::
+
+Når du har opdateret datakilderne, skal du gå til **Data** > **Saml**. Her kan du finde indstillinger fra kildemiljøet. Rediger dem efter behov, eller vælg **Kør**, for at starte datasamlingsprocessen og det samlede kundeobjekt.
+
+Når datasamlingen er fuldført, skal du gå til **Målinger** og **Segmenter** for at opdatere dem.
 
 ## <a name="reset-an-existing-environment"></a>Nulstil et eksisterende miljø
 

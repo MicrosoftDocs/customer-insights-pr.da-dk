@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 9326f821f9970ba2254ab804814e369abb677eb0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: f98af8fb1c1d1ae050a5273286d35cf276d9fb17
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304735"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554474"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbejd med Customer Insights API'er
 
@@ -35,7 +35,7 @@ I denne artikel beskrives, hvordan du får adgang til API'erne for Customer Insi
  
    Aktivering af API'er opretter en primær og sekundær abonnementsnøgle for den forekomst, der bruges i API-forespørgslerne. Du kan oprette nøglerne igen ved at vælge indstillingen **Genopret primær** eller **Genopret sekundær** i **Admin** > **Tilladelser** > **API'er**.
 
-   :::image type="content" source="media/enable-apis.gif" alt-text="Aktivér Customer Insights API'er":::
+   :::image type="content" source="media/enable-apis.gif" alt-text="Aktivér Customer Insights API'er.":::
 
 1. Vælg **Undersøg vores API'er** for at [afprøve API'er](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
 
@@ -129,7 +129,7 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
  
    Du kan også køre denne kommando i **NuGet-pakkestyringskonsollen**: `Install-Package -Id Microsoft.Dynamics.CustomerInsights.Api -Source nuget.org -ProjectName <project name> [-Version <version>]`
 
-   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Tilføj NuGet-pakken til Visual Studio-projektet":::
+   :::image type="content" source="media/visual-studio-nuget-package.gif" alt-text="Tilføj NuGet-pakken til Visual Studio-projektet.":::
 
 #### <a name="use-the-c-client-library"></a>Brug af klientbiblioteket C#
 
@@ -141,7 +141,7 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
 
 1. Det skal overføres `HttpClient` til konstruktion af `CustomerInsights`-klienten.
 
-   :::image type="content" source="media/httpclient-sample.png" alt-text="Eksempel på httpclient":::
+   :::image type="content" source="media/httpclient-sample.png" alt-text="Eksempel på httpclient.":::
 
 1. Foretag opkald med klienten i "udvidelsesmetoder" - f.eks. `GetAllInstancesAsync`. Hvis adgangen til den underliggende `Microsoft.Rest.HttpOperationResponse` er foretrukket, skal du bruge http-meddelelsesmetoder som f.eks. `GetAllInstancesWithHttpMessagesAsync`.
 

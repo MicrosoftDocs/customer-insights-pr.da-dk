@@ -9,12 +9,12 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: edd2cf488b52cef87b09b90336e48fdc7f470a68
-ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+ms.openlocfilehash: 3f97e22687ae4f5536d492bac83bdf9c711e2c94
+ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "5597412"
+ms.lasthandoff: 07/13/2021
+ms.locfileid: "6554428"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Brug Azure Machine Learning-baserede modeller
 
@@ -52,7 +52,7 @@ Du skal oprette datasæt for at bruge objektdata fra Customer Insights i en batc
      I designeren skal du åbne **Vælg kolonner i datasæt** og vælge **Indstil som pipeline-parameter**, hvor du angiver et navn til parameteren.
 
      > [!div class="mx-imgBorder"]
-     > ![Datasætparametre i Designer](media/intelligence-designer-dataset-parameters.png "Datasætparametre i Designer")
+     > ![Datasætparametre i Designer.](media/intelligence-designer-dataset-parameters.png "Datasætparametre i Designer")
    
 * Datasætparameter i SDK (Python)
    
@@ -78,7 +78,7 @@ Du skal oprette datasæt for at bruge objektdata fra Customer Insights i en batc
 
 * Designeren indeholder [Eksportér Data-modulet](/azure/machine-learning/algorithm-module-reference/export-data), der gør det muligt at eksportere output fra en pipeline til Azure-lageret. I øjeblikket skal modulet bruge datalagertypen **Azure Blob Storage** og angive parametre for **Datalager** og eventuel **Sti**. Customer Insights tilsidesætter både disse parametre under kørsel af pipeline med et datalager og en sti, der er tilgængelig for produktet.
    > [!div class="mx-imgBorder"]
-   > ![Eksport af Data Module Configuration](media/intelligence-designer-importdata.png "Eksport af Data Module Configuration")
+   > ![Eksport af Data Module Configuration.](media/intelligence-designer-importdata.png "Eksport af Data Module Configuration")
    
 * Når du skriver udledningsresultatet ved hjælp af kode, kan du overføre outputtet til en sti i et *registreret datalager* i arbejdsområdet. Hvis der er angivet parametre for sti og datalager i pipeline, kan Customer Insights læse og importere udledningsoutput. I øjeblikket understøttes et enkelt-tabel output i CSV-format. Stien skal indeholde mappen og filnavnet.
 
