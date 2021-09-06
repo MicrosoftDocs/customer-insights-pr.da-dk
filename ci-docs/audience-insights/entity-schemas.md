@@ -1,7 +1,7 @@
 ---
 title: Skemaer til Customer Insights-objekt i Common Data Model
 description: Arbejd med objekter i Common Data Model.
-ms.date: 04/17/2020
+ms.date: 08/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: e21f8a9422357fbc5c9425f91f3ba241c9dec9d8
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: 66d846c3e9404ca7993cae742ea6e16833233fba
+ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692298"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7380736"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Objektskema i Common Data Model
 
@@ -42,7 +42,7 @@ Du kan finde flere oplysninger i dokumentationen til [Customer Insights-objektsk
 
 ## <a name="view-entities-using-the-common-data-model-entity-navigator"></a>Visning af objekter ved hjælp af Entity Navigator til Common Data Model
 
-Du kan få vist objekter i [Common Data Model-objektnavigatør](https://microsoft.github.io/CDM/). Vælg knappen **Indlæs fra GitHub!**, og naviger til **foundationCommon** > **crmCommon** > **løsninger** > **customerInsights**, hvor du kan finde listen over Customer Insights-objekter og definitioner af dem.
+Du kan få vist objekter i [Common Data Model-objektnavigatør](https://microsoft.github.io/CDM/). Vælg et objekt i sektionen Insights-program for at få listen over Customer Insights-objekter og deres definitioner.
 > [!div class="mx-imgBorder"]
 > ![CDM Entity Navigator, der viser CustomerActivity-objekt.](media/CDM-entity-navigator.png "CDM Entity Navigator, der viser CustomerActivity-objekt")
 

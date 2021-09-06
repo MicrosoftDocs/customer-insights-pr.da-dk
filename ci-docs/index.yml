@@ -4,17 +4,17 @@ metadata:
   author: m-hartmann
   description: Find relevante artikler for at starte indholdet i hjælpen.
   ms.author: mhart
-  ms.date: 10/29/2020
+  ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: e9c4aa3347d6f477751804790bd3dc9b20eb5dbe
-  ms.sourcegitcommit: bae40184312ab27b95c140a044875c2daea37951
+  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
+  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
   ms.translationtype: HT
   ms.contentlocale: da-DK
-  ms.lasthandoff: 03/15/2021
-  ms.locfileid: "5598450"
+  ms.lasthandoff: 08/10/2021
+  ms.locfileid: "7036550"
 title: Dynamics 365 Customer Insights-dokumentation
-summary: Find nyttige ressourcer til at komme i gang, og få mere at vide om funktioner i Customer Insights.
+summary: Find nyttige ressourcer, der kan hjælpe dig med at komme i gang, og få mere at vide om funktioner og funktioner i Customer Insights.
 landingContent:
 - title: Mød Customer Insights
   linkLists:
@@ -23,9 +23,9 @@ landingContent:
     - text: " Oversigt over Customer Insights"
       url: overview.md
     - text: Frigivelsesplaner
-      url: /dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
-    - text: Få adgang til dit miljø
-      url: https://home.ci.ai.dynamics.com/
+      url: /dynamics365-release-plan/
+    - text: Opdag CDP'en
+      url: https://dynamics.microsoft.com/ai/customer-insights/
 - title: Introduktion til målgruppen Insights
   linkLists:
   - linkListType: get-started
@@ -86,7 +86,7 @@ landingContent:
       url: engagement-insights/glossary.md
     - text: Start her
       url: engagement-insights/get-started.md
-- title: Rapporter for engagementindsigt (prøveversion)
+- title: Rapporter for engagementsindsigt (prøveversion)
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -96,7 +96,7 @@ landingContent:
       url: engagement-insights/custom-reports.md
     - text: Rapporten Vis samlede profiler
       url: engagement-insights/profile-reports.md
-- title: Hændelser i engagementindsigt (prøveversion)
+- title: Hændelser i engagementsindsigt (prøveversion)
   linkLists:
   - linkListType: how-to-guide
     links:

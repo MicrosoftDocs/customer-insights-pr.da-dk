@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
-ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
+ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/03/2021
-ms.locfileid: "6171157"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7035224"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellem objekter
 
@@ -82,7 +82,7 @@ Denne side indeholder et sæt indstillinger for eksisterende og nye relationer:
 
 ### <a name="explore-the-relationship-visualizer"></a>Udforsk relationens visualiseringsfunktion
 
-Relationens visualiseringsfunktion viser et netværksdiagram over de eksisterende relationer mellem tilsluttede objekter og deres kardinalitet.
+Relationens visualiseringsfunktion viser et netværksdiagram over de eksisterende relationer mellem tilsluttede objekter og deres kardinalitet. Relationsstien visualiseres også.
 
 Hvis du vil tilpasse visningen, kan du ændre felternes placering ved at trække dem på lærredet.
 
@@ -92,6 +92,20 @@ Tilgængelige indstillinger:
 - **Eksporter som billede**: Gem den aktuelle visning som en billedfil.
 - **Skift til vandret/lodret layout**: Skift justering af enhederne og relationer.
 - **Rediger**: Opdater egenskaber for brugerdefinerede relationer i redigeringsruden, og gem ændringerne.
+
+### <a name="relationship-path"></a>Relationssti
+
+Relationsstien beskriver de objekter, der er knyttet til relationer mellem et kildeobjekt og et destinationsobjekt. Det bruges, når du opretter et segment eller en måleenhed, der omfatter andre objekter end objektet for den samlede profil, og der er flere indstillinger, du kan bruge til at oprette forbindelse til objektet for den samlede profil.
+
+Relationsstien informerer systemet om de relationer, der har adgang til objektet med den samlede profil. Forskellige relationsstier kan give forskellige resultater.
+
+Objektenheden indeholder f.eks. *eCommerce_eCommercePurchases* følgende relationer til objektet *Kunde* i den samlede profil:
+
+- eCommerce_eCommercePurchases > kunde
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kunde 
+
+Relationsstien bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases), på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
 
 ## <a name="manage-existing-relationships"></a>Administrer eksisterende relationer 
 
@@ -105,6 +119,6 @@ Vælg en relation, og vælg en af følgende indstillinger:
 
 ## <a name="next-step"></a>Næste trin
 
-System- og brugerdefinerede relationer bruges til at [oprette segmenter](segments.md) baseret på flere datakilder, der ikke længere er i en silo.
+System- og nrugerdefinerede relationer bruges til at [oprette segmenter](segments.md) og [mål](measures.md) baseret på flere datakilder, der ikke længere er tilgængelige.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

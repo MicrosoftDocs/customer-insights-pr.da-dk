@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4a19661abea42618ef1848110c05d635a925c68f
-ms.sourcegitcommit: c45b094072cbe3fbf61d1e9e7d220e1f29ffebd0
+ms.openlocfilehash: e759872643cc7387cf732d73c7a320ae8901e5a9
+ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/29/2021
-ms.locfileid: "6685455"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "7377781"
 ---
 # <a name="create-and-manage-segments"></a>Oprette og administrere segmenter
 
@@ -27,6 +27,23 @@ ms.locfileid: "6685455"
 > - En siderude til valg af attributter er konstant tilgængelig.
 > - En indstilling til valg af objektrelationsstier.
 > Du kan prøve den nye segmentgenerator ved at sende en mail med emnet "Anmodning om at aktivere den nye segmentgenerator" for at hjælpe [at] microsoft.com. Inkluder navnet på din organisation og id'et for sandkassemiljøet.
+> :::image type="content" source="media/segment-builder-overview.png" alt-text="Elementer i segmentgeneratoren." lightbox="media/segment-builder-overview.png":::
+>
+> 1 – Organiser dit segment med regler og underregler. Hver enkelt regel eller underregel består af betingelser. Kombinere betingelserne med logiske operatorer
+>
+> 2 – Vælg [relationsstien](relationships.md) mellem objekter, der gælder for en regel. Relationsstien bestemmer, hvilke attributter der kan bruges i en betingelse.
+>
+> 3 – Administrere regler og underregler. Rediger placeringen af en regel, eller slet den.
+>
+> 4 – Tilføj betingelser, og opret det rette indlejreniveau ved hjælp af underregler.
+>
+> 5 – Anvend sæthandlinger på tilknyttede regler.
+>
+> 6 – Brug attributruden til at tilføje tilgængelige objektattributter eller til at oprette betingelser baseret på attributter. I ruden vises listen over objekter og attributter, der er tilgængelige for den valgte regel, på baggrund af den valgte relationssti.
+>
+> 7 – Føj betingelser, der er baseret på attributter, til eksisterende regler og underregler, eller føj dem til en ny regel.
+>
+> 8 – Fortryd ændringerne, og annuller fortryd ændringerne, mens segmentet bygges op.
 
 Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på. Segmenter administreres på siden **Segmenter**. 
 
@@ -147,6 +164,6 @@ Med hurtige segmenter kan du nemt oprette simple segmenter med en enkelt operato
 
 ## <a name="next-steps"></a>Næste trin
 
-[Eksportere et segment](export-destinations.md) og udforske [kundekort](customer-card-add-in.md) og [connectorer](export-power-bi.md) for at få indsigt i kundeniveauet.
+[Eksportér et segment](export-destinations.md), og udforsk [integrationen med kundekort](customer-card-add-in.md) for at bruge segmenter i andre programmer.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

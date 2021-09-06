@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til Dynamics 365 Marketing
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Dynamics 365 Marketing.
-ms.date: 03/03/2021
+ms.date: 08/24/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bd8189f8daee1a6aea75e75e116186f62a360ba4
-ms.sourcegitcommit: 8cc70f30baaae13dfb9c4c201a79691f311634f5
+ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
+ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "6692474"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "7417198"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Brug segmenter i Dynamics 365 Marketing (forhåndsversion)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte grupper af kunder sammen med Dynamics 365 Marketing. Du kan finde flere oplysninger under [Bruge segmenter fra Dynamics 365 Customer Insights sammen med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments)
+Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte grupper af kunder sammen med Dynamics 365 Marketing. Du kan finde flere oplysninger under [Bruge segmenter fra Dynamics 365 Customer Insights sammen med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments).
+
+Hvis du bruger de nye funktioner i Dynamics 365 Marketing til organisering i realtid af kundekampagneforløb i en Dataverse-organisation, er det ikke nødvendigt at oprette en standardeksport til Dynamics 365 Marketing. Kontakter og segmenter fra publikum er tilgængelige direkte i Dynamics 365 Marketing, når du har forbundet Marketing og Customer Insights. Før du sletter eksisterende eksport, skal du gennemgå dokumentationen om, [hvordan du opretter forbindelse mellem målgruppeindsigt og Dynamics 365 Marketing-kundekampagneforløbsorganisering](/dynamics365/marketing/real-time-marketing-ci-profile).
 
 ## <a name="prerequisite-for-a-connection"></a>Forudsætning for en forbindelse
 
