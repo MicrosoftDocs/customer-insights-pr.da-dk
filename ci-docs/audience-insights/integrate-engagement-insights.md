@@ -9,16 +9,16 @@ author: mukeshpo
 ms.author: mukeshpo
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 76a53a897e90152707a7c1255ed5ed93a5f3b5a0
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+ms.openlocfilehash: c2789a7d1379e0cf56511b272a763c904d8a3d347058ea9e029aaff0f723a028
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6305011"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7033762"
 ---
 # <a name="integrate-web-data-from-engagement-insights-with-audience-insights"></a>Integrere webdata fra engagementsindsigt med målgruppeindsigt
 
-Kunder foretager ofte deres daglige transaktioner online ved hjælp af websteder. Engagementindsigt (forhåndsversion) kapacitet i Dynamics 365 Customer Insights er en praktisk løsning til at integrere webdata som en kilde. Ud over transaktions-, demografi- eller adfærdsdata kan vi se aktiviteter på internettet i samlede kundeprofiler. Vi kan bruge disse profiler til at få yderligere indsigter som segmenter, mål eller forudsigelser for målgruppeaktivering.
+Kunder foretager ofte deres daglige transaktioner online ved hjælp af websteder. Engagementsindsigt (forhåndsversion) kapacitet i Dynamics 365 Customer Insights er en praktisk løsning til at integrere webdata som en kilde. Ud over transaktions-, demografi- eller adfærdsdata kan vi se aktiviteter på internettet i samlede kundeprofiler. Vi kan bruge disse profiler til at få yderligere indsigter som segmenter, mål eller forudsigelser for målgruppeaktivering.
 
 I denne artikel beskrives trinnene til at hente dine kunders webaktivitetsdata fra engagementsindsigt ind i dit målgruppeindsigtsmiljø.
 
