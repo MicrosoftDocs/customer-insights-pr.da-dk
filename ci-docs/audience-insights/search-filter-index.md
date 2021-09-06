@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: a6131d4dddce48b0fba153bcefe5631e0d22d808
-ms.sourcegitcommit: dab2cbf818fafc9436e685376df94c5e44e4b144
+ms.openlocfilehash: e53d87c4f633cba09fecbc1c219f0ac2ec6bb5598a7902cbcf7398d26d6d7c6b
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/13/2021
-ms.locfileid: "6554014"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7029392"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Indeks for søgning og filtrering
 
@@ -60,7 +60,7 @@ Menuen **Filter** på siden **Kunder** kan indeholde et varierende antal attribu
 
 ## <a name="next-steps"></a>Næste trin
 
-Gå til siden **Kunder** for at søge efter kundeprofiler eller bruge de indekserede felter til at se et undersæt af alle kundeprofiler.
+Gennemse siden med [ensartede profiler](customer-profiles.md) for at søge efter profiler eller bruge de indekserede felter til at se et undersæt af alle ensartede profiler.
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
