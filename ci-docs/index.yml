@@ -7,12 +7,12 @@ metadata:
   ms.date: 07/30/2021
   ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: 1446a2bcb24739187a37b2024c9a6070ab008989d722ebf84ef5259ec2ee4d5c
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.openlocfilehash: e6a658f43b382934ee9b9b55c54fc1dff3f4df72
+  ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
   ms.translationtype: HT
   ms.contentlocale: da-DK
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7036550"
+  ms.lasthandoff: 09/17/2021
+  ms.locfileid: "7498590"
 title: Dynamics 365 Customer Insights-dokumentation
 summary: Find nyttige ressourcer, der kan hjælpe dig med at komme i gang, og få mere at vide om funktioner og funktioner i Customer Insights.
 landingContent:
@@ -26,16 +26,16 @@ landingContent:
       url: /dynamics365-release-plan/
     - text: Opdag CDP'en
       url: https://dynamics.microsoft.com/ai/customer-insights/
-- title: Introduktion til målgruppen Insights
+- title: Start her med Customer Insights
   linkLists:
   - linkListType: get-started
     links:
     - text: Tilmeld dig en prøveversion
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Nyheder
+    - text: Nyheder i målgruppeindsigt
       url: audience-insights/whats-new-audience-insights.md
-    - text: Dokumentation i målgruppen Insights
-      url: audience-insights/index.yml
+    - text: Nyheder i engagementsindsigt
+      url: https://docs.microsoft.com/dynamics365-release-plan/2021wave1/customer-data-platform/engagement-insights/planned-features
 - title: Kom i kontakt
   linkLists:
   - linkListType: overview
@@ -44,18 +44,18 @@ landingContent:
       url: https://go.microsoft.com/fwlink/?linkid=2073991
     - text: Del dine ideer
       url: https://go.microsoft.com/fwlink/?linkid=2074172
-    - text: Rapportér et problem
+    - text: Rapportér en fejl
       url: https://go.microsoft.com/fwlink/?linkid=2079641
-- title: Selvstudier til målgruppen Insights
+- title: Dele data mellem funktioner
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
-    - text: Opret et miljø
-      url: audience-insights/home.md
-    - text: Oprette en samlet kundeprofil
-      url: /learn/modules/unified-customer-profile/
-    - text: Arbejde med appen
-      url: /learn/modules/working-with-customer-insights/
+    - text: Oprette et link mellem funktioner
+      url: engagement-insights/integrate-audience-insights-engagement-insights.md
+    - text: Oprette segmenter til brug i rapporter
+      url: engagement-insights/integrate-audience-insights-segments.md
+    - text: Brug profilegenskaber til interaktiv analyse
+      url: engagement-insights/curate-dimensions.md
 - title: Eksport af data fra målgruppen Insights
   linkLists:
   - linkListType: how-to-guide

@@ -1,20 +1,20 @@
 ---
 title: Kundeaktiviteter
-description: Definer kundeaktiviteter, og få vist dem på kundetidslinjen.
-ms.date: 04/07/2021
+description: Definer kundeaktiviteter, og se dem på en tidslinje for kundeprofiler.
+ms.date: 09/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 6ebe899d3e3da43c4108678cd2e4f9a986e18ab35e839044becab4619adb0f14
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c5697df8a7d011c70384c8bc5e4773d7fcc25a62
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033624"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494404"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -60,12 +60,15 @@ Datakilderne kan inkludere objekter med transaktions- og aktivitetsdata fra fler
       - **Flere detaljer**: Felt med relevante oplysninger om aktiviteten.
       - **Ikon**: Det ikon, der bedst repræsenterer denne aktivitetstype.
       - **Webadresse**: Felt, der indeholder en URL-adresse med oplysninger om aktiviteten. For eksempel det transaktionssystem, der er kilde til aktiviteten. Denne URL-adresse kan være et hvilket som helst felt fra datakilden, eller den kan konstrueres som et nyt felt ved hjælp af en Power Query-transformation. URL-dataene gemmes i objektet *Unified Activity*, som kan forbruges downstream ved hjælp af [API'er](apis.md).
-   
-   :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Angiv kundeaktivitetsdata i et Unified Activity-objekt.":::
+
+   - **Vis på tidslinje**
+      - Vælg, hvad du vil vise for denne aktivitet i tidslinjevisningen for dine kundeprofiler. Vælg **Ja** for at få vist aktiviteten på tidslinjen eller **Nej** for at skjule den.
+
+      :::image type="content" source="media/Activity_Wizard3.PNG" alt-text="Angiv kundeaktivitetsdata i et Unified Activity-objekt.":::
 
 1. Vælg **Næste** for at gå til næste trin. Du kan vælge **Afslut og gennemse** for at gemme aktiviteten nu, hvor aktivitetstypen er angivet til **Andet**. 
 
-1. Vælg aktivitetstypen i trinnet **Aktivitetstype**, og vælg eventuelt, om du vil tilknytte nogle af aktivitetstyperne til brug i andre områder af Customer Insights. I øjeblikket kan aktivitetstyperne *Abonnement* og *Salgsordrelinje* tilknyttes semantisk, når du har accepteret at tilknytte felterne. Hvis en aktivitetstype ikke er relevant for den nye aktivitet, kan du vælge *Andet* eller *Opret nyt* for en brugerdefineret aktivitetstype.
+1. Vælg aktivitetstypen i trinnet **Aktivitetstype**, og vælg eventuelt, om du vil tilknytte nogle af aktivitetstyperne til brug i andre områder af Customer Insights. I øjeblikket kan aktivitetstyperne *Feedback*, *Loyalitet*, *Salgsordre*, *Salgsordrelinje* og *Abonnement* tilknyttes semantisk, når du har accepteret at tilknytte felterne. Hvis en aktivitetstype ikke er relevant for den nye aktivitet, kan du vælge *Andet* eller *Opret nyt* for en brugerdefineret aktivitetstype.
 
 1. Vælg **Næste** for at gå til næste trin. 
 

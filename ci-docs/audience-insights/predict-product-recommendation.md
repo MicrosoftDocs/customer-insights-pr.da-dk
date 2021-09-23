@@ -1,20 +1,20 @@
 ---
 title: Forudsige produktanbefalinger
 description: Forudsige de produkter, en kunde køber eller kommunikerer med.
-ms.date: 03/17/2021
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: zacookmsft
-ms.author: zacook
+author: wmelewong
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 60d511181aa85e3e939eff3e5931f0de7807c01c8f38134ebca5c5604cd53871
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034949"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494532"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Forudsige produktanbefalinger (prøveversion)
 
@@ -89,23 +89,24 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 ### <a name="add-required-data"></a>Tilføj påkrævede data
 
-1. Vælg **Tilføj data** til **Kundetransaktionshistorik**, og vælg det objekt, der indeholder oplysninger om transaktionen/indkøbshistorikken, som beskrevet i [forudsætninger](#prerequisites).
+1. Vælg **Tilføj data**, og vælg aktivitetstypen den siderude, der indeholder de påkrævede oplysninger om transaktionen eller købsoversigten.
 
-1. Tilknyt de semantiske felter til attributter i objektet indkøbsoversigt, og vælg **Næste**. Du kan finde beskrivelser af felterne under [forudsætningerne](#prerequisites).
-   > [!div class="mx-imgBorder"]
-   > ![Definere objektrelationen.](media/product-recommendation-purchasehistorymapping.PNG "Siden Købshistorik, der viser semantiske attributter, som er knyttet til felter i det valgte objekt for købsobjektet")
+1. Under **Vælg aktiviteterne** skal du vælge de specifikke aktiviteter fra den valgte aktivitet, som beregningen skal fokusere på.
 
-1. Hvis nedenstående felter ikke er udfyldt, skal du konfigurere relationen fra dit indkøbsoversigtsobjekt til objektet *Kunde*.
-    1. Vælg **Indkøbsoversigtsobjekt**.
-    1. Vælg det **Felt**, der identificerer kunden i objektet indkøbsoversigt. Det skal relateres til primære kunde-id i objektet *Kunde*.
-    1. Vælg det **Kundeobjekt**, der stemmer overens med dit primære kundeobjekt.
-    1. Angiv et navn, der beskriver relationen.
-       > [!div class="mx-imgBorder"]
-       > ![Siden Indkøbsoversigt, der viser oprettelsen af en relation til kunde.](media/model-purchase-join.png "Siden Indkøbshistorik, der viser oprettelsen af en relation til kunde")
+   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Sideruden viser, hvordan du vælger bestemte aktiviteter under den semantiske type.":::
+
+1. Hvis du endnu ikke har knyttet aktiviteten til en semantisk type, skal du vælge **Rediger** for at gøre det. Den styrede oplevelse til tilknytning af semantiske aktiviteter åbnes. Knyt nu dine data til relaterede felter i den valgte aktivitetstype.
+
+   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Aktivitetstype for sideindstilling.":::
+
+1. Når du har knytte aktiviteten til den tilsvarende semantiske type, skal du vælge **Næste** for at fortsætte 
+ 
+1. Knyt de semantiske attributter til de felter, der kræves for at køre modellen.
 
 1. Vælg **Gem**.
 
 1. Vælg **Næste**.
+
 
 ### <a name="configure-product-filters"></a>Konfigurere produktfiltre
 

@@ -14,8 +14,14 @@
       href: audience-insights/overview.md
     - name: Nye og opdaterede funktioner
       href: audience-insights/whats-new-audience-insights.md
-    - name: Opret et nyt miljø
-      href: audience-insights/get-started-paid.md
+    - name: Start her
+      items:
+        - name: Hurtig startvejledning
+          href: audience-insights/get-started.md
+        - name: Opret et nyt miljø
+          href: audience-insights/get-started-paid.md
+        - name: Udforsk målgruppeindsigt
+          href: audience-insights/home.md
     - name: Få mere at vide om moduler
       items:
         - name: Indsættelse af data
@@ -68,6 +74,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Udvidede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Forbedre med Azure Maps
+          href: audience-insights/enrichment-azure-maps.md
         - name: Forbedring med HERE Technologies
           href: audience-insights/enrichment-here.md
         - name: Forbedre med Leadspace
@@ -230,21 +238,15 @@
           href: audience-insights/apis.md
         - name: API-referencer
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-    - name: Tjenestebegrænsninger
-      href: audience-insights/service-limits.md
-    - name: DSR-anmodninger under GDPR
-      href: audience-insights/gdpr.md
-- name: Indsigt i engagement (forhåndsversion)
+- name: Engagementsindsigt (forhåndsversion)
   items:
     - name: Hjælp-hub
       href: engagement-insights/index.yml
     - name: Oversigt over funktioner
       href: engagement-insights/overview.md
-    - name: Gratis prøveversion
-      href: 'https://pi.dynamics.com/'
     - name: Start her
       items:
-        - name: Start her
+        - name: Hurtig startvejledning
           href: engagement-insights/get-started.md
         - name: Opret et arbejdsområde
           href: engagement-insights/create-workspace.md
@@ -300,18 +302,10 @@
           href: engagement-insights/user-roles.md
         - name: Administrér miljøer og arbejdsområder
           href: engagement-insights/manage-environments-workspaces.md
-        - name: Konfigurér forbindelser
-          href: engagement-insights/configure-connections.md
         - name: Administrér cookies og brugersamtykke
           href: engagement-insights/user-consent-storage.md
-    - name: GDPR
-      items:
-        - name: Slet og eksportér personlige data
-          href: engagement-insights/delete-export-personal-data.md
     - name: Regional tilgængelighed
       href: engagement-insights/regional-availability.md
-    - name: Tjenestebegrænsninger
-      href: engagement-insights/quotas.md
 - name: Integrer målgruppeindsigt i engagementsindsigt
   items:
     - name: Opret forbindelse mellem engagementsindsigt og målgruppeindsigt
@@ -320,5 +314,9 @@
       href: engagement-insights/integrate-audience-insights-segments.md
     - name: Brug demografiske dimensioner til opdeling af adfærdsdata
       href: engagement-insights/curate-dimensions.md
+- name: Tjenestebegrænsninger
+  href: service-limits.md
+- name: DSR-rettigheder og forespørgsler
+  href: dsr-rights-requests.md
 - name: Få support
-  href: 'https://dynamics.microsoft.com/en-us/support/'
+  href: 'https://dynamics.microsoft.com/support/'

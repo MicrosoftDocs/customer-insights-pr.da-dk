@@ -8,12 +8,12 @@ ms.service: customer-insights
 ms.topic: overview
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 651bd151a77b9d7f44d5fcca15da0f131b9fb3f07ffc89bfac9c0aa6f799e9b1
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 0d04de418326152dafbbf020e6bb6d3b350ca806
+ms.sourcegitcommit: 048d65bded22abadcbbad1e22f15b05828bb977b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036504"
+ms.lasthandoff: 09/06/2021
+ms.locfileid: "7474096"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Produktoversigt for Dynamics 365 Customer Insights
 
@@ -33,5 +33,10 @@ Vælge en funktion
 1. Vælg **Alle apps** i navigationsruden for at åbne vinduet **Vælg fokus**.
 1. Vælg **Gå nu** for at navigere til den funktion, du vælger.
 
+## <a name="pricing-and-licensing"></a>Prissætning og licenser
+
+Customer Insights licenseres pr. lejer og indeholder flere funktioner. Du kan købe mere kapacitet og licens for at øge standardkvoten. 
+- [Oversigt over prisfastsættelse](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
+- Kapacitet og rettigheder: [Dynamics 365 Licensvejledning](https://go.microsoft.com/fwlink/?LinkId=866544)
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

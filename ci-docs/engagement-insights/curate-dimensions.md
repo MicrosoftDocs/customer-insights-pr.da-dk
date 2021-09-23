@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 8a3d7f9276330a6daacbe9428d84a371b81bbefe
+ms.sourcegitcommit: 971716c761871cee390519cacef617dac21ecd60
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461096"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466341"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Brug demografiske dimensioner til opdeling af adfærdsdata
 
@@ -29,7 +29,7 @@ Ved hjælp af samlede demografiske profiler kan brugere af engagementsindsigt f�
 - Et engagementsindsigtsmiljø, hvor du har kundeprofildata knyttet til det målgruppeindsigtsmiljø, hvor kundeprofilerne oprettes. Flere oplysninger: [Opret et link mellem målgruppeindsigt og engagementsindsigt](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> Når du har oprettet et link mellem målgruppeindsigtsmiljøet og engagementsindsigtsmiljøerne, ønsker du måske kun data, der er specifikke for egenskaber for kundeprofiler, og som kan være nyttige som dimensioner i engagementsindsigt. Du kan finde flere oplysninger i [Aktivere målgruppeindsigts samlede profilattributter og segmenter](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).<!--note from editor: Suggested. -->
+> Når du har oprettet et link mellem målgruppeindsigtsmiljøet og engagementsindsigtsmiljøerne, ønsker du måske kun data, der er specifikke for egenskaber for kundeprofiler, og som kan være nyttige som dimensioner i engagementsindsigt. Du kan finde flere oplysninger i [Aktivere målgruppeindsigts samlede profilattributter og segmenter](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).
 
 ## <a name="create-a-new-custom-report"></a>Opret en ny brugerdefineret rapport
 

@@ -1,7 +1,7 @@
 ---
 title: Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en tjenestekonto
-description: Brug en Azure-tjenestekonto til at oprette forbindelse til din egen datasø.
-ms.date: 07/23/2021
+description: Brug en Azure-tjenestekonto til at oprette forbindelse til din egen Data Lake.
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,21 +9,21 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 845d1f55eb99f2adf9b437124addec4f6d016fec
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: b96c7f580b4067e059e00a9cdb4e872e9acd4a5c
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461141"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483518"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto
-<!--note from editor: The Cloud Style Guide would have us just use "Azure Data Lake Storage" to mean the current version, unless the old version (Gen1) is mentioned. I've followed this guidance, even though it seems that our docs and Azure docs are all over the map on this.-->
+
 Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begrænsede tilladelser. I stedet for at have programmer til at logge på som bruger med fuld administratorrettigheder, tilbyder Azure tjenestekonti. Læs videre for at få mere at vide om, hvordan du opretter forbindelse til Dynamics 365 Customer Insights med en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekontokonto i stedet for nøglerne til lagerkontoen. 
 
-Du kan bruge tjenestechefen til på sikker måde at [tilføje eller redigere en mappe med Common Data Model som en datakilde](connect-common-data-model.md) eller til at [oprette eller opdatere et miljø](get-started-paid.md).<!--note from editor: Suggested. Or it could be ", or create a new environment or update an existing one". I think "new" is implied with "create". The comma is necessary.-->
+Du kan bruge tjenestechefen til på sikker måde at [tilføje eller redigere en mappe med Common Data Model som en datakilde](connect-common-data-model.md) eller til at [oprette eller opdatere et miljø](get-started-paid.md).
 
 > [!IMPORTANT]
-> - Den Data Lake Storage-konto, der skal bruge<!--note from editor: Suggested. Or perhaps it could be "The Data Lake Storage account to which you want to give access to the service principal..."--> tjenestes hovednavn skal have [aktiveret hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace).
+> - Den lagerkonto for Data Lake, der skal bruge tjenestekontoen, skal have [aktiveret hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace).
 > - Du skal have administratorrettigheder til dit Azure-abonnement for at oprette tjenestekonto.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Oprettelse af en Azure-servicekonto til Customer Insights
@@ -38,7 +38,7 @@ Før du opretter en ny tjenestekonto for målgruppeindsigt eller engagementsinds
 
 3. Vælg **Administrer** under **Virksomhedsprogrammer**.
 
-4. Søg efter Microsoft<!--note from editor: Via Microsoft Writing Style Guide.--> program-id:
+4. Søg efter Microsoft-program-id:
    - Målgruppeindsigt: `0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff` med navnet `Dynamics 365 AI for Customer Insights`
    - Engagementsindsigt: `ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd` med navnet `Dynamics 365 AI for Customer Insights engagement insights`
 
@@ -49,23 +49,23 @@ Før du opretter en ny tjenestekonto for målgruppeindsigt eller engagementsinds
 6. Hvis der ikke returneres resultater, skal du oprette en ny tjenestekonto.
 
 >[!NOTE]
->Hvis du vil udnytte alle kræfterne i Dynamics 365 Customer Insights, anbefaler vi, at du føjer begge apps til tjenestekontoen.<!--note from editor: Using the note format is suggested, just so this doesn't get lost by being tucked up in the step.-->
+>Hvis du vil udnytte alle kræfterne i Dynamics 365 Customer Insights, anbefaler vi, at du føjer begge apps til tjenestekontoen.
 
 ### <a name="create-a-new-service-principal"></a>Opret en ny tjenestekonto
-<!--note from editor: Some general formatting notes: The MWSG wants bold for text the user enters (in addition to UI strings and the settings users select), but there's plenty of precedent for using code format for entering text in PowerShell so I didn't change that. Note that italic should be used for placeholders, but not much else.-->
+
 1. Installer den nyeste version af Azure Active Directory PowerShell til Graph. Du kan finde flere oplysninger i [Installere Azure Active Directory PowerShell for Graph](/powershell/azure/active-directory/install-adv2).
 
-   1. På din pc skal du vælge Windows-tasten på tastaturet og søge efter **Windows PowerShell** og vælge **Kør som administrator**.<!--note from editor: Or should this be something like "search for **Windows PowerShell** and, if asked, select **Run as administrator**."?-->
+   1. På din pc skal du vælge Windows-tasten på tastaturet og søge efter **Windows PowerShell** og vælge **Kør som administrator**.
    
    1. I det PowerShell-vindue, der åbnes, skal du skrive `Install-Module AzureAD`.
 
 2. Opret tjenestekontoen til Customer Insights med Azure AD PowerShell-modulet.
 
-   1. I det PowerShell-vindue, der åbnes, skal du skrive `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Erstat *"[dit lejer-id]"*<!--note from editor: Edit okay? Or should the quotation marks stay in the command line, in which case it would be "Replace *[your tenant ID]* --> med det faktiske id for den lejer, hvor du vil oprette tjenestekontoen. Valgfrit navn for miljøet `AzureEnvironmentName`.
+   1. I det PowerShell-vindue, der åbnes, skal du skrive `Connect-AzureAD -TenantId "[your tenant ID]" -AzureEnvironmentName Azure`. Erstat *[dit lejer-id]* med det faktiske ID for din lejer, hvor du vil oprette tjenestekonto. Valgfrit navn for miljøet `AzureEnvironmentName`.
   
    1. Angiv `New-AzureADServicePrincipal -AppId "0bfc4568-a4ba-4c58-bd3e-5d3e76bd7fff" -DisplayName "Dynamics 365 AI for Customer Insights"`. Denne kommando opretter tjenestekontoen for at få målgruppeindsigt i den valgte lejer. 
 
-   1. Angiv `New-AzureADServicePrincipal -AppId "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd" -DisplayName "Dynamics 365 AI for Customer Insights engagement insights"`. Denne kommando opretter tjenestekontoen til engagementsindsigt<!--note from editor: Edit okay?--> på den valgte lejer.
+   1. Angiv `New-AzureADServicePrincipal -AppId "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd" -DisplayName "Dynamics 365 AI for Customer Insights engagement insights"`. Denne kommando opretter tjenestekontoen til engagementsindsigt på udvalgt lejer.
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Giv tilladelser til den pågældende tjenestekonto for at få adgang til lagerkontoen
 
@@ -90,7 +90,7 @@ Det kan tage op til 15 minutter at overføre ændringerne.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Angiv Azure Resource-id eller Azure-abonnementsoplysningerne i lagerkontoen for den vedhæftede målgruppeindsigt.
 
-Du kan:<!--note from editor: Edit suggested only if this section is optional.--> vedhæfte en Azure Data Lake Storage-konto i målgruppeindsigter for at [gemme outputdata](manage-environments.md) eller [bruge det som en datakilde](connect-common-data-service-lake.md). Med denne indstilling kan du vælge mellem en ressourcebaseret eller abonnementsbaseret fremgangsmåde. Afhængigt af den fremgangsmåde, du vælger, skal du følge proceduren i et af følgende afsnit.<!--note from editor: Suggested.-->
+Vedhæft en Data Lake Storage-konto i målgruppeindsigter for at [gemme outputdata](manage-environments.md) eller [bruge det som en datakilde](connect-common-data-service-lake.md). Med denne indstilling kan du vælge mellem en ressourcebaseret eller abonnementsbaseret fremgangsmåde. Afhængigt af den fremgangsmåde, du vælger, skal du følge proceduren i et af følgende afsnit.
 
 ### <a name="resource-based-storage-account-connection"></a>Ressourcebaseret forbindelse til lagerkonto
 

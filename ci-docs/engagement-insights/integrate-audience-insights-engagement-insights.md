@@ -1,19 +1,19 @@
 ---
 title: Opret et link mellem målgruppeindsigt og engagementsindsigt
 description: Opret et aktivt link mellem målgruppeindsigt og engagementsindsigt for at muliggøre tovejsdeling af data.
-ms.date: 07/22/2021
+ms.date: 09/08/2021
 ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 870209a7e19fec464ec41462a02365771bd653bd
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 0fdbc93292291814b2e1a62fee2c5ff796ae14e2
+ms.sourcegitcommit: 4e5b7ec50c7612765a9ec2c8673e0cc43b357abb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461006"
+ms.lasthandoff: 09/10/2021
+ms.locfileid: "7487100"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Opret et link mellem målgruppeindsigt og engagementsindsigt
 
@@ -25,15 +25,15 @@ Brug ensartede profiler og segmenter fra målgruppeindsigt for at få flere anal
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-- Målgruppeindsigtsprofiler skal gemmes i et Azure Data Lake Storage-firma, du ejer, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;-administrerede datasø. 
-
+- Målgruppeindsigtsprofiler skal gemmes i et Azure Data Lake Storage-firma, du ejer, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;-administrerede Data Lake. 
+- Dit målgruppeindsigtsmiljø skal have et tilknyttet Dataverse-miljø. Og hvis det pågældende miljø også bruger Dataverse til datalagring, skal du kontrollere indstillingen **Aktivér datadeling** i målgruppeindsigt. Flere oplysninger: [Oprette og konfigurere betalt miljø i målgruppeindsigt](../audience-insights/get-started-paid.md).
 - Du skal administratortilladelser til både engagementsindsigt og til målgruppeindsigtsmiljøer.
-
 - Tilknyttede miljøer skal være i samme geografiske område.
 
 > [!NOTE]
-> - Hvis dit målgruppeindsigts-abonnement er en prøveversion, der bruger en målgruppeindsigt i internt administrerede data, kan du kontakte [pirequest@microsoft.com](mailto:pirequest@microsoft.com) for at få hjælp. 
-> - Hvis dit målgruppeindsigtsmiljø bruger dit eget Azure Data Lake Storage til at gemme data, skal du føje en engagementsindsigts Azure-tjenestekonto til din lagerkonto. Du kan finde flere oplysninger ved at gå til [Oprette forbindelse til en Azure Data Lake Storage-konto med en Azure-tjenestekonto for at få målgruppeindsigt](../audience-insights/connect-service-principal.md). Desuden skal dit målgruppeindsigtsmiljø have et tilknyttet [Dataverse-miljø](../audience-insights/get-started-paid.md). 
+> - Hvis dit målgruppeindsigts-abonnement er en prøveversion, der bruger en målgruppeindsigt i internt administreret Data Lake, kan du kontakte [pirequest@microsoft.com](mailto:pirequest@microsoft.com) for at få hjælp. 
+> - Hvis dit målgruppeindsigtsmiljø bruger dit eget Azure Data Lake Storage til at gemme data, skal du føje en engagementsindsigts Azure-tjenestekonto til din lagerkonto. Du kan finde flere oplysninger ved at gå til [Oprette forbindelse til en Azure Data Lake Storage-konto med en Azure-tjenestekonto for at få målgruppeindsigt](../audience-insights/connect-service-principal.md). 
+
 
 ## <a name="create-an-environment-link"></a>Oprette et miljølink
 
@@ -75,6 +75,7 @@ Når du har forbundet miljøer, kan du vælge valgfrie funktioner til tilknytted
 
    > [!IMPORTANT]
    > Hvis du ikke eksplicit tilføjer brugere i dette trin, skjules dataene for brugere i engagementsindsigt.
+   > Hvis målgruppeindsigtssegmenter skal vises i engagementsindsigt, skal du først [køre fletning og downstreamprocesser](../audience-insights/merge-entities.md). Downstreamprocesser er vigtige, fordi de genererer en entydig tabel, der forbereder målgruppeindsigtssegmenter, så de kan deles med engagementsindsigt. (Hvis en systemopdatering planlægges, medtages downstreamprocesser automatisk.)
 
 1. Gennemse dit valg, og vælg derefter klik derefter på **Afslut**.
 

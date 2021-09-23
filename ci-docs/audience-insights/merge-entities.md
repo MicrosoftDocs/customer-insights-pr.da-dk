@@ -1,7 +1,7 @@
 ---
 title: Flet objekter i datasamling
 description: Flet objekter for at oprette samlede kundeprofiler.
-ms.date: 05/10/2021
+ms.date: 09/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6e64154dc58f679d13033fa55a60cd0c306f62f31548b8ce98ea1ed5f423b3e9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034995"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494312"
 ---
 # <a name="merge-entities"></a>Flet objekter
 
@@ -66,7 +66,7 @@ Omdøb det viste navn på flettede attributter. Du kan ikke ændre navnet på ou
 
 Udelad en attribut fra den samlede kundeprofil. Hvis feltet bruges i andre processer, f.eks. i et segment, skal du fjerne det fra disse processer, før det udelades i kundeprofilen. 
 
-1. Vælg det flettede felt.
+1. Vælg et flettet felt.
   
 1. Vælg **Vis flere**, og vælg **Udelad**.
 
@@ -76,17 +76,40 @@ Udelad en attribut fra den samlede kundeprofil. Hvis feltet bruges i andre proce
 
 Vælg **Udeladte felter** på siden **Flet** for at se listen over alle udeladte felter. Med denne rude kan du tilføje udeladte felter igen.
 
+## <a name="edit-a-merged-field"></a>Redigere et flettet felt
+
+1.  Vælg et flettet felt.
+
+1.  Vælg **Vis flere**, og vælg **Rediger**.
+
+1.  Angiv, hvordan felterne skal kombineres eller flettes fra en af tre indstillinger:
+    - **Betydning**: Identificerer vinderværdien på baggrund af den rangordnede betydning, der er angivet for de deltagende felter. Dette er standardfletteindstillingen. Vælg **Flyt op/ned** for at angive prioritetsranglisten.
+    :::image type="content" source="media/importance-merge-option.png" alt-text="Indstillingen Prioritet i dialogboksen med brevfletningsfelter."::: 
+    - **Nyeste**: Identificerer vinderværdien baseret på den mest aktuelle. Kræver en dato eller et numerisk felt for alle deltagende objekter i omfanget af brevfletningsfelterne for at definere rekursen.
+    :::image type="content" source="media/recency-merge-option.png" alt-text="Indstillingen Nyhed i dialogboksen med brevfletningsfelter.":::
+    - **Mindst nyeste**: Identificerer vinderværdien baseret på den mindst aktuelle. Kræver en dato eller et numerisk felt for alle deltagende objekter i omfanget af brevfletningsfelterne for at definere rekursen.
+
+1.  Du kan tilføje flere felter for at deltage i fletningsprocessen.
+
+1.  Du kan omdøbe det flettede felt.
+
+1. Vælg **Fuldført** for at anvende dine ændringer.
+
+1. Vælg **Gem** og **Kør** for at behandle ændringerne. 
+
 ## <a name="manually-combine-fields"></a>Kombinere felter manuelt
 
 Angiv en flettet attribut manuelt. 
 
 1. Vælg **Kombiner felter** på siden **Flet**.
 
-1. Angiv et **Navn** og et **Navn på outputfelt**.
+1. Angiv vinderpolitik for fletning i rullelisten **Kombiner felter efter**.
 
 1. Vælg et felt, der skal tilføjes. Vælg **Tilføj felter** for at kombinere flere felter.
 
-1. Bekræft udeladelsen.
+1. Angiv et **Navn** og et **Navn på outputfelt**.
+
+1. Vælg **Fuldført** for at anvende ændringerne.
 
 1. Vælg **Gem** og **Kør** for at behandle ændringerne. 
 
@@ -103,6 +126,27 @@ Nogle objekter indeholder flere detaljer end andre. Hvis et objekt indeholder de
 1. Bekræft ændringen.
 
 1. Vælg **Gem** og **Kør** for at behandle ændringerne.
+
+## <a name="configure-customer-id-generation"></a>Konfigurer generering af kunde-id 
+
+Når du har konfigureret flettefelter, kan du definere, hvordan du opretter CustomerId-værdier, de entydige kundeprofil-id'er. I flettetrinnet i datafletteprocessen oprettes det entydige kundeprofil-id. Id er CustomerId i objektet *Kunde*, som er resultatet af processen til datasamling. 
+
+CustomerId i objektet Kunde er baseret på en hashen med den første værdi af de primære nøgler, der ikke er null-vindere. Nøglerne kommer fra de objekter, der bruges i overensstemmelses- og flettefasen, og de anvendes af overensstemmelsesrækkefølgen.Det oprettede CustomerID kan derfor ændres, når værdien for en primær nøgle ændres i det primære objekt i overensstemmelsesrækkefølgen. Værdien for den primære nøgle repræsenterer derfor ikke altid den samme kunde.
+
+Hvis du konfigurerer et stabilt kunde-id, kan du undgå denne funktionsmåde.
+
+**Konfigurer entydigt kunde-id**
+
+1. Gå til **Unify** > **Flette**.
+
+1. Vælg fanen **Nøgler** på siden **Flette**. 
+
+1. Hold musen hen over rækken **CustomerId**, og vælg indstillingen **Konfigurer**.
+   :::image type="content" source="media/customize-stable-id.png" alt-text="Kontrolelement til tilpasning af id-oprettelse.":::
+
+1. Vælg op til fem felter, der udgør et entydigt kunde-id, og som er mere stabilt. Poster, der ikke stemmer overens med konfigurationen, bruger i stedet et systemkonfigureret id.  
+
+1. Vælg **Udført**, og kør fletteprocessen for at anvende ændringerne.
 
 ## <a name="run-your-merge"></a>Køre fletningen
 

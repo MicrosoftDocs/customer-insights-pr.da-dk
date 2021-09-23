@@ -4,17 +4,17 @@ description: Sådan bruges tragtrapporter til at forstå, hvordan målgruppen tr
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
+ms.date: 09/17/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
+ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032248"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "7498635"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Opret, og administrer tragtrapporter
 
@@ -158,4 +158,21 @@ Du kan ændre navnet på en tragtrapport, slette den eller ændre trinnene i rap
 1. Markér et navn for at åbne rapporten.
 
 1. Markér det trin, du vil fjerne, og vælg derefter **Slet**.
+
+## <a name="funnel-insights"></a>Tragtindsigt 
+
+Engagementsindsigt giver nu tragtindsigt til kunderne. Brug tragtindsigt til at få større indsigt i kundernes adfærd omkring trinnene i tragtrapporten. Når du opretter og gemmer en ny tragtrapport, oprettes der automatisk tragtindsigt for rapporten. 
+
+Du kan få vist tragtindsigt fra følgende kategorier på både hoved- og trinniveauer: 
+
+ - Omregningskurs 
+ - Overgangstid 
+ - Sluttidspunkt 
+
+Brug denne indsigt til at gå mere i dybden med kundernes funktionsmåde og få en bedre forståelse af frafaldspunkter og konverteringer for tragtrapporten. 
+
+Tragtindsigt genberegnes hver 24. time, eller når du **gemmer** tragtrapporten. 
+
+> [!NOTE]
+> Hvis du vil have vist indsigt for tragten, skal du gemme rapporten, hver gang du foretager ændringer. 
 

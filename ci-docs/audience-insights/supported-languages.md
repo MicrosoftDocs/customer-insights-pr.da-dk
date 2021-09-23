@@ -1,24 +1,23 @@
 ---
-title: Understøttede sprog for målgruppen Insights
+title: Understøttede sprog til Dynamics 365 Customer Insights
 description: Forstå og konfigurer understøttelse af sprog.
-ms.date: 02/26/2021
+ms.date: 09/01/2021
 ms.service: customer-insights
-ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e9161ebbfdf3ae6c48c12cdf7515b77ca49ae8055ae9a69f9ec314bc1247aeaf
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f80c3019df9b5d82273842ca6f6f18bef0239687
+ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035132"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "7483335"
 ---
-# <a name="supported-languages-for-audience-insights-capability"></a>Understøttede sprog for funktionen i målgruppen Insights
+# <a name="supported-languages-for-dynamics-365-customer-insights"></a>Understøttede sprog til Dynamics 365 Customer Insights
 
-Målgruppeindsigt for Dynamics 365 Customer Insights er oversat til mange sprog. Følgende liste indeholder tilgængelige sprog og oplysninger om, hvad der er oversat. Du kan også få mere at vide om, hvordan du ændrer sprogindstillingerne. 
+Dynamics 365 Customer Insights er oversat til mange sprog. Følgende liste indeholder tilgængelige sprog og oplysninger om, hvad der er oversat. Du kan også få mere at vide om, hvordan du ændrer sprogindstillingerne. 
 
 ## <a name="languages"></a>Sprog
 
@@ -69,7 +68,7 @@ Målgruppeindsigt for Dynamics 365 Customer Insights er oversat til mange sprog.
 
 ## <a name="whats-translated"></a>Hvad er oversat
 
-Appen bruger dit foretrukne sprog til at vise elementer som menuen, etikettetekst og systemmeddelelser på dit foretrukne sprog.
+Customer Insights bruger dit foretrukne sprog til at vise elementer som menuen, teksten til etikettetekst og systemmeddelelser på dit foretrukne sprog.
 
 Da de fleste funktioner er baseret på dine data, forbliver nogle elementer på deres oprindelige sprog. Eksempel:
 
