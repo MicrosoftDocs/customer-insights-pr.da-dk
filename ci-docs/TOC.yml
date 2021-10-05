@@ -242,7 +242,7 @@
   items:
     - name: Hjælp-hub
       href: engagement-insights/index.yml
-    - name: Oversigt over funktioner
+    - name: Om engagementsindsigt
       href: engagement-insights/overview.md
     - name: Start her
       items:
@@ -306,7 +306,7 @@
           href: engagement-insights/user-consent-storage.md
     - name: Regional tilgængelighed
       href: engagement-insights/regional-availability.md
-- name: Integrer målgruppeindsigt i engagementsindsigt
+- name: Dele data mellem funktioner
   items:
     - name: Opret forbindelse mellem engagementsindsigt og målgruppeindsigt
       href: engagement-insights/integrate-audience-insights-engagement-insights.md
@@ -318,5 +318,3 @@
   href: service-limits.md
 - name: DSR-rettigheder og forespørgsler
   href: dsr-rights-requests.md
-- name: Få support
-  href: 'https://dynamics.microsoft.com/support/'

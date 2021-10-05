@@ -1,20 +1,20 @@
 ---
 title: Forhold mellem objekter og objektstier
 description: Opret og administrer forhold mellem objekter fra flere datakilder.
-ms.date: 06/01/2020
+ms.date: 09/27/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: MichelleDevaney
-ms.author: midevane
+author: CadeSanthaMSFT
+ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: 1853fcd8db2918a0b4a19fa0934e2f0ddbcf6d093c85fdf2068a13f954035dec
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
+ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035224"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7557345"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellem objekter
 
@@ -93,11 +93,11 @@ Tilgængelige indstillinger:
 - **Skift til vandret/lodret layout**: Skift justering af enhederne og relationer.
 - **Rediger**: Opdater egenskaber for brugerdefinerede relationer i redigeringsruden, og gem ændringerne.
 
-### <a name="relationship-path"></a>Relationssti
+## <a name="relationship-paths"></a>Relationsstier
 
-Relationsstien beskriver de objekter, der er knyttet til relationer mellem et kildeobjekt og et destinationsobjekt. Det bruges, når du opretter et segment eller en måleenhed, der omfatter andre objekter end objektet for den samlede profil, og der er flere indstillinger, du kan bruge til at oprette forbindelse til objektet for den samlede profil.
+En relationssti beskriver de objekter, der er knyttet til relationer mellem et kildeobjekt og et destinationsobjekt. Det bruges, når du opretter et segment eller en måleenhed, der omfatter andre objekter end objektet for den samlede profil, og der er flere indstillinger, du kan bruge til at oprette forbindelse til objektet for den samlede profil. 
 
-Relationsstien informerer systemet om de relationer, der har adgang til objektet med den samlede profil. Forskellige relationsstier kan give forskellige resultater.
+En relationssti giver det system, relationer har adgang til, oplysninger om adgang til det samlede profilobjekt. Forskellige relationsstier kan give forskellige resultater.
 
 Objektenheden indeholder f.eks. *eCommerce_eCommercePurchases* følgende relationer til objektet *Kunde* i den samlede profil:
 
@@ -105,7 +105,43 @@ Objektenheden indeholder f.eks. *eCommerce_eCommercePurchases* følgende relatio
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kunde 
 
-Relationsstien bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases), på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
+En relationssti bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases), på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
+
+### <a name="direct-relationship"></a>Direkte relation
+
+En relation klassificeres som en **direkte relation**, når et kildeobjekt er relateret til et målobjekt med kun én relation.
+
+Hvis et aktivitetsobjekt, der kaldes *eCommerce_eCommercePurchases*, f.eks. kun opretter forbindelse til et målobjekt *eCommerce_eCommerceContacts* via *ContactId*, er det en direkte relation.
+
+:::image type="content" source="media/direct_Relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til destinationsobjektet.":::
+
+#### <a name="multi-path-relationship"></a>Relation med flere forbindelser
+
+En **relation med flere forbindelser** er en særlig type direkte relation, der opretter forbindelse mellem et kildeobjekt og mere end ét destinationsobjekt.
+
+Hvis et aktivitetsobjekt, der kaldes *eCommerce_eCommercePurchases*, f.eks. er relateret til to målobjekter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en relation med flere forbindelser.
+
+:::image type="content" source="media/multi-path_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til mere end ét destinationsobjekt via en relation til flere forbindelser.":::
+
+### <a name="indirect-relationship"></a>Indirekte relation
+
+En relation klassificeres som en **indirekte relation**, når et kildeobjekt er relateret til et eller flere yderligere objekter, før det relaterer til é målobjekt.
+
+#### <a name="multi-hop-relationship"></a>Multi-hop-relation
+
+En *multi-hop-relation* er en et *indirekte relation*, der bruges til at tilknytte et kildeobjekt til et destinationsobjekt via et eller flere objekter.
+
+Hvis et aktivitetsobjekt kaldet *eCommerce_eCommercePurchasesWest* f.eks. opretter forbindelse til et mellemliggende objekt, der kaldes *eCommerce_eCommercePurchasesEast* og derefter opretter forbindelse til et målobjekt, der kaldes *eCommerce_eCommerceContacts*, er det en multi-hop-relation.
+
+:::image type="content" source="media/multi-hop_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til et destinationsobjekt med et mellemliggende objekt.":::
+
+### <a name="multi-hop-multi-path-relationship"></a>Multi-hop, relation med flere forbindelser
+
+Multi-hop-relation og relation med flere forbindelser kan bruges sammen til at oprette **multi-hop-relation, relation med flere forbindelser**. Denne specielle type kombinerer funktionerne for **multi-hop-relation** og **relation med flere forbindelser**. Du kan oprette forbindelse til mere end ét destinationsobjekt, mens du bruger mellemliggende objekter.
+
+Hvis et aktivitetsobjekt kaldet *eCommerce_eCommercePurchasesWest* f.eks. opretter forbindelse til et mellemliggende objekt, der kaldes *eCommerce_eCommercePurchasesEast* og derefter opretter forbindelse til to målobjekter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en multi-hop-relation, relation med flere forbindelser.
+
+:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til ét destinationsobjekt og opretter forbindelse til et andet målobjekt via et mellemobjekt.":::
 
 ## <a name="manage-existing-relationships"></a>Administrer eksisterende relationer 
 

@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til Google Ads
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Google Ads.
-ms.date: 03/03/2021
+ms.date: 09/27/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,16 +9,19 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5977b3de9fbb0d97c0912e2ada6a313b0ab92498adf9cdbed48191c0e5143567
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c958f58c927b76364f305dad8f524dde29b2a638
+ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031650"
+ms.lasthandoff: 09/27/2021
+ms.locfileid: "7558948"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksport af segmenter til Google Ads (forhåndsversion)
 
 Eksporter segmenter af samlede kundeprofiler til en Liste over Google Ads-målgruppe, og brug dem til at annoncere på Google Søgning, Gmail, YouTube og Google Display Network. 
+
+> [!IMPORTANT]
+> I øjeblikket kan du kun oprette en ny forbindelse og eksportere data til Google Ads, hvis du allerede har et godkendt Google Ads-udviklertoken. På grund af ændringer af politikker opdaterer vi snart eksporten fra Google Ads og giver en eksportindstilling, der ikke kræver et udviklertoken for at sikre kontinuitet i din oplevelse og forenkle eksporten til Google Ads. Vi anbefaler, at du ikke opretter flere forbindelser til Google Ads for at lette overgangen til den nye eksportindstilling.
 
 ## <a name="prerequisites-for-connection"></a>Forudsætninger for forbindelse
 
