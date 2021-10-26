@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 37c5d152a4cc91a90df8db387d25923ed150e238bc6b54c54f7bba59fbd48c82
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3689c7016454ed44e22b4d4ff5a338836a8fe288
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033211"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7605942"
 ---
 # <a name="connections-preview-overview"></a>Oversigt over forbindelser (forhåndsversion)
 
@@ -47,6 +47,7 @@ Hvis du vil tilføje forbindelser, skal du have [administratortilladelser](permi
 1. Angiv de nødvendige oplysninger i ruden **Konfigurer forbindelse**. 
    1. **Visningsnavn** og forbindelsestype beskriver en forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for denne forbindelse.
    1. De nøjagtige felter afhænger af, hvilken tjeneste du opretter forbindelse til. Du kan få mere at vide om detaljer om en bestemt forbindelse ved at skrive artiklen om måltjenesten.
+   1. Hvis du [bruger din egen Key Vault](use-azure-key-vault.md) til at gemme hemmeligheder, skal du aktivere **Brug Key Vault** og vælge hemmeligheden på listen.
 
 1. Vælg **Gem** for at oprette forbindelsen.
 
@@ -93,3 +94,6 @@ Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved 
 
 1. Bekræft sletningen ved at vælge **Fjern**.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurere forbindelser med hemmeligheder, der administreres af din egen Key Vault
+
+Nogle forbindelser har brug for hemmeligheder som API-nøgler eller adgangskoder. Nogle forbindelser understøtter hemmeligheder, der er gemt i din egen Key Vault. Få mere at vide om understøttede forbindelser, og hvordan du konfigurerer [din egen Key Vault for at få målgruppeindsigt](use-azure-key-vault.md).

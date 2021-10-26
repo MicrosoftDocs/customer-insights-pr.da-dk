@@ -1,7 +1,7 @@
 ---
 title: Eksport af Customer Insights-data til RollWorks
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til RollWorks.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d8ce4d867835dcb7cf56c6fffff4e25d1f5c109af0e401fc0eb8b3a7427c1de4
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f8f6a79db9cb4bb109c03a464d9f8c7f3b862ad5
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034583"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617437"
 ---
 # <a name="export-segments-to-rollworks-preview"></a>Eksportere segmenter til RollWorks (forhåndsversion)
 
@@ -28,11 +28,11 @@ Eksportér segmenter med ensartede kundeprofiler til RollWorks, og brug dem til 
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 250.000 profiler pr. eksport til RollWorks.
-- Du kan ikke eksportere segmenter med færre end 100 profiler til RollWorks. 
+- Du kan eksportere op til 250.000 kundeprofiler pr. eksport til RollWorks.
+- Du kan ikke eksportere segmenter med færre end 100 kundeprofiler til RollWorks. 
 - Eksport til RollWorks er begrænset til segmenter.
-- Det kan tage op til 10 minutter at eksportere op til 250.000 profiler til RollWorks. 
-- Det antal profiler, du kan eksportere til RollWorks, er afhængigt af og begrænset af kontrakten med RollWorks.
+- Det kan tage op til 10 minutter at eksportere op til 250.000 kundeprofiler til RollWorks. 
+- Antallet af kundeprofiler, du kan eksportere til RollWorks, er begrænset og afhænger af din kontrakt med RollWorks.
 
 ## <a name="set-up-connection-to-rollworks"></a>Konfigurer forbindelsen til RollWorks
 
@@ -66,7 +66,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv dit **RollWorks Advertiser-id** [RollWorks Advertisable](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det er obligatorisk at eksportere segmenter til RollWorks.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til RollWorks.
 
 1. Vælg de segmenter, du vil eksportere. Vælg et segment med mindst 100 medlemmer. Du kan ikke eksportere mindre segmenter. Derudover er maksimumstørrelsen på et segment, der skal eksporteres, 250.000 medlemmer pr. eksport. 
 

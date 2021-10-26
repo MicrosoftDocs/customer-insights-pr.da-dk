@@ -1,7 +1,7 @@
 ---
 title: Tilføjelsesprogrammet Kundekort til Dynamics 365-apps
 description: Vis data fra målgruppeindsigt i Dynamics 365-apps med dette tilføjelsesprogram.
-ms.date: 05/18/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,18 +9,20 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0f6c922104df229980b308136a4d764938121b35d6d744f41b1530bdb5515e7f
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
+ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032981"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "7643383"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
 [!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilføjelsesprogrammet Kundekort er installeret i en understøttet Dynamics 365-app, kan du vælge at få vist demografi, indsigt og aktivitetstidslinjer. Tilføjelsesprogrammet henter data fra Customer Insights, uden at det påvirker dataene i den tilknyttede Dynamics 365-app. 
+Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilføjelsesprogrammet Kundekort er installeret i en understøttet Dynamics 365-app, kan du vælge at få vist kundeprofilfelter, indsigt og aktivitetstidslinje. Tilføjelsesprogrammet henter data fra Customer Insights, uden at det påvirker dataene i den tilknyttede Dynamics 365-app.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN1qv]
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -28,20 +30,19 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
 - Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, skal de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse connectoren](connect-power-query.md).
 - Alle Dynamics 365-brugere af Kundekort-tilføjelsesprogrammet skal [tilføjes som brugere](permissions.md) i målgruppeindsigt for at kunne se dataene.
 - [Konfigurerede søge- og filterfunktioner](search-filter-index.md) i målgruppeindsigt kræves for at få opslag af data til at fungere.
-- Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i målgruppeindsigt:
-  - Målingskontrol: Kræver [konfigurerede målinger](measures.md).
-  - Intelligenskontrol: Kræver data genereret ved hjælp af [forudsigelser](predictions.md) eller [brugerdefinerede modeller](custom-models.md).
-  - Demografisk kontrolelement: Demografiske felter (f.eks. alder eller køn) er tilgængelige i den samlede kundeprofil.
-  - Forbedringskontrol: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler.
-  - Tidslinjekontrol: Kræver [konfigurerede aktiviteter](activities.md).
+- Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i målgruppeindsigt. Nogle data og kontrolelementer er kun tilgængelige i miljøer af bestemte typer. Du får besked i konfigurationen af tilføjelsesprogrammet, hvis et kontrolelement ikke er tilgængeligt på grund af den valgte miljøtype. Få mere at vide om [miljøanvendelser](work-with-business-accounts.md).
+  - **Kontrolelementet Måling**: Kræver [konfigurerede målinger](measures.md) af typen kundeattributter.
+  - **Kontrolelementet Intelligens**: Kræver data genereret ved hjælp af [forudsigelser](predictions.md) eller [brugerdefinerede modeller](custom-models.md).
+  - **Kontrolelementet Kundeoplysninger**: Alle felter fra profilen er tilgængelige i den samlede kundeprofil.
+  - **Kontrolelementet Forbedring**: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler.
+  - **Kontrolelementet Kontakter**: Kræver definition af semantisk objekt af typen kontakter.
+  - **Kontrolelementet Tidslinje**: Kræver [konfigurerede aktiviteter](activities.md).
 
 ## <a name="install-the-customer-card-add-in"></a>Installere tilføjelsesprogrammet Kundekort
 
 Tilføjelsesprogrammet Kundekort er en løsning til Customer Engagement-apps i Dynamics 365. Hvis du vil installere løsningen, skal du gå til AppSource og søge efter **Dynamics-kundekort**. Vælg [Tilføjelsesprogrammet Kundekort i AppSource](https://appsource.microsoft.com/product/dynamics-365/mscrm.dynamics_365_customer_insights_customer_card_addin?tab=Overview), og vælg **Hent det nu**.
 
-Det kan være nødvendigt at logge på med dine administrator-legitimationsoplysninger, når Dynamics 365-appen skal installere løsningen.
-
-Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
+Det kan være nødvendigt at logge på med dine administrator-legitimationsoplysninger, når Dynamics 365-appen skal installere løsningen. Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 
 ## <a name="configure-the-customer-card-add-in"></a>Konfigurere tilføjelsesprogrammet Kundekort
 
@@ -50,7 +51,7 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 1. Vælg linket **Vist navn** til løsningen **tilføjelsesprogrammet Kundekort til Dynamics 365 Customer Insights (eksempel)**.
 
    > [!div class="mx-imgBorder"]
-   > ![Vælge vist navn.](media/select-display-name.png "Vælge vist navn")
+   > ![Vælge vist navn.](media/select-display-name.png "Vælg vist navn.")
 
 1. Vælg **Log på**, og angiv legitimationsoplysningerne for den administratorkonto, du bruger til at konfigurere Customer Insights.
 
@@ -64,7 +65,7 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
    - Hvis du vil tilknytte en konto, skal du vælge det felt i kundeobjektet, der stemmer overens med id for dit kontoobjekt.
 
    > [!div class="mx-imgBorder"]
-   > ![Feltet Kontakt-id.](media/contact-id-field.png "Feltet Kontakt-id")
+   > ![Feltet Kontakt-id.](media/contact-id-field.png "Feltet Kontakt-id.")
 
 1. Vælg **Gem konfiguration** for at gemme indstillingerne.
 
@@ -73,21 +74,23 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 1. Tildel rollen **Customer Insights-korttilpasser** til brugere, der skal tilpasse det indhold, der vises på kortet, for hele organisationen.
 
 ## <a name="add-customer-card-controls-to-forms"></a>Tilføj Kundekort-kontrolelementer til formularer
-  
+
+Afhængigt af scenariet kan du vælge at føje kontrolelementer til enten formularen **Kontakt** eller formularen **Firma**. Hvis dit miljø for målgruppeindsigt er til forretningskonti, anbefales det, at du føjer kontrolelementerne til formularen Firma. I det tilfælde skal du erstatte "kontakt" i nedenstående trin med "firma".
+
 1. Hvis du vil føje Kundekort-kontrolelementer til formularen Kontakt, skal du gå til **Indstillinger** > **Tilpasninger** i Dynamics 365.
 
 1. Vælg **Tilpas systemet**.
 
 1. Gå til objektet **Kontakt**, udvid det, og vælg **Formularer**.
 
-1. Vælg den kontaktformular, hvor du vil tilføje kontrolelementerne for kundekortet.
+1. Vælg den kontaktformular, hvor du vil tilføje kontrolelementerne for Kundekort.
 
     > [!div class="mx-imgBorder"]
-    > ![Vælge formularen Kontakt.](media/contact-active-forms.png "Vælge formularen Kontakt")
+    > ![Vælge formularen Kontakt.](media/contact-active-forms.png "Vælg formularen Kontakt.")
 
 1. Hvis du vil tilføje et kontrolelement, skal du i formulareditoren trække et hvilket som helst felt fra **Feltoversigt** til det sted, hvor du vil placere kontrolelementet.
 
-1. Vælg det felt i den formular, du lige har tilføjet, og vælg **Skift egenskaber**.
+1. Vælg feltet i den formular, du lige har tilføjet, og vælg **Skift egenskaber**.
 
 1. Gå til fanen **Kontrolelementer**, og vælg **Tilføj kontrolelement**. Vælg et af de tilgængelige brugerdefinerede kontrolelementer, og vælg **Tilføj**.
 
@@ -102,7 +105,8 @@ Det kan tage et stykke tid, før løsningen er installeret i dit miljø.
 1. Hvis du vil tilpasse det, du vil have vist på det brugerdefinerede kontrolelement, skal du vælge knappen Rediger i øverste højre hjørne.
 
 ## <a name="upgrade-customer-card-add-in"></a>Opgradere tilføjelsesprogrammet Kundekort
-Tilføjelsesprogrammet Kundekort opgraderes ikke automatisk. Hvis du vil opgradere til den nyeste version, skal du følge denne procedure i den Dynamics 365-app, hvor tilføjelsesprogrammet er installeret.
+
+Tilføjelsesprogrammet Kundekort opgraderes ikke automatisk. Hvis du vil opgradere til den nyeste version, skal du følge disse trin i Dynamics 365-appen, hvor tilføjelsesprogrammet er installeret.
 
 1. Gå til **Indstillinger** > **Tilpasning** og vælg **Løsninger** i Dynamics 365-appen.
 

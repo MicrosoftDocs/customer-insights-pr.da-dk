@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til Marketo
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Marketo.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0d5eaa769973c861d89287bba0ed29509ab2efc653bdd8e177cc49b3560c698e
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 71a16bd71a58b5cc0a6a2ed421561d91f782dd8e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033486"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619158"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Eksportér segmenter til Marketo (forhåndsversion)
 
@@ -29,10 +29,10 @@ Eksportér segmenter fra de samlede brugerprofiler til at generere kampagner, le
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Op til 1000000 profiler pr. eksport til Marketo.
+- Op til 1 million kundeprofiler pr. eksport til Marketo.
 - Eksport til Marketo er begrænset til segmenter.
-- Eksport af segmenter med i alt 1000000 profiler kan tage op til tre timer. 
-- Antallet af profiler, du kan eksportere til Marketo, er afhængige og begrænsede i kontrakten med Marketo.
+- Eksport af segmenter med i alt 1 million kundeprofiler kan tage op til tre timer. 
+- Antallet af kundeprofiler, du kan eksportere til Marketo, er begrænset og afhænger af din kontrakt med Marketo.
 
 ## <a name="set-up-connection-to-marketo"></a>Konfigurer forbindelsen til Marketo.
 
@@ -64,7 +64,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv dit **[Marketo-liste-id](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Liste-id'et er en rent numerisk værdi. Hvis f.eks. Marketo-liste-id'et er ST12345A7, skal du fjerne tegnet før og efter tallene og angive `12345`. 
 
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. 
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. 
 
 1. Du kan også eksportere **Fornavn**, **Efternavn**, **By**, **Land** og **Land/Område** for at oprette mere personlige mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 

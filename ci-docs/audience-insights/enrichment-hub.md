@@ -1,7 +1,7 @@
 ---
 title: Forbedring af samlede kundeprofiler
 description: Du kan bruge egenskaber til at forbedre dine kundedata.
-ms.date: 08/31/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 992c45e30e2dff00f5207290940b56b2fe1c08ad
-ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
+ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "7469955"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617548"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Forbedring af kundeprofiler (prøveversion)
 
@@ -27,16 +27,26 @@ Hvis du målgruppeindsigt, kan du gå til **Data** > **Forbedring** for at arbej
 
 Du skal have bidragyder- eller administratortilladelser for at kunne oprette eller redigere forbedringer. Du kan finde flere oplysninger under [Tilladelser](permissions.md).
 
-Under fanen **Opdag** kan du se følgende forbedringer:
+Under fanen **Opdag** finder du alle understøttede forbedringsmuligheder.
 
-- [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft
+# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+
 - [Varemærker](enrichment-microsoft.md) leveret af Microsoft
 - [Interesser](enrichment-microsoft.md) leveret af Microsoft
-- [Udvidede adresser](enrichment-enhanced-addresses.md) leveret af Microsoft
-- [Firmadata](enrichment-leadspace.md) leveret af Leadspace
+- [Udvidede adresser](enrichment-enhanced-addresses.md) leveret af Microsoft 
 - [Demografiske oplysninger](enrichment-experian.md) leveret af Experian
-- [Lokationsdata](enrichment-here.md) leveret af HERE Technologies
-- [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP)
+- [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
+- [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft
+
+# <a name="business-accounts-b2b"></a>[Virksomhedskonti (B2B)](#tab/b2b)
+
+- [Firmadata](enrichment-leadspace.md) leveret af Leadspace
+- [Udvidede adresser](enrichment-enhanced-addresses.md) leveret af Microsoft 
+- [Lokationsdata](enrichment-here.md) leveret af HERE Technologies 
+- [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
+- [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft
+
+---
 
 Under fanen **Mine forbedringer** kan du se de forbedringer, du har konfigureret, og redigere deres egenskaber.
 
@@ -58,7 +68,7 @@ Kør eller deaktiver flere lister på én gang ved at vælge dem på listen. Vis
 
 ## <a name="enrichments-and-connections"></a>Forbedringer og forbindelser
 
-Konfigurationer fra tredjeparter konfigureres ved hjælp af [forbindelser](connections.md), som en administrator konfigurerer med legitimationsoplysninger og giver samtykke til dataoverførsler. Forbindelsen kan derefter bruges af både administratorer og bidragydere til at konfigurere forbedringer.  
+Konfigurationer fra tredjeparter konfigureres ved hjælp af [forbindelser](connections.md), som en administrator konfigurerer med legitimationsoplysninger og giver samtykke til dataoverførsler. Disse forbindelser kan bruges af administratorer og bidragsydere til at konfigurere forbedringer.  
 
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere forbedringer af samme type
 

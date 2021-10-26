@@ -4,17 +4,17 @@ description: Sådan opretter, redigerer og sletter du dimensioner.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 06/09/2021
+ms.date: 10/01/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: b575c5e84197d76f53a722bac60c5af928c917f9671720ede1de38c4a7478be4
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 136da1e1265c7087d861712d34d011b09cb60ad5
+ms.sourcegitcommit: 565637f49cbdd05a82f42784f594c19cac299140
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033990"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7623625"
 ---
 # <a name="view-and-create-dimensions"></a>Få vist og opret dimensioner
 
@@ -22,7 +22,7 @@ ms.locfileid: "7033990"
 
 En dimension er en attribut for en hændelse, der kan beskrive, filtrere eller gruppere data. Hvis du kører en markedsføringskampagne på dit websted, kan du bruge dimensioner til at sortere besøgende efter nye og tilbagevendende brugere.  
 
-Engagementsindsigt omfatter køreklare dimensioner for hændelsesegenskaber. Eksempler:
+Engagementsindsigt omfatter køreklare dimensioner (OOB) for hændelsesegenskaber. Eksempler:
 
 - Browsernavn
 - Sidenavn
@@ -44,17 +44,21 @@ Dimensioner er baseret på eksisterende hændelsesegenskaber. Når du bruger spo
 Ud over systemgenererede dimensioner kan miljø- og arbejdsområdeadministratorer oprette brugerdefinerede dimensioner. Brugerdefinerede dimensioner er baseret på standardegenskaber for basishændelser, eller de kan bruge [brugerdefinerede egenskaber for en hændelse](advanced-SDK-implementation.md).
 
 1. Vælg **Data** > **Dimensioner**.
-1. Vælg **Tilføj en dimension**.
+1. Vælg **Ny dimension**.
 
    :::image type="content" source="media/add-dimension.png" alt-text="Føje en dimension til en hændelse.":::
 
 1. Vælg en egenskab, som dimensionen skal baseres på, i ruden **Opret en dimension**. Egenskabslisten viser alle de egenskaber i arbejdsområdet, der ikke er tildelt til en dimension.
-1. Angiv et navn i feltet **Vist navn**. Valgfri: Du kan tilføje en beskrivelse.
-1. Vælg **Opret** for at gemme dimensionen. Det kan tage op til et minut, før du kan bruge dimensionen i en [brugerdefineret rapport](custom-reports.md) eller et [segment](segments.md). 
+   
+   :::image type="content" source="media/create-new-dimension.png" alt-text="Opret en ny dimension.":::
+      
+3. Angiv et navn i feltet **Vist navn**. Du kan frit vælge at tilføje en **Beskrivelse**.
+4. Vælg **Opret** for at gemme dimensionen. Det kan tage op til et minut, før du kan bruge dimensionen i en [brugerdefineret rapport](custom-reports.md) eller et [segment](segments.md). 
 
 ## <a name="edit-a-dimension"></a>Rediger en dimension
 
-Du kan ændre navnet på og beskrivelsen af en dimension.
+Du kan ændre navnet på og beskrivelsen af en dimension. Du kan kun redigere brugeroprettede dimensioner, men du kan ikke redigere systemdimensioner.
+
 
 1. Vælg **Data** > **Dimensioner**.
 1. Markér den dimension, som du vil slette.

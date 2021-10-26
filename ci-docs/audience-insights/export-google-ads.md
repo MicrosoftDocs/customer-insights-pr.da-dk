@@ -9,12 +9,12 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: c958f58c927b76364f305dad8f524dde29b2a638
-ms.sourcegitcommit: f1e3cc51ea4cf68210eaf0210ad6e14b15ac4fe8
+ms.openlocfilehash: ce9579f3d31207e666665237fd8935bb86889f8d
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7558948"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617911"
 ---
 # <a name="export-segments-to-google-ads-preview"></a>Eksport af segmenter til Google Ads (forhåndsversion)
 
@@ -35,9 +35,9 @@ Eksporter segmenter af samlede kundeprofiler til en Liste over Google Ads-målgr
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Op til 1000000 profiler pr. eksport til Google Ads.
+- Op til 1 millioner kundeprofiler pr. eksport til Google Ads.
 - Eksport til Google Ads er begrænset til segmenter.
-- Eksport af segmenter med det samlede antal 1000000-profiler kan tage op til 5 minutter på grund af begrænsninger på udbydersiden. 
+- Eksport af segmenter med i alt 1 million kundeprofiler kan tage op til 5 minutter på grund af begrænsninger på udbydersiden. 
 - Det kan tage op til 48 timer at foretage match ingen i Google Ads.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfigurer forbindelse til Google Ads
@@ -74,7 +74,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv dit **[Google Ads-målgruppe-id](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, og vælg **Opret forbindelse** for at initialisere forbindelsen til Google Ads.
 
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**.
 
 1. Vælg de segmenter, du vil eksportere. Du kan eksportere op til 1000000 kundeprofiler i alt til Google Ads.
 

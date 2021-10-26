@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Brug Customer Insights-objekter som tabeller i Microsoft Dataverse.
-ms.date: 06/15/2021
+ms.date: 10/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 45535a7368b89e19a91f08fcd825bda9d57a8709653104bf4043c29ffa14d0b8
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032889"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645211"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
@@ -24,11 +24,7 @@ Customer Insights giver mulighed for at gøre outputobjekter tilgængelige i [Mi
 
 **Organisationer med eksisterende Dataverse-miljøer**
 
-Organisationer, der allerede bruger Dataverse, kan bruge et af deres [eksisterende Dataverse-miljøer](get-started-paid.md), når en administrator konfigurerer målgruppeindsigt. Når du angiver URL-adressen til Dataverse-miljøet, knyttes den til deres nye målgruppeindsigtsmiljø. Customer Insights- og Dataverse-miljøer skal hostes i samme område for at sikre den bedst mulige ydeevne.
-
-Hvis du vil tilknytte et Dataverse-miljø, skal du udvide **Avancerede indstillinger**, når du opretter målgruppeindsigtsmiljøet. Angiv **URL-adressen til Microsoft Dataverse-miljøet**, og markér afkrydsningsfeltet **Aktivér datadeling**.
-
-:::image type="content" source="media/Datasharing-with-DataverseMDL.png" alt-text="Alt.":::
+Organisationer, der allerede bruger Dataverse, kan bruge et af deres [eksisterende Dataverse-miljøer](create-environment.md), når en administrator konfigurerer målgruppeindsigt. Når du angiver URL-adressen til Dataverse-miljøet, knyttes den til deres nye målgruppeindsigtsmiljø. Customer Insights- og Dataverse-miljøer skal hostes i samme område for at sikre den bedst mulige ydeevne.
 
 **Ny organisation**
 

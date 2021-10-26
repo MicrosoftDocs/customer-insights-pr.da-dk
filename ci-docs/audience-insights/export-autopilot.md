@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Autopilot
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Autopilot.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9ada8a6f4e4546990a1360567b400033050119c4c4c9a3df1af8fcaab75e157
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4cceb64484e8e257a90b8cbaedff4419659bb399
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032018"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618422"
 ---
 # <a name="export-segments-to-autopilot-preview"></a>Eksportér segmenter til Autopilot (forhåndsversion)
 
@@ -30,8 +30,8 @@ Eksportér segmenter med ensartede kundeprofiler til Autopilot, og brug dem til 
 
 - Du kan eksportere op til 100.000 kundeprofiler i alt til Autopilot.
 - Eksport til Autopilot er begrænset til segmenter.
-- Det kan tage op til et par timer at eksportere op til 100.000 profiler til Autopilot. 
-- Antallet af profiler, du kan eksportere til Autopilot, er afhængige og begrænsede i kontrakten med Autopilot.
+- Det kan tage op til et par timer at eksportere op til 100.000 kundeprofiler til Autopilot. 
+- Antallet af kundeprofiler, du kan eksportere til Autopilot, er begrænset og afhænger af din kontrakt med Autopilot.
 
 ## <a name="set-up-connection-to-autopilot"></a>Konfigurer forbindelsen til Autopilot
 
@@ -43,7 +43,7 @@ Eksportér segmenter med ensartede kundeprofiler til Autopilot, og brug dem til 
 
 1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-3. Angiv [Autopilot-API-nøglen](https://autopilot.docs.apiary.io/#).
+1. Angiv [Autopilot-API-nøglen](https://autopilot.docs.apiary.io/#).
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
 
@@ -63,7 +63,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg en forbindelse i sektionen Autopilot i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Gentag de samme trin for andre felter som **Fornavn**, **Efternavn**.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Gentag de samme trin for andre felter som **Fornavn**, **Efternavn**.
 
 1. Vælg de segmenter, du vil eksportere. Det **anbefales ikke at eksportere mere end 100'000 kundeprofiler i alt** til Autopilot. 
 

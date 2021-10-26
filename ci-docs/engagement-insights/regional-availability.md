@@ -8,18 +8,18 @@ ms.date: 09/28/2021
 ms.service: customer-insights
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: d4ae7a085ba68c482372868e75376b6f769325d7
-ms.sourcegitcommit: ce2c011f06999dba2e886b8804d3439fbf67074d
+ms.openlocfilehash: 82591919b44eaac8a251d7fdb148253d5cac23c3
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "7564587"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645394"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Regional tilgængelighed til Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Engagementsindsigt, en funktion i Dynamics 365 Customer Insights, der efterhånden introducerer flere områder, hvor kunderne kan vælge at gemme deres data. Administratorer kan vælge et område, når de [opretter et nyt miljø](manage-environments-workspaces.md#create-an-environment). 
+Engagementsindsigt, en funktion i Dynamics 365 Customer Insights, der efterhånden introducerer flere områder, hvor kunderne kan vælge at gemme deres data. Administratorer kan vælge et område, når de [opretter et nyt miljø](create-new-environment.md). 
 
 Når du konfigurerer engagementsindsigt første gang, kan du vælge området, mens du gennemgår den [styrede første kørselsoplevelse](quickstart.md). Senere giver alle nye miljøer dig mulighed for at vælge det område, som data skal gemmes i.
 

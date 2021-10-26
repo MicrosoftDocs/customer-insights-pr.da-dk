@@ -1,7 +1,7 @@
 ---
 title: Eksport af Customer Insights til Kampagneovervågning
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til kampagneovervågning.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d2cc3ec944faa1d77ffb44e8abb422d753c5625d0ccef75cbb7efb14cb7c3741
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 063de14c4ffd51b3afd89786606d7b37626695dc
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031880"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618974"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Eksport segmenter til kampagneovervågning (forhåndsversion)
 
@@ -28,10 +28,10 @@ Eksportér segmenter med ensartede kundeprofiler til Kampagneovervågning, og br
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 1 millioner profiler pr. eksport til Kampagneovervågning.
+- Du kan eksportere op til 1 millioner kundeprofiler pr. eksport til Campaign Monitor.
 - Eksport til Kampagneovervågning er begrænset til segmenter.
-- Det kan tage op til 20 minutter at eksportere op til 1 millioner profiler til Kampagneovervågning. 
-- Det antal profiler, du kan eksportere til Kampagneovervågning, er afhængigt af og begrænset af kontrakten med Kampagneovervågning.
+- Det kan tage op til 20 minutter at eksportere op til 1 million kundeprofiler til Campaign Monitor. 
+- Antallet af kundeprofiler, du kan eksportere til Campaign Monitor, er begrænset og afhænger af din kontrakt med Campaign Monitor.
 
 ## <a name="set-up-connection-to-campaign-monitor"></a>Konfigurer forbindelse til Kampagneovervågning
 
@@ -66,7 +66,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 1. Angiv din [**Kampagneovervågningsliste-id**](https://www.campaignmonitor.com/api/getting-started/#your-list-id).    
    [Opret første API-nøglen](https://www.campaignmonitor.com/api/getting-started/) fra **Kontoindstillinger** i Kampagneovervågning for at få vist API-liste-id.  
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det er obligatorisk at eksportere segmenter til Kampagneovervågning.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Kampagneovervågning.
 
 1. Vælg **Gem**.
 

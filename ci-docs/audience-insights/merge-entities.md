@@ -1,7 +1,7 @@
 ---
 title: Flet objekter i datasamling
 description: Flet objekter for at oprette samlede kundeprofiler.
-ms.date: 09/14/2021
+ms.date: 10/10/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,12 +9,14 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b038cd3f5b433fedf918d34bbfaf2261e11c5c17
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+searchScope:
+- ci-merge
+ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
+ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494312"
+ms.lasthandoff: 10/18/2021
+ms.locfileid: "7648247"
 ---
 # <a name="merge-entities"></a>Flet objekter
 
@@ -89,7 +91,7 @@ Vælg **Udeladte felter** på siden **Flet** for at se listen over alle udeladte
     :::image type="content" source="media/recency-merge-option.png" alt-text="Indstillingen Nyhed i dialogboksen med brevfletningsfelter.":::
     - **Mindst nyeste**: Identificerer vinderværdien baseret på den mindst aktuelle. Kræver en dato eller et numerisk felt for alle deltagende objekter i omfanget af brevfletningsfelterne for at definere rekursen.
 
-1.  Du kan tilføje flere felter for at deltage i fletningsprocessen.
+1.  Du kan tilføje flere felter for at deltage i fletteprocessen.
 
 1.  Du kan omdøbe det flettede felt.
 
@@ -139,7 +141,7 @@ Hvis du konfigurerer et stabilt kunde-id, kan du undgå denne funktionsmåde.
 
 1. Gå til **Unify** > **Flette**.
 
-1. Vælg fanen **Nøgler** på siden **Flette**. 
+1. Vælg fanen **Nøgler**. 
 
 1. Hold musen hen over rækken **CustomerId**, og vælg indstillingen **Konfigurer**.
    :::image type="content" source="media/customize-stable-id.png" alt-text="Kontrolelement til tilpasning af id-oprettelse.":::
@@ -147,6 +149,30 @@ Hvis du konfigurerer et stabilt kunde-id, kan du undgå denne funktionsmåde.
 1. Vælg op til fem felter, der udgør et entydigt kunde-id, og som er mere stabilt. Poster, der ikke stemmer overens med konfigurationen, bruger i stedet et systemkonfigureret id.  
 
 1. Vælg **Udført**, og kør fletteprocessen for at anvende ændringerne.
+
+## <a name="group-profiles-into-households-or-clusters"></a>Gruppere profiler i husstande eller klynger
+
+Som en del af konfigurationsprocessen for oprettelse af kundeprofiler kan du definere regler til gruppering af relaterede profiler i en klynge. Der findes i øjeblikket to typer klynger – husstandsklynger og brugerdefinerede klynger. Systemet vælger automatisk en husstand med foruddefinerede regler, hvis objektet *Kunde* indeholder de semantiske felter *Person.LastName* og *Location.Address*. Du kan også oprette en klynge med dine egne regler og betingelser ligesom [matchregler](match-entities.md#define-rules-for-match-pairs).
+
+**Definere en husstand eller en klynge**
+
+1. Gå til **Unify** > **Flette**.
+
+1. Vælg **Avanceret** > **Opret klynge** under fanen **Flet**.
+
+   :::image type="content" source="media/create-cluster.png" alt-text="Kontrolelement til oprettelse af en ny klynge.":::
+
+1. Vælg mellem en **Husstand**-klynge eller en **Brugerdefineret** klynge. Hvis de semantiske felter *Person.LastName* og *Location.Address* findes i objektet *Kunde*, vælges husstand automatisk.
+
+1. Angiv et navn til klyngen, og vælg **Udført**.
+
+1. Vælg fanen **Klynger** for at finde den klynge, du har oprettet.
+
+1. Angiv regler og betingelser for at definere klyngen.
+
+1. Vælg **Kør** for at køre fletteprocessen og oprette klyngen.
+
+Når du har kørt fletteprocessen, tilføjes klynge-id'erne som nye felter i objektet *Kunde*.
 
 ## <a name="run-your-merge"></a>Køre fletningen
 

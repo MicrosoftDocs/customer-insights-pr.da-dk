@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til Mailchimp
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Mailchimp.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: a6bdf43bb40345b868bf2e7d2c91de169c8ba841ba77f732f455f4c4d496a7f5
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 94a9fead56ce8c40b35d4eb41ebdc0d672798dce
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033532"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618606"
 ---
 # <a name="export-segments-to-mailchimp-preview"></a>Eksportere segmenter til Mailchimp (forhåndsversion)
 
@@ -29,10 +29,10 @@ Eksportér segmenter af samlede kundeprofiler til MailChimp for at oprette nyhed
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Op til 1000000 profiler pr. eksport til Mailchimp.
+- Op til 1 million kundeprofiler pr. eksport til Mailchimp.
 - Eksport til Mailchimp er begrænset til segmenter.
-- Eksport af segmenter med 1 millioner profiler kan tage op til tre timer. 
-- Antallet af profiler, du kan eksportere til Mailchimp, er afhængige og begrænsede i kontrakten med Mailchimp.
+- Eksport af segmenter med 1 million kundeprofiler kan tage op til tre timer. 
+- Antallet af kundeprofiler, du kan eksportere til Mailchimp, er begrænset og afhænger af din kontrakt med Mailchimp.
 
 ## <a name="set-up-connection-to-mailchimp"></a>Konfigurer forbindelsen til Mailchimp
 
@@ -66,7 +66,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv din **[Mailchimp Målgruppe-id](https://mailchimp.com/help/find-audience-id/)**
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. 
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. 
 
 1. Du kan også eksportere **Fornavn** og **Efternavn** for at oprette mere personlige e-mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 

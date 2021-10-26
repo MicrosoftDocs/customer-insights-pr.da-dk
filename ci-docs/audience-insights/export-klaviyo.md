@@ -1,7 +1,7 @@
 ---
 title: Eksporter Customer Insights-data til Klaviyo
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Klaviyo.
-ms.date: 08/13/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 7c1297fd5381c00c07d6501186c51fe4798773d1
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
+ms.openlocfilehash: 5f7c91afed8eeb1f767f1efc58dceb7782c37bb4
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7385781"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7619066"
 ---
 # <a name="export-segment-lists-to-klaviyo-preview"></a>Eksport af segmentlister til Klaviyo (forhåndsversion)
 
@@ -28,10 +28,10 @@ Eksporter segmenter af samlede kundeprofiler til Klaviyo, og brug dem til market
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 100.000 profiler pr. eksport til Klaviyo.
+- Du kan eksportere op til 100.000 kundeprofiler pr. eksport til Klaviyo.
 - Eksport til Klaviyo er begrænset til segmenter.
-- Det kan tage op til 20 minutter at eksportere op til 1 million profiler til Klaviyo. 
-- Antallet af profiler, du kan eksportere til Klaviyo, afhænger af og er begrænset af din kontrakt med Klaviyo.
+- Det kan tage op til 20 minutter at eksportere op til 1 million kundeprofiler til Klaviyo. 
+- Antallet af kundeprofiler, du kan eksportere til Klaviyo, er begrænset og afhænger af din kontrakt med Klaviyo.
 
 ## <a name="set-up-connection-to-klaviyo"></a>Konfigurer forbindelsen til Klaviyo.
 
@@ -67,7 +67,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv din [**Id for Klaviyo-liste**](https://help.klaviyo.com/hc/articles/115005078647-How-to-Find-a-List-ID).     
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det kræves, at der eksporteres segmenter til Klaviyo.
+3. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det kræves, at der eksporteres segmenter til Klaviyo.
 
 1. Vælg **Gem**.
 

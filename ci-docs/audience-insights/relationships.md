@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c639cfca30cf1b57ada7d728311210b7210a37ac
-ms.sourcegitcommit: f72d5b86dfdc7282c6c1918b1ab3962d7a1c9852
+ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
+ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/27/2021
-ms.locfileid: "7557345"
+ms.lasthandoff: 10/11/2021
+ms.locfileid: "7622992"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellem objekter
 
@@ -68,6 +68,20 @@ Relationen består af et *kildeobjekt*, der indeholder fremmednøglen, og et *de
 
 4. Vælg **Gem** for at oprette den brugerdefinerede relation.
 
+## <a name="set-up-account-hierarchies"></a>Konfigurere kontohierarkier
+
+Miljøer, der er konfigureret til at bruge forretningskonti som primær målgruppe, kan konfigurere kontohierarkier for relaterede forretningskonti. Det kan f.eks. være en virksomhed, der har separate afdelinger. 
+
+Organisationer kan oprette kontohierarkier for bedre at administrere konti og deres relationer med hinanden. Funktionen til målgruppeindsigt understøtter hierarkier for overordnede og underordnede konti, der allerede findes i kundedata, der er indtaget. Det kan f.eks. være konti fra Dynamics 365 Sales. Disse hierarkier kan konfigureres på siden **Relationer** i målgruppeindsigt under fanen Kontohierarki.
+
+1. Gå til **Data** > **Relationer**.
+1. Vælg fanen **Kontohierarki**.
+1. Vælg **Nyt kontohierarki**. 
+1. Angiv et navn til hierarkiet i ruden **Kontohierarki**. Der oprettes et navn til outputobjektet. Du kan ændre navnet på outputobjektet.
+1. Vælg det objekt, der indeholder kontohierarkiet. Det findes som regel i det samme objekt, som indeholder kontiene.
+1. Vælg **Konto-id** og **Overordnet konto-id** fra det valgte objekt 
+1. Vælg **Gem** for at anvende indstillingerne og færdiggøre kontohierarkiet.
+
 ## <a name="view-relationships"></a>Vise relationer
 
 På siden Relationer vises alle de relationer, der er oprettet. Hver række repræsenterer en relation, som også indeholder oplysninger om kildeobjektet, målobjektet og kardinaliteten. 
@@ -105,7 +119,7 @@ Objektenheden indeholder f.eks. *eCommerce_eCommercePurchases* følgende relatio
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kunde 
 
-En relationssti bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases), på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
+En relationssti bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases) på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
 
 ### <a name="direct-relationship"></a>Direkte relation
 

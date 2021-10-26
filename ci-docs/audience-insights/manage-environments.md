@@ -1,7 +1,7 @@
 ---
 title: Oprette og administrere miljøer
 description: Få mere at vide om, hvordan du tilmelder dig tjenesten, og hvordan du administrerer miljøer.
-ms.date: 07/22/2021
+ms.date: 10/14/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e3f99f8f151aea5f120084382babd5e46e109545a4f63aafc51c3ecb1400cc33
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: ce2fdd435a81bb04148057554c5958e3ab59f125
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034170"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645119"
 ---
 # <a name="manage-environments"></a>Administrere miljøer
 
@@ -26,7 +26,7 @@ Vælg **Miljø**-kontrolelementet i øverste højre hjørne af siden for at skif
 
 :::image type="content" source="media/home-page-environment-switcher.png" alt-text="Skærmbillede af det kontrolelement, der skal ændre miljøer.":::
 
-Administratorer kan [oprette](get-started-paid.md) og administrer miljøer.
+Administratorer kan [oprette](create-environment.md) og administrer miljøer.
 
 ## <a name="edit-an-existing-environment"></a>Redigere et eksisterende miljø
 
@@ -36,23 +36,9 @@ Du kan redigere nogle af oplysningerne i eksisterende miljøer.
 
 2.  Vælg **Rediger**-ikonet.
 
-3. I feltet **Rediger miljø** kan du opdatere miljøets **visningsnavn**, men du kan ikke ændre **område** eller **Type**.
+3. I feltet **Rediger miljø** kan du opdatere miljøindstillingerne.
 
-4. Hvis et miljø er konfigureret til at gemme data i Azure Data Lake Storage, kan du opdatere **Firmanøglen**. Du kan dog ikke ændre **Kontonavn** eller navnet på **Objektbeholder**.
-
-5. Du kan også vælge at opdatere fra en kontonøglebaseret forbindelse til en ressourcebaseret eller en abonnementsbaseret forbindelse. Når det er opgraderet, kan du ikke vende tilbage til kontonøglen efter opdateringen. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Du kan ikke ændre **objektbeholder**-oplysninger, når du opdaterer forbindelsen.
-
-6. Du kan også angive en Microsoft Dataverse URL-adresse til miljøet under **Konfiguration af datadeling med Microsoft Dataverse og aktivering af flere funktioner**. Disse funktioner omfatter datadeling med applikationer og løsninger baseret på Microsoft Dataverse, dataindtagelse fra datakilder i det lokale miljø eller brug af [forudsigelser](predictions.md). Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Microsoft Dataverse -administreret Data Lake.
-
-   > [!NOTE]
-   > - Datadeling med Microsoft Dataverse Administreret Data Lake understøttes ikke i øjeblikket, når du gemmer alle data i din egen Azure Data Lake Storage.
-   > - [Forudsigelse af manglende værdier i et objekt](predictions.md) og PowerBI Embedded-rapporter i målgruppeindsigt (hvis de er aktiveret i dit miljø) understøttes i øjeblikket ikke, når du aktiverer datadeling med Microsoft Dataverse-administrerede data lake.
-
-   Når du aktiverer datadeling med Microsoft Dataverse, starter en fuldstændig opdatering af dine datakilder og andre processer. Hvis processer kører, vises indstillingen til aktivering af datadeling med Microsoft Dataverse ikke. Vent på, at disse processer fuldføres eller annulleres, for at du kan dele data. 
-   
-   :::image type="content" source="media/datasharing-with-DataverseMDL.png" alt-text="Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.":::
-   
-   Når du kører processer, f. eks. dataindsættelse eller segmentoprettelse, oprettes der tilsvarende mapper i den lagerkonto, du har angivet ovenfor. Datafiler og model.json-filer oprettes og føjes til de respektive undermapper, afhængigt af den proces du kører.
+Du kan finde flere oplysninger om miljøindstillinger i [Oprette et nyt miljø](create-environment.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopier miljøkonfiguration
 

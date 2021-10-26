@@ -1,7 +1,7 @@
 ---
 title: Eksportér Customer Insights-data til DotDigital
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til DotDigital.
-ms.date: 03/03/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f09be0dfa599c1ef7cf0055b7ce1df8784cf447ada64b56bc7543c214f9a5b99
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 3e3a79603f9f5746ee176d3d4299a30510c7459e
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7034629"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618376"
 ---
 # <a name="export-segments-to-dotdigital-preview"></a>Eksporter segmenter til DotDigital (forhåndsversion)
 
@@ -22,17 +22,17 @@ Eksportér segmenter af Unified-kundeprofiler til DotDigital-adressekartotekerne
 
 ## <a name="prerequisites-for-a-connection"></a>Forudsætninger for en forbindelse
 
--   Du har en [DotDigital-konto](https://dotdigital.com/) og tilsvarende administratorlegitimationsoplysninger.
+-   Du har en [DotDigital-konto](https://dotdigital.com/) og har oprettet en [API-bruger](https://support.dotdigital.com/hc/articles/115001718730-How-do-I-create-an-API-user). Du skal bruge API-brugerlegitimationsoplysningerne til at oprette forbindelse
 -   Der findes eksisterende adressekartoteker i DotDigital og de tilsvarende id'er. Id kan findes i URL-adressen, når du vælger og åbner et adressekartotek. Du kan finde flere oplysninger i [DotDigital-adressekartoteker](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book).
 -   Du har [konfigureret segmenter](segments.md)-tilladelser i målgruppen Insights.
 -   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Op til 1 million profiler pr. eksport til DotDigital.
+- Op til 1 millioner kundeprofiler pr. eksport til DotDigital.
 - Eksport til DotDigital er begrænset til segmenter.
-- Eksport af segmenter med det samlede antal 1 million profiler kan tage op til tre timer på grund af begrænsninger på udbydersiden. 
-- Antallet af profiler, du kan eksportere til DotDigital, er afhængige og begrænsede i kontrakten med DotDigital.
+- Eksport af segmenter med i alt 1 million kundeprofiler kan tage op til 3 timer på grund af begrænsninger på udbydersiden. 
+- Antallet af kundeprofiler, du kan eksportere til DotDigital, er begrænset og afhænger af din kontrakt med DotDigital.
 
 ## <a name="set-up-connection-to-dotdigital"></a>Konfigurer forbindelsen til DotDigital
 
@@ -44,7 +44,7 @@ Eksportér segmenter af Unified-kundeprofiler til DotDigital-adressekartotekerne
 
 1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Angiv **DotDigital-brugernavn og adgangskode**.
+1. Angiv **DotDigital API-brugernavn og -adgangskode**. 
 
 1. Angiv dit **[DotDigital-adressekartoteks-id](https://support.dotdigital.com/hc/articles/212211968-Creating-an-address-book)**.
 
@@ -67,7 +67,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 1. Vælg en forbindelse i sektionen DotDigital i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
 
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Gentag de samme trin for andre valgfrie felter, f. eks. **fornavn**, **Efternavn**, **Fulde navn**, **Køn** og **Postnummer**.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Gentag de samme trin for andre valgfrie felter, f. eks. **fornavn**, **Efternavn**, **Fulde navn**, **Køn** og **Postnummer**.
 
 1. Vælg de segmenter, du vil eksportere. Du kan eksportere op til 1 million kundeprofiler i alt til DotDigital.
 

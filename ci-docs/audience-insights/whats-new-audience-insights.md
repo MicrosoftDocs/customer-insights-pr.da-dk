@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: fcc45c24e9d89516dba9964ee16f57caf439eff0
-ms.sourcegitcommit: 2abe9b661b8c3c01e9730c629e383402e3f6a655
+ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
+ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/31/2021
-ms.locfileid: "7465198"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "7606053"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheder i målgruppen Insights-funktioner i Dynamics 365 Customer Insights
 
@@ -26,6 +26,20 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2021-updates"></a>Opdateringer fra september 2021
+
+Opdateringerne i september 2021 indeholder nye funktioner, ydeevneopgraderinger og fejlrettelser.
+
+### <a name="activities"></a>Aktiviteter
+
+- **Forbedringer af aktivitetstidslinjen** Vi har udvidet filtrene til aktivitetstidslinjen på kundeprofiler. Derudover kan du bruge den nye filterrude til at filtrere efter aktivitetstype og dato. Datoer kan filtreres ved hjælp af forskellige betingelser. Du kan finde flere oplysninger i [Se aktivitetstidslinjer for kundeprofiler](activities.md#view-activity-timelines-on-customer-profiles).
+
+### <a name="relationships"></a>Relationer
+
+- **Understøttelse af multi-hop-relation** Brug multi-hop-relationer under konfiguration af aktiviteter og definition af relationer mellem objekter. Multi-hop-relationer bruger et midlertidigt objekt til at forbinde to objekter. Når du konfigurerer en aktivitet, kan du bruge en multi-hop-relation til at knytte aktivitetsobjektet til et midlertidigt objekt og derefter til et kundeobjekt. Du kan kombinere multi-hop-relationer og relationer med flere forbindelser. Du kan finde flere oplysninger under [Multi-hop-relation](relationships.md#multi-hop-relationship).
+
+- **Understøttelse af relation med flere forbindelser** Brug relationer med flere forbindelser under konfiguration af aktiviteter og definition af relationer mellem objekter. Relationer med flere forbindelser relaterer et kildeobjekt til mere end ét objekt. Når du konfigurerer en aktivitet, kan du bruge en relation med flere forbindelser til at knytte aktivitetsobjektet til mere end ét kundeobjekt. Du kan kombinere relationer med flere forbindelser med multi-hop-relationer. Du kan finde flere oplysninger under [Relation med flere forbindelser](relationships.md#multi-path-relationship).
 
 ## <a name="august-2021-updates"></a>Opdateringer fra august 2021
 

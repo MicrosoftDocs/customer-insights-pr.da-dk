@@ -1,7 +1,7 @@
 ---
 title: Eksporter Customer Insights-data til ActiveCampaign
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til ActiveCampaign.
-ms.date: 06/29/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 14d420205a5c60d471ef21a04ab6d02295a65ca8fd5205ba782a300703b06102
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 4fbdd5a51a3df35d31ad072eef64d20ee967d7ee
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032202"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7618146"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Eksporter segmenter til ActiveCampaign (forhåndsversion)
 
@@ -28,9 +28,9 @@ Eksporter segmenter af samlede kundeprofiler til ActiveCampaign, og brug dem til
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 1 million profiler pr. eksport til ActiveCampaign, og det kan tage op til 90 minutter at gennemføre.
+- Du kan eksportere op til 1 million kundeprofiler pr. eksport til ActiveCampaign, og det kan tage op til 90 minutter at fuldføre den.
 - Eksport til ActiveCampaign er begrænset til segmenter.
-- Antallet af profiler, du kan eksportere til ActiveCampaign, afhænger af kontrakten med ActiveCampaign.
+- Antallet af kundeprofiler, du kan eksportere til ActiveCampaign, afhænger af din kontrakt med ActiveCampaign.
 
 ## <a name="set-up-connection-to-activecampaign"></a>Konfigurer forbindelsen til ActiveCampaign
 
@@ -64,7 +64,7 @@ Du kan konfigurere en eksport, hvis du har adgang til en forbindelse af denne ty
 
 1. Angiv din [**Id for ActiveCampaign-liste**](https://help.activecampaign.com/hc/articles/360000030559-How-to-create-a-list-in-ActiveCampaign).    
 
-3. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det kræves, at der eksporteres segmenter til ActiveCampaign. Du kan også eksportere Fornavn, Efternavn og Telefon for at oprette mere personlige e-mails. Vælg Tilføj attribut for at tilknytte disse felter.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det kræves, at der eksporteres segmenter til ActiveCampaign. Du kan også eksportere Fornavn, Efternavn og Telefon for at oprette mere personlige e-mails. Vælg Tilføj attribut for at tilknytte disse felter.
 
 1. Vælg **Gem**.
 

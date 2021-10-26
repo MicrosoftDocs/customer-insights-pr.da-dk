@@ -1,7 +1,7 @@
 ---
 title: Segmenter i målgruppeindsigt
 description: Oversigt over segmenter, og hvordan de oprettes og administreres.
-ms.date: 05/03/2021
+ms.date: 09/30/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: f1003b53b17e3ba2c37c0f2d94b89f7e97c2b6f10e28b7bbe93160e4c7f08d54
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036366"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617333"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
@@ -26,11 +26,19 @@ Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* a
 
 Der er flere måder, du kan oprette et nyt segment på: 
 
-- Komplekst segment med segmentgenerator: [Tomt segment](segment-builder.md#create-a-new-segment)
-- Simple segmenter med én operator: [Hurtigt segment](segment-builder.md#quick-segments)
-- AI-baserede måder at finde lignende kunder på: [Lignende kunder](find-similar-customer-segments.md)
-- AI-baserede forslag ud fra målinger eller attributter: [Foreslåede segmenter til forbedring af målingerne](suggested-segments.md)
-- Forslag baseret på aktiviteter: [Foreslåede segmenter baseret på kundeaktivitet](suggested-segments-activity.md)
+# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+
+- Komplekst segment med segmentgenerator: [Byg din egen](segment-builder.md#create-a-new-segment) 
+- Simple segmenter med én operator: [Hurtigt segment](segment-builder.md#quick-segments) 
+- AI-baserede måder at finde lignende kunder på: [Lignende kunder](find-similar-customer-segments.md) 
+- AI-baserede forslag ud fra målinger eller attributter: [Foreslåede segmenter til forbedring af målingerne](suggested-segments.md) 
+- Forslag baseret på aktiviteter: [Foreslåede segmenter baseret på kundeaktivitet](suggested-segments-activity.md) 
+
+# <a name="business-accounts-b2b"></a>[Virksomhedskonti (B2B)](#tab/b2b)
+
+- Komplekst segment med segmentgenerator: [Byg din egen](segment-builder.md#create-a-new-segment)
+
+---
 
 ## <a name="manage-existing-segments"></a>Administrere eksisterende segmenter
 
@@ -70,9 +78,9 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
 
 1. Vælg **Administrer eksport** fra rullelisten Handlinger.
 
-1. Siden **Eksporter (forhåndsversion) for segment** åbnes. Alle konfigurerede eksporter vises grupperet efter eksporter, der indeholder det aktuelle segment eller ikke indeholder det.
+1. Siden **Eksporter (forhåndsversion) for segment** åbnes. Du kan se alle konfigurerede eksporter grupperet efter, om de indeholder det aktuelle segment eller ej.
 
-   1. Hvis du vil føje det valgte segment til en eksport, skal du markere eksporten på listen og vælge **Tilføj segment**.
+   1. Hvis du vil føje det valgte segment til en eksport, skal du **redigere** den pågældende eksport for at vælge det tilknyttede segment og derefter gemme. I miljøer for individuelle kunder kan du i stedet vælge eksporten på listen og vælge **Tilføj segment** for at opnå det samme resultat.
 
    1. Hvis du vil oprette en ny eksport med det valgte segment, skal du vælge **Tilføj eksport**. Du kan finde flere oplysninger om oprettelse af eksport i [Konfigurere en ny eksport](export-destinations.md#set-up-a-new-export).
 

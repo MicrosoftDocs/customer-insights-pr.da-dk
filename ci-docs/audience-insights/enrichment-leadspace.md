@@ -1,32 +1,32 @@
 ---
 title: Forhøjelse af virksomhedsprofiler med tredjeparts Leadspace
 description: Generelle oplysninger om Leadspace-tilsætning af tredjepart.
-ms.date: 04/09/2021
+ms.date: 09/30/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
-author: kishorem-MS
-ms.author: kishorem
+author: jodahlMSFT
+ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 34b73b37670ed45e2c31ea164c0788b793bee433829ce21317c83903f3fca1fe
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
+ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7031696"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "7617344"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Forbedring af virksomhedsprofiler med Leadspace (prøveversion)
 
-Leadspace er en videnskabelig datavirksomhed, der leverer en B2B-kundedataplatform. Den gør det muligt for kunder, der har en samlet kundeprofil for virksomheder, at forbedre deres data. Forbedringer omfatter flere attributter, herunder firmastørrelse, lokation, branche og meget mere.
+Leadspace er en videnskabelig datavirksomhed, der leverer en B2B-kundedataplatform. Det muliggør miljøer med samlede kundeprofiler baseret på firmaer at få forbedret deres data. Du kan forbedre *Kundeprofiler* med attributter som firmastørrelse, placering eller branche. Du kan forbedre *Kontaktprofiler* med attributter som f.eks. titel, karakter eller mailbekræftelse.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
 Hvis du vil konfigurere Leadspace, skal følgende forudsætninger være opfyldt:
 
 - Du har en aktiv Leadspace-licens.
-- Du har [samlede kundeprofiler](customer-profiles.md) til virksomheder.
-- En Leadspace-forbindelse er allerede konfigureret af en administrator, eller du har [administrator](permissions.md#administrator)-tilladelser og den "permanente nøgle" (kaldes også **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/products/leadspace-on-demand/) direkte for at få oplysninger om produktet.
+- Du har [samlede kundeprofiler](customer-profiles.md) baseret på firmaer.
+- En Leadspace-forbindelse er allerede konfigureret af en administrator, eller du har [administrator](permissions.md#administrator)-tilladelser og den "permanente nøgle" (kaldes også **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkte for at få oplysninger om produktet.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
@@ -46,10 +46,14 @@ Hvis du vil konfigurere Leadspace, skal følgende forudsætninger være opfyldt:
 
 1. Vælg **Næste**, og definer, hvilke felter fra dine samlede profiler der bruges til at søge efter tilsvarende virksomhedsdata fra Leadspace. Feltet **Firmanavn** er obligatorisk. Hvis du vil opnå en større overensstemmelse, kan du tilføje op til to andre felter, **Virksomheds-websteder** og **Virksomhedsplacering**.
 
-   :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-felttilknytningsruden.":::
+   :::image type="content" source="media/enrichment-leadspace-mapping.png" alt-text="Leadspace-felttilknytningsrude.":::
 
 1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
 
+1. Markér afkrydsningsfeltet, hvis du har *Kontaktprofiler*, du vil forbedre. Målgruppeindsigt tilknytter automatisk de påkrævede felter.
+
+   :::image type="content" source="media/enrichment-leadspace-contacts.png" alt-text="Forbedring af kontaktpersonposter i Leadspace.":::
+ 
 1. Angiv et navn til den forbedring, du udvælger, og angiv **Vælg forbedring**, når du har gennemset dine valg.
 
 
@@ -81,7 +85,8 @@ Du kan finde flere oplysninger under [Leadspace-API'er](https://support.leadspac
 
 ## <a name="next-steps"></a>Næste trin
 
-Byg oven over dine forbedrede kundedata. Opret [segmenter](segments.md) og [målpunkter](measures.md), og [eksporter endda dataene](export-destinations.md) for at levere personlige oplevelser til dine kunder.
+
+[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 
