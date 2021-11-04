@@ -1,7 +1,7 @@
 ---
 title: Opret segmenter med segmentgenerator
 description: Opret segmenter med kunder for at gruppere dem på baggrund af forskellige attributter.
-ms.date: 09/07/2021
+ms.date: 10/18/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: e089c475234935742fc42fc3f2bada47711305bf
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: bd01edfe7d63d6c7712a808224171f1bb8ad8a2b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622996"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673543"
 ---
 # <a name="create-segments"></a>Oprette segmenter
 
@@ -23,6 +23,7 @@ Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede obj
 > [!TIP]
 > - Hurtige segmenter understøttes kun i miljøer for **individuelle kunder**.    
 > - Segmenter, der er baseret på **individuelle kunder**, indeholder automatisk tilgængelige kontaktoplysninger for segmentmedlemmer. I miljøer for **forretningskonti** er segmenter baseret på konti (virksomheder eller datterselskaber). Hvis du vil medtage kontaktoplysninger i et segment, skal du bruge funktionen **Projektattributter** i segmentgeneratoren.
+>    - Kontrollér, at kontaktpersonens datakilder er [semantisk knyttet til objektet ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
 ## <a name="segment-builder"></a>Segmentgenerator
 
@@ -52,7 +53,7 @@ Eksemplet ovenfor illustrerer segmenteringsfunktionaliteten. Vi har defineret et
 
 Der er flere måder, du kan oprette et nyt segment på. I dette afsnit beskrives, hvordan du kan opbygge dit eget segment fra bunden. Du kan også oprette et *hurtigt segment*, der er baseret på eksisterende objekter, eller gøre brug af modeller til maskinel indlæring for at få *forslag til segmenter*. Du kan finde flere oplysninger i [Oversigt over segmenter](segments.md).
 
-Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et segment som et inaktivt segment. Når du har fuldført segmentkonfigurationen, skal du køre den for at aktivere segmentet. Du kan også ***Aktivere** _ et segment fra siden _ *Alle segmenter**.
+Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et segment som et inaktivt segment. Når du har fuldført segmentkonfigurationen, skal du køre den for at aktivere segmentet. Du kan også **Aktivere** et segment fra siden **Alle segmenter**.
 
 1. Gå til siden **Segmenter**.
 
@@ -86,17 +87,25 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
 
    Når du bruger ELLER-operatoren, skal alle betingelser være baseret på objekter, der er inkluderet i relationsstien.
 
-   - Du kan oprette flere regler for at oprette forskellige sæt kundeposter. Du kan kombinere grupper for at medtage de kunder, der kræves til din sag. Vælg **Tilføj regel** for at oprette en ny regel. Hvis du ikke kan inkludere og objektet i en regel på grund af den angivne relationssti, skal du oprette en ny regel for at vælge attributformularen.
+   - Du kan oprette flere regler for at oprette forskellige sæt kundeposter. Du kan kombinere grupper for at medtage de kunder, der kræves til din sag. Vælg **Tilføj regel** for at oprette en ny regel. Hvis du ikke kan inkludere og have et objekt i en regel på grund af den angivne relationssti, skal du oprette en ny regel for at vælge attributformularen.
 
       :::image type="content" source="media/segment-rule-grouping.png" alt-text="Føj en ny regel til et segment, og vælg den indstillede operator.":::
 
    - Vælg en af de indstillede operatorer: **Foreningsmængde**, **Overlapning** eller **Undtagen**.
 
       - **Foreningsmængde** forener de to grupper.
-      - **Overlapning** overlapper de to grupper. Kun data, der *er fælles* for begge grupper, bevares i den samlede gruppe.
-      - **Undtagen** kombinerer de to grupper. Kun data i gruppe A, der *ikke er fælles* med data i gruppe B, bevares.
+      - **Overlapning** overlapper de to grupper. Kun data, *der er fælles* for begge grupper, forbliver i den samlede gruppe.
+      - **Undtagen** kombinerer de to grupper. Kun data i gruppe A, *der ikke er fælles* for data i gruppe B, bevares.
 
-1. Som standard opretter segmenter det outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet.  
+1. Som standard opretter segmenter det outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet. 
+
+   > [!IMPORTANT]
+   > I forbindelse med segmenter baseret på forretningskonti skal der medtages detaljer om en eller flere kontakter for hver konto fra objektet *ContactProfile* i dette segment, så segmentet kan aktiveres eller eksporteres til de steder, hvor der kræves kontaktoplysninger. Du kan finde flere oplysninger om objektet *ContactProfile* under [Semantiske tilknytninger](semantic-mappings.md).
+   > Et eksempelresultat for et segment, der er baseret på forretningskonti med projektattributter for kontakter, kunne se sådan ud: 
+   >
+   > |Id  |Firmanavn  |Indtægt  |Navn på kontakt  | Kontaktrolle|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100.000 | [Abbie Moss, Ruth Soto]  | [CEO, projektstyring]
 
    :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på projicerede attributter, der er valgt i sideruden, og som skal føjes til outputobjektet.":::
   
@@ -107,13 +116,14 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
    > - Hvis den attribut, du vil projektere, er mere end ét hop væk fra objektet *Kunde*, som defineret af relationen, skal den pågældende attribut bruges i alle regler i den segmentforespørgsel, du er ved at oprette. 
    > - Hvis den attribut, du vil projektere, kun er ét hop væk fra objektet *Kunde*, skal den pågældende attribut ikke nødvendigvis findes i alle regler i den segmentforespørgsel, du er ved at oprette. 
    > - **Projekterede attributter** anvendes, når der bruges faste operatorer.
-   > - I forbindelse med segmenter baseret på forretningskonti skal der medtages detaljer om en eller flere kontakter for hver konto i dette segment, så segmentet kan aktiveres eller eksporteres til de steder, hvor der kræves kontaktoplysninger.
 
 1. Før du gemmer og kører segmentet, skal du vælge **Rediger detaljer** ud for segmentnavnet. Angiv et navn til segmentet, og opdater det foreslåede **Navn på outputobjekt** for segmentet. Du kan også føje en beskrivelse til målgruppen.
 
 1. Vælg **Kør** for at gemme segmentet, aktivér det, og begynd at behandle dit segment på baggrund af alle regler og betingelser. Ellers gemmes det som et inaktivt segment.
-
+   
 1. Vælg **Tilbage til segmenter** for at gå tilbage til siden **Segmenter**.
+
+1. Som standard oprettes segmentet som en dynamisk segment. Det betyder, at segmentet opdateres, når systemet opdateres. Hvis du vil [standse den automatiske opdatering](segments.md#manage-existing-segments), skal du vælge indstillingen **Gør statisk**. Statiske segmenter kan kun [opdateres manuelt](segments.md#refresh-segments) til enhver tid.
 
 > [!TIP]
 > - Segmentgeneratoren foreslår ikke gyldige værdier fra objekter, når operatorerne angives for betingelserne. Du kan gå til **Data** > **Objekter** og hente objektdataene for at se, hvilke værdier der er tilgængelige.

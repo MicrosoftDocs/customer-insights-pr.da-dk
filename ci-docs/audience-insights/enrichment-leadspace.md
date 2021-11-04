@@ -9,16 +9,16 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: c57eb0ceb50e3b778acac72a4bbfd733a5b0c401
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 685b1683b0c90eab04b130552d2cb23a8ab7a235
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617344"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673223"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Forbedring af virksomhedsprofiler med Leadspace (prøveversion)
 
-Leadspace er en videnskabelig datavirksomhed, der leverer en B2B-kundedataplatform. Det muliggør miljøer med samlede kundeprofiler baseret på firmaer at få forbedret deres data. Du kan forbedre *Kundeprofiler* med attributter som firmastørrelse, placering eller branche. Du kan forbedre *Kontaktprofiler* med attributter som f.eks. titel, karakter eller mailbekræftelse.
+Leadspace er et databaseret firma, der leverer en B-til-B-kundedataplatform. Det muliggør miljøer med samlede kundeprofiler baseret på firmaer at få forbedret deres data. Du kan forbedre *Kundeprofiler* med attributter som firmastørrelse, placering eller branche. Du kan forbedre *Kontaktprofiler* med attributter som f.eks. titel, karakter eller mailbekræftelse.
 
 ## <a name="prerequisites"></a>Forudsætninger
 

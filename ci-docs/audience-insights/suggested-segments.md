@@ -1,7 +1,7 @@
 ---
 title: Maskinel indlæring drevet af foreslåede segmenter
 description: Lad maskinel indlæring hjælpe dig med at finde nye og interessante segmenter baseret på kundeattributter.
-ms.date: 02/01/2021
+ms.date: 10/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 manager: shellyha
-ms.openlocfilehash: f743853826cee0427618abccfba27f10016a0f05cc674f5f7da2210366d60305
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 44e46bb650b6f090afcab3bc940d03a304e9c375
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028353"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673176"
 ---
 # <a name="suggested-segments-preview"></a>Foreslåede segmenter (prøveversion)
 
@@ -23,7 +23,7 @@ Oplev interessante segmenter af dine kunder ved hjælp af en AI-model. Denne mas
 > [!NOTE]
 > Den foreslåede segmentfunktion bruger automatiserede midler til at evaluere data og foretage forudsigelser baseret på disse data og har derfor evnen til at blive brugt som en metode til profilering, da dette udtryk er defineret i den generelle databeskyttelsesforordning ("GDPR"). Din brug af denne funktion til at behandle data kan være underlagt GDPR eller andre love eller bestemmelser. Du er ansvarlig for at sikre, at brugen af Dynamics 365 Customer Insights, herunder denne funktion, overholder alle gældende love og bestemmelser, herunder lovgivning vedrørende beskyttelse af personlige oplysninger, personlige data, biometriske data, databeskyttelse og fortrolighed i kommunikationen.
 
-:::image type="content" source="media/suggested-segments-details.png" alt-text="Siden med foreslåede segmenter i Customer Insights, der viser oplysninger om et forslag i en siderude.":::
+:::image type="content" source="media/suggested-segments.png" alt-text="Foreslået side med segmenter, der viser detaljer om et forslag i en siderude.":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>Foreslåede segmenter for at forbedre dine KPI'er
 
@@ -49,7 +49,7 @@ Målgruppeforslag er forskellige, hvis du vælger en numerisk attribut eller en 
 
 Med en numerisk attribut som *årlig indkomst* eller *medlemskabsperiode* som den primære attribut foreslår systemet segmenter, der har en højere eller lavere gennemsnitsværdi af den numeriske attribut sammenlignet med alle kunder.
 
-En kategorisk attribut som *kundetilfredshed* som den primære attribut resulterer i foreslåede segmenter, der har en højere eller lavere procentdel af kunder, der tilhører en bestemt kategori, sammenlignet med procentdelen af alle kunder, der tilhører samme kategori. For eksempel vælges *kundetilfredshed* som den primære attribut og består af tre kategorier (*Lav*, *Mellem* og *Høj*). For hver kategori foreslås segmenter, der har en betydeligt højere eller lavere procentdel af kunder, der tilhører den pågældende kategori, sammenlignet med andelen af alle kunder i samme kategori. Hvis 22 % af alle kunder har en *høj* tilfredshed, vil kun segmenter, der har en betydeligt højere eller lavere andel af kunder med en *høj* tilfredshed sammenlignet med 22 %, blive foreslået for den pågældende kategori. På samme måde vil der blive foreslået segmenter for hver af de andre kategorier (*Lav* og *Mellem*), hvis de er statistisk signifikante.
+En kategorisk attribut som *kundetilfredshed* som den primære attribut resulterer i foreslåede segmenter, der har en højere eller lavere procentdel af kunder, der tilhører en bestemt kategori, sammenlignet med procentdelen af alle kunder, der tilhører samme kategori. For eksempel vælges *kundetilfredshed* som den primære attribut og består af tre kategorier (*Lav*, *Mellem* og *Høj*). For hver kategori foreslås det, at segmenterne har en højere eller lavere procentdel af kunder, der tilhører den pågældende kategori, i forhold til procentdelen af alle kunder i samme kategori. Hvis 22 % af alle kunder har *Høj* tilfredshed, foreslås der kun de segmenter, der har en højere eller lavere procentdel af kunder med en *høj* tilfredshed i forhold til 22 %, for den pågældende kategori. På samme måde vil der blive foreslået segmenter for hver af de andre kategorier (*Lav* og *Mellem*), hvis de er statistisk signifikante.
 
 > [!NOTE]
 > I øjeblikket understøtter vi kun primære kategoriske attributter, der har op til 10 kategorier. Hvis du vil se målgruppeforslag baseret på en primær attribut med mere end 10 kategorier, anbefales det at gruppere nogle af kategorierne for at reducere antallet af kategorier til 10 eller færre. Denne begrænsning gælder kun for primære attributter. For at påvirke kategoriske egenskaber understøtter vi i øjeblikket maksimalt 100 kategorier.
@@ -77,7 +77,7 @@ En kategorisk attribut som *kundetilfredshed* som den primære attribut resulter
 
 Når AI-modellen har genereret forslagene, finder du dem angivet på **Segmenter** > **Forslag (prøveversion)**.
  
-Vælg et foreslået segment for at gennemgå detaljerne i dette forslag, herunder en sammenligning af gennemsnitsværdien og antallet af segmentmedlemmer. Du kan også gennemse de attributværdier eller -regler, som AI-modellen lærte at foreslå den valgte målgruppe.
+Vælg et foreslået segment for at gennemgå detaljerne i dette forslag. Du kan også gennemse de attributværdier eller -regler, som AI-modellen lærte at foreslå den valgte målgruppe.
 
 ## <a name="save-a-suggestion-as-a-segment"></a>Gemme et forslag som et segment
 

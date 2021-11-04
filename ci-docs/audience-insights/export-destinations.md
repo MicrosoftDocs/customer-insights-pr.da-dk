@@ -10,12 +10,12 @@ author: pkieffer
 ms.author: philk
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 45a4c964e9810640c764357a72b9794f4fda89f4
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: 61e95e47489495e367498547687b0065169519e6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7623094"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673316"
 ---
 # <a name="exports-preview-overview"></a>Eksportoversigt (forhåndsversion)
 
@@ -32,14 +32,14 @@ Der findes to hovedtyper af eksport:
 
 ### <a name="export-segments"></a>Eksportere segmenter
 
-**Eksportere segmenter i miljøer for forretningskonti (B2B) eller individuelle kunder (B2C)**  
-De fleste eksportmuligheder understøtter begge typer miljøer. Der er særlige krav ved eksport af segmenter til forskellige destinationssystemer. Et segmentmedlem, kundeprofilen, indeholder generelt kontaktoplysninger. Dette er normalt tilfældet for segmenter, der er baseret på individuelle kunder (B2C), men det er ikke nødvendigvis tilfældet for segmenter baseret på forretningskonti (B2B). 
+**Eksportere segmenter i miljøer for forretningskonti (B-til-B) eller individuelle kunder (B-til-C)**  
+De fleste eksportmuligheder understøtter begge typer miljøer. Der er særlige krav ved eksport af segmenter til forskellige destinationssystemer. Et segmentmedlem, kundeprofilen, indeholder generelt kontaktoplysninger. Dette er normalt tilfældet for segmenter, der er baseret på individuelle kunder (B-til-C), men det er ikke nødvendigvis tilfældet for segmenter baseret på forretningskonti (B-til-B). 
 
-**Segmenteksportmiljøer for forretningskonti (B2B)**  
+**Segmenteksportmiljøer for forretningskonti (B-til-B)**  
 - Segmenter i konteksten af miljøer for forretningskonti bygger på *firma*-objektet. Hvis du vil eksportere firmasegmenter, som de er, skal destinationssystemet understøtte firmasegmenter. Det er tilfældet for [LinkedIn](export-linkedin-ads.md), når du vælger **firma**-indstillingen, mens du definerer eksporten.
 - Alle andre destinationssystemer kræver felter fra kontaktobjektet. Hvis du vil sikre, at firmasegmenter kan hente data fra relaterede kontakter, skal din segmentdefinition projicere attributter for kontaktobjektet. Få mere at vide om, hvordan du [konfigurerer segmenter og projektattributter](segment-builder.md).
 
-**Segmenteksport i miljøer for individuelle kunder (B2C)**  
+**Segmenteksport i miljøer for individuelle forbrugere (B-til-C)**  
 - Segmenter i konteksten af miljøer for individuelle kunder bygger på objektet *samlet kundeprofil*. Alle de segmenter, der opfylder kravene i destinationssystemerne (f.eks. en mailadresse), kan eksporteres.
 
 **Begrænsninger for segmenteksport**  

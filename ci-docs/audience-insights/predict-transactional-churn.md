@@ -1,7 +1,7 @@
 ---
 title: Forudsigelse af transaktionsafgang
 description: Forudsig, om en kunde kan risikere ikke længere at købe virksomhedens produkter eller tjenester.
-ms.date: 10/11/2021
+ms.date: 10/20/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ac484f74e388aa23422a89e25dabb555f2ad4118
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: 9fa6a044989d523e1068aff24266cfb475632736
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643370"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673038"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Forudsigelse af transaktionsafgang (forhåndsversion)
 
@@ -28,6 +28,32 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
 > Prøv selvstudiet til en forudsigelse af transaktionsafgang med eksempeldata: [Eksempelvejledning til forudsigelse af transaktionsafgang (forhåndsversion)](sample-guide-predict-transactional-churn.md).
 
 ## <a name="prerequisites"></a>Forudsætninger
+
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
+
+- Mindst [bidragydertilladelser](permissions.md) i Customer Insights.
+- Forretningsviden for at forstå, hvad afgang betyder for din virksomhed. Vi understøtter timebaserede definitioner for afgang, hvilket vil sige, at en kunde anses for at have forladt dig efter en periode uden køb.
+- Data om dine transaktioner/køb og deres oversigt:
+    - Transaktions-id'er for at skelne mellem køb og transaktioner.
+    - Kunde-id'er, der stemmer overens med transaktioner til dine kunder.
+    - Datoer for posteringshændelser, som definerer de datoer, transaktionen forekom i.
+    - Semantisk dataskema for køb/transaktioner kræver følgende oplysninger:
+        - **Transaktions-id**: Et entydigt id for et køb eller en transaktion.
+        - **Transaktionsdato**: Købs- eller transaktionsdato.
+        - **Værdi af transaktionen**: Valutaen/den numeriske værdi af transaktionen/varen.
+        - (Valgfrit) **Entydigt produkt-id**: Id for det produkt eller den tjeneste, du har købt, hvis dataene befinder sig på linjeelementniveau.
+        - (Valgfrit) **Angiver, om denne transaktion var en returnering**: Et sandt/falsk-felt, der identificerer, om transaktionen var en returvare eller ej. Hvis **Værdi for transaktion** er negativ, bruger vi også disse oplysninger til at udlede et returvare.
+- (Valgfri) Data om kundeaktiviteter:
+    - Aktivitets-id'er, der skal skelne mellem aktiviteter af samme type.
+    - Kunde-id'er, der knytter aktiviteter til dine kunder.
+    - Aktivitetsoplysninger, der indeholder navnet på og datoen for aktiviteten.
+    - Det semantiske dataskema for kundeaktiviteter omfatter:
+        - **Primær nøgle:** Et entydigt id for en aktivitet. F.eks. et webstedbesøg eller en forbrugspost, der viser, at kunden har forsøgt et eksempel af produktet.
+        - **Tidsstempel:** Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle.
+        - **Hændelse:** Navnet på den hændelse, du vil bruge. Et felt, der kaldes "UserAction" i en forretning, kan f. eks. være en kupon, der bruges af kunden.
+        - **Detaljer:** Detaljerede oplysninger om hændelsen. Et felt, der kaldes "CouponValue" i en forretning, kan f. eks. være valutaværdien af en kupon.
+
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
 - Mindst [bidragydertilladelser](permissions.md) i Customer Insights.
 - Forretningsviden for at forstå, hvad afgang betyder for din virksomhed. Vi understøtter timebaserede definitioner for afgang, hvilket vil sige, at en kunde anses for at have forladt dig efter en periode uden køb.
@@ -51,7 +77,7 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
         - **Hændelse:** Navnet på den hændelse, du vil bruge. Et felt, der kaldes "UserAction" i en forretning, kan f. eks. være en kupon, der bruges af kunden.
         - **Detaljer:** Detaljerede oplysninger om hændelsen. Et felt, der kaldes "CouponValue" i en forretning, kan f. eks. være valutaværdien af en kupon.
 - (Valgfrit) Data om dine kunder:
-    - Disse data bør kun bruges sjældent og skal justeres i forhold til mere statiske attributter for at sikre, at modellen fungerer bedst.
+    - Disse data skal justeres i forhold til mere statiske attributter for at sikre, at modellen fungerer bedst.
     - Det semantiske dataskema til kundedata omfatter:
         - **Kunde-id:** Et entydigt id for en kunde.
         - **Oprettelsesdato:** Den dato, hvor kunden oprindeligt blev tilføjet.
@@ -59,6 +85,9 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
         - **Land:** Kundens land.
         - **Branche:** En kundes branchetype. Et felt, der f.eks. kaldes "Branche" i en kafferister, kan angive, om kunden var detail.
         - **Klassificering:** Kategorisering af en kunde i din virksomhed. Et felt, der f.eks. kaldes "ValueSegment" i en kafferister, kan være kundeniveauet baseret på kundens størrelse.
+
+---
+
 - Forslåede datakarakteristika:
     - Tilstrækkelige historiske data: Transaktionsdata for mindst det dobbelte af det valgte tidsvindue. Helst to til tre års transaktionshistorik. 
     - Flere køb pr. kunde: Ideelt mindst to transaktioner pr. kunde.
@@ -114,6 +143,32 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
 
 1. Vælg **Næste**.
 
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
+
+### <a name="add-additional-data-optional"></a>Tilføje yderligere data (valgfrit)
+
+Konfigurer relationen fra kundeaktivitetsobjektet til *Kunde*-objektet.
+
+1. Vælg det felt, der identificerer kunden i objektet kundeaktivitetsoversigt. Det kan relateres direkte til det primære kunde-id for *Kunde*-objektet.
+
+1. Vælg det objekt, der er det primære *Kunde*-objekt.
+
+1. Angiv et navn, der beskriver relationen.
+
+#### <a name="customer-activities"></a>Kundeaktiviteter
+
+1. Du kan også vælge **Tilføj data** til **Kundeaktiviteter**.
+
+1. Vælg den semantiske aktivitetstype, der indeholder de data, du vil bruge, og vælg derefter en eller flere aktiviteter i sektionen **Aktiviteter**.
+
+1. Vælg en aktivitetstype, der svarer til den type kundeaktivitet, du konfigurerer. Vælg **Opret ny**, og vælg en tilgængelig aktivitetstype, eller opret en ny type.
+
+1. Vælg **Næste** og derefter **Gem**.
+
+1. Hvis du har andre kundeaktiviteter, som du vil medtage, skal du gentage trinnene ovenfor.
+
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
+
 ### <a name="select-prediction-level"></a>Vælge forudsigelsesniveau
 
 De fleste forudsigelser oprettes på kundeniveau. I visse situationer er det måske ikke så detaljeret, at det opfylder forretningsbehovene. Du kan f.eks. bruge denne funktion til at forudsige afgang i en forgrening for en kunde i stedet for kunden som en helhed.
@@ -122,9 +177,9 @@ De fleste forudsigelser oprettes på kundeniveau. I visse situationer er det må
 
 1. Udvid de objekter, du vil vælge det sekundære niveau fra, eller brug søgefilterfeltet til at filtrere de valgte indstillinger.
 
-1. Vælg den attribut, der skal bruges som sekundært niveau, og vælg derefter **Tilføj**
+1. Vælg den attribut, der skal bruges som sekundært niveau, og vælg derefter **Tilføj**.
 
-1. Vælg **Næste**
+1. Vælg **Næste**.
 
 > [!NOTE]
 > De objekter, der er tilgængelige i dette afsnit, vises, fordi de har en relation til det objekt, du vælger i forrige afsnit. Hvis du ikke kan se det objekt, du vil tilføje, skal du kontrollere, at det har en gyldig relation i **Relationer**. Der er kun én til én- og mange-til-én-relationer, der er gyldige for denne konfiguration.
@@ -159,7 +214,7 @@ Konfigurer relationen fra kundeaktivitetsobjektet til *Kunde*-objektet.
 
 1. Vælg **Næste**.
 
-### <a name="provide-an-optional-list-of-benchmark-accounts-business-accounts-only"></a>Angive en valgfri liste over benchmarkkonti (kun forretningskonti)
+### <a name="provide-an-optional-list-of-benchmark-accounts"></a>Angive en valgfri liste over benchmarkkonti
 
 Tilføj en liste over de forretningskunder og konti, du vil bruge som benchmarks. Du får [detaljer om disse benchmarkkonti](#review-a-prediction-status-and-results), herunder deres kundeafgangsscore og de mest betydende funktioner, der har påvirket deres forudsigelse af kundeafgang.
 
@@ -168,6 +223,8 @@ Tilføj en liste over de forretningskunder og konti, du vil bruge som benchmarks
 1. Vælg de kunder, der fungerer som benchmark.
 
 1. Vælg **Næste** for at fortsætte.
+
+---
 
 ### <a name="set-schedule-and-review-configuration"></a>Angive konfiguration for planlægning og evaluering
 
@@ -201,6 +258,25 @@ Tilføj en liste over de forretningskunder og konti, du vil bruge som benchmarks
 1. Vælg de lodrette ellipser ud for den forudsigelse, du vil gennemgå resultaterne for, og vælg **Vis**.
 
    :::image type="content" source="media/model-subs-view.PNG" alt-text="Vis kontrol for at se resultater af en forudsigelse.":::
+
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
+
+1. Der findes tre primære sektioner med data på resultatsiden:
+   - **Træningsmodellens ydeevne**: A, B eller C er mulige scorer. Denne score ydeevnen af forudsigelsen og kan hjælpe dig med at træffe beslutningen om at bruge de resultater, der er gemt i outputobjektet. Scorer bestemmes ud fra følgende regler: 
+        - **A**, når modellen forventes at forudse mindst 50 % af de samlede forudsigelser, og når procentsatsen for præcise forudsigelser for kunder, der er afgået, er større end den oprindelige sats, med mindst 10 %.
+            
+        - **B**, når modellen forventes at forudse mindst 50 % af de samlede forudsigelser, og når procentsatsen for præcise forudsigelser for kunder, der er afgået, er op til 10 % større end den oprindelige sats.
+            
+        - **CB**, når modellen forventes at forudse mindre end 50 % af de samlede forudsigelser, eller når procentsatsen for præcise forudsigelser for kunder, der er afgået, er mindre end den oprindelige sats.
+               
+        - **Oprindelig plan** tager forudsigelsestidsvinduets input for modellen (f. eks. et år), og modellen opretter forskellige brøkdele af tiden ved at dividere den med 2, indtil den er på en måned eller mindre. Disse brøker bruges til at oprette en forretningsregel for kunder, der ikke har købt i denne tidsramme. Disse kunder betragtes som afgået. Den tidsbaserede forretningsregel med den højeste mulighed for at forudse, hvem der sandsynligvis afgår, vælges som oprindelig plan.
+            
+    - **Sandsynlighed for afgang (antal kunder)**: Kundegrupper baseret på deres forudsagte risiko for afgang. Du kan senere bruge disse data, hvis du vil oprette et kundesegment med stor risiko for afgang. Sådanne segmenter hjælper dig med at forstå, hvor din grænse skal være for segmentmedlemskab.
+       
+    - **Mest indflydelsesrige faktorer**: Der er mange faktorer, som tages i betragtning ved oprettelsen af din forudsigelse. Hver af faktorerne er vigtig for de aggregerede forudsigelser, som en model opretter. Du kan bruge disse faktorer til at validere resultaterne af forudsigelse, eller du kan bruge disse oplysninger senere til at [oprette segmenter](segments.md), der kan have indflydelse på kundernes afgangsrisiko.
+
+
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
 1. Der findes tre primære sektioner med data på resultatsiden:
    - **Træningsmodellens ydeevne**: A, B eller C er mulige scorer. Denne score ydeevnen af forudsigelsen og kan hjælpe dig med at træffe beslutningen om at bruge de resultater, der er gemt i outputobjektet. Scorer bestemmes ud fra følgende regler: 
@@ -237,6 +313,11 @@ Tilføj en liste over de forretningskunder og konti, du vil bruge som benchmarks
        Når du forudsiger kundeafgang på kontoniveau, tages alle konti i betragtning med henblik på at udlede de gennemsnitlige funktionsværdier for kundeafgangssegmenter. I forbindelse med forudsigelser af kundeafgang på sekundært niveau for hver konto afhænger afledningen af kundeafgangssegmenter af det sekundære niveau for det element, der er valgt i sideruden. Hvis et element f.eks. har et sekundært niveau af produktkategorien = kontorartikler, er det kun de elementer, der har kontorartikler som produktkategori, der tages i betragtning, når de gennemsnitlige funktionsværdier for kundeafgangssegmenter afledes. Denne logik anvendes for at sikre en rimelig sammenligning af elementers funktionsværdier med de gennemsnitlige værdier i lave, mellem og høje afgangssegmenter.
 
        I visse tilfælde er den gennemsnitlige værdi af lave, mellem eller høje afgangssegmenter tom eller ikke tilgængelig, fordi der ikke er elementer, der tilhører de tilsvarende kundeafgangssegmenter, baseret på ovenstående definition.
+       
+       > [!NOTE]
+       > Værdierne under de gennemsnitlige lave, mellemstore og høje kolonner er forskellige for kategoriske funktioner som land eller branche. Da den almindelige funktionsværdi for "gennemsnitlig" ikke gælder for kategoriske funktioner, er værdierne i disse kolonner proportionen mellem kunder i lav-, mellem- eller højskærmssegmenter, der har samme værdi som den kategoriske funktion i forhold til det element, der er valgt i sidepanelet.
+
+---
 
 ## <a name="manage-predictions"></a>Administrere forudsigelser
 

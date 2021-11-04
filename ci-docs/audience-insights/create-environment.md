@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 95afd1fedb98a451e4978ee66be2ea98ad7a4a76
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 914af46d2d82f3556d149f2836680c902f826d50
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645676"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673384"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Oprette et miljø i målgruppeindsigt
 
@@ -46,7 +46,7 @@ I trinnet **Grundlæggende oplysninger** skal du vælge, om du vil oprette et mi
 
 Angiv følgende oplysninger:
    - **Navn**: Navnet på dette miljø. Dette felt er allerede udfyldt, hvis du har kopieret et eksisterende miljø, men du kan ændre det.
-   - **Vælg din forretning**: Vælg den primære målgruppe til det nye miljø. Du kan arbejde med individuelle kunder (B2C) eller [forretningskonti](work-with-business-accounts.md) (B2B).
+   - **Vælg din forretning**: Vælg den primære målgruppe til det nye miljø. Du kan arbejde med individuelle firmaer (B-til-C) eller [forretningskonti](work-with-business-accounts.md) (B-til-B).
    - **Type**: Vælg, om du vil oprette et produktions- eller sandkassemiljø. Sandkassemiljøer tillader ikke planlagt dataopdatering og er beregnet til forudimplementering og test. Sandkassemiljøer bruger samme primære målgruppe som det produktionsmiljø, der i øjeblikket er valgt.
    - **Område**: Det område, hvor tjenesten er installeret og har sin vært.
 
@@ -54,7 +54,7 @@ Angiv følgende oplysninger:
 
 I trinnet **Datalager** skal du vælge, hvor dataene skal lagres fra målgruppeindsigt.
 
-Du har to muligheder: **Customer Insights Storage** (et Azure Data Azure-område, der administreres af Customer Insights-teamet) og **Azure Data Lake Storage** (dit eget Azure Data Lake Storage). Som standard er indstillingen Customer Insights-lager valgt.
+Du har to muligheder: **Customer Insights Storage** (Azure-datasø, der administreres af Customer Insights-teamet) og **Azure Data Lake Storage** (dit eget Azure Data Lake Storage). Som standard er indstillingen Customer Insights-lager valgt.
 
 :::image type="content" source="media/data-storage-environment.png" alt-text="Vælg Azure Data Lake Storage, hvor du vil gemme målgruppeindsigtsdata.":::
 
@@ -66,7 +66,7 @@ Når du gemmer data i Azure Data Lake Storage, accepterer du, at data overføres
 > - Azure Data Lake Storage-konti fra det samme Azure-område, som du valgte under oprettelse af miljøet.
 > - Azure Data Lake Storage-firmaer, hvor *hierarkisk navneområde* er aktiveret.
 
-Du kan vælge mellem en ressourcebaseret indstilling og en abonnementsbaseret indstilling for godkendelse for Azure Data Lake Storage-indstillingen. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Navnet **Beholder** er `customerinsights` og kan ikke ændres.
+Du kan vælge mellem en ressourcebaseret indstilling og en abonnementsbaseret indstilling for godkendelse for Azure Data Lake Storage-indstillingen. Du kan finde flere oplysninger i [Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md). Navnet **Beholder** er `customerinsights` og kan ikke ændres.
 
 Når systemprocesser, f.eks. dataindtagelse, er fuldført, oprettes der tilsvarende mapper på den angivne lagerkonto. Datafiler og *model.json*-filer oprettes og føjes til mapper baseret på procesnavnet.
 
@@ -76,14 +76,14 @@ Hvis du opretter flere miljøer i Customer Insights og vælger at gemme outputob
    
 Med **Microsoft Dataverse**-trinnet kan du forbinde Customer Insights til dit Dataverse-miljø.
 
-Hvis du vil bruge de [indbyggede forudsigelsesmodeller](predictions-overview.md#out-of-box-models), skal du konfigurere datadeling med Dataverse. Du kan også aktivere dataindtagelse fra datakilder i det lokale miljø, hvis du angiver den Microsoft Dataverse-URL-adresse til miljøet, som din organisation administrerer. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Dataverse-administreret Data Lake.
+Hvis du vil bruge de [indbyggede forudsigelsesmodeller](predictions-overview.md#out-of-box-models), skal du konfigurere datadeling med Dataverse. Du kan også aktivere dataindtagelse fra datakilder i det lokale miljø, hvis du angiver den Microsoft Dataverse-URL-adresse til miljøet, som din organisation administrerer. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Dataverse -administreret datasø.
 
 :::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.":::
 
 > [!NOTE]
 > Customer Insights understøtter ikke følgende scenarier til datadeling:
-> - Hvis du gemmer alle data i dit eget Azure Data Lake Storage, kan du ikke aktivere datadeling med en Microsoft Dataverse-administreret Data Lake.
-> - Hvis du aktiverer datadeling med en Microsoft Dataverse-administreret Data Lake, kan du ikke [oprette forudsagte eller manglende værdier i et objekt](predictions.md).
+> - Hvis du gemmer alle data i dit eget Azure Data Lake Storage, kan du ikke aktivere datadeling med en Dataverse-administreret datasø.
+> - Hvis du aktiverer datadeling med en Dataverse, kan du ikke [oprette forudsagte eller manglende værdier i et objekt](predictions.md).
 
 ### <a name="step-4-finalize-the-settings"></a>Trin 4: Fuldfør indstillingerne
 
@@ -93,10 +93,10 @@ Du kan også ændre de fleste indstillinger senere. Du kan finde flere oplysning
 
 ## <a name="work-with-your-new-environment"></a>Arbejde med dit nye miljø
 
-Gennemgå følgende artikler for at hjælpe dig med at komme i gang med at konfigurere Customer Insights. 
+Gennemgå følgende artikler for at hjælpe dig med at komme i gang med at konfigurere Customer Insights: 
 
 - [Tilføj flere brugere, og tildel tilladelser](permissions.md).
 - [Gennemgå datakilderne](data-sources.md) og kør dem gennem [processen til enhed af data](data-unification.md) for at få [ensartede kundeprofiler](customer-profiles.md).
 - [Forbedr de ensartede kundeprofiler](enrichment-hub.md) eller [kør intelligente modeller](predictions-overview.md).
-- [Opret segmenter](segments.md) for at gruppere kunder og [målingers](measures.md) gennemgangs-nøgletal.
+- [Opret segmenter](segments.md) for at gruppere kunder og [målingers](measures.md) til gennemgangs-nøgletal.
 - [Opret forbindelser](connections.md) og [eksporter](export-destinations.md) for at behandle undersæt af dataene i andre programmer.

@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 5262ad20019e90e73ab121a5ab90e602c1a32b7e
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7606053"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673821"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheder i målgruppen Insights-funktioner i Dynamics 365 Customer Insights
 
@@ -166,7 +166,7 @@ Opdateringerne i marts 2021 indeholder flere funktioner, ydelsesopgraderinger og
 - **Eksportér segmenter til Constant Contact** Vi har udvidet vores eksportdestinationer til at omfatte Constant Contact. Du kan nu eksportere segmenter fra Customer Insights til Constant Contact-lister og bruge dem som udgangspunkt for marketingkampagner.   
    Du kan finde flere oplysninger i [Eksportere til Constant Contact](export-constant-contact.md).
 
-- **Eksportér segmenter til RollWorks** Vi har udvidet vores eksportdestinationer til at omfatte RollWorks. Du kan nu eksportere segmenter fra Customer Insights til RollWorks-målgrupper og bruge dem som udgangspunkt for B2B-marketing.    
+- **Eksportér segmenter til RollWorks** Vi har udvidet vores eksportdestinationer til at omfatte RollWorks. Du kan nu eksportere segmenter fra Customer Insights til RollWorks-målgrupper og bruge dem som udgangspunkt for dine B-til-B-reklamer.    
    Du kan finde flere oplysninger i [Eksportere til RollWorks ](export-rollworks.md).
 
 - **Eksportér segmenter til Snapchat** Vi har udvidet vores eksportdestinationer til at omfatte Snapchat. Du kan nu eksportere segmenter fra Customer Insights til Snapchat-målgrupper og bruge dem som udgangspunkt for marketing.     
@@ -215,7 +215,7 @@ Opdateringerne i februar 2021 indeholder flere funktioner, opgraderinger af ydee
 
 - **Kopiering af miljø understøtter flere typer datakilder**
 
-  Administratorer kan kopiere miljøkonfigurationer til et nyt miljø i samme organisation. Denne funktion udvider kopimiljøfunktionaliteten i tilfælde, hvor der bruges datakilder, der er baseret på en Microsoft Dataverse-administreret Data Lake eller en fælles datamodelmappe.
+  Administratorer kan kopiere miljøkonfigurationer til et nyt miljø i samme organisation. Denne funktion udvider kopimiljøfunktionaliteten i tilfælde, hvor der bruges datakilder, der er baseret på en Microsoft Dataverse-administreret datasø eller en fælles datamodelmappe.
 
 ## <a name="january-2021-updates"></a>Opdatering fra januar 2021
 

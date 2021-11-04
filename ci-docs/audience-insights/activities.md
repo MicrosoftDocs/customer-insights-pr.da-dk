@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: c250efcd54ec126c0726b22a971cdedd89760d6b
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: bcb8d42963719f5d225556c31b3fc06db8573e5b
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617962"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673130"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -49,7 +49,7 @@ Et objekt skal have mindst én attribut af typen **Dato** for at blive medtaget 
    :::image type="content" source="media/Activity_Wizard2.PNG" alt-text="Definere objektrelationen.":::
 
    > [!TIP]
-   > I B2B-miljøer kan du vælge mellem firmaobjekter og andre objekter. Hvis du vælger et firmaobjekt, angives relationsstien automatisk. I forbindelse med andre objekter skal du definere relationsstien hen over et eller flere mellemliggende objekter, indtil du når til et firmaobjekt.
+   > I B-til-B-miljøer kan du vælge mellem firmaobjekter og andre objekter. Hvis du vælger et firmaobjekt, angives relationsstien automatisk. I forbindelse med andre objekter skal du definere relationsstien hen over et eller flere mellemliggende objekter, indtil du når til et firmaobjekt.
 
 1. Vælg **Næste** for at gå til næste trin. 
 

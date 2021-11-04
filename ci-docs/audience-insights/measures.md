@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: wameng
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 39acca78c022bc15ebc15dc80f21fe175da04d4d
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d77d1901fee4771537554c05d3963316d0fb37cb
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622852"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673363"
 ---
 # <a name="define-and-manage-measures"></a>Definere og administrere målinger
 
@@ -28,7 +28,7 @@ Brug målegeneratoren til at planlægge forretningsaktiviteter ved at forespørg
 
 Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra bunden. Du kan oprette en måling med dataattributter fra dataobjekter, hvor der er konfigureret en relation, for at oprette forbindelse til det samlede kundeprofilobjekt.
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
 
 1. Gå til **Målinger** i målgruppen Insights.
 
@@ -92,7 +92,7 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
 
 1. Gå til **Målinger** for at se den måling, du netop har oprettet, på listen.
 
-# <a name="business-accounts-b2b"></a>[Virksomhedskonti (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
 1. Gå til **Målinger** i målgruppen Insights.
 
@@ -164,7 +164,7 @@ Dette afsnit indeholder en gennemgang af, hvordan du opretter en ny måling fra 
 
 Du kan bruge foruddefinerede skabeloner med almindeligt anvendte foranstaltninger til at oprette dem. Detaljerede beskrivelser af skabelonerne og en styret oplevelse hjælper dig med at oprette effektive måleenheder. Skabeloner bygger på tilknyttede data fra objektet *Unified Activity*. Sørg derfor for, at du har konfigureret [kundeaktiviteter](activities.md), før du opretter en måleenhed ud fra en skabelon.
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
 
 Du kan bruge foruddefinerede skabeloner med almindeligt anvendte foranstaltninger til at oprette dem. Detaljerede beskrivelser af skabelonerne og en styret oplevelse hjælper dig med at oprette effektive måleenheder. Skabeloner bygger på tilknyttede data fra objektet *Unified Activity*. Sørg derfor for, at du har konfigureret [kundeaktiviteter](activities.md), før du opretter en måleenhed ud fra en skabelon.
 
@@ -212,7 +212,7 @@ I følgende procedure beskrives trinnene til opbygning af en ny måleenhed ved h
 
 1. Du kan nu vælge **Kør** for at beregne resultaterne af målingen. Hvis du vil finjustere den senere, skal du vælge **Gem kladde**.
 
-# <a name="business-accounts-b2b"></a>[Virksomhedskonti (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
 Denne funktion er kun tilgængelig for målinger, der er oprettet i miljøer med individuelle kunder som primær målgruppe.
 

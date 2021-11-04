@@ -1,7 +1,7 @@
 ---
 title: Introduktion til forretningskonti som primær målgruppe
 description: Få mere at vide om forretningskonti som primær målgruppe i Dynamics 365 Customer Insights.
-ms.date: 09/30/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,16 +9,16 @@ author: m-hartmann
 ms.author: wimohabb
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ea036cf3a3623a314a6d0d7da85b2c30c030ccea
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: ac5ae950a44f7f32e3cb9fdc0ffad05b78fddef0
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7644981"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673680"
 ---
 # <a name="work-with-business-accounts-in-audience-insights"></a>Arbejde med forretningskonti målgruppeindsigt
 
-Med målgruppeindsigtsfunktionaliteten i Dynamics 365 Customer Insights kan du konfigurere miljøet til forskellige primære målgrupper: individuelle kunder (B2C) og forretningskonti (B2B). I B2C-scenarier er dataene centreret om enkeltpersoner. I forbindelse med B2B er den primære målgruppe konti – organisationer eller virksomheder – og kontakter. I denne artikel kan du få hjælp til at komme i gang med et miljø til forretningskonti. Den indeholder en liste over forskellene for funktionsområder i målgruppeindsigt, afhængigt af dit miljøfokus. Du kan finde flere oplysninger om forskelle ved at gennemse dokumentationen til funktionsområder. 
+Med målgruppeindsigtsfunktionaliteten i Dynamics 365 Customer Insights kan du konfigurere miljøet til forskellige primære målgrupper: individuelle forbrugere (B-til-C) og forretningskonti (B-til-B). I B-til-C-scenarier er dataene centreret om enkeltpersoner. I forbindelse med B-til-B er den primære målgruppe konti – organisationer eller virksomheder – og kontakter. I denne artikel kan du få hjælp til at komme i gang med et miljø til forretningskonti. Den indeholder en liste over forskellene for funktionsområder i målgruppeindsigt, afhængigt af dit miljøfokus. Du kan finde flere oplysninger om forskelle ved at gennemse dokumentationen til funktionsområder. 
 
 ## <a name="create-an-environment-for-business-accounts"></a>Oprette et miljø til forretningskonti
 
@@ -32,7 +32,7 @@ Når dataene er blevet samlet, skal du [angive kontohierarkier](relationships.md
 
 Hvis organisationen vedligeholder miljøer for individuelle kunder og forretningskonti, kan du bruge skifteren i venstre rude til at vælge den primære målgruppe.
 
-:::image type="content" source="media/switch-primary-target-audience.PNG" alt-text="Skifter til at ændre den primære målgruppe mellem individuelle kunder og forretningskonti.":::
+:::image type="content" source="media/switch-primary-target-audience.png" alt-text="Skifter til at ændre den primære målgruppe mellem individuelle kunder og forretningskonti.":::
 
 ## <a name="supported-feature-areas"></a>Understøttede funktionsområder
 

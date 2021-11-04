@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 6840f4bc345b0821fb2349666130b39d542878e7
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: ac33a6dcde4c710cecd3c6836aad3e26ce5c7de6
+ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617333"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "7673753"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
@@ -26,7 +26,7 @@ Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* a
 
 Der er flere måder, du kan oprette et nyt segment på: 
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
 
 - Komplekst segment med segmentgenerator: [Byg din egen](segment-builder.md#create-a-new-segment) 
 - Simple segmenter med én operator: [Hurtigt segment](segment-builder.md#quick-segments) 
@@ -34,7 +34,7 @@ Der er flere måder, du kan oprette et nyt segment på:
 - AI-baserede forslag ud fra målinger eller attributter: [Foreslåede segmenter til forbedring af målingerne](suggested-segments.md) 
 - Forslag baseret på aktiviteter: [Foreslåede segmenter baseret på kundeaktivitet](suggested-segments-activity.md) 
 
-# <a name="business-accounts-b2b"></a>[Virksomhedskonti (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
 - Komplekst segment med segmentgenerator: [Byg din egen](segment-builder.md#create-a-new-segment)
 
