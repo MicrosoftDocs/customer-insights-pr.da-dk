@@ -1,7 +1,7 @@
 ---
 title: Forbedre kundeprofiler med data fra Microsoft
-description: Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold til varemærker og interesse.
-ms.date: 11/01/2021
+description: Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold og stemmeandel.
+ms.date: 11/11/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,29 +9,33 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: c25dbb7a877da2d3fccc1a4e5b219b9792bc6402
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 346c79d0a4d5cd5c47e91c195a48d3a153db0dc0
+ms.sourcegitcommit: 9d3c9e4eb2ce20996a4f4fb44c42e3fe020c5b48
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732535"
+ms.lasthandoff: 11/11/2021
+ms.locfileid: "7793697"
 ---
-# <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Forbedre kundeprofiler med brand- og interessetilhørsforhold (eksempel)
+# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Forbedre kundeprofiler med tilhørsforhold og stemmeandel (forhåndsversion)
 
-Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold til varemærker og interesse. Disse tilhørsforhold er baseret på data fra personer i samme demografi som dine kunder. Disse oplysninger hjælper dig med at få bedre indsigt i og segmentere dine kunder på baggrund af deres tilhørsforhold til specifikke mærker og interesser.
+Brug Microsofts beskyttede data til at forbedre dine kundedata med mærketilhørsforhold, interessetilhørsforhold og stemmeandel (SoV). Disse tilhørsforhold og SoV er baseret på data fra personer med samme demografi som dine kunder. Disse oplysninger hjælper dig med bedre at forstå og segmentere dine kunder ud fra deres tilhørsforhold eller SoV til bestemte mærker og interesser.
 
 I målgruppeindsigt skal du gå til **Data** > **Forbedring** for at [konfigurere og få vist forbedring](enrichment-hub.md).
 
-Hvis du vil konfigurere forbedring af mærketilhørsforhold, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Mærker**.
+Hvis du vil konfigurere forberinger af mærketilhørsforhold og SoV, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Mærker**.
 
-Hvis du vil konfigurere forbedring af interessetilhørsforhold, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Interesser**.
+Hvis du vil konfigurere forberinger af interessetilhørsforhold og SoV, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Interesser**.
 
    > [!div class="mx-imgBorder"]
    > ![Brands og interesser-felter.](media/BrandsInterest-tile-Hub.png "Brands og interesse-felter")
 
-## <a name="how-we-determine-affinities"></a>Sådan afgør vi tilhørsforhold
+## <a name="how-we-determine-affinities-and-sov"></a>Sådan afgør vi tilhørsforhold og SoV
 
-Vi bruger Microsofts onlinesøgningsdata til at finde tilhørsforhold til og interesser på tværs af forskellige demografiske segmenter (defineret efter alder, køn eller lokation). Antal søgninger online for et brand eller en interesse bestemmer, hvor stærkt tilhørsforholdet til et demografisk segment er for det pågældende brand eller den pågældende interesse i forhold til andre segmenter.
+Vi bruger Microsofts onlinesøgedata til at finde tilhørsforhold og SoV for mærker og interesser på tværs af forskellige demografiske segmenter (defineret efter alder, køn eller placering). Omfanget af onlinesøgning for et mærke eller en interesse udgør grundlaget for fastlæggelse af tilhørsforhold eller SoV. De giver dog hver især et forskelligt perspektiv til at forstå dine kunder.
+
+- Tilhørsforhold kan sammenlignes på tværs af demografiske segmenter. Du kan bruge disse oplysninger til at identificere demografiske segmenter, der har det højeste tilhørsforhold til et bestemt mærke eller en bestemt interesse sammenlignet med andre segmenter.
+
+- Stemmeandel kan sammenlignes på tværs af dine valgte mærker eller interesser. Du kan bruge disse oplysninger til at identificere, hvilket mærke eller hvilken interesse der har den højeste stemmeandel for et bestemt demografisk segment sammenlignet med andre mærker eller interesser, du har valgt.
 
 ## <a name="affinity-level-and-score"></a>Tilhørsniveau og point
 
@@ -48,6 +52,10 @@ På alle forbedrede kundeprofiler leverer vi to relaterede værdier: tilhørsniv
 |Lav     | 1 - 34        |
 
 Afhængigt af den granularitet, du vil måle tilhørsforholdet med, kan du enten bruge affinitetsniveau eller resultat. Tilhørspoint giver dig mere præcis styring.
+
+## <a name="share-of-voice-sov"></a>Stemmeandel (SoV)
+
+SoV beregnes på en skala med 100 point. Den samlede SoV på tværs af alle mærker eller interesser for alle forbedrede kundeprofiler bliver i alt 100. I modsætning til tilhørsforhold er SoV relativ i forhold til de mærker og interesser, du vælger. SoV-værdierne for 'Microsoft' kan for eksempel være forskellige, hvis de valgte mærker er ('Microsoft', 'GitHub') i forhold til ('Microsoft', 'LinkedIn').
 
 ## <a name="supported-countriesregions"></a>Understøttede lande/områder
 
@@ -82,7 +90,7 @@ Gennemse præferencerne for foretrukne indstillinger for standardpræferencer, o
 
 ### <a name="select-entity-to-enrich"></a>Vælge objekt, der skal forbedres
 
-Vælg **Forbedret objekt**, og vælg det datasæt, du vil forbedre med virksomhedsdata fra Microsoft. Du kan vælge objektet Kunde for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+Vælg **Forbedret objekt**, og vælg det datasæt, du vil forbedre med data fra Microsoft. Du kan vælge objektet Kunde for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
 
 ### <a name="map-your-fields"></a>Tilknyt dine felter
 
@@ -124,13 +132,11 @@ Når du har kørt forbedringen, skal du gå til **Mine forbedringer** for at gen
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Eksempel på resultater efter kørsel af en forbedringsproces.":::
 
-Gennemse de forbedrede data ved at vælge **Vis forbedrede data** i diagrammet. Forbedrede data for brands sendes til objektet **BrandAffinityFromMicrosoft**. Data for interesser findes i objektet **InterestAffinityFromMicrosoft**. Du kan også finde disse objekter på listen i gruppen **Forbedring** i **Data** > **Objekter**.
-
-Du kan se et diagram med antallet af forbedrede kundeprofiler over tid og forhåndsversion af det forbedrede objekt. Vælg **Vis mere** i forhåndsversionsfeltet for at åbne det forbedrede objekt.
+Du kan finde et diagram med antallet af forbedrede kundeprofiler over tid og eksempler på forbedrede objekter. Gennemse de forbedrede data ved at vælge **Se mere** i diagrammerne **Affinitetsniveau** eller **Del af stemmen**. Forbedrede data for mærker sendes til objekterne **BrandAffinityFromMicrosoft** og **BrandShareOfVoiceFromMicrosoft**. Data for interesser findes i objekterne **InterestAffinityFromMicrosoft** og **InterestShareOfVoiceFromMicrosoft**. Du kan også finde disse objekter på listen i gruppen **Forbedring** i **Data** > **Objekter**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Se forbedringsdata på kundekortet
 
-Det er også muligt at få vist tilhørsforhold til mærker og interesser på individuelle kundekort. Gå til **Kunder**, og vælg en kundeprofil. På kundekortet finder du diagrammer til de mærker eller interesser, som personer i den pågældende kundes demografiske profil har tilhørsforhold til.
+SoV for mærke og interesse kan også ses på de enkelte kundekort. Gå til **Kunder**, og vælg en kundeprofil. I kundekortet kan du finde diagrammer for SoV for mærke eller interesse baseret på personer i den pågældende kundes demografiske profil.
 
 :::image type="content" source="media/enrichment-customer-card.png" alt-text="Kundekort med forbedrede data.":::
 

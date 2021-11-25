@@ -1,7 +1,7 @@
 ---
 title: Forbedrede virksomhedsdata
 description: Forbedre og normalisere virksomhedsdata med Microsofts modeller.
-ms.date: 11/05/2021
+ms.date: 11/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 9bfb96d47de4ec98325e644c60752fc7cab2706c
-ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
+ms.openlocfilehash: d11700c87f31cedc40d32b201251d8a9e2e2c312
+ms.sourcegitcommit: dfc4843cc78857f1e3ca49d7b938e3ba77969169
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "7770163"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "7813911"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Forbedring af virksomhedsprofiler med forbedrede virksomhedsdata
 
@@ -51,7 +51,8 @@ Der er nogle få begrænsninger i forbindelse med de forbedrede data. Elementern
 
 1.  Bekræft firmaets identitet. Vi kontrollerer ikke, om inputtet er en eksisterende organisation, eller om en virksomhed bruger outputtet som standardnavn.
 2.  Omfattende dækning af virksomheder globalt. Microsofts kompilerede virksomhedsdata har global dækning, men tilbyder mest dækning i Australien, Canada, Storbritannien og USA.
-3.  Garanterer nøjagtigheden eller opdatering af data. Da forretningsoplysninger ofte ændres, kan vi ikke garantere, at de forbedrede virksomhedsdata altid er nøjagtige eller opdaterede.
+3.  Standardiser virksomhedsadresser globalt. Vi understøtter i øjeblikket standardiserede adresser i disse lande eller områder: Australien, Canada, Frankrig, Tyskland, Italien, Japan, Storbritannien og USA.
+4.  Garanterer nøjagtigheden eller opdatering af data. Da forretningsoplysninger ofte ændres, kan vi ikke garantere, at de forbedrede virksomhedsdata altid er nøjagtige eller opdaterede.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
