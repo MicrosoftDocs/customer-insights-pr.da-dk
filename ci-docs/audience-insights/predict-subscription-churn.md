@@ -9,16 +9,18 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 409dfce02c41d7c52295409912880b9224469908805e199066faeb2b7a4f1f9d
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035316"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799721"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forudsigelse af abonnementsafgang (prøveversion)
 
 Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risiko for, at en kunde ikke længere vil bruge dit firmas produkter eller services. Du kan oprette en ny forudsigelse af abonnementsafgang på siden **Intelligens** > **Forudsigelser**. Vælg **Mine forudsigelser** for at få vist andre forudsigelser, du har oprettet.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOKNQ]
 
 > [!TIP]
 > Prøv selvstudiet for at få en abonnementsrelateret afgangsforudsigelse ved at bruge eksempeldata: [Abonnementsrelateret forudsigelse om afgang (prøveversion) eksempelvejledning](sample-guide-predict-subscription-churn.md).

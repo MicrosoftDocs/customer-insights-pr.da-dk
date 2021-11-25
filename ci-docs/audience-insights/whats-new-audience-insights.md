@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funktioner
 description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 08/31/2021
+ms.date: 11/04/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,12 +9,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: e501df8701493a1c5b83c4d06da3a73fd226165f
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: f7e2645e1608ea83b5d3af1073a5d6f6e97eec8f
+ms.sourcegitcommit: 2a0947cffb52eaf885aa2e50c95b3693f7e4c589
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673821"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "7753110"
 ---
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheder i målgruppen Insights-funktioner i Dynamics 365 Customer Insights
 
@@ -26,6 +26,41 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="october-2021-updates"></a>Opdateringer fra oktober 2021
+
+Opdateringerne i oktober 2021 indeholder nye funktioner, ydeevneopgraderinger og fejlrettelser.
+
+### <a name="b-to-b"></a>B-til-B
+
+Med start i oktober 2021 kan du arbejde med forretningskonti og deres relaterede kontaktpersoner i Customer Insights. Før var appen stort set skræddersyet til individuelle målgrupper. Flere funktionsområder er blevet opdateret, så de understøtter B-til-B-scenarier oven på en ny miljøtype. Du kan få en oversigt over understøttede B-til-B-funktioner under [Arbejde med forretningskonti målgruppeindsigt](work-with-business-accounts.md).
+
+I følgende afsnit fremhæves nogle af de vigtigste områder, der er tilpasset til at understøtte virksomhedskonti og individuelle behov.
+
+#### <a name="export-segments-based-on-business-accounts"></a>Eksport af segmenter baseret på forretningskonti
+
+Alle segmenteksporter i målgruppeindsigt er tilgængelige i forbindelse med forretningskonti. De fleste eksporter af segmenter kræver, at ekstra konfigurations- og [kontaktoplysninger projekteres](segment-builder.md#create-a-new-segment) i de underliggende segmenter, så de kan anvendes på forretningskonti. Du kan finde flere oplysninger under [Eksportere segmenter](export-destinations.md#export-segments).
+
+#### <a name="use-the-linkedin-ads-export-with-business-accounts"></a>Brug af eksporten af LinkedIn Ads til forretningskonti
+
+Eksporten af LinkedIn Ads er nu tilgængelig for kontakt- og virksomhedsmålretning i forbindelse med forretningskonti. Når du vælger virksomhedsmålretning som dit primære fokus i forbindelse med LinkedIn-eksporten, kan du eksportere de segmenter, der er opbygget på forretningskonti, uden at det er nødvendigt at projektkontaktoplysninger. Du kan finde flere oplysninger i dokumentationen om [eksport af LinkedIn-annoncer](export-linkedin-ads.md) og forskellen mellem [at målrette kontakter](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) og [at målrette virksomheden](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting). 
+
+#### <a name="create-measures-based-on-business-accounts-and-their-hierarchy"></a>Oprette mål på baggrund af forretningskonti og deres hierarki
+
+Med målgeneratoren kan du oprette mål omkring forretningskonti og eventuelt bruge hierarkioplysningerne. Hierarkioplysninger bruges til at akkumuler en måleenhedsberegning på tværs af et firma og alle relaterede underordnede firmaer. Du kan f.eks. oprette mål som den samlede omsætning for hver gruppe af forretningskonti, der identificeres af deres hierarki. Du kan finde flere oplysninger under [Definér, og administrer målpunkter](measures.md).
+
+#### <a name="create-segments-based-on-business-accounts-and-their-hierarchy"></a>Oprette segmenter på baggrund af forretningskonti og deres hierarki
+
+Du kan bruge segmentgeneratoren til at oprette forretningssegmenter, der eventuelt indeholder kontaktoplysninger for hvert firma i et segment. Hvis du har konfigureret firmahierarkiet, kan du bruge oplysninger om firmahierarkier i forbindelse med oprettelse af segmenter. Du kan finde flere oplysninger i [Oprette et nyt segment](segment-builder.md#create-a-new-segment).
+
+#### <a name="retain-your-business-accounts-with-deep-insights-to-their-churn-tendency"></a>Bevare virksomhedskontiene med omfattende indsigt i virksomhedens kunder
+
+Forudsigelsesmodellen til kundeafgang understøtter nu også forretningskonti. Du kan vurdere risikoen for kundeafgang ikke kun for et firma, men for en kombination af et firma og en produkt- eller servicekategori, de køber af dig. Derudover kan du se, om et firma med større sandsynlighed vil ophøre med at købe af dig generelt eller kun for en bestemt kategori af varer eller servicer. Hvis du yderligere vil bruge denne AI-model, vises der også en liste over årsager til, at et firma sandsynligvis vil blive brugt. Du kan finde flere oplysninger i [Forudsigelse om transaktionsafgang (forhåndsversion)](predict-transactional-churn.md).
+
+#### <a name="see-contacts-of-a-business-account-in-customer-view"></a>Få vist kontaktpersoner for et forretningskonto i kundevisningen
+
+Hvis forretningskonti er knyttet til relaterede firmaer, viser appen Customer Insights disse relaterede kontakter som en del af visningen med kundedetaljer. Du kan finde flere oplysninger i [Debitorprofiler](customer-profiles.md).
+
 
 ## <a name="september-2021-updates"></a>Opdateringer fra september 2021
 

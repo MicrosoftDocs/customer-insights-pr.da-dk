@@ -1,7 +1,7 @@
 ---
 title: Kundeaktiviteter
 description: Definer kundeaktiviteter, og se dem på en tidslinje for kundeprofiler.
-ms.date: 09/27/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: bcb8d42963719f5d225556c31b3fc06db8573e5b
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: c99ec2e7d5e4bf32a509bbe4c0c53999129b2305
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673130"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732437"
 ---
 # <a name="customer-activities"></a>Kundeaktiviteter
 
@@ -82,9 +82,7 @@ Et objekt skal have mindst én attribut af typen **Dato** for at blive medtaget 
 
 1. Vælg **Kør** på siden **Aktiviteter** for at behandle aktiviteten. 
 
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
-
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-activities"></a>Administrer eksisterende aktiviteter
 

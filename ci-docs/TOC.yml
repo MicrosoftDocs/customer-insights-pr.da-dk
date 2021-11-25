@@ -84,6 +84,8 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Udvidede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Forbedre virksomhedsdata
+          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Forbedre med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
         - name: Forbedring med HERE Technologies
@@ -250,6 +252,40 @@
           href: audience-insights/apis.md
         - name: API-referencer
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+- name: Samtykkeadministration (forhåndsversion)
+  items:
+    - name: Hjælp-hub
+      href: consent-management/index.yml
+    - name: Oversigt over funktioner
+      href: consent-management/overview.md
+    - name: Start her
+      items:
+        - name: Start her
+          href: consent-management/get-started.md
+        - name: Koncepter og terminologi
+          href: consent-management/glossary.md
+    - name: Importér samtykkedata
+      items:
+        - name: Importér samtykkedata
+          href: consent-management/import-consent-data.md
+        - name: Angiv samtykkedata og anvend indstillinger for samtykke
+          href: consent-management/set-consent-rules.md
+    - name: Administrer samtykkedata
+      items:
+        - name: Aktivér samtykkeregler i målgruppeindsigt
+          href: audience-insights/activate-consent.md
+        - name: Administrer standardregler for samtykke for segmenter i målgruppeindsigt
+          href: audience-insights/change-default-consent-rules.md
+    - name: Administrer indstillinger og brugere
+      items:
+        - name: Konfigurer systemindstillinger
+          href: consent-management/system-settings.md
+        - name: Administrer brugere og tilladelser
+          href: consent-management/manage-users.md
+    - name: Brug samtykkedata
+      items:
+        - name: Opret forudsigelser med samtykkedata
+          href: consent-management/predictions-consent-data.md
 - name: Engagementsindsigt (forhåndsversion)
   items:
     - name: Hjælp-hub

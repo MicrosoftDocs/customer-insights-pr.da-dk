@@ -1,7 +1,7 @@
 ---
 title: Forbedring af samlede kundeprofiler
 description: Du kan bruge egenskaber til at forbedre dine kundedata.
-ms.date: 09/30/2021
+ms.date: 11/05/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -10,12 +10,12 @@ author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: bc0128c222c032e8cfe35e6f3baa0ea722bce7cb
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: de27da92118b83dafa0742b6a1e10ee315750c61
+ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7672992"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "7770110"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Forbedring af kundeprofiler (prøveversion)
 
@@ -42,6 +42,7 @@ Under fanen **Opdag** finder du alle understøttede forbedringsmuligheder.
 
 - [Firmadata](enrichment-leadspace.md) leveret af Leadspace
 - [Udvidede adresser](enrichment-enhanced-addresses.md) leveret af Microsoft 
+- [Forbedrede virksomhedsdata](enrichment-enhanced-company-data.md) fra Microsoft
 - [Lokationsdata](enrichment-here.md) leveret af HERE Technologies 
 - [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft

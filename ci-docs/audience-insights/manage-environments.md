@@ -1,7 +1,7 @@
 ---
 title: Oprette og administrere miljøer
 description: Få mere at vide om, hvordan du tilmelder dig tjenesten, og hvordan du administrerer miljøer.
-ms.date: 10/14/2021
+ms.date: 11/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.reviewer: mhart
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: 2d977ef4eb585e26b36139681552db22d84759c9
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: 65c6a68f550c2873ec30c6ac54f1752d880ce12c
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673726"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799629"
 ---
 # <a name="manage-environments"></a>Administrere miljøer
 
@@ -39,6 +39,19 @@ Du kan redigere nogle af oplysningerne i eksisterende miljøer.
 3. I feltet **Rediger miljø** kan du opdatere miljøindstillingerne.
 
 Du kan finde flere oplysninger om miljøindstillinger i [Oprette et nyt miljø](create-environment.md).
+
+## <a name="connect-to-microsoft-dataverse"></a>Opret forbindelse til Microsoft Dataverse
+   
+Med **Microsoft Dataverse**-trinnet kan du forbinde Customer Insights til dit Dataverse-miljø.
+
+Hvis du vil bruge de [indbyggede forudsigelsesmodeller](predictions-overview.md#out-of-box-models), skal du konfigurere datadeling med Dataverse. Du kan også aktivere dataindtagelse fra datakilder i det lokale miljø, hvis du angiver den Microsoft Dataverse-URL-adresse til miljøet, som din organisation administrerer. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Dataverse -administreret datasø.
+
+:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.":::
+
+> [!NOTE]
+> Customer Insights understøtter ikke følgende scenarier til datadeling:
+> - Hvis du gemmer alle data i dit eget Azure Data Lake Storage, kan du ikke aktivere datadeling med en Dataverse-administreret datasø.
+> - Hvis du aktiverer datadeling med en Dataverse, kan du ikke [oprette forudsagte eller manglende værdier i et objekt](predictions.md).
 
 ## <a name="copy-the-environment-configuration"></a>Kopier miljøkonfiguration
 

@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: eba7871faf304d5945191b5b9bc215243b4f8a05
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: eb25e050b8aa768e6e1d8d4c5adce6095cccc346
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483655"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7791974"
 ---
 # <a name="service-limits-in-customer-insights-capabilities"></a>Servicegrænser i funktioner i Customer Insights
 
@@ -24,9 +24,9 @@ I denne artikel beskrives de indbyggede begrænsninger for Customer Insights-tje
 
 ### <a name="service-limits-in-dynamics-365-customer-insights-audience-insights-capability"></a>Tjenestebegrænsninger i Dynamics 365 Customer Insights-funktionen med målgruppen Insights
 
-| Område  | Grænser  | Noter |
+| Område  | Grænser  | Notes |
 |-------------|---------------------------------------------------------------------|---------------------------------------------------------------------|
-| Segmenter og målinger | 100 segmenter eller målpunkter. | Det samlede antal aktive [segmenter](audience-insights/segments.md) og [målpunkter](audience-insights/measures.md), der er kombineret, må ikke overstige 100.  |
+| Segmenter, mål og forudsigelser | 300  | Det samlede antal kombinerede [segmenter](audience-insights/segments.md), [mål](audience-insights/measures.md) og [forudsigelser](audience-insights/predictions.md) må ikke være større end 300.  |
 | Relationer | 20 niveauers relationer i objektstier. | Når du opretter [segmenter](audience-insights/segments.md) eller [måler](audience-insights/measures.md) ved hjælp af brugergrænsefladen i generatoren, kan objektstier have op til 20 relationsforløb mellem startobjektet og destinationsobjektet.  |
 
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 8404515a20529c00708d84813f3a022ad98c45362a2f1e68d7aa890d085071a9
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7201ed9e5315d73e6b9c25b4bc4c4e4ed839a215
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033578"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732257"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbejd med Customer Insights API'er
 
@@ -135,7 +135,7 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
 
 1. Brug [Microsoft-godkendelsesbiblioteket (MSAL)](/azure/active-directory/develop/msal-overview) til at hente en `AccessToken` ved hjælp af en eksisterende [Azure-app-registrering](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Når du har fuldført godkendelse og hentning af et token, skal du oprette en ny eller bruge et eksisterende `HttpClient` med ekstra **DefaultRequestHeaders-"Authorization"**, der er angivet til **Ihændehaver <access token>** og **Ocp-Apim-Subscription-Key** er indstillet til [**abonnementsnøglen** fra Customer Insights-miljø](#get-started-trying-the-customer-insights-apis).   
+1. Når et token er godkendt og håndteret korrekt, skal du oprette et nyt token eller bruge en eksisterende `HttpClient`, hvor den ekstra **DefaultRequestHeaders "Authorization"** er angivet til **Bearer "adgangstoken"** og **Ocp-Apim-Subscription-Key** angivet til [**abonnementsnøglen** fra Customer Insights-miljøet](#get-started-trying-the-customer-insights-apis).   
  
    Nulstil overskriften **Godkendelse**, hvis det er relevant. Når tokenet f. eks. er udløbet.
 

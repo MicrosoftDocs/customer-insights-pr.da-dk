@@ -1,7 +1,7 @@
 ---
 title: Flet objekter i datasamling
 description: Flet objekter for at oprette samlede kundeprofiler.
-ms.date: 10/10/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-merge
-ms.openlocfilehash: 6b3002b21ea043315e50724ec103aef8a3ced98e
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648247"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732765"
 ---
 # <a name="merge-entities"></a>Flet objekter
 
@@ -187,10 +187,9 @@ Vælg **Kør flettede og downstream-processer** for at opdatere systemet med æn
 
 Hvis du vil foretage flere ændringer og køre trinnet igen, kan du annullere en igangværende fletning. Vælg **Opdaterer...**, og vælg **Annuller job** i den siderude, der vises.
 
-> [!TIP]
-> Når du har kørt fletteprocessen, skal du vælge processtatus for at åbne ruden med **opgaveoplysninger**. Den giver et overblik over behandlingstiden, den sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven. Vælg **Se detaljer** for at se, hvilke objekter der deltog i matchprocessen, hvis konfliktløsningen lykkedes, og om opdateringerne blev udgivet korrekt.  
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Nedrulningssti for at få vist procesoplysninger fra linket til opgavestatus.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+
+:::image type="content" source="media/process-detail-path.png" alt-text="Nedrulningssti for at få vist procesoplysninger fra linket til opgavestatus.":::
 
 ## <a name="next-step"></a>Næste trin
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: c9c7cfbf9f47cca53e5543e2cda2584e25ad855d
-ms.sourcegitcommit: 1565f4f7b4e131ede6ae089c5d21a79b02bba645
+ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
+ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "7643383"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "7792020"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
@@ -34,7 +34,7 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
   - **Kontrolelementet Måling**: Kræver [konfigurerede målinger](measures.md) af typen kundeattributter.
   - **Kontrolelementet Intelligens**: Kræver data genereret ved hjælp af [forudsigelser](predictions.md) eller [brugerdefinerede modeller](custom-models.md).
   - **Kontrolelementet Kundeoplysninger**: Alle felter fra profilen er tilgængelige i den samlede kundeprofil.
-  - **Kontrolelementet Forbedring**: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler.
+  - **Kontrolelementet Forbedring**: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler. Korttilføjelsesprogrammet understøtter disse forbedringer: [Mærker](enrichment-microsoft.md) leveret af Microsoft, [Interesser](enrichment-microsoft.md) leveret af Microsoft.
   - **Kontrolelementet Kontakter**: Kræver definition af semantisk objekt af typen kontakter.
   - **Kontrolelementet Tidslinje**: Kræver [konfigurerede aktiviteter](activities.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Match objekter til datasamling
 description: Match objekter for at kombinere datasæt og oprette samlede kundeprofiler.
-ms.date: 02/23/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: 67e17495fa6da1cfac7ee4ee165e798364f6cb27
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648201"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732627"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -180,10 +180,7 @@ Gå til **Data** > **Saml** > **Match**, og vælg **Kør** for at starte process
 
 Du kan se resultatet af en vellykket kørsel, det samlede kundeprofilobjekt, på siden **Objekter**. Dit samlede kundeobjekt kaldes **Kunder** i sektionen **Profiler**. Ved den første vellykkede matchkørsel oprettes det samlede objekt *Kunde*. Enhver efterfølgende match udvider objektet.
 
-> [!TIP]
-> Når du har kørt matchprocessen, skal du vælge processtatus for at åbne ruden med **opgaveoplysninger**. Den giver et overblik over behandlingstiden, den sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven. Vælg **Se detaljer** for at se, hvilke objekter der deltog i matchprocessen, hvilke regler der blev anvendt på dem, og om opdateringerne blev udgivet korrekt.  
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies).  
-> :::image type="content" source="media/process-detail-path.png" alt-text="Nedrulningssti for at få vist procesoplysninger fra linket til opgavestatus.":::
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="review-and-validate-your-matches"></a>Gennemgå og validere dine matches
 

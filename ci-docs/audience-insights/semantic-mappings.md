@@ -1,7 +1,7 @@
 ---
 title: Semantiske tilknytninger (forhåndsversion)
 description: Oversigt over semantiske tilknytninger, og hvordan de bruges.
-ms.date: 09/28/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: f23c622572ff9f967eca07de7898419d1ffc18b0
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622928"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7731936"
 ---
 # <a name="semantic-mappings"></a>Semantiske tilknytninger
 
@@ -75,8 +75,7 @@ Med semantiske tilknytninger kan du knytte ikke-aktivitetsdataene til foruddefin
 
 1. Hvis du vil køre en semantisk tilknytning på et senere tidspunkt, skal du vælge den semantiske tilknytning og vælge **Opdater**.
 
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Administrere eksisterende semantiske tilknytninger
 
@@ -91,5 +90,6 @@ I **Data** > **Semantiske tilknytninger (forhåndsversion)** kan du få vist all
 - **Omdøb**: Åbner en dialogboks, hvor du kan angive et andet navn til den valgte semantiske tilknytning. Vælg **Gem** for at anvende dine ændringer.
 
 - **Slet**: Åbner en dialogboks for at bekræfte sletningen af den valgte semantiske tilknytning. Du kan også slette mere end én semantisk tilknytning på én gang ved at vælge de semantiske tilknytninger og sletteikonet. Bekræft sletningen ved at vælge **Slet**.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

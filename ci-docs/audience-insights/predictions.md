@@ -1,7 +1,7 @@
 ---
 title: Udfyld delvise data ved hjælp af forudsigelser
 description: Brug af forudsigelser til at udfylde ufuldstændige kundedata.
-ms.date: 05/05/2020
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,16 +9,17 @@ author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 3100acf383d85c00a6ff0a8ebc54e038bd813427
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645027"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732371"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Fuldføre delvise data med forudsigelser
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fuldfør de delvise data med forudsigelser (frarådet)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Denne funktion **frarådes** fra **5. november 2021**. Aktuelle implementeringer fungerer fortsat, indtil funktionen er fjernet, men du kan ikke oprette nye integrationer ved hjælp af instruktionerne nedenfor.
 
 Med forudsigelser kan du nemt oprette forventede værdier, der kan forbedre forståelsen af en kunde. På siden **Intelligens** > **Forudsigelser** kan du vælge **Mine forudsigelser** for at se forudsigelser, som du har konfigureret i andre dele af målgruppen Insights, og give dig mulighed for at tilpasse dem yderligere.
 
@@ -60,6 +61,8 @@ Du kan finde flere oplysninger i [Oprette et nyt miljø](create-environment.md).
    > ![Eksempel, der viser tilknyttede feltværdier for kategorier.](media/intelligence-categorymapping.png "Eksempel, der viser tilknyttede feltværdier for kategorier")
 
 8. Vælg **Udført**,så forudsigelsen vil blive behandlet. Behandlingen vil tage et stykke tid, afhængigt af datastørrelsen og kompleksiteten af dataene. Resultaterne vil være tilgængelige i et nyt objekt, der er baseret på det **Navn på outputobjekt** for forudsigelsen, du har oprettet.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Oprette en forudsigelse under oprettelse af et segment
 

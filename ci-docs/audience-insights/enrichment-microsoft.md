@@ -1,7 +1,7 @@
 ---
 title: Forbedre kundeprofiler med data fra Microsoft
 description: Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold til varemærker og interesse.
-ms.date: 06/14/2021
+ms.date: 11/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-MS
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 51b150cbf5d9cfb3a5df42e680bcfa57ec5496cb
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: c25dbb7a877da2d3fccc1a4e5b219b9792bc6402
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617870"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732535"
 ---
 # <a name="enrich-customer-profiles-with-brand-and-interest-affinities-preview"></a>Forbedre kundeprofiler med brand- og interessetilhørsforhold (eksempel)
 
@@ -116,8 +116,7 @@ Kør forbedringen, når du har konfigureret brands, interesser og felttilknytnin
 
 Afhængigt af størrelsen på dine kundedata, kan det vare nogle minutter, før en forbedring kan fuldføres.
 
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af jobbets opgaver, finder du yderligere oplysninger: behandlingstid, sidste behandlingsdato og alle fejl og advarsler, der er knyttet til opgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 

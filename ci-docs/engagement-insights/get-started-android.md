@@ -4,17 +4,17 @@ description: Få mere at vide om, hvordan du tilpasser og kører Android SDK
 author: britl
 ms.reviewer: mhart
 ms.author: britl
-ms.date: 09/15/2021
+ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: a060ac60db71a7b0fb8c0d7a3b0e266004fbee6a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
+ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494268"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7655335"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Kom i gang med Android SDK
 
@@ -42,12 +42,12 @@ Begynd processen ved at vælge et arbejdsområde, vælge Android-mobilplatformen
 
 - Hvis du ikke har et eksisterende arbejdsområde, skal du vælge **Nyt arbejdsområde** og følge trinnene til at oprette et [nyt arbejdsområde](create-workspace.md).
 
-- Når du har oprettet et arbejdsområde, skal du gå til **Administration** > **Arbejdsområde** og derefter vælge **Installationsvejledning**. 
+- Når du har oprettet et arbejdsområde, skal du gå til **Administration** > **Arbejdsområde** og derefter vælge **Installationsvejledning**.
 
 ## <a name="configure-the-sdk"></a>Konfigurer SDK
 
 Når du har hentet SDK, kan du arbejde med det i Android Studio for at aktivere og definere hændelser. Du kan søge på to måder:
-### <a name="option-1-using-jitpack-recommended"></a>Mulighed 1: Brug af JitPack (anbefales)
+### <a name="option-1-use-jitpack-recommended"></a>Indstilling 1: Brug JitPack (anbefales)
 1. Føj JitPack-lageret til `build.gradle`-roden:
     ```gradle
     allprojects {
@@ -61,12 +61,12 @@ Når du har hentet SDK, kan du arbejde med det i Android Studio for at aktivere 
 1. Tilføj afhængigheden:
     ```gradle
     dependencies {
-        implementation 'com.github.microsoft:engagementinsights-sdk-android:1.0.0'
+        implementation 'com.github.microsoft:engagementinsights-sdk-android:v1.0.0'
         api 'com.google.code.gson:gson:2.8.1'
     }
     ```
 
-### <a name="option-2-using-download-link"></a>Mulighed 2: Brug af overførselslink
+### <a name="option-2-use-download-link"></a>Indstilling 2. Brug overførsel af link
 1. Hent [engagementsindsigt Android SDK](https://download.pi.dynamics.com/sdk/EI-SDKs/ei-android-sdk.zip), og placer filen `eiandroidsdk-debug.aar` i `libs`-mappen.
 
 1. Åbn filen `build.gradle` på projektniveau, og tilføj følgende kodestykker.
@@ -83,22 +83,23 @@ Når du har hentet SDK, kan du arbejde med det i Android Studio for at aktivere 
     }
     ```
 
-1. Tilføj tilladelse til netværk og internet i `AndroidManifest.xml`-filen, der findes under `manifests`-mappen. 
+## <a name="enable-auto-instrumentation"></a>Aktiver automatisk instrumentation
+
+1. Tilføj tilladelse til netværk og internet i `AndroidManifest.xml`-filen, der findes under `manifests`-mappen.
     ```xml
     <manifest>
         ...
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     ```
-    
-1. Konfigurer SDK-konfigurationen med engagementsindsigt via `AndroidManifest.xml`-filen. 
 
-## <a name="enable-auto-instrumentation"></a>Aktiver automatisk instrumentation
+1. Konfigurer SDK-konfigurationen med engagementsindsigt via `AndroidManifest.xml`-filen.
+
 1. Kopiér XML-kodestykke fra **installationsvejledningen**. `Your-Ingestion-Key` bør udfyldes automatisk.
 
    > [!NOTE]
    > Du behøver ikke at erstatte `${applicationId}`-sektionen. Den udfyldes automatisk.
-   
+
 
    ```xml
    <application>
@@ -116,20 +117,24 @@ Når du har hentet SDK, kan du arbejde med det i Android Studio for at aktivere 
    </application>
    ```
 
-1. Aktivér eller deaktiver automatisk registrering af `View`-hændelser ved at indstille ovenstående `autoCapture`-felt til `true` eller `false`. `Action`-hændelser skal tilføjes manuelt i øjeblikket.
+1. Aktivér eller deaktiver automatisk registrering af `View`-hændelser ved at indstille ovenstående `autoCapture`-felt til `true` eller `false`. 
 
-1. (Valgfrit) Andre konfigurationer omfatter angivelse slutpunkt URL-slutpunkt. De kan tilføjes under indtagelsen af nøglemetadata i `AndroidManifest.xml`:
-    ```xml
+   >[!NOTE]
+   >`Action`-hændelser skal tilføjes manuelt.
+
+1. (Valgfrit) Andre konfigurationer omfatter angivelse slutpunkt URL-slutpunkt. De kan tilføjes under indtagelsen af nøglemetadata i `AndroidManifest.xml`.
+
+   ```xml
         <meta-data
             android:name="com.microsoft.engagementinsights.endpointUrl"
             android:value="https://some-endpoint-url.com" />
-    ```
+   ```
 
 ## <a name="implement-custom-events"></a>Implementer brugerdefinerede hændelser
 
 Når du har initialiseret SDK, kan du arbejde med hændelserne og deres egenskaber i `MainActivity`-miljøet.
 
-    
+
 Java:
 ```java
 Analytics analytics = new Analytics();
@@ -141,7 +146,7 @@ var analytics = Analytics()
 ```
 
 ### <a name="set-property-for-all-events-optional"></a>Angiv egenskab for alle hændelser (valgfrit)
-    
+
 Java:
 ```java
 analytics.setProperty("year", 2021);

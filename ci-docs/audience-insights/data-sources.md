@@ -1,7 +1,7 @@
 ---
 title: Brug datakilder til at indsætte data
 description: Få mere at vide om, hvordan du importerer data fra forskellige kilder.
-ms.date: 04/12/2021
+ms.date: 11/01/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: de31e1f25c08d0bcb5341c5f465b1999de48acf3
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 27cbd0346b1219c7812f4b90327dd27b645c2b8e
+ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645348"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "7732135"
 ---
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
@@ -48,14 +48,7 @@ Du får vist navnet på hver indtagne datakilde, dens status, og hvornår dataen
 > [!div class="mx-imgBorder"]
 > ![Datakilde er tilføjet.](media/configure-data-datasource-added.png "Tilføjet datakilde")
 
-|Status  |Beskrivelse  |
-|---------|---------|
-|Gennemført   |Datakilde blev indregistreret, hvis der er angivet et tidspunkt i den **Opdaterede** kolonne.
-|Ikke startet   |Datakilde har ingen data, der er indsat endnu, eller er stadig i kladdetilstand.         |
-|Opdaterer    |Dataindtagelse er i gang. Du kan annullere denne handling ved at vælge **Stop opdatering** i kolonnen **Handlinger**. Hvis du stopper opdateringen af en datakilde, gendannes den til den seneste opdateringstilstand.       |
-|Mislykket     |Der opstod fejl under indtagelse af data.         |
-
-Vælg værdien i kolonnen **Status** i en hvilken som helst datakilde du vil gennemse for flere detaljer. Udvid **Datakilder** i ruden **Statusdetaljer**. Vælg **Se detaljer** for at få vist flere oplysninger om opdateringsstatus, herunder fejldetaljer og downstream-procesopdateringer.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden **Objekter**. Du kan finde flere oplysninger under [Objekter](entities.md).
 
