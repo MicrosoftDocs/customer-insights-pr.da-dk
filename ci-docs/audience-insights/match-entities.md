@@ -1,7 +1,7 @@
 ---
 title: Match objekter til datasamling
-description: Match objekter for at kombinere datasæt og oprette samlede kundeprofiler.
-ms.date: 11/01/2021
+description: Sammenlign objekter for at oprette samlede kundeprofiler.
+ms.date: 11/24/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -11,12 +11,12 @@ ms.reviewer: mhart
 manager: shellyha
 searchScope:
 - ci-match
-ms.openlocfilehash: cabeddbc9d485108d166e6355175a01721b75a55
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
+ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732627"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "7863804"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -224,17 +224,24 @@ Du kan omkonfigurere og finjustere de fleste af matchparametrene.
 
 ## <a name="specify-custom-match-conditions"></a>Angive brugerdefinerede matchbetingelser
 
-Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal matche. Disse regler kan overføres for at tilsidesætte standardmatchprocessen. Hvis der f.eks. findes John Doe I og John Doe II i vores poster, kan systemet matche dem som én person. Med brugerdefinerede matchregler kan du angive, at deres profiler refererer til forskellige personer. 
+Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken. Der findes følgende fire indstillinger: 
+
+|Mulighed  |Description |Eksempel  |
+|---------|---------|---------|
+|Match altid     | Definerer værdier, der altid sammenholdes.         |  Du skal altid matche *Mike* og *MikeR*.       |
+|Match aldrig     | Definerer værdier, der aldrig matcher.        | Du skal aldrig matche *John* og *Jonathan*.        |
+|Brugerdefineret tilsidesætter     | Definerer værdier, som systemet altid skal ignorere i match-fasen. |  Ignorer værdierne *11111* og *Ukendt* under match.        |
+|Aliastilknytning    | Definition af værdier, som skal overvejes som den samme værdi i systemet.         | Overvej, om *Joe* skal være lig *Joseph*.        |
 
 1. Gå til **Data** > **Saml** > **Match**, og vælg **Brugerdefineret match** i sektionen **Oplysninger om matchede poster**.
 
-  :::image type="content" source="media/custom-match-create.png" alt-text="Skærmbillede af sektionen med matchregler og kontrolelement for brugerdefineret match fremhævet.":::
+   :::image type="content" source="media/custom-match-create.png" alt-text="Skærmbillede af sektionen med matchregler og kontrolelement for brugerdefineret match fremhævet.":::
 
-1. Hvis der ikke er angivet brugerdefinerede matchregler, kan du se en ny **Brugerdefineret match**-rude med flere detaljer.
+1. Gå til fanen **Poster** i ruden **Brugerdefineret**.
 
-1. Vælg **Udfyld skabelonen** for at hente en skabelonfil, der kan angive, hvilke poster fra hvilke objekter der altid skal matche eller aldrig matche. Du skal separat udfylde posterne af typen "match altid " og "match aldrig " i to forskellige filer.
+1. Vælg den brugerdefinerede matchindstilling på rullelisten **Brugerdefineret type**, og vælg **Hent skabelon**. Du skal bruge en separat skabelon for hver enkelt matchindstilling.
 
-1. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
+1. Download af en skabelonfil. Åbn den, og udfyld detaljerne. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
     - Entity1: Salg
     - Entity1Key: 12345
     - Entity2: Kontakt
@@ -244,26 +251,32 @@ Du kan angive betingelser, som visse poster altid skal matche eller aldrig skal 
    
    Hvis du vil angive brugerdefineret matchning for deduplikering for et objekt, skal du angive det samme objekt som både Objekt1 og Objekt2 og angive de forskellige værdier for primære nøgler.
 
-1. Gem skabelonfilen, når du har tilføjet alle de tilsidesættelser, du vil anvende.
+1. Når du har tilføjet alle tilsidesættelser, skal du gemme skabelonfilen.
 
-1. Gå til **Data** > **Datakilder**, og indsæt skabelonfilerne som nye objekter. Når de er indtaget, kan du bruge dem til at angive matchkonfigurationen.
+1. Gå til **Data** > **Datakilder**, og indsæt skabelonfilerne som nye objekter.
 
-1. Når du har overført filerne, og objekterne er tilgængelige, skal du vælge indstillingen **Brugerdefineret match** igen. Du kan se indstillinger for at angive de objekter, du vil inkludere. Vælg de nødvendige enheder i rullemenuen.
+1. Når du har overført filerne, og objekterne er tilgængelige, skal du vælge indstillingen **Brugerdefineret match** igen. Du kan se indstillinger for at angive de objekter, du vil inkludere. Vælg de nødvendige objekter på rullelisten, og vælg **Udført**.
 
    :::image type="content" source="media/custom-match-overrides.png" alt-text="Skærmbillede af dialogboksen til valg af tilsidesættelser for et brugerdefineret matchscenario.":::
 
-1. Vælg de objekter, du vil bruge til **Match altid** og **Match aldrig**, og vælg **Udført**.
+1. Anvendelse af det brugerdefinerede match afhænger af den matchindstilling, du vil bruge. 
+
+   - Fortsæt til næste trin for **Altid at matche** eller **Aldrig at matche**.
+   - For **Brugerdefineret bypass** eller **Aliastilknytning** skal du vælge **Rediger** for en eksisterende match-regel eller oprette en ny regel. Vælg indstillingen **Brugerdefineret bypass** eller **Alias-tilknytning** på rullelisten Normaliseringer, og vælg **Udført**.
 
 1. Vælg **Gem** på siden **Match** for at anvende den brugerdefinerede matchkonfiguration.
 
 1. Vælg **Kør** på siden **Match** for at starte matchprocessen. Andre angivne matchregler tilsidesættes af den brugerdefinerede matchkonfiguration.
 
-> [!TIP]
-> Gå til **Data** > **Objekter**, og gennemgå objektet **ConflationMatchPair** for at bekræfte, at tilsidesættelserne er anvendt.
+### <a name="known-issues"></a>Kendte problemer
+
+- Selv-sammenblanding viser ikke de normaliserede data i deduplikeringsobjekter. Normalisering anvendes dog internt under deduplikering. Det er efter design til alle normaliseringer. 
+- Hvis indstillingen for semantisk type fjernes i fasen **Tilknytning**, når en overensstemmelsesregel bruger Alias-tilknytning eller Brugerdefineret bypass, anvendes normalisering ikke. Det sker kun, hvis du fjerner den semantiske type, når du har konfigureret normalisering i matchreglen, da den semantiske type er ukendt.
+
 
 ## <a name="next-step"></a>Næste trin
 
-Når du har fuldført matchprocessen for mindst ét matchpar, kan du løse mulige modstridende data ved at gennemgå emnet [**Flet**](merge-entities.md).
+Når du har fuldført matchprocessen for mindst ét matchpar, skal du fortsætte til trinnet [**Flet**](merge-entities.md).
 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]
