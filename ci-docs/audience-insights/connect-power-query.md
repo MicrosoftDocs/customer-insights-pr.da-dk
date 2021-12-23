@@ -1,7 +1,7 @@
 ---
-title: Indsættelse af data via en Power Query forbindelse
+title: Indtag data via en Power Query-connector (video)
 description: Connectorer til datakilder, der er baseret på Power Query.
-ms.date: 11/01/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,18 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: 5d54d33c235e646644e8874e5b0c28898dcff11a
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 38c447d80a25feca087ca9f110278b8401423018
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732211"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903833"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
-Power Query tilbyder en lang række connectorer til indtagelse af data. De fleste af disse connectorer understøttes af Dynamics 365 Customer Insights. Hvis du tilføjer datakilder, der er baseret på Power Query-connectorer, følger normalt de trin, der beskrives i næste afsnit. Men afhængigt af den connector, du bruger, er der brug for forskellige oplysninger. Du kan finde flere oplysninger i dokumentationen om de enkelte connectorer i [Power Query-connector-referencen](/power-query/connectors/).
+Power Query tilbyder en lang række connectorer til indtagelse af data. De fleste af disse connectorer understøttes af Dynamics 365 Customer Insights. 
+
+Hvis du tilføjer datakilder på Power Query-connectors, følger du som regel de trin, der er skitseret i dette afsnit. Men afhængigt af den connector, du bruger, er der brug for forskellige oplysninger. Du kan få mere at vide i dokumentationen om de enkelte tilslutninger i [referencen til Power Query-connector](/power-query/connectors/).
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
 
@@ -28,14 +30,11 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
 
 1. Vælg **Tilføj datakilde**.
 
-1. Vælg metoden **Importér data**, og vælg **Næste**.
+1. Vælg **Microsoft Power Query**, og vælg derefter **Næste**.
 
-1. Angiv et **Navn** til datakilde, og vælg **Næste** for at oprette datakilden. Navneretningslinjer: 
-   - Start med et bogstav.
-   - Brug kun bogstaver og tal. Specialtegn og mellemrum er ikke tilladt.
-   - Brug mellem 3 og 64 tegn.
+1. Angiv et **Navn** til datakilde, og vælg **Næste** for at oprette datakilden.
 
-1. Vælg en af de [tilgængelige connectorer](#available-power-query-data-sources). I dette eksempel skal du vælge **Text/CSV** som connector.
+1. Vælg en af de [tilgængelige connectorer](#available-power-query-data-sources). I dette eksempel vælger vi **Text/CSV**-connector.
 
 1. Angiv de nødvendige detaljer i **Forbindelsesindstillinger** for den valgte connector, og vælg **Næste** for at få vist en prøveversion af dataene.
 
@@ -50,7 +49,7 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
 
 1. Du kan føje flere objekter til datakilden ved at vælge **Hent data** i dialogboksen **Rediger forespørgsler**.
 
-   Disse transformeringer anbefales på det kraftigste:
+   Det anbefales, at du bruger følgende transformationer:
 
    - Hvis du indtager data fra en CSV-fil, indeholder den første række ofte overskrifter. Gå til **Transformer tabel**, og vælg **Brug overskrifter som første række**.
    - Kontrollér, at datatypen er angivet korrekt.
@@ -61,7 +60,7 @@ Power Query tilbyder en lang række connectorer til indtagelse af data. De flest
 
 ## <a name="available-power-query-data-sources"></a>Tilgængelige Power Query-datakilder
 
-Se [Power Query-connector-referencen](/power-query/connectors/) for at få en opdateret liste over connectorer, som du kan vælge for at importere data til Customer Insights. 
+Se [reference til Power Query-connector](/power-query/connectors/) for at få en liste over connectors, du kan bruge til at importere data til Customer Insights. 
 
 Connectorer med markering i kolonnen **Customer Insights (dataflows)** er tilgængelige for oprettelse af nye datakilder, der er baseret på Power Query. Gennemgå dokumentationen til en bestemt connector for at lære mere om dens forudsætninger, begrænsninger og andre detaljer.
 

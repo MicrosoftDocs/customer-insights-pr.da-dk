@@ -1,7 +1,7 @@
 ---
 title: Eksperimenter til Azure Machine Learning
 description: Brug Azure Machine Learning-baserede modeller i Dynamics 365 Customer Insights.
-ms.date: 11/30/2020
+ms.date: 12/02/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -9,16 +9,16 @@ author: naravill
 ms.author: naravill
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 4c04a1d08aba152ce91d452ae2300c1ce0fc79e5d6980ac506dc40d9914c9fca
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: e37eec503c9df83ef72497e22afa1266296e642c
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033165"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881731"
 ---
 # <a name="use-azure-machine-learning-based-models"></a>Brug Azure Machine Learning-baserede modeller
 
-De samlede data i Dynamics 365 Customer Insights er en kilde til opbygning af maskinelle indlæringsmodeller, der kan generere yderligere forretningsindsigt. Customer Insights er integreret med Machine Learning Studio (classic) og Azure Machine Learning til brug af dine egne brugerdefinerede modeller. Se [Machine Learning Studio (klassisk)-eksperimenter](machine-learning-studio-experiments.md), hvor der er eksempler på de eksperimenter, der er baseret på Machine Learning Studio (klassisk). 
+De samlede data i Dynamics 365 Customer Insights er en kilde til opbygning af maskinelle indlæringsmodeller, der kan generere yderligere forretningsindsigt. Customer Insights er integreret i Azure Machine Learning, så du kan bruge dine egne brugerdefinerede modeller.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -35,7 +35,7 @@ De samlede data i Dynamics 365 Customer Insights er en kilde til opbygning af ma
 
 ## <a name="work-with-azure-machine-learning-designer"></a>Arbejd med Azure Machine Learning-designer
 
-Azure Machine Learning-designer indeholder et visuelt lærred, hvor du kan trække og slippe datasæt og moduler, der ligner Machine Learning Studio (klassisk). En batch pipeline, der er oprettet i designeren, kan integreres i Customer Insights, hvis de er konfigureret tilsvarende. 
+Azure Machine Learning-designer viser et visuelt lærred, hvor du kan trække og slippe datasæt og moduler. En batch pipeline, der er oprettet i designeren, kan integreres i Customer Insights, hvis de er konfigureret tilsvarende. 
    
 ## <a name="working-with-azure-machine-learning-sdk"></a>Arbejd med Azure Machine Learning SDK
 

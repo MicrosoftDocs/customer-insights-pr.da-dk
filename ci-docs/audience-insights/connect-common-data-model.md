@@ -1,7 +1,7 @@
 ---
 title: Forbind almindelig datamodeldata til en Azure Data Lake-konto
 description: Arbejd med Common Data Model-data ved hjælp af Azure Data Lake Storage.
-ms.date: 05/29/2020
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 93871f8029053d4ed4a116d3af3550b7684ee11ea8633e937138245e193a44e6
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7033119"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900190"
 ---
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Tilknyt en Common Data Model med en Azure Data Lake-konto
 
@@ -30,7 +30,7 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 
 - Den Azure Data Lake, som du vil oprette forbindelse til og hente data fra, skal være i samme Azure-område som Dynamics 365 Customer Insights-miljøet. Forbindelser til en Common Data Model-mappe fra en Data Lake i et andet Azure-område understøttes ikke. Du kan se Azure-området for miljøet ved at gå til **Admin** > **System** > **Om** i målgruppeindsigt.
 
-- Data, der lagres i onlinetjenester, kan gemmes på en anden placering end det sted, hvor dataene behandles eller lagres i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights.  [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration.](https://www.microsoft.com/trust-center)
+- Data, der lagres i onlinetjenester, kan gemmes på en anden placering end det sted, hvor dataene behandles eller lagres i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration](https://www.microsoft.com/trust-center).
 
 ## <a name="connect-to-a-common-data-model-folder"></a>Opret forbindelse til en Common Data Model-mappe
 
@@ -38,12 +38,11 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 
 1. Vælg **Tilføj datakilde**.
 
-1. Vælg **Opret forbindelse til Common Data model-mappe**, angiv et **Navn** for datakilde, og vælg **Næste**. Navneretningslinjer: 
-   - Start med et bogstav.
-   - Brug kun bogstaver og tal. Specialtegn og mellemrum er ikke tilladt.
-   - Brug mellem 3 og 64 tegn.
+1. Vælg **Azure data lake storage**, angiv et **Navn** til datakilde, og vælg derefter **Næste**.
 
-1. Du kan vælge mellem at bruge en ressourcebaseret indstilling og en abonnementsbaseret indstilling til godkendelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Angiv oplysninger om **Objektbeholder**, og vælg **Næste**.
+   - Hvis du bliver bedt om det, skal du vælge et af de eksempeldatasæt, der vedrører din branche, og derefter vælge **Næste**. 
+
+1. Du kan vælge mellem at bruge en ressourcebaseret indstilling og en abonnementsbaseret indstilling til godkendelse. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md). Angiv **serveradressen**, vælg **log på**, og vælg derefter **Næste**.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks, hvor du kan angive nye forbindelsesdetaljer for Azure Data Lake.](media/enter-new-storage-details.png)
    > [!NOTE]
@@ -56,11 +55,11 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
    > [!NOTE]
    > Alle model.json- eller manifest.json-filer, der er knyttet til andre datakilder i miljøet, vises ikke på listen.
 
-1. Du får vist en liste over tilgængelige objekter i den valgte model.json- eller manifest.json-fil. Du kan se og foretage valg på listen med tilgængelige objekter og vælge **Gem**. Alle de valgte objekter hentes fra den nye datakilde.
+1. Du kan se en liste over tilgængelige objekter i den valgte model.json- eller manifest.json-fil. Gennemse, og vælg på listen over tilgængelige objekter, og vælg derefter **Gem**. Alle de valgte objekter hentes fra den nye datakilde.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks, der viser en liste over objekter fra en model.json-fil.](media/review-entities.png)
 
-8. Angiv, hvilke dataobjekter du vil aktivere dataprofilering for, og vælge **Gem**. Dataprofilering muliggør analyser og andre funktioner. Du kan vælge hele objektet, som vælger alle attributter fra objektet, eller selv vælge bestemte attributter. Som standard er intet objekt aktiveret for dataprofilering.
+8. Angiv, hvilke dataobjekter du vil aktivere dataprofilering for, og vælg **Gem**. Dataprofilering muliggør analyser og andre funktioner. Du kan vælge hele objektet, som vælger alle attributter fra objektet, eller selv vælge bestemte attributter. Som standard er intet objekt aktiveret for dataprofilering.
    > [!div class="mx-imgBorder"]
    > ![Dialogboks, der viser en dataprofil.](media/dataprofiling-entities.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Find lignende kunder med AI
+title: Find kunder, der ligner hinanden med AI (Video)
 description: Find lignende kundesegmenter med kunstig intelligens.
 ms.date: 06/25/2020
 ms.service: customer-insights
@@ -9,12 +9,12 @@ author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7c447609bd54de0780dd14aae9f05c7c24b8cce5
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
+ms.openlocfilehash: 7999c4964773c3b5c49537027a2ed67f0ad57ec5
+ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799675"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "7903883"
 ---
 # <a name="similar-customers-preview"></a>Lignende kunder (prøveversion)
 

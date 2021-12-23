@@ -1,7 +1,7 @@
 ---
 title: Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en tjenestekonto
 description: Brug en Azure-tjenestekonto til at oprette forbindelse til din egen Data Lake.
-ms.date: 09/08/2021
+ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,26 +9,26 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: b901d799dbd73841a6ddbae754c4e4275f61146a
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645165"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900236"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto
 
-Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begrænsede tilladelser. I stedet for at have programmer til at logge på som bruger med fuld administratorrettigheder, tilbyder Azure tjenestekonti. Læs videre for at få mere at vide om, hvordan du opretter forbindelse til Dynamics 365 Customer Insights med en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekontokonto i stedet for nøglerne til lagerkontoen. 
+I denne artikel beskrives, hvordan du opretter forbindelse mellem Dynamics 365 Customer Insights og en Azure Data Lake Storage-konto ved hjælp af Azure-tjenestekonto i stedet for nøglerne til en lagerkonto. 
 
-Du kan bruge tjenestechefen til på sikker måde at [tilføje eller redigere en mappe med Common Data Model som en datakilde](connect-common-data-model.md) eller til at [oprette eller opdatere et miljø](create-environment.md).
+Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begrænsede tilladelser. I stedet for at have programmer til at logge på som bruger med fuld administratorrettigheder, tilbyder Azure tjenestekonti. Du kan bruge servicechefer til på sikker måde at [tilføje eller redigere en mappe med Common Data Model som en datakilde](connect-common-data-model.md) eller [oprette eller opdatere et miljø](create-environment.md).
 
 > [!IMPORTANT]
 > - Den lagerkonto for Data Lake, der skal bruge tjenestekontoen, skal have [aktiveret hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace).
-> - Du skal have administratorrettigheder til dit Azure-abonnement for at oprette tjenestekonto.
+> - Du skal have administratortilladelser til dit Azure-abonnement for at oprette en servicechef.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Oprettelse af en Azure-servicekonto til Customer Insights
 
-Før du opretter en ny tjenestekonto for målgruppeindsigt eller engagementsindsigt, skal du kontrollere, om den allerede findes i din organisation.
+Før du opretter en ny servicekonto til Customer Insights, skal du kontrollere, om den allerede findes i din organisation.
 
 ### <a name="look-for-an-existing-service-principal"></a>Søge efter en eksisterende tjenestekonto
 

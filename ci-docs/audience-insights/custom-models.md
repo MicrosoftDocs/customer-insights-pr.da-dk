@@ -1,7 +1,7 @@
 ---
 title: Brugerdefinerede maskinelle indlæringsmodeller | Microsoft Docs
 description: Arbejde med brugerdefinerede modeller fra Azure Machine Learning i Dynamics 365 Customer Insights.
-ms.date: 03/22/2021
+ms.date: 12/01/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,20 @@ ms.topic: tutorial
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 187995cdf4d92a0609f8abb4c792e698ad4342cdb1f578744136add1bfcf3a53
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 47e2e5109ef8f21a782f6c8f87088009f8a40fdf
+ms.sourcegitcommit: 58651d33e0a7d438a2587c9ceeaf7ff58ae3b648
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032935"
+ms.lasthandoff: 12/02/2021
+ms.locfileid: "7881777"
 ---
 # <a name="custom-machine-learning-models"></a>Brugerdefinerede maskinelle indlæringsmodeller
+
+> [!NOTE]
+> Understøttelse af Machine Learning Studio (klassisk) slutter den 31. august 2024. Vi anbefaler, at du skifter til [Azure Machine Learning](/azure/machine-learning/overview-what-is-azure-machine-learning) fra denne dato.
+>
+> Fra og med 1. december 2021 kan du ikke oprette nye ressourcer i Machine Learning Studio (klassisk). Fra den 31. august 2024 kan du fortsætte med at bruge de eksisterende Machine Learning Studio (klassisk)-ressourcer. Du kan finde flere oplysninger i [Overføre til Azure Machine Learning](/azure/machine-learning/migrate-overview).
+
 
 **Intelligens** > **Brugerdefinerede modeller** giver dig mulighed for at administrere arbejdsprocesser baseret på Azure Machine Learning-modeller. Arbejdsprocesser hjælper dig med at vælge de data, du vil oprette indsigt fra, og knytte resultaterne til dine samlede kundedata. Du kan finde flere oplysninger om oprettelse af brugerdefinerede ML-modeller under [Brug af Azure Machine Learning-based models](azure-machine-learning-experiments.md).
 
@@ -26,7 +32,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-- I øjeblikket understøtter denne funktion webtjenester, der publiceres via [Machine Learning Studio (klassisk)](https://studio.azureml.net) og [Azure Machine Learning-batch pipelines](/azure/machine-learning/concept-ml-pipelines).
+- Denne funktion understøtter webtjenester, der er udgivet via [Azure Machine Learning-batchpipelines](/azure/machine-learning/concept-ml-pipelines).
 
 - Du skal have en Azure Data Lake Gen2-lagerkonto, der er knyttet til din Azure Studio-forekomst, for at kunne bruge denne funktion. Du kan finde flere oplysninger under [Oprette en Azure Data Lake Storage Gen2-lagerkonto](/azure/storage/blobs/data-lake-storage-quickstart-create-account).
 
@@ -48,11 +54,10 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 
 1. Hvis dit Azure Machine Learning-abonnement er i en anden lejer end Customer Insights, skal du vælge **Log på** med dine legitimationsoplysninger for den valgte organisation.
 
-1. Vælg de **Arbejdsområder**, der er knyttet til din webtjeneste. Der er angivet to sektioner: En til Azure Machine Learning v1 (Machine Learning Studio (klassisk)) og Azure Machine Learning v2 (Azure Machine Learning ). Hvis du ikke er sikker på, hvilket arbejdsområde der er den rigtige til din Machine Learning Studio (klassisk)-webtjeneste, skal du vælge **Vilkårlig**.
+1. Vælg de **Arbejdsområder**, der er knyttet til din webtjeneste. 
 
-1. Vælg Machine Learning Studio (klassisk)-webtjeneste eller Azure Machine Learning-pipeline i rullelisten **Webtjeneste, der indeholder din model**. Vælg derefter **Næste**.
-   - Få mere at vide om at [udgive en webtjeneste i Machine Learning Studio (klassisk)](/azure/machine-learning/studio/deploy-a-machine-learning-web-service#deploy-it-as-a-new-web-service)
-   - Få mere at vide om, hvordan du [udgiver en pipeline i Azure Machine Learning ved hjælp af designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline skal udgives under et [pipeline-slutpunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
+1. Vælg Azure Machine Learning-pipeline i rullelisten **webtjeneste, der indeholder din model**. Vælg derefter **Næste**.    
+   Få mere at vide om, hvordan du [udgiver en pipeline i Azure Machine Learning ved hjælp af designeren](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-designer) eller [SDK](/azure/machine-learning/concept-ml-pipelines#building-pipelines-with-the-python-sdk). Din pipeline skal udgives under et [pipeline-slutpunkt](/azure/machine-learning/how-to-run-batch-predictions-designer#submit-a-pipeline-run).
 
 1. For hvert **Webtjenesteinput** skal du vælge det tilsvarende **Objekt** fra målgruppeindsigter og vælge **Næste**.
    > [!NOTE]
@@ -62,9 +67,6 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
    > ![Konfigurere en arbejdsproces.](media/intelligence-screen2-updated.png "Konfigurere en arbejdsproces")
 
 1. Angiv følgende egenskaber i **Modeloutputparametre**-trinnet:
-   - Machine Learning Studio (klassisk)
-      1. Angiv det output **Objektnavn**, som flow for webtjenesteoutputresultater.
-   - Azure Machine Learning
       1. Angiv det output **Objektnavn**, som flow for pipeline-outputresultater.
       1. Vælg **Navn på outputdatalagerparameter** i batch pipeline på rullelisten.
       1. Vælg **Navn på outputstiparameter** i batch pipeline på rullelisten.
@@ -93,9 +95,6 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 1. For hvert **Webtjenesteinput** skal du vælge det tilsvarende **Objekt** fra målgruppeindsigter. Vælg derefter **Næste**.
 
 1. Angiv følgende egenskaber i **Modeloutputparametre**-trinnet:
-   - Machine Learning Studio (klassisk)
-      1. Angiv det output **Objektnavn**, som flow for webtjenesteoutputresultater.
-   - Azure Machine Learning
       1. Angiv det output **Objektnavn**, som flow for pipeline-outputresultater.
       1. Vælg **Navn på outputdatalager-parameter** for test-pipeline.
       1. Vælg **Navn på outputstiparameter** for test-pipeline.

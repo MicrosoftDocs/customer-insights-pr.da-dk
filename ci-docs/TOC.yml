@@ -84,7 +84,7 @@
           href: audience-insights/enrichment-microsoft.md
         - name: Udvidede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Forbedre virksomhedsdata
+        - name: Forbedrede virksomhedsdata
           href: audience-insights/enrichment-enhanced-company-data.md
         - name: Forbedre med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
@@ -94,6 +94,8 @@
           href: audience-insights/enrichment-leadspace.md
         - name: Forbedre med Experian
           href: audience-insights/enrichment-experian.md
+        - name: Forbedre med Office 365-data
+          href: audience-insights/enrichment-office.md
         - name: Forbedring med SFTP-brugerdefineret import
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segmenter
@@ -144,8 +146,6 @@
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Eksperimenter med Azure Machine Learning
               href: audience-insights/azure-machine-learning-experiments.md
-            - name: Eksperimenter i Azure Machine Learning Studio
-              href: audience-insights/machine-learning-studio-experiments.md
         - name: Administrere forudsigelser
           href: audience-insights/manage-predictions.md
         - name: Opret segmenter baseret på forudsigelser
@@ -240,6 +240,8 @@
               href: audience-insights/use-azure-key-vault.md
             - name: Opret forbindelse til en ADLS-lagerkonto ved hjælp af en tjenestekonto
               href: audience-insights/connect-service-principal.md
+            - name: Eksport af diagnosticeringslogfiler
+              href: audience-insights/diagnostics.md
     - name: Udvidelse
       items:
         - name: Integrere webdata fra engagementsindsigt

@@ -1,7 +1,7 @@
 ---
 title: Trinvis opdatering af Power Query-baserede datakilder
 description: Opdater nye og opdaterede data for store datakilder baseret på Power Query.
-ms.date: 09/28/2020
+ms.date: 12/06/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,14 +9,16 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: d204228f8d6881cbf0e7fac6609bf50dd5296610
-ms.sourcegitcommit: 42692a815695b9fdc93b9358eae09f2c3e97293c
+ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
+ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7377827"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "7900248"
 ---
 # <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinvis opdatering af datakilder, der er baseret på Power Query
+
+I denne artikel beskrives, hvordan du kan konfigurere trinvis opdatering for datakilder baseret på Power Query.
 
 Den trinvise opdatering af datakilder giver følgende fordele:
 
@@ -30,9 +32,9 @@ Målgruppen Insights muliggør trinvis opdatering af datakilder, der importeres 
 
 1. [Oprette en ny datakilde, der er baseret på Power Query](connect-power-query.md).
 
-1. Angiv et navn til datakilden.
+1. Angiv et **Navn** til datakilden.
 
-1. Vælg en datakilde, der understøtter trinvis opdatering, f.eks. Azure SQL Database.
+1. Vælg en datakilde, der understøtter trinvis opdatering, f.eks. [Azure SQL-database](/power-query/connectors/azuresqldatabase).
 
 1. Vælg de objekter eller tabeller, der skal indtages.
 
