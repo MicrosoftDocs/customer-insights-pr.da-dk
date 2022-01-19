@@ -80,7 +80,7 @@
       items:
         - name: Forbedre kundeprofiler
           href: audience-insights/enrichment-hub.md
-        - name: Brand- og interessetilhørsforhold
+        - name: Brands og interesser
           href: audience-insights/enrichment-microsoft.md
         - name: Udvidede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
@@ -130,6 +130,8 @@
               href: audience-insights/predict-subscription-churn.md
             - name: Forudsige transaktionsafgang
               href: audience-insights/predict-transactional-churn.md
+            - name: Analysér synspunkt i kundefeedback
+              href: audience-insights/sentiment-analysis.md
             - name: Brug brugerdefinerede modeller fra Azure Machine Learning
               href: audience-insights/custom-models.md
             - name: Fuldfør delvist manglende data

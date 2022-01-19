@@ -1,7 +1,7 @@
 ---
-title: Udvidelse af forbedring af adresser (video)
+title: Udvidelse af forbedring af adresser (indeholder video)
 description: Udvid og normaliser adresseoplysninger om kundeprofiler med Microsofts modeller.
-ms.date: 07/25/2021
+ms.date: 12/16/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 2158d80aa088c5bf8589fb7d23586496e2d8b855
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7903929"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934916"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Udvidelse af kundeprofiler med forbedrede adresser
 
@@ -101,6 +101,16 @@ Hvis du vil starte forbedringsprocessen, skal du vælge **Kør** fra kommandolin
 Når forbedringsprocessen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under **Mine forbedringer**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler.
 
 Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at vælge **Vis forbedrede data**.
+
+### <a name="overview-card"></a>Oversigtskort
+
+Oversigtskortet viser detaljer om dækningen af forbedringen. 
+
+* **Kunder behandlet og ændret**: Antallet af kundeprofiler, der blev forbedret.
+
+* **Kunder behandlet og ikke ændret**: Antallet af kundeprofiler, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
+
+* **Kunder ikke behandlet og ikke ændret**: Antallet af profiler, der ikke blev genkendt. Som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
 
 ## <a name="next-steps"></a>Næste trin
 

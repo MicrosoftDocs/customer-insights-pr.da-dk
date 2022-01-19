@@ -1,7 +1,7 @@
 ---
-title: Tilføjelsesprogram til kundekort for Dynamics 365-apps (video)
+title: Tilføjelsesprogrammet Kundekort til Dynamics 365-apps (indeholder video)
 description: Vis data fra målgruppeindsigt i Dynamics 365-apps med dette tilføjelsesprogram.
-ms.date: 12/07/2021
+ms.date: 12/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: e15d73bfc7af2cd9c8b5d983f01922459ec4a2ee
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 3927b5a13a5f9b4d2b39c7f0b389bc51cafeb213
+ms.sourcegitcommit: 3811dede65946c37aa7ed3cc364251f20ffd4d17
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904006"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "7945420"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
@@ -27,12 +27,12 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
 ## <a name="prerequisites"></a>Forudsætninger
 
 - Tilføjelsesprogrammet fungerer kun med Dynamics 365-modelbaserede apps, f.eks. Sales eller Customer Service, version 9.0 og nyere.
-- Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, skal de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse connectoren](connect-power-query.md).
+- Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, anbefaler vi, at de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse-connectoren](connect-power-query.md). Hvis du bruger en anden metode til at indtage Dynamics 365-kontakter (eller firmaer), skal du kontrollere, at feltet `contactid` (eller `accountid`) er angivet som den [primære nøgle for den pågældende datakilde i tilknytningstrinnene i processen til samling af data](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Alle Dynamics 365-brugere af Kundekort-tilføjelsesprogrammet skal [tilføjes som brugere](permissions.md) i målgruppeindsigt for at kunne se dataene.
 - [Konfigurerede søge- og filterfunktioner](search-filter-index.md) i målgruppeindsigt kræves for at få opslag af data til at fungere.
 - Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i målgruppeindsigt. Nogle data og kontrolelementer er kun tilgængelige i miljøer af bestemte typer. Du får besked i konfigurationen af tilføjelsesprogrammet, hvis et kontrolelement ikke er tilgængeligt på grund af den valgte miljøtype. Få mere at vide om [miljøanvendelser](work-with-business-accounts.md).
   - **Kontrolelementet Måling**: Kræver [konfigurerede målinger](measures.md) af typen kundeattributter.
-  - **Kontrolelementet Intelligens**: Kræver data genereret ved hjælp af [forudsigelser](predictions.md) eller [brugerdefinerede modeller](custom-models.md).
+  - **Intelligenskontrol**: Kræver data genereret ved hjælp af [forudsigelser eller brugerdefinerede modeller](predictions-overview.md).
   - **Kontrolelementet Kundeoplysninger**: Alle felter fra profilen er tilgængelige i den samlede kundeprofil.
   - **Kontrolelementet Forbedring**: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler. Korttillægget understøtter disse forbedringer. [Mærker](enrichment-microsoft.md), der er leveret af Microsoft, [Interesser](enrichment-microsoft.md), der leveres af Microsoft, og [Office-engagementdata](enrichment-office.md), der leveres af Microsoft.
   - **Kontrolelementet Kontakter**: Kræver definition af semantisk objekt af typen kontakter.

@@ -1,7 +1,7 @@
 ---
-title: Forudsigelse af transaktionsafgang (video)
+title: Forudsigelse om transaktionsafgang (indeholder video)
 description: Forudsig, om en kunde kan risikere ikke længere at købe virksomhedens produkter eller tjenester.
-ms.date: 10/20/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: ad87e0fd848168d1a18f28f2ac5c507bb01e1f28
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 602a86a67006925faac00add8e089d28f7071c14
+ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904065"
+ms.lasthandoff: 01/13/2022
+ms.locfileid: "7967740"
 ---
 # <a name="transaction-churn-prediction-preview"></a>Forudsigelse af transaktionsafgang (forhåndsversion)
 
@@ -103,10 +103,10 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
 
 1. Vælg visningen **Afgangsmodel for kunde (prøveversion)**, og vælg **Brug denne model**.
 
-1. Vælg **Transaktion** i ruden **Model for kundeafgang**, og vælg **Start her**.
+1. Vælg **Transaktion** i ruden **Model for kundeafgang (forhåndsversion)**, og vælg **Start her**.
 
 :::image type="content" source="media/select-transaction-churn.PNG" alt-text="Skærmbillede med valgt transaktionsindstilling i ruden Model for kundeafgang.":::
-
+ 
 ### <a name="name-model"></a>Navngiv model
 
 1. Angiv et navn til modellen for at adskille den fra andre modeller.
@@ -117,11 +117,11 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
 
 ### <a name="define-customer-churn"></a>Definer kundeafgang
 
-1. Angiv et vindue med dage til forudsigelse af afgang i feltet **identificere kunder, der kan afgå i næste**. Du kan f. eks. forudsige risikoen for afgang af kunder i løbet af de næste 90 dage for at justere din marketingsindsats. Hvis du forudsiger afgangsrisikoen for en længere eller kortere tidsperiode, kan det være sværere at håndtere faktorerne i din risikoprofil vedrørende afgang, men den afhænger af virksomhedens specifikke behov.
+1. Angiv **Forudsigelsesvindue**. Du kan f. eks. forudsige risikoen for afgang af kunder i løbet af de næste 90 dage for at justere din marketingsindsats. Hvis du forudsiger afgangsrisikoen for en længere eller kortere tidsperiode, kan det være sværere at håndtere faktorerne i din risikoprofil vedrørende afgang, men den afhænger af virksomhedens specifikke behov.
    >[!TIP]
-   > Du kan til enhver tid vælge **Gem og Luk** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
+   > Du kan når som helst vælge **Gem kladde** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
 
-1. Angiv det antal dage, afgang skal defineres i feltet **En kunde er afgået, hvis der ikke er foretaget køb i:**. Hvis kunden f. eks. ikke har foretaget køb inden for de seneste 30 dage, betragtes de muligvis som afgået for virksomheden. 
+1. Angiv antallet af dage for at definere afgang i feltet **Definition af kundeafgang**. Hvis kunden f. eks. ikke har foretaget køb inden for de seneste 30 dage, betragtes de muligvis som afgået for virksomheden. 
 
 1. Vælg **Næste** for at fortsætte.
 
@@ -129,19 +129,16 @@ I miljøer, der er baseret på forretningskonti, kan vi forudsige transaktionsaf
 
 1. Vælg **Tilføj data**, og vælg aktivitetstypen den siderude, der indeholder de påkrævede oplysninger om transaktionen eller købsoversigten.
 
-1. Under **Vælg aktiviteterne** skal du vælge de specifikke aktiviteter fra den valgte aktivitet, som beregningen skal fokusere på.
+1. Under **Vælg aktiviteter** skal du vælge de specifikke aktiviteter fra den valgte aktivitetstype, som beregningen skal fokusere på.
 
-   :::image type="content" source="media/product-recommendation-select-semantic-activity.PNG" alt-text="Sideruden viser, hvordan du vælger bestemte aktiviteter under den semantiske type.":::
+   :::image type="content" source="media/transaction-churn-select-activity.PNG" alt-text="Sideruden viser, hvordan du vælger bestemte aktiviteter under den semantiske type.":::
 
-1. Hvis du endnu ikke har knyttet aktiviteten til en semantisk type, skal du vælge **Rediger** for at gøre det. Den styrede oplevelse til tilknytning af semantiske aktiviteter åbnes. Knyt nu dine data til relaterede felter i den valgte aktivitetstype.
+   Hvis du endnu ikke har knyttet aktiviteten til en semantisk type, skal du vælge **Rediger** for at gøre det. Den styrede oplevelse til tilknytning af semantiske aktiviteter åbnes. Knyt nu dine data til relaterede felter i den valgte aktivitetstype.
 
-   :::image type="content" source="media/product-recommendation-set-activity-type.PNG" alt-text="Aktivitetstype for sideindstilling.":::
+1. Knyt de semantiske attributter til de felter, der kræves for at køre modellen. Hvis nedenstående felter ikke er udfyldt, skal du konfigurere relationen fra dit indkøbsoversigtsobjekt til objektet *Kunde*. Vælg **Gem**.
 
-1. Når du har knytte aktiviteten til den tilsvarende semantiske type, skal du vælge **Næste** for at fortsætte
+1. Vælg **Næste** i trinnet **Tilføj påkrævede data** for at fortsætte, hvis du ikke vil tilføje flere aktiviteter.
 
-1. Knyt de semantiske attributter til de felter, der kræves for at køre modellen. Hvis nedenstående felter ikke er udfyldt, skal du konfigurere relationen fra dit indkøbsoversigtsobjekt til objektet *Kunde*.
-
-1. Vælg **Næste**.
 
 # <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
 

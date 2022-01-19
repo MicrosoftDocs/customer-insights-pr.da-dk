@@ -1,5 +1,5 @@
 ---
-title: Eksportere data fra Customer Insights til SFTP-værter (video)
+title: Eksportere data fra Customer Insights til SFTP-værter (indeholder video)
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til en SFTP-lokation.
 ms.date: 03/03/2021
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: bb73c49cf87657b71e0c2f5934662b062eeffb21
-ms.sourcegitcommit: 12910882ca990ec0e890ed4deaf3dac7e01621e5
+ms.openlocfilehash: 542bd908010cf0a8ccc12f15d54e0a3d5b72f189
+ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "7904112"
+ms.lasthandoff: 12/18/2021
+ms.locfileid: "7934880"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportere segmenter og andre data til SFTP (forhåndsversion)
 
@@ -28,6 +28,7 @@ Brug dine kundedata i tredjepartsprogrammer ved at eksportere dem til en SFTP (S
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- SFTP-destinationer bag firewalls understøttes i øjeblikket ikke. 
 - Kørslen af en eksport afhænger af systemets ydeevne. Vi anbefaler to CPU-kerner og 1 GB hukommelse som minimal konfiguration af serveren. 
 - Det kan tage 90 minutter at eksportere objekter med op til 100 millioner kundeprofiler, når du bruger den anbefalede minimale konfiguration af to CPU-kerner og 1 GB hukommelse. 
 
