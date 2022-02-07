@@ -1,6 +1,6 @@
 ---
-title: Semantisk analyse for kundefeedback
-description: Få mere at vide om, hvordan du anvender en synspunktsanalysemodel på kundefeedback i Dynamics 365 Customer Insights.
+title: Synspunktanalyse for kundefeedback
+description: 'Få mere at vide om, hvordan du anvender en synspunktsanalysemodel på kundefeedback i Dynamics 365 Customer Insights.'
 ms.date: 12/23/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 05e530a1bc96c5fd9c7a3bc0197563d8fe330387
-ms.sourcegitcommit: cb71e39de9b891c24bd5cd9c014eb3eeb537ac24
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 01/10/2022
-ms.locfileid: "7951076"
 ---
+
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analysér synspunkt i kundefeedback (forhåndsversion)
 
 Kunderne forventer i disse tider produkter, servicer og oplevelser i høj kvalitet. Især kunder, der deler deres feedback. Det er en stor udfordring for organisationer at analysere en stigende mængde data uden at reducere præcisionen og øge arbejdsomkostningerne. Dynamics 365 Customer Insights indeholder en synspunktsanalysemodel til kundefeedback, der gør det muligt for organisationer at analysere deres data mere nøjagtigt og med lavere omkostninger.
@@ -38,7 +33,7 @@ For at sikre, at du kan stole på resultaterne af modellerne, giver vi gennemsku
 
 Vi bruger to **NLP-modeller (Natural Language Processing)**: De første tildeler hver feedbackkommentar en synspunktscore. Den anden model knytter de enkelte feedbacktilmeldinger til alle relevante forretningsaspekter. Modellen er trænet på offentlige data fra kilder på tværs af sociale medier, detail, restauranter, forbrugerprodukter og bilbranchen.    
   
-- Foruddefinerede forretningsaspekter for modellen, der skal knyttes til feedbackdata, omfatter:
+Foruddefinerede forretningsaspekter for modellen, der skal knyttes til feedbackdata, omfatter:
 -   Kontoadministration
 -   Tjek ud og betaling
 -   Kundesupport

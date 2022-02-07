@@ -1,7 +1,7 @@
 ---
 title: Flet objekter i datasamling
 description: Flet objekter for at oprette samlede kundeprofiler.
-ms.date: 11/01/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-merge
-ms.openlocfilehash: c218f9c1a1b7711ee48419470bf6c352450ffc0c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732765"
+  - ci-merge
 ---
+
 # <a name="merge-entities"></a>Flet objekter
 
 Flettefasen er den sidste fase i datasamlingsprocessen. Dens formål er at afstemme data, der er i konflikt. Af eksempler på data, der er i konflikt, kan nævnes et kundenavn, der findes i to af dine datasæt, men som vises en smule anderledes i hvert sæt ("Claus Madsen" i forhold til "Klaus Madsen") eller et telefonnummer, der adskiller sig i formatet (617-803-091X i forhold til 617803091X). Fletning af disse datapunkter, der er i konflikt, sker på attribut for attribut-basis.
@@ -99,11 +94,13 @@ Vælg **Udeladte felter** på siden **Flet** for at se listen over alle udeladte
 
 1. Vælg **Gem** og **Kør** for at behandle ændringerne. 
 
-## <a name="manually-combine-fields"></a>Kombinere felter manuelt
+## <a name="combine-fields-manually"></a>Kombiner felter manuelt
 
-Angiv en flettet attribut manuelt. 
+Angiv en flettet attribut manuelt.
 
-1. Vælg **Kombiner felter** på siden **Flet**.
+1. Vælg **Kombiner** på siden **Flette**.
+
+1. Vælg indstillingen **Felter**.
 
 1. Angiv vinderpolitik for fletning i rullelisten **Kombiner felter efter**.
 
@@ -114,6 +111,26 @@ Angiv en flettet attribut manuelt.
 1. Vælg **Fuldført** for at anvende ændringerne.
 
 1. Vælg **Gem** og **Kør** for at behandle ændringerne. 
+
+## <a name="combine-a-group-of-fields"></a>Kombiner en gruppe af felter
+
+Behandle en gruppe felter som en enkelt enhed. Hvis f.eks. posterne indeholder felterne Adresse1, Adresse2, By, Land og Postnr. Vi vil højst sandsynligt ikke flette adresse2 i en anden post og tænke på, at det ville gøre dataene mere fuldstændige
+
+1. Vælg **Kombiner** på siden **Flette**.
+
+1. Vælg indstillingen **Gruppe af felter**.
+
+1. Angiv vinderpolitik for fletning i rullelisten **Inddel grupper efter**.
+
+1. Vælg **Tilføj**, og vælg, om du vil føje flere felter eller flere grupper til felterne.
+
+1. Angiv et **Navn** og et **Outputnavn** for hvert samlet felt.
+
+1. Angiv et **Navn** til gruppen af felter. 
+
+1. Vælg **Fuldført** for at anvende ændringerne.
+
+1. Vælg **Gem** og **Kør** for at behandle ændringerne.
 
 ## <a name="change-the-order-of-fields"></a>Ændre rækkefølgen for felter
 

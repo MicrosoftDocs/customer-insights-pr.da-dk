@@ -9,16 +9,11 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 66d846c3e9404ca7993cae742ea6e16833233fba
-ms.sourcegitcommit: 205f931ec671a0ab1850f2c1c94df3307ffb62c9
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "7380736"
 ---
+
 # <a name="entity-schemas-in-common-data-model"></a>Objektskema i Common Data Model
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 [Common Data Model](/common-data-model/) er en erklærende specifikation og en definition for standardobjekter, der repræsenterer ofte anvendte koncepter og aktiviteter på tværs af forretnings og produktivitets-applikationer. Denne model også udvidet med observations- og analysedata. Common Data Model giver forretningsobjekter, der er veldefinerede, modulopbyggede og kan udvides, f.eks. Konto, Afdeling, Sag, Kontakt, Kundeemne, Salgsmulighed og Produkt — samt interaktioner med leverandører, arbejdere og kunder — såsom aktiviteter og serviceniveauaftaler. Alle kan bygge videre på og udvide Common Data Model-definitioner for at registrere flere forretningsspecifikke ideer.
 

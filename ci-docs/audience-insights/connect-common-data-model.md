@@ -1,7 +1,7 @@
 ---
 title: Forbind almindelig datamodeldata til en Azure Data Lake-konto
 description: Arbejd med Common Data Model-data ved hjælp af Azure Data Lake Storage.
-ms.date: 12/06/2021
+ms.date: 01/25/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -9,13 +9,8 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 5f9010f78ea4c24094e0df4f8e153fb832e05cc8
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900190"
 ---
+
 # <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Tilknyt en Common Data Model med en Azure Data Lake-konto
 
 Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Common Data Model-mappe ved hjælp af din Azure Data Lake Storage Gen2-konto.
@@ -25,6 +20,8 @@ Denne artikel indeholder oplysninger om, hvordan du kan indsætte data fra en Co
 - Data i Azure Data Lake skal følge Common Data Model-standarden. Andre formater understøttes ikke i øjeblikket.
 
 - Dataindsættelse understøtter udelukkende Azure Data Lake *Gen2*-lagerkonti. Du kan ikke bruge Azure Data Lake Gen1-lagerkonti til indsættelse af data.
+
+- Kontoen Azure Data Lake Storage skal have funktionen [Hierarkisk navneområde aktiveret](/azure/storage/blobs/data-lake-storage-namespace).
 
 - Hvis du vil godkende med en Azure-tjenestekonto, skal du sørge for, at den er konfigureret i din lejer. Der er flere oplysninger i [Opret forbindelse mellem målgruppeindsigt og en Azure Data Lake Storage Gen2-konto med et Azure-tjenestekonto](connect-service-principal.md).
 

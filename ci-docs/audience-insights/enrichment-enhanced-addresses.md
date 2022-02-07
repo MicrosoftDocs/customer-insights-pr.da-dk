@@ -1,7 +1,7 @@
 ---
 title: Udvidelse af forbedring af adresser (indeholder video)
 description: Udvid og normaliser adresseoplysninger om kundeprofiler med Microsofts modeller.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: afb1a6b4805702697889bb91ca36a96a714cba3d
-ms.sourcegitcommit: 9132fdf54070cc551ab878378078e6285852818f
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 12/18/2021
-ms.locfileid: "7934916"
 ---
+
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Udvidelse af kundeprofiler med forbedrede adresser
 
 Adresser i dine data kan være ustrukturerede, ufuldstændige eller forkerte. Brug Microsofts modeller til at normalisere og forbedre dine adresser i [Common Data Model-formatet](/common-data-model/schema/core/applicationcommon/address) for at opnå større nøjagtighed og indsigt.
@@ -100,17 +95,17 @@ Hvis du vil starte forbedringsprocessen, skal du vælge **Kør** fra kommandolin
 
 Når forbedringsprocessen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under **Mine forbedringer**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler.
 
-Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at vælge **Vis forbedrede data**.
+Du kan se et eksempel på de forbedrede data i **Forbedrede kunders forhåndsversion**-feltet. Vælg **Se mere**, og vælg fanen **Data** for at få adgang til en detaljeret visning af hver enkelt forbedret profil.
 
 ### <a name="overview-card"></a>Oversigtskort
 
 Oversigtskortet viser detaljer om dækningen af forbedringen. 
 
-* **Kunder behandlet og ændret**: Antallet af kundeprofiler, der blev forbedret.
+* **Adresser behandlet og ændret**: Antallet af kundeprofiler med adresser, der blev forbedret.
 
-* **Kunder behandlet og ikke ændret**: Antallet af kundeprofiler, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
+* **Adresser behandlet og ikke ændret**: Antallet af kundeprofiler med adresser, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
 
-* **Kunder ikke behandlet og ikke ændret**: Antallet af profiler, der ikke blev genkendt. Som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
+* **Adresser ikke behandlet og ikke ændret**: Antallet af kundeprofiler med adresser, der ikke blev genkendt. Som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
 
 ## <a name="next-steps"></a>Næste trin
 

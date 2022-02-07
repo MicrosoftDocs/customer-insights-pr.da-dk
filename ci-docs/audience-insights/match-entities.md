@@ -1,7 +1,7 @@
 ---
 title: Match objekter til datasamling
 description: Sammenlign objekter for at oprette samlede kundeprofiler.
-ms.date: 11/24/2021
+ms.date: 01/28/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,14 +10,9 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-match
-ms.openlocfilehash: 253c1614725252eb4c794d77669a00b401f0198d
-ms.sourcegitcommit: 740e41ec965cee2229592a6d2610c12def116311
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "7863804"
+  - ci-match
 ---
+
 # <a name="match-entities"></a>Sammenlign objekter
 
 Matchfasen angiver, hvordan du kan kombinere dine datasæt i et samlet kundeprofildatasæt. Når du har fuldført [tilknytningstrinnet](map-entities.md) i processen til samling af data, er du klar til at matche dine objekter. Matchfasen kræver mindst to tilknyttede objekter.
@@ -35,7 +30,7 @@ Hvert match samler to eller flere objekter i ét samlet konsolideret objekt. Sam
 
 :::image type="content" source="media/match-page.png" alt-text="Skærmbillede af matchsiden i området Saml af datasamlingsprocessen.":::
   
-Det primære objekt *eCommerce:eCommerceContacts* matches med det næste objekt *LoyaltyScheme:loyCustomers*. Det datasæt, der er resultatet af første matchtrin, matches med følgende objekt, hvis du har mere end to objekter.
+Det primære objekt *eCommerce:eCommerceContacts* matches med det næste objekt *LoyaltyScheme:loyCustomers*. Det datasæt resultat fra første matchtrin sammenholdes med følgende objekt, hvis du har mere end to objekter.
 
 > [!IMPORTANT]
 > Det objekt, du vælger som primært objekt, tjener som udgangspunkt for det samlede profildatasæt. Flere objekter, der er valgt under matchfasen, føjes til dette objekt. Det betyder ikke, at det samlede objekt indeholder *alle* de data, der findes i dette objekt.
@@ -89,7 +84,7 @@ Advarslen **Behøver regler** ud for et objektnavn indikerer, at der ikke er def
 
 Hvis du kun vil matche objekter, hvis attributterne overholder flere betingelser, skal du føje flere betingelser til en matchregel. Betingelser er knyttet til en logisk AND-operator og køres derfor kun, hvis alle betingelser er opfyldt.
 
-1. Gå til **Data** > **Saml** > **Match**, og vælg **Rediger** på den regel, du vil føje betingelser til.
+1. Gå til **Data** > **Unify** > **Match**, og vælg **Rediger** på den regel, du vil føje betingelser til.
 
 1. Vælg **Tilføj betingelse** i ruden **Rediger regel**.
 
@@ -108,7 +103,7 @@ Matchregler repræsenterer sæt af betingelser. Hvis du vil matche objekter efte
 
 ### <a name="change-the-entity-order-in-match-rules"></a>Ændre objektrækkefølgen i matchregler
 
-Du kan omarrangere objekter for matchregler for at ændre den rækkefølge, de behandles i. Regler, der er i konflikt på grund af en ændret rækkefølge, fjernes. Du skal genoprette fjernede regler med en opdateret konfiguration.
+Du kan omarrangere objekter for overensstemmelsesregler for at ændre den rækkefølge, de behandles i. Regler, der er i konflikt på grund af en ændret rækkefølge, fjernes. Du skal genoprette fjernede regler med en opdateret konfiguration.
 
 1. Gå til **Data** > **Saml** > **Match**, og vælg **Rediger**.
 
@@ -128,19 +123,23 @@ Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der i
 
 ### <a name="add-deduplication-rules"></a>Tilføj regler for deduplikering
 
-1. Gå til **Data** > **Saml** > **Match**.
+1. Gå til **Data** > **Unify** > **Match**.
 
-1. Vælg **Angiv objekter** i sektionen **Flettede dubletter**. Hvis der allerede er oprettet regler for deduplikering, skal du vælge **Rediger**.
+1. Vælg **Angiv objekter** i sektionen **Detaljer om de duplikerede poster**. Hvis der allerede er oprettet regler for deduplikering, skal du vælge **Rediger**.
 
 1. I ruden **Indstillinger for fletninger** skal du vælge de objekter, du vil køre deduplikering på.
 
-1. Angiv, hvordan dubletposterne skal kombineres, og vælg en af de tre indstillinger:
-   - **Flest udfyldte**: Identificerer posten med de fleste udfyldte attributfelter som vinderposten. Dette er standardfletteindstillingen.
-   - **Nyeste**: Identificerer vinderposten baseret på de nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
-   - **Mindst nyeste**: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
+   1. Angiv, hvordan dubletposterne skal kombineres, og vælg en af de tre indstillinger:
+      - **Flest udfyldte**: Identificerer posten med de fleste udfyldte attributfelter som vinderposten. Dette er standardfletteindstillingen.
+      - **Nyeste**: Identificerer vinderposten baseret på de nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
+      - **Mindst nyeste**: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
+
+   1. Du kan også vælge **Avanceret** for at definere regler for deduplikering for individuelle attributter for et objekt. Du kan f.eks. vælge at bevare den nyeste e-mail og den mest fuldstændige adresse fra forskellige poster. Udvid objektet for at se alle attributterne, og definer, hvilken indstilling der skal bruges til de enkelte attributter. Hvis du vælger en rekursbaseret indstilling, skal du også angive et dato/klokkeslætsfelt, der definerer rekursen. 
  
-   > [!div class="mx-imgBorder"]
-   > ![Regler for deduplikering trin 1.](media/match-selfconflation.png "Regler for deduplikering trin 1")
+      > [!div class="mx-imgBorder"]
+      > ![Regler for deduplikering trin 1.](media/match-selfconflation.png "Regler for deduplikering trin 1")
+
+   1. Vælg **Udført** for at anvende dine indstillinger for fletning for duplikering.
  
 1. Når objekterne er valgt, og de flettede indstillinger er angivet, skal du vælge **Tilføj regel** for at definere reglerne for deduplikering på et objektniveau.
    - **Vælg felt** lister alle de tilgængelige felter fra objektet. Vælg det felt, du vil kontrollere for dubletter. Vælg felter, der sandsynligvis er entydige for hver enkelt kunde. Det kan f.eks. være en mailadresse eller en kombination af navn, by og telefonnummer.
@@ -158,7 +157,7 @@ Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der i
 
 1. Alle brugerdefinerede matchregler, der er defineret, overskriver deduplikeringsregler. Hvis en deduplikeringsregel identificerer matchende poster, og en brugerdefineret matchregel er angivet til aldrig at matche disse poster, kan disse to poster ikke blive matchet.
 
-1. Når du har [kørt matchprocessen](#run-the-match-process), kan du se deduplikeringsstatistikken i felter med nøglemålepunkter.
+1. Når [du har kørt matchprocessen](#run-the-match-process), kan du se deduplikeringsstatistik i felterne med nøglemetrikværdier.
 
 ### <a name="deduplication-output-as-an-entity"></a>Deduplikere output som et objekt
 
@@ -222,7 +221,23 @@ Du kan omkonfigurere og finjustere de fleste af matchparametrene.
 
 - **Slet en regel** ved at vælge symbolet **Slet**.
 
-## <a name="specify-custom-match-conditions"></a>Angive brugerdefinerede matchbetingelser
+## <a name="advanced-options"></a>Avancerede indstillinger
+
+### <a name="add-exceptions-to-a-rule"></a>Føje undtagelser til en regel
+
+I de fleste tilfælde fører objektets matching til entydige brugerprofiler med samlede data. Hvis du dynamisk vil håndtere sjældne tilfælde af falsk positive og false negativer, kan du definere undtagelser for en overensstemmelsesregel. Undtagelser anvendes efter behandling af overensstemmelsesreglerne og undgå matchning af alle poster, der opfylder undtagelseskriterierne.
+
+Hvis din matchregel f.eks. kombinerer efternavn, by og fødselsdato, identificerer systemet de samme efternavn, der lever i samme bybillede som den samme profil. Du kan angive en undtagelse, der ikke stemmer overens med profilerne, hvis fornavn i de objekter, du kombinerer, ikke er de samme.
+
+1. Gå til **Data** > **Unify** > **Match**, og vælg **Rediger** på den regel, du vil føje betingelser til.
+
+1. Vælg **Tilføj undtagelse** i ruden **Rediger regel**.
+
+1. Angiv undtagelseskriterierne. 
+
+1. Vælg **Udført** for at gemme reglen.
+
+### <a name="specify-custom-match-conditions"></a>Angive brugerdefinerede matchbetingelser
 
 Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken. Der findes følgende fire indstillinger: 
 
@@ -241,7 +256,7 @@ Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken.
 
 1. Vælg den brugerdefinerede matchindstilling på rullelisten **Brugerdefineret type**, og vælg **Hent skabelon**. Du skal bruge en separat skabelon for hver enkelt matchindstilling.
 
-1. Download af en skabelonfil. Åbn den, og udfyld detaljerne. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
+1. Åbn den hentede skabelonfil, og udfyld detaljerne. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
     - Entity1: Salg
     - Entity1Key: 12345
     - Entity2: Kontakt
@@ -268,7 +283,7 @@ Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken.
 
 1. Vælg **Kør** på siden **Match** for at starte matchprocessen. Andre angivne matchregler tilsidesættes af den brugerdefinerede matchkonfiguration.
 
-### <a name="known-issues"></a>Kendte problemer
+#### <a name="known-issues"></a>Kendte problemer
 
 - Selv-sammenblanding viser ikke de normaliserede data i deduplikeringsobjekter. Normalisering anvendes dog internt under deduplikering. Det er efter design til alle normaliseringer. 
 - Hvis indstillingen for semantisk type fjernes i fasen **Tilknytning**, når en overensstemmelsesregel bruger Alias-tilknytning eller Brugerdefineret bypass, anvendes normalisering ikke. Det sker kun, hvis du fjerner den semantiske type, når du har konfigureret normalisering i matchreglen, da den semantiske type er ukendt.

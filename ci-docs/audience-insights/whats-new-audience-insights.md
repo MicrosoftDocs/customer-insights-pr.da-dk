@@ -1,7 +1,7 @@
 ---
 title: Nye og kommende funktioner
-description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 12/02/2021
+description: 'Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.'
+ms.date: 01/27/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -9,23 +9,62 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: midevane
 manager: shellyha
-ms.openlocfilehash: 346ef93e8471580b782618550ca4eb71b3f3c921
-ms.sourcegitcommit: 48d799535fad84e8b63c80aef48b5c5e87628f58
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "7884255"
 ---
+
 # <a name="whats-new-in-the-audience-insights-capability-of-dynamics-365-customer-insights"></a>Nyheder i målgruppen Insights-funktioner i Dynamics 365 Customer Insights
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
-Vi er glade for at kunne fortælle om vores nyeste opdateringer! Denne artikel indeholder en oversigt over funktionerne i offentlig prøveversion, forbedring af generel tilgængelighed og funktionsopdateringer. Hvis du vil have vist de langsigtede funktionsplaner, skal du kigge i [frigivelsesplanerne for Dynamics 365 og Power Platform](/dynamics365/release-plans/).
+
+Vi er glade for at kunne fortælle om vores nyeste opdateringer! Denne artikel indeholder en oversigt over funktionerne i offentlig forhåndsversion, forbedring af generel tilgængelighed og funktionsopdateringer. Hvis du vil have vist de langsigtede funktionsplaner, skal du kigge i [frigivelsesplanerne for Dynamics 365 og Power Platform](/dynamics365/release-plans/).
 
 Vi udruller opdateringerne område for område. Så visse geografiske områder kan se funktioner før andre. Medmindre andet er angivet, behøver du ikke at foretage dig noget, og vi opdaterer automatisk appen uden nedetid.
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+
+## <a name="december-2021-updates"></a>Opdatering fra december 2021
+
+Opdateringerne i december 2021 indeholder nye funktioner, ydeevneopgraderinger og fejlrettelser.
+
+### <a name="forward-customer-insights-logs-to-azure-monitor"></a>Videresende Customer Insights-logfiler til Azure Monitor
+
+Customer Insights leverer en direkte integration med Azure Monitor. Denne funktion omfatter overvågningshændelser og driftsmæssige hændelser. Med Azure Monitor-ressourcelogfiler kan du overvåge og sende logge til Azure-datalager, Azure Log Analytics eller streame dem til Azure Event Hubs.
+
+Du kan finde flere oplysninger i [Logge på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)](diagnostics.md).
+
+### <a name="enrich-customer-profiles-with-engagement-data"></a>Forbedre kundeprofiler med engagementsdata
+
+Brug data fra Microsoft Office 365 til at forbedre dine kundekontoprofiler med indsigt i engagementer via Office 365-apps. Engagementsdataene består af mail- og mødeaktivitet, der aggregeres på kontoniveau. F.eks. antallet af mails fra et forretningskonto eller antallet af møder med kontoen. Der deles ingen data om de enkelte brugere. Denne forbedring er kun tilgængelig i følgende områder: Storbritannien, Europa, Nordamerika.
+
+Du kan finde flere oplysninger i [Forbedre kundeprofiler med engagementsdata (forhåndsversion)](enrichment-office.md)
+
+### <a name="advanced-data-unification-features"></a>Funktioner til avanceret dataenhed
+
+#### <a name="enable-conflict-resolution-policies-at-the-individual-attribute-level"></a>Aktivere politikker for løsning af konflikter på de enkelte attributniveauer
+
+Når du deduplikerer kundeposter i et objekt, er det måske ikke en god ide at vælge en fuld post som vinder. Nu kan du flette de bedste felter fra forskellige poster baseret på regler for alle attributter. Du kan f.eks. vælge at bevare den nyeste e-mail og den mest fuldstændige adresse fra forskellige poster. 
+
+Du kan nu definere separate regler for fletning for de enkelte attributter, mens dubletter og fletning af poster i et enkelt objekt. Tidligere har du kun mulighed for at vælge en enkelt fletningsregel (holde poster baseret på rekencydata completeency-data), og den pågældende regel er blevet anvendt på postniveau på alle attributter. Det er ikke ideelt, når nogle af de data, du vil beholde, findes i post A og andre gode data, der findes i post B.
+
+Du kan finde flere oplysninger i [Definition af deduplikering for et match-objekt](match-entities.md#define-deduplication-on-a-match-entity).
+
+#### <a name="custom-rules-for-matching"></a>Brugerdefinerede regler for match
+
+Der er tidspunkter, hvor du skal angive en undtagelse til generelle regler for IKKE at matche poster. Dette kan ske, når flere brugere deler tilstrækkeligt mange oplysninger, så systemet svarer til dem som en enkeltperson. Det kan f.eks. være med efternavn, der lever i den samme by og deler fødselsdatoen.
+
+Undtagelser sikrer, at samling af data kan håndteres forkert i reglerne for samling. Du kan føje flere undtagelser til en regel.
+
+Du kan finde flere oplysninger under [Føj undtagelser til en regel](match-entities.md#add-exceptions-to-a-rule).
+
+#### <a name="provide-additional-conflict-resolution-policies-and-enable-grouping-of-attributes"></a>Angive yderligere politikker for løsning af konflikter og aktivere gruppering af attributter
+
+Med denne funktion kan du behandle en gruppe felter som en enkelt enhed. Hvis f.eks. posterne indeholder felterne Adresse1, Adresse2, By, Land og Postnr. Vi vil højst sandsynligt ikke flette Adresse2 i en anden post og tænke på, at det ville gøre dataene mere fuldstændige.
+
+Du kan nu kombinere en gruppe relaterede felter og anvende en enkelt fletningspolitik på gruppen. 
+
+Du kan finde flere oplysninger [i Kombinere en gruppe felter](merge-entities.md#combine-a-group-of-fields).
+
 
 ## <a name="november-2021-updates"></a>Opdatering fra november 2021
 
@@ -271,12 +310,12 @@ Opdateringerne fra januar 2021 indeholder flere funktioner, opgraderinger af yde
 #### <a name="extensibility"></a>Udvidelse
 
 - **Udvidet funktionalitet og forbedret ydeevne ved eksport af SFTP** Du kan nu eksportere alle outputobjekter fra Customer Insights til en SFTP-vært. Tidligere var eksport begrænset til segmentobjekter. Ydeevnen af eksporten af SFTP giver desuden mulighed for mere datamængde på mindre tid, afhængigt af SFTP-værtsydeevnen.    
-  Du kan finde flere oplysninger i [Connector til SFTP (prøveversion)](export-sftp.md).  
+  Du kan finde flere oplysninger i [Connector til SFTP (forhåndsversion)](export-sftp.md).  
 
 #### <a name="segments"></a>Segmenter
 
 - **Maskinel indlæring foreslåede segmenter for at forbedre målinger** Der er en ny måde at opdage og oprette segmenter på. Systemet bruger en AI-model til at foreslå segmenter, der kan være med til at forbedre et nøgletal (måling), du allerede sporer. Vi viser omfanget af den indflydelse, som attributter, du vælger på en måleenhed eller en anden primær attribut, er. Oplysningerne hjælper dig med at finde potentielle segmenter, der indeholder salgsmuligheder.    
-  Du kan finde flere oplysninger i [Foreslåede segmenter (prøveversion)](suggested-segments.md).
+  Du kan finde flere oplysninger i [Foreslåede segmenter (forhåndsversion)](suggested-segments.md).
 
 #### <a name="data-unification"></a>Datasamling
 

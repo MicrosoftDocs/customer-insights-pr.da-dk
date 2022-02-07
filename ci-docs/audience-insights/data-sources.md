@@ -1,6 +1,6 @@
 ---
 title: Brug datakilder til at indsætte data
-description: Få mere at vide om, hvordan du importerer data fra forskellige kilder.
+description: 'Få mere at vide om, hvordan du importerer data fra forskellige kilder.'
 ms.date: 12/06/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,16 +9,11 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 78379c827e132b3b172aa7381f4c5ef2c70b9771
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977822"
 ---
+
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Målgruppeindsigt-muligheden for Dynamics 365 Customer Insights opretter forbindelse til data fra et bredt udvalg af kilder. Oprettelse af forbindelse til en datakilde kaldes ofte processen for *dataindtagelse*. Når du har indtaget dataene, kan du [samle](data-unification.md) og udføre handlinger på dem.
 
@@ -28,7 +23,7 @@ Se de detaljerede artikler om, hvordan du tilføjer en datakilde afhængigt af d
 
 Du kan tilføje følgende datakilder:
 
-- [Power Query-connectors](connect-power-query.md)
+- [Power Query-connectorer](connect-power-query.md)
 - [Fælles datamodel](connect-common-data-model.md)
 - [Microsoft Dataverse-sø](connect-dataverse-managed-lake.md)
 

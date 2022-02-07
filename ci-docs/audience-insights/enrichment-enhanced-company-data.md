@@ -1,7 +1,7 @@
 ---
 title: Forbedrede virksomhedsdata
 description: Forbedre og normalisere virksomhedsdata med Microsofts modeller.
-ms.date: 12/16/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,13 +9,8 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 616efe723313a6fbec7f1c7219c236a8f0aab3b2
-ms.sourcegitcommit: e141a6a34a985cca68f03082a700ed27f2f3c0c1
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "7927575"
 ---
+
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Forbedring af virksomhedsprofiler med forbedrede virksomhedsdata
 
 Brug Microsofts modeller og kompilerede virksomhedsdata til at korrigere, supplere og standardisere dine virksomhedsprofiler. Vi bruger formatet [Common Data Model](/common-data-model/schema/core/applicationcommon/account) for at opnå større præcision og indsigt.
@@ -82,17 +77,17 @@ Hvis du vil starte forbedringsprocessen, skal du vælge **Kør** fra kommandolin
 
 Når forbedringsprocessen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under **Mine forbedringer**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler.
 
-Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at vælge **Vis forbedrede data**.
+Du kan se et eksempel på de forbedrede data i **Forbedrede kunders forhåndsversion**-feltet. Vælg **Se mere**, og vælg fanen **Data** for at få adgang til en detaljeret visning af hver enkelt forbedret profil.
 
 ### <a name="overview-card"></a>Oversigtskort
 
 Oversigtskortet viser detaljer om dækningen af forbedringen. 
 
-* **Kunder behandlet og ændret**: Antallet af kundeprofiler, der blev forbedret.
+* **Firmaer behandlet og ændret**: Antallet af kundefirmaprofiler, der blev forbedret.
 
-* **Kunder behandlet og ikke ændret**: Antallet af kundeprofiler, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
+* **Firmaer behandlet og ikke ændret**: Antallet af kundefirmaprofiler, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
 
-* **Kunder ikke behandlet og ikke ændret**: Antallet af profiler, der ikke blev genkendt. Som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
+* **Firmaer ikke behandlet og ikke ændret**: Antallet af kundefirmaprofiler, der ikke blev genkendt. Det sker som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
 
 ## <a name="next-steps"></a>Næste trin
 
