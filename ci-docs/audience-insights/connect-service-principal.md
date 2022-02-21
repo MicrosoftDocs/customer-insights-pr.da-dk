@@ -9,12 +9,12 @@ author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+ms.openlocfilehash: 1af01e5579f85d7c8bc8976a003f53ef2dd280d1
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900236"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088111"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto
 
@@ -23,7 +23,7 @@ I denne artikel beskrives, hvordan du opretter forbindelse mellem Dynamics 365 C
 Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begrænsede tilladelser. I stedet for at have programmer til at logge på som bruger med fuld administratorrettigheder, tilbyder Azure tjenestekonti. Du kan bruge servicechefer til på sikker måde at [tilføje eller redigere en mappe med Common Data Model som en datakilde](connect-common-data-model.md) eller [oprette eller opdatere et miljø](create-environment.md).
 
 > [!IMPORTANT]
-> - Den lagerkonto for Data Lake, der skal bruge tjenestekontoen, skal have [aktiveret hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace).
+> - Den Data Lake-lagerkonto, der skal bruge tjenestekontoen, skal være Gen2 og have [hierarkisk navneområde aktiveret](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagerkonti understøttes ikke.
 > - Du skal have administratortilladelser til dit Azure-abonnement for at oprette en servicechef.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Oprettelse af en Azure-servicekonto til Customer Insights

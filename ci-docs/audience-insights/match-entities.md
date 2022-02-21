@@ -1,7 +1,7 @@
 ---
 title: Match objekter til datasamling
 description: Sammenlign objekter for at oprette samlede kundeprofiler.
-ms.date: 01/28/2022
+ms.date: 02/07/2022
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
@@ -10,9 +10,14 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-match
+- ci-match
+ms.openlocfilehash: 20f21a6601a1a6f13d076878b10c15be947dac9f
+ms.sourcegitcommit: a399bd17523c8d06afd7d78af4fc711f93c0e8be
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 02/07/2022
+ms.locfileid: "8098828"
 ---
-
 # <a name="match-entities"></a>Sammenlign objekter
 
 Matchfasen angiver, hvordan du kan kombinere dine datasæt i et samlet kundeprofildatasæt. Når du har fuldført [tilknytningstrinnet](map-entities.md) i processen til samling af data, er du klar til at matche dine objekter. Matchfasen kræver mindst to tilknyttede objekter.
@@ -24,13 +29,7 @@ Matchsiden består af tre sektioner:
 
 ## <a name="specify-the-match-order"></a>Angive matchrækkefølgen
 
-Gå til **Data** > **Saml** > **Match**, og vælg **Angiv rækkefølge** for at starte fasen.
-
-Hvert match samler to eller flere objekter i ét samlet konsolideret objekt. Samtidig opbevares de entydige kundeposter. Vi har f.eks. valgt to objekter: **eCommerce:eCommerceContacts** som det primære objekt og **LoyaltyScheme:loyCustomers** som andet objekt. Rækkefølgen af objekterne angiver, i hvilken rækkefølge systemet skal forsøge at matche posterne.
-
-:::image type="content" source="media/match-page.png" alt-text="Skærmbillede af matchsiden i området Saml af datasamlingsprocessen.":::
-  
-Det primære objekt *eCommerce:eCommerceContacts* matches med det næste objekt *LoyaltyScheme:loyCustomers*. Det datasæt resultat fra første matchtrin sammenholdes med følgende objekt, hvis du har mere end to objekter.
+Hvert match samler to eller flere objekter i ét samlet konsolideret objekt. Samtidig opbevares de entydige kundeposter. Overensstemmelsesrækkefølgen angiver den rækkefølge, som systemet forsøger at matche posterne i.
 
 > [!IMPORTANT]
 > Det objekt, du vælger som primært objekt, tjener som udgangspunkt for det samlede profildatasæt. Flere objekter, der er valgt under matchfasen, føjes til dette objekt. Det betyder ikke, at det samlede objekt indeholder *alle* de data, der findes i dette objekt.
@@ -38,9 +37,18 @@ Det primære objekt *eCommerce:eCommerceContacts* matches med det næste objekt 
 > Der er to overvejelser, der kan hjælpe dig med at vælge hierarkiet for objekterne:
 >
 > - Vælg det objekt, der har de mest fuldstændige og pålidelige profildata om kunderne, som det primære objekt.
-> - Vælg det objekt, der har flere attributter til fælles med andre objekter (f.eks. navn, telefonnummer eller mailadresse) som primært objekt.
+> - Vælg det objekt, der har flere attributter til fælles med andre objekter (f.eks. navn, telefonnummer eller e-mailadresse) som primært objekt.
 
-Når du har angivet matchrækkefølgen, kan du se de definerede matchpar i afsnittet **Oplysninger om matchede poster** i **Data** > **Saml** > **Match**. Nøglemålepunkterne er tomme, indtil matchprocessen er fuldført.
+1. Gå til **Data** > **Saml** > **Match**, og vælg **Angiv rækkefølge** for at starte fasen.
+1. Vælg **Objektrækkefølge**. Du kan f.eks. vælge **eCommerce:eCommerceContacts** som det primære objekt og **LoyaltyScheme:loyCustomers** som sekundære objekt. 
+1. Hvis du have alle poster i objektet som en entydig kunde og matchet med ethvert følgende objekt, skal du vælge **Inkludér alle**.
+1. Vælg **Udført**. 
+
+Når du har angivet overensstemmelsesrækkefølgen, vises de definerede matchpar i afsnittet **Oplysninger om matchede poster** i **Data** > **Unify** > **Match**. Målepunkterne er tomme, indtil overensstemmelsesprocessen er fuldført.
+
+:::image type="content" source="media/match-page.png" alt-text="Skærmbillede af matchsiden i området Saml af datasamlingsprocessen.":::
+  
+Det primære objekt *eCommerce:eCommerceContacts* matches med det næste objekt *LoyaltyScheme:loyCustomers*. Det datasæt resultat fra første matchtrin sammenholdes med følgende objekt, hvis du har mere end to objekter.
 
 ## <a name="define-rules-for-match-pairs"></a>Definere regler for matchpar
 
@@ -50,7 +58,7 @@ Advarslen **Behøver regler** ud for et objektnavn indikerer, at der ikke er def
 
 :::image type="content" source="media/match-rule-add.png" alt-text="Skærmbillede af sektionen Oplysninger om matchet post med kontrolelement for at tilføje regler fremhævet.":::
 
-1. Vælg **Tilføj regler** under et objekt i sektionen **Detaljer om matchede poster** for at definere matchregler.
+1. Vælg **Tilføj regel** under et objekt i sektionen **Oplysninger om matchede poster** for at definere matchregler.
 
 1. Konfigurer betingelserne for reglen i ruden **Opret regel**.
 
@@ -61,15 +69,15 @@ Advarslen **Behøver regler** ud for et objektnavn indikerer, at der ikke er def
    - **Objekt/felt (anden række)**: Vælg en attribut, der er relateret til attributten for det objekt, der er angivet i første række.
 
    - **Normaliser**: Vælg mellem følgende normaliseringsindstillinger for de valgte attributter. 
-     - Blanktegn: Fjerner alle mellemrum. *Hej   verden* bliver til *Hejverden*.
+     - Tal: Konverterer andre talsystemer, f.eks. romertal, til arabertal. *VIII* bliver til *8*.
      - Symboler: Fjerner alle symboler og specialtegn. *Head&Shoulder* bliver til *HeadShoulder*.
      - Tekst til små bogstaver: Konverterer alle tegn til små bogstaver. *ALL CAPS og Titel, små/store bogstaver* bliver til *all caps og titel, små/store bogstaver*.
+     - Type (Telefon, Navn, Adresse, Organisation): Standardiserer navne, titler, telefonnumre, adresser osv. 
      - Unicode til ASCII: Konverter Unicode-format til ASCII-tegn. */u00B2* bliver til *2*.
-     - Tal: Konverterer andre talsystemer, f.eks. romertal, til arabertal. *VIII* bliver til *8*.
-     - Semantiske typer: Standardiserer navne, titler, telefonnumre, adresser osv. 
+     - Blanktegn: Fjerner alle mellemrum. *Hej   verden* bliver til *Hejverden*.
 
    - **Præcision** : Angiv det præcisionsniveau, der skal gælde for denne betingelse. 
-     - **Grundlæggende**: Vælg mellem *Lav*, *Mellem*, *Høj* og *Nøjagtig*. Vælg **Nøjagtig** for kun at matche poster, der matcher 100 procent. Vælg et af de andre niveauer for at matche poster, der ikke er 100 procent identiske.
+     - **Grundlæggende**: Vælg mellem *Lav*, *Mellem*, *Høj* og *Nøjagtig*. Vælg **Nøjagtig**, hvis du kun vil matche poster, der svarer til 100 procent. Vælg et af de andre niveauer for at matche poster, der ikke er 100 procent identiske.
      - **Brugerdefineret** : Angiv en procentdel, som posterne skal matche. Systemet vil kun matche poster, der opfylder denne grænse.
 
 1. Angiv et **Navn** til reglen.
@@ -92,7 +100,7 @@ Hvis du kun vil matche objekter, hvis attributterne overholder flere betingelser
 
 ### <a name="add-rules-to-a-match-pair"></a>Føje regler til et matchpar
 
-Matchregler repræsenterer sæt af betingelser. Hvis du vil matche objekter efter betingelser ud fra flere attributter, skal du tilføje flere regler
+Matchregler repræsenterer sæt af betingelser. Hvis du vil matche objekter efter betingelser ud fra flere attributter, skal du tilføje flere regler.
 
 1.  Gå til **Data** > **Saml** > **Match**, og vælg **Tilføj regel** på det objekt, du vil føje regler til.
 
@@ -117,7 +125,7 @@ Du kan omarrangere objekter for overensstemmelsesregler for at ændre den række
 
 Ud over [matchregler på tværs af objekter](#define-rules-for-match-pairs) kan du også angive regler for deduplikering. *Deduplikering* er en anden proces, når poster matches. Den identificerer dubletposter og fletter dem til én post. Kildeposter knyttes til den flettede post med alternative id'er.
 
-Deduplikerede poster anvendes i processen med match af krydsobjektet. Deduplikering sker på individuelle objekter og kan konfigureres for alle objekter, der bruges i matchpar.
+Oplysninger om deduplikerede poster bruges i matchningsprocessen på tværs af objekter. Deduplikering sker på individuelle objekter og kan konfigureres for alle objekter, der bruges i matchpar.
 
 Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der ikke er konfigureret sådanne regler, anvendes de systemdefinerede regler. De kombinerer alle poster i en enkelt post, før de overfører objektdataene til matchning på tværs af objekter med forbedret ydeevne.
 
@@ -134,7 +142,7 @@ Det er ikke obligatorisk at angive regler for fjernelse af dubletter. Hvis der i
       - **Nyeste**: Identificerer vinderposten baseret på de nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
       - **Mindst nyeste**: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
 
-   1. Du kan også vælge **Avanceret** for at definere regler for deduplikering for individuelle attributter for et objekt. Du kan f.eks. vælge at bevare den nyeste e-mail og den mest fuldstændige adresse fra forskellige poster. Udvid objektet for at se alle attributterne, og definer, hvilken indstilling der skal bruges til de enkelte attributter. Hvis du vælger en rekursbaseret indstilling, skal du også angive et dato/klokkeslætsfelt, der definerer rekursen. 
+   1. Alternativt kan du definere deduplikeringsregler for individuelle attributter for et objekt ved at vælge **Avanceret**. Du kan f.eks. vælge at bevare den nyeste e-mail og den mest fuldstændige adresse fra forskellige poster. Udvid objektet for at se alle attributterne, og definer, hvilken indstilling der skal bruges til de enkelte attributter. Hvis du vælger en rekursbaseret indstilling, skal du også angive et dato/klokkeslætsfelt, der definerer rekursen. 
  
       > [!div class="mx-imgBorder"]
       > ![Regler for deduplikering trin 1.](media/match-selfconflation.png "Regler for deduplikering trin 1")

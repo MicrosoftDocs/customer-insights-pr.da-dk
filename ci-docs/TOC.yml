@@ -2,6 +2,22 @@
   href: index.yml
 - name: Produktoversigt
   href: overview.md
+- name: Læringskatalog
+  items:
+    - name: Start her
+      href: /learn/modules/get-started-customer-data-platform/
+    - name: Indsættelse af data
+      href: /learn/modules/ingest-data-customer-insights/
+    - name: Oprette en samlet kundeprofil
+      href: /learn/modules/unified-customer-profile/
+    - name: Arbejde med målgruppeindsigt
+      href: /learn/modules/working-with-customer-insights/
+    - name: Forbedre data og forudsigelser
+      href: /learn/modules/enrich-data/
+    - name: Administrere eksterne forbindelser
+      href: /learn/modules/configure-third-party-connections/
+    - name: Administere Customer Insights
+      href: /learn/modules/administer-customer-data-platform/
 - name: Gratis prøveversion
   items:
     - name: Tilmelde dig for at få en gratis prøveversion
@@ -30,16 +46,6 @@
           href: audience-insights/home.md
     - name: Arbejde med forretningskonti
       href: audience-insights/work-with-business-accounts.md
-    - name: Få mere at vide om moduler
-      items:
-        - name: Indsættelse af data
-          href: /learn/modules/ingest-data-customer-insights/
-        - name: Oprette en samlet kundeprofil
-          href: /learn/modules/unified-customer-profile/
-        - name: Arbejde med appen
-          href: /learn/modules/working-with-customer-insights/
-        - name: Forbedring af data og forudsigelser
-          href: /learn/modules/enrich-data/
     - name: Datakilder
       items:
         - name: Oversigt over datakilder
@@ -372,3 +378,5 @@
   href: service-limits.md
 - name: DSR-rettigheder og forespørgsler
   href: dsr-rights-requests.md
+- name: Få support
+  href: /power-platform/admin/get-help-support

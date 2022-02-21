@@ -8,12 +8,12 @@ author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: db38778c0da862e119f9b374e07c82ead0d3a4f2
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 6aadd6b5018f63362f86c0e3e3ce085e94c47391
+ms.sourcegitcommit: 5dd32dc2b18027cf2aa954356dded4bc6aab9801
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645575"
+ms.lasthandoff: 02/12/2022
+ms.locfileid: "8116007"
 ---
 # <a name="create-a-link-between-audience-insights-and-engagement-insights"></a>Opret et link mellem målgruppeindsigt og engagementsindsigt
 
@@ -25,7 +25,7 @@ Brug ensartede profiler og segmenter fra målgruppeindsigt for at få flere anal
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-- Målgruppeindsigtsprofiler skal gemmes i et Azure Data Lake Storage-firma, du ejer, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md)&ndash;-administrerede Data Lake. 
+- Målgruppeindsigtsprofiler skal gemmes i et Azure Data Lake Storage-firma, du ejer, eller i en [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro)&ndash;-administrerede Data Lake. 
 - Dit målgruppeindsigtsmiljø skal have et tilknyttet Dataverse-miljø. Og hvis det pågældende miljø også bruger Dataverse til datalagring, skal du kontrollere indstillingen **Aktivér datadeling** i målgruppeindsigt. Du kan finde flere oplysninger under [Oprette og konfigurere et miljø i målgruppeindsigt](../audience-insights/create-environment.md).
 - Du skal administratortilladelser til både engagementsindsigt og til målgruppeindsigtsmiljøer.
 - Tilknyttede miljøer skal være i samme geografiske område.

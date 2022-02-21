@@ -1,7 +1,7 @@
 ---
 title: Tilføjelsesprogrammet Kundekort til Dynamics 365-apps (indeholder video)
 description: Vis data fra målgruppeindsigt i Dynamics 365-apps med dette tilføjelsesprogram.
-ms.date: 12/22/2021
+ms.date: 02/02/2022
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: Nils-2m
 ms.author: nikeller
 manager: shellyha
+ms.openlocfilehash: ce6c8fab84fd4c5dfc9f78b91dde3483a1d358c1
+ms.sourcegitcommit: 11308ed275b4b25a35576eccfcae9dda9e2c2784
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "8085207"
 ---
-
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
 
@@ -113,5 +118,26 @@ Tilføjelsesprogrammet Kundekort opgraderes ikke automatisk. Hvis du vil opgrade
 
 1. Når du har startet opgraderingsprocessen, kan du se en indlæsningsindikator, indtil opgraderingen er fuldført. Hvis der ikke findes en nyere version, vises der en fejlmeddelelse i opgraderingen.
 
+## <a name="troubleshooting"></a>Fejlfinding
+
+### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Kontrolelementer fra tilføjelsesprogrammet Kundekort kan ikke finde data
+
+**Problem:**
+
+Selv med korrekt konfigurerede id-felter kan kontrolelementerne ikke finde data til kunder.  
+
+**Løsning:**
+
+1. Kontrollér, at du har konfigureret tilføjelsesprogrammet Kort i henhold til instruktionerne: [Konfiguration af kundekort-tilføjelsesprogrammet](#configure-the-customer-card-add-in) 
+
+1. Gennemse konfigurationen af dataindtagelse. Rediger datakilde til Dynamics 365-systemet, som indeholder kontakt-id'et GUID. Hvis der vises et GUID for kontakt-id'et med store bogstaver i Power Query-editoren, skal du prøve følgende: 
+    1. Rediger datakilde for at åbne datakilde i Power Query-editor.
+    1. Vælg kolonnen for kontakt-id.
+    1. Vælg **Transformér** i overskriftslinjen for at få vist tilgængelige handlinger.
+    1. Vælg **små bogstaver**. Kontrollér, om GUID'er i tabellen nu er med små bogstaver.
+    1. Gem datakilden.
+    1. Kør dataindtagelse, samling og downstream-processer for at overføre ændringerne til GUID'et. 
+
+Når hele opdateringen er fuldført, skal kontrolelementerne til tilføjelsesprogrammet Til kundekort vise de forventede data. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

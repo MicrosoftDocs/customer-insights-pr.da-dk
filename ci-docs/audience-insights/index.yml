@@ -9,13 +9,13 @@ metadata:
   ms.topic: hub-page
   author: m-hartmann
   ms.author: mhart
-  ms.date: 07/30/2021
-  ms.openlocfilehash: 3764ed7c7fc4bd0dfa89e8a574617a1eb6273c2e36f6e5daa5aeca2c919ba7b8
-  ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+  ms.date: 03/02/2022
+  ms.openlocfilehash: d24ed34b794e77a52ceec1a4411440a88430a369
+  ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
   ms.translationtype: HT
   ms.contentlocale: da-DK
-  ms.lasthandoff: 08/10/2021
-  ms.locfileid: "7031374"
+  ms.lasthandoff: 02/03/2022
+  ms.locfileid: "8088232"
 landingContent:
 - title: Om målgruppen Insights
   linkLists:
@@ -27,6 +27,10 @@ landingContent:
       url: whats-new-audience-insights.md
     - text: Find målgruppeindsigt
       url: https://dynamics.microsoft.com/ai/customer-insights/audience-insights-capability/
+  - linkListType: learn
+    links:
+    - text: Customer Insights, læringsforløb
+      url: /learn/paths/build-customer-insights/
 - title: Saml data
   linkLists:
   - linkListType: how-to-guide
@@ -37,7 +41,11 @@ landingContent:
       url: data-unification.md
     - text: Forstå enheder
       url: entities.md
-- title: Forbedre og opdatere data
+  - linkListType: learn
+    links:
+    - text: Oprette en samlet profil
+      url: /learn/modules/unified-customer-profile/
+- title: Få indsigt
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -45,9 +53,13 @@ landingContent:
       url: enrichment-hub.md
     - text: Konfigurer relationer
       url: relationships.md
-    - text: Angiv kundeaktiviteter
-      url: activities.md
-- title: Få indsigt
+    - text: Komplet data med forudsigelser
+      url: predictions.md
+  - linkListType: learn
+    links:
+    - text: Forbedre og styrke data
+      url: /learn/modules/enrich-data/
+- title: Bygge på dine data
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -55,8 +67,12 @@ landingContent:
       url: segments.md
     - text: Oprette målinger
       url: measures.md
-    - text: Komplet data med forudsigelser
-      url: predictions.md
+    - text: Angiv kundeaktiviteter
+      url: activities.md
+  - linkListType: learn
+    links:
+    - text: Arbejde med appen
+      url: /learn/modules/working-with-customer-insights/
 - title: Eksportere kundedata
   linkLists:
   - linkListType: how-to-guide
@@ -67,6 +83,10 @@ landingContent:
       url: customer-card-add-in.md
     - text: Power BI-connector
       url: export-power-bi.md
+  - linkListType: learn
+    links:
+    - text: Administrere eksterne forbindelser
+      url: /learn/modules/configure-third-party-connections/
 - title: Administrere appen
   linkLists:
   - linkListType: how-to-guide
@@ -77,3 +97,7 @@ landingContent:
       url: permissions.md
     - text: Administrere flere miljøer
       url: manage-environments.md
+  - linkListType: learn
+    links:
+    - text: Administere Customer Insights
+      url: /learn/modules/administer-customer-data-platform/

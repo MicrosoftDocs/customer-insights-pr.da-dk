@@ -10,12 +10,12 @@ author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 4f26220f6ba7f5b5ae00c11216129f9ad814b77d
-ms.sourcegitcommit: 626d485dae1e001e63e4d4bf78f6770766822ba0
+ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
+ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/06/2021
-ms.locfileid: "7892331"
+ms.lasthandoff: 02/03/2022
+ms.locfileid: "8088095"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Oprette et miljø i målgruppeindsigt
 
@@ -28,7 +28,7 @@ Organisationer kan oprette *to* miljøer for alle Customer Insights-licenser. Hv
 
 ## <a name="create-a-new-environment"></a>Opret et nyt miljø
 
-Når du har købt en abonnementslicens til Customer Insights, modtager den globale administrator af Microsoft 365-lejeren en mail, der inviterer dem til at oprette miljøet. Gå til [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) for at komme i gang. 
+Efter køb af en abonnementslicens til Customer Insights, modtager Microsoft 365-lejerens globale administrator en mail, hvor de opfordres til at oprette miljøet. Gå til [https://home.ci.ai.dynamics.com/start](https://home.ci.ai.dynamics.com/start) for at komme i gang. 
 
 En styret oplevelse hjælper dig gennem trinnene til at indsamle alle nødvendige oplysninger til et nyt miljø. Du skal have [administratortilladelser](permissions.md) i målgruppeindsigt til at oprette eller administrere miljøer.
 
@@ -64,7 +64,7 @@ Når du gemmer data i Azure Data Lake Storage, accepterer du, at data overføres
 > Customer Insights understøtter i øjeblikket følgende:
 > - Objekter, der er indtaget fra Power BI-datastrømme, som er gemt i en Microsoft Dataverse-administreret Data Lake.  
 > - Azure Data Lake Storage-konti fra det samme Azure-område, som du valgte under oprettelse af miljøet.
-> - Azure Data Lake Storage-firmaer, hvor *hierarkisk navneområde* er aktiveret.
+> - Azure Data Lake Storage-konti der er Gen2, og som har aktiveret *Hierarkisk navneområde*. Azure Data Lake Gen1-lagerkonti understøttes ikke.
 
 Du kan vælge mellem en ressourcebaseret indstilling og en abonnementsbaseret indstilling for godkendelse for Azure Data Lake Storage-indstillingen. Du kan finde flere oplysninger i [Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md). Navnet **Beholder** er `customerinsights` og kan ikke ændres.
 
