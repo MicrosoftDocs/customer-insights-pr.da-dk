@@ -1,6 +1,6 @@
 ---
 title: Synspunktanalyse for kundefeedback
-description: 'Få mere at vide om, hvordan du anvender en synspunktsanalysemodel på kundefeedback i Dynamics 365 Customer Insights.'
+description: Få mere at vide om, hvordan du anvender en synspunktsanalysemodel på kundefeedback i Dynamics 365 Customer Insights.
 ms.date: 12/23/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,8 +9,13 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
+ms.openlocfilehash: 8a4473c1c395bbcf8efa2bfa24cddb82e1784279
+ms.sourcegitcommit: 15ec8c5f54242feda9489e7665726ec5e0983dc9
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "8008758"
 ---
-
 # <a name="analyze-sentiment-in-customer-feedback-preview"></a>Analysér synspunkt i kundefeedback (forhåndsversion)
 
 Kunderne forventer i disse tider produkter, servicer og oplevelser i høj kvalitet. Især kunder, der deler deres feedback. Det er en stor udfordring for organisationer at analysere en stigende mængde data uden at reducere præcisionen og øge arbejdsomkostningerne. Dynamics 365 Customer Insights indeholder en synspunktsanalysemodel til kundefeedback, der gør det muligt for organisationer at analysere deres data mere nøjagtigt og med lavere omkostninger.
