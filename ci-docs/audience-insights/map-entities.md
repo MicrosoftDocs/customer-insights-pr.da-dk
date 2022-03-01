@@ -1,22 +1,20 @@
 ---
-title: Tilknytte objekter og attributter til datasamling
-description: Vælg objekter, attributter, primære nøgler og semantiske typer for at knytte data til den samlede kundeprofil.
-ms.date: 10/18/2020
+title: Tilknyt objekter til datasamling
+description: Tilknyt data for at oprette samlede kundeprofiler.
+ms.date: 09/25/2020
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: tutorial
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
+ms.reviewer: adkuppa
 manager: shellyha
-searchScope:
-- ci-map
-ms.openlocfilehash: 8b84ed1a860e383e4eb3f7499be6d397ba3f1db1
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+ms.openlocfilehash: e98c7717f7707d43a9fd1fc6f6b0e9c49e4e7ee0
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673256"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4405445"
 ---
 # <a name="map-entities-and-attributes"></a>Tilknyt objekter og attributter
 
@@ -37,14 +35,14 @@ Du kan finde flere oplysninger om det generelle flow af datasamling under [Samle
 3. Vælg de objekter og attributter, du vil bruge i faserne *Afstem* og *Flet*. Du kan vælge de krævede attributter individuelt for et objekt eller inkludere alle attributter fra et objekt ved at markere afkrydsningsfeltet **Medtag alle felter** på objektniveauet. Det anbefales, at du vælger mindst to objekter for at drage fordel af datasamlingsprocessen.
 
    > [!div class="mx-imgBorder"]
-   > ![Eksempel på tilføjelse af objekter.](media/data-manager-configure-map-add-entities-example.png "Eksempel på tilføjelse af objekter")
+   > ![Eksempel på tilføjelse af objekter](media/data-manager-configure-map-add-entities-example.png "Eksempel på tilføjelse af objekter")
 
    I dette eksempel tilføjer vi objekterne **eCommerceContacts** og **loyCustomers**. Hvis du vælger disse objekter, kan du få indsigt i, hvilke online virksomhedskunder der er medlemmer af loyalitetsprogrammet.
    
    Du kan søge efter nøgleord på tværs af alle attributter og objekter for at vælge de nødvendige attributter, du vil tilknytte.
    
      > [!div class="mx-imgBorder"]
-   > ![Eksempel på feltet Søg.](media/data-manager-configure-map-search-fields-example.png "Eksempel på feltet Søg")
+   > ![Eksempel på feltet Søg](media/data-manager-configure-map-search-fields-example.png "Eksempel på feltet Søg")
 
 4. Vælg **Anvend** for at bekræfte de valgte indstillinger.
 
@@ -57,7 +55,7 @@ Når du har valgt objekterne , viser siden **Tilknyt** de valgte objekter for an
 - **Semantisk attributtype**: Kategorier af attributter, f.eks. mailadresse eller navn. Hvis du vil bruge AI-modeller til smart forudsigelse af semantik og spare tid og øge præcisionen, skal du indstille **Intelligent tilknytning** til **TIL**. Intelligent tilknytning fremhæver den AI-baserede semantikanbefaling i feltet **Type**. Hvis du indstiller den til **FRA**, kan du se vores almindelige tilknytningsanbefalinger. Du kan vælge en hvilken som helst semantisk type på den tilgængelige liste over indstillinger og tilsidesætte den foreslåede markering.
 
 > [!div class="mx-imgBorder"]
-> ![Attributtype og semantisk forudsigelse.](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtype og semantisk forudsigelse")
+> ![Attributtype og semantisk forudsigelse](media/data-manager-configure-map-add-attributes-semantic-prediction.png "Attributtype og semantisk forudsigelse")
 
 Det er også muligt at tilføje en brugerdefineret semantisk type. Vælg typefeltet for en attribut, og skriv navnet på den brugerdefinerede semantiske type. På denne måde kan du også ændre de attributtyper, der er identificeret automatisk af systemet.
 
@@ -66,7 +64,7 @@ Alle attributter, hvor der automatisk identificeres en semantisk type, grupperes
 Attributter, der ikke automatisk knyttes til en semantisk type, grupperes i sektionen **Definer data i ikke-tilknyttede felter**. Vælg feltet for semantisk type for de ikke-tilknyttede attributter, eller angiv navnet på den brugerdefinerede attributtype.
 
 > [!div class="mx-imgBorder"]
-> ![Primær nøgle og attributtype.](media/data-manager-configure-map-add-attributes.png "Primær nøgle og attributtype")
+> ![Primær nøgle og attributtype](media/data-manager-configure-map-add-attributes.png "Primær nøgle og attributtype")
 
 > [!NOTE]
 > Et enkelt felt skal knyttes til den semantiske type Person.FullName for at udfylde kundenavnet på debitorkortet. Ellers vises kundekortene uden navn. 
@@ -78,7 +76,7 @@ Attributter, der ikke automatisk knyttes til en semantisk type, grupperes i sekt
 2. Tilføj eller fjern attributter og objekter i ruden **Rediger felter**. Brug søgning eller rulning til at søge efter og vælge de ønskede attributter og objekter. Du kan ikke fjerne en attribut eller et objekt, hvis det allerede er tilknyttet.
 
    > [!div class="mx-imgBorder"]
-   > ![Tilføje eller fjerne attributter.](media/configure-data-map-edit.png "Tilføje eller fjerne attributter")
+   > ![Tilføje eller fjerne attributter](media/configure-data-map-edit.png "Tilføje eller fjerne attributter")
 
 3. Vælg **Anvend**.
 
@@ -96,7 +94,7 @@ Fortsæt med fremgangsmåden for ensartethed, og kontrollér, at den attribut, d
 
 For organisationer (prøveversion) skal attributtypen knyttes til "Organization.Name".
 > [!div class="mx-imgBorder"]
-> ![Primær nøgle og attributtype B-til-B.](media/configure-data-map-edit-b2b.png "Primær nøgle og attributtype B-til-B")
+> ![Primær nøgle og attributtype B2B](media/configure-data-map-edit-b2b.png "Primær nøgle og attributtype B2B")
 
 ## <a name="next-step"></a>Næste trin
 
@@ -104,6 +102,3 @@ Gå til siden **Match** som en del af datasamlingsprocessen. Besøg [**Match**](
 
 > [!TIP]
 > Se følgende video: [Introduktion: oprettelse af en samlet kundeprofil](https://youtu.be/oBfGEhucAxs).
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

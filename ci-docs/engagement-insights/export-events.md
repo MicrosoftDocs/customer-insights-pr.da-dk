@@ -4,23 +4,23 @@ description: Sådan eksporteres begivenheder og basishændelser.
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 10/01/2021
+ms.date: 04/30/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7881f8f63134170a7f76e3c75dcfc5fa8930754b
-ms.sourcegitcommit: 693458e13e4b4d94b6205093559912f6a4dc4a1c
+ms.openlocfilehash: faa0c3afb08d1c0282b2164ed914637ce9aad88117af37ba44fdb81e7610e574
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "7606194"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7032378"
 ---
 # <a name="export-events"></a>Eksportér hændelser
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-En hændelse repræsenterer brugerfunktionsmåden. Den registrerer, hvornår en bruger får vist en side (få vist en hændelse) eller kommunikerer med indhold (handlingshændelse). Når du kan bestemme, hvilke egenskaber for de data du vil have vist i en rapport, kaldes denne virtuelle visning af dataene en *forfinet hændelse*. Der er flere oplysninger under [Oprette og redigere hændelser](refined-events.md).
+En hændelse repræsenterer brugerfunktionsmåden. Den registrerer, hvornår en bruger får vist en side (få vist en hændelse) eller kommunikerer med indhold (handlingshændelse). Når du kan bestemme, hvilke egenskaber for de data du vil have vist i en rapport, kaldes denne virtuelle visning af dataene en *forfinet hændelse*. 
 
 - Du kan eksportere arrangementer og hændelser, der udføres uden for dit arbejde, til eksternt lager. 
 - Eksporten er en datastrømme til videresendelse. Du kan ikke udfylde streamingen. 
@@ -45,28 +45,26 @@ Før du konfigurerer en eksport, skal du have adgang til Azure-portalen og et ak
 
 ## <a name="export-events"></a>Eksportér hændelser
 
-Dialogboksen **Eksportér hændelser** kan vises på to måder: 
+Du kan eksportere hændelser på to måder: 
 - Gå til **Data** > **Eksporter**, og vælg **Ny eksport**.
 - Gå til **Data** > **Hændelser**, vælg **Flere [...]** ud for den hændelse, du vil eksportere, og vælg **Eksportér** i rullemenuen. 
 
-:::image type="content" source="media/new-export.png" alt-text="Opret en ny eksport.":::
-
 Du får en vejledning i at oprette en eksport:
 
-1. Angiv et **Eksportnavn**, og vælg derefter **Næste**.
+1. Angiv et **Eksportnavn**.
 
 1. Vælg de basishændelser og hændelser, der skal inkluderes i eksporten, på rullelisten **Hændelser**. 
 
-1. Vælg kadencen (hver time eller dagligt) i sektionen **Filstruktur** for at oprette nye filer i destinationslageret, og vælg derefter **Næste**. Arrangementer eksporteres løbende, når de ankommer.
+1. Vælg en cadence under **Filstruktur** for at oprette nye filer i destinationslageret. Arrangementer eksporteres løbende, når de ankommer.
 
-1. Vælg eksportformatet i dialogboksen **Vælg format**. Vælg mellem **Common Data Model**, **CSV** og **JSON** som format. Hvis du vil bruge eksporten sammen med andre Dynamics 365-programmer, anbefaler vi formatet **Common Data Model**.
+1. Vælg formatet for eksporten. Du kan vælge mellem formatet **Almindelig datamodel**, **CSV** og **JSON**. Hvis du vil bruge eksporten sammen med andre Dynamics 365-programmer, anbefales det, at du bruger formatet Common Data Model.
 
-1. Angiv Azure Data Lake Storage Gen 2-placeringen i dialogboksen **Vælg destination**.
+1. Angiv Gen 2-placeringen i **Vælg destination** i Azure Data Lake Storage.
     1. **Firmanavnet ADLS Gen 2** er navnet på den lagerkonto, du vil gemme eksporten til. 
     1. **Mappesti** definerer, hvor eksporten skal gemmes i filsystemet og mappestrukturen for lagerkontoen.
     1. **Delt nøgle** er tilgængelig fra Azure-portalen for lagerkontoen.
 
-1. Gennemse og bekræft dine valg for at udføre dem.
+1. Gennemse og bekræft dine markeringer.
 
 ## <a name="view-and-manage-exports"></a>Få vist og administrere eksporter
 

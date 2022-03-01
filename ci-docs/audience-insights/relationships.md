@@ -1,20 +1,20 @@
 ---
 title: Forhold mellem objekter og objektstier
 description: Opret og administrer forhold mellem objekter fra flere datakilder.
-ms.date: 09/27/2021
+ms.date: 06/01/2020
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: CadeSanthaMSFT
-ms.author: cadesantha
+author: MichelleDevaney
+ms.author: midevane
 manager: shellyha
-ms.openlocfilehash: bd80d0315f4f501b8f8108b99c144082c21e0d4c
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+ms.openlocfilehash: d5b9566ec88096fec31d8e164a51598159ec26d4
+ms.sourcegitcommit: ece48f80a7b470fb33cd36e3096b4f1e9190433a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622992"
+ms.lasthandoff: 06/03/2021
+ms.locfileid: "6171157"
 ---
 # <a name="relationships-between-entities"></a>Relationer mellem objekter
 
@@ -68,20 +68,6 @@ Relationen består af et *kildeobjekt*, der indeholder fremmednøglen, og et *de
 
 4. Vælg **Gem** for at oprette den brugerdefinerede relation.
 
-## <a name="set-up-account-hierarchies"></a>Konfigurere kontohierarkier
-
-Miljøer, der er konfigureret til at bruge forretningskonti som primær målgruppe, kan konfigurere kontohierarkier for relaterede forretningskonti. Det kan f.eks. være en virksomhed, der har separate afdelinger. 
-
-Organisationer kan oprette kontohierarkier for bedre at administrere konti og deres relationer med hinanden. Funktionen til målgruppeindsigt understøtter hierarkier for overordnede og underordnede konti, der allerede findes i kundedata, der er indtaget. Det kan f.eks. være konti fra Dynamics 365 Sales. Disse hierarkier kan konfigureres på siden **Relationer** i målgruppeindsigt under fanen Kontohierarki.
-
-1. Gå til **Data** > **Relationer**.
-1. Vælg fanen **Kontohierarki**.
-1. Vælg **Nyt kontohierarki**. 
-1. Angiv et navn til hierarkiet i ruden **Kontohierarki**. Der oprettes et navn til outputobjektet. Du kan ændre navnet på outputobjektet.
-1. Vælg det objekt, der indeholder kontohierarkiet. Det findes som regel i det samme objekt, som indeholder kontiene.
-1. Vælg **Konto-id** og **Overordnet konto-id** fra det valgte objekt 
-1. Vælg **Gem** for at anvende indstillingerne og færdiggøre kontohierarkiet.
-
 ## <a name="view-relationships"></a>Vise relationer
 
 På siden Relationer vises alle de relationer, der er oprettet. Hver række repræsenterer en relation, som også indeholder oplysninger om kildeobjektet, målobjektet og kardinaliteten. 
@@ -96,7 +82,7 @@ Denne side indeholder et sæt indstillinger for eksisterende og nye relationer:
 
 ### <a name="explore-the-relationship-visualizer"></a>Udforsk relationens visualiseringsfunktion
 
-Relationens visualiseringsfunktion viser et netværksdiagram over de eksisterende relationer mellem tilsluttede objekter og deres kardinalitet. Relationsstien visualiseres også.
+Relationens visualiseringsfunktion viser et netværksdiagram over de eksisterende relationer mellem tilsluttede objekter og deres kardinalitet.
 
 Hvis du vil tilpasse visningen, kan du ændre felternes placering ved at trække dem på lærredet.
 
@@ -106,56 +92,6 @@ Tilgængelige indstillinger:
 - **Eksporter som billede**: Gem den aktuelle visning som en billedfil.
 - **Skift til vandret/lodret layout**: Skift justering af enhederne og relationer.
 - **Rediger**: Opdater egenskaber for brugerdefinerede relationer i redigeringsruden, og gem ændringerne.
-
-## <a name="relationship-paths"></a>Relationsstier
-
-En relationssti beskriver de objekter, der er knyttet til relationer mellem et kildeobjekt og et destinationsobjekt. Det bruges, når du opretter et segment eller en måleenhed, der omfatter andre objekter end objektet for den samlede profil, og der er flere indstillinger, du kan bruge til at oprette forbindelse til objektet for den samlede profil. 
-
-En relationssti giver det system, relationer har adgang til, oplysninger om adgang til det samlede profilobjekt. Forskellige relationsstier kan give forskellige resultater.
-
-Objektenheden indeholder f.eks. *eCommerce_eCommercePurchases* følgende relationer til objektet *Kunde* i den samlede profil:
-
-- eCommerce_eCommercePurchases > kunde
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kunde 
-
-En relationssti bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases) på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
-
-### <a name="direct-relationship"></a>Direkte relation
-
-En relation klassificeres som en **direkte relation**, når et kildeobjekt er relateret til et målobjekt med kun én relation.
-
-Hvis et aktivitetsobjekt, der kaldes *eCommerce_eCommercePurchases*, f.eks. kun opretter forbindelse til et målobjekt *eCommerce_eCommerceContacts* via *ContactId*, er det en direkte relation.
-
-:::image type="content" source="media/direct_Relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til destinationsobjektet.":::
-
-#### <a name="multi-path-relationship"></a>Relation med flere forbindelser
-
-En **relation med flere forbindelser** er en særlig type direkte relation, der opretter forbindelse mellem et kildeobjekt og mere end ét destinationsobjekt.
-
-Hvis et aktivitetsobjekt, der kaldes *eCommerce_eCommercePurchases*, f.eks. er relateret til to målobjekter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en relation med flere forbindelser.
-
-:::image type="content" source="media/multi-path_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til mere end ét destinationsobjekt via en relation til flere forbindelser.":::
-
-### <a name="indirect-relationship"></a>Indirekte relation
-
-En relation klassificeres som en **indirekte relation**, når et kildeobjekt er relateret til et eller flere yderligere objekter, før det relaterer til é målobjekt.
-
-#### <a name="multi-hop-relationship"></a>Multi-hop-relation
-
-En *multi-hop-relation* er en et *indirekte relation*, der bruges til at tilknytte et kildeobjekt til et destinationsobjekt via et eller flere objekter.
-
-Hvis et aktivitetsobjekt kaldet *eCommerce_eCommercePurchasesWest* f.eks. opretter forbindelse til et mellemliggende objekt, der kaldes *eCommerce_eCommercePurchasesEast* og derefter opretter forbindelse til et målobjekt, der kaldes *eCommerce_eCommerceContacts*, er det en multi-hop-relation.
-
-:::image type="content" source="media/multi-hop_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til et destinationsobjekt med et mellemliggende objekt.":::
-
-### <a name="multi-hop-multi-path-relationship"></a>Multi-hop, relation med flere forbindelser
-
-Multi-hop-relation og relation med flere forbindelser kan bruges sammen til at oprette **multi-hop-relation, relation med flere forbindelser**. Denne specielle type kombinerer funktionerne for **multi-hop-relation** og **relation med flere forbindelser**. Du kan oprette forbindelse til mere end ét destinationsobjekt, mens du bruger mellemliggende objekter.
-
-Hvis et aktivitetsobjekt kaldet *eCommerce_eCommercePurchasesWest* f.eks. opretter forbindelse til et mellemliggende objekt, der kaldes *eCommerce_eCommercePurchasesEast* og derefter opretter forbindelse til to målobjekter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en multi-hop-relation, relation med flere forbindelser.
-
-:::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til ét destinationsobjekt og opretter forbindelse til et andet målobjekt via et mellemobjekt.":::
 
 ## <a name="manage-existing-relationships"></a>Administrer eksisterende relationer 
 
@@ -169,6 +105,6 @@ Vælg en relation, og vælg en af følgende indstillinger:
 
 ## <a name="next-step"></a>Næste trin
 
-System- og nrugerdefinerede relationer bruges til at [oprette segmenter](segments.md) og [mål](measures.md) baseret på flere datakilder, der ikke længere er tilgængelige.
+System- og brugerdefinerede relationer bruges til at [oprette segmenter](segments.md) baseret på flere datakilder, der ikke længere er i en silo.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

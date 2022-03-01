@@ -1,58 +1,64 @@
 ---
 title: Brug datakilder til at indsætte data
 description: Få mere at vide om, hvordan du importerer data fra forskellige kilder.
-ms.date: 12/06/2021
+ms.date: 04/12/2021
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
+ms.topic: conceptual
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ca979527c9cb8418e12af4a74513033047e4901c
-ms.sourcegitcommit: 3807202283dd116a30f900a163d8141db621e5a8
+ms.openlocfilehash: 0fc13d3ac0a5176637b6fe481dabe0b2aec11649
+ms.sourcegitcommit: d89b19b2a3497722b78362aeee688ae7e94915d9
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "8046581"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "5887887"
 ---
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Målgruppeindsigt-muligheden for Dynamics 365 Customer Insights opretter forbindelse til data fra et bredt udvalg af kilder. Oprettelse af forbindelse til en datakilde kaldes ofte processen for *dataindtagelse*. Når du har indtaget dataene, kan du [samle](data-unification.md) og udføre handlinger på dem.
 
 ## <a name="add-a-data-source"></a>Tilføj en datakilde
 
-Se de detaljerede artikler om, hvordan du tilføjer en datakilde afhængigt af den indstilling, du vælger.
+Se de detaljerede artikler om, hvordan du kan tilføje en datakilde, afhængigt af den indstilling, du vælger.
 
-Du kan tilføje følgende datakilder:
+Du kan tilføje en datakilde på tre primære måder:
 
-- [Power Query-connectorer](connect-power-query.md)
-- [Fælles datamodel](connect-common-data-model.md)
-- [Microsoft Dataverse-sø](connect-dataverse-managed-lake.md)
-
-> [!NOTE]
-> Hvis du bruger prøveversionen, indeholder afsnittet importmetoder et **Customer Insights-databibliotek**. Vælg denne indstilling for at vælge en datasæt tilgængelig for forskellige brancher. Du kan finde flere oplysninger under [Dynamics 365 Customer Insights-prøveversion](../trial-signup.md).
+- [Via dusinvis af Power Query-connectorer](connect-power-query.md)
+- [Fra en Common Data Model-mappe](connect-common-data-model.md)
+- [Fra din egen Common Data Service-sø](connect-common-data-service-lake.md)
 
 ## <a name="add-data-from-on-premises-data-sources"></a>Tilføje data fra de lokale datakilder
 
-Data fra de lokale datakilder i målgruppeindsigt understøttes på basis af Microsoft Power Platform-dataflows. Du kan aktivere dataflow i Customer Insights ved at [angive URL Microsoft Dataverse-miljøet](create-environment.md), når du konfigurerer miljøet.
+Data fra de lokale datakilder i målgruppeindsigt understøttes på basis af Power Platform-dataflows. Dataflows kan aktiveres i Customer Insights ved at [angive Microsoft Dataverse URL-adressen til miljøet](manage-environments.md#create-an-environment-in-an-existing-organization) under konfiguration af miljøet.
 
-Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med Customer Insights, bruger [Power Platform-dataflow](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365) som standard. Dataflows understøtter forbindelser i det lokale miljø ved hjælp af datagateway. Du kan fjerne og genoprette datakilder, der fandtes, før et Dataverse-miljø blev tilknyttet, [ved hjælp af datagateways i det lokale miljø](/data-integration/gateway/service-gateway-app).
+Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med Customer Insights, bruger som standard [Power Platform-dataflows](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Dataflows understøtter forbindelse forud for brug ved hjælp af data gateways. Fjern og genskab datakilder, der fandtes, før et Dataverse-miljø blev knyttet til at bruge de lokale datagateways.
 
-Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, og du kan genbruge dem i Customer Insights. På siden med datakilder vises links til at gå til det Microsoft Power Platform-miljø, hvor du kan få vist og konfigurere det lokale miljøs datagateways.
+Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, og du kan genbruge dem i Customer Insights. På siden med datakilder vises links til at gå Power Platform-miljøet, hvor du kan få vist og konfigurere de lokale datagateways.
 
-## <a name="review-ingested-data"></a>Gennemgå indtagne data
+:::image type="content" source="media/data-sources-onpremises-gateways.png" alt-text="Skærmbillede af siden med datakilder, der viser links, der peger på Power Platform-miljøet.":::
+
+## <a name="review-ingested-data"></a>Gennemgå indtagede data
 
 Du får vist navnet på hver indtagne datakilde, dens status, og hvornår dataene sidst blev opdateret for den pågældende kilde. Du kan sortere listen over datakilder efter alle kolonner.
 
 > [!div class="mx-imgBorder"]
-> ![Datakilde er tilføjet.](media/configure-data-datasource-added.png "Tilføjet datakilde")
+> ![Tilføjet datakilde](media/configure-data-datasource-added.png "Tilføjet datakilde")
 
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+|Status  |Beskrivelse  |
+|---------|---------|
+|Fuldført   |Datakilde blev indregistreret, hvis der er angivet et tidspunkt i den **Opdaterede** kolonne.
+|Ikke startet   |Datakilde har ingen data, der er indsat endnu, eller er stadig i kladdetilstand.         |
+|Opdaterer    |Dataindtagelse er i gang. Du kan annullere denne handling ved at vælge **Stop opdatering** i kolonnen **Handlinger**. Hvis du stopper opdateringen af en datakilde, gendannes den til den seneste opdateringstilstand.       |
+|Mislykket     |Der opstod fejl under indtagelse af data.         |
 
-Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden **Objekter**. Du kan finde flere oplysninger under [Objekter](entities.md).
+Vælg værdien i kolonnen **Status** i en hvilken som helst datakilde du vil gennemse for flere detaljer. Udvid **Datakilder** i ruden **Statusdetaljer**. Vælg **Se detaljer** for at få vist flere oplysninger om opdateringsstatus, herunder fejldetaljer og downstream-procesopdateringer.
+
+Indlæsning af tage kan tage et stykke tid. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden **Objekter**. Du kan finde flere oplysninger under [Objekter](entities.md).
 
 ## <a name="refresh-a-data-source"></a>Opdater en datakilde
 
@@ -62,9 +68,9 @@ Gå til **Administrator** > **System** > [**Tidsplan**](system.md#schedule-tab) 
 
 Benyt følgende fremgangsmåde for at opdatere en datakilde efter behov:
 
-1. Gå til **Data** > **Datakilder** i målgruppen Insights.
+1. Gå til **Data** > **Datakilder** i målgruppen Insights
 
-2. Vælg den lodrette ellipse ud for den datakilde, du vil opdatere, og vælg **Opdatér** i rullemenuen.
+2. Vælg den lodrette ellipse ud for den datakilde, du vil opdatere, og vælg **Opdater** på rullelisten.
 
 3. Datakilden er nu udløst for at få en manuel opdatering. Hvis du opdaterer en datakilde, opdateres både objektskemaet og dataene for alle de objekter, der er angivet i datakilden.
 

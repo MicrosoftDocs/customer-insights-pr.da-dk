@@ -2,19 +2,19 @@
 title: Dataindsættelse og begrænsninger i realtid
 description: Generelle oplysninger om realtidsfunktioner i målgruppen Insights.
 ms.date: 10/27/2020
-ms.reviewer: mhart
+ms.reviewer: nikeller
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: Nils-2m
-ms.author: nikeller
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 897c876306a39cd9d5842487b96cb2f0a8df7e656de0fb7f10fe8c7f53e2db6b
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: b00a72e6a67e33c8e70ccc6139c5e62020f9d3e1
+ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035270"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "4689168"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (prøveversion)
 
@@ -54,7 +54,7 @@ I realtids-API kan du udgive en ny aktivitet fra kildesystemet (en enkelt kildep
 
 Der er to måder at oprette forbindelse til en realtids-API på:
 
-- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjælp af [Dynamics 365 Customer Insights-connectoren](/connectors/customerinsights/)
+- [indirekte](#connect-via-the-dynamics-365-customer-insights-connector) ved hjælp af [Dynamics 365 Customer Insights-connectoren](https://docs.microsoft.com/connectors/customerinsights/)
 - [direkte](#connect-directly-to-the-real-time-api) med kode
 
 Der gælder følgende forudsætninger for begge måder:
@@ -66,13 +66,13 @@ Der gælder følgende forudsætninger for begge måder:
 
 ## <a name="connect-via-the-dynamics-365-customer-insights-connector"></a>Forbindelse via Dynamics 365 Customer Insights-connectoren
 
-I realtids-API kan du indtage data fra en dedikeret Power Platform-connector, [Dynamics 365 Customer Insights-connectoren](/connectors/customerinsights/) uden at skulle skrive og installere nogen kode.    
-Connectoren kan udføre de samme realtidshandlinger som API'en. Du skal have en gyldig licens til premium connectorer. Du kan finde flere oplysninger under [Ofte stillede spørgsmål til Power Apps- og Power Automate-licenser](/power-platform/admin/powerapps-flow-licensing-faq).
+I realtids-API kan du indtage data fra en dedikeret Power Platform-connector, [Dynamics 365 Customer Insights-connectoren](https://docs.microsoft.com/connectors/customerinsights/) uden at skulle skrive og installere nogen kode.    
+Connectoren kan udføre de samme realtidshandlinger som API'en. Du skal have en gyldig licens til premium connectorer. Du kan finde flere oplysninger under [Ofte stillede spørgsmål til Power Apps- og Power Automate-licenser](https://docs.microsoft.com/power-platform/admin/powerapps-flow-licensing-faq).
 
-- Power Platform [Power Apps og/eller Power Automate](/connectors/)
-- Azure [Logic Apps](/azure/connectors/apis-list)
+- Power Platform [Power Apps og/eller Power Automate](https://docs.microsoft.com/connectors/)
+- Azure [Logic Apps](https://docs.microsoft.com/azure/connectors/apis-list)
 
-Du kan finde flere oplysninger om oprettelse af flow i [dokumentationen til Power Automate](/power-automate/).
+Du kan finde flere oplysninger om oprettelse af flow i [dokumentationen til Power Automate](https://docs.microsoft.com/power-automate/).
 
 ## <a name="connect-directly-to-the-real-time-api"></a>Oprette direkte forbindelse til API i realtid
 
@@ -83,7 +83,6 @@ Du kan finde oplysninger om denne API, herunder parametre og svar, i afsnittet *
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå dit realtidsforbrug med telemetri
 
-Få et overblik over omfanget af anmodninger til API i realtid og oplysninger om de problemer, der kan opstå i systemet. Du kan få [adgang til telemetri i realtid](system.md#api-usage-tab). 
+Få et overblik over omfanget af anmodninger til API i realtid og oplysninger om de problemer, der kan opstå i systemet. Du kan få [adgang til realtidstelemetri](system.md#api-usage-tab) ved at gå til **Admin** > **System** > **API-forbrug**. I tabellen **Handlinger** indeholder rækkerne for API-handlinger, som bruger realtidsmetoderne, en knap til at få vist API-forbrug i realtid. Knappen er visuel og har et kikkert-symbol. Vælg knappen for at åbne en siderude med detaljer om forbrug for API-anvendelsen i realtid i det aktuelle miljø.
 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+Brug vælgeren **Grupper efter** til at vælge, hvordan du bedst kan præsentere dine interaktioner i realtid på en tidslinje lige fra de seneste 24 timer til de seneste 30 dage. Du kan gruppere dataene efter API-metode, kvalificeret navn på objekt (indtaget objekt), oprettet af (kilden for hændelsen), resultat (vellykket eller mislykket) eller fejlkoder. Dataene er tilgængelige som et historikdiagram og en tabel.

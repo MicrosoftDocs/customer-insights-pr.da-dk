@@ -1,141 +1,97 @@
 ---
-title: Eksportere data fra Customer Insights
-description: Administrer dataeksport til at dele data.
-ms.date: 11/01/2021
-ms.reviewer: mhart
+title: Eksportdestinationer
+description: Eksportér data, og administrer eksportdestinationer.
+ms.date: 07/21/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: overview
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05485fc7def3d699d5179bcaa005ceb57024f840
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: 9032d99357db86e66588eda544211a5f8eb2f23b
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977960"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643856"
 ---
-# <a name="exports-preview-overview"></a>Eksportoversigt (forhåndsversion)
+# <a name="export-destinations-preview"></a>Eksportdestinationer (prøveversion)
 
-På siden **Eksport** vises alle de konfigurerede eksporter. Eksporter deler specifikke data med forskellige programmer. De kan omfatte kundeprofiler, objekter, skemaer og tilknytningsoplysninger. Hver eksport kræver en [forbindelse, konfigureret af en administrator, til at administrere godkendelse og adgang](connections.md).
+Siden **Eksportdestinationer** viser alle de placeringer, du har konfigureret til at eksportere data til. Du kan også tilføje nye destinationer til eksport. Derudover vises de eksportindstillinger, der er tilgængelige i øjeblikket. Få en hurtig oversigt og beskrivelse, og find ud af, hvad du kan gøre med de enkelte udvidelsesmuligheder. Eksportér ensartede profiler, målpunkter og segmenter til understøttede apps, som er relevante for din virksomhed.
 
-Gå til **Data** > **Eksport** for at få vist eksportsiden. Alle brugerroller kan få vist konfigurerede eksporter. Brug søgefeltet på kommandolinjen til at finde eksporter efter navn, forbindelsesnavn eller forbindelsestype.
+Gå til **Admin** > **Exportdestinationer** for at finde følgende udvidelsesmuligheder:
 
-## <a name="export-types"></a>Eksporttyper
+- [Dynamics 365 Customer Kundekort](customer-card-add-in.md)
+- [Facebook Annonceadministrator-connector](export-facebook.md)
+- [Power AutomateConnector](export-power-automate.md)
+- [Power AppsConnector](export-power-apps.md)
+- [Power BIConnector](export-power-bi.md)
+- [DotDigital](export-dotdigital.md)
+- [Dynamics 365-salg](export-dynamics365-sales.md)
+- [Dynamics 365 Marketing](export-dynamics365-marketing.md)
+- [Azure Blob Storage](export-azure-blob-storage.md)
+- [LiveRamp&reg;-connector](export-liveramp.md)
+- [Bot til Microsoft Teams](export-teams-bot.md)
+- [Mailchimp](export-mailchimp.md)
+- [Customer Insights API](apis.md)
 
-Der findes to hovedtyper af eksport:  
+## <a name="add-a-new-export-destination"></a>Tilføje en ny eksportdestination
 
-- **Eksport af dataoutput** giver dig mulighed for at eksportere alle objekttyper, der er tilgængelige i målgruppeindsigt. De objekter, du vælger til eksport, eksporteres med alle datafelter, metadata, skemaer og tilknytningsdetaljer. 
-- Med **segmenteksport** kan du eksportere segmentobjekter fra målgruppeindsigt. Segmenter repræsenterer en liste over kundeprofiler. Når du konfigurerer eksporten, skal du vælge de inkluderede datafelter, afhængigt af det målsystem du eksporterer data til. 
+Hvis du vil tilføje eksportdestinationer, har du [administratortilladelser](permissions.md). Hvis du eksporterer til Microsoft-tjenester, antages det, at begge servicer er i den samme organisation.
 
-### <a name="export-segments"></a>Eksportere segmenter
+1. Gå til **Adminstration** > **Eksportdestinationer**.
 
-**Eksportere segmenter i miljøer for forretningskonti (B-til-B) eller individuelle kunder (B-til-C)**  
-De fleste eksportmuligheder understøtter begge typer miljøer. Der er særlige krav ved eksport af segmenter til forskellige destinationssystemer. Et segmentmedlem, kundeprofilen, indeholder generelt kontaktoplysninger. Dette er normalt tilfældet for segmenter, der er baseret på individuelle kunder (B-til-C), men det er ikke nødvendigvis tilfældet for segmenter baseret på forretningskonti (B-til-B). 
+1. Skift til fanen **Mine eksportdestinationer**.
 
-**Segmenteksportmiljøer for forretningskonti (B-til-B)**  
-- Segmenter i konteksten af miljøer for forretningskonti bygger på *firma*-objektet. Hvis du vil eksportere firmasegmenter, som de er, skal destinationssystemet understøtte firmasegmenter. Det er tilfældet for [LinkedIn](export-linkedin-ads.md), når du vælger **firma**-indstillingen, mens du definerer eksporten.
-- Alle andre destinationssystemer kræver felter fra kontaktobjektet. Hvis du vil sikre, at firmasegmenter kan hente data fra relaterede kontakter, skal din segmentdefinition projicere attributter for kontaktobjektet. Få mere at vide om, hvordan du [konfigurerer segmenter og projektattributter](segment-builder.md).
+1. Vælg **Tilføj destination** for at oprette en ny eksportdestination.
 
-**Segmenteksport i miljøer for individuelle forbrugere (B-til-C)**  
-- Segmenter i konteksten af miljøer for individuelle kunder bygger på objektet *samlet kundeprofil*. Alle de segmenter, der opfylder kravene i destinationssystemerne (f.eks. en mailadresse), kan eksporteres.
+1. På ruden **Tilføj destination** vælg **Type** for eksportdestination fra rullelisten.
 
-**Begrænsninger for segmenteksport**  
-- Tredjeparters destinationssystemer kan begrænse antallet af kundeprofiler, du kan eksportere. 
-- For individuelle kunder kan du se det faktiske antal segmentmedlemmer, når du vælger et segment til eksport. Du får en advarsel, hvis et segment er for stort. 
-- I forbindelse med forretningskonti kan du se antallet af firmaer i et segment. Men antallet af kontakter, der kan projiceres, vises ikke. I visse tilfælde kan det medføre, at det eksporterede segment rent faktisk indeholder flere kundeprofiler, end destinationssystemet accepterer. Hvis grænserne for destinationssystemers resultater overskrides, springes eksporten over. 
+1. Angiv de nødvendige oplysninger, og vælg **Næste** for at oprette eksportdestinationen.
 
-## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport  
-Hvis du vil konfigurere eller redigere en eksport, skal du have tilgængelige forbindelser. Forbindelser afhænger af [brugerrollen](permissions.md):
-- **Administratorer** har adgang til alle forbindelser. De kan også oprette nye forbindelser, når en eksport konfigureres.
-- **Bidragydere** kan have adgang til bestemte forbindelser. De er afhængige af administratorer, når de skal konfigurere og dele forbindelser. Eksportlisten viser bidragydere, om de kan redigere eller kun få vist en eksport i kolonnen **Dine tilladelser**. Du kan finde flere oplysninger ved at gå til [Tillade bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
-- **Seere** kan kun få vist eksisterende eksporter – ikke oprette dem.
+Du kan også vælge **Konfigurer** i et område på fanen **Udforsk**.
 
-### <a name="define-a-new-export"></a>Definer en ny eksport
+## <a name="view-export-destinations"></a>Vise Eksportdestinationer
 
-1. Gå til **Data** > **Eksport**.
+Når du har oprettet eksportdestinationer, kan du finde dem i en tabel under fanen **Mine eksportdestinationer**. Denne tabel indeholder tre kolonner:
 
-1. Vælg **Tilføj eksport** for at oprette en ny eksport.
+- **Vist navn**: Det navn, du angav under oprettelsen af destinationen.
+- **Type**: Den eksportdestinationstype, du angav, da du oprettede destinationen.
+- **Oprettet den**: Den dato, hvor du oprettede destinationen.
 
-1. Vælg, hvilken forbindelse du vil bruge, i ruden **Konfigurer eksport**. [Forbindelser](connections.md) administreres af administratorer. 
+## <a name="edit-an-export-destination"></a>Rediger en eksportdestination
 
-1. Angiv de nødvendige oplysninger, og vælg **Gem** for at oprette eksporten.
+1. Vælg den lodrette ellipse for den eksportdestination, du vil redigere.
 
-### <a name="define-a-new-export-based-on-an-existing-export"></a>Definer en ny eksport baseret på en eksisterende eksport
+   > [!div class="mx-imgBorder"]
+   > ![Lodret ellipse](media/export-destinations-page-ellipsis.png "Lodret ellipse")
 
-1. Gå til **Data** > **Eksport**.
+1. Vælg **Rediger** på rullelisten.
 
-1. Vælg den eksport, som du vil duplikere, på eksportlisten.
+1. Rediger de værdier, der skal opdateres, og vælg **Gem**.
 
-1. Vælg **Opret dublet** på kommandolinjen for at åbne ruden **Konfigurer eksport** med oplysninger om den valgte eksport.
+## <a name="export-data-on-demand"></a>Eksporter data efter behov
 
-1. Gennemse, og tilpas eksporten, og vælg **Gem** for at oprette en ny eksport.
+Når en connector er konfigureret til en eksportdestination, køres eksporter med alle [planlagte opdateringer](system.md#schedule-tab).
 
-### <a name="edit-an-export"></a>Rediger en eksport
+Hvis du vil eksportere data uden at vente på en planlagt opdatering, så gå til fanen **Mine eksportdestinationer** i **Administrator** > **Eksportdestinationer**.
 
-1. Gå til **Data** > **Eksport**.
+> [!div class="mx-imgBorder"]
+> ![Lodret ellipse](media/export-destinations-page-ellipsis.png "Lodret ellipse")
 
-1. Vælg den eksport, som du vil redigere, på eksportlisten.
+- Vælg **Eksport** over listen for at køre eksporten til alle eksportdestinationer på samme tid.
+- Vælg ellipsen (...) efter et listeelement, og vælg derefter indstillingen **Eksport** for at køre eksporten for en enkelt eksportdestination.
 
-1. Vælg **Rediger** på kommandolinjen.
+## <a name="remove-an-export-destination"></a>Fjerne en eksportdestination
 
-1. Opdatér de værdier, du vil opdatere, og vælg **Gem**.
+Hvis du vil fjerne en eksportdestination, skal du begynde på siden med primære **Eksportdestinationer**.
 
-## <a name="view-exports-and-export-details"></a>Få vist eksport og eksportdetaljer
+1. Vælg den lodrette ellipse for den eksportdestination, du vil fjerne.
 
-Når du har oprettet eksportmål, vises de under **Data** > **Eksport**. Alle brugere kan se, hvilke data der deles, og den seneste status.
+   > [!div class="mx-imgBorder"]
+   > ![Lodret ellipse](media/export-destinations-page-ellipsis.png "Lodret ellipse")
 
-1. Gå til **Data** > **Eksport**.
+2. Vælg **Fjern** på rullelisten.
 
-1. Brugere uden redigeringstilladelser skal vælge **Vis** i stedet for **Rediger** for at få vist eksportoplysningerne.
-
-1. I sideruden vises konfigurationen af en eksport. Uden redigeringstilladelser kan du ikke ændre værdier. Vælg **Luk** for at vende tilbage til eksportsiden.
-
-## <a name="schedule-and-run-exports"></a>Planlæg, og kør eksport
-
-Hver eksport, du konfigurerer, har en opdateringsplan. Under en opdatering søger systemet efter nye eller opdaterede data, der skal medtages i en eksport. Eksport køres som standard som del af alle [planlagte systemopdateringer](system.md#schedule-tab). Du kan tilpasse opdateringsplanen, eller slå den fra for at køre eksporten manuelt.
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
-
-Eksportplaner afhænger af miljøets tilstand. Hvis der er opdateringer i gang om [afhængigheder](system.md#refresh-processes), når en planlagt eksport skal starte, fuldfører systemet først opdateringerne og kører derefter eksporten. Du kan få vist, hvornår en eksport sidst blev opdateret i kolonnen **Opdateret**.
-
-### <a name="schedule-exports"></a>Planlæg eksport
-
-Du kan definere brugerdefinerede opdateringsplaner for individuelle eksporter eller flere eksporter på én gang. Den aktuelt definerede tidsplan vises i kolonnen **Tidsplan** på eksportlisten. Tilladelsen til at ændre tidsplanen er den samme som for [redigering og definition af eksporter](export-destinations.md#set-up-a-new-export). 
-
-1. Gå til **Data** > **Eksport**.
-
-1. Vælg den eksport, du vil planlægge.
-
-1. Vælg **Planlæg** på kommandolinjen.
-
-1. Angiv **Planlæg kørsel** til **Til** i ruden **Planlæg eksport** for at køre eksporten automatisk. Indstil den til **Fra** for at opdatere den manuelt.
-
-1. Ved automatisk opdaterede eksporter skal du vælge en værdi for **Gentagelse** og angive detaljerne for den. Den definerede tid gælder for alle forekomster af en gentagelse. Det er det tidspunkt, hvor en eksport skal begynde at opdatere.
-
-1. Anvend og aktivér ændringerne ved at vælge **Gem**.
-
-Når du redigerer tidsplanen for flere eksporter, skal du foretage et valg under **Behold eller tilsidesætte tidsplaner**:
-- **Bevar individuelle tidsplaner**: Bevar den tidligere definerede tidsplan for de valgte eksporter, og deaktiver eller aktiver dem kun.
-- **Definer ny tidsplan for alle valgte eksporter**: Tilsidesæt de eksisterende tidsplaner for de valgte eksporter.
-
-### <a name="run-exports-on-demand"></a>Kør eksporter efter behov
-
-Hvis du vil eksportere data uden at vente på en planlagt opdatering, skal du gå til **Data** > **Eksport**.
-
-- Hvis du vil køre alle eksporter, skal du vælge **Kør alle** på kommandolinjen. Denne handling kører kun eksporter, der har en aktiv tidsplan.
-- Hvis du vil køre en enkelt eksport, skal du markere den på listen og vælge **Kør** på kommandolinjen. Det er sådan, du kører eksporter uden aktiv tidsplan. 
-
-## <a name="remove-an-export"></a>Fjerne en eksport
-
-1. Gå til **Data** > **Eksport**.
-
-1. Markér den eksport, du vil fjerne.
-
-1. Vælg **Fjern** på kommandolinjen.
-
-1. Bekræft fjernelsen ved at vælge **Fjern** på bekræftelsesskærmen.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+3. Bekræft fjernelsen ved at vælge **Fjern** på bekræftelsesskærmen.

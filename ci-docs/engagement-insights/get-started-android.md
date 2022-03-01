@@ -3,19 +3,18 @@ title: Introduktion til Android SDK
 description: Få mere at vide om, hvordan du tilpasser og kører Android SDK
 author: britl
 ms.reviewer: mhart
-ms.custom: intro-internal
 ms.author: britl
 ms.date: 10/19/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 71ec4841303bd17d3f605547be8d6032c58a7b21
-ms.sourcegitcommit: bb1ca84bc38e81fb2ff2961c457384b7beb5b5fa
+ms.openlocfilehash: c678c2dafbb77926269b5602bca363c678ec6b3f
+ms.sourcegitcommit: ef823f3d7fa28d3a90cfde9409be9465ffa2cf09
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/15/2022
-ms.locfileid: "7977506"
+ms.lasthandoff: 10/19/2021
+ms.locfileid: "7655335"
 ---
 # <a name="get-started-with-the-android-sdk"></a>Kom i gang med Android SDK
 

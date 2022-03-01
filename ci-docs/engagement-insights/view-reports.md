@@ -4,17 +4,17 @@ description: Brug de tilgængelige rapporter til at få vist aktivitet i realtid
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 10/01/2021
+ms.date: 06/18/2021
 ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 5ccdcb47db597154cf79b9f2e8fc238ab75dfde9
-ms.sourcegitcommit: d9965f4bfc09391698a34042f6b44367e53819e3
+ms.openlocfilehash: cb6d9ab75b95a5f677d2267f5412a55327930987b2fc3a1a21958633a8116bd2
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/30/2021
-ms.locfileid: "7582915"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036641"
 ---
 # <a name="view-reports"></a>Vis rapporter
 
@@ -92,18 +92,12 @@ Mobilrapporter grupperes i kategorierne Brug i realtid, i appen og i brugerkateg
 
 - **Steder** viser oplysninger om app-brugere efter land, område og by.
 
-## <a name="filter-by-time-or-date-range"></a>Filtrere efter klokkeslæt eller datointerval
+## <a name="filter-by-time-or-value"></a>Filtrer efter klokkeslæt eller værdi
 
-Du kan vælge tidsrammen eller datointervallet i en web- eller mobilrapport for at fokusere på en værdi eller tidsperiode. 
+Du kan vælge den tidsramme eller værdi i en web- eller mobilrapport for at fokusere på en værdi eller tidsperiode. 
 
-- Hvis du vil bruge en tidsramme, skal du vælge en værdi på rullelisten i rapporten i øverste højre hjørne i rapportvisningen. Du kan også vælge et **Fast datointerval**. 
+- Hvis du vil tidsramme, skal du vælge **Flere [...]** på rullelisten for rapporten. Valg af tidsinterval er deaktiveret for en brugsrapport i realtid. Tidsintervallet for en brugsrapport i realtid er "nu".
 
-  :::image type="content" source="media/filter-by-time.png" alt-text="Filtrer efter klokkeslæt eller datointerval.":::   
-
-- Til de fleste rapporter skal du vælge en værdi i et diagram eller på en liste for at filtrere rapporten.
-
-> [!NOTE]
-> Valg af tidsinterval er deaktiveret for en brugsrapport i realtid. Tidsintervallet for en brugsrapport i realtid er "nu".
-
+- I de fleste rapporter skal du vælge en værdi i et diagram eller en liste for at filtrere rapporten for den valgte værdi.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

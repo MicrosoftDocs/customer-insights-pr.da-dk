@@ -1,7 +1,7 @@
 ---
 title: Søg og filtrér kundeprofiler
 description: Find hurtigt oplysninger om samlede kundeprofiler, og filtrer efter angivne attributter.
-ms.date: 11/01/2021
+ms.date: 01/19/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,20 +9,19 @@ ms.topic: conceptual
 author: NimrodMagen
 ms.author: nimagen
 manager: shellyha
-ms.openlocfilehash: e17d745974958b73683f1f9406c5ae95f2cbcb3c
-ms.sourcegitcommit: 834651b933b1e50e7557d44f926a3fb757c1f83a
+ms.openlocfilehash: 9eaeb0c93481283324f21122c9528ff5896b9866
+ms.sourcegitcommit: b9a81c2acd42d774669d2db3d0430c7d81de991c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "7732027"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "7469956"
 ---
 # <a name="customer-profiles-search--filter-index"></a>Kundeprofiler: Indeks for søgning og filtrering
 
 Resultatet af at samle dine kundedata er et kundeprofilobjekt, der giver en fælles visning af den samlede kundebase. Hvis du hurtigt vil [finde oplysninger om en bestemt kunde eller gruppe af kunder](customer-profiles.md), kan du konfigurere **Søg**- og **Filter**-funktionerne på siden **Kunder**. Læs videre for at få mere at vide om, hvordan administratorer kan redigere attributterne på siden **Indeks for søgning og filtrering**, som er tilgængelig for brugere i forbindelse med søgning og filtrering.
 
-   :::image type="content" source="media/search-filter.png" alt-text="Søgefilter":::
-
-[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
+> [!div class="mx-imgBorder"]
+> ![Søgefilter.](media/search-filter.png "Søgefilter")
 
 ## <a name="add-fields-and-specify-attributes"></a>Tilføje felter og angive attributter
 

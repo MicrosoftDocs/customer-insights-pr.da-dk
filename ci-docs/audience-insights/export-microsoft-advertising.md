@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til Microsoft Advertising
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Microsoft Advertising.
-ms.date: 10/08/2021
+ms.date: 05/12/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 12fd221acb7c0eed443c9b860aca42dcb2b3788c
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: c2ac92de2718cf7f0622b407bf198a7a7e50a37b
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618054"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124471"
 ---
 # <a name="export-segments-to-microsoft-advertising-preview"></a>Eksportere segmenter til Microsoft Advertising (forhåndsversion)
 
@@ -29,9 +29,9 @@ Eksporter Customer Insights-segmenter til Microsoft Advertising for at oprette m
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 500.000 kundeprofiler pr. eksport til Microsoft Advertising.
+- Du kan eksportere op til 500K profiler pr. eksport til Microsoft Advertising.
 - Eksport til Microsoft Advertising er begrænset til segmenter.
-- Det kan tage op til 10 minutter at eksportere op til 500.000 kundeprofiler til Microsoft Advertising. 
+- Det kan tage op til 10 minutter at eksportere op til 500K profiler til Microsoft Advertising. 
 
 
 ## <a name="set-up-the-connection-to-microsoft-advertising"></a>Konfigurer forbindelsen til Microsoft Advertising
@@ -68,7 +68,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv dit **Microsoft Advertising-kunde-id og -konto-id**. Du kan finde kunde-id' et (`cid`) og konto-id'et (`aid`) i parametrene for URL-adressen, når du er logget på Microsoft Advertising.
 
-1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Microsoft Advertising.
+1. Vælg det felt i din samlede kundeprofil med en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Microsoft Advertising.
 
 1. Vælg **Gem**.
 

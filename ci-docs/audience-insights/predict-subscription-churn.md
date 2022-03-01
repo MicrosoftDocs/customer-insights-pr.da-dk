@@ -1,5 +1,5 @@
 ---
-title: Forudsigelse om abonnementsafgang (indeholder video)
+title: Forudsigelse af abonnementsafgang
 description: Du kan forudsige, om der er risiko for, at en kunde ikke længere vil bruge dit firmas produkter eller services.
 ms.date: 08/19/2020
 ms.reviewer: mhart
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 52ef7a8584cbae5dff0c800650b0238cc09fd6d5
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
+ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967694"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "7799721"
 ---
 # <a name="subscription-churn-prediction-preview"></a>Forudsigelse af abonnementsafgang (prøveversion)
 
@@ -77,7 +77,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 1. Angiv antallet af **Dage, siden abonnement sluttede**, som din virksomhed betragter som en kunde, der ikke længere er kunde. Denne periode er typisk velegnet til forretningsaktiviteter som tilbud eller andre marketingtiltag, der forsøger at forhindre tab af kunden.
 1. Angiv det antal **Dage, der skal undersøges for at forudsige kundeafgang** for at angive et interval, hvor kundeafgang skal forudsiges. F.eks. for at forudsige risikoen for kundeafgang i løbet af de næste 90 dage for at justere din marketingindsats. Forudsigelse af afgangsrisiko i kortere eller længere perioder kan gøre det mere problematisk at adressere faktorer i din afgangsrisikoprofil, afhængigt at dine specifikke forretningskrav. Vælge **Næste** for at fortsætte
    >[!TIP]
-   > Du kan når som helst vælge **Gem kladde** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
+   > Du kan til enhver tid vælge **Gem og Luk** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
 
 ### <a name="add-required-data"></a>Tilføj påkrævede data
 

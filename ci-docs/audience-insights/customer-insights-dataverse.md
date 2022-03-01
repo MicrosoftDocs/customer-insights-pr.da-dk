@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Brug Customer Insights-objekter som tabeller i Microsoft Dataverse.
-ms.date: 11/25/2021
+ms.date: 10/14/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6f74559b34a95ed976a4e353c2dbabe59e1a8839
-ms.sourcegitcommit: 9558ff772ee6c944fcb8db4bfc8cda13b38a1bff
+ms.openlocfilehash: 9855ff6908001dd18bc19a286fc56620d0a127e5
+ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/29/2021
-ms.locfileid: "7866927"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "7645211"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
@@ -45,7 +45,6 @@ Nogle outputobjekter fra målgruppeindsigt er tilgængelige som tabeller i Datav
 - [CustomerMeasure](#customermeasure)
 - [Forbedring](#enrichment)
 - [Forudsigelse](#prediction)
-- [Segmentmedlemskab](#segment-membership)
 
 
 ### <a name="customerprofile"></a>Kundeprofil
@@ -122,16 +121,3 @@ Denne tabel indeholder resultatet af modelforudsigelserne.
 | Værdier               | JSON-streng | Liste over attributter, der er produceret af modellen |
 | msdynci_predictionid | GUID        | Deterministisk GUID genereret fra msdynci_identifier | 
 | msdynci_identifier   | String      |  `Model|ModelProvider|CustomerId`                      |
-
-### <a name="segment-membership"></a>Segmentmedlemskab
-
-Denne tabel indeholder oplysninger om kundeprofilerne vedrørende segmentmedlemskaber.
-
-| Column        | Skriv | Description                        |
-|--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundeprofil-id        |
-| SegmentProvider      | String       | App, der udgiver segmenterne. Standard: Målgruppeindsigt         |
-| SegmentMembershipType | String       | Kundetype for denne segmentmedlemspost. Understøtter flere typer, f.eks. Kunde, Kontakt eller Firma. Standard: Kunde  |
-| Segmenter       | JSON-streng  | Liste over entydige segmenter, som kundeprofilen er medlem af      |
-| msdynci_identifier  | String   | Entydigt id for segmentmedlemspost. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
-| msdynci_segmentmembershipid | GUID      | Deterministisk GUID, der er genereret fra `msdynci_identifier`          |

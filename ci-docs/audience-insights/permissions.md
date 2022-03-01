@@ -1,20 +1,20 @@
 ---
 title: Administrer brugertilladelser
 description: Få mere at vide om tilladelser og brugerroller.
-ms.date: 03/25/2021
-ms.reviewer: mhart
+ms.date: 10/27/2020
+ms.reviewer: nimagen
 ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: NimrodMagen
-ms.author: nimagen
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 430ad902a5a75552243bc4a094361a749364383717278f687dd6e8ef33749c6f
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7de78c0ef71ec5b83870d396de36a7dcabbd14e5
+ms.sourcegitcommit: b50c754481d0af6d0cf4b550775d7b31d95846ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7028307"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "4689213"
 ---
 # <a name="user-permissions"></a>Brugertilladelser
 
@@ -31,7 +31,7 @@ Der findes tre typer roller:
 - Åbn og undersøg siden **Forbedring**.
 - Udforsk og eksportér objekter ved hjælp af siden **Objekter**.
 - Se status for systemprocesser ved hjælp af siden **System**.
-- Vis eksporter på siden **Eksporter**.
+- Eksporter segmenter fra siden **Segmenter**.
 - Installer og brug dashboard **Power BI Customer Insights**.
 
 ## <a name="contributor"></a>Bidragyder
@@ -43,7 +43,6 @@ Der findes tre typer roller:
 - Opret segmenter ved hjælp af siden **Segmenter**.
 - Opret målinger på siden **Målinger**.
 - Administrer konfiguration og forbedring af kundeprofiler på siden **Forbedring** (kun førstepartsforbedringer).
-- Administrer og opret eksporter på baggrund af forbindelser, der deles med bidragydere. [Få mere at vide om, hvordan administratorer tillader bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 ## <a name="administrator"></a>Administrator
 
@@ -51,9 +50,8 @@ Der findes tre typer roller:
 - Rediger indstillingerne på siden **System**, herunder arbejdssproget og opdateringsplanerne for systemprocesserne.
 - Se og tilføj tilladelser på siden **Tilladelser**.
 - Angiv søge- og filterdefinitioner for siden Kunder ved hjælp af siden **Indeks for søgning og filtrering** (tilgængelig via siden **Kunder**).
-- Administrer forbindelser, og tillad dem for andre brugerroller på siden **Forbindelser**.
+- Definer Dynamics 365 Sales-segmentdestinationer ved hjælp af siden **Eksportdestinationer**.
 - Administrer konfiguration og forbedring af kundeprofiler på siden **Forbedring** (for alle forbedringer).
-- Administrere og oprette eksporter på siden **Eksporter**.
 - Installer og brug **tilføjelsesprogrammet Kundekort**.
 - Tilføj og brug **Power Apps-connector**.
 - Aktiver brug af [Customer Insights API'er](apis.md).
@@ -76,6 +74,3 @@ Gå til **Admin** > **Tilladelser** i målgruppen Insights for at se, hvilke rol
 - Roller angives i kolonnen **Rolle**.
 - Vælg en vilkårlig kolonnetitel for at sortere resultaterne efter den pågældende kolonnes værdi.
 - Brug feltet **Søg** øverst på siden til at finde bestemte brugere.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]

@@ -9,12 +9,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: cbeac7e25d83df152c38d1c59cc6734a3d1fee97
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 63f241c27ec86f357c83a301d6797f9ff87c2241
+ms.sourcegitcommit: 2acda3c5adf40bc3f5bbb4b2b4b6c22f84371da7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7618560"
+ms.lasthandoff: 09/01/2021
+ms.locfileid: "7466755"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Forskellige kundeprofiler med Azure Maps (forhåndsversion)
 
@@ -86,7 +86,7 @@ Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at væ
 
 ## <a name="next-steps"></a>Næste trin
 
-[!INCLUDE [next-steps-enrichment](../includes/next-steps-enrichment.md)]
+Byg oven over dine forbedrede kundedata. Du kan oprette [segmenter](segments.md), [målepunkter](measures.md) og endda [eksportere dataene](export-destinations.md) for at give kunderne personlige oplevelser.
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

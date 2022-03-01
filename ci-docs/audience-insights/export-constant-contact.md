@@ -1,7 +1,7 @@
 ---
 title: Eksport af Customer Insights-data til Constant Contact-kontaktperson
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Constant Contact.
-ms.date: 10/08/2021
+ms.date: 03/22/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b25e4f11e21d059c2d867e925c0ae5635a87addc
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 29f4320c798db62609283e3c48f0b47a4f0b982f
+ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7619112"
+ms.lasthandoff: 06/01/2021
+ms.locfileid: "6124266"
 ---
 # <a name="export-segments-to-constant-contact-preview"></a>Eksporter segmenter til Constant Contact (forhåndsversion)
 
@@ -28,10 +28,10 @@ Eksportér segmenter med ensartede kundeprofiler til Constant Contact, og brug d
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 1 millioner kundeprofiler pr. eksport til Constant Contact.
+- Du kan eksportere op til 1 millioner profiler pr. eksport til Constant Contact.
 - Eksport til Constant Contact er begrænset til segmenter.
-- Det kan tage op til 1 time at eksportere op til 1 million kundeprofiler til Constant Contact. 
-- Antallet af kundeprofiler, du kan eksportere til Constant Contact, er begrænset og afhænger af din kontrakt med Constant Contact.
+- Det kan tage op til 1 time at eksportere op til 1 millioner profiler til Constant Contact. 
+- Det antal profiler, du kan eksportere til Constant Contact, er afhængigt af og begrænset af kontrakten med Constant Contact.
 
 ## <a name="set-up-connection-to-constant-contact"></a>Konfigurere til Constant Contact
 
@@ -47,7 +47,7 @@ Eksportér segmenter med ensartede kundeprofiler til Constant Contact, og brug d
 
 1. Vælg **Opret forbindelse** for at initialisere forbindelsen til Constant Contact.
 
-1. Vælg **Godkend med konstant**-kontakt, og angiv dine administratorlegitimationsoplysninger for Konstant kontakt. 
+1. Vælg **Autentificer med AdRoll**, og angiv administratoroplysningerne for Constant Contact. 
 
 1. Vælg **Tilføj dig selv som eksport bruger**, og giv din Customer Insights-legitimationsoplysninger.
 
@@ -65,7 +65,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv din [**Constant Contact-liste-id**](https://app.constantcontact.com/pages/contacts/ui#lists). Åbn en liste i Constant Contact for at finde liste-id'et i URL-adressen.
 
-1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Constant Contact.
+1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det er obligatorisk at eksportere segmenter til Constant Contact.
 
 1. Du kan også eksportere Fornavn og Efternavn som ekstra felter for at oprette mere personlige e-mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 

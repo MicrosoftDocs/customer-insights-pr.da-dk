@@ -1,7 +1,7 @@
 ---
 title: Eksportere Customer Insights-data til AdRoll
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til AdRoll.
-ms.date: 10/08/2021
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen til AdRoll.
+ms.date: 02/15/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,40 +9,32 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f9373ea18e77723c988392a5a2959baa66d8eae9
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+ms.openlocfilehash: 6fedd549c2e7de362f36e3fb23d363200bb92a04
+ms.sourcegitcommit: d24e52150fe5a4fab45128e12d6a03637771d9b9
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617326"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "5697067"
 ---
-# <a name="export-segments-to-adroll-preview"></a>Eksporter segmentlister til AdRoll (forhåndsversion)
+# <a name="connector-for-adroll-preview"></a>Connector til AdRoll (forhåndsversion)
 
 Eksportér segmenter med ensartede kundeprofiler til AdRoll, og brug dem til reklamer. 
 
-## <a name="prerequisites-for-a-connection"></a>Forudsætninger for en forbindelse
+## <a name="prerequisites"></a>Forudsætninger
 
 -   Du har en [AdRoll-konto](https://www.adroll.com/) og tilsvarende administratorlegitimationsoplysninger.
 -   Du har [konfigureret segmenter](segments.md)-tilladelser i målgruppen Insights.
 -   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
 
-## <a name="known-limitations"></a>Kendte begrænsninger
+## <a name="connect-to-adroll"></a>Opret forbindelse til AdRoll
 
-- Du kan eksportere op til 250.000 kundeprofiler ad gangen til AdRoll.
-- Du kan ikke eksportere segmenter med færre end 100 kundeprofiler til AdRoll. 
-- Eksport til AdRoll er begrænset til segmenter.
-- Det kan tage op til 10 minutter at eksportere op til 250.000 kundeprofiler til AdRoll. 
-- Antallet af kundeprofiler, du kan eksportere til AdRoll, afhænger af din kontrakt med AdRoll.
+1. Gå til **Adminstration** > **Eksportdestinationer**.
 
-## <a name="set-up-connection-to-adroll"></a>Konfigurer forbindelsen til AdRoll
+1. Under **AdRoll** skal du vælge **Konfigurer**.
 
-1. Gå til **Administrator** > **Forbindelser**.
+1. Giv din eksportdestination et genkendeligt navn ifeltet **Vist navn**.
 
-1. Vælg **Tilføj forbindelse**, og vælg **AdRoll** for at konfigurere forbindelsen.
-
-1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
-
-1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+   :::image type="content" source="media/AdRoll_config.PNG" alt-text="Konfigurationsrude til AdRoll-forbindelse.":::
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
 
@@ -52,32 +44,29 @@ Eksportér segmenter med ensartede kundeprofiler til AdRoll, og brug dem til rek
 
 1. Vælg **Tilføj dig selv som eksport bruger**, og giv din Customer Insights-legitimationsoplysninger.
 
-1. Vælg **Gem** for at fuldføre forbindelsen.
+1. Angiv dit **AdRoll-annoncør-id** [AdRoll-annoncering](https://help.adroll.com/hc/en-us/articles/212011838-Advertiser-Profiles).
 
-## <a name="configure-an-export"></a>Konfigurere en eksport
+1. Vælg **Næste** for at konfigurere eksporten.
 
-Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+## <a name="configure-the-connector"></a>Konfigurer connectoren
 
-1. Gå til **Data** > **Eksport**.
-
-1. Vælg **Tilføj destination** for at oprette en ny eksport.
-
-1. Vælg en forbindelse i sektionen AdRoll i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen tilgængelige forbindelser af denne type.
-
-1. Angiv dit **AdRoll-annoncør-id**. Du kan finde flere oplysninger under [AdRoll-annoncørprofiler](https://help.adroll.com/hc/articles/212011838-Advertiser-Profiles).
-
-1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Den kræves for at eksportere segmenter til AdRoll.
+1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Den kræves for at eksportere segmenter til AdRoll.
 
 1. Vælg de segmenter, du vil eksportere. Vælg et segment med mindst 100 medlemmer. Du kan ikke eksportere mindre segmenter. Derudover er maksimumstørrelsen på et segment, der skal eksporteres, 250.000 medlemmer pr. eksport. 
 
 1. Vælg **Gem**.
 
-Når du gemmer en eksport, køres eksporten ikke med det samme.
+## <a name="export-the-data"></a>Eksportér dataene
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). 
+Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).
 
-Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
+## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Du kan eksportere op til 250.000 profiler pr. eksport til AdRoll.
+- Du kan ikke eksportere segmenter med færre end 100 profiler til AdRoll. 
+- Eksport til AdRoll er begrænset til segmenter.
+- Det kan tage op til 10 minutter at eksportere op til 250.000 profiler til AdRoll. 
+- Antallet af profiler, du kan eksportere til AdRoll, er afhængige og begrænsede i kontrakten med AdRoll.
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

@@ -1,48 +1,38 @@
 ---
 title: Eksportér Customer Insights-data til Dynamics 365 Sales
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Dynamics 365 Sales.
-ms.date: 03/03/2021
-ms.reviewer: mhart
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Dynamics 365 Sales.
+ms.date: 08/21/2020
+ms.reviewer: philk
 ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: pkieffer
-ms.author: philk
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: d8a35424f4271b350b8d84e72a01deb6d69652a0
-ms.sourcegitcommit: 08a5dfcc4f9d293c8e7ac4fef604bc52985b1b78
+ms.openlocfilehash: af0824e69dfdf620a0ac756e32a9bd3dd85e5151
+ms.sourcegitcommit: 6a6df62fa12dcb9bd5f5a39cc3ee0e2b3988184b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/04/2022
-ms.locfileid: "8090916"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "4643811"
 ---
-# <a name="use-segments-in-dynamics-365-sales-preview"></a>Brug segmenter i Dynamics 365 Sales (forhåndsversion)
+# <a name="connector-for-dynamics-365-sales-preview"></a>Opret forbindelse til Dynamics 365 Sales (forhåndsvisning)
 
-
+[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
 
 Brug dine kundedata til at oprette marketinglister, følge op på arbejdsprocesser og udsende kampagner med Dynamics 365 Sales.
 
-## <a name="known-limitations"></a>Kendte begrænsninger
+## <a name="prerequisite"></a>Forudsætning
 
-- Eksport til Dynamics 365 Sales er begrænset til 100.000 medlemmer pr. segment.
-- Segmenteksporten til Dynamics 365 Sales kan tage op til 3 timer at fuldføre. 
+Kontaktpersonposter [fra Dynamics 365 Sales, der tilføres ved hjælp af Common Data Service](connect-power-query.md).
 
-## <a name="prerequisite-for-connection"></a>Forudsætning for forbindelse
+## <a name="configure-the-connector-for-sales"></a>Konfigurer connectoren til Sales
 
-1. Kontaktposter skal være til stede i Dynamics 365 Sales, før du kan eksportere et segment fra Customer Insights til Sales. Læs mere om, hvordan du kontakter i [Dynamics 365 Sales ved hjælp af Microsoft Dataverse](connect-power-query.md).
+1. Gå til **Admin** > **Eksportdestinationer** i målgruppen Insights.
 
-   > [!NOTE]
-   > Hvis du eksporterer segmenter fra målgruppeindsigt til Sales, oprettes der ikke nye kontaktposter i Sales-forekomsterne. Kontaktpersonposterne fra Sales skal være direkte målgruppeindsigt og bruges som en datakilde. De skal også inkluderes i den samlede brugerdefinerede enhed for at knytte kunde-ID'er til kontakt-ID'er, før segmenter kan eksporteres.
+1. Under **Dynamics 365 Sales** vælg **Konfigurer**.
 
-## <a name="set-up-the-connection-to-sales"></a>Konfigurer forbindelsen til Sales
-
-1. Gå til **Administrator** > **Forbindelser**.
-
-1. Vælg **Tilføj forbindelse**, og vælg **Dynamics 365 Sales** for at konfigurere forbindelsen.
-
-1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
-
-1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Giv din eksportdestination et genkendeligt navn ifeltet **Vist navn**.
 
 1. Angiv din organisations URL-adresse for Sales i feltet **Serveradresse**.
 
@@ -50,24 +40,12 @@ Brug dine kundedata til at oprette marketinglister, følge op på arbejdsprocess
 
 1. Knyt et kunde-ID-felt til Dynamics 365-kontakt-id.
 
-1. Vælg **Gem** for at fuldføre forbindelsen. 
-
-## <a name="configure-an-export"></a>Konfigurere en eksport
-
-Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
-
-1. Gå til **Data** > **Eksport**.
-
-1. Vælg **Tilføj destination** for at oprette en ny eksport.
-
-1. Vælg en forbindelse i sektionen Dynamics 365 Sales i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+1. Vælg **Næste**.
 
 1. Vælg en eller flere segmenter.
 
-1. Vælg **Gem**
+1. Vælg **Gem**.
 
-Når du gemmer en eksport, køres eksporten ikke med det samme.
+## <a name="export-the-data"></a>Eksportér dataene
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab).

@@ -1,7 +1,7 @@
 ---
 title: Forudsige produktanbefalinger
 description: Forudsige de produkter, en kunde køber eller kommunikerer med.
-ms.date: 01/13/2022
+ms.date: 09/13/2021
 ms.reviewer: mhart
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 62b829b6ca3074e0ca52fb52584b74572bb05f05
-ms.sourcegitcommit: 15b1521041149716f8031cfa6d0dc61a56a5e2ff
+ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
+ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/13/2022
-ms.locfileid: "7967787"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "7494532"
 ---
 # <a name="product-recommendation-prediction-preview"></a>Forudsige produktanbefalinger (prøveversion)
 
@@ -79,11 +79,11 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 1. Angiv det **antal produkter**, der skal anbefales til en kunde. Værdien afhænger af, hvordan leveringsmetoden udfylder data. Hvis du kan anbefale tre produkter, skal du angive denne værdi i overensstemmelse hermed.
    
    >[!TIP]
-   > Du kan når som helst vælge **Gem kladde** for at gemme forudsigelsen som en kladde. Du kan se forudsigelse under fanen **Mine forudsigelser**.
+   > Du kan til enhver tid vælge **Gem og Luk** for at gemme forudsigelsen som en kladde. Du kan se forudsigelse under fanen **Mine forudsigelser**.
 
-1. Vælg, om du vil medtage produkter, som kunderne for nylig har købt, i feltet **Gentag køb forventet**.
+1. Vælg, om du ønsker at **Foreslå produkter, som kunder har købt for nylig**.
 
-1. Angiv **Tilbagebliksvindue**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Angiv f.eks., at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
+1. Hvis du har valgt *ikke* at anbefale produkter, du har købt for nylig, skal du indstille **tilbagebliksvinduet**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Angiv f.eks., at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
 
 1. Vælg **Næste**
 
