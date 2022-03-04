@@ -3,18 +3,20 @@ title: Forbindelser til andre tjenester fra Customer Insights.
 description: Dele data med andre tjenester.
 ms.date: 04/09/2021
 ms.reviewer: nikeller
-ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: conceptual
+ms.topic: overview
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 17e04b243e9b3d4375c86f5a890a18be35956835
-ms.sourcegitcommit: d84d664e67f263bfeb741154d309088c5101b9c3
+searchScope:
+- ci-connections
+- customerInsights
+ms.openlocfilehash: ccad090d3bf6eab96eff37f7a96289ca2882d369
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6304965"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354376"
 ---
 # <a name="connections-preview-overview"></a>Oversigt over forbindelser (forhåndsversion)
 
@@ -47,6 +49,7 @@ Hvis du vil tilføje forbindelser, skal du have [administratortilladelser](permi
 1. Angiv de nødvendige oplysninger i ruden **Konfigurer forbindelse**. 
    1. **Visningsnavn** og forbindelsestype beskriver en forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for denne forbindelse.
    1. De nøjagtige felter afhænger af, hvilken tjeneste du opretter forbindelse til. Du kan få mere at vide om detaljer om en bestemt forbindelse ved at skrive artiklen om måltjenesten.
+   1. Hvis du [bruger din egen Key Vault](use-azure-key-vault.md) til at gemme hemmeligheder, skal du aktivere **Brug Key Vault** og vælge hemmeligheden på listen.
 
 1. Vælg **Gem** for at oprette forbindelsen.
 
@@ -93,3 +96,6 @@ Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved 
 
 1. Bekræft sletningen ved at vælge **Fjern**.
 
+## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurere forbindelser med hemmeligheder, der administreres af din egen Key Vault
+
+Nogle forbindelser har brug for hemmeligheder som API-nøgler eller adgangskoder. Nogle forbindelser understøtter hemmeligheder, der er gemt i din egen Key Vault. Få mere at vide om understøttede forbindelser, og hvordan du konfigurerer [din egen Key Vault for at få målgruppeindsigt](use-azure-key-vault.md).

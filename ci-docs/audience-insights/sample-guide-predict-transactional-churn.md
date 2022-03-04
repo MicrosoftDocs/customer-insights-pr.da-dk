@@ -3,26 +3,25 @@ title: Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
 description: Brug denne eksempelvejledning til at afprøve transaktionsrelateret standardafgang i en forudsigelsesmodel.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: diegogranados117
 ms.author: digranad
 manager: shellyha
-ms.openlocfilehash: 19befa17524aba4543f0d8a5f5f7d6f5a88b2322f1264b88fa0b31641610592a
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 93841358d110bd16c7b7f8beb079bed704b22260
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7029438"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354594"
 ---
-# <a name="transactional-churn-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse af transaktionsrelateret afgang (prøveversion)
+# <a name="transactional-churn-prediction-sample-guide"></a>Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
 
-Denne vejledning vil gennemgå et eksempel på forudsigelse af transaktionsrelateret afgang i Customer Insights fra start til slut ved hjælp af de data, der er angivet nedenfor. Alle data, der bruges i denne vejledning, er ikke rigtige kundedata og er en del af de Contoso-datasæt, der findes i *Demo*-miljøet i dit Customer Insights-abonnement.
+Denne vejledning vil gennemgå et eksempel på forudsigelse af transaktionsrelateret afgang i Customer Insights fra start til slut ved hjælp af de data, der er angivet nedenfor. Alle de data, der bruges i denne vejledning, er ikke virkelige kundedata og er en del af det Contoso-datasæt, der findes i *Demo*-miljøet i Customer Insights-abonnementet.
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at vide, hvilke kunder der jævnligt køber deres produkter, men som holder op med at være aktive kunder i de næste 60 dage. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
+Contoso er et firma, der fremstiller kaffe og kaffemaskiner i høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at vide, hvilke kunder der jævnligt køber deres produkter, men som holder op med at være aktive kunder i de næste 60 dage. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -31,7 +30,7 @@ Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de 
 
 ## <a name="task-1---ingest-data"></a>Opgave 1 - Indsættelse af data
 
-Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectors](connect-power-query.md) specifikt. I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data. 
+Gennemse artiklerne [om dataimport](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectorer](connect-power-query.md). I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Indsættelse af kundedata fra eCommerce-platform
 
@@ -149,7 +148,7 @@ Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Opgave 3 - Konfiguration af transaktion af forudsigelse af afgang
 
-Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abonnementsafgang. Du kan se de detaljerede trin i artiklen [Forudsigelse af abonnementsafgang (prøveversion)](predict-subscription-churn.md). 
+Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abonnementsafgang. Du kan finde flere oplysninger i artiklen om [Forudsigelse af opsigelse af abonnement](predict-subscription-churn.md). 
 
 1. Gå til **Intelligens** > **Find**, og vælg at bruge **Model for kundeafgang**.
 

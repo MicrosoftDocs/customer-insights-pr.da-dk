@@ -1,22 +1,24 @@
 ---
-title: Trinvis opdatering af Power Query-baserede datakilder
-description: Opdater nye og opdaterede data for store datakilder baseret på Power Query.
+title: Trinvis opdatering for Power Query-baserede datakilder
+description: Opdatere nye og opdaterede data til store datakilder baseret på Power Query.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.openlocfilehash: f614d701aeb06720a60b14549a7fe666f8fe0617
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-system-schedule
+- customerInsights
+ms.openlocfilehash: 62632efda3c0c7e53fcdd8864b053ba93e2918bc
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900248"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353674"
 ---
-# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinvis opdatering af datakilder, der er baseret på Power Query
+# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinvis opdatering for Power Query-baserede datakilder
 
 I denne artikel beskrives, hvordan du kan konfigurere trinvis opdatering for datakilder baseret på Power Query.
 
@@ -28,9 +30,9 @@ Den trinvise opdatering af datakilder giver følgende fordele:
 
 ## <a name="configure-incremental-refresh"></a>Konfigurer trinvis opdatering
 
-Målgruppen Insights muliggør trinvis opdatering af datakilder, der importeres via Power Query, der understøtter den trinvise indsættelse. F.eks. Azure SQL-databaser med dato- og klokkeslætsfelter, som angiver, hvornår dataposterne sidst blev opdateret.
+Publikum indsigt gør det muligt at opdatere trinvist for datakilder, der importeres via Power Query, der understøtter trinvis indtagelse. F.eks. Azure SQL-databaser med dato- og klokkeslætsfelter, som angiver, hvornår dataposterne sidst blev opdateret.
 
-1. [Oprette en ny datakilde, der er baseret på Power Query](connect-power-query.md).
+1. [Opret en ny datakilde baseret på Power Query](connect-power-query.md).
 
 1. Angiv et **Navn** til datakilden.
 

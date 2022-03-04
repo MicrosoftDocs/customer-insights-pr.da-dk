@@ -3,26 +3,29 @@ title: Eksempelvejledning til forudsigelse til produktanbefaling
 description: Brug denne eksempelvejledning til at afprøve den indbyggede forudsigelsesmodel til produktanbefaling.
 ms.date: 02/10/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+author: m-hartmann
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: b219935dfbd9f7acc1104d83e2ca281801a1a4251ae4c19fc03d4b1ce46f4613
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- customerInsights
+ms.openlocfilehash: 8ba54cfd466049c8df99c15f34626ab1914234f1
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035178"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354640"
 ---
-# <a name="product-recommendation-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse til produktanbefaling (prøveversion)
+# <a name="product-recommendation-prediction-sample-guide"></a>Eksempelvejledning til forudsigelse til produktanbefaling
 
 Vi gennemgår fra start til slut et eksempel på forudsigelse af produktanbefaling ved hjælp af de eksempeldata, der er angivet nedenfor.
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at forstå, hvilke produkter der skal anbefales til tilbagevendende kunder. Hvis du ved, hvilke kunder der er **større sandsynlighed for at købe**, kan du hjælpe dem med at spare marketingindsatsen ved at fokusere på bestemte elementer.
+Contoso er et firma, der fremstiller kaffe og kaffemaskiner i høj kvalitet, som de sælger via deres Contoso Coffee-websted. Deres mål er at forstå, hvilke produkter der skal anbefales til tilbagevendende kunder. Hvis du ved, hvilke kunder der er **større sandsynlighed for at købe**, kan du hjælpe dem med at spare marketingindsatsen ved at fokusere på bestemte elementer.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -31,7 +34,7 @@ Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de 
 
 ## <a name="task-1---ingest-data"></a>Opgave 1 - Indsættelse af data
 
-Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectors](connect-power-query.md) specifikt. I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data.
+Gennemse artiklerne [om dataimport](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectorer](connect-power-query.md). I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Indsættelse af kundedata fra eCommerce-platform
 

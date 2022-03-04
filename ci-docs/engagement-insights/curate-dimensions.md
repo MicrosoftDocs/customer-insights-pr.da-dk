@@ -2,18 +2,17 @@
 title: Brug demografiske dimensioner til opdeling af adfærdsdata (kuraterede dimensioner)
 description: Brug samlede profil-kuraterede dimensioner til at aktivere målgruppeindsigt i egenskaber for kundeprofiler.
 ms.date: 07/27/2021
-ms.service: customer-insights
 ms.topic: conceptual
 author: mkisel
 ms.author: mkisel
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 50bb800c9e097d03cc6f26f79819c741ab5e8baf
-ms.sourcegitcommit: 1c396394470df8e68c2fafe3106567536ff87194
+ms.openlocfilehash: 95395e09bc0ba5ba93138957c62105f31c709e91
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/30/2021
-ms.locfileid: "7461096"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8232960"
 ---
 # <a name="use-demographic-dimensions-for-splitting-behavioral-data"></a>Brug demografiske dimensioner til opdeling af adfærdsdata
 
@@ -29,7 +28,7 @@ Ved hjælp af samlede demografiske profiler kan brugere af engagementsindsigt f�
 - Et engagementsindsigtsmiljø, hvor du har kundeprofildata knyttet til det målgruppeindsigtsmiljø, hvor kundeprofilerne oprettes. Flere oplysninger: [Opret et link mellem målgruppeindsigt og engagementsindsigt](integrate-audience-insights-engagement-insights.md)
 
 > [!NOTE]
-> Når du har oprettet et link mellem målgruppeindsigtsmiljøet og engagementsindsigtsmiljøerne, ønsker du måske kun data, der er specifikke for egenskaber for kundeprofiler, og som kan være nyttige som dimensioner i engagementsindsigt. Du kan finde flere oplysninger i [Aktivere målgruppeindsigts samlede profilattributter og segmenter](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).<!--note from editor: Suggested. -->
+> Når du har oprettet et link mellem målgruppeindsigtsmiljøet og engagementsindsigtsmiljøerne, ønsker du måske kun data, der er specifikke for egenskaber for kundeprofiler, og som kan være nyttige som dimensioner i engagementsindsigt. Du kan finde flere oplysninger i [Aktivere målgruppeindsigts samlede profilattributter og segmenter](integrate-audience-insights-engagement-insights.md#enable-audience-insights-unified-profiles-attributes-and-segments).
 
 ## <a name="create-a-new-custom-report"></a>Opret en ny brugerdefineret rapport
 

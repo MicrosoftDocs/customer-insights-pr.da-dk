@@ -1,22 +1,24 @@
 ---
 title: Semantiske tilknytninger (forhåndsversion)
 description: Oversigt over semantiske tilknytninger, og hvordan de bruges.
-ms.date: 09/28/2021
-ms.service: customer-insights
+ms.date: 12/01/2021
 ms.subservice: audience-insights
 ms.reviewer: mhart
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
 manager: shellyha
-ms.openlocfilehash: b0884b8b6a2c5abe4b3967d1b57d11a3a6d65c5b
-ms.sourcegitcommit: 5d82e5b808517e0e99fdfdd7e4a4422a5b8ebd5c
+searchScope:
+- ci-semantic-mapping
+- customerInsights
+ms.openlocfilehash: 37696f3e82eb9b75fbf9f78363adc890891efcc3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/11/2021
-ms.locfileid: "7622928"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353950"
 ---
-# <a name="semantic-mappings"></a>Semantiske tilknytninger
+# <a name="semantic-mappings-preview"></a>Semantiske tilknytninger (forhåndsversion)
 
 Med semantiske tilknytninger kan du knytte ikke-aktivitetsdataene til foruddefinerede skemaer. Disse skemaer hjælper målgruppeindsigt til bedre at forstå dine dataattributter. Semantisk tilknytning og de medfølgende data muliggør ny indsigt og funktioner i målgruppeindsigt. Hvis du vil knytte aktivitetsdataene til skemaerne, skal du gennemgå dokumentationen til [aktiviteter](activities.md).
 
@@ -75,8 +77,7 @@ Med semantiske tilknytninger kan du knytte ikke-aktivitetsdataene til foruddefin
 
 1. Hvis du vil køre en semantisk tilknytning på et senere tidspunkt, skal du vælge den semantiske tilknytning og vælge **Opdater**.
 
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="manage-existing-semantic-mappings"></a>Administrere eksisterende semantiske tilknytninger
 
@@ -91,5 +92,41 @@ I **Data** > **Semantiske tilknytninger (forhåndsversion)** kan du få vist all
 - **Omdøb**: Åbner en dialogboks, hvor du kan angive et andet navn til den valgte semantiske tilknytning. Vælg **Gem** for at anvende dine ændringer.
 
 - **Slet**: Åbner en dialogboks for at bekræfte sletningen af den valgte semantiske tilknytning. Du kan også slette mere end én semantisk tilknytning på én gang ved at vælge de semantiske tilknytninger og sletteikonet. Bekræft sletningen ved at vælge **Slet**.
+
+## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Brug en semantisk objekttilknytning af ContactProfile til at oprette aktiviteter på kontaktniveau
+
+Når du har oprettet en semantisk objekttilknytning af *ContactProfile*, kan du registrere kontaktaktiviteter. Det giver dig mulighed for på aktivitetstidslinjen at se, hvilken kontaktperson der var ansvarlig for hver enkelt aktivitet, på aktivitetstidslinjen. De fleste trin følger den typiske konfiguration af aktivitetstilknytning.
+
+   > [!NOTE]
+   > Hvis aktiviteter på kontaktniveau skal fungere, skal du have attributterne **AccountID** og **ContactID** for hver post i aktivitetsdataene.
+
+1. [Definere en semantisk objekttilknytning af *ContactProfile*.](#define-a-contactprofile-semantic-entity-mapping) og køre den semantiske tilknytning.
+
+1. Gå til **Data** > **Aktiviteter** i målgruppeindsigt.
+
+1. Vælg **Tilføj aktivitet** for at oprette en ny aktivitet.
+
+1. Navngive aktiviteten, vælge kildeaktivitetsobjektet og vælge den primære nøgle til aktivitetsobjektet.
+
+1. I trinnet med **Relationer** kan du oprette en relation mellem aktivitetskildedataene og firmaer ved at bruge kontaktdataene som et objekt, der gør det nemt at anvende dem. Du kan finde flere oplysninger ved at gå til [direkte og indirekte relationsstier](relationships.md#relationship-paths).
+   - Eksempel på relation for en aktivitet, der kaldes *Køb*:
+      - **Køber kildeaktivitetsdata** > **Kontaktdata** på attributten **ContactID**
+      - **Kontaktdata** > **Kontodata** på attributten **AccountID**
+
+   :::image type="content" source="media/Contact_Activities1.png" alt-text="Eksempel på konfiguration af relation.":::
+
+1. Når du har konfigureret Relationer, skal du vælge **Næste** og fuldføre konfigurationen af aktivitetstilknytningen. Du kan finde detaljerede oplysninger om oprettelse af en aktivitet i [definere en aktivitet](activities.md).
+
+1. Kør aktivitetstilknytningerne.
+
+1. Dine aktiviteter på kontaktniveau er nu synlige på din kundetidslinje.
+
+   :::image type="content" source="media/Contact_Activities2.png" alt-text="Slutresultat efter konfiguration af kontaktaktiviteter":::
+
+### <a name="contact-level-activity-timeline-filtering"></a>Filtrering af aktivitetstidslinje på kontaktniveau
+
+Når du har konfigureret en aktivitetstilknytning på kontaktniveau og kørt den, opdateres dine kunders aktivitetstidslinje. Den indeholder deres ide eller navne, afhængigt af din *ContactProfile*-konfiguration, for de aktiviteter, de har handlet på. Du kan filtrere aktiviteter efter kontaktpersoner på tidslinjen for at se bestemte kontakter, du er interesseret i. Du kan også se alle de aktiviteter, der ikke er tildelt til en bestemt kontakt, ved at vælge **Aktiviteter, der ikke er knyttet til en kontaktperson**.
+
+   :::image type="content" source="media/Contact_Activities3.png" alt-text="De filtreringsindstillinger, der er tilgængelige for aktiviteter på kontaktniveau.":::
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

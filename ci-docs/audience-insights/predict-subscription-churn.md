@@ -1,22 +1,21 @@
 ---
-title: Forudsigelse af abonnementsafgang
+title: Forudsigelse om abonnementsafgang (indeholder video)
 description: Du kan forudsige, om der er risiko for, at en kunde ikke længere vil bruge dit firmas produkter eller services.
 ms.date: 08/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: f9397729d2f79d079b4dea2ee92d0823b6d987e4
-ms.sourcegitcommit: fb9f118b4e16b5aabb3e503463efca21718f5d72
+ms.openlocfilehash: b61e87ad833dd7a8e51c6619945a9e216d85f221
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "7799721"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354686"
 ---
-# <a name="subscription-churn-prediction-preview"></a>Forudsigelse af abonnementsafgang (prøveversion)
+# <a name="subscription-churn-prediction"></a>Forudsigelse af abonnementsafgang
 
 Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risiko for, at en kunde ikke længere vil bruge dit firmas produkter eller services. Du kan oprette en ny forudsigelse af abonnementsafgang på siden **Intelligens** > **Forudsigelser**. Vælg **Mine forudsigelser** for at få vist andre forudsigelser, du har oprettet.
 
@@ -63,7 +62,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 ## <a name="create-a-subscription-churn-prediction"></a>Oprette en abonnementsafgang (prøveversion)
 
 1. Gå til **Intelligens** > **Forudsigelser** i målgruppen insights.
-1. Vælg feltet **Model for abonnementsafgang (prøveversion)**, og vælg **Brug denne model**.
+1. Vælg feltet **Model til abonnementsafgang**, og vælg **Brug denne model**.
    > [!div class="mx-imgBorder"]
    > ![Modelfelt for abonnementsafgang med knappen Brug denne model.](media/subscription-churn-usethismodel.PNG "Modelfelt for abonnementsafgang med knappen Brug denne model")
 
@@ -77,7 +76,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
 1. Angiv antallet af **Dage, siden abonnement sluttede**, som din virksomhed betragter som en kunde, der ikke længere er kunde. Denne periode er typisk velegnet til forretningsaktiviteter som tilbud eller andre marketingtiltag, der forsøger at forhindre tab af kunden.
 1. Angiv det antal **Dage, der skal undersøges for at forudsige kundeafgang** for at angive et interval, hvor kundeafgang skal forudsiges. F.eks. for at forudsige risikoen for kundeafgang i løbet af de næste 90 dage for at justere din marketingindsats. Forudsigelse af afgangsrisiko i kortere eller længere perioder kan gøre det mere problematisk at adressere faktorer i din afgangsrisikoprofil, afhængigt at dine specifikke forretningskrav. Vælge **Næste** for at fortsætte
    >[!TIP]
-   > Du kan til enhver tid vælge **Gem og Luk** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
+   > Du kan når som helst vælge **Gem kladde** for at gemme forudsigelsen som en kladde. Du kan se kladdeforudsigelsen under fanen **Mine forudsigelser** for at fortsætte.
 
 ### <a name="add-required-data"></a>Tilføj påkrævede data
 

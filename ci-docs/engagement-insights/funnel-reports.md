@@ -4,17 +4,16 @@ description: Sådan bruges tragtrapporter til at forstå, hvordan målgruppen tr
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 09/17/2021
-ms.service: customer-insights
+ms.date: 09/21/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 901e7ec50037d66c7c5ceb635d1c6cda6cfff83b
-ms.sourcegitcommit: 3bafa27adae113948636b30c7462e0af060c7131
+ms.openlocfilehash: 7bb961c5ba8d42f704eefe0dcb22e561367f3efb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/17/2021
-ms.locfileid: "7498635"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226253"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Opret, og administrer tragtrapporter
 
@@ -163,13 +162,23 @@ Du kan ændre navnet på en tragtrapport, slette den eller ændre trinnene i rap
 
 Engagementsindsigt giver nu tragtindsigt til kunderne. Brug tragtindsigt til at få større indsigt i kundernes adfærd omkring trinnene i tragtrapporten. Når du opretter og gemmer en ny tragtrapport, oprettes der automatisk tragtindsigt for rapporten. 
 
+:::image type="content" source="media/funnel-insights.png" alt-text="Tragtindsigt.":::
+
+> [!NOTE]
+> Tragtindsigt kan kun oprettes for tragttrin, **der ikke** indeholder brugerdefinerede dimensioner. Hvis du vil generere tragtindsigt for alle trin i tragten, skal du bruge in-of-box-engagementsindsigt til at oprette tragttrinnene. 
+
 Du kan få vist tragtindsigt fra følgende kategorier på både hoved- og trinniveauer: 
 
- - Omregningskurs 
+ - Omregningskurs
+ -    Konverteringsraten mellem Tjek ud og Køb er 22 %.
  - Overgangstid 
+ -    Den gennemsnitlige konverteringsfrekvens mellem Indkøbskurv og Tjek ud er 23 minutter. 
  - Sluttidspunkt 
+ -    Den gennemsnitlige tid, det tager kunderne at fuldføre tragten, er 47 minutter. 
 
 Brug denne indsigt til at gå mere i dybden med kundernes funktionsmåde og få en bedre forståelse af frafaldspunkter og konverteringer for tragtrapporten. 
+
+Hvis du vil sammenligne indsigt på tværs af forskellige trin, skal du vælge **Se trinvise vejledninger** eller **Sammenlign med andre trin** fra indsigtskortene. Her vises et søjlediagram, hvor metrikværdier sammenlignes for hvert trin i tragten. 
 
 Tragtindsigt genberegnes hver 24. time, eller når du **gemmer** tragtrapporten. 
 

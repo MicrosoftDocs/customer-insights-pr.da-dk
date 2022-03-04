@@ -1,22 +1,21 @@
 ---
 title: Eksport af Customer Insights-data til Snapchat
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Snapchat.
-ms.date: 03/22/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: d3dae7f0fef1fc3792c90c8ac0d3b037f5c0923d
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: 7eac3307b3f82b6c5ebc3d66d6563ae50696ed65
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760500"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8227241"
 ---
-# <a name="export-segment-lists-to-snapchat-preview"></a>Eksport af segmentlister til Snapchat (forhåndsversion)
+# <a name="export-segments-to-snapchat-preview"></a>Eksportere segmenter til Snapchat (forhåndsversion)
 
 Eksportér segmenter med ensartede kundeprofiler til Snapchat, og brug dem til marketing. 
 
@@ -29,7 +28,7 @@ Eksportér segmenter med ensartede kundeprofiler til Snapchat, og brug dem til m
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
 - Eksport til Snapchat er begrænset til segmenter.
-- Det kan tage op til 15 minutter at eksportere op til 1 millioner profiler til Snapchat. 
+- Det kan tage op til 15 minutter at eksportere op til 1 million kundeprofiler til Snapchat. 
 
 ## <a name="set-up-connection-to-snapchat"></a>Konfigurer forbindelsen til Snapchat
 
@@ -63,7 +62,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv [**Snapchat Audience-id**](https://businesshelp.snapchat.com/s/article/custom-audiences).
 
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det er obligatorisk at eksportere segmenter til Snapchat.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Snapchat.
 
 1. Vælg de segmenter, du vil eksportere. 
 

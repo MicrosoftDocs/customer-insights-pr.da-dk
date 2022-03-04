@@ -3,18 +3,17 @@ title: DSR-anmodninger (Data Subject Rights) under GDPR | Microsoft Docs
 description: Svar på DSR-anmodninger til muligheder i Dynamics 365 Customer Insights-målgruppen Insights.
 ms.date: 08/11/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 6faaeb6a1ee34c3e5c8e7d465b37cee589bc920c
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: e095eb4f8e194f314d7d6baf6fa6a7a319319d2a
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483654"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350262"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-anmodninger (Data Subject Rights) under GDPR
 
@@ -79,71 +78,78 @@ En lejeradministrator kan følge disse trin for at eksportere data:
 2. Acceptér bekræftelsen for at eksportere dataene til den ønskede bruger.
 3. Modtag de eksporterede data via mailadressen for lejeradministratoren.
 
-## <a name="engagement-insights"></a>Engagementsindsigt
+## <a name="consent-management-preview"></a>Samtykkeadministration (forhåndsversion)
 
-### <a name="deleting-and-exporting-event-data-containing-end-user-identifiable-information"></a>Sletning og eksport af hændelsesdata, der indeholder oplysninger, der kan identificere slutbrugere
+Funktionen til administration af samtykke indsamler ikke brugerdata direkte. Den importerer og behandler kun samtykkedata, der leveres af brugere i andre programmer.
 
-I følgende afsnit beskrives, hvordan du kan slette og eksportere hændelsesdata, der kan indeholde personlige data.
+Hvis du vil fjerne samtykkedata om bestemte brugere, skal du fjerne dem i de datakilder, der er tilgængelige for administration af samtykke. Når du har datakilde, slettes de fjernede data også i Samtykkecenter. Programmer, der bruger objektet til samtykke, sletter også data, der er fjernet på kilden efter en [opdatering](audience-insights/system.md#refresh-processes). Vi anbefaler, at du opdaterer datakilder hurtigt efter at have reageret på en forespørgsel om dataanmodning for at fjerne brugerens data fra alle andre processer og programmer.
 
-Slette eller eksportere eksportdata:
 
-1. Mærk hændelsesegenskaber, der indeholder data med personlige oplysninger.
-2. Slette eller eksportere data, der er knyttet til bestemte værdier (f.eks. et angivet bruger-id).
+<!-- ## Engagement insights (preview)
 
-#### <a name="tag-and-update-event-properties"></a>Mærke og opdatere hændelsesegenskaber
+### Deleting and exporting event data containing end user identifiable information
 
-Personlige data er tagget på egenskabsniveau for hændelser. Du skal først mærke de egenskaber, der tages i betragtning til sletning eller eksport.
+The following sections describe how to delete and export event data that might contain personal data.
 
-Hvis du vil markere en hændelsesegenskab som indeholdende personlige oplysninger, skal du følge disse trin:
+To delete or export data:
 
-1. Åbn det arbejdsområde, der indeholder hændelsen.
+1. Tag event properties that contain data with personal information.
+2. Delete or export data associated with specific values (for example: a specified user ID).
 
-1. Gå til **Data** > **Hændelser** for at se listen over hændelser i det valgte arbejdsområde.
+#### Tag and update event properties
+
+Personal data is tagged on an event property level. First, tag the properties being considered for deletion or export.
+
+To tag an event property as containing personal information, follow these steps:
+
+1. Open the workspace containing the event.
+
+1. Go to **Data** > **Events** to see the list of events in the selected workspace.
   
-1. Vælg den hændelse, du vil mærke.
+1. Select the event you want to tag.
 
-1. Vælg **Rediger egenskaber** for at åbne ruden med en liste over alle egenskaber for den valgte hændelse.
+1. Select **Edit properties** to open the pane listing all properties of the selected event.
      
-1. Vælg **...**, og vælg derefter **Rediger** for at åbne dialogboksen **Opdater egenskab**.
+1. Select **...** and then choose **Edit** to reach the **Update property** dialog.
 
-   ![Rediger hændelse.](engagement-insights/media/edit-event.png "Rediger hændelse")
+   ![Edit event.](engagement-insights/media/edit-event.png "Edit event")
 
-1. Vælg **...** i øverste højre hjørne i vinduet **Opdater egenskab**, og vælg derefter feltet **Indeholder EUII**. Vælg **Opdater** for at gemme dine ændringerne.
+1. In the **Update Property** window, choose **...** in the upper right corner, and then choose the **Contains EUII** box. Choose **Update** to save your changes.
 
-   ![Gem dine ændringer.](engagement-insights/media/update-property.png "Gem dine ændringer")
+   ![Save your changes.](engagement-insights/media/update-property.png "Save your changes")
 
    > [!NOTE]
-   > Hver gang hændelsesskemaet ændres, eller du opretter en ny hændelse, anbefales det, at du evaluerer de tilknyttede hændelsesegenskaber og mærker eller untag dem som indeholdende personlige data, hvis det er nødvendigt.
+   > Every time the event schema changes or you create a new event, it's recommended that you evaluate the associated event properties and tag or untag them as containing personal data, if necessary.
 
-#### <a name="delete-or-export-tagged-event-data"></a>Slette eller eksportere mærkede hændelsesdata
+#### Delete or export tagged event data
 
-Hvis alle hændelsesegenskaber er blevet mærket korrekt som beskrevet i forrige trin, kan en miljøadministrator udstede en sletningsanmodning mod de kodede hændelsesdata.
+If all event properties have been tagged appropriately as described in the previous step, an environment admin can issue a deletion request against the tagged event data.
 
-Sådan administreres sletning eller eksportanmodninger i EUII
+To manage EUII deletion or export requests
 
-1. Gå til **Administration** > **Miljø** > **Indstillinger**.
+1. Go to **Admin** > **Environment** > **Settings**.
 
-1. Vælg **Administrer EUII** i sektionen **Administrer oplysninger, der kan identificere slutbrugere (EUII)**.
+1. In the **Manage end user identifiable information (EUII)** section, select **Manage EUII**.
 
-##### <a name="deletion"></a>Sletning
+##### Deletion
 
-Til sletning kan du angive en liste over kommaseparerede bruger-id'er i sektionen **Slette de slutbrugere, der kan identificeres (EUII)**. Derefter sammenlignes disse -hændelser med alle mærkede hændelsesegenskaber for alle projekter i det aktuelle miljø via nøjagtig strengtilpasning. 
+For deletion, you can enter a list of comma-separated user IDs in the **Delete end user identifiable information (EUII)** section. These IDs will then be compared with all tagged event properties of all projects in the current environment via exact string matching. 
 
-Hvis en egenskabsværdi svarer til et af de angivne id'er, slettes den tilknyttede hændelse permanent. Da handlingen er uigenkaldelig, skal du bekræfte sletningen, når du har valgt **Slet**.
+If a property value matches one of the provided IDs, the associated event will be permanently deleted. Due to the irreversibility of this action, you must confirm the deletion after selecting **Delete**.
 
-##### <a name="export"></a>Export
+##### Export
 
-Eksportprocessen er identisk med sletningsprocessen, når det drejer sig om at definere værdier for hændelsesegenskab i afsnittet **Eksportere slutbrugerens identificerbare oplysninger (EUII)**. Derudover skal du angive webadressen til **Azure Blob Storage** for at angive eksportdestinationen. Webadressen til Azure Blob skal omfatte en [SAS (Shared Access Signature)](/azure/storage/common/storage-sas-overview).
+The export process is identical to the deletion process when it comes to defining event property values in the **Export end user identifiable information (EUII)** section. Additionally, you'll need to provide an **Azure blob storage URL** to specify the export destination. The Azure Blob URL must include a [Shared Access Signature (SAS)](/azure/storage/common/storage-sas-overview).
 
-Når du har valgt **Eksportér**, eksporteres alle hændelser i det aktuelle team, der indeholder tilsvarende kodede egenskaber, til eksportdestinationen i CSV-format.
+After selecting **Export**, all events of the current team that contain matching tagged properties will be exported in CSV format to the export destination.
 
-### <a name="good-practices"></a>Bedste praksis
+### Good practices
 
-* Prøv at undgå at sende hændelser, der indeholder personlige data.
-* Hvis du har brug for at sende hændelser, der indeholder EUII-data, skal du begrænse antallet af hændelser og hændelsesegenskaber, der indeholder EUII-data. Ideelt set skal du begrænse dig selv til en sådan hændelse.
-* Sørg for, at så få personer som muligt har adgang til de sendte personlige data.
-* I forbindelse med hændelser, der indeholder personlige data, skal du sørge for at angive én egenskab til at sende et entydigt id, der nemt kan knyttes til en bestemt bruger (f.eks. et bruger-id). Det gør det nemmere at indsamle data og eksportere eller slette de rette data.
-* Tag kun én egenskab pr. hændelse, så den indeholder personlige data. Ideelt set ét, der kun indeholder et entydigt id.
-* Du skal ikke mærke egenskaber, der indeholder detaljerede værdier (f.eks. en hel brødtekst i anmodningen). Engagementsindsigtsfunktion bruger nøjagtig strengtilpasning, når det besluttes, hvilke hændelser der skal slettes eller eksporteres.
+* Try to avoid sending any events that contain personal data.
+* If you need to send events containing EUII data, limit the number of events and event properties that contain EUII data. Ideally, limit yourself to one such event.
+* Make sure that as few people as possible have access to the sent personal data.
+* For events containing personal data, make sure that you set one property to emit a unique identifier that can easily be linked to a specific user (for example, a user ID). This makes it easier to segregate data and to export or delete the right data.
+* Only tag one property per event as containing personal data. Ideally one that only contains a unique identifier.
+* Do not tag properties containing verbose values (for example, an entire request body). Engagement insights capability uses exact string matching when deciding which events to delete or export. -->
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

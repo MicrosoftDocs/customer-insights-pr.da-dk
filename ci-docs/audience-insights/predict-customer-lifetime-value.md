@@ -3,20 +3,24 @@ title: Forudsigelse af kundens levetidsværdi (CLV)
 description: Indtægtskilde for aktive kunder i fremtiden.
 ms.date: 02/05/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: m-hartmann
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: 740d6a5a749e156414b0e80193334051b7f2632fe4d1f4291d74b99250f35bc2
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+searchScope:
+- ci-predictions
+- ci-create-prediction
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 07790604b06f21095a9220a6f57727cac80789c5
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7035362"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355782"
 ---
-# <a name="customer-lifetime-value-clv-prediction-preview"></a>Kundens levetidsværdi (CLV) forudsigelse (prøveversion)
+# <a name="customer-lifetime-value-clv-prediction"></a>Forudsigelse af kundens levetidsværdi (CLV)
 
 Potentiel værdi (omsætning), som de enkelte aktive kunder henter ind i virksomheden via en defineret fremtidig tidsperiode. Du kan bruge denne funktion til at nå forskellige mål: 
 - Identificere kunder af høj værdi, og bearbejde denne indsigt
@@ -65,7 +69,7 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
     - Datafuldstændighed: Mindre end 20 % manglende værdier i obligatoriske felter i inputdataene   
 
 > [!NOTE]
-> - Modellen kræver kundernes transaktionsoversigt. Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købs-/transaktionsobjekter, kan du samle dem i Power Query inden dataindtagelse.
+> - Modellen kræver kundernes transaktionsoversigt. Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købs/transaktionsobjekter, kan du oprette dem sammen i Power Query, før dataindtagelse går i gang.
 > - Hvis du vil have flere kundeaktivitetsdata (valgfrit), kan du dog tilføje lige så mange kundeaktivitetsobjekter, som du ønsker, til overvejelse af modellen.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Oprette kundens levetidsværdi (CLV) forudsigelse
@@ -74,7 +78,7 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
 
 1. Vælg feltet **Kundens levetidsværdi**, og vælg **Brug model**. 
 
-1. Vælg **Start her** i ruden **Kundens levetidsværdi (prøveversion)**.
+1. Vælg **Kom i gang** i ruden **Værdi for kundes levetid**.
 
 1. **Navngive denne model** og **navnet på outputobjektet** for at skelne mellem dem fra andre modeller eller objekter.
 

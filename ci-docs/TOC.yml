@@ -2,8 +2,30 @@
   href: index.yml
 - name: Produktoversigt
   href: overview.md
-- name: Opret ny prøveversion
-  href: audience-insights/get-started-trial.md
+- name: Læringskatalog
+  items:
+    - name: Start her
+      href: /learn/modules/get-started-customer-data-platform/
+    - name: Indsættelse af data
+      href: /learn/modules/ingest-data-customer-insights/
+    - name: Oprette en samlet kundeprofil
+      href: /learn/modules/unified-customer-profile/
+    - name: Arbejde med målgruppeindsigt
+      href: /learn/modules/working-with-customer-insights/
+    - name: Forbedre data og forudsigelser
+      href: /learn/modules/enrich-data/
+    - name: Administrere eksterne forbindelser
+      href: /learn/modules/configure-third-party-connections/
+    - name: Administere Customer Insights
+      href: /learn/modules/administer-customer-data-platform/
+- name: Gratis prøveversion
+  items:
+    - name: Tilmelde dig for at få en gratis prøveversion
+      href: trial-signup.md
+    - name: Ofte stillede spørgsmål om prøveversion
+      href: trial-FAQ.md
+- name: Starte med en betalt licens
+  href: paid-license.md
 - name: Få adgang til dit miljø
   href: 'https://home.ci.ai.dynamics.com/'
 - name: Indsigt i målgruppe
@@ -19,19 +41,11 @@
         - name: Hurtig startvejledning
           href: audience-insights/get-started.md
         - name: Opret et nyt miljø
-          href: audience-insights/get-started-paid.md
+          href: audience-insights/create-environment.md
         - name: Udforsk målgruppeindsigt
           href: audience-insights/home.md
-    - name: Få mere at vide om moduler
-      items:
-        - name: Indsættelse af data
-          href: /learn/modules/ingest-data-customer-insights/
-        - name: Oprette en samlet kundeprofil
-          href: /learn/modules/unified-customer-profile/
-        - name: Arbejde med appen
-          href: /learn/modules/working-with-customer-insights/
-        - name: Forbedring af data og forudsigelser
-          href: /learn/modules/enrich-data/
+    - name: Arbejde med forretningskonti
+      href: audience-insights/work-with-business-accounts.md
     - name: Datakilder
       items:
         - name: Oversigt over datakilder
@@ -40,8 +54,10 @@
           href: audience-insights/connect-power-query.md
         - name: Tilføj en Common Data Model-mappe som en datakilde
           href: audience-insights/connect-common-data-model.md
-        - name: Tilføje Dataverse-administreret data lake
+        - name: Tilføje Dataverse-administreret datasø
           href: audience-insights/connect-dataverse-managed-lake.md
+        - name: Tilføje Azure Synapse Analytics
+          href: audience-insights/connect-synapse.md
         - name: Trinvis opdatering af datakilder
           href: audience-insights/incremental-refresh-data-sources.md
         - name: Dataindtagelse i realtid
@@ -66,14 +82,18 @@
           href: audience-insights/relationships.md
         - name: Angiv kundeaktiviteter
           href: audience-insights/activities.md
+        - name: Definere semantiske tilknytninger
+          href: audience-insights/semantic-mappings.md
     - name: Dataforbedring
       items:
         - name: Forbedre kundeprofiler
           href: audience-insights/enrichment-hub.md
-        - name: Brand- og interessetilhørsforhold
+        - name: Brands og interesser
           href: audience-insights/enrichment-microsoft.md
         - name: Udvidede adresser
           href: audience-insights/enrichment-enhanced-addresses.md
+        - name: Forbedrede virksomhedsdata
+          href: audience-insights/enrichment-enhanced-company-data.md
         - name: Forbedre med Azure Maps
           href: audience-insights/enrichment-azure-maps.md
         - name: Forbedring med HERE Technologies
@@ -82,6 +102,8 @@
           href: audience-insights/enrichment-leadspace.md
         - name: Forbedre med Experian
           href: audience-insights/enrichment-experian.md
+        - name: Forbedre med Office 365-data
+          href: audience-insights/enrichment-office.md
         - name: Forbedring med SFTP-brugerdefineret import
           href: audience-insights/enrichment-SFTP-custom-import.md
     - name: Segmenter
@@ -100,8 +122,12 @@
           href: audience-insights/find-similar-customer-segments.md
     - name: Målinger
       items:
-        - name: Definer målepunkter og nøgletal
+        - name: Målingsoversigt
           href: audience-insights/measures.md
+        - name: Opret en ny måling
+          href: audience-insights/measure-builder.md
+        - name: Sådan bruger du en måleskabelon
+          href: audience-insights/measure-templates.md
     - name: Forudsigelser
       items:
         - name: Forudsige data ved hjælp af AI
@@ -114,8 +140,10 @@
               href: audience-insights/predict-product-recommendation.md
             - name: Forudsige abonnementsafgang
               href: audience-insights/predict-subscription-churn.md
-            - name: Transaktionsrelateret forudsigelse af afgang
+            - name: Forudsige transaktionsafgang
               href: audience-insights/predict-transactional-churn.md
+            - name: Analysér synspunkt i kundefeedback
+              href: audience-insights/sentiment-analysis.md
             - name: Brug brugerdefinerede modeller fra Azure Machine Learning
               href: audience-insights/custom-models.md
             - name: Fuldfør delvist manglende data
@@ -126,14 +154,12 @@
               href: audience-insights/sample-guide-predict-clv.md
             - name: Eksempelvejledning til forudsigelse af abonnementsafgang
               href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
+            - name: Eksempelvejledning til forudsigelse af transaktionsafgang
               href: audience-insights/sample-guide-predict-transactional-churn.md
             - name: Eksempelvejledning til forudsigelse til produktanbefaling
               href: audience-insights/sample-guide-predict-product-recommendation.md
             - name: Eksperimenter med Azure Machine Learning
               href: audience-insights/azure-machine-learning-experiments.md
-            - name: Eksperimenter i Azure Machine Learning Studio
-              href: audience-insights/machine-learning-studio-experiments.md
         - name: Administrere forudsigelser
           href: audience-insights/manage-predictions.md
         - name: Opret segmenter baseret på forudsigelser
@@ -222,14 +248,16 @@
           href: audience-insights/connections.md
         - name: Administrere flere miljøer
           href: audience-insights/manage-environments.md
-        - name: Opret forbindelse til en ADLS-lagerkonto ved hjælp af en tjenestekonto
-          href: audience-insights/connect-service-principal.md
-        - name: Understøttede sprog
-          href: audience-insights/supported-languages.md
+        - name: Sikkerhed
+          items:
+            - name: Bring Your Own Key Vault
+              href: audience-insights/use-azure-key-vault.md
+            - name: Opret forbindelse til en ADLS-lagerkonto ved hjælp af en tjenestekonto
+              href: audience-insights/connect-service-principal.md
+            - name: Eksport af diagnosticeringslogfiler
+              href: audience-insights/diagnostics.md
     - name: Udvidelse
       items:
-        - name: Integrere webdata fra engagementsindsigt
-          href: audience-insights/integrate-engagement-insights.md
         - name: Gennemgå objektskemaer i Common Data Model
           href: audience-insights/entity-schemas.md
         - name: Customer Insights-data i Dataverse
@@ -238,85 +266,45 @@
           href: audience-insights/apis.md
         - name: API-referencer
           href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
-- name: Engagementsindsigt (forhåndsversion)
+- name: Samtykkeadministration (forhåndsversion)
   items:
     - name: Hjælp-hub
-      href: engagement-insights/index.yml
+      href: consent-management/index.yml
     - name: Oversigt over funktioner
-      href: engagement-insights/overview.md
+      href: consent-management/overview.md
     - name: Start her
       items:
-        - name: Hurtig startvejledning
-          href: engagement-insights/get-started.md
-        - name: Opret et arbejdsområde
-          href: engagement-insights/create-workspace.md
-        - name: Hent hændelser fra websteder og mobilapps
-          href: engagement-insights/developer-resources.md
+        - name: Start her
+          href: consent-management/get-started.md
         - name: Koncepter og terminologi
-          href: engagement-insights/glossary.md
-    - name: Arrangementer
+          href: consent-management/glossary.md
+    - name: Importér samtykkedata
       items:
-        - name: Opret og opdatér begivenheder
-          href: engagement-insights/refined-events.md
-        - name: Genkend webhændelser fra tidligere godkendte besøgende
-          href: engagement-insights/unknown-to-known.md
-        - name: Eksportér hændelser
-          href: engagement-insights/export-events.md
-    - name: Rapporter
+        - name: Importér samtykkedata
+          href: consent-management/import-consent-data.md
+        - name: Angiv samtykkedata og anvend indstillinger for samtykke
+          href: consent-management/set-consent-rules.md
+    - name: Administrer samtykkedata
       items:
-        - name: Vis rapporter
-          href: engagement-insights/view-reports.md
-        - name: Opret brugerdefinerede rapporter
-          href: engagement-insights/custom-reports.md
-        - name: Opret samlede profilrapporter
-          href: engagement-insights/profile-reports.md
-        - name: Få vist og opret dimensioner
-          href: engagement-insights/dimensions.md
-        - name: Få vist og opret målepunkter
-          href: engagement-insights/metrics.md
-        - name: Få vist og opret segmenter
-          href: engagement-insights/segments.md
-    - name: Analyse af rejse
+        - name: Aktivér samtykkeregler i målgruppeindsigt
+          href: audience-insights/activate-consent.md
+        - name: Administrer standardregler for samtykke for segmenter i målgruppeindsigt
+          href: audience-insights/change-default-consent-rules.md
+    - name: Administrer indstillinger og brugere
       items:
-        - name: 'Opret, og administrer tragtrapporter'
-          href: engagement-insights/funnel-reports.md
-    - name: Udviklerressourcer
+        - name: Konfigurer systemindstillinger
+          href: consent-management/system-settings.md
+        - name: Administrer brugere og tilladelser
+          href: consent-management/manage-users.md
+    - name: Brug samtykkedata
       items:
-        - name: Oversigt over udviklerressourcer
-          href: engagement-insights/developer-resources.md
-        - name: Web SDK-vejledning
-          href: engagement-insights/advanced-SDK-implementation.md
-        - name: Web SDK-eksempel
-          href: engagement-insights/websdk-sample.md
-        - name: Android SDK-selvstudium
-          href: engagement-insights/get-started-android.md
-        - name: Android SDK-eksempel
-          href: engagement-insights/androidsdk-sample.md
-        - name: iOS SDK-selvstudium
-          href: engagement-insights/get-started-ios.md
-        - name: iOS SDK-eksempel
-          href: engagement-insights/iossdk-sample.md
-    - name: Administration
-      items:
-        - name: Roller og tilladelser
-          href: engagement-insights/user-roles.md
-        - name: Administrér miljøer og arbejdsområder
-          href: engagement-insights/manage-environments-workspaces.md
-        - name: Administrér cookies og brugersamtykke
-          href: engagement-insights/user-consent-storage.md
-    - name: Regional tilgængelighed
-      href: engagement-insights/regional-availability.md
-- name: Integrer målgruppeindsigt i engagementsindsigt
-  items:
-    - name: Opret forbindelse mellem engagementsindsigt og målgruppeindsigt
-      href: engagement-insights/integrate-audience-insights-engagement-insights.md
-    - name: Brug målgruppeindsigtssegmenter i rapporter over engagementsindsigt
-      href: engagement-insights/integrate-audience-insights-segments.md
-    - name: Brug demografiske dimensioner til opdeling af adfærdsdata
-      href: engagement-insights/curate-dimensions.md
+        - name: Opret forudsigelser med samtykkedata
+          href: consent-management/predictions-consent-data.md
+- name: Engagementsindsigt (forhåndsversion)
+  href: engagement-insights/overview.md
 - name: Tjenestebegrænsninger
   href: service-limits.md
 - name: DSR-rettigheder og forespørgsler
   href: dsr-rights-requests.md
 - name: Få support
-  href: 'https://dynamics.microsoft.com/support/'
+  href: /power-platform/admin/get-help-support

@@ -3,18 +3,17 @@ title: Vejledning til eksempel på forudsigelse af kundens levetidsværdi
 description: Brug denne eksempelvejledning til at afprøve forudsigelsesmodellen for kundens levetidsværdi.
 ms.date: 05/25/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 19c1fbadb79ba22c0dc11aa7c3b5b2415add70a7
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+ms.openlocfilehash: c130e5f699f7eb921b69a20bc6d4ba9eab5b2779
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306342"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354824"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Vejledning til eksempel på forudsigelse af kundens levetidsværdi (CLV)
 
@@ -22,7 +21,7 @@ Denne vejledning indeholder et komplet eksempel på CLV-forudsigelse (Customer L
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet. De sælger produkterne via deres Contoso Coffee-hjemmeside. Virksomheden ønsker at forstå den værdi (omsætning), som deres kunder kan generere i de næste 12 måneder. At kende den forventede værdi af deres kunder i de næste 12 måneder vil hjælpe dem med at styre deres marketingindsats på kunder af høj værdi.
+Contoso er en virksomhed, der fremstiller kaffe- og kaffemaskiner af høj kvalitet. Produkterne sælges via deres Contoso Coffee-websted. Virksomheden ønsker at forstå den værdi (omsætning), som deres kunder kan generere i de næste 12 måneder. At kende den forventede værdi af deres kunder i de næste 12 måneder vil hjælpe dem med at styre deres marketingindsats på kunder af høj værdi.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -31,7 +30,7 @@ Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet. De sæl
 
 ## <a name="task-1---ingest-data"></a>Opgave 1 - Indsættelse af data
 
-Gennemse artiklerne om [dataindtagelse](data-sources.md) og import af [datakilder ved hjælp af Power Query forbindelser](connect-power-query.md). I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data.
+Gennemse artiklerne [om dataindtag](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectorer](connect-power-query.md). I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data.
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Indsættelse af kundedata fra eCommerce-platform
 
@@ -164,7 +163,7 @@ Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en sam
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Opgave 3 – Konfigurer værdien for forudsigelse af kundens levetidsværdi
 
-Med de samlede kundeprofiler på plads kan vi nu køre forudsigelsen af kundens levetidsværdi. Du kan finde detaljerede trin i [Forudsigelse af kundens levetidsværdi (forhåndsversion)](predict-customer-lifetime-value.md).
+Med de samlede kundeprofiler på plads kan vi nu køre forudsigelsen af kundens levetidsværdi. Du kan finde flere oplysninger i [Forudsigelse om kundens levetidsværdi](predict-customer-lifetime-value.md).
 
 1. Gå til **Intelligens**  > **Forudsigelser**, og vælg **Model for kundens levetidsværdi**.
 

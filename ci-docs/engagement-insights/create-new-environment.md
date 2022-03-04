@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/04/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 5e301b4ff0a7586fb143b154b773791b3bd645b7
-ms.sourcegitcommit: 37182127b93b90846cc91fbeb26dd7a18cf5610a
+ms.openlocfilehash: 1f82ff588c2ffbe82c3ee7df2498ac2cca2bad31
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/18/2021
-ms.locfileid: "7648110"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225416"
 ---
 # <a name="create-a-new-environment"></a>Opret et nyt miljø 
 
@@ -42,11 +41,11 @@ Et miljø er et sted, hvor du administrerer dine arbejdsområder og forbindelser
 
 1. Skriv et **Navn på arbejdsområde**, som giver dig mulighed for at indsamle data til bestemte websteder eller apps. Du kan finde flere oplysninger i [Oprette et arbejdsområde](create-workspace.md).
 
-1. Vælg den **Arbejdsområdetype** (Web eller Mobil), du vil oprette. 
+1. Vælg den **Arbejdsområdetype** (web eller mobil), du vil oprette. 
 
 1. Vælg **Vis avancerede indstillinger** for at aktivere eller deaktivere disse valgfrie indstillinger:
 
-   - Skift **Ukendt til kendt** til "aktiveret" for at knytte webhændelser til brugere, der tidligere har godkendt. Du kan finde flere oplysninger under [Genkende webhændelser fra tidligere godkendte besøgende](unknown-to-known.md)
+   - Skift **Ukendt til kendt** til "aktiveret" for at knytte webhændelser til brugere, der tidligere har godkendt. Du kan finde flere oplysninger under [Genkende webhændelser fra tidligere godkendte besøgende](unknown-to-known.md).
    - Skift **Filtrer robottrafik** til "aktiveret" for at fjerne webtrafik efter robotter for dette arbejdsområde. 
 
 1. Vælg **Fuldfør**, når du er færdig. 

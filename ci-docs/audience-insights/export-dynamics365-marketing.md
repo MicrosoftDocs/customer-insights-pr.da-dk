@@ -3,22 +3,24 @@ title: Eksportér Customer Insights-data til Dynamics 365 Marketing
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Dynamics 365 Marketing.
 ms.date: 08/24/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 2c673c432f308efa289625a159de608d07f8d2b3
-ms.sourcegitcommit: f988114ac7a288ccadf2db35b02dbef5cacea4d9
+searchScope:
+- ci-export
+- customerInsights
+ms.openlocfilehash: d3254bf13b843fe8e1b6e6db49dd6ee1dc22290c
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/14/2022
-ms.locfileid: "7975117"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353904"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Brug segmenter i Dynamics 365 Marketing (forhåndsversion)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte grupper af kunder sammen med Dynamics 365 Marketing. Du kan finde flere oplysninger under [Bruge segmenter fra Dynamics 365 Customer Insights sammen med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments).
 

@@ -4,17 +4,16 @@ description: Sådan oprettes, redigeres og slettes målgrupper, og hvor de skal 
 ms.reviewer: mhart
 ms.author: jusali
 author: jusali
-ms.date: 06/09/2021
-ms.service: customer-insights
+ms.date: 10/01/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: cedcd58373428dd35ba29ce8fdd00007257f8fa59b0d25bc584b4e832df13604
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: e99c04e6c92d8ca16c2d69957e0f5b7dba0ac757
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7036141"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225369"
 ---
 # <a name="view-and-create-segments"></a>Få vist og opret segmenter
 
@@ -44,22 +43,27 @@ I dette afsnit beskrives, hvordan du opretter *et tomt segment* fra bunden.
 
 1. Vælg **Nyt segment**.
 
-1. Vælg den attribut, du vil filtrere efter, i **Ressourcebibliotek**. I øjeblikket kan du kun oprette målgrupper baseret på dimensioner.
+1. Vælg (+) ud for den attribut, du vil filtrere efter, i **Ressourcebibliotek**. I øjeblikket kan du kun oprette målgrupper baseret på dimensioner.
 
-1. Vælg en operator og en værdi for den valgte attribut. Følgende handlinger understøttes.
+   :::image type="content" source="media/create-new-segment.png" alt-text="Opret et nyt segment.":::
+
+1. Vælg en operator og en værdi for den valgte attribut i sektionen **Regel**. Følgende handlinger understøttes.
+
+   :::image type="content" source="media/choose-operator-segment.png" alt-text="Vælg en operator til det nye segment.":::
+
    - **er**: kræver et nøjagtigt match for at medtage værdier. Bruger **lig med** for en enkelt værdi eller **enhver** til at medtage flere værdier.
    - **er ikke**: kræver et nøjagtigt match for at udelukke værdier. Bruger **lig med** for en enkelt værdi eller **enhver** til at medtage flere værdier.
    - **starter med**: en streng, som de tilsvarende værdier starter med.
    - **slutter med**: en streng, som de tilsvarende værdier slutter med.
    - **indeholder**: en streng, der er indeholdt i tilsvarende værdier.
 
-1. Hvis du vil føje flere betingelser til en gruppe, kan du bruge to logiske operatorer. Projekterede attributter anvendes, når der bruges indstillede operatorer.
+1. Hvis du vil føje flere betingelser til en gruppe, kan du bruge logiske operatorer. Projekterede attributter anvendes, når der bruges indstillede operatorer.
    - **OG**-operator: Begge betingelser skal overholdes som en del af segmenteringsprocessen. Denne indstilling er mest nyttig, når du definerer betingelser på tværs af forskellige objekter.
    - **ELLER**-operator: Den ene eller anden betingelse skal overholdes som en del af segmenteringsprocessen. Denne indstilling er mest nyttig, når du definerer flere betingelser for det samme objekt.
 
 1. Vælg **Gem**, og skriv navnet på segmentet. 
 
-Segmentet vises på siden Segmenter, og du kan anvende den på alle rapporter og tragte i arbejdsområdet.
+Segmentet vises på siden **Segmenter**, og du kan anvende det på alle rapporter og tragte i arbejdsområdet.
 
 ## <a name="use-a-segment-in-a-report-or-funnel"></a>Bruge et segment i en rapport eller tragt
 
@@ -67,7 +71,7 @@ Du kan anvende segmenter i en rapport eller en tragt for at filtrere dem baseret
 
 :::image type="content" source="media/segment-reports-filter.png" alt-text="En sidevisningsrapport med en udvidet rulleliste for at vælge, hvilke målgrupper der skal anvendes.":::
 
-Hvis du vil anvende et segment, skal du åbne rapporten eller tragten. Vælg **Tilføj betingelse**, og vælg **Filtrer efter segment**. Vælg segmentet på den liste, som du vil anvende. Segmentet anvendes i rapporten. Hvis et diagram ikke understøtter segmentet, vises der en fejl.
+Hvis du vil anvende et segment, skal du åbne rapporten eller tragten. Vælg **+ Tilføj betingelse**, og vælg **Filtrer efter segment**. Vælg segmentet på den liste, som du vil anvende. Segmentet anvendes i rapporten. Hvis et diagram ikke understøtter segmentet, vises der en fejl. Du kan finde flere oplysninger under [Oprette og administrere tragtrapporter](funnel-reports.md).
  
 Du kan anvende *op til tre segmenter* i en rapport eller tragt.
 
@@ -91,5 +95,7 @@ Du kan anvende *op til tre segmenter* i en rapport eller tragt.
 1. Vælg **Mere [...]** på segmentlisten. 
 1. Vælg **Slet** på rullelisten.
 1. Vælg **Slet** for at bekræfte.
+
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

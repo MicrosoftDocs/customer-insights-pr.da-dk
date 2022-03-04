@@ -1,25 +1,24 @@
 ---
 title: Introduktion til en betalt licens til Dynamics 365 Customer Insights
 author: m-hartmann
-description: Sætte dig ind i den første kørselsoplevelse i Dynamics 365 Customer Insights, og undersøg funktionerne.
+description: Sæt dig ind i den første kørselsoplevelse i Dynamics 365 Customer Insights, og undersøg funktionerne.
 ms.author: mhart
 ms.date: 10/05/2021
-ms.service: customer-insights
-ms.topic: overview
+ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: b4228a36069f4adb8098ea96cefec0eef81a6560
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: c9517ed2b50ff37e361a27538dfb9f9ccbf3df8f
+ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645675"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8350124"
 ---
 # <a name="get-started-after-purchasing-customer-insights"></a>Introduktion efter køb af Customer Insights
 
 I denne artikel forklares, hvordan du tager de første skridt i Dynamics 365 Customer Insights, når din organisation har købt et abonnement. Hvis du gerne vil købe Customer Insights, vises vores kontaktmuligheder på [Dynamics 365 Customer Insights-hjemmesiden](https://dynamics.microsoft.com/ai/customer-insights/). 
 
-Når du har købt en abonnementslicens til Customer Insights, modtager den globale administrator af Microsoft 365-lejeren en mail, der inviterer dem til at oprette miljøet. 
+Efter køb af en abonnementslicens til Customer Insights, modtager Microsoft 365-lejerens globale administrator en mail, hvor de opfordres til at oprette miljøet. 
 
 Customer Insights licenseres pr. lejer og indeholder flere funktioner. Du kan købe mere kapacitet og flere licenser for at øge standardkvoten. 
 - [Oversigt over prisfastsættelse](https://dynamics.microsoft.com/ai/customer-insights/pricing/)
@@ -40,10 +39,7 @@ Den første kørselsoplevelse hjælper dig med at vælge dit første fokus med C
 
 ## <a name="create-your-own-environment"></a>Oprette dit eget miljø
 
-Når du har logget på første gang, kan du se et miljø med eksempeldata. Du kan bruge disse data til at undersøge funktionerne og sætte dig ind i appen. Hvis du vil bruge dine egne data, skal du oprette et miljø med de funktioner, du vil arbejde med.
-
-- [Opret et miljø i målgruppeindsigt.](audience-insights/get-started-paid.md)
-- [Opret et miljø i engagementsindsigt.](engagement-insights/create-new-environment.md) 
+Når du har logget på første gang, kan du se et miljø med eksempeldata. Du kan bruge disse data til at undersøge funktionerne og sætte dig ind i appen. Hvis du vil bruge dine egne data, skal du [oprette et miljø](audience-insights/get-started-paid.md).
 
 
 

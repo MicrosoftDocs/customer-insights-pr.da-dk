@@ -1,22 +1,21 @@
 ---
 title: Forudsige produktanbefalinger
 description: Forudsige de produkter, en kunde køber eller kommunikerer med.
-ms.date: 09/13/2021
+ms.date: 01/13/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: wmelewong
 ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: a75a245bc721d65643fa78d46f2be52291595a5a
-ms.sourcegitcommit: fecdee73e26816c42d39d160d4d5cfb6c8a91596
+ms.openlocfilehash: b9a9c7eb4ee3f2f0510a609757a36e5d5796a2f7
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "7494532"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355744"
 ---
-# <a name="product-recommendation-prediction-preview"></a>Forudsige produktanbefalinger (prøveversion)
+# <a name="product-recommendation-prediction"></a>Forudsige produktanbefalinger
 
 Produktanbefalingsmodellen opretter produktanbefalinger for forudsigelse. Anbefalinger er baseret på tidligere købsmåder og kunder med lignende købsmønstre. Du kan oprette forudsigelser om nye produktanbefalinger siden **Intelligens** > **Forudsigelse**. Vælg **Mine forudsigelser** for at få vist andre forudsigelser, du har oprettet.
 
@@ -54,7 +53,7 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 > [!NOTE]
 > - Modellen kræver kundernes transaktionsoversigt. Definitionen af en transaktion er ret fleksibel. Alle data, der beskriver en brugerproduktinteraktion, kan fungere som et input. Det kan f.eks. være at købe et produkt, tage en klasse eller deltage i et arrangement.
-> - Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købsobjekter, skal du oprette en ny Power Query inden dataindtag.
+> - Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købsobjekter, kan du oprette dem sammen i Power Query, før dataindtagelse går i gang.
 > - Hvis ordren og ordredetaljer er forskellige objekter, kan du samle dem, før du bruger den i modellen. Modellen fungerer ikke kun med et ordre-id eller et kvitterings-id i et objekt.
 
 
@@ -62,7 +61,7 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 
 1. Gå til **Intelligens** > **Forudsigelser** i Customer Insights.
 
-1. Vælg **Produktanbefalinger for model (prøveversion)**, og vælg **Brug denne model**.
+1. Vælg feltet **Model til produktanbefalinger**, og vælg **Brug denne model**.
    > [!div class="mx-imgBorder"]
    > ![Produktanbefalingsmodel med knappen Brug denne model.](media/product-recommendation-usethismodel.PNG "Produktanbefalingsmodel med knappen Brug denne model")
 
@@ -79,11 +78,11 @@ Hvis du er interesseret i at prøve denne funktion, men ikke har data, der opfyl
 1. Angiv det **antal produkter**, der skal anbefales til en kunde. Værdien afhænger af, hvordan leveringsmetoden udfylder data. Hvis du kan anbefale tre produkter, skal du angive denne værdi i overensstemmelse hermed.
    
    >[!TIP]
-   > Du kan til enhver tid vælge **Gem og Luk** for at gemme forudsigelsen som en kladde. Du kan se forudsigelse under fanen **Mine forudsigelser**.
+   > Du kan når som helst vælge **Gem kladde** for at gemme forudsigelsen som en kladde. Du kan se forudsigelse under fanen **Mine forudsigelser**.
 
-1. Vælg, om du ønsker at **Foreslå produkter, som kunder har købt for nylig**.
+1. Vælg, om du vil medtage produkter, som kunderne for nylig har købt, i feltet **Gentag køb forventet**.
 
-1. Hvis du har valgt *ikke* at anbefale produkter, du har købt for nylig, skal du indstille **tilbagebliksvinduet**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Angiv f.eks., at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
+1. Angiv **Tilbagebliksvindue**. Denne indstilling angiver den tidsramme, modellen overvejer, før den anbefaler produktet til brugeren igen. Angiv f.eks., at en kunde køber en bærbar computer hvert andet år. I dette vindue kigges der på købsoversigten for de seneste to år, og hvis de finder et element, filtreres elementet efter anbefalingerne.
 
 1. Vælg **Næste**
 

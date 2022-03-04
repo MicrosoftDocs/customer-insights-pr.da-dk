@@ -1,21 +1,23 @@
 ---
 title: Oprette miljøer i Customer Insights
 description: Trin til oprettelse af miljøer med licensabonnement til Dynamics 365 Customer Insights.
-ms.date: 12/06/2021
+ms.date: 02/24/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: MichelleDevaney
 ms.author: midevane
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: d29992c88bd54fcfcf5e6429a89a34b6f73148c8
-ms.sourcegitcommit: b7189b8621e66ee738e4164d4b3ce2af0def3f51
+searchScope:
+- ci-home
+- customerInsights
+ms.openlocfilehash: c37afd5649f8cf40d5379f3d39d0cbd96cde3bd3
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/03/2022
-ms.locfileid: "8088095"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354088"
 ---
 # <a name="create-an-environment-in-audience-insights"></a>Oprette et miljø i målgruppeindsigt
 
@@ -76,12 +78,14 @@ Hvis du opretter flere miljøer i Customer Insights og vælger at gemme outputob
    
 Med **Microsoft Dataverse**-trinnet kan du forbinde Customer Insights til dit Dataverse-miljø.
 
-Hvis du vil bruge de [indbyggede forudsigelsesmodeller](predictions-overview.md#out-of-box-models), skal du konfigurere datadeling med Dataverse. Du kan også aktivere dataindtagelse fra datakilder i det lokale miljø, hvis du angiver den Microsoft Dataverse-URL-adresse til miljøet, som din organisation administrerer. Vælg **Aktivér datadeling** for at dele Customer Insights-outputdata med Dataverse -administreret datasø.
+Tildel dit eget Microsoft Dataverse-miljø mulighed for at dele data (profiler og indsigt) med virksomhedsprogrammer, der er baseret på Dataverse, f.eks. Dynamics 365 Marketing eller modelbaserede programmer i Power Apps. Lad dette felt være tomt, hvis du ikke har dit eget Dataverse-miljø. Vi klargør et til dig.
+
+Hvis du opretter forbindelse til Dataverse-miljøet, kan du også [indtage data fra det lokale miljø datakilder ved hjælp af Power Platform-dataflow og gateways](data-sources.md#add-data-from-on-premises-data-sources). Du kan også bruge [stanard-forudsigelsesmodeller](predictions-overview.md?tabs=b2c#out-of-box-models) ved at oprette forbindelse til et Dataverse-miljø.
 
 > [!IMPORTANT]
 > Customer Insights og Dataverse skal være i samme område for at kunne dele data.
 
-:::image type="content" source="media/dataverse-data-sharing.png" alt-text="Konfigurationsindstillinger, der aktiverer datadeling med Microsoft Dataverse.":::
+:::image type="content" source="media/dataverse-provisioning.png" alt-text="datadeling med Microsoft Dataverse er automatisk aktiveret for nye forekomster.":::
 
 > [!NOTE]
 > Customer Insights understøtter ikke følgende scenarier til datadeling:

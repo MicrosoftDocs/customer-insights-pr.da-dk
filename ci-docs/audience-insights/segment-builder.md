@@ -1,133 +1,160 @@
 ---
-title: Oprette og administrere segmenter
+title: Opret segmenter med segmentgenerator
 description: Opret segmenter med kunder for at gruppere dem på baggrund af forskellige attributter.
-ms.date: 05/03/2021
-ms.service: customer-insights
+ms.date: 10/18/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 550e509a24701fe5fcdeb9d54311872dc954156c
-ms.sourcegitcommit: 72603fb39c4d5dbca71128815a2e1692542ea4dc
+searchScope:
+- ci-segments
+- ci-segment-builder
+- ci-segment-details
+- customerInsights
+ms.openlocfilehash: 6fa6f0738bf7fba94b2fb84a70ea17483aae8dac
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "6064930"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354548"
 ---
-# <a name="create-and-manage-segments"></a>Oprette og administrere segmenter
+# <a name="create-segments"></a>Oprette segmenter
 
-Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på. Segmenter administreres på siden **Segmenter**. 
+Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på. Segmenter administreres på siden **Segmenter**. Du kan [oprette nye segmenter](#create-a-new-segment) ved hjælp af segmentgenerator eller [oprette hurtige segmenter](#quick-segments) fra andre områder af appen. 
 
-I følgende eksempel vises segmenteringsfunktionen. Vi har defineret et segment for kunder, der har bestilt mindst $500 varer over de seneste 90 dage, *og* som har været en del af et kundeserviceopkald, der blev eskaleret.
+> [!TIP]
+> - Hurtige segmenter understøttes kun i miljøer for **individuelle kunder**.    
+> - Segmenter, der er baseret på **individuelle kunder**, indeholder automatisk tilgængelige kontaktoplysninger for segmentmedlemmer. I miljøer for **forretningskonti** er segmenter baseret på konti (virksomheder eller datterselskaber). Hvis du vil medtage kontaktoplysninger i et segment, skal du bruge funktionen **Projektattributter** i segmentgeneratoren.
+>    - Kontrollér, at kontaktpersonens datakilder er [semantisk knyttet til objektet ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
-:::image type="content" source="media/segmentation-group1-2.png" alt-text="Skærmbillede af brugergrænsefladen til segmentgenerator med to grupper, der angiver et kundesegment.":::
+## <a name="segment-builder"></a>Segmentgenerator
+
+I følgende billede illustreres de forskellige aspekter i segmentgeneratoren. Her vises et segment, der resulterer i en gruppe kunder. Kunderne har bestilt varer i en bestemt tidsramme og har indsamlet bonuspoint eller brugt en bestemt sum penge. 
+
+:::image type="content" source="media/segment-builder-overview.png" alt-text="Elementer i segmentgeneratoren." lightbox="media/segment-builder-overview.png":::
+
+1. Organiser dit segment med regler og underregler. Hver enkelt regel eller underregel består af betingelser. Kombinere betingelserne med logiske operatorer
+
+1. Vælg [relationsstien](relationships.md) mellem objekter, der gælder for en regel. Relationsstien bestemmer, hvilke attributter der kan bruges i en betingelse.
+
+1. Administrer regler og underregler. Rediger placeringen af en regel, eller slet den.
+
+1. Tilføj betingelser, og opret det rette indlejreniveau ved hjælp af underregler.
+
+1. Anvend sæthandlinger på tilknyttede regler.
+
+1. Brug attributruden til at tilføje tilgængelige objektattributter eller at oprette betingelser baseret på attributter. I ruden vises listen over objekter og attributter, der er tilgængelige for den valgte regel, på baggrund af den valgte relationssti.
+
+1. Føj betingelser, der er baseret på attributter, til eksisterende regler og underregler, eller føj dem til en ny regel.
+
+1. Fortryd ændringerne, og annuller fortrydelse af ændringer, mens segmentet bygges op.
+
+Eksemplet ovenfor illustrerer segmenteringsfunktionaliteten. Vi har defineret et segment for kunder, der som minimum sælger $500 online *og* har interesse i softwareudvikling.
 
 ## <a name="create-a-new-segment"></a>Oprette et nyt segment
 
-Der er flere måder, du kan oprette et nyt segment på. I dette afsnit beskrives, hvordan du opretter *et tomt segment* fra bunden. Du kan også oprette et *hurtigt segment*, der er baseret på eksisterende objekter, eller gøre brug af modeller til maskinel indlæring for at få *forslag til segmenter*. Flere oplysninger: [Oversigt over segmenter](segments.md).
+Der er flere måder, du kan oprette et nyt segment på. I dette afsnit beskrives, hvordan du kan opbygge dit eget segment fra bunden. Du kan også oprette et *hurtigt segment*, der er baseret på eksisterende objekter, eller gøre brug af modeller til maskinel indlæring for at få *forslag til segmenter*. Du kan finde flere oplysninger i [Oversigt over segmenter](segments.md).
 
-Når du opretter et segment, kan du gemme en kladde. Den gemmes som et inaktivt segment og kan ikke aktiveres, før den er fuldført med en gyldig konfiguration.
+Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et segment som et inaktivt segment. Når du har fuldført segmentkonfigurationen, skal du køre den for at aktivere segmentet. Du kan også **Aktivere** et segment fra siden **Alle segmenter**.
 
 1. Gå til siden **Segmenter**.
 
-1. Vælg **Ny** > **Tomt segment**.
+1. Vælg **Ny** > **opbyg din egen**.
 
-1. Vælg en segmenttype i ruden **Nyt segment**:
+1. Du kan definere eller oprette regler på siden Segmentgenerator. En regel består af en eller flere betingelser, der definerer et sæt kunder.
 
-   - **Dynamiske segmenter** [opdateres](segments.md#refresh-segments) efter en tilbagevendende tidsplan.
-   - **Statiske segmenter** køres én gang, når du opretter dem.
+1. Vælg en attribut til et objekt, som du vil filtrere kunderne efter, i sektionen **Regel1**. Du kan vælge attributter på to måder. 
+   - Gennemse listen over tilgængelige objekter og attributter i ruden **Føj til regel**, og vælg ikonet **+** ud for den attribut, der skal tilføjes. Vælg, om du vil føje attributten til en eksisterende regel eller bruge den til at oprette en ny regel.
+   - Skriv navnet på attributten i regelafsnittet for at få vist tilsvarende forslag.
 
-1. Angiv **Navn på outputobjekt** for segmentet. Du kan også angive et vist navn og en beskrivelse, der hjælper med at identificere segmentet.
+1. Vælg operatorerne for at angive de tilsvarende værdier for betingelsen. Attributten kan have en af fire datatyper som værdi: numerisk, streng, dato eller boolesk. Afhængigt af datatypen af attributten er der forskellige operatorer, der kan angive betingelsen. For segmenter med forretningskonti er der to tilgængelige specialoperatører til at inkludere potentielle hierarkier mellem de konti, der er indtaget. Brug operatorerne *underordnet af* og *overordnet af* til at medtage relaterede konti. 
 
-1. Vælg **Næste** for at gå til siden **Segmentgenerator**, hvor du definerer en gruppe. En gruppe er et sæt kunder.
+1. Vælg **Tilføj betingelse** for at føje flere betingelser til en regel. Hvis du vil oprette en regel under den aktuelle regel, skal du vælge **Tilføj underregel**.
 
-1. Vælg det objekt, der indeholder den attribut, du vil segmentere efter.
+1. Hvis en regel bruger andre objekter end objektet *Kunde*, skal du angive relationsstien. Relationsstien skal informere systemet om de relationer, der skal have adgang til det samlede profilobjekt. Vælg **Angiv relationssti** for at knytte det valgte objekt til det samlede kundeobjekt. Hvis der kun er én mulig relationssti, vælges den automatisk af systemet. Forskellige relationsstier kan give forskellige resultater. Alle regler kan have sin egen relationssti.
 
-1. Vælg den attribut, der skal segmenteres efter. Denne attribut kan have en af fire værdityper: numerisk, streng, dato eller boolesk.
+   :::image type="content" source="media/relationship-path.png" alt-text="Mulig relationssti, når du opretter en regel baseret på et objekt, der er knyttet til det samlede kundeobjekt.":::
 
-1. Vælg en operator og en værdi for den valgte attribut.
+   Objektenheden *eCommerce_eCommercePurchases* i skærmbilledet indeholder f.eks. fire funktioner, der kan knyttes til objektet *Kunde*: 
+   - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > Kunde
+   - eCommerce_eCommercePurchases > kunde
+   - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
+   - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > Kunde Når du vælger den sidste indstilling, kan vi medtage attributter fra alle de viste objekter i regelbetingelserne. Vi får sandsynligvis færre resultater, fordi de tilsvarende kundeposter skal være en del af alle objekter. I dette eksempel har de købt varer via e-handel (*eCommerce_eCommercePurchases*) på et POS (*POS_posPurchases*) og deltager i vores loyalitetsprogram (*loyaltyScheme_loyCustomers*). Når du vælger den anden indstilling, kan vi kun vælge attributter *eCommerce_eCommercePurchases* fra objektet *Kunde*. Dette resulterer højst sandsynligt i flere kundeprofiler.
 
-   > [!div class="mx-imgBorder"]
-   > ![Brugerdefineret gruppefilter](media/customer-group-numbers.png "Kundegruppefilter")
+1. Hvis der findes flere betingelser i en regel, kan du vælge, hvilken logisk operator der skal forbinde dem.  
+   - **OG**-operator: Alle betingelser skal være opfyldt, for at der kan inkluderes en post i segmentet. Denne indstilling er mest nyttig, når du definerer betingelser på tværs af forskellige objekter.
+   - **ELLER**-operator: En af betingelserne skal være opfyldt, for at der kan inkluderes en post i segmentet. Denne indstilling er mest nyttig, når du definerer flere betingelser for det samme objekt.
 
-   |Antal |Definition  |
-   |---------|---------|
-   |0     |Enhed          |
-   |2     |Attribut          |
-   |3    |Operatør         |
-   |4    |Værdi         |
+   :::image type="content" source="media/segmentation-either-condition.png" alt-text="Regel med to OG-betingelser.":::
 
-   1. Hvis du vil føje flere betingelser til en gruppe, kan du bruge to logiske operatorer:
+   Når du bruger ELLER-operatoren, skal alle betingelser være baseret på objekter, der er inkluderet i relationsstien.
 
-      - **OG**-operator: Begge betingelser skal overholdes som en del af segmenteringsprocessen. Denne indstilling er mest nyttig, når du definerer betingelser på tværs af forskellige objekter.
+   - Du kan oprette flere regler for at oprette forskellige sæt kundeposter. Du kan kombinere grupper for at medtage de kunder, der kræves til din sag. Vælg **Tilføj regel** for at oprette en ny regel. Hvis du ikke kan inkludere og have et objekt i en regel på grund af den angivne relationssti, skal du oprette en ny regel for at vælge attributformularen.
 
-      - **ELLER**-operator: Den ene eller anden betingelse skal overholdes som en del af segmenteringsprocessen. Denne indstilling er mest nyttig, når du definerer flere betingelser for det samme objekt.
+      :::image type="content" source="media/segment-rule-grouping.png" alt-text="Føj en ny regel til et segment, og vælg den indstillede operator.":::
 
-      > [!div class="mx-imgBorder"]
-      > ![ELLER-operator, hvor en af betingelserne skal overholdes](media/segmentation-either-condition.png "ELLER-operator, hvor en af betingelserne skal overholdes")
+   - Vælg en af de indstillede operatorer: **Foreningsmængde**, **Overlapning** eller **Undtagen**.
 
-      Det er aktuelt muligt at indlejre en **ELLER**-operator under en **OG**-operator, men ikke den anden vej rundt.
+      - **Foreningsmængde** forener de to grupper.
+      - **Overlapning** overlapper de to grupper. Kun data, *der er fælles* for begge grupper, forbliver i den samlede gruppe.
+      - **Undtagen** kombinerer de to grupper. Kun data i gruppe A, *der ikke er fælles* for data i gruppe B, bevares.
 
-   1. Hver gruppe matcher sæt af kundegrupper. Du kan kombinere grupper for at medtage de kunder, der kræves til din sag.    
-   Vælg **Tilføj gruppe**.
+1. Som standard opretter segmenter det outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet. 
 
-      > [!div class="mx-imgBorder"]
-      > ![Tilføje kundegruppe](media/customer-group-add-group.png "Tilføje kundegruppe")
+   > [!IMPORTANT]
+   > I forbindelse med segmenter baseret på forretningskonti skal der medtages detaljer om en eller flere kontakter for hver konto fra objektet *ContactProfile* i dette segment, så segmentet kan aktiveres eller eksporteres til de steder, hvor der kræves kontaktoplysninger. Du kan finde flere oplysninger om objektet *ContactProfile* under [Semantiske tilknytninger](semantic-mappings.md).
+   > Et eksempelresultat for et segment, der er baseret på forretningskonti med projektattributter for kontakter, kunne se sådan ud: 
+   >
+   > |Id  |Firmanavn  |Indtægt  |Navn på kontakt  | Kontaktrolle|
+   > |---------|---------|---------|---------|---|
+   > |10021     | Contoso | 100.000 | [Abbie Moss, Ruth Soto]  | [CEO, projektstyring]
 
-   1. Vælg en af de indstillede operatorer: **Foreningsmængde**, **Overlapning** eller **Undtagen**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Tilføje foreningsmængde af kundegruppe](media/customer-group-union.png "Tilføje foreningsmængde af kundegruppe")
-
-   - **Foreningsmængde** forener de to grupper.
-
-   - **Overlapning** overlapper de to grupper. Kun data, der *er fælles* for begge grupper, bevares i den samlede gruppe.
-
-   - **Undtagen** kombinerer de to grupper. Kun data i gruppe A, der *ikke er fælles* med data i gruppe B, bevares.
-
-1. Hvis objektet er knyttet til det samlede kundeobjekt via [Relationer](relationships.md), skal du definere relationsstien for at oprette et gyldigt segment. Tilføj objekterne fra relationsstien, indtil du kan vælge objektet **Kunde: CustomerInsights** på rullelisten. Vælg derefter **Alle poster** for hvert trin.
-
-   > [!div class="mx-imgBorder"]
-   > ![Relationsstien under oprettelse af segmenter](media/segments-multiple-relationships.png "Relationsstien under oprettelse af segmenter")
-
-1. Som standard opretter segmenter et outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet.  
+   :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på projicerede attributter, der er valgt i sideruden, og som skal føjes til outputobjektet.":::
   
-   Eksempel: Et segment er baseret på et objekt, der indeholder kundeaktivitetsdata, som er relateret til objektet *Kunde*. Segmentet søger efter alle kunder, der har ringet til Helpdesk inden for de seneste 60 dage. Du kan vælge at føje varigheden af opkaldet og antallet af opkald til alle tilsvarende kundeposter i outputobjektet. Disse oplysninger kan være nyttige, hvis du vil sende en mail med nyttige links til artikler i onlinehjælp og ofte stillede spørgsmål til kunder, der ofte har ringet.
+   Eksempel: Et segment er baseret på et objekt, der indeholder indkøbsdata, som er relateret til objektet *Kunde*. Segmentet søger efter alle kunder fra Spanien, der har købt varer i det indeværende år. Du kan vælge at føje attributter som varers pris eller købsdatoen til alle tilsvarende kundeposter i outputobjektet. Disse oplysninger kan være nyttige, hvis du vil analysere sammenhængene mellem overensstemmelse og det samlede forbrug.
 
    > [!NOTE]
-   > - Projekterede attributter fungerer kun for objekter, der har en en til mange-relation til kundeobjektet. En kunde kan f.eks. have flere abonnementer.
-   > - Du kan kun projektere attributter fra et objekt, der bruges i alle grupper af segmentforespørgsel, du er i gang med at bygge.
-   > - Projekterede attributter anvendes, når der bruges indstillede operatorer.
+   > - **Projektattributter** fungerer kun for objekter, der har en en til mange-relation til kundeobjektet. En kunde kan f.eks. have flere abonnementer.
+   > - Hvis den attribut, du vil projektere, er mere end ét hop væk fra objektet *Kunde*, som defineret af relationen, skal den pågældende attribut bruges i alle regler i den segmentforespørgsel, du er ved at oprette. 
+   > - Hvis den attribut, du vil projektere, kun er ét hop væk fra objektet *Kunde*, skal den pågældende attribut ikke nødvendigvis findes i alle regler i den segmentforespørgsel, du er ved at oprette. 
+   > - **Projekterede attributter** anvendes, når der bruges faste operatorer.
 
-1. Vælg **Gem** for at gemme dit segment. Dit segment gemmes og behandles, hvis alle krav valideres. Ellers gemmes det som en kladde.
+1. Før du gemmer og kører segmentet, skal du vælge **Rediger detaljer** ud for segmentnavnet. Angiv et navn til segmentet, og opdater det foreslåede **Navn på outputobjekt** for segmentet. Du kan også føje en beskrivelse til målgruppen.
 
+1. Vælg **Kør** for at gemme segmentet, aktivér det, og begynd at behandle dit segment på baggrund af alle regler og betingelser. Ellers gemmes det som et inaktivt segment.
+   
 1. Vælg **Tilbage til segmenter** for at gå tilbage til siden **Segmenter**.
 
+1. Som standard oprettes segmentet som en dynamisk segment. Det betyder, at segmentet opdateres, når systemet opdateres. Hvis du vil [standse den automatiske opdatering](segments.md#manage-existing-segments), skal du vælge indstillingen **Gør statisk**. Statiske segmenter kan kun [opdateres manuelt](segments.md#refresh-segments) til enhver tid.
 
+> [!TIP]
+> - Segmentgeneratoren foreslår ikke gyldige værdier fra objekter, når operatorerne angives for betingelserne. Du kan gå til **Data** > **Objekter** og hente objektdataene for at se, hvilke værdier der er tilgængelige.
+> - Betingelser, der er baseret på datoerne, giver dig mulighed for at skifte mellem faste datoer og et flydende datointerval.
+> - Hvis du har flere regler for dit segment, har den regel, du redigerer, en lodret blå linje ud for den. 
+> - Du kan flytte regler og betingelser til andre steder i segmentdefinitionen. Vælg [...] ud for en regel eller betingelse, og vælg, hvordan og hvor den skal flyttes.
+> - Med kontrolelementerne **Fortryd** og **Annuller fortryd** på kommandolinjen kan du annullere ændringerne.
 
 ## <a name="quick-segments"></a>Hurtige segmenter
 
 Med hurtige segmenter kan du nemt oprette simple segmenter med en enkelt operator for at få hurtigere indsigt.
 
 1. På siden **Segmenter** skal du vælge **Nyt** > **Opret fra**.
-
    - Vælg indstillingen **Profiler** for at oprette et segment, der er baseret på det *samlede kundeobjekt*.
    - Vælg indstillingen **Målinger** for at oprette et segment omkring de målinger, du tidligere har oprettet.
    - Vælg indstillingen **Intelligens** for at oprette en segment omkring en af de outputenheder, du har oprettet ved hjælp af funktionerne **Forudsigelser** eller **Brugerdefinerede modeller**.
 
 2. Vælg en attribut på rullelisten **Felt** i dialogboksen **Nyt hurtigt segment**.
 
-3. Der gives yderligere indsigt i systemet, som kan hjælpe dig med at oprette bedre segmenter af dine kunder.
+3. Systemet vil give dig mere indsigt, der kan hjælpe dig med at oprette bedre kundesegmenter.
    - I forbindelse med kategoriske felter vises de 10 bedste kundeantal. Vælg en **Værdi**, og vælg **Gennemse**.
-
    - I forbindelse med en numerisk attribut viser systemet, hvilken attributværdi der er omfattet af hver enkelt kundes percentil. Vælg en **Operator** og en **Værdi**, og vælg derefter **Gennemse**.
 
 4. Systemet vil give dig en **Anslået segmentstørrelse**. Du kan vælge, om du vil oprette det segment, du har defineret, eller først vil gå til det igen for at få en anden segmentstørrelse.
 
     > [!div class="mx-imgBorder"]
-    > ![Navn og estimering for et hurtigt segment](media/quick-segment-name.png "Navn og estimering for et hurtigt segment")
+    > ![Navn og estimering for et hurtigt segment.](media/quick-segment-name.png "Navn og estimering for et hurtigt segment")
 
 5. Angiv et **Navn** til dit segment. Angiv eventuelt et **Vist navn**.
 
@@ -137,6 +164,6 @@ Med hurtige segmenter kan du nemt oprette simple segmenter med en enkelt operato
 
 ## <a name="next-steps"></a>Næste trin
 
-[Eksportere et segment](export-destinations.md) og udforske [kundekort](customer-card-add-in.md) og [connectorer](export-power-bi.md) for at få indsigt i kundeniveauet.
+[Eksportér et segment](export-destinations.md), og udforsk [integrationen med kundekort](customer-card-add-in.md) for at bruge segmenter i andre programmer.
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

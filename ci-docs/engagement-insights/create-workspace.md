@@ -5,16 +5,15 @@ author: jusali
 ms.reviewer: mhart
 ms.author: jusali
 ms.date: 10/01/2021
-ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 816f948331a06794c15000eb779f93cc7fdda202
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+ms.openlocfilehash: 76b3466afd84aa439ea55afe90ae037825884f2d
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645303"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229070"
 ---
 # <a name="create-a-new-workspace-and-add-members"></a>Oprette et nyt arbejdsområde og tilføje medlemmer
 
@@ -26,17 +25,17 @@ Når du opretter et arbejdsområde, vælger du den type data, du vil fokusere p�
 
 ## <a name="create-a-new-workspace"></a>Opret et nyt arbejdsområde
 
-Processen til oprettelse af et arbejdsområde omfatter opsætning af *miljøet* til organisering af arbejdsområdet. Et miljø er plads, der kan indeholde et eller flere arbejdsområder. Du kan bruge et miljø til at administrere dine arbejdsområder og forbindelser til Customer Insights og målgruppeindsigtsfunktioner.
+Processen til oprettelse af et arbejdsområde omfatter opsætning af *miljøet* til organisering af arbejdsområdet. Et miljø er plads, der kan indeholde et eller flere arbejdsområder. Du kan bruge et miljø til at administrere dine arbejdsområder og forbindelser til den målgruppeindsigtsfunktion.
 
-1. Vælg **Ny** i arbejdsområdeskifteren.
+1. Vælg **+Ny** i arbejdsområdeskifteren.
 
-   :::image type="content" source="media/new-workspace.png" alt-text="Siden Customer Insights med opslag i navigationsrude og beskrivelse.":::
+   :::image type="content" source="media/new-workspace.png" alt-text="Siden Customer Insights med forklaring i navigationsrude og beskrivelse.":::
 
 1. Angiv et **Navn på arbejdsområde** i ruden **Arbejdsområde**.
 
    :::image type="content" source="media/workspace-name.png" alt-text="Skriv et navn på arbejdsområdet.":::
 
-1. Vælg den platformstype (Web eller Mobil), du vil måle.
+1. Vælg den platformstype (web eller mobil), du vil måle.
 
 1. Vælg **Vis avancerede indstillinger** for at aktivere eller deaktivere disse valgfrie indstillinger:
 

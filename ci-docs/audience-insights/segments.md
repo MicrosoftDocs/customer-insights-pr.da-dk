@@ -1,26 +1,31 @@
 ---
 title: Segmenter i målgruppeindsigt
 description: Oversigt over segmenter, og hvordan de oprettes og administreres.
-ms.date: 09/30/2021
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
-ms.topic: how-to
+ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: ac33a6dcde4c710cecd3c6836aad3e26ce5c7de6
-ms.sourcegitcommit: 31985755c7c973fb1eb540c52fd1451731d2bed2
+searchScope:
+- ci-customers-page
+- ci-enrichment-details
+- ci-segments
+- ci-segment-details
+- customerInsights
+ms.openlocfilehash: c58f79c2beda1083d19bd36d94549ff1a46b096e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "7673753"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355976"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
 Med segmenter kan du gruppere dine kunder baseret på demografiske, transaktionsrelaterede eller adfærdsattributter. Du kan bruge segmenter til at målrette kampagnefremstød, salgsaktiviteter og kundesupporthandlinger for at nå dine forretningsmæssige mål.
 
-Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* af et segment. Der gælder nogle [tjenestebegrænsninger](service-limits.md).
+Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* af et segment. Der gælder nogle [tjenestebegrænsninger](/dynamics365/customer-insights/service-limits).
 
 ## <a name="create-a-new-segment"></a>Oprette et nyt segment
 
@@ -65,8 +70,7 @@ Følgende handlinger er tilgængelige, når du vælger et segment:
 
 Du kan opdatere alle segmenter på én gang ved at vælge **Opdater alle** på siden **Segmenter**, eller du kan opdatere et eller flere segmenter, når du vælger dem, og vælge **Opdater** fra indstillingerne. Du kan også konfigurere en tilbagevendende opdatering i **Admin** > **System** > **Planlæg**.
 
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="export-segments"></a>Eksportere segmenter
 
@@ -106,4 +110,5 @@ Den nederste del indeholder en liste over segmentmedlemmerne.
 >
 >Listen er et eksempel på de matchende segmentmedlemmer og viser de første 100 poster i dit segment, så du hurtigt kan evaluere det og gennemgå dets definitioner, hvis det er nødvendigt. Hvis du vil se alle matchende poster, skal du [eksportere segmentet](export-destinations.md).
 
-[!INCLUDE[footer-include](../includes/footer-banner.md)] 
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

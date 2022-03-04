@@ -4,26 +4,25 @@ description: Få mere at vide om de områder og geografiske områder, tjenesten 
 author: mkisel11
 ms.reviewer: mhart
 ms.author: mkisel
-ms.date: 09/01/2021
-ms.service: customer-insights
+ms.date: 09/28/2021
 ms.topic: article
 ms.manager: shellyha
-ms.openlocfilehash: c89637cbbe6626f95bcadb1f69831a1647f448a4
-ms.sourcegitcommit: 5704002484cdf85ebbcf4e7e4fd12470fd8e259f
+ms.openlocfilehash: 08435e651c3706257b8c0548e6e9bbf98f39dce9
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "7483290"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8228099"
 ---
 # <a name="regional-availability-for-dynamics-365-customer-insights"></a>Regional tilgængelighed til Dynamics 365 Customer Insights
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Engagementsindsigt, en funktion i Dynamics 365 Customer Insights, der efterhånden introducerer flere områder, hvor kunderne kan vælge at gemme deres data. Administratorer kan vælge et område, når de [opretter et nyt miljø](manage-environments-workspaces.md#create-an-environment). 
+Engagementsindsigt, en funktion i Dynamics 365 Customer Insights, der efterhånden introducerer flere områder, hvor kunderne kan vælge at gemme deres data. Administratorer kan vælge et område, når de [opretter et nyt miljø](create-new-environment.md). 
 
-Når du konfigurerer engagementsindsigt første gang, kan du vælge området, mens du gennemgår den [styrede første kørselsoplevelse](quickstart.md). På et senere tidspunkt kan alle de nye miljøer vælge det område, som dataene skal gemmes i.
+Når du konfigurerer engagementsindsigt første gang, kan du vælge området, mens du gennemgår den [styrede første kørselsoplevelse](quickstart.md). Senere giver alle nye miljøer dig mulighed for at vælge det område, som data skal gemmes i.
 
-I øjeblikket er der to geografiske områder: USA og Europa. Brugerne kan vælge mellem det Vestamerikanske område og Nordvesteuropa.
+I øjeblikket understøtter vi geografiske områder som USA og Europa. Brugerne kan vælge mellem disse områder: det vestlige USA, det østlige USA, Nordeuropa og Vesteuropa.
 
 En organisation kan vedligeholde miljøer i forskellige områder. Miljø A gemmer f.eks. data i det vestlige USA og Miljø B i det nordlige Europa.
 

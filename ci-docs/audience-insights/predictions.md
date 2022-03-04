@@ -1,24 +1,28 @@
 ---
 title: Udfyld delvise data ved hjælp af forudsigelser
 description: Brug af forudsigelser til at udfylde ufuldstændige kundedata.
-ms.date: 05/05/2020
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
 ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 7ca42334420a27a8739d7c28bb72606c3ed91f3c
-ms.sourcegitcommit: 53b133a716c73cb71e8bcbedc6273cec70ceba6c
+searchScope:
+- ci-predictions
+- ci-custom-models
+- customerInsights
+ms.openlocfilehash: 9634523f61e27a0ed183186a788ab0cef3c0491b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "7645027"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353996"
 ---
-# <a name="complete-your-partial-data-with-predictions"></a>Fuldføre delvise data med forudsigelser
+# <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fuldfør de delvise data med forudsigelser (frarådet)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+> [!IMPORTANT]
+> Denne funktion **frarådes** fra **5. november 2021**. Aktuelle implementeringer fungerer fortsat, indtil funktionen er fjernet, men du kan ikke oprette nye integrationer ved hjælp af instruktionerne nedenfor.
 
 Med forudsigelser kan du nemt oprette forventede værdier, der kan forbedre forståelsen af en kunde. På siden **Intelligens** > **Forudsigelser** kan du vælge **Mine forudsigelser** for at se forudsigelser, som du har konfigureret i andre dele af målgruppen Insights, og give dig mulighed for at tilpasse dem yderligere.
 
@@ -60,6 +64,8 @@ Du kan finde flere oplysninger i [Oprette et nyt miljø](create-environment.md).
    > ![Eksempel, der viser tilknyttede feltværdier for kategorier.](media/intelligence-categorymapping.png "Eksempel, der viser tilknyttede feltværdier for kategorier")
 
 8. Vælg **Udført**,så forudsigelsen vil blive behandlet. Behandlingen vil tage et stykke tid, afhængigt af datastørrelsen og kompleksiteten af dataene. Resultaterne vil være tilgængelige i et nyt objekt, der er baseret på det **Navn på outputobjekt** for forudsigelsen, du har oprettet.
+
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="create-a-prediction-while-creating-a-segment"></a>Oprette en forudsigelse under oprettelse af et segment
 
@@ -110,7 +116,7 @@ Som en del af dette flow vælger du en bestemt attribut til at basere dit segmen
 
 ## <a name="edit-a-prediction"></a>Redigere en forudsigelse
 
-Når du har oprettet en forudsigelse, kan du tilpasse modellen i AI Builder for at øge effektiviteten for din model.  
+Når du har oprettet en forudsigelse, kan du tilpasse modellen i AI Builder for at øge effektiviteten af din model.  
 
 1. Gå til **Intelligens** > **Forudsigelser** > **Mine forudsigelser** i målgruppen Insights.
 
@@ -125,7 +131,7 @@ Når du har oprettet en forudsigelse, kan du tilpasse modellen i AI Builder for 
 Den næste kørsel af forudsigelsen bruger den opdaterede model, du har oprettet.
 
 > [!NOTE]
-> Nye modeller, der er oprettet i AI Builder, vises ikke i målgruppen Insights, medmindre modellen er oprettet ud fra de oplevelser, der er nævnt ovenfor.
+> Nye modeller, der er oprettet i AI Builder, vises ikke i målgruppeindsigt, medmindre modellen blev oprettet ud fra de erfaringer, der er nævnt ovenfor.
 
 ## <a name="remove-a-prediction"></a>Fjerne en forudsigelse
 

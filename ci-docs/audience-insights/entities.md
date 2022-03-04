@@ -3,18 +3,20 @@ title: Objekter og datasæt
 description: Få vist data på siden objekter.
 ms.date: 12/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 00c5ee50fb9f0906622c91699852ffba0acb5c15
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-entities
+- customerInsight
+ms.openlocfilehash: 1e1abdf49a3c1fe6f9fdd2cf5353a7723454f47b
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900420"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355291"
 ---
 # <a name="entities-in-audience-insights"></a>Objekter i målgruppeindsigt
 
@@ -71,7 +73,9 @@ Felter fra en brugerdefineret datakilde kan indeholde beskadigede data. Poster m
 
 Datatypen er f.eks. angivet som 'dato' i kolonnen 'fødselsdag'. En kundepost har fødselsdag angivet som '01/01/1977'. Denne post markeres som beskadiget af systemet. Nogen kan nu ændre fødselsdagen i kildesystemet til '1977'. Efter en automatiseret opdatering af datakilder har feltet nu et gyldigt format, og posten fjernes fra det beskadigede objekt. 
 
-Gå til **Data** > **Objekter**, og søg efter de beskadigede objekter i sektionen **System**. Navngivningsskema for beskadigede objekter: 'DataSourceName_EntityName_corrupt'.
+Gå til **Data** > **Objekter**, og søg efter de beskadigede objekter i sektionen **System**. Navngivningsskema for beskadigede objekter: 'DataSourceName_EntityName_corrupt'. Vælg et beskadiget objekt for at identificere alle de beskadigede felter og årsagen på de enkelte postniveau.
+> [!div class="mx-imgBorder"]
+> ![Årsag til beskadigelse.](media/corruption-reason.png "Årsag til beskadigelse")
 
 I Customer Insights behandles stadig beskadigede poster. De kan dog give problemer, når du arbejder med de ensartede data.
 

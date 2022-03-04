@@ -3,18 +3,17 @@ title: Forbedrede virksomhedsdata
 description: Forbedre og normalisere virksomhedsdata med Microsofts modeller.
 ms.date: 01/19/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 693e2f410a77cbf2e87ff0132ce963aab7e8e3e4
-ms.sourcegitcommit: 4c9db6c124d7244e7e8bb2f8bfdc697523781c31
+ms.openlocfilehash: 7a576621c71b925bd1563827aca10cad4ef9b4eb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "8010890"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229396"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Forbedring af virksomhedsprofiler med forbedrede virksomhedsdata
 

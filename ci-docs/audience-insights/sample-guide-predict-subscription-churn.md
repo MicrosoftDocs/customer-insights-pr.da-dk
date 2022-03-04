@@ -3,26 +3,28 @@ title: Eksempelvejledning til forudsigelse af abonnementsafgang
 description: Brug denne eksempelvejledning til at afprøve abonnementet i en forudsigelsesmodel for afgang af standard-abonnement.
 ms.date: 11/19/2020
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: diegogranados117
-ms.author: digranad
+author: m-hartmann
+ms.author: wameng
 manager: shellyha
-ms.openlocfilehash: fa460fa5c79bc8a356ec5e90050ec85e05c55be8
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+searchScope:
+- ci-create-prediction
+- customerInsights
+ms.openlocfilehash: 5de57155b47b74efa4c5ef2fe63a3c87505644be
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306296"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355606"
 ---
-# <a name="subscription-churn-prediction-preview-sample-guide"></a>Eksempelvejledning til forudsigelse af abonnementsafgang (prøveversion)
+# <a name="subscription-churn-prediction-sample-guide"></a>Eksempelvejledning til forudsigelse af abonnementsafgang
 
 Vi gennemgår fra start til slut et eksempel på forudsigelse af abonnementsafgang ved hjælp af de eksempeldata, der er angivet nedenfor. 
 
 ## <a name="scenario"></a>Scenarie
 
-Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de sælger via deres Contoso Coffee-websted. De har for nylig startet en abonnementsforretning for kunderne for at få kaffe på normal basis. Deres målsætning er at forstå, hvilke abonnementskunder kan opsige deres abonnement i løbet af de næste par måneder. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
+Contoso er et firma, der fremstiller kaffe og kaffemaskiner i høj kvalitet, som de sælger via deres Contoso Coffee-websted. De har for nylig startet en abonnementsforretning for kunderne for at få kaffe på normal basis. Deres målsætning er at forstå, hvilke abonnementskunder kan opsige deres abonnement i løbet af de næste par måneder. Det kan være en god hjælp at vide, hvilke af deres kunder der evt. **afgår**, ved at spare marketingkræfter og fokusere på at holde på dem.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -31,7 +33,7 @@ Contoso er en virksomhed, der producerer kaffemaskiner af høj kvalitet, som de 
 
 ## <a name="task-1---ingest-data"></a>Opgave 1 - Indsættelse af data
 
-Gennemgå artiklerne [om indsættelse af data](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectors](connect-power-query.md) specifikt. I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data. 
+Gennemse artiklerne [om dataimport](data-sources.md) og [import af datakilder ved hjælp af Power Query-connectorer](connect-power-query.md). I følgende oplysninger antages det, at du har generelt kendskab til indsættelse af data. 
 
 ### <a name="ingest-customer-data-from-ecommerce-platform"></a>Indsættelse af kundedata fra eCommerce-platform
 
@@ -168,7 +170,7 @@ Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for
 
 ## <a name="task-3---configure-the-subscription-churn-prediction"></a>Opgave 3 - Konfiguration af forudsigelse af abonnementsafgang
 
-Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abonnementsafgang. Du kan se de detaljerede trin i artiklen [Forudsigelse af abonnementsafgang (prøveversion)](predict-subscription-churn.md). 
+Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abonnementsafgang. Du kan finde flere oplysninger i artiklen om [Forudsigelse af opsigelse af abonnement](predict-subscription-churn.md). 
 
 1. Gå til **Intelligens** > **Find**, og vælg at bruge **Model for kundeafgang**.
 

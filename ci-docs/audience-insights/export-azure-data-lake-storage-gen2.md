@@ -1,22 +1,31 @@
 ---
 title: Eksportere Customer Insights-data til Azure Data Lake Storage Gen2
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Azure Data Lake Storage Gen2.
-ms.date: 03/03/2021
+ms.date: 10/06/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: f431b707e1d65ffe47f8b3aa1c52abaa964e871a
-ms.sourcegitcommit: 1b671c6100991fea1cace04b5d4fcedcd88aa94f
+ms.openlocfilehash: cc0b3aac11a33facc366e9c57071d1fb8be4ecc4
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "5760044"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8231667"
 ---
-# <a name="set-up-the-connection-to-azure-data-lake-storage-gen2-preview"></a>Konfigurer forbindelsen til Azure Data Lake Storage Gen 2 (forhåndsversion)
+# <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Eksportere segmentliste og andre data til Azure Data Lake Storage Gen2 (forhåndsversion)
+
+Gem dine Customer Insights-data i en Data Lake Storage Gen2-konto, eller brug den til at overføre dine data til andre programmer.
+
+## <a name="known-limitations"></a>Kendte begrænsninger
+
+1. Til Azure Data Lake Storage Gen2 kan du vælge mellem [Standardydeevne og Premium-ydeevne som niveau](/azure/storage/blobs/create-data-lake-storage-account), når du opretter en lagerkonto til din datasø. Hvis du vælger Premium-ydeevneniveau, skal du vælge Premium-blok-blobbe som kontotype. 
+
+
+## <a name="set-up-the-connection-to-azure-data-lake-storage-gen2"></a>Konfigurere forbindelsen til Azure Data Lake Storage Gen2 
+
 
 1. Gå til **Administrator** > **Forbindelser**.
 

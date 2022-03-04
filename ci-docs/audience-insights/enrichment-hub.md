@@ -1,21 +1,25 @@
 ---
 title: Forbedring af samlede kundeprofiler
 description: Du kan bruge egenskaber til at forbedre dine kundedata.
-ms.date: 09/30/2021
+ms.date: 02/07/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
-ms.openlocfilehash: 5d5e12ee44dfa40c470738eaee5c68fdf23d1b2d
-ms.sourcegitcommit: 23c8973a726b15050e368cc6e0aab78b266a89f6
+searchScope:
+- ci-enrichments
+- ci-enrichment-details
+- ci-enrichment-wizard
+- customerInsights
+ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "7617548"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355376"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Forbedring af kundeprofiler (prøveversion)
 
@@ -29,7 +33,7 @@ Du skal have bidragyder- eller administratortilladelser for at kunne oprette ell
 
 Under fanen **Opdag** finder du alle understøttede forbedringsmuligheder.
 
-# <a name="individual-customers-b2c"></a>[Individuelle kunder (B2C)](#tab/b2c)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
 
 - [Varemærker](enrichment-microsoft.md) leveret af Microsoft
 - [Interesser](enrichment-microsoft.md) leveret af Microsoft
@@ -37,14 +41,17 @@ Under fanen **Opdag** finder du alle understøttede forbedringsmuligheder.
 - [Demografiske oplysninger](enrichment-experian.md) leveret af Experian
 - [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft
+- [Lokationsdata](enrichment-here.md) leveret af HERE Technologies 
 
-# <a name="business-accounts-b2b"></a>[Virksomhedskonti (B2B)](#tab/b2b)
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
 - [Firmadata](enrichment-leadspace.md) leveret af Leadspace
 - [Udvidede adresser](enrichment-enhanced-addresses.md) leveret af Microsoft 
+- [Forbedrede virksomhedsdata](enrichment-enhanced-company-data.md) fra Microsoft
 - [Lokationsdata](enrichment-here.md) leveret af HERE Technologies 
 - [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft
+- [Data om firmaengagement](enrichment-office.md) leveret af Microsoft
 
 ---
 

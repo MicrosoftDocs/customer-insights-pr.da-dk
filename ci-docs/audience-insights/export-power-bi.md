@@ -1,20 +1,19 @@
 ---
 title: Power BI-connector
 description: Få at vide, hvordan du kan bruge Dynamics 365 Customer Insights-connectoren i Power BI.
-ms.date: 09/21/2020
-ms.reviewer: sthe
-ms.service: customer-insights
+ms.date: 07/23/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: how-to
+author: stefanie-msft
+ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: d497ca779a337c512a7254524f597cff226bcb45
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: dccc069a355725bae09c1fece9292b9aee374e6d
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405413"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8225508"
 ---
 # <a name="connector-for-power-bi-preview"></a>Connector til Power BI (prøve)
 
@@ -23,7 +22,7 @@ Opret visualiseringer for dataene ved hjælp af Power BI Desktop. Generer yderli
 ## <a name="prerequisites"></a>Forudsætninger
 
 - Du har samlet kundeprofiler.
-- Den nyeste version af [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) er installeret på computeren. [Få mere at vide om Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-what-is-desktop).
+- Den nyeste version af [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/) installeres på din computer. [Få mere at vide om Power BI Desktop](/power-bi/desktop-what-is-desktop).
 
 ## <a name="configure-the-connector-for-power-bi"></a>Konfigurer connectoren til Power BI
 
@@ -31,7 +30,7 @@ Opret visualiseringer for dataene ved hjælp af Power BI Desktop. Generer yderli
 
 1. Vælg **Se mere**, og søg efter **Dynamics 365 Customer Insights**
 
-1. Vælg resultatet, og vælg **Opret forbindelse**.
+1. Vælg **Opret forbindelse**.
 
 1. **Log på** med den samme organisationskonto, som du bruger til Customer Insights, og vælg **Opret forbindelse**.
    > [!NOTE]
@@ -39,7 +38,7 @@ Opret visualiseringer for dataene ved hjælp af Power BI Desktop. Generer yderli
 
 1. I dialogboksen **Navigator**. der vises en liste om alle de miljøer, du har adgang til. Udvid et miljø, og åbn en af mapperne (objekter, målpunkter, segmenter, forbedringer). Du kan f.eks. åbne mappen **Objekter** for at få vist alle de objekter, du kan importere.
 
-   ![Power BI Connector Navigator](media/power-bi-navigator.png "Power BI Connector Navigator")
+   ![Power BI Connector Navigator.](media/power-bi-navigator.png "Power BI Connector Navigator")
 
 1. Markér afkrydsningsfelterne ud for de objekter, der skal inkluderes, og vælg **Indlæs**. Du kan vælge flere objekter fra flere miljøer.
 
@@ -47,8 +46,32 @@ Opret visualiseringer for dataene ved hjælp af Power BI Desktop. Generer yderli
 
 ## <a name="large-data-sets"></a>Store datasæt
 
-Customer Insights-connectoren for Power BI er udviklet til at fungere for datasæt, der indeholder op til 1 million kundeprofiler. Import af større datasæt fungerer muligvis, men tager længere tid. Processen kan derudover køres med en timeout på grund af Power BI-begrænsninger. Du kan finde flere oplysninger i [Power BI: Anbefalinger til store datasæt](https://docs.microsoft.com/power-bi/admin/service-premium-what-is#large-datasets). 
+Customer Insights-connectoren for Power BI er udviklet til at fungere for datasæt, der indeholder op til 1 million kundeprofiler. Import af større datasæt fungerer muligvis, men tager længere tid. Processen kan derudover køres med en timeout på grund af Power BI-begrænsninger. Du kan finde flere oplysninger i [Power BI: Anbefalinger til store datasæt](/power-bi/admin/service-premium-what-is#large-datasets). 
 
 ### <a name="work-with-a-subset-of-data"></a>Arbejde med et delsæt af data
 
 Overvej at arbejde med et delsæt af dine data. Du kan f. eks. oprette [segmenter](segments.md) i stedet for at eksportere alle kundeposter til Power BI.
+
+## <a name="troubleshooting"></a>Fejlfinding
+
+### <a name="customer-insights-environment-doesnt-show-in-power-bi"></a>Customer Insights-miljøet vises ikke i Power BI
+
+Miljøer, hvor der er defineret mere end én [relation](relationships.md) mellem to identiske objekter i målgruppeindsigt, er ikke tilgængelige i Power BI-connector.
+
+Du kan identificere og fjerne de kopierede relationer.
+
+1. I målgruppeindsigt, skal du gå til **Data** > **Relationer** vedrørende det miljø, du mangler i Power BI.
+2. Identificere kopierede Relationer:
+   - Kontrollér, om der er defineret mere end én relation mellem de samme to objekter.
+   - Kontrollér, om der er oprettet en relation mellem to objekter, som begge er medtaget i samlingsprocessen. Der er defineret en implicit relation mellem alle objekter, der er inkluderet i samlingsprocessen.
+3. Fjern eventuelle kopier af identificerede relationer.
+
+Når du har fjernet de kopierede relationer, skal du prøve at konfigurere Power BI-connector igen. Miljøet skulle nu være tilgængeligt.
+
+### <a name="errors-on-date-fields-when-loading-entities-in-power-bi-desktop"></a>Fejl i datofelter under indlæsning af objekter i Power BI Desktop
+
+Når du indlæser objekter, som indeholder felter med et datoformat, f.eks. DD/MM/ÅÅÅÅ, kan du støde på fejl på grund af uoverensstemmende landeformater. Denne uoverensstemmelse opstår, når Power BI Desktop-filen angives til en anden landestandard end engelsk (USA), da datofelter i målgruppeindsigt gemmes i amerikansk format.
+
+Filen Power BI Desktop har en enkelt indstilling for landeindstilling, som anvendes, når du henter data. Du kan få vist datofelterne korrekt ved at angive landestandard for .BPI-fil til engelsk (USA). [Flere oplysninger om, hvordan du ændrer landestandard for en Power BI Desktop-fil](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

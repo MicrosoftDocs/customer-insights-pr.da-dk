@@ -1,20 +1,19 @@
 ---
 title: Eksportere Customer Insights-data til Omnisend
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Omnisend.
-ms.date: 05/21/2021
+ms.date: 10/08/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8bd692819fa8451ded5e74191ee717f81f87425d
-ms.sourcegitcommit: 831765a55775d358447cb7ffa56f2c3b85459084
+ms.openlocfilehash: 15fc6fc2426ad3958268e5bcc200b8eb2b0fd13a
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2021
-ms.locfileid: "6124472"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226755"
 ---
 # <a name="export-segments-to-omnisend-preview"></a>Eksportere segmenter til Omnisend (forhåndsversion)
 
@@ -28,9 +27,9 @@ Eksportere segmenter med ensartede kundeprofiler til Omnisend, og brug dem til m
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan eksportere op til 1 million profiler pr. eksport til Omnisend, og det kan tage op til 4 timer at gennemføre.
+- Du kan eksportere op til 1 million kundeprofiler pr. eksport til Omnisend, og det kan tage op til 4 timer at fuldføre den.
 - Eksport til Omnisend er begrænset til segmenter.
-- Antallet af profiler, du kan eksportere til Omnisend, afhænger af din kontrakt med Omnisend.
+- Antallet af kundeprofiler, du kan eksportere til Omnisend, afhænger af din kontrakt med Omnisend.
 
 ## <a name="set-up-connection-to-omnisend"></a>Konfigurer forbindelsen til Omnisend
 
@@ -62,7 +61,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg en forbindelse i sektionen Omnisend i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. Det er obligatorisk at eksportere segmenter til Omnisend. Du kan også eksportere Fornavn, Efternavn, Adresse, Land/Område, Stat, By og Postnr. for at oprette mere personlige mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Omnisend. Du kan også eksportere Fornavn, Efternavn, Adresse, Land/Område, Stat, By og Postnr. for at oprette mere personlige mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 
 1. Vælg **Gem**.
 
