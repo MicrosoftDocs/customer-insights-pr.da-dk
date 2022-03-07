@@ -1,31 +1,24 @@
 ---
-title: Indtag data via en Power Query-connector (indeholder video)
-description: Connectorer til datakilder baseret på Power Query.
-ms.date: 12/06/2021
-ms.reviewer: mhart
+title: Indsættelse af data via en Power Query forbindelse
+description: Connectorer til datakilder, der er baseret på Power Query.
+ms.date: 09/29/2020
+ms.reviewer: adkuppa
+ms.service: customer-insights
 ms.subservice: audience-insights
-ms.topic: how-to
-author: adkuppa
-ms.author: adkuppa
+ms.topic: conceptual
+author: m-hartmann
+ms.author: mhart
 manager: shellyha
-searchScope:
-- ci-data-sources
-- ci-create-data-source
-- customerInsights
-ms.openlocfilehash: 4c12933a0684094702843be309525dd6d5d9b6f4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 8a170cc5b64b4b383501021232c83948e838a0e2
+ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355514"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "4405432"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
-Power Query indeholder et bredt sæt connectorer til indtagelse af data. De fleste af disse connectorer understøttes af Dynamics 365 Customer Insights. 
-
-Tilføjelse af datakilder baseret på Power Query-connectorer følger generelt de trin, der er angivet i denne sektion. Men afhængigt af den connector, du bruger, er der brug for forskellige oplysninger. Du kan få mere at vide i dokumentationen angående individuelle connectorer i [Reference til Power Query-connectorer](/power-query/connectors/).
-
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWN6EK]
+Power Query tilbyder en lang række connectorer til indtagelse af data. De fleste af disse connectorer understøttes af Dynamics 365 Customer Insights. Hvis du tilføjer datakilder, der er baseret på Power Query-connectorer, følger normalt de trin, der beskrives i næste afsnit. Men afhængigt af den connector, du bruger, er der brug for forskellige oplysninger. Du kan finde flere oplysninger i dokumentationen om de enkelte connectorer i [Power Query-connector-referencen](https://docs.microsoft.com/power-query/connectors/).
 
 ## <a name="create-a-new-data-source"></a>Oprette en ny datakilde
 
@@ -33,41 +26,41 @@ Tilføjelse af datakilder baseret på Power Query-connectorer følger generelt d
 
 1. Vælg **Tilføj datakilde**.
 
-1. Vælg **Microsoft Power Query**.
+1. Vælg metoden **Importér data**, og vælg **Næste**.
 
 1. Angiv et **Navn** til datakilde, og vælg **Næste** for at oprette datakilden.
 
-1. Vælg en af de [tilgængelige connectorer](#available-power-query-data-sources). I dette eksempel vælger vi **Text/CSV**-connector.
+1. Vælg en af de [tilgængelige connectorer](#available-power-query-data-sources). I dette eksempel skal du vælge **Text/CSV** som connector.
 
 1. Angiv de nødvendige detaljer i **Forbindelsesindstillinger** for den valgte connector, og vælg **Næste** for at få vist en prøveversion af dataene.
 
 1. Vælg **Transformer data**. I dette trin skal du føje objekter til din datakilde. Objekter er datasæt. Hvis du har en database, der indeholder flere datasæt, er de enkelte datasæt sit eget objekt.
 
-1. Dialogboksen **Power Query - Rediger forespørgsler** giver dig mulighed for at gennemse og finjustere dataene. De objekter, som systemerne har identificeret i den valgte datakilde, vises i venstre rude.
+1. Dialogboksen **Power Query - rediger forespørgsler** giver dig mulighed for at gennemse og finpudse dataene. De objekter, som systemerne har identificeret i den valgte datakilde, vises i venstre rude.
 
    > [!div class="mx-imgBorder"]
-   > ![Dialogboksen Rediger forespørgsler.](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger forespørgsler")
+   > ![Dialogboksen Rediger forespørgsler](media/data-manager-configure-edit-queries.png "Dialogboksen Rediger forespørgsler")
 
-1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. Hver transformation er vist under **Anvendte trin**. Power Query indeholder mange foruddefinerede transformationsindstillinger. Du kan finde flere oplysninger under [Power Query Transformationer](/power-query/power-query-what-is-power-query#transformations).
+1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. Hver transformation er vist under **Anvendte trin**. Power Query indeholder mange standardindstillinger for transformation. Du kan finde flere oplysninger i [Power Query-transformationer](https://docs.microsoft.com/power-query/power-query-what-is-power-query#transformations).
 
-   Det anbefales, at du bruger følgende transformationer:
+1. Du kan føje flere objekter til datakilden ved at vælge **Hent data** i dialogboksen **Rediger forespørgsler**.
 
-   - Hvis du indtager data fra en CSV-fil, indeholder den første række ofte overskrifter. Gå til **Transformér**, og vælg **Brug første række som overskrifter**.
-   - Kontrollér, at datatypen er angivet korrekt. I forbindelse med datofelter kan du f.eks. vælge en datotype.
+   Disse transformeringer anbefales på det kraftigste:
 
-1. Hvis du vil føje flere objekter til datakilde i dialogboksen **Rediger forespørgsler**, skal du gå til **Startside** og vælge **Hent data**.
+   - Hvis du indtager data fra en CSV-fil, indeholder den første række ofte overskrifter. Gå til **Transformer tabel**, og vælg **Brug overskrifter som første række**.
+   - Kontrollér, at datatypen er angivet korrekt.
 
-1. Vælg **Gem** i nederste hjørne af Power Query-vinduet for at gemme transformationerne. Når du har gemt, kan du finde din datakilde i **Data** > **Datakilder**.
+1. Vælg **Gem** nederst i Power Query-vinduet for at gemme transformationerne. Når du har gemt, kan du finde din datakilde i **Data** > **Datakilder**.
 
 1. På siden **Datakilder** skal du bemærke, at den nye datakilde har **Opdatering**-status.
 
 ## <a name="available-power-query-data-sources"></a>Tilgængelige Power Query-datakilder
 
-Se [Reference til Power Query-connector](/power-query/connectors/) for at finde en lister over de connectorer, du kan bruge til import af data til Customer Insights. 
+Se [Power Query-connector-referencen](https://docs.microsoft.com/power-query/connectors/) for at få en opdateret liste over connectorer, som du kan vælge for at importere data til Customer Insights. 
 
-Connectorer med et afkrydsningsfelt i kolonnen **Customer Insights (Dataflows)** er tilgængelige til at oprette nye datakilder baseret på Power Query. Gennemgå dokumentationen til en bestemt connector for at lære mere om dens forudsætninger, begrænsninger og andre detaljer.
+Connectorer med markering i kolonnen **Customer Insights (dataflows)** er tilgængelige for oprettelse af nye datakilder, der er baseret på Power Query. Gennemgå dokumentationen til en bestemt connector for at lære mere om dens forudsætninger, begrænsninger og andre detaljer.
 
-## <a name="edit-power-query-data-sources"></a>Rediger Power Query-datakilder
+## <a name="edit-power-query-data-sources"></a>Redigere Power Query-datakilder
 
 > [!NOTE]
 > Det er måske ikke muligt at foretage ændringer af datakilder, der i øjeblikket bruges i en af appens processer (f.eks *segmentering*, *match* eller *fletning*). 
@@ -79,13 +72,8 @@ Connectorer med et afkrydsningsfelt i kolonnen **Customer Insights (Dataflows)**
 2. Vælg den lodrette ellipse ud for den datakilde, du vil ændre, og vælg **Rediger** i rullemenuen.
 
    > [!div class="mx-imgBorder"]
-   > ![Indstillingen Rediger.](media/edit-option-data-sources.png "Indstillingen Rediger")
+   > ![Indstillingen Rediger](media/edit-option-data-sources.png "Indstillingen Rediger")
 
-   [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
-   
-3. Anvend ændringer og transformationer i dialogboksen **Power Query – Rediger forespørgsler** som beskrevet i sektionen [Opret en ny datakilde](#create-a-new-data-source).
+3. Anvend ændringerne og transformationerne i dialogboksen **Power Query – rediger forespørgsler** som beskrevet i afsnittet [Oprette en ny datakilde](#create-a-new-data-source).
 
-4. Vælg **Gem** i Power Query, når du har fuldført dine rettelser, for at gemme ændringerne.
-
-
-[!INCLUDE[footer-include](../includes/footer-banner.md)]
+4. Vælg **Gem** i Power Query, når du har fuldført redigeringen, for at gemme ændringerne.

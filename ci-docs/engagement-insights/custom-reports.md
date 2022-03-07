@@ -4,22 +4,23 @@ description: Flere oplysninger om, hvordan du opretter brugerdefinerede rapporte
 author: mochimochi016
 ms.reviewer: mhart
 ms.author: jefhar
-ms.date: 10/01/2021
+ms.date: 06/09/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: e8cdfc07b67b78febc1d50b3b1fd44ab94448e64
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 2540221710786dc1c84b231fbb23b9749b601cc6a2aeb78614e16002302a80a9
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8232141"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036956"
 ---
 # <a name="create-and-edit-custom-reports"></a>Oprette og redigere brugerdefinerede rapporter
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-Ud over indbyggede rapporter (OOB) kan du oprette en brugerdefineret rapport med diagram- og tabelvisualiseringer, så du kan forstå brugerens adfærd. I denne artikel forklares, hvordan du kan oprette en rapport med de data, du skal bruge, ved hjælp af tabel- og diagramvisualiseringer. Du kan finde oplysninger om OOB-rapporter under [Se rapporter](view-reports.md).
+Ud over standardrapporter kan du oprette en brugerdefineret rapport med diagram- og tabelvisualiseringer, der hjælper dig med at forstå brugerfunktionsmåden. I denne artikel forklares, hvordan du kan oprette en rapport med de data, du skal bruge, ved hjælp af tabel- og diagramvisualiseringer. 
 
 ## <a name="create-a-custom-report"></a>Oprette en brugerdefineret rapport
 
@@ -34,13 +35,11 @@ Ud over indbyggede rapporter (OOB) kan du oprette en brugerdefineret rapport med
     - Vælg **Tilføj visualisering** på kommandolinjen for at oprette en standardtabelvisualisering.
     - Du kan også vælge en kolonne, bjælke, linje, område, cirkel, donut eller tabelvisualisering fra ruden **Rapporteditor**.
 
-1. Vælg en af de tilgængelige indstillinger (f.eks. sidevisninger) på rullelisten **Målepunkter** i sektionen **Data** i **Visualiseringseditor**. Du kan også tilføje **Dimensioner** (f.eks. land/område), der skal medtages i visualiseringen. Du kan finde flere oplysninger i [Se og oprette målepunkter](metrics.md) og [Se og oprette dimensioner](dimensions.md).
+1. Vælg en af de tilgængelige **Metrikværdier** i ruden **Data** (f.eks. sidevisninger), du vil have vist. Tilføj derefter **Dimension** (f.eks. land) for at blive vist i visualiseringerne. Du kan finde flere oplysninger om at tilføje flere indstillinger at vælge imellem under [Få vist og oprette metrikværdier](metrics.md) og [Få vist og oprette dimensioner](dimensions.md).
 
-   :::image type="content" source="media/page-views.png" alt-text="Vælg en metrikværdi til din rapport.":::
+1. Vælg **Design** i ruden **Visualiseringseditor** for at tilføje **Titeltekst** og angive **Placering**, **Dataetiketter** og **Akse**.  Du kan også ændre visualisering ved at vælge en anden diagramtype.
 
-1. Vælg sektionen **Design** i **Visualiseringseditor** for at tilføje **Titeltekst** og skifte **Titel** til og fra.  Du kan også ændre visualiseringstypen ved at vælge et andet diagram, f.eks. **cirkeldiagram**.
-
-1. Sådan ændrer du størrelsen og placeringen af en visualisering:
+1. Du kan ændre størrelsen på og placeringen af en visualisering:
    - Vælg visualisering, og træk derefter en af de forskellige ønsker for at justere størrelsen.
    - Vælg visualisering, og flyt den til en ny placering. Du kan også bruge piletasterne til at ændre placeringen.
 1. Vælg **Tilføj visuel** på kommandolinjen for at tilføje et ny visualisering.
@@ -48,27 +47,17 @@ Ud over indbyggede rapporter (OOB) kan du oprette en brugerdefineret rapport med
 
 1. Angiv et navn til den brugerdefinerede rapport, og vælg **Gem** for at oprette den.
  
-## <a name="filter-a-custom-report"></a>Filtrere en brugerdefineret rapport
-
-Du kan vælge tidsrammen eller datointervallet i en brugerdefineret rapport for at fokusere på en værdi eller tidsperiode.
-
-Hvis du vil bruge en tidsramme, skal du vælge en værdi på rullelisten i rapporten i øverste højre hjørne i rapportvisningen. Du kan også vælge et **Fast datointerval*.
-
-:::image type="content" source="media/filter-time-date-range.png" alt-text="Filtrer efter klokkeslæt eller datointerval.":::
-
-I forbindelse med de fleste rapporter skal du vælge **+ Tilføj betingelse** for at vælge en dimension eller et segment, rapporten skal filtreres efter. Der er flere oplysninger under [Se og oprette segmenter](segments.md).
-
 ## <a name="edit-a-custom-report"></a>Redigere en brugerdefineret rapport
 
 1. Gå til **Analysér** > **Brugerdefineret** for at få adgang til den brugerdefinerede rapportliste.
 
 1. Vælg **Flere [...]** på den brugerdefinerede rapportliste 
 
-1. Vælg **Rediger navn** for at ændre navnet på rapporten.
+1. Vælg **Rediger detaljer** for at ændre navnet på rapporten.
 
-1. Vælg navnet på rapporten, og brug indstillingerne **+ Tilføj visuelt element** og **Rediger** til at tilføje, fjerne, flytte eller tilpasse visualiseringerne.
+1. Vælg navnet på rapporten, og brug indstillingerne **Tilføj visuelle elementer** og **Rediger** til at tilføje, fjerne, flytte eller tilpasse visualiseringerne.
 
-1. Hvis du vil ændre egenskaberne for en visualisering, skal du markere det visuelle element, vælge **...** og derefter **Rediger visuelt element**.
+1. Hvis du vil ændre egenskaberne for en visualisering, skal du vælge **...** og derefter vælge **Rediger visuel**.
 
    :::image type="content" source="media/edit-visual-control.png" alt-text="Redigering af diagramegenskaber for brugerdefinerede rapporter.":::
 
@@ -83,6 +72,5 @@ I forbindelse med de fleste rapporter skal du vælge **+ Tilføj betingelse** fo
 1. Vælg **Slet** for at fjerne rapporten.
 
 1. Bekræft sletningen for at fjerne rapporten permanent.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

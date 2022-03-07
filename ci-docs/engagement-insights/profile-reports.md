@@ -1,33 +1,39 @@
 ---
-title: Aktivere indbyggede (OOB) profilrapporter
-description: Sådan oprettes de indbyggede (OOB) profilrapporter grupperet efter køn, område, alder og oprindelsesområde.
+title: Aktivere de indbyggede profilrapporter
+description: Sådan oprettes de indbyggede profilrapporter grupperet efter område, alder og område.
 author: darrinw-docs
 ms.reviewer: mhart
 ms.author: darrinw
-ms.date: 10/01/2021
+ms.date: 05/03/2021
+ms.service: customer-insights
 ms.subservice: engagement-insights
 ms.topic: conceptual
 ms.manager: shellyha
-ms.openlocfilehash: 4c165c4278a4870e6872d460e20cf7cb1eb8df83
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: bf2ec67c9fb99918b87841d3c0b131934e31b58b
+ms.sourcegitcommit: 0ceb46c4f57ab49d3a2ebb1c8a816bbafe979e3d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8233947"
+ms.lasthandoff: 09/09/2021
+ms.locfileid: "7486113"
 ---
-# <a name="out-of-box-oob-unified-profile-reports"></a>Indbyggede (OOB) samlede profilrapporter
+# <a name="out-of-box-profile-reports"></a>Indbyggede profilrapporter
 
 [!INCLUDE [cc-beta-prerelease-disclaimer](includes/cc-beta-prerelease-disclaimer.md)]
 
-En samlet profilrapport er en samling datavisualisering, der hjælper dig med at forstå, hvordan brugere agerer. Ved at oprette forbindelse til Customer Insights-funktionalitet for målgruppeindsigt kan engagementsindsigt vise OOB-rapporter med oplysninger om samlede kundeprofiler. Rapporten indeholder antallet af profiler, du har grupperet efter placering, alder og geografisk placering. Du kan finde oplysninger om kundeprofiler under [Kundeprofiler](../audience-insights/customer-profiles.md).
+En rapport er en samling datavisualiseringer, der hjælper dig med at forstå brugerfunktionsmåder. Hvis du opretter forbindelse til Customer Insights og målgruppeindsigt, kan engagementsindsigt vise en rapport med oplysninger om ensartede kundeprofiler. Rapporten indeholder antallet af profiler, du har grupperet efter placering, alder og geografisk placering.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-En miljøadministrator skal [oprette et link mellem engagementsindsigt og målgruppeindsigt](integrate-audience-insights-engagement-insights.md).
+I målgruppeindsigt-miljøet skal der lagres data i et kundebaseret Azure Data Lake Storage-firma.
+
+Hvis du bruger en prøveversion af målgruppeindsigt eller et miljø i et Customer Insights-administreret Data Lake, kan du [kontakte os](https://go.microsoft.com/fwlink/?linkid=2145734) for at få hjælp.  
+
 
 ## <a name="enable-the-customer-profile-report"></a>Aktivere kundeprofilrapporten
 
-Når du har angivet linket mellem engagementsindsigt og målgruppeindsigt, kan administratoren derefter give andre personer i organisationen adgang til at se rapporten. Den miljøadministrator, der konfigurerer forbindelsen, har automatisk adgang til rapporten. 
+En miljøadministrator skal [sammenkæde engagementsindsigt og målgruppeindsigt](integrate-audience-insights-engagement-insights.md).
+
+Når du har angivet forbindelsesoplysningerne, kan administratoren give andre personer i organisationen adgang til at se rapporten. Den miljøadministrator, der konfigurerer forbindelsen, har automatisk adgang til rapporten. 
 
 Når forbindelsen er fuldført, er funktionen **Profiler** tilgængelig i venstre navigationsrude. 
 

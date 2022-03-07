@@ -4,16 +4,17 @@ metadata:
   author: m-hartmann
   description: Find relevante artikler for at starte indholdet i hjælpen.
   ms.author: mhart
-  ms.date: 03/02/2022
+  ms.date: 10/29/2020
+  ms.service: customer-insights
   ms.topic: landing-page
-  ms.openlocfilehash: 5efa266dfe8d70812f4c668b04cee2f93f206f7b
-  ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+  ms.openlocfilehash: f175ea858213022afc87fce77213893c7d050d30
+  ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
   ms.translationtype: HT
   ms.contentlocale: da-DK
-  ms.lasthandoff: 02/25/2022
-  ms.locfileid: "8350448"
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "4405461"
 title: Dynamics 365 Customer Insights-dokumentation
-summary: Find nyttige ressourcer, der kan hjælpe dig med at komme i gang, og få mere at vide om funktioner og funktioner i Customer Insights.
+summary: Find nyttige ressourcer til at komme i gang, og få mere at vide om funktioner i Customer Insights.
 landingContent:
 - title: Mød Customer Insights
   linkLists:
@@ -22,28 +23,50 @@ landingContent:
     - text: " Oversigt over Customer Insights"
       url: overview.md
     - text: Frigivelsesplaner
-      url: /dynamics365/release-plans/
-    - text: Opdag CDP'en
-      url: https://dynamics.microsoft.com/ai/customer-insights/
-  - linkListType: learn
-    links:
-    - text: Customer Insights, læringsforløb
-      url: /learn/paths/build-customer-insights/
-- title: Start her med Customer Insights
+      url: https://docs.microsoft.com/dynamics365-release-plan/2020wave2/customer-data-platform/dynamics365-customer-insights/planned-features
+    - text: Få adgang til dit miljø
+      url: https://home.ci.ai.dynamics.com/
+- title: Introduktion til målgruppen Insights
   linkLists:
   - linkListType: get-started
     links:
     - text: Tilmeld dig en prøveversion
       url: https://dynamics.microsoft.com/en-us/get-started/?appname=customerinsights
-    - text: Nyheder i målgruppeindsigt
+    - text: Nyheder
       url: audience-insights/whats-new-audience-insights.md
-    - text: Hurtig startvejledning
-      url: audience-insights/get-started.md
-  - linkListType: learn
+    - text: Dokumentation i målgruppen Insights
+      url: audience-insights/index.yml
+- title: Kom i kontakt
+  linkLists:
+  - linkListType: overview
     links:
-    - text: Start her
-      url: /learn/modules/get-started-customer-data-platform/
-- title: Administere Customer Insights
+    - text: Tilmeld dig Dynamics 365-community
+      url: https://go.microsoft.com/fwlink/?linkid=2073991
+    - text: Del dine ideer
+      url: https://go.microsoft.com/fwlink/?linkid=2074172
+    - text: Rapportér et problem
+      url: https://go.microsoft.com/fwlink/?linkid=2079641
+- title: Selvstudier til målgruppen Insights
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Opret et miljø
+      url: audience-insights/home.md
+    - text: Oprette en samlet kundeprofil
+      url: https://docs.microsoft.com/learn/modules/unified-customer-profile/
+    - text: Arbejde med appen
+      url: https://docs.microsoft.com/learn/modules/working-with-customer-insights/
+- title: Eksport af data fra målgruppen Insights
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Konfigurer eksportdestinationer
+      url: audience-insights/export-destinations.md
+    - text: Kundekort i Dynamics 365-apps
+      url: audience-insights/customer-card-add-in.md
+    - text: Power BI-connector
+      url: audience-insights/export-power-bi.md
+- title: Administrér målgruppen Insights
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -53,17 +76,33 @@ landingContent:
       url: audience-insights/permissions.md
     - text: Administrere flere miljøer
       url: audience-insights/manage-environments.md
-  - linkListType: learn
-    links:
-    - text: Administere Customer Insights
-      url: /learn/modules/administer-customer-data-platform/
-- title: Kom i kontakt
+- title: Om målgruppen Insights (prøveversion)
   linkLists:
   - linkListType: overview
     links:
-    - text: Tilmeld dig Dynamics 365-community
-      url: https://go.microsoft.com/fwlink/?linkid=2073991
-    - text: Del dine ideer
-      url: https://go.microsoft.com/fwlink/?linkid=2074172
-    - text: Rapportér en fejl
-      url: https://go.microsoft.com/fwlink/?linkid=2079641
+    - text: Oversigt over funktioner
+      url: engagement-insights/overview.md
+    - text: Vilkår og betingelser
+      url: engagement-insights/glossary.md
+    - text: Start her
+      url: engagement-insights/get-started.md
+- title: Rapporter for engagementindsigt (prøveversion)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Vis rapporter
+      url: engagement-insights/view-reports.md
+    - text: Opret brugerdefinerede rapporter
+      url: engagement-insights/custom-reports.md
+    - text: Rapporten Vis samlede profiler
+      url: engagement-insights/profile-reports.md
+- title: Hændelser i engagementindsigt (prøveversion)
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Opret raffinerede hændelser
+      url: engagement-insights/refined-events.md
+    - text: Eksportér hændelser
+      url: engagement-insights/export-events.md
+    - text: Slet og eksportér personlige data
+      url: engagement-insights/delete-export-personal-data.md

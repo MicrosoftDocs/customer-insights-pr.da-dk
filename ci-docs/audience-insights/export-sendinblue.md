@@ -1,19 +1,20 @@
 ---
 title: Eksporter Customer Insights-data til Sendinblue
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Sendinblue.
-ms.date: 10/08/2021
+ms.date: 06/29/2021
 ms.reviewer: mhart
+ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: phkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8d870ff31ce2d441e619ac18899c4d1b6c69ca41
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: be52554763b57e1c1ef2f960d52bbae79ac9827913c97ac73b429f66bbf4db37
+ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8231412"
+ms.lasthandoff: 08/10/2021
+ms.locfileid: "7036048"
 ---
 # <a name="export-segments-to-sendinblue-preview"></a>Eksporter segmenter til Sendinblue (forhåndsversion)
 
@@ -28,10 +29,10 @@ Eksportér segmenter ud fra samlede kundeprofiler til at generere kampagner, lev
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Op til 1 million kundeprofiler pr. eksport til Sendinblue.
+- Op til 1 million profiler pr. eksport til Sendinblue.
 - Eksport til Sendinblue er begrænset til segmenter.
-- Eksport af segmenter med i alt 1 million kundeprofiler kan tage op til 90 minutter. 
-- Antallet af kundeprofiler, du kan eksportere til Sendinblue, er begrænset og afhænger af din kontrakt med Sendinblue.
+- Eksport af segmenter med i alt 1 million profiler kan tage op til 90 minutter. 
+- Antallet af profiler, du kan eksportere til Sendinblue, afhænger af og er begrænset af din kontrakt med Sendinblue.
 
 ## <a name="set-up-connection-to-sendinblue"></a>Konfigurer forbindelse til Sendinblue
 
@@ -63,7 +64,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv din Id for **Sendinblue-liste**. 
 
-1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. 
+1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. 
 
 1. Du kan også eksportere **Fornavn**, **Efternavn** og **Telefon** for at oprette mere personlige e-mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 
