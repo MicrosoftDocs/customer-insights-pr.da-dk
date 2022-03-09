@@ -1,36 +1,49 @@
 ---
 title: Segmenter i målgruppeindsigt
 description: Oversigt over segmenter, og hvordan de oprettes og administreres.
-ms.date: 05/03/2021
-ms.service: customer-insights
+ms.date: 11/01/2021
 ms.subservice: audience-insights
-ms.topic: how-to
+ms.topic: overview
 author: JimsonChalissery
 ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 336cab8619c0b80b7b8a38035cae99620baf2873
-ms.sourcegitcommit: 0b754d194d765afef70d1008db7b347dd1f0ee40
+searchScope:
+- ci-customers-page
+- ci-enrichment-details
+- ci-segments
+- ci-segment-details
+- customerInsights
+ms.openlocfilehash: c58f79c2beda1083d19bd36d94549ff1a46b096e
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/24/2021
-ms.locfileid: "6306250"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8355976"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
 Med segmenter kan du gruppere dine kunder baseret på demografiske, transaktionsrelaterede eller adfærdsattributter. Du kan bruge segmenter til at målrette kampagnefremstød, salgsaktiviteter og kundesupporthandlinger for at nå dine forretningsmæssige mål.
 
-Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* af et segment. Der gælder nogle [tjenestebegrænsninger](service-limits.md).
+Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* af et segment. Der gælder nogle [tjenestebegrænsninger](/dynamics365/customer-insights/service-limits).
 
 ## <a name="create-a-new-segment"></a>Oprette et nyt segment
 
 Der er flere måder, du kan oprette et nyt segment på: 
 
-- Komplekst segment med segmentgenerator: [Tomt segment](segment-builder.md#create-a-new-segment)
-- Simple segmenter med én operator: [Hurtigt segment](segment-builder.md#quick-segments)
-- AI-baserede måder at finde lignende kunder på: [Lignende kunder](find-similar-customer-segments.md)
-- AI-baserede forslag ud fra målinger eller attributter: [Foreslåede segmenter til forbedring af målingerne](suggested-segments.md)
-- Forslag baseret på aktiviteter: [Foreslåede segmenter baseret på kundeaktivitet](suggested-segments-activity.md)
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
+
+- Komplekst segment med segmentgenerator: [Byg din egen](segment-builder.md#create-a-new-segment) 
+- Simple segmenter med én operator: [Hurtigt segment](segment-builder.md#quick-segments) 
+- AI-baserede måder at finde lignende kunder på: [Lignende kunder](find-similar-customer-segments.md) 
+- AI-baserede forslag ud fra målinger eller attributter: [Foreslåede segmenter til forbedring af målingerne](suggested-segments.md) 
+- Forslag baseret på aktiviteter: [Foreslåede segmenter baseret på kundeaktivitet](suggested-segments-activity.md) 
+
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
+
+- Komplekst segment med segmentgenerator: [Byg din egen](segment-builder.md#create-a-new-segment)
+
+---
 
 ## <a name="manage-existing-segments"></a>Administrere eksisterende segmenter
 
@@ -57,8 +70,7 @@ Følgende handlinger er tilgængelige, når du vælger et segment:
 
 Du kan opdatere alle segmenter på én gang ved at vælge **Opdater alle** på siden **Segmenter**, eller du kan opdatere et eller flere segmenter, når du vælger dem, og vælge **Opdater** fra indstillingerne. Du kan også konfigurere en tilbagevendende opdatering i **Admin** > **System** > **Planlæg**.
 
-> [!TIP]
-> Opgaver og processer indeholder [seks typer status](system.md#status-types). De fleste processer er desuden [afhængige af andre downstream-processer](system.md#refresh-policies). Du kan vælge status for en proces for at se statusdetaljer for hele jobbet. Når du har valgt **Se detaljer** for en af opgaverne i jobbet, kan du finde flere oplysninger: behandlingstid, datoen for den seneste behandling og alle fejl og advarsler, der er knyttet til opgaven.
+[!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
 ## <a name="export-segments"></a>Eksportere segmenter
 
@@ -70,9 +82,9 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
 
 1. Vælg **Administrer eksport** fra rullelisten Handlinger.
 
-1. Siden **Eksporter (forhåndsversion) for segment** åbnes. Alle konfigurerede eksporter vises grupperet efter eksporter, der indeholder det aktuelle segment eller ikke indeholder det.
+1. Siden **Eksporter (forhåndsversion) for segment** åbnes. Du kan se alle konfigurerede eksporter grupperet efter, om de indeholder det aktuelle segment eller ej.
 
-   1. Hvis du vil føje det valgte segment til en eksport, skal du markere eksporten på listen og vælge **Tilføj segment**.
+   1. Hvis du vil føje det valgte segment til en eksport, skal du **redigere** den pågældende eksport for at vælge det tilknyttede segment og derefter gemme. I miljøer for individuelle kunder kan du i stedet vælge eksporten på listen og vælge **Tilføj segment** for at opnå det samme resultat.
 
    1. Hvis du vil oprette en ny eksport med det valgte segment, skal du vælge **Tilføj eksport**. Du kan finde flere oplysninger om oprettelse af eksport i [Konfigurere en ny eksport](export-destinations.md#set-up-a-new-export).
 
@@ -89,7 +101,7 @@ Den øverste del af siden indeholder en tendensgraf, der viser ændringer i medl
 Du kan opdatere tidsrammen i visualiseringen.
 
 > [!div class="mx-imgBorder"]
-> ![Tidsinterval for segment](media/segment-time-range.png "Tidsinterval for segment")
+> ![Tidsinterval for segment.](media/segment-time-range.png "Tidsinterval for segment")
 
 Den nederste del indeholder en liste over segmentmedlemmerne.
 
@@ -98,4 +110,5 @@ Den nederste del indeholder en liste over segmentmedlemmerne.
 >
 >Listen er et eksempel på de matchende segmentmedlemmer og viser de første 100 poster i dit segment, så du hurtigt kan evaluere det og gennemgå dets definitioner, hvis det er nødvendigt. Hvis du vil se alle matchende poster, skal du [eksportere segmentet](export-destinations.md).
 
-[!INCLUDE[footer-include](../includes/footer-banner.md)] 
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

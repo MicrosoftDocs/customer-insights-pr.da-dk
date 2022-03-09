@@ -1,24 +1,28 @@
 ---
-title: Tilføjelsesprogrammet Kundekort til Dynamics 365-apps
+title: Tilføjelsesprogrammet Kundekort til Dynamics 365-apps (indeholder video)
 description: Vis data fra målgruppeindsigt i Dynamics 365-apps med dette tilføjelsesprogram.
-ms.date: 09/30/2021
+ms.date: 02/02/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: pkieffer
-ms.author: philk
+author: Nils-2m
+ms.author: nikeller
 manager: shellyha
-ms.openlocfilehash: dbcdcbea8ffd1755b58c322233c08c70a065db36
-ms.sourcegitcommit: 31a9b531dacd3a6465b3030c704ff5c085b7e122
+searchScope:
+- ci-customers-page
+- ci-search-filter
+- ci-customer-card
+- customerInsights
+ms.openlocfilehash: d67d8e2cb30cf20de204bfb293bb8ce81c7bb2f4
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "7792020"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353858"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilføjelsesprogrammet Kundekort er installeret i en understøttet Dynamics 365-app, kan du vælge at få vist kundeprofilfelter, indsigt og aktivitetstidslinje. Tilføjelsesprogrammet henter data fra Customer Insights, uden at det påvirker dataene i den tilknyttede Dynamics 365-app.
 
@@ -27,14 +31,14 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
 ## <a name="prerequisites"></a>Forudsætninger
 
 - Tilføjelsesprogrammet fungerer kun med Dynamics 365-modelbaserede apps, f.eks. Sales eller Customer Service, version 9.0 og nyere.
-- Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, skal de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse connectoren](connect-power-query.md).
+- Hvis dine Dynamics 365-data skal knyttes til kundeprofilers målgruppeindsigt, anbefaler vi, at de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse-connectoren](connect-power-query.md). Hvis du bruger en anden metode til at indtage Dynamics 365-kontakter (eller firmaer), skal du kontrollere, at feltet `contactid` (eller `accountid`) er angivet som den [primære nøgle for den pågældende datakilde i tilknytningstrinnene i processen til samling af data](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
 - Alle Dynamics 365-brugere af Kundekort-tilføjelsesprogrammet skal [tilføjes som brugere](permissions.md) i målgruppeindsigt for at kunne se dataene.
 - [Konfigurerede søge- og filterfunktioner](search-filter-index.md) i målgruppeindsigt kræves for at få opslag af data til at fungere.
 - Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i målgruppeindsigt. Nogle data og kontrolelementer er kun tilgængelige i miljøer af bestemte typer. Du får besked i konfigurationen af tilføjelsesprogrammet, hvis et kontrolelement ikke er tilgængeligt på grund af den valgte miljøtype. Få mere at vide om [miljøanvendelser](work-with-business-accounts.md).
   - **Kontrolelementet Måling**: Kræver [konfigurerede målinger](measures.md) af typen kundeattributter.
-  - **Kontrolelementet Intelligens**: Kræver data genereret ved hjælp af [forudsigelser](predictions.md) eller [brugerdefinerede modeller](custom-models.md).
+  - **Intelligenskontrol**: Kræver data genereret ved hjælp af [forudsigelser eller brugerdefinerede modeller](predictions-overview.md).
   - **Kontrolelementet Kundeoplysninger**: Alle felter fra profilen er tilgængelige i den samlede kundeprofil.
-  - **Kontrolelementet Forbedring**: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler. Korttilføjelsesprogrammet understøtter disse forbedringer: [Mærker](enrichment-microsoft.md) leveret af Microsoft, [Interesser](enrichment-microsoft.md) leveret af Microsoft.
+  - **Kontrolelementet Forbedring**: Kræver aktive [forbedringer](enrichment-hub.md), der anvendes på kundeprofiler. Korttillægget understøtter disse forbedringer. [Mærker](enrichment-microsoft.md), der er leveret af Microsoft, [Interesser](enrichment-microsoft.md), der leveres af Microsoft, og [Office-engagementdata](enrichment-office.md), der leveres af Microsoft.
   - **Kontrolelementet Kontakter**: Kræver definition af semantisk objekt af typen kontakter.
   - **Kontrolelementet Tidslinje**: Kræver [konfigurerede aktiviteter](activities.md).
 
@@ -118,5 +122,26 @@ Tilføjelsesprogrammet Kundekort opgraderes ikke automatisk. Hvis du vil opgrade
 
 1. Når du har startet opgraderingsprocessen, kan du se en indlæsningsindikator, indtil opgraderingen er fuldført. Hvis der ikke findes en nyere version, vises der en fejlmeddelelse i opgraderingen.
 
+## <a name="troubleshooting"></a>Fejlfinding
+
+### <a name="controls-from-customer-card-add-in-dont-find-data"></a>Kontrolelementer fra tilføjelsesprogrammet Kundekort kan ikke finde data
+
+**Problem:**
+
+Selv med korrekt konfigurerede id-felter kan kontrolelementerne ikke finde data til kunder.  
+
+**Løsning:**
+
+1. Kontrollér, at du har konfigureret tilføjelsesprogrammet Kort i henhold til instruktionerne: [Konfiguration af kundekort-tilføjelsesprogrammet](#configure-the-customer-card-add-in) 
+
+1. Gennemse konfigurationen af dataindtagelse. Rediger datakilde til Dynamics 365-systemet, som indeholder kontakt-id'et GUID. Hvis der vises et GUID for kontakt-id'et med store bogstaver i Power Query-editoren, skal du prøve følgende: 
+    1. Rediger datakilde for at åbne datakilde i Power Query-editor.
+    1. Vælg kolonnen for kontakt-id.
+    1. Vælg **Transformér** i overskriftslinjen for at få vist tilgængelige handlinger.
+    1. Vælg **små bogstaver**. Kontrollér, om GUID'er i tabellen nu er med små bogstaver.
+    1. Gem datakilden.
+    1. Kør dataindtagelse, samling og downstream-processer for at overføre ændringerne til GUID'et. 
+
+Når hele opdateringen er fuldført, skal kontrolelementerne til tilføjelsesprogrammet Til kundekort vise de forventede data. 
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

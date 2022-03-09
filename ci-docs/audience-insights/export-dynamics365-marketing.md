@@ -3,22 +3,24 @@ title: Eksportér Customer Insights-data til Dynamics 365 Marketing
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Dynamics 365 Marketing.
 ms.date: 08/24/2021
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: b8e63a738abaf4fbb902e3edbf83f5a815978478
-ms.sourcegitcommit: 8e89575fe2acb4b289fc157fa7c4c29caf9be967
+searchScope:
+- ci-export
+- customerInsights
+ms.openlocfilehash: d3254bf13b843fe8e1b6e6db49dd6ee1dc22290c
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "7417198"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8353904"
 ---
 # <a name="use-segments-in-dynamics-365-marketing-preview"></a>Brug segmenter i Dynamics 365 Marketing (forhåndsversion)
 
-[!INCLUDE [cc-data-platform-banner](../includes/cc-data-platform-banner.md)]
+
 
 Brug [segmenter](segments.md) til at generere kampagner, og kontakt bestemte grupper af kunder sammen med Dynamics 365 Marketing. Du kan finde flere oplysninger under [Bruge segmenter fra Dynamics 365 Customer Insights sammen med Dynamics 365 Marketing](/dynamics365/marketing/customer-insights-segments).
 
@@ -45,7 +47,7 @@ Hvis du bruger de nye funktioner i Dynamics 365 Marketing til organisering i rea
 
 1. I sektionen **Serveradministratorkonto** vælg **Log på** og vælg en Dynamics 365 Marketing-konto.
 
-1. Knyt et kunde-ID-felt til Dynamics 365-kontakt-id.
+1. Knyt feltet Kontakt-id i objektet Kunde til Dynamics 365-kontakt-id'et.
 
 1. Vælg **Gem** for at fuldføre forbindelsen. 
 

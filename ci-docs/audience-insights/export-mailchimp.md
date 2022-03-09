@@ -1,76 +1,85 @@
 ---
 title: Eksportér Customer Insights-data til Mailchimp
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Mailchimp.
-ms.date: 10/26/2020
-ms.reviewer: philk
-ms.service: customer-insights
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Mailchimp.
+ms.date: 10/08/2021
+ms.reviewer: mhart
 ms.subservice: audience-insights
-ms.topic: conceptual
-author: m-hartmann
-ms.author: mhart
+ms.topic: how-to
+author: pkieffer
+ms.author: philk
 manager: shellyha
-ms.openlocfilehash: edff494f6edf26a8b641cb1d788a715389ddb346
-ms.sourcegitcommit: cf9b78559ca189d4c2086a66c879098d56c0377a
+ms.openlocfilehash: f7a33f2eddb6b625ddb8663b97103de75beab44c
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "4405414"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226839"
 ---
-# <a name="connector-for-mailchimp-preview"></a>Connector til Mailchimp (prøveversion)
+# <a name="export-segments-to-mailchimp-preview"></a>Eksportere segmenter til Mailchimp (forhåndsversion)
 
 Eksportér segmenter af samlede kundeprofiler til MailChimp for at oprette nyhedsbreve og e-mailkampagner.
 
-## <a name="prerequisites"></a>Forudsætninger
+## <a name="prerequisites-for-connection"></a>Forudsætninger for forbindelse
 
 -   Du har en [Mailchimp-konto](https://mailchimp.com/) og tilsvarende administratorlegitimationsoplysninger.
 -   Der findes eksisterende målgrupper i Mailchimp og de tilsvarende id'er. Du kan finde flere oplysninger i [Mailchimp-målgrupper](https://mailchimp.com/help/create-audience/).
 -   Du har [konfigureret segmenter](segments.md)
 -   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
 
-## <a name="connect-to-mailchimp"></a>Opret forbindelse til Mailchimp
+## <a name="known-limitations"></a>Kendte begrænsninger
 
-1. Gå til **Adminstration** > **Eksportdestinationer**.
+- Op til 1 million kundeprofiler pr. eksport til Mailchimp.
+- Eksport til Mailchimp er begrænset til segmenter.
+- Eksport af segmenter med 1 million kundeprofiler kan tage op til tre timer. 
+- Antallet af kundeprofiler, du kan eksportere til Mailchimp, er begrænset og afhænger af din kontrakt med Mailchimp.
 
-1. Under **Mailchimp** skal du vælge **Konfigurer**.
+## <a name="set-up-connection-to-mailchimp"></a>Konfigurer forbindelsen til Mailchimp
 
-1. Giv din eksportdestination et genkendeligt navn ifeltet **Vist navn**.
+1. Gå til **Administrator** > **Forbindelser**.
+
+1. Vælg **Tilføj forbindelse**, og vælg **Mailchimp** for at konfigurere forbindelsen.
+
+1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
+
+1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
 
-1. Angiv dit **[Mailchimp-målgruppe-id](https://mailchimp.com/help/find-audience-id/)**, og vælg **Opret forbindelse** for at initialisere forbindelsen til Mailchimp.
+1. Vælg **Opret forbindelse** for at initialisere forbindelsen til Mailchimp.
 
 1. Vælg **Godkendelse med Mailchimp**, og angiv dine Mailchimp-legitimationsoplysninger.
 
 1. Vælg **Tilføj dig selv som eksport bruger**, og giv din Customer Insights-legitimationsoplysninger.
 
-   :::image type="content" source="media/export-connect-mailchimp.png" alt-text="Eksportér skærmbilleder til Mailchimp-forbindelse":::
-
-1. Vælg **Næste** for at konfigurere eksporten.
+1. Vælg **Gem** for at fuldføre forbindelsen. 
 
 ## <a name="configure-the-connector"></a>Konfigurer connectoren
 
-1. I afsnittet **Datamatching** i feltet **E-mail** skal du vælge det felt i din samlede kundeprofil, der repræsenterer en kundens e-mailadresse. 
+Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
 
-1. Du kan også eksportere **Fornavn** og **Efternavn** som ekstra felter for at oprette mere personlige e-mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
+1. Gå til **Data**> **Eksport**.
+
+1. Vælg **Tilføj destination** for at oprette en ny eksport.
+
+1. Vælg en forbindelse i sektionen Mailchimp i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+
+1. Angiv din **[Mailchimp Målgruppe-id](https://mailchimp.com/help/find-audience-id/)**
+
+1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. 
+
+1. Du kan også eksportere **Fornavn** og **Efternavn** for at oprette mere personlige e-mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 
 1. Vælg de segmenter, du vil eksportere. Du kan eksportere op til 1000000 kundeprofiler i alt til Mailchimp.
 
-   :::image type="content" source="media/export-segments-mailchimp.png" alt-text="Vælge felter og segmenter, der skal eksporteres til MailChimp":::
-
 1. Vælg **Gem**.
 
-## <a name="export-the-data"></a>Eksportér dataene
+Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Du kan [eksportere data efter behov](export-destinations.md). Eksporten vil også køre med alle [planlagte opdateringer](system.md#schedule-tab). I Mailchimp kan du nu finde dine segmenter under [Mailchimp-målgrupper](https://mailchimp.com/help/create-audience/).
-
-## <a name="known-limitations"></a>Kendte begrænsninger
-
-- Op til 1000000 profiler pr. eksport til Mailchimp.
-- Eksport til Mailchimp er begrænset til segmenter.
-- Eksport af segmenter med det samlede antal 1000000-profiler kan tage op til tre timer på grund af begrænsninger på udbydersiden. 
-- Antallet af profiler, du kan eksportere til Mailchimp, er afhængige og begrænsede i kontrakten med Mailchimp.
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 
 Når du aktiverer Dynamics 365 Customer Insights for at overføre data til Mailchimp, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at Mailchimp overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne eksportdestination for at afslutte brugen af denne funktionalitet.
+
+[!INCLUDE[footer-include](../includes/footer-banner.md)]

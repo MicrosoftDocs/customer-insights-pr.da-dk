@@ -2,19 +2,21 @@
 title: Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en tjenestekonto
 description: Brug en Azure-tjenestekonto til at oprette forbindelse til din egen Data Lake.
 ms.date: 12/06/2021
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: faef3583337fd495e7baf40b0a208f1d9f10281a
-ms.sourcegitcommit: 11b343f6622665251ab84ae39ebcd91fa1c928ca
+searchScope:
+- ci-system-security
+- customerInsights
+ms.openlocfilehash: d593880b06bd21e96826039a67382b75a4296a87
+ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "7900236"
+ms.lasthandoff: 02/25/2022
+ms.locfileid: "8354181"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto
 
@@ -23,7 +25,7 @@ I denne artikel beskrives, hvordan du opretter forbindelse mellem Dynamics 365 C
 Automatiserede værktøjer, der bruger Azure-tjenester, bør altid have begrænsede tilladelser. I stedet for at have programmer til at logge på som bruger med fuld administratorrettigheder, tilbyder Azure tjenestekonti. Du kan bruge servicechefer til på sikker måde at [tilføje eller redigere en mappe med Common Data Model som en datakilde](connect-common-data-model.md) eller [oprette eller opdatere et miljø](create-environment.md).
 
 > [!IMPORTANT]
-> - Den lagerkonto for Data Lake, der skal bruge tjenestekontoen, skal have [aktiveret hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace).
+> - Den Data Lake-lagerkonto, der skal bruge tjenestekontoen, skal være Gen2 og have [hierarkisk navneområde aktiveret](/azure/storage/blobs/data-lake-storage-namespace). Azure Data Lake Gen1-lagerkonti understøttes ikke.
 > - Du skal have administratortilladelser til dit Azure-abonnement for at oprette en servicechef.
 
 ## <a name="create-an-azure-service-principal-for-customer-insights"></a>Oprettelse af en Azure-servicekonto til Customer Insights
@@ -90,7 +92,7 @@ Det kan tage op til 15 minutter at overføre ændringerne.
 
 ## <a name="enter-the-azure-resource-id-or-the-azure-subscription-details-in-the-storage-account-attachment-to-audience-insights"></a>Angiv Azure Resource-id eller Azure-abonnementsoplysningerne i lagerkontoen for den vedhæftede målgruppeindsigt.
 
-Vedhæft en Data Lake Storage-konto i målgruppeindsigter for at [gemme outputdata](manage-environments.md) eller [bruge det som en datakilde](connect-common-data-service-lake.md). Med denne indstilling kan du vælge mellem en ressourcebaseret eller abonnementsbaseret fremgangsmåde. Afhængigt af den fremgangsmåde, du vælger, skal du følge proceduren i et af følgende afsnit.
+Vedhæft en Data Lake Storage-konto i målgruppeindsigter for at [gemme outputdata](manage-environments.md) eller [bruge det som en datakilde](/dynamics365/customer-insights/audience-insights/connect-dataverse-managed-lake). Med denne indstilling kan du vælge mellem en ressourcebaseret eller abonnementsbaseret fremgangsmåde. Afhængigt af den fremgangsmåde, du vælger, skal du følge proceduren i et af følgende afsnit.
 
 ### <a name="resource-based-storage-account-connection"></a>Ressourcebaseret forbindelse til lagerkonto
 

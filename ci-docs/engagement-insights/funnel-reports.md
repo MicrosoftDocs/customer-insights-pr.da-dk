@@ -4,17 +4,16 @@ description: Sådan bruges tragtrapporter til at forstå, hvordan målgruppen tr
 ms.reviewer: mhart
 ms.author: kamacdon
 author: kamacdon
-ms.date: 06/23/2021
-ms.service: customer-insights
+ms.date: 09/21/2021
 ms.subservice: engagement-insights
 ms.topic: how-to
 ms.manager: shellyha
-ms.openlocfilehash: 7c6b7b7285556f8a531ce9e29f0d1de162562be6fb43dd826a65fd9e00d87b30
-ms.sourcegitcommit: aa0cfbf6240a9f560e3131bdec63e051a8786dd4
+ms.openlocfilehash: 7bb961c5ba8d42f704eefe0dcb22e561367f3efb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2021
-ms.locfileid: "7032248"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8226253"
 ---
 # <a name="create-and-manage-funnel-reports"></a>Opret, og administrer tragtrapporter
 
@@ -158,4 +157,31 @@ Du kan ændre navnet på en tragtrapport, slette den eller ændre trinnene i rap
 1. Markér et navn for at åbne rapporten.
 
 1. Markér det trin, du vil fjerne, og vælg derefter **Slet**.
+
+## <a name="funnel-insights"></a>Tragtindsigt 
+
+Engagementsindsigt giver nu tragtindsigt til kunderne. Brug tragtindsigt til at få større indsigt i kundernes adfærd omkring trinnene i tragtrapporten. Når du opretter og gemmer en ny tragtrapport, oprettes der automatisk tragtindsigt for rapporten. 
+
+:::image type="content" source="media/funnel-insights.png" alt-text="Tragtindsigt.":::
+
+> [!NOTE]
+> Tragtindsigt kan kun oprettes for tragttrin, **der ikke** indeholder brugerdefinerede dimensioner. Hvis du vil generere tragtindsigt for alle trin i tragten, skal du bruge in-of-box-engagementsindsigt til at oprette tragttrinnene. 
+
+Du kan få vist tragtindsigt fra følgende kategorier på både hoved- og trinniveauer: 
+
+ - Omregningskurs
+ -    Konverteringsraten mellem Tjek ud og Køb er 22 %.
+ - Overgangstid 
+ -    Den gennemsnitlige konverteringsfrekvens mellem Indkøbskurv og Tjek ud er 23 minutter. 
+ - Sluttidspunkt 
+ -    Den gennemsnitlige tid, det tager kunderne at fuldføre tragten, er 47 minutter. 
+
+Brug denne indsigt til at gå mere i dybden med kundernes funktionsmåde og få en bedre forståelse af frafaldspunkter og konverteringer for tragtrapporten. 
+
+Hvis du vil sammenligne indsigt på tværs af forskellige trin, skal du vælge **Se trinvise vejledninger** eller **Sammenlign med andre trin** fra indsigtskortene. Her vises et søjlediagram, hvor metrikværdier sammenlignes for hvert trin i tragten. 
+
+Tragtindsigt genberegnes hver 24. time, eller når du **gemmer** tragtrapporten. 
+
+> [!NOTE]
+> Hvis du vil have vist indsigt for tragten, skal du gemme rapporten, hver gang du foretager ændringer. 
 

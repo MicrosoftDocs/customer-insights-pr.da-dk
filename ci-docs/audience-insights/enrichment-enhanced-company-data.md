@@ -1,20 +1,19 @@
 ---
 title: Forbedrede virksomhedsdata
 description: Forbedre og normalisere virksomhedsdata med Microsofts modeller.
-ms.date: 11/05/2021
+ms.date: 01/19/2022
 ms.reviewer: mhart
-ms.service: customer-insights
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 9bfb96d47de4ec98325e644c60752fc7cab2706c
-ms.sourcegitcommit: 6efcba688d1db1a5d6343c229f292a26c48fc007
+ms.openlocfilehash: 7a576621c71b925bd1563827aca10cad4ef9b4eb
+ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "7770163"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "8229396"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Forbedring af virksomhedsprofiler med forbedrede virksomhedsdata
 
@@ -51,7 +50,8 @@ Der er nogle få begrænsninger i forbindelse med de forbedrede data. Elementern
 
 1.  Bekræft firmaets identitet. Vi kontrollerer ikke, om inputtet er en eksisterende organisation, eller om en virksomhed bruger outputtet som standardnavn.
 2.  Omfattende dækning af virksomheder globalt. Microsofts kompilerede virksomhedsdata har global dækning, men tilbyder mest dækning i Australien, Canada, Storbritannien og USA.
-3.  Garanterer nøjagtigheden eller opdatering af data. Da forretningsoplysninger ofte ændres, kan vi ikke garantere, at de forbedrede virksomhedsdata altid er nøjagtige eller opdaterede.
+3.  Standardiser virksomhedsadresser globalt. Vi understøtter i øjeblikket standardiserede adresser i disse lande eller områder: Australien, Canada, Frankrig, Tyskland, Italien, Japan, Storbritannien og USA.
+4.  Garanterer nøjagtigheden eller opdatering af data. Da forretningsoplysninger ofte ændres, kan vi ikke garantere, at de forbedrede virksomhedsdata altid er nøjagtige eller opdaterede.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
@@ -81,7 +81,17 @@ Hvis du vil starte forbedringsprocessen, skal du vælge **Kør** fra kommandolin
 
 Når forbedringsprocessen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under **Mine forbedringer**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler.
 
-Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at vælge **Vis forbedrede data**.
+Du kan se et eksempel på de forbedrede data i **Forbedrede kunders forhåndsversion**-feltet. Vælg **Se mere**, og vælg fanen **Data** for at få adgang til en detaljeret visning af hver enkelt forbedret profil.
+
+### <a name="overview-card"></a>Oversigtskort
+
+Oversigtskortet viser detaljer om dækningen af forbedringen. 
+
+* **Firmaer behandlet og ændret**: Antallet af kundefirmaprofiler, der blev forbedret.
+
+* **Firmaer behandlet og ikke ændret**: Antallet af kundefirmaprofiler, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
+
+* **Firmaer ikke behandlet og ikke ændret**: Antallet af kundefirmaprofiler, der ikke blev genkendt. Det sker som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
 
 ## <a name="next-steps"></a>Næste trin
 
