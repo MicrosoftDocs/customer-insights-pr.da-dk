@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: 49729a13d26885c30039f9fa426eaee92c172424
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: ab4ab0dba1bd91b1893cd4b16b8d51381d5b6ef8
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355146"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376915"
 ---
 # <a name="match-entities"></a>Sammenlign objekter
 
@@ -180,7 +180,19 @@ Et deduplikeret outputobjekt indeholder følgende oplysninger:
   - Deduplication_WinnerId: Dette felt indeholder vinder-id fra de identificerede grupper eller klynger. Hvis Deduplication_WinnerId er den samme som værdien for den primære nøgle for en post, betyder det, at posten er vinderposten.
 - Felter, der bruges til at definere reglerne for deduplikering.
 - Felterne Regel og Resultat angiver, hvilke af de duplikeringsregler der blev anvendt, og det antal point, der returneres af den tilsvarende algoritme.
-   
+ 
+## <a name="include-enriched-entities-preview"></a>Medtag forbedrede objekter (forhåndsversion)
+
+Hvis du har forbedret objekter på datakilde niveau, skal du vælge dem, før du kører overensstemmelsesprocessen. De forbedrede objekter kan forbedre resultaterne af din samling. Du kan finde flere oplysninger i [Forbedring til datakilder](data-sources-enrichment.md). 
+
+Det forbedrede objekt indeholder de oprindelige datakilde felter og de forbedrede felter. Så hvis du vælger at arbejde med det forbedrede objekt, påvirkes den eksisterende konfiguration ikke. Det kan dog være nødvendigt at opdatere matchreglerne for i stedet at bruge de forbedrede felter.
+
+1. Gå til **Data** > **Samle** > **Match**, og vælg **Brug forbedrede objekter** øverst på siden.
+
+1. Vælg et eller flere forbedrede objekter i ruden **Brug forbedrede objekter**.
+
+1. Vælg **Udført**. Der, hvor kildeobjektet bruges (f.eks. overensstemmelsesrækkefølge eller regler), ændres det automatisk til det forbedrede objekt.
+  
 ## <a name="run-the-match-process"></a>Køre matchprocessen
 
 Med konfigurerede matchregler, herunder regler for matchning og deduplikering på tværs af objekter, kan du køre matchprocessen. 

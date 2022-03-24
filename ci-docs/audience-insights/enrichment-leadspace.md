@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: f89ef6842c21cf6b78154586f818beffbcdcffb9
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 0db0c984f6bf9f7ded0704b6fa0caf39c7dace3a
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8230627"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376777"
 ---
 # <a name="enrichment-of-company-profiles-with-leadspace-preview"></a>Forbedring af virksomhedsprofiler med Leadspace (prøveversion)
 
@@ -25,7 +25,7 @@ Hvis du vil konfigurere Leadspace, skal følgende forudsætninger være opfyldt:
 
 - Du har en aktiv Leadspace-licens.
 - Du har [samlede kundeprofiler](customer-profiles.md) baseret på firmaer.
-- En Leadspace-forbindelse er allerede konfigureret af en administrator, eller du har [administrator](permissions.md#administrator)-tilladelser og den "permanente nøgle" (kaldes også **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkte for at få oplysninger om produktet.
+- En Leadspace-forbindelse er allerede konfigureret af en administrator, eller du har [administrator](permissions.md#admin)-tilladelser og den "permanente nøgle" (kaldes også **Leadspace-token**). Kontakt [Leadspace](https://www.leadspace.com/leadspace-microsoft-dynamics-365/) direkte for at få oplysninger om produktet.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 

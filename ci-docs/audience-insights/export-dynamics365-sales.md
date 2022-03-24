@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-export
 - customerInsights
-ms.openlocfilehash: cf680c21c55c71d99728be79fe68111dc89a79ec
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 4c1b5eaa3568b5c73013024d2da7e65276142f72
+ms.sourcegitcommit: d168a738a08adb8b4b2e410bdaa3716d7b63cc9b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355010"
+ms.lasthandoff: 03/17/2022
+ms.locfileid: "8455831"
 ---
 # <a name="use-segments-in-dynamics-365-sales-preview"></a>Brug segmenter i Dynamics 365 Sales (forhåndsversion)
 
@@ -31,7 +31,7 @@ Brug dine kundedata til at oprette marketinglister, følge op på arbejdsprocess
 
 ## <a name="prerequisite-for-connection"></a>Forudsætning for forbindelse
 
-1. Kontaktposter skal være til stede i Dynamics 365 Sales, før du kan eksportere et segment fra Customer Insights til Sales. Læs mere om, hvordan du kontakter i [Dynamics 365 Sales ved hjælp af Microsoft Dataverse](connect-power-query.md).
+1. Kontaktposter skal være til stede i Dynamics 365 Sales, før du kan eksportere et segment fra Customer Insights til Sales. Læs mere om, hvordan du indtager kontakter fra [Dynamics 365 Sales ved hjælp af Microsoft Dataverse](connect-dataverse-managed-lake.md).
 
    > [!NOTE]
    > Hvis du eksporterer segmenter fra målgruppeindsigt til Sales, oprettes der ikke nye kontaktposter i Sales-forekomsterne. Kontaktpersonposterne fra Sales skal være direkte målgruppeindsigt og bruges som en datakilde. De skal også inkluderes i den samlede brugerdefinerede enhed for at knytte kunde-ID'er til kontakt-ID'er, før segmenter kan eksporteres.

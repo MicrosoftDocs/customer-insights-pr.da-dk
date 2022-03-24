@@ -8,16 +8,18 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 7a576621c71b925bd1563827aca10cad4ef9b4eb
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: e9cf93f28ba6918c72039670e42d26c8aaa7f922
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8229396"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376315"
 ---
 # <a name="enrichment-of-company-profiles-with-enhanced-company-data"></a>Forbedring af virksomhedsprofiler med forbedrede virksomhedsdata
 
 Brug Microsofts modeller og kompilerede virksomhedsdata til at korrigere, supplere og standardisere dine virksomhedsprofiler. Vi bruger formatet [Common Data Model](/common-data-model/schema/core/applicationcommon/account) for at opnå større præcision og indsigt.
+
+Du kan også [forbedre firmadata på datakilder](data-sources-enrichment.md) for at gøre dataene mere nøjagtige i processen til overensstemmelse med hinanden. 
 
 ## <a name="how-we-enhance-company-data"></a>Sådan forbedrer vi virksomhedsdata
 

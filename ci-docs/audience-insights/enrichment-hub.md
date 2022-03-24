@@ -1,7 +1,7 @@
 ---
 title: Forbedring af samlede kundeprofiler
 description: Du kan bruge egenskaber til at forbedre dine kundedata.
-ms.date: 02/07/2022
+ms.date: 02/18/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: e8cac35ccf7012524dc22cb4a499dc605dd66346
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
+ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355376"
+ms.lasthandoff: 03/02/2022
+ms.locfileid: "8372695"
 ---
 # <a name="enrichment-for-customer-profiles-preview"></a>Forbedring af kundeprofiler (prøveversion)
 
@@ -42,6 +42,7 @@ Under fanen **Opdag** finder du alle understøttede forbedringsmuligheder.
 - [Brugerdefineret data](enrichment-SFTP-custom-import.md) via Secure File Transfer Protocol (SFTP) 
 - [Azure Maps](enrichment-azure-maps.md) leveret af Microsoft
 - [Lokationsdata](enrichment-here.md) leveret af HERE Technologies 
+- [Identitet](enrichment-liveramp.md), der leveres af LiveRamp AbiliTec
 
 # <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
@@ -80,6 +81,10 @@ Konfigurationer fra tredjeparter konfigureres ved hjælp af [forbindelser](conne
 ## <a name="multiple-enrichments-of-the-same-type"></a>Flere forbedringer af samme type
 
 Det objekt, der skal forbedres, angives under forbedringskonfigurationen med mulighed for forbedring, som gør det muligt kun at forbedre et undersæt af dine profiler. Du kan f.eks. kun forbedre data for et bestemt segment. Du kan konfigurere flere forbedringer af samme type og genbruge den samme forbindelse. Nogle forbedringer har grænser for antallet af forbedringer af samme type, der kan oprettes. Grænseværdierne og den aktuelle brug kan ses på siden **Forbedring**.
+
+## <a name="enrich-data-sources-before-unification"></a>Forbedre datakilder før samling
+
+Du kan forbedre dine kundedata før datasamling for at øge kvaliteten af datamatchen. Du kan finde flere oplysninger i [datakildeforbedring](data-sources-enrichment.md).
 
 ## <a name="see-the-progress-of-the-enrichment-process"></a>Se status for processen til forbedring
 

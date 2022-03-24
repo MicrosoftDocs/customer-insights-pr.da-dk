@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 2e0801c2b6af591e48a7df485a8523903c07617c
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354365"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376409"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
 
@@ -37,7 +37,7 @@ Customer Insights sender følgende hændelseslogfiler:
 Hvis du vil konfigurere diagnosticering i Customer Insights, skal følgende forudsætninger være opfyldt:
 
 - Du skal have et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Du har [administrator](permissions.md#administrator)-tilladelser i Customer Insights.
+- Du har [administrator](permissions.md#admin)-tilladelser i Customer Insights.
 - Du har rollen **bidragyder** og **brugeradgangsadministrator** for destinationsressourcen på Azure. Ressourcen kan være en Azure-lagerkonto, en Azure-hændelseshub eller et Azure Log Analytics-arbejdsområde. Du kan finde flere oplysninger ved at gå til [Tilføje eller fjerne Azure-rolletildelinger ved hjælp af Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 - [Destinationskravene](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) til Azure-lager, Azure-hændelseshub eller Azure Log Analytics opfyldes.
 - Du har som minimum rollen **Læser** i den ressourcegruppe, som ressourcen tilhører.
@@ -132,7 +132,7 @@ API-hændelser og arbejdsproceshændelser har en fælles struktur og detaljer, h
 | `resultSignature` | String    | Valgfrit          | Resultatstatus for hændelsen. Hvis handlingen svarer til et REST API, er det HTTP-statuskoden.        | `200`             |
 | `durationMs`      | Long      | Valgfrit          | Varigheden af handlingen i millisekunder.     | `133`     |
 | `callerIpAddress` | String    | Valgfrit          | Opkalders IP-adresse, hvis handlingen svarer til et API-opkald, der kommer fra en offentligt tilgængelig IP-adresse.                                                 | `144.318.99.233`         |
-| `identity`        | String    | Valgfrit          | JSON-objekt, der beskriver identiteten på den bruger eller det program, der har udført handlingen.       | Se [Identitet](#identity-schema)-sektion.     |  |
+| `identity`        | String    | Valgfrit          | JSON-objekt, der beskriver identiteten på den bruger eller det program, der har udført handlingen.       | Se [Identitet](#identity-schema)-sektion.     |  
 | `properties`      | String    | Valgfrit          | JSON-objekt med flere egenskaber til en bestemt kategori af hændelser.      | Se [Egenskaber for](#api-properties-schema)-sektion.    |
 | `level`           | String    | Obligatorisk          | Begivenhedens forskellige niveauer.    | `Informational`, `Warning`, `Error` eller `Critical`.           |
 | `uri`             | String    | Valgfrit          | URI'er til absolutte anmodninger.    |               |
@@ -230,7 +230,7 @@ Arbejdsproceshændelser har følgende egenskaber.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Ja      | Ja  | Altid `WorkflowEvent`-markering af loghændelsen som arbejdsproceshændelse.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Ja      | Ja  | Id for kørslen af arbejdsprocessen. Alle arbejdsproces- og opgavehændelser i arbejdsproceskørslen har samme `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Ja      | Ja  | Id for handlingen i [Operationstyper].(#operation-typer)                                                                                                                                                                                       |
+| `properties.operationType`                   | Ja      | Ja  | Id for handlingen i [Operationstyper].(#operation-types)                                                                                                                                                                                       |
 | `properties.tasksCount`                      | Ja      | Nr.   | Kun arbejdsproces. Antallet af opgaver, der er udløst af arbejdsprocessen.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Ja      | Nr.   | Valgfrit. Kun arbejdsproceshændelser. Det Azure Active Directory [objectId for den bruger](/azure/marketplace/find-tenant-object-id#find-user-object-id), der udløste arbejdsprocessen, skal også se `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Ja      | Nr.   | `full` eller `incremental` opdatere.                                                                                                                                                                                                                            |
@@ -239,7 +239,7 @@ Arbejdsproceshændelser har følgende egenskaber.
 | `properties.startTimestamp`                  | Ja      | Ja  | UTC-tidsstempel `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.endTimestamp`                    | Ja      | Ja  | UTC-tidsstempel `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
 | `properties.submittedTimestamp`              | Ja      | Ja  | UTC-tidsstempel `yyyy-MM-ddThh:mm:ss.SSSSSZ`                                                                                                                                                                                                                  |
-| `properties.instanceId`                      | Ja      | Ja  | Customer Insights `instanceId`                                                                                                                                                                                                                              |  |
+| `properties.instanceId`                      | Ja      | Ja  | Customer Insights `instanceId`                                                                                                                                                                                                                              |  
 | `properties.identifier`                      | Nr.       | Ja  | - For OperationType = `Export`er id-guid for eksportkonfigurationen. <br> - For OperationType = `Enrichment` er det guid for forbedringen <br> - I forbindelse med OperationType er `Measures` og `Segmentation` id'et objektnavnet. |
 | `properties.friendlyName`                    | Nr.       | Ja  | Brugervenligt navn på eksporten eller det objekt, der behandles.                                                                                                                                                                                           |
 | `properties.error`                           | Nr.       | Ja  | Valgfrit. Fejlmeddelelse med flere detaljer.                                                                                                                                                                                                                  |

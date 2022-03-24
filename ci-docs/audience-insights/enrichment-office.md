@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 938a9de83fd8f5ff0c9ae815d626cdfa35228aba
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 47239bd7f0c89742cf9c673bb2ebe4c41d853233
+ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228467"
+ms.lasthandoff: 03/03/2022
+ms.locfileid: "8376823"
 ---
 # <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Forbedre kundeprofiler med engagementsdata (prøveversion)
 
@@ -28,7 +28,7 @@ Hvis du vil konfigurere forbedringen, skal følgende forudsætninger være opfyl
 - Du har en aktiv Office 365-skylicens.
 - Du har [samlet kundeprofiler](customer-profiles.md) baseret på [forretningskonti](work-with-business-accounts.md)..
 - Dit Customer Insights-miljø skal have en [Microsoft Dataverse-organisation tilknyttet](create-environment.md#step-3-connect-to-microsoft-dataverse).
-- Du har [administrator](permissions.md#administrator)-tilladelser.
+- Du har [administrator](permissions.md#admin)-tilladelser.
 - Du har eller kan få dit samtykke fra din Office 365-lejeradministrator at bruge Office 365-data til at give **indblik for organisationen** i Dynamics 365-programmer.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
