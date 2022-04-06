@@ -1,6 +1,6 @@
 ---
 title: Overvåge Dynamics 365 Customer Insights med Azure Monitor
-description: Få mere at vide om, hvordan du sender logge til Microsoft Azure-overvågning.
+description: 'Få mere at vide om, hvordan du sender logge til Microsoft Azure-overvågning.'
 ms.date: 12/14/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -9,15 +9,10 @@ author: brndkfr
 ms.author: bkief
 manager: shellyha
 searchScope:
-- ci-system-diagnostic
-- customerInsights
-ms.openlocfilehash: d84ae8301bdf384c2484cdb1e7dd8eb75d406769
-ms.sourcegitcommit: 50d32a4cab01421a5c3689af789e20857ab009c4
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 03/03/2022
-ms.locfileid: "8376409"
+  - ci-system-diagnostic
+  - customerInsights
 ---
+
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
 
 Dynamics 365 Customer Insights leverer en direkte integration med Azure Monitor. Med Azure Monitor-ressourcelogfiler kan du overvåge og sende logge til [Azure-datalager](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) eller streame dem til [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
@@ -230,7 +225,7 @@ Arbejdsproceshændelser har følgende egenskaber.
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Ja      | Ja  | Altid `WorkflowEvent`-markering af loghændelsen som arbejdsproceshændelse.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Ja      | Ja  | Id for kørslen af arbejdsprocessen. Alle arbejdsproces- og opgavehændelser i arbejdsproceskørslen har samme `workflowJobId`.                                                                                                                                   |
-| `properties.operationType`                   | Ja      | Ja  | Id for handlingen i [Operationstyper].(#operation-types)                                                                                                                                                                                       |
+| `properties.operationType`                   | Ja      | Ja  | Id for handlingen findes i [Handlingstyper](#operation-types).                                                                                                                                                                               |
 | `properties.tasksCount`                      | Ja      | Nr.   | Kun arbejdsproces. Antallet af opgaver, der er udløst af arbejdsprocessen.                                                                                                                                                                                                       |
 | `properties.submittedBy`                     | Ja      | Nr.   | Valgfrit. Kun arbejdsproceshændelser. Det Azure Active Directory [objectId for den bruger](/azure/marketplace/find-tenant-object-id#find-user-object-id), der udløste arbejdsprocessen, skal også se `properties.workflowSubmissionKind`.                                   |
 | `properties.workflowType`                    | Ja      | Nr.   | `full` eller `incremental` opdatere.                                                                                                                                                                                                                            |

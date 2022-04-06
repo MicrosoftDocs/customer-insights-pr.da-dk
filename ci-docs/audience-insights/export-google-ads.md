@@ -1,42 +1,32 @@
 ---
 title: Eksportér Customer Insights-data til Google Ads
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Google Ads.
-ms.date: 09/27/2021
+description: 'Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Google Ads.'
+ms.date: 03/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 28e2b35c5a47a025b8cdcccdb3f61c79878bf056
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8227003"
 ---
+
 # <a name="export-segments-to-google-ads-preview"></a>Eksport af segmenter til Google Ads (forhåndsversion)
 
 Eksporter segmenter af samlede kundeprofiler til en Liste over Google Ads-målgruppe, og brug dem til at annoncere på Google Søgning, Gmail, YouTube og Google Display Network. 
 
-> [!IMPORTANT]
-> I øjeblikket kan du kun oprette en ny forbindelse og eksportere data til Google Ads, hvis du allerede har et godkendt Google Ads-udviklertoken. På grund af ændringer af politikker opdaterer vi snart eksporten fra Google Ads og giver en eksportindstilling, der ikke kræver et udviklertoken for at sikre kontinuitet i din oplevelse og forenkle eksporten til Google Ads. Vi anbefaler, at du ikke opretter flere forbindelser til Google Ads for at lette overgangen til den nye eksportindstilling.
 
 ## <a name="prerequisites-for-connection"></a>Forudsætninger for forbindelse
 
 -   Du har en [Google Ads-konto](https://ads.google.com/) og tilsvarende administratorlegitimationsoplysninger.
--   Du har et [godkendt Google Ads-udviklertoken](https://developers.google.com/google-ads/api/docs/first-call/dev-token). 
 -   Du opfylder kravene i [Politik for kundematch](https://support.google.com/adspolicy/answer/6299717).
 -   Du opfylder kravene til [listestørrelser for re-marketing](https://support.google.com/google-ads/answer/7558048).
--   Der findes eksisterende målgrupper i Google Ads og de tilsvarende id'er. Du kan finde flere oplysninger i [Google ads-målgrupper](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.).
 -   Du har [konfigureret segmenter](segments.md).
--   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse, fornavn og efternavn.
+-   Ensartede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en mailadresse, en telefon, et mobil annoncør-id, et tredjepartsbruger-id eller en adresse.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Op til 1 millioner kundeprofiler pr. eksport til Google Ads.
 - Eksport til Google Ads er begrænset til segmenter.
-- Eksport af segmenter med i alt 1 million kundeprofiler kan tage op til 5 minutter på grund af begrænsninger på udbydersiden. 
+- Eksport af segmenter med i alt 1 million kundeprofiler kan tage op til 30 minutter på grund af begrænsninger på udbydersiden. 
 - Det kan tage op til 48 timer at foretage match ingen i Google Ads.
 
 ## <a name="set-up-connection-to-google-ads"></a>Konfigurer forbindelse til Google Ads
@@ -50,8 +40,6 @@ Eksporter segmenter af samlede kundeprofiler til en Liste over Google Ads-målgr
 1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
 1. Angiv din **[Google Ads-kunde-id](https://support.google.com/google-ads/answer/1704344)**.
-
-1. Angiv din **[Google Ads-godkendte udvikler-token](https://developers.google.com/google-ads/api/docs/first-call/dev-token)**.
 
 1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
 
@@ -71,11 +59,11 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg en forbindelse i sektionen Google Ads i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen tilgængelige forbindelser af denne type.
 
-1. Angiv dit **[Google Ads-målgruppe-id](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)**, og vælg **Opret forbindelse** for at initialisere forbindelsen til Google Ads.
+1. Hvis du vil oprette en ny målgruppe, skal du lade Google Målgruppe-id være tomt. Vi opretter automatisk en ny målgruppe i din Google Ads-konto og bruger navnet på det eksporterede segment. Hvis du vil opdatere en eksisterende Google Ads-målgruppe, skal du angive dit [Google Ads-målgruppe-id](https://support.google.com/google-ads/answer/7558048?hl=en#:~:text=Audience%20lists%20is%20a%20section,Display%20Network%20through%20remarketing%20campaigns.)
 
-1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**.
+1. Vælg et eller flere datafelter, du vil eksportere, i sektionen **Datatilpasning**, og vælg det felt, der repræsenterer de tilsvarende datafelter i Customer Insights.
 
-1. Vælg de segmenter, du vil eksportere. Du kan eksportere op til 1000000 kundeprofiler i alt til Google Ads.
+1. Vælg de segmenter, du vil eksportere. 
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 

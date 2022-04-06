@@ -1,5 +1,5 @@
 ---
-title: Dataindsættelse og begrænsninger i realtid
+title: Dataindtagelse i realtid (forhåndsversion)
 description: Generelle oplysninger om realtidsfunktioner i målgruppen Insights.
 ms.date: 10/27/2020
 ms.reviewer: mhart
@@ -9,16 +9,11 @@ author: Nils-2m
 ms.author: nikeller
 manager: shellyha
 searchScope:
-- ci-system-api-usage
-- customerInsights
-ms.openlocfilehash: 2fe5279eee1b3b30f5bc21464c85fe5f86d342a0
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355468"
+  - ci-system-api-usage
+  - customerInsights
 ---
-# <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (prøveversion)
+
+# <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (forhåndsversion)
 
 I næsten realtidsfunktionalitet kan du se i løbet af få sekunder de seneste interaktioner, som dine kunder har foretaget med dine produkter eller servicer.
 

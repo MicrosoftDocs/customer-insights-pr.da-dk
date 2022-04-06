@@ -1,7 +1,7 @@
 ---
 title: Opret forbindelse til tabeller i Microsoft Dataverse
 description: Importere data fra en Microsoft Dataverse-administreret data lake.
-ms.date: 12/06/2021
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -9,18 +9,11 @@ ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
 searchScope:
-- ci-dataverse
-- customerInsights
-ms.openlocfilehash: 8e11b60295fa5c187b1ac4877fb347e2d9bb41a1
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354134"
+  - ci-dataverse
+  - customerInsights
 ---
+
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Oprette forbindelse til data i en Microsoft Dataverse-administreret data lake
-
-
 
 Denne artikel indeholder oplysninger om, hvordan Dataverse-brugere hurtigt kan oprette forbindelse til analytiske objekter i et Microsoft Dataverse-administreret område. 
 
@@ -29,7 +22,8 @@ Denne artikel indeholder oplysninger om, hvordan Dataverse-brugere hurtigt kan o
 
 ## <a name="important-considerations"></a>Vigtige overvejelser
 
-Data, der gemmes i onlinetjenester, f.eks. Azure Data Lake Storage, gemmes på en anden placering end der, hvor dataene behandles eller gemmes i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration](https://www.microsoft.com/trust-center).
+1. Data, der gemmes i onlinetjenester, f.eks. Azure Data Lake Storage, gemmes på en anden placering end der, hvor dataene behandles eller gemmes i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration](https://www.microsoft.com/trust-center).
+2. Kun Dataverse-objekter, hvor [ændringssporing](/power-platform/admin/enable-change-tracking-control-data-synchronization) er aktiveret og synlige. Disse objekter kan eksporteres til de administrerede Dataverse-datasø og bruges i Customer Insights. Standardtabellerne har Dataverse-ændringssporing aktiveret som standard. Du skal slå sporing af ændringer til for brugerdefinerede tabeller. Hvis du vil kontrollere, om en Dataverse-tabel er aktiveret til sporing af ændringer, skal du gå til [Power Apps](https://make.powerapps.com) > **Data** > **Tabeller**. Find tabellen med interesse, og vælg den. Gå til **Indstillinger** > **Avancerede indstillinger**, og gennemse indstillingen **Spor ændringer**.
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Opret forbindelse til Dataverse-administreret sø
 

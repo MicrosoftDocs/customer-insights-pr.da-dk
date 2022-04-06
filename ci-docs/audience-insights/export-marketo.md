@@ -1,6 +1,6 @@
 ---
 title: Eksportér Customer Insights-data til Marketo
-description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Marketo.
+description: 'Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Marketo.'
 ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -8,13 +8,8 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ec286bb6a90fb4d18e89caf9166aa659b29d668e
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8231972"
 ---
+
 # <a name="export-segments-to-marketo-preview"></a>Eksportér segmenter til Marketo (forhåndsversion)
 
 Eksportér segmenter fra de samlede brugerprofiler til at generere kampagner, levere e-mailmarketing og bruge bestemte grupper af kunder med Marketo.
@@ -63,7 +58,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Angiv dit **[Marketo-liste-id](https://docs.marketo.com/display/public/DOCS/Understanding+Static+Lists)**. Liste-id'et er en rent numerisk værdi. Hvis f.eks. Marketo-liste-id'et er ST12345A7, skal du fjerne tegnet før og efter tallene og angive `12345`. 
 
-1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. 
+1. Vælg mindst et felt, der repræsenterer en kundes e-mail-adresse eller en kundes Marketo-id, i sektionen **Datamatchning**. 
 
 1. Du kan også eksportere **Fornavn**, **Efternavn**, **By**, **Land** og **Land/Område** for at oprette mere personlige mails. Vælg **Tilføj attribut** for at tilknytte disse felter.
 

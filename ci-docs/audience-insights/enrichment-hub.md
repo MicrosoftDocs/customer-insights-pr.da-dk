@@ -1,7 +1,7 @@
 ---
 title: Forbedring af samlede kundeprofiler
 description: Du kan bruge egenskaber til at forbedre dine kundedata.
-ms.date: 02/18/2022
+ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -10,17 +10,12 @@ ms.author: jodahl
 manager: shellyha
 ms.custom: intro-internal
 searchScope:
-- ci-enrichments
-- ci-enrichment-details
-- ci-enrichment-wizard
-- customerInsights
-ms.openlocfilehash: b44f5a4b74c63629811837b853b4e069dea63504
-ms.sourcegitcommit: bb1f9e96023490ab340c114f54200ab4dd48da78
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 03/02/2022
-ms.locfileid: "8372695"
+  - ci-enrichments
+  - ci-enrichment-details
+  - ci-enrichment-wizard
+  - customerInsights
 ---
+
 # <a name="enrichment-for-customer-profiles-preview"></a>Forbedring af kundeprofiler (prøveversion)
 
 Brug data fra kilder som f.eks. Microsoft og andre partnere til at forbedre kundedataene.
@@ -97,5 +92,19 @@ Sådan kan du se status for en forbedring
 1. Udvid sektionen **Forbedringer** i ruden **Statusdetaljer**. 
 1. Vælg **Se detaljer** under den status, du vil have vist. 
 1. Vælg **Vis detaljer** i ruden med **opgavedetaljer** for at se de processer, der er involveret i opdatering af forbedringen og status. 
+
+## <a name="enrichment-results"></a>Forbedringsresultater
+
+Når forbedringskørslen er fuldført, kan du gennemgå resultaterne.
+
+1. Gå til **Data** > **Forbedring**. 
+1. Vælg den forbedringsperiode, du vil have oplysninger om.
+
+Alle forbedringer viser grundlæggende oplysninger, f.eks. antallet af forbedrede profiler, et eksempel på det oprettede forbedringsobjekt og antallet af forbedrede profiler over tid. Hvis feltet **Antal kunder, der er forbedret med felt**, bliver det muligt at foretage detailudledning i dækningen af hvert enkelt forbedret felt.
+
+:::image type="content" source="media/enrichments-results.png" alt-text="Forbedringsresultater-side.":::
+
+Nogle forbedringer viser også oplysninger, der er specifikke for typen af forbedring. Du kan finde flere oplysninger om den relevante forbedring i dokumentationen.
+
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

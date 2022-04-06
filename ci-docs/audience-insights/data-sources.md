@@ -1,7 +1,7 @@
 ---
 title: Brug datakilder til at indsætte data
-description: Få mere at vide om, hvordan du importerer data fra forskellige kilder.
-ms.date: 12/06/2021
+description: 'Få mere at vide om, hvordan du importerer data fra forskellige kilder.'
+ms.date: 03/18/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: adkuppa
@@ -9,16 +9,11 @@ ms.author: adkuppa
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-data-sources
-- ci-create-data-source
-- customerInsights
-ms.openlocfilehash: e7bcf82c4fe3625ef791ec2b0a7651be0356a006
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354042"
+  - ci-data-sources
+  - ci-create-data-source
+  - customerInsights
 ---
+
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
 
@@ -47,7 +42,18 @@ Datakilder, der er oprettet, når et Dataverse-miljø er blevet associeret med C
 
 Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, og du kan genbruge dem i Customer Insights. På siden med datakilder vises links til at gå til det Microsoft Power Platform-miljø, hvor du kan få vist og konfigurere det lokale miljøs datagateways.
 
+> [!IMPORTANT]
+> Kontrollér, at dine gateways er opdateret til den nyeste version. Du kan installere en opdatering og omkonfigurere en gateway fra en prompt, der vises direkte på gatewayskærmbilledet, eller [hente den nyeste version](https://powerapps.microsoft.com/downloads/). Hvis du ikke bruger den nyeste gatewayversion, lykkes opdateringen af dataflowet ikke, og fejlmeddelelser som **Nøgleordet understøttes ikke: konfigurationsegenskaber. Parameternavn: nøgleord**.
+
 ## <a name="review-ingested-data"></a>Gennemgå indtagne data
+Hvis miljøet indeholder Power Platform-dataflow, vises der tre sektioner på siden **Datakilder**: 
+- **Delt**: Datakilder, der kan administreres af alle Customer Insights-administratorer. Power BI-dataflows, din egen lagerkonto og din vedhæftede fil til en Dataverse-administreret datasø er eksempler på delte datakilder.
+- **Administreres af mig**: Power Platform-dataflow, der er oprettet og kun kan administreres af dig. Andre Customer Insights-administratorer kan kun få vist disse dataflows, men de kan ikke redigere, opdatere eller slette dem.
+- **Administreret af andre**: Power Platform-dataflows, der er oprettet af andre administratorer. Du kan kun se dem. Ejeren af det dataflow, der skal kontaktes, vises for at få hjælp.
+> [!NOTE]
+> Alle objekter kan ses og bruges af andre brugere. Kontekstafhængige brugere gælder kun for datakilder og ikke for de objekter, der er resultatet af disse dataflows.
+
+Hvis der ikke bruges Power Platform-dataflows, kan du ikke se grupper eller sektioner. Siden **Datakilder** indeholder kun en liste over alle datakilder.
 
 Du får vist navnet på hver indtagne datakilde, dens status, og hvornår dataene sidst blev opdateret for den pågældende kilde. Du kan sortere listen over datakilder efter alle kolonner.
 

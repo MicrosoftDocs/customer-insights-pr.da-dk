@@ -1,20 +1,15 @@
 ---
 title: Oversigt over understøttede forudsigelsesscenarier
-description: Forudsigelsesscenarier og -muligheder, der er dækket af Dynamics 365 Customer Insights-applikationen.
-ms.date: 12/21/2021
+description: 'Forudsigelsesscenarier og -muligheder, der er dækket af Dynamics 365 Customer Insights-applikationen.'
+ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: c692785c7d81ab660ba2e07411e986c67c1a5d0a
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8228237"
 ---
+
 # <a name="predictions-overview"></a>Oversigt over forudsigelser
 
 Dynamics 365 Customer Insights leveres med en række muligheder, der udnytter AI og maskinel indlæring til at forudsige data. 
@@ -36,6 +31,11 @@ Den nemmeste måde at starte med at forudsige data på er foruddefinerede modell
 - [Transaktionsafgang](predict-transactional-churn.md): Forudsiger, om en kunde ikke længere vil købe dine produkter eller services i en bestemt tidsramme.
 
 ---
+
+> [!TIP]
+> Vi anbefaler, at du jævnligt opdaterer standardmodeller med opdaterede data for at sikre, at de giver en nøjagtig oplysninger om din sag i forbindelse med forretningsbrug. Data opdateres ad hoc,når systemet opdaterer nye eller opdaterede datakilder. I dette tilfælde vil modellerne dog kun score igen og fortsætte med at bruge de eksisterende træningsdata.
+> 
+> Du kan konfigurere en **opdateringsplan** ved at angive den model, der skal planlægges igen, i konfigurationsoplevelsen. Modellen træner igen og scorer igen denne plan, som du kan ændre når som helst.
 
 
 ## <a name="azure-machine-learning-integration"></a>Azure Machine Learning-integration

@@ -9,23 +9,20 @@ author: Nils-2m
 ms.author: nikeller
 manager: shellyha
 searchScope:
-- ci-customers-page
-- ci-customer-card
-- ci-activities
-- ci-activities-wizard
-- customerInsights
-ms.openlocfilehash: 3a17716508a14020c56640c7d68f300a9d721af4
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354874"
+  - ci-customers-page
+  - ci-customer-card
+  - ci-activities
+  - ci-activities-wizard
+  - customerInsights
 ---
+
 # <a name="customer-profiles"></a>Kundeprofiler
 
 På siden **Kunder** vises en samlet visning af dine samlede kundeprofiler. Kundeprofilerne er tilgængelige, når du har [oprettet det samlede kundeobjekt](data-unification.md). På siden kan du søge efter kunder og definere indekset for den pågældende søgning.
 
-Kunder kan være enkeltpersoner eller organisationer. Hver kundeprofil repræsenteres ved et felt. Brug kontrolelementerne for sideinddeling til at hente flere poster. På kortet vises felter fra objektet *Kunde* som defineret i **Indeks for søgning og filtrering**. Vælg et felt for at få vist data for den valgte kunde på en dedikeret side med navnet [Kundeoplysninger](customer-profiles.md#customer-details-page).
+Kunder kan være enkeltpersoner eller organisationer. Hver kundeprofil repræsenteres ved et felt. Brug kontrolelementerne for sideinddeling til at hente flere poster. På kortet vises felter fra objektet *Kunde* som defineret i **Indeks for søgning og filtrering**. Rækkefølgen af felterne i de enkelte kort udvælges af systemet.
+
+Vælg et felt for at få vist data for den valgte kunde på en dedikeret side med navnet [Kundeoplysninger](customer-profiles.md#customer-details-page).
 
 > [!div class="mx-imgBorder"] 
 > ![Siden Kunder, der viser resultatfelter](media/customers-page-result-tiles-B2C.png "Siden Kunder, der viser resultatfelter")

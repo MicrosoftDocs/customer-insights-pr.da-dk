@@ -1,7 +1,7 @@
 ---
 title: Segmenter i målgruppeindsigt
-description: Oversigt over segmenter, og hvordan de oprettes og administreres.
-ms.date: 11/01/2021
+description: 'Oversigt over segmenter, og hvordan de oprettes og administreres.'
+ms.date: 03/30/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -9,18 +9,13 @@ ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-- ci-customers-page
-- ci-enrichment-details
-- ci-segments
-- ci-segment-details
-- customerInsights
-ms.openlocfilehash: c58f79c2beda1083d19bd36d94549ff1a46b096e
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
-ms.translationtype: HT
-ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355976"
+  - ci-customers-page
+  - ci-enrichment-details
+  - ci-segments
+  - ci-segment-details
+  - customerInsights
 ---
+
 # <a name="segments-overview"></a>Oversigter over segmenter
 
 Med segmenter kan du gruppere dine kunder baseret på demografiske, transaktionsrelaterede eller adfærdsattributter. Du kan bruge segmenter til at målrette kampagnefremstød, salgsaktiviteter og kundesupporthandlinger for at nå dine forretningsmæssige mål.
@@ -68,7 +63,9 @@ Følgende handlinger er tilgængelige, når du vælger et segment:
 
 ## <a name="refresh-segments"></a>Opdatere segmenter
 
-Du kan opdatere alle segmenter på én gang ved at vælge **Opdater alle** på siden **Segmenter**, eller du kan opdatere et eller flere segmenter, når du vælger dem, og vælge **Opdater** fra indstillingerne. Du kan også konfigurere en tilbagevendende opdatering i **Admin** > **System** > **Planlæg**.
+Du kan opdatere alle segmenter på én gang ved at vælge **Opdater alle** på siden **Segmenter**, eller du kan opdatere et eller flere segmenter, når du vælger dem, og vælge **Opdater** fra indstillingerne. Du kan også konfigurere en tilbagevendende opdatering i **Admin** > **System** > **Planlæg**. Når der konfigureres en tilbagevendende opdatering, gælder følgende regler:
+- Alle segmenter med typen **Dynamisk** eller **Udvidelse** opdateres automatisk med den indstillede hyppighed. Når opdateringen er fuldført, indikerer **Status**, om der var problemer med opdatering af segmentet. I det **senest opdaterede felt** vises et tidsstempel for den seneste vellykkede opdatering. Hvis der opstår en fejl, skal du vælge fejlen for at få vist detaljer om, hvad der er sket.
+- Segmenter med typen **Statisk** opdateres *ikke* automatisk. I det **senest opdaterede** felt vises et tidsstempel for det seneste tidspunkt, hvor de statiske segmenter blev kørt eller opdateret manuelt.
 
 [!INCLUDE [progress-details-include](../includes/progress-details-pane.md)]
 
