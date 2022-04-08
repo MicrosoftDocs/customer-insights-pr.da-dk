@@ -9,10 +9,15 @@ author: Nils-2m
 ms.author: nikeller
 manager: shellyha
 searchScope:
-  - ci-system-api-usage
-  - customerInsights
+- ci-system-api-usage
+- customerInsights
+ms.openlocfilehash: 138704445d52df3336af6af60420f0bd0ee0c639
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464019"
 ---
-
 # <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (forhåndsversion)
 
 I næsten realtidsfunktionalitet kan du se i løbet af få sekunder de seneste interaktioner, som dine kunder har foretaget med dine produkter eller servicer.
