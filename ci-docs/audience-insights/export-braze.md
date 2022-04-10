@@ -1,6 +1,6 @@
 ---
 title: Eksport af Customer Insights-data til Braze
-description: 'Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Braze.'
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Braze.
 ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -8,8 +8,13 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
+ms.openlocfilehash: 8d7cf95c1f157c771b2d655346464e5af03d73b9
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8524142"
 ---
-
 # <a name="export-segment-lists-to-braze-preview"></a>Eksportér segmentlister til Braze (forhåndsversion)
 
 Eksportér segmenter med ensartede kundeprofiler til Braze, og brug dem til marketingaktiviteter.

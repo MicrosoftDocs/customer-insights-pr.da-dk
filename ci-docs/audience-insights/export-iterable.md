@@ -1,6 +1,6 @@
 ---
 title: Eksport af Customer Insights-data til Iterable
-description: 'Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Iterable.'
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Iterable.
 ms.date: 03/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -8,8 +8,13 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
+ms.openlocfilehash: 4de499fcc4a5a0dcc2dfd3bae02913c81a59647b
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8524139"
 ---
-
 # <a name="export-segment-lists-to-iterable-preview"></a>Eksportér segmentlister til Iterable (forhåndsversion)
 
 Eksportér segmenter med ensartede kundeprofiler til Iterable, og brug dem til marketingaktiviteter.

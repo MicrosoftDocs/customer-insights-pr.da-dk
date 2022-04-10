@@ -1,6 +1,6 @@
 ---
 title: Oversigt over understøttede forudsigelsesscenarier
-description: 'Forudsigelsesscenarier og -muligheder, der er dækket af Dynamics 365 Customer Insights-applikationen.'
+description: Forudsigelsesscenarier og -muligheder, der er dækket af Dynamics 365 Customer Insights-applikationen.
 ms.date: 03/24/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -8,8 +8,13 @@ ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
+ms.openlocfilehash: 11b0efeecf8bea893272e67d29b1c6622771110c
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487492"
 ---
-
 # <a name="predictions-overview"></a>Oversigt over forudsigelser
 
 Dynamics 365 Customer Insights leveres med en række muligheder, der udnytter AI og maskinel indlæring til at forudsige data. 

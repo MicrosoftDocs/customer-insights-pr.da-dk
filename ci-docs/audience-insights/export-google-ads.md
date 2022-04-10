@@ -1,6 +1,6 @@
 ---
 title: Eksportér Customer Insights-data til Google Ads
-description: 'Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Google Ads.'
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Google Ads.
 ms.date: 03/31/2022
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -8,8 +8,13 @@ author: pkieffer
 ms.author: philk
 ms.reviewer: mhart
 manager: shellyha
+ms.openlocfilehash: 7a85237f7aff564d6b540b2c11553a52f875fac4
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523787"
 ---
-
 # <a name="export-segments-to-google-ads-preview"></a>Eksport af segmenter til Google Ads (forhåndsversion)
 
 Eksporter segmenter af samlede kundeprofiler til en Liste over Google Ads-målgruppe, og brug dem til at annoncere på Google Søgning, Gmail, YouTube og Google Display Network. 

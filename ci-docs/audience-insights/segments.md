@@ -1,6 +1,6 @@
 ---
 title: Segmenter i målgruppeindsigt
-description: 'Oversigt over segmenter, og hvordan de oprettes og administreres.'
+description: Oversigt over segmenter, og hvordan de oprettes og administreres.
 ms.date: 03/30/2022
 ms.subservice: audience-insights
 ms.topic: overview
@@ -9,13 +9,18 @@ ms.author: jimsonc
 ms.reviewer: mhart
 manager: shellyha
 searchScope:
-  - ci-customers-page
-  - ci-enrichment-details
-  - ci-segments
-  - ci-segment-details
-  - customerInsights
+- ci-customers-page
+- ci-enrichment-details
+- ci-segments
+- ci-segment-details
+- customerInsights
+ms.openlocfilehash: 340a7b7326f5b4a8cbde8683b8d41cb53dc557b0
+ms.sourcegitcommit: 0bd5f53e4e7e37359afd087ee16b779a6b3a9183
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "8508559"
 ---
-
 # <a name="segments-overview"></a>Oversigter over segmenter
 
 Med segmenter kan du gruppere dine kunder baseret på demografiske, transaktionsrelaterede eller adfærdsattributter. Du kan bruge segmenter til at målrette kampagnefremstød, salgsaktiviteter og kundesupporthandlinger for at nå dine forretningsmæssige mål.

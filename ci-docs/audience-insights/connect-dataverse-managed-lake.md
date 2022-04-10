@@ -9,10 +9,15 @@ ms.author: adkuppa
 manager: shellyha
 ms.reviewer: mhart
 searchScope:
-  - ci-dataverse
-  - customerInsights
+- ci-dataverse
+- customerInsights
+ms.openlocfilehash: 81412ea8259e690eb839676d82ab31847854a97e
+ms.sourcegitcommit: a8e99cf8b23ccc00d76c1dee22afd808a160a5c8
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "8464059"
 ---
-
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Oprette forbindelse til data i en Microsoft Dataverse-administreret data lake
 
 Denne artikel indeholder oplysninger om, hvordan Dataverse-brugere hurtigt kan oprette forbindelse til analytiske objekter i et Microsoft Dataverse-administreret område. 

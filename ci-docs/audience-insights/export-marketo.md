@@ -1,6 +1,6 @@
 ---
 title: Eksportér Customer Insights-data til Marketo
-description: 'Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Marketo.'
+description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Marketo.
 ms.date: 10/08/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -8,8 +8,13 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
+ms.openlocfilehash: d56ed779c342bb0855ee84d949f8d3ca604b92c1
+ms.sourcegitcommit: a5e4503cf9ce0cea562bab9389748d8ca1451f9d
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "8487508"
 ---
-
 # <a name="export-segments-to-marketo-preview"></a>Eksportér segmenter til Marketo (forhåndsversion)
 
 Eksportér segmenter fra de samlede brugerprofiler til at generere kampagner, levere e-mailmarketing og bruge bestemte grupper af kunder med Marketo.

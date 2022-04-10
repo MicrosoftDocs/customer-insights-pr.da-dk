@@ -1,6 +1,6 @@
 ---
 title: Overvåge Dynamics 365 Customer Insights med Azure Monitor
-description: 'Få mere at vide om, hvordan du sender logge til Microsoft Azure-overvågning.'
+description: Få mere at vide om, hvordan du sender logge til Microsoft Azure-overvågning.
 ms.date: 12/14/2021
 ms.reviewer: mhart
 ms.subservice: audience-insights
@@ -9,10 +9,15 @@ author: brndkfr
 ms.author: bkief
 manager: shellyha
 searchScope:
-  - ci-system-diagnostic
-  - customerInsights
+- ci-system-diagnostic
+- customerInsights
+ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
+ms.sourcegitcommit: 5bd07f3a1288f003704acd576741cf6aedc1ac33
+ms.translationtype: HT
+ms.contentlocale: da-DK
+ms.lasthandoff: 03/31/2022
+ms.locfileid: "8523661"
 ---
-
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
 
 Dynamics 365 Customer Insights leverer en direkte integration med Azure Monitor. Med Azure Monitor-ressourcelogfiler kan du overvåge og sende logge til [Azure-datalager](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) eller streame dem til [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
