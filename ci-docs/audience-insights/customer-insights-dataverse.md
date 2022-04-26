@@ -1,7 +1,7 @@
 ---
 title: Customer Insights-data i Microsoft Dataverse
 description: Brug Customer Insights-objekter som tabeller i Microsoft Dataverse.
-ms.date: 11/25/2021
+ms.date: 04/05/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -11,31 +11,33 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 9f730f5856221592cddf34b714beeaca24c52130
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: bbbbf2a7f5edb81ee75f6e33988cd4721134b6e7
+ms.sourcegitcommit: 0363559a1af7ae16da2a96b09d6a4a8a53a8cbb8
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355422"
+ms.lasthandoff: 04/05/2022
+ms.locfileid: "8547619"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
-Customer Insights giver mulighed for at gøre outputobjekter tilgængelige i [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro.md). Denne integration muliggør nem datadeling og brugerdefineret udvikling gennem en tilgang med næste ingen kode/ingen kode. Outputobjekterne vil være tilgængelige som tabeller i Dataverse. Disse tabeller muliggør scenarier som [automatiserede arbejdsprocesser via Power Automate](/power-automate/getting-started), [modelbaserede apps](/powerapps/maker/model-driven-apps/) og [lærredapps](/powerapps/maker/canvas-apps/) via Power Apps. Du kan bruge dataene til alle andre applikationer, der er baseret på Dataverse-tabeller. Den aktuelle implementering understøtter hovedsageligt opslag, hvor data fra de tilgængelige målgruppeindsigtsobjekter kan hentes for et givet kunde-id.
+Customer Insights giver mulighed for at gøre outputobjekter tilgængelige i [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro). Denne integration muliggør nem datadeling og brugerdefineret udvikling gennem en tilgang med næste ingen kode/ingen kode. [Outputobjekterne](#output-entities) er tilgængelige som tabeller i et Dataverse-miljø. Du kan bruge dataene til et hvilket som helst andet program baseret på Dataverse-tabeller. Disse tabeller muliggør scenarier som automatiserede arbejdsprocesser via Power Automate eller opbygning af apps med Power Apps. Den aktuelle implementering understøtter primært opslag, hvor data fra de tilgængelige Customer Insights-objekter kan hentes til et bestemt kunde-id.
 
 ## <a name="attach-a-dataverse-environment-to-customer-insights"></a>Knytte et Dataverse-miljø til Customer Insights
 
-**Organisationer med eksisterende Dataverse-miljøer**
+**Eksisterende organisation**
 
-Organisationer, der allerede bruger Dataverse, kan bruge et af deres [eksisterende Dataverse-miljøer](create-environment.md), når en administrator konfigurerer målgruppeindsigt. Når du angiver URL-adressen til Dataverse-miljøet, knyttes den til deres nye målgruppeindsigtsmiljø. Customer Insights- og Dataverse-miljøer skal hostes i samme område for at sikre den bedst mulige ydeevne.
+Administratorer kan konfigurere Customer Insights til at [bruge et eksisterende Dataverse-miljø](create-environment.md), når de opretter et Customer Insights-miljø. Når du angiver URL-adressen til Dataverse-miljøet, knyttes den til deres nye målgruppeindsigtsmiljø. Customer Insights og Dataverse-miljøer skal hostes i det samme område. 
+
+Hvis du ikke vil bruge et eksisterende Dataverse-miljø, oprettes der et nyt miljø for Customer Insights-dataene i din lejer. 
+
+> [!NOTE]
+> Hvis dine organisationer allerede bruger Dataverse i deres lejer, er det vigtigt at huske, at [oprettelsen af Dataverse-miljøet styres af en administrator](/power-platform/admin/control-environment-creation). Hvis du f.eks. konfigurerer et nyt målgruppeindsigtsmiljø med din organisationskonto, og administratoren har deaktiveret oprettelsen af Dataverse-prøvemiljøer for alle undtagen administratorer, kan du ikke oprette et nyt prøvemiljø.
+> 
+> De Dataverse-prøvemiljøer, der er oprettet i Customer Insights, har 3 GB lagerplads, som ikke tæller med i den samlede kapacitet, der er berettiget til lejeren. Betalte abonnementer får Dataverse-berettigelse til 15 GB til database og 20 GB til fillagring.
 
 **Ny organisation**
 
-Hvis du opretter en ny organisation, når du konfigurerer Customer Insights, får du automatisk et nyt Dataverse-miljø.
-
-> [!NOTE]
-> Hvis dine organisationer allerede bruger Dataverse i deres lejer, er det vigtigt at huske, at [oprettelsen af Dataverse-miljøet styres af en administrator](/power-platform/admin/control-environment-creation.md). Hvis du f.eks. konfigurerer et nyt målgruppeindsigtsmiljø med din organisationskonto, og administratoren har deaktiveret oprettelsen af Dataverse-prøvemiljøer for alle undtagen administratorer, kan du ikke oprette et nyt prøvemiljø.
-> 
-> De Dataverse-prøvemiljøer, der er oprettet i Customer Insights, har 3 GB lagerplads, som ikke tæller med i den samlede kapacitet, der er berettiget til lejeren. Betalte abonnementer får Dataverse-berettigelse til 15 GB til database og 20 GB til fillagring.
+Hvis du opretter en ny organisation, når du konfigurerer Customer Insights, oprettes der automatisk et nyt Dataverse-miljø i organisationen for dig.
 
 ## <a name="output-entities"></a>Outputobjekter
 
@@ -129,11 +131,11 @@ Denne tabel indeholder resultatet af modelforudsigelserne.
 
 Denne tabel indeholder oplysninger om kundeprofilerne vedrørende segmentmedlemskaber.
 
-| Column        | Skriv | Description                        |
+| Column        | Skriv | Description                        |
 |--------------------|--------------|-----------------------------|
-| CustomerId        | String       | Kundeprofil-id        |
-| SegmentProvider      | String       | App, der udgiver segmenterne. Standard: Målgruppeindsigt         |
-| SegmentMembershipType | String       | Kundetype for denne segmentmedlemspost. Understøtter flere typer, f.eks. Kunde, Kontakt eller Firma. Standard: Kunde  |
-| Segmenter       | JSON-streng  | Liste over entydige segmenter, som kundeprofilen er medlem af      |
-| msdynci_identifier  | String   | Entydigt id for segmentmedlemspost. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
+| CustomerId        | String       | Kundeprofil-id        |
+| SegmentProvider      | String       | App, der udgiver segmenterne. Standard: Målgruppeindsigt         |
+| SegmentMembershipType | String       | Kundetype for denne segmentmedlemspost. Understøtter flere typer, f.eks. Kunde, Kontakt eller Firma. Standard: Kunde  |
+| Segmenter       | JSON-streng  | Liste over entydige segmenter, som kundeprofilen er medlem af      |
+| msdynci_identifier  | String   | Entydigt id for segmentmedlemspost. `CustomerId|SegmentProvider|SegmentMembershipType|Name`  |
 | msdynci_segmentmembershipid | GUID      | Deterministisk GUID, der er genereret fra `msdynci_identifier`          |

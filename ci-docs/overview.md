@@ -6,12 +6,12 @@ ms.author: mhart
 ms.date: 07/30/2021
 ms.topic: overview
 ms.manager: shellyha
-ms.openlocfilehash: 82b335388002158885fa55b61562db6c8370dc9d
-ms.sourcegitcommit: 1946d7af0bd2ca216885bec3c5c95009996d9a28
+ms.openlocfilehash: ff3d23d00a565bf9e5693e7cd5db644ddfe4887e
+ms.sourcegitcommit: 9f6733b2f2c273748c1e7b77f871e9b4e5a8666e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8350170"
+ms.lasthandoff: 04/11/2022
+ms.locfileid: "8560426"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Produktoversigt for Dynamics 365 Customer Insights
 
@@ -19,7 +19,7 @@ ms.locfileid: "8350170"
 
 [Målgruppeindsigt](audience-insights/overview.md) hjælper dig med at transformere virksomheden til en kundefokuseret organisation. Marketing-, salgs- og servicemedarbejdere har den indsigt, de skal bruge for at tilpasse oplevelserne. Opret forbindelse mellem data fra transaktions-, adfærds- og overvågningskilder for at oprette en 360-graders kundevisning. Se resultaterne hurtigere med et CDP, der er designet til at give indsigt, der kan handles ud fra. 
 
-[Engagementsindsigt](engagement-insights/overview.md) var en eksempelvisningsfunktion i Customer Insights, der fokuserer på indsamling af web- og mobilhændelser for at få yderligere indsigt Eksemplet er afsluttet den 15. februar 2022.
+[Engagementsindsigt](engagement-insights/overview.md) var en forhåndsversionsfunktion i Customer Insights, der fokuserer på indsamling af web- og mobilhændelser for at få yderligere indsigt. Forhåndsversionen er afsluttet den 15. februar 2022.
  
 ## <a name="choose-a-capability"></a>Vælg en funktion
 

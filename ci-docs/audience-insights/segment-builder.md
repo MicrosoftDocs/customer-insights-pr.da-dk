@@ -1,37 +1,36 @@
 ---
 title: Opret segmenter med segmentgenerator
 description: Opret segmenter med kunder for at gruppere dem på baggrund af forskellige attributter.
-ms.date: 10/18/2021
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segments
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 6fa6f0738bf7fba94b2fb84a70ea17483aae8dac
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 1a28289ecb740ab6cdfa603b2cd66376e7e8b576
+ms.sourcegitcommit: 9ef2cf99b847e7bd8f890f83d84b3a4045aaf8cc
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8354548"
+ms.lasthandoff: 04/01/2022
+ms.locfileid: "8529578"
 ---
 # <a name="create-segments"></a>Oprette segmenter
 
-Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på. Segmenter administreres på siden **Segmenter**. Du kan [oprette nye segmenter](#create-a-new-segment) ved hjælp af segmentgenerator eller [oprette hurtige segmenter](#quick-segments) fra andre områder af appen. 
+Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på. Segmenter administreres på siden **Segmenter**. Du kan [oprette nye segmenter](#create-a-new-segment) ved hjælp af segmentgenerator eller [oprette hurtige segmenter](#quick-segments) fra andre områder af appen.
 
 > [!TIP]
-> - Hurtige segmenter understøttes kun i miljøer for **individuelle kunder**.    
-> - Segmenter, der er baseret på **individuelle kunder**, indeholder automatisk tilgængelige kontaktoplysninger for segmentmedlemmer. I miljøer for **forretningskonti** er segmenter baseret på konti (virksomheder eller datterselskaber). Hvis du vil medtage kontaktoplysninger i et segment, skal du bruge funktionen **Projektattributter** i segmentgeneratoren.
->    - Kontrollér, at kontaktpersonens datakilder er [semantisk knyttet til objektet ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+> - Hurtige segmenter understøttes kun i miljøer for **individuelle kunder**.
+> - Segmenter, der er baseret på **individuelle kunder**, indeholder automatisk tilgængelige kontaktoplysninger for segmentmedlemmer. I miljøer for **forretningskonti** er segmenter baseret på konti (virksomheder eller datterselskaber). Hvis du vil medtage kontaktoplysninger i et segment, skal du bruge funktionen **Projektattributter** i segmentgeneratoren. Kontrollér, at kontaktpersonens datakilder er [semantisk knyttet til objektet ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
 
 ## <a name="segment-builder"></a>Segmentgenerator
 
-I følgende billede illustreres de forskellige aspekter i segmentgeneratoren. Her vises et segment, der resulterer i en gruppe kunder. Kunderne har bestilt varer i en bestemt tidsramme og har indsamlet bonuspoint eller brugt en bestemt sum penge. 
+I følgende billede illustreres de forskellige aspekter i segmentgeneratoren. Her vises et segment, der resulterer i en gruppe kunder. Kunderne har bestilt varer i en bestemt tidsramme og har indsamlet bonuspoint eller brugt en bestemt sum penge.
 
 :::image type="content" source="media/segment-builder-overview.png" alt-text="Elementer i segmentgeneratoren." lightbox="media/segment-builder-overview.png":::
 
@@ -65,11 +64,11 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
 
 1. Du kan definere eller oprette regler på siden Segmentgenerator. En regel består af en eller flere betingelser, der definerer et sæt kunder.
 
-1. Vælg en attribut til et objekt, som du vil filtrere kunderne efter, i sektionen **Regel1**. Du kan vælge attributter på to måder. 
+1. Vælg en attribut til et objekt, du vil filtrere kunder efter, i sektionen **Regel1**. Du kan vælge attributter på to måder.
    - Gennemse listen over tilgængelige objekter og attributter i ruden **Føj til regel**, og vælg ikonet **+** ud for den attribut, der skal tilføjes. Vælg, om du vil føje attributten til en eksisterende regel eller bruge den til at oprette en ny regel.
    - Skriv navnet på attributten i regelafsnittet for at få vist tilsvarende forslag.
 
-1. Vælg operatorerne for at angive de tilsvarende værdier for betingelsen. Attributten kan have en af fire datatyper som værdi: numerisk, streng, dato eller boolesk. Afhængigt af datatypen af attributten er der forskellige operatorer, der kan angive betingelsen. For segmenter med forretningskonti er der to tilgængelige specialoperatører til at inkludere potentielle hierarkier mellem de konti, der er indtaget. Brug operatorerne *underordnet af* og *overordnet af* til at medtage relaterede konti. 
+1. Vælg operatorerne for at angive de tilsvarende værdier for betingelsen. Attributten kan have en af fire datatyper som værdi: numerisk, streng, dato eller boolesk. Afhængigt af datatypen af attributten er der forskellige operatorer, der kan angive betingelsen. For segmenter med forretningskonti er der to tilgængelige specialoperatører til at inkludere potentielle hierarkier mellem de konti, der er indtaget. Brug operatorerne *underordnet af* og *overordnet af* til at medtage relaterede konti.
 
 1. Vælg **Tilføj betingelse** for at føje flere betingelser til en regel. Hvis du vil oprette en regel under den aktuelle regel, skal du vælge **Tilføj underregel**.
 
@@ -77,7 +76,7 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
 
    :::image type="content" source="media/relationship-path.png" alt-text="Mulig relationssti, når du opretter en regel baseret på et objekt, der er knyttet til det samlede kundeobjekt.":::
 
-   Objektenheden *eCommerce_eCommercePurchases* i skærmbilledet indeholder f.eks. fire funktioner, der kan knyttes til objektet *Kunde*: 
+   Objektenheden *eCommerce_eCommercePurchases* i skærmbilledet indeholder f.eks. fire funktioner, der kan knyttes til objektet *Kunde*:
    - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > Kunde
    - eCommerce_eCommercePurchases > kunde
    - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
@@ -101,11 +100,11 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
       - **Overlapning** overlapper de to grupper. Kun data, *der er fælles* for begge grupper, forbliver i den samlede gruppe.
       - **Undtagen** kombinerer de to grupper. Kun data i gruppe A, *der ikke er fælles* for data i gruppe B, bevares.
 
-1. Som standard opretter segmenter det outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet. 
+1. Som standard opretter segmenter det outputobjekt, der indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Kunde*-objektet, kan du føje flere attributter fra disse objekter til outputobjektet. Vælg **Projektattributter** for at vælge de attributter, der skal føjes til outputobjektet.
 
    > [!IMPORTANT]
    > I forbindelse med segmenter baseret på forretningskonti skal der medtages detaljer om en eller flere kontakter for hver konto fra objektet *ContactProfile* i dette segment, så segmentet kan aktiveres eller eksporteres til de steder, hvor der kræves kontaktoplysninger. Du kan finde flere oplysninger om objektet *ContactProfile* under [Semantiske tilknytninger](semantic-mappings.md).
-   > Et eksempelresultat for et segment, der er baseret på forretningskonti med projektattributter for kontakter, kunne se sådan ud: 
+   > Et eksempelresultat for et segment, der er baseret på forretningskonti med projektattributter for kontakter, kunne se sådan ud:
    >
    > |Id  |Firmanavn  |Indtægt  |Navn på kontakt  | Kontaktrolle|
    > |---------|---------|---------|---------|---|
@@ -117,14 +116,16 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
 
    > [!NOTE]
    > - **Projektattributter** fungerer kun for objekter, der har en en til mange-relation til kundeobjektet. En kunde kan f.eks. have flere abonnementer.
-   > - Hvis den attribut, du vil projektere, er mere end ét hop væk fra objektet *Kunde*, som defineret af relationen, skal den pågældende attribut bruges i alle regler i den segmentforespørgsel, du er ved at oprette. 
-   > - Hvis den attribut, du vil projektere, kun er ét hop væk fra objektet *Kunde*, skal den pågældende attribut ikke nødvendigvis findes i alle regler i den segmentforespørgsel, du er ved at oprette. 
+   > - Hvis den attribut, du vil projektere, er mere end ét hop væk fra objektet *Kunde*, som defineret af relationen, skal den pågældende attribut bruges i alle regler i den segmentforespørgsel, du er ved at oprette.
+   > - Hvis den attribut, du vil projektere, kun er ét hop væk fra objektet *Kunde*, skal den pågældende attribut ikke nødvendigvis findes i alle regler i den segmentforespørgsel, du er ved at oprette.
    > - **Projekterede attributter** anvendes, når der bruges faste operatorer.
 
-1. Før du gemmer og kører segmentet, skal du vælge **Rediger detaljer** ud for segmentnavnet. Angiv et navn til segmentet, og opdater det foreslåede **Navn på outputobjekt** for segmentet. Du kan også føje en beskrivelse til målgruppen.
+1. Vælg **Rediger detaljer** ud for Ikke-navngivet segment. Angiv et navn til segmentet, og opdater det foreslåede **Navn på outputobjekt** for segmentet. Du kan også føje en beskrivelse og [koder](work-with-tags-columns.md#manage-tags) til segmentet.
+
+   :::image type="content" source="media/segments_edit_details.png" alt-text="Dialogboksen Rediger detaljer.":::
 
 1. Vælg **Kør** for at gemme segmentet, aktivér det, og begynd at behandle dit segment på baggrund af alle regler og betingelser. Ellers gemmes det som et inaktivt segment.
-   
+
 1. Vælg **Tilbage til segmenter** for at gå tilbage til siden **Segmenter**.
 
 1. Som standard oprettes segmentet som en dynamisk segment. Det betyder, at segmentet opdateres, når systemet opdateres. Hvis du vil [standse den automatiske opdatering](segments.md#manage-existing-segments), skal du vælge indstillingen **Gør statisk**. Statiske segmenter kan kun [opdateres manuelt](segments.md#refresh-segments) til enhver tid.
@@ -132,7 +133,7 @@ Når du opretter et segment, kan du gemme en kladde. I kladdefasen gemmes et seg
 > [!TIP]
 > - Segmentgeneratoren foreslår ikke gyldige værdier fra objekter, når operatorerne angives for betingelserne. Du kan gå til **Data** > **Objekter** og hente objektdataene for at se, hvilke værdier der er tilgængelige.
 > - Betingelser, der er baseret på datoerne, giver dig mulighed for at skifte mellem faste datoer og et flydende datointerval.
-> - Hvis du har flere regler for dit segment, har den regel, du redigerer, en lodret blå linje ud for den. 
+> - Hvis du har flere regler for dit segment, har den regel, du redigerer, en lodret blå linje ud for den.
 > - Du kan flytte regler og betingelser til andre steder i segmentdefinitionen. Vælg [...] ud for en regel eller betingelse, og vælg, hvordan og hvor den skal flyttes.
 > - Med kontrolelementerne **Fortryd** og **Annuller fortryd** på kommandolinjen kan du annullere ændringerne.
 
@@ -153,10 +154,9 @@ Med hurtige segmenter kan du nemt oprette simple segmenter med en enkelt operato
 
 4. Systemet vil give dig en **Anslået segmentstørrelse**. Du kan vælge, om du vil oprette det segment, du har defineret, eller først vil gå til det igen for at få en anden segmentstørrelse.
 
-    > [!div class="mx-imgBorder"]
-    > ![Navn og estimering for et hurtigt segment.](media/quick-segment-name.png "Navn og estimering for et hurtigt segment")
+   :::image type="content" source="media/quick-segment-name.png" alt-text="Navn og estimering for et hurtigt segment.":::
 
-5. Angiv et **Navn** til dit segment. Angiv eventuelt et **Vist navn**.
+5. Angiv et **Navn** og **Outputobjektnavn** til segmentet. Du kan også tilføje [koder](work-with-tags-columns.md#manage-tags).
 
 6. Vælg **Gem** for at oprette dit segment.
 

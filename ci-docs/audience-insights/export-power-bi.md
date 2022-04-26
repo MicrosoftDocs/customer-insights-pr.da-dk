@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: dccc069a355725bae09c1fece9292b9aee374e6d
-ms.sourcegitcommit: e7cdf36a78a2b1dd2850183224d39c8dde46b26f
+ms.openlocfilehash: 06c5bed74b82f9ae2a764a2eb363348e0edab531
+ms.sourcegitcommit: 4b2ad63aa7a4d4f31b573870bccbc40befe5f8fd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "8225508"
+ms.lasthandoff: 04/07/2022
+ms.locfileid: "8552049"
 ---
 # <a name="connector-for-power-bi-preview"></a>Connector til Power BI (prøve)
 
@@ -72,6 +72,6 @@ Når du har fjernet de kopierede relationer, skal du prøve at konfigurere Power
 
 Når du indlæser objekter, som indeholder felter med et datoformat, f.eks. DD/MM/ÅÅÅÅ, kan du støde på fejl på grund af uoverensstemmende landeformater. Denne uoverensstemmelse opstår, når Power BI Desktop-filen angives til en anden landestandard end engelsk (USA), da datofelter i målgruppeindsigt gemmes i amerikansk format.
 
-Filen Power BI Desktop har en enkelt indstilling for landeindstilling, som anvendes, når du henter data. Du kan få vist datofelterne korrekt ved at angive landestandard for .BPI-fil til engelsk (USA). [Flere oplysninger om, hvordan du ændrer landestandard for en Power BI Desktop-fil](/power-bi/fundamentals/supported-languages-countries-regions.md#choose-the-locale-for-importing-data-into-power-bi-desktop).
+Filen Power BI Desktop har en enkelt indstilling for landeindstilling, som anvendes, når du henter data. Du kan få vist datofelterne korrekt ved at angive landestandard for .BPI-fil til engelsk (USA). [Flere oplysninger om, hvordan du ændrer landestandard for en Power BI Desktop-fil](/power-bi/fundamentals/supported-languages-countries-regions#choose-the-language-or-locale-of-power-bi-desktop).
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

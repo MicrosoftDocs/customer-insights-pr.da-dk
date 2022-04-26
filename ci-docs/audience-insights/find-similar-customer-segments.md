@@ -1,23 +1,23 @@
 ---
 title: Find lignende kunder med AI (indeholder video)
 description: Find lignende kundesegmenter med kunstig intelligens.
-ms.date: 06/25/2020
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: JimsonChalissery
 ms.author: jimsonc
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: 5626b980ad8802aae9657052e3ca51a70c49baf9
-ms.sourcegitcommit: 73cb021760516729e696c9a90731304d92e0e1ef
+ms.openlocfilehash: 851ea2c3388de603c1beef4a58e359aa989c9c46
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/25/2022
-ms.locfileid: "8355238"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561563"
 ---
 # <a name="similar-customers-preview"></a>Lignende kunder (prøveversion)
 
@@ -36,6 +36,8 @@ Denne funktion giver dig mulighed for at finde lignende kunder i kundebasen ved 
 
 1. Gennemgå det foreslåede navn på det nye segment, og rediger det, hvis det er nødvendigt.
 
+1. Du kan også føje [koder](work-with-tags-columns.md#manage-tags) til det nye segment.
+
 1. Gennemgå de felter, der definerer det nye segment. I disse felter defineres det udgangspunkt, som systemet vil bruge til at finde lignende kunder i et kildesegment. Systemet vil som standard vælge anbefalede felter.
   Felter, der kan reducere modellens ydeevne drastisk, udelukkes automatisk:
   
@@ -44,9 +46,9 @@ Denne funktion giver dig mulighed for at finde lignende kunder i kundebasen ved 
 
 1. Vælg, om du vil medtage **Alle kunder** eller kun kunder i et **Bestemt eksisterende segment** i det nye segment.
 
-1. Udeluk kunder i kildesegmentet ved at markere afkrydsningsfeltet **Udelad alle i kildesegment**.
-
 1. Systemet foreslår som standard kun 20 % af målgruppens størrelse i outputtet. Rediger denne tærskel efter behov. Hvis tærskelværdien øges, reduceres præcisionen.
+
+1. Inkluder kunder i kildesegmentet ved at markere afkrydsningsfeltet **Medtag medlemmer fra kildesegmentet ud over kunder med lignende attributter**.
 
 1. Vælg **Kør** nederst på siden for at starte en binær klassificeringsopgave (en metode til maskinel indlæring), som analyserer datasættet.
 
@@ -67,7 +69,7 @@ Du kan [arbejde med outputtet af et lignende segment](segments.md) på samme må
 
 Hvis du vil opdatere et lignende segment, skal du vælge det på siden **Segmenter** og vælge **Opdater** på handlingslinjen.
 
-Hvis du redigerer et lignende segment, behandles dataene igen. Det tidligere oprettede segment opdateres med nye data.    
+Hvis du redigerer et lignende segment, behandles dataene igen. Det tidligere oprettede segment opdateres med nye data.
 Hvis du vil redigere et lignende segment, skal du vælge det på siden **Segmenter** og vælge **Rediger** på handlingslinjen. Anvend ændringerne, og vælg **Kør** for at starte behandlingen.
 
 ## <a name="delete-a-similar-segment"></a>Slette et lignende segment
@@ -84,6 +86,5 @@ Den binære klassificerings maskinelle indlæringsmodel tildeler kunderne en sco
 - Lighedsscorer mellem 0,85 og 1 er kunder, som systemet klassificerer som *meget lignende*
 
 Kunder med lighedsscorer på under 0,4 medtages ikke i modellens output. Systemet betragter dem ikke som tilstrækkeligt lig med kildesegmentet.
-
 
 [!INCLUDE[footer-include](../includes/footer-banner.md)]

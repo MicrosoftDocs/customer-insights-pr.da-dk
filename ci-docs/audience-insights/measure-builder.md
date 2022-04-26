@@ -1,26 +1,26 @@
 ---
 title: Oprette nye måleenheder med målergeneratoren
 description: Opbyg målinger fra bunden for at analysere målepunkter om virksomheden.
-ms.date: 02/28/2022
+ms.date: 03/25/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.author: wameng
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 5329aea240ba40ec8698b3ddeb67fb5f21c62bbd
-ms.sourcegitcommit: cf6a0ed44915908a44c70889a2dd199a9d0d4798
+ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
+ms.sourcegitcommit: e129a1fa8b020b6bfb6efc3c53fa9d89e1614ad1
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 02/28/2022
-ms.locfileid: "8359896"
+ms.lasthandoff: 04/12/2022
+ms.locfileid: "8561526"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Brug målgenerator til at oprette måleenheder fra bunden
 
-I denne artikel forklares, hvordan du kan oprette en [ny måleenhed](measures.md) fra bunden. Med målgeneratoren kan du definere beregninger ved hjælp af regneoperatører, aggregeringsfunktioner og filtre. Du kan oprette en måleenhed med attributter fra objekter, der er relateret til objektet samlet *Kunde*. 
+I denne artikel forklares, hvordan du kan oprette en [ny måleenhed](measures.md) fra bunden. Med målgeneratoren kan du definere beregninger ved hjælp af regneoperatører, aggregeringsfunktioner og filtre. Du kan oprette en måleenhed med attributter fra objekter, der er relateret til objektet samlet *Kunde*.
 
 Oprettelse af foranstaltninger i B-til-C- og B-til-B-miljøer fungerer på samme måde. Men hvis du i B-til-B-miljøet [bruger firmaer med hierarkier](relationships.md#set-up-account-hierarchies), kan du vælge at aggregere målingen på tværs af relaterede underkonti.
 
@@ -40,11 +40,11 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundeattribut, k
 
 1. Vælg **Ny**, og vælg **Opret din egen**.
 
-   :::image type="content" source="media/measure-b2c.png" alt-text="Tom konfigurationsskærm for en B-til-C-måleenhed. ":::
+   :::image type="content" source="media/measure-b2c.png" alt-text="Tom konfigurationsskærm for en B-til-C-måleenhed. " lightbox="media/measure-b2c.png":::
 
-1. Vælg **Rediger navn**, og angiv et **Navn** til målingen. 
+1. Hvis du vil spore resultaterne på virksomhedsniveau, skal du skifte mellem **Måltype** og **Virksomhedsniveau**. **Kundeniveau** er valgt som standard. **Kundeniveau** tilføjer automatisk *Kunde-id*-attributten til Dimensioner, mens **Virksomhedsniveau** automatisk fjerner den.
 
-1. Vælg aggregeringsfunktionen i rullemenuen **Vælg funktion** i konfigurationsområdet. Aggregeringsfunktionerne omfatter: 
+1. Vælg aggregeringsfunktionen i rullemenuen **Vælg funktion** i konfigurationsområdet. Aggregeringsfunktionerne omfatter:
    - **Sum**
    - **Gennemsnitlig**
    - **Tælling**
@@ -57,11 +57,11 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundeattribut, k
    - **ArgMin**: finder den datapost, der giver minimumværdien fra en målfunktion
 
 1. Vælg **Tilføj attribut** for at vælge de data, du skal bruge for at oprette denne måling.
-   
-   1. Vælg fanen **Attributter**. 
-   1. Dataobjekt: Vælg det objekt, der indeholder den attribut, du vil måle. 
+
+   1. Vælg fanen **Attributter**.
+   1. Dataobjekt: Vælg det objekt, der indeholder den attribut, du vil måle.
    1. Dataattribut: Vælg den attribut, du vil bruge i aggregeringsfunktionen for at beregne målingen. Du kan kun vælge én attribut ad gangen.
-   1. Du kan også vælge en dataattribut fra en eksisterende måleenhed ved at vælge fanen **Målinger**, eller du kan også søge efter navnet på et objekt eller en måling. 
+   1. Du kan også vælge en dataattribut fra en eksisterende måleenhed ved at vælge fanen **Målinger**, eller du kan også søge efter navnet på et objekt eller en måling.
    1. Vælg **Tilføj** for at føje den valgte attribut til målingen.
 
 1. Hvis du vil oprette mere komplekse målinger, kan du tilføje flere attributter eller bruge matematikoperatorer på målfunktionen.
@@ -73,16 +73,18 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundeattribut, k
    1. Vælg **Tilføj** for at tilføje filtrene til målingen.
 
 1. Vælg **Dimension** for at vælge flere felter, der skal føjes som kolonner til objektet Output.
- 
-   1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn. Som standard vælges dimensionen *CustomerID* for at oprette *mål på kundeniveau*. Du kan fjerne standarddimensionen, hvis du vil oprette *mål på virksomhedsniveau*.
+
+   1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn.
+   > [!TIP]
+   > Hvis du har valgt **Kundeniveau** som **Måltype** er attributten *Kunde-id* allerede tilføjet. Hvis du fjerner attributten, skifter **Måltype** til **Forretningsniveau**.
    1. Vælg **Gennemført** for at tilføje dimensioner til målingen.
 
 1. Hvis der er værdier i dataene, som du skal erstatte med et heltal, skal du vælge **Regler**. Konfigurer reglen, og sørg for kun at vælge hele tal som erstatninger. Erstat f.eks. *null* med *0*.
 
-1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti. 
-   
+1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti.
+
    1. Vælg **Relationssti**, og vælg den objektsti, der skal bruges til at identificere målingen. Hvis der kun er en enkelt sti til objektet *Kunde*, vises dette kontrolelement ikke.
-   1. Vælg **Udført** for at anvende det valgte. 
+   1. Vælg **Udført** for at anvende det valgte.
 
 1. Hvis du vil tilføje flere beregninger for målingen, skal du vælge **Ny beregning**. Du kan kun bruge objekter på samme objektsti til nye beregninger. Flere beregninger vises som nye kolonner i objektet til måling af output.
 
@@ -90,14 +92,17 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundeattribut, k
 
 1. I området **Prøveversion** kan du se dataskemaet for outputobjektet for måleenheden, herunder filtre og dimensioner. Prøveversionen reagerer dynamisk på ændringer i konfigurationen.
 
+1. Vælg **Rediger detaljer** ud for Ikke-navngivet mål. Angiv et navn for målingen. Du kan også tilføje [koder](work-with-tags-columns.md#manage-tags) til den nye måling.
+
+   :::image type="content" source="media/measures_edit_details.png" alt-text="Dialogboksen Rediger detaljer.":::
+
 1. Vælg **Kør** for at beregne resultaterne for det konfigurerede mål. Vælg **Gem og luk**, hvis du vil bevare den aktuelle konfiguration og køre målingen senere.
 
 1. Gå til **Målinger** for at se den måling, du netop har oprettet, på listen.
 
 # <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
-
-Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller på niveauet for alle firmaer (forretningsmål). 
+Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller på niveauet for alle firmaer (forretningsmål).
 
 - Kundemåleenhed: Genererer output som sit eget objekt. Kundetiltag vises ikke på kundeprofilkortet.
 
@@ -109,9 +114,7 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller
 
    :::image type="content" source="media/measure-b2b.png" alt-text="Tom konfigurationsskærm for en B-til-B-måleenhed. ":::
 
-1. Vælg **Rediger navn**, og angiv et **Navn** til målingen. 
-
-1. Vælg aggregeringsfunktionen i rullemenuen **Vælg funktion** i konfigurationsområdet. Aggregeringsfunktionerne omfatter: 
+1. Vælg aggregeringsfunktionen i rullemenuen **Vælg funktion** i konfigurationsområdet. Aggregeringsfunktionerne omfatter:
    - **Sum**
    - **Gennemsnitlig**
    - **Tælling**
@@ -122,11 +125,11 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller
    - **Sidste**: Tager den sidste værdi, der er tilføjet dataposten
 
 1. Vælg **Tilføj attribut** for at vælge de data, du skal bruge for at oprette denne måling.
-   
-   1. Vælg fanen **Attributter**. 
-   1. Dataobjekt: Vælg det objekt, der indeholder den attribut, du vil måle. 
+
+   1. Vælg fanen **Attributter**.
+   1. Dataobjekt: Vælg det objekt, der indeholder den attribut, du vil måle.
    1. Dataattribut: Vælg den attribut, du vil bruge i aggregeringsfunktionen for at beregne målingen. Du kan kun vælge én attribut ad gangen.
-   1. Du kan også vælge en dataattribut fra en eksisterende måleenhed ved at vælge fanen **Målinger**, eller du kan også søge efter navnet på et objekt eller en måling. 
+   1. Du kan også vælge en dataattribut fra en eksisterende måleenhed ved at vælge fanen **Målinger**, eller du kan også søge efter navnet på et objekt eller en måling.
    1. Vælg **Tilføj** for at føje den valgte attribut til målingen.
 
 1. Hvis du vil oprette mere komplekse målinger, kan du tilføje flere attributter eller bruge matematikoperatorer på målfunktionen.
@@ -138,8 +141,10 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller
    1. Vælg **Tilføj** for at tilføje filtrene til målingen.
 
 1. Vælg **Dimension** for at vælge flere felter, der skal føjes som kolonner til objektet Output.
- 
-   1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn. Som standard vælges dimensionen *CustomerID* for at oprette *mål på kundeniveau*. Du kan fjerne standarddimensionen, hvis du vil oprette *mål på virksomhedsniveau*.
+
+   1. Vælg **Rediger dimensioner** for at tilføje dataattributter, som du vil gruppere måleværdierne efter. Det kan f.eks. være by eller køn.
+      > [!TIP]
+      > Hvis du har valgt **Kundeniveau** som **Måltype** er attributten *Kunde-id* allerede tilføjet. Hvis du fjerner attributten, skifter **Måltype** til **Forretningsniveau**.
    1. Vælg **Gennemført** for at tilføje dimensioner til målingen.
 
 1. Hvis der er værdier i dataene, som du skal erstatte med et heltal, skal du vælge **Regler**. Konfigurer reglen, og sørg for kun at vælge hele tal som erstatninger. Erstat f.eks. *null* med *0*.
@@ -148,17 +153,19 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller
    - Hvis den er angivet til **Fra**, beregnes målingen for hvert firma. Hver konto får eget resultat.
    - Hvis den er angivet til **Til**, skal du vælge **Rediger** for at vælge firmahierarkiet i henhold til de hierarkier, der er indtaget. Målingen giver kun ét resultat, fordi den samles med underordnede firmaer.
 
-1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti. 
-   
+1. Hvis der er flere stier mellem det dataobjekt, du har tilknyttet, og objektet *Kunde*, skal du vælge en af de identificerede [objektrelationsstier](relationships.md). Måleresultater kan variere, afhængigt af den valgte sti.
+
    1. Vælg **Relationssti**, og vælg den objektsti, der skal bruges til at identificere målingen. Hvis der kun er en enkelt sti til objektet *Kunde*, vises dette kontrolelement ikke.
-   1. Vælg **Udført** for at anvende det valgte. 
+   1. Vælg **Udført** for at anvende det valgte.
 
 1. Vælg **...** i beregningen at **Dupliker**, **Omdøb** eller **Fjern** for en beregning fra en måleenhed.
 
 1. I området **Prøveversion** kan du se dataskemaet for outputobjektet for måleenheden, herunder filtre og dimensioner. Prøveversionen reagerer dynamisk på ændringer i konfigurationen.
 
+1. Vælg **Rediger detaljer** ud for Ikke-navngivet mål. Angiv et navn for målingen. Du kan også tilføje [koder](work-with-tags-columns.md#manage-tags) til den nye måling.
+
+   :::image type="content" source="media/measures_edit_details.png" alt-text="Dialogboksen Rediger detaljer.":::
+
 1. Vælg **Kør** for at beregne resultaterne for det konfigurerede mål. Vælg **Gem og luk**, hvis du vil bevare den aktuelle konfiguration og køre målingen senere.
 
 1. Gå til **Målinger** for at se den måling, du netop har oprettet, på listen.
-
----
