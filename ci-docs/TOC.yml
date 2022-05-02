@@ -2,6 +2,8 @@
   href: index.yml
 - name: Produktoversigt
   href: overview.md
+- name: Nye og opdaterede funktioner
+  href: whats-new-customer-insights.md
 - name: Læringskatalog
   items:
     - name: Start her
@@ -10,7 +12,7 @@
       href: /learn/modules/ingest-data-customer-insights/
     - name: Oprette en samlet kundeprofil
       href: /learn/modules/unified-customer-profile/
-    - name: Arbejde med målgruppeindsigt
+    - name: Arbejde med Customer Insights
       href: /learn/modules/working-with-customer-insights/
     - name: Forbedre data og forudsigelser
       href: /learn/modules/enrich-data/
@@ -26,266 +28,260 @@
       href: trial-FAQ.md
 - name: Få adgang til dit miljø
   href: 'https://home.ci.ai.dynamics.com/'
-- name: Indsigt i målgruppe
+- name: Start her
   items:
-    - name: Hjælp-hub
-      href: audience-insights/index.yml
-    - name: Oversigt over funktioner
-      href: audience-insights/overview.md
-    - name: Nye og opdaterede funktioner
-      href: audience-insights/whats-new-audience-insights.md
-    - name: Start her
+    - name: Hurtig startvejledning
+      href: get-started.md
+    - name: Starte med en betalt licens
+      href: paid-license.md
+    - name: Opret et nyt miljø
+      href: create-environment.md
+    - name: Udforsk Customer Insights
+      href: home.md
+    - name: Arbejde med koder og tabeller
+      href: work-with-tags-columns.md
+    - name: Arbejde med forretningskonti
+      href: work-with-business-accounts.md
+    - name: Integration med Dynamics 365 Marketing
+      href: marketing-get-started.md
+- name: Datakilder
+  items:
+    - name: Oversigt over datakilder
+      href: data-sources.md
+    - name: Tilføje datakilder via Power Query-connectorer
+      href: connect-power-query.md
+    - name: Tilføj en Common Data Model-mappe som en datakilde
+      href: connect-common-data-model.md
+    - name: Tilføje Dataverse-administreret datasø
+      href: connect-dataverse-managed-lake.md
+    - name: Tilføje Azure Synapse Analytics
+      href: connect-synapse.md
+    - name: Forbedring til datakilder
+      href: data-sources-enrichment.md
+    - name: Trinvis opdatering af datakilder
+      href: incremental-refresh-data-sources.md
+    - name: Dataindtagelse i realtid
+      href: real-time-data-ingestion.md
+- name: Datasamling
+  items:
+    - name: Oversigt over datasamling
+      href: data-unification.md
+    - name: Tilknyt objekter og attributter
+      href: map-entities.md
+    - name: Sammenlign objekter
+      href: match-entities.md
+    - name: Flet objekter
+      href: merge-entities.md
+- name: Dataforbedring
+  items:
+    - name: Forbedre kundeprofiler
+      href: enrichment-hub.md
+    - name: Brands og interesser
+      href: enrichment-microsoft.md
+    - name: Udvidede adresser
+      href: enrichment-enhanced-addresses.md
+    - name: Forbedrede virksomhedsdata
+      href: enrichment-enhanced-company-data.md
+    - name: Forbedre med Azure Maps
+      href: enrichment-azure-maps.md
+    - name: Forbedre med Dun & Bradstreet
+      href: enrichment-dnb.md
+    - name: Forbedring med HERE Technologies
+      href: enrichment-here.md
+    - name: Forbedre med Leadspace
+      href: enrichment-leadspace.md
+    - name: Forbedre med LiveRamp
+      href: enrichment-liveramp.md
+    - name: Forbedre med Experian
+      href: enrichment-experian.md
+    - name: Forbedre med Office 365-data
+      href: enrichment-office.md
+    - name: Forbedring med SFTP-brugerdefineret import
+      href: enrichment-SFTP-custom-import.md
+- name: Samlede profiler
+  items:
+    - name: Gennemse samlede kundeprofiler
+      href: customer-profiles.md
+    - name: Filtrer samlede kundeprofiler
+      href: search-filter-index.md
+    - name: Definer kundeaktiviteter
+      href: activities.md
+- name: Segmenter
+  items:
+    - name: Oversigter over segmenter
+      href: segments.md
+    - name: Oprette segmenter
+      href: segment-builder.md
+    - name: Foreslåede segmenter baseret på målinger
+      href: suggested-segments.md
+    - name: Foreslåede segmenter baseret på aktivitet
+      href: suggested-segments-activity.md
+    - name: Få indsigt i segmenter
+      href: segment-insights.md
+    - name: Find lignende kunder
+      href: find-similar-customer-segments.md
+- name: Målinger
+  items:
+    - name: Målingsoversigt
+      href: measures.md
+    - name: Opret en ny måling
+      href: measure-builder.md
+    - name: Sådan bruger du en måleskabelon
+      href: measure-templates.md
+- name: Forudsigelser
+  items:
+    - name: Forudsige data ved hjælp af AI
       items:
-        - name: Hurtig startvejledning
-          href: audience-insights/get-started.md
-        - name: Starte med en betalt licens
-          href: paid-license.md
-        - name: Opret et nyt miljø
-          href: audience-insights/create-environment.md
-        - name: Udforsk målgruppeindsigt
-          href: audience-insights/home.md
-        - name: Arbejde med koder og tabeller
-          href: audience-insights/work-with-tags-columns.md
-        - name: Arbejde med forretningskonti
-          href: audience-insights/work-with-business-accounts.md
-    - name: Datakilder
+        - name: Oversigt over forudsigelsesmodeller
+          href: predictions-overview.md
+        - name: Forudsige kundens levetidsværdi (CLV)
+          href: predict-customer-lifetime-value.md
+        - name: Forudsige produktanbefalinger
+          href: predict-product-recommendation.md
+        - name: Forudsige abonnementsafgang
+          href: predict-subscription-churn.md
+        - name: Forudsige transaktionsafgang
+          href: predict-transactional-churn.md
+        - name: Analysér synspunkt i kundefeedback
+          href: sentiment-analysis.md
+        - name: Brug brugerdefinerede modeller fra Azure Machine Learning
+          href: custom-models.md
+        - name: Fuldfør delvist manglende data
+          href: predictions.md
+    - name: Eksempel på guides
       items:
-        - name: Oversigt over datakilder
-          href: audience-insights/data-sources.md
-        - name: Tilføje datakilder via Power Query-connectorer
-          href: audience-insights/connect-power-query.md
-        - name: Tilføj en Common Data Model-mappe som en datakilde
-          href: audience-insights/connect-common-data-model.md
-        - name: Tilføje Dataverse-administreret datasø
-          href: audience-insights/connect-dataverse-managed-lake.md
-        - name: Tilføje Azure Synapse Analytics
-          href: audience-insights/connect-synapse.md
-        - name: Forbedring til datakilder
-          href: audience-insights/data-sources-enrichment.md
-        - name: Trinvis opdatering af datakilder
-          href: audience-insights/incremental-refresh-data-sources.md
-        - name: Dataindtagelse i realtid
-          href: audience-insights/real-time-data-ingestion.md
-    - name: Datasamling
+        - name: Eksempelguide til CLV-forudsigelse
+          href: sample-guide-predict-clv.md
+        - name: Eksempelvejledning til forudsigelse af abonnementsafgang
+          href: sample-guide-predict-subscription-churn.md
+        - name: Eksempelvejledning til forudsigelse af transaktionsafgang
+          href: sample-guide-predict-transactional-churn.md
+        - name: Eksempelvejledning til forudsigelse til produktanbefaling
+          href: sample-guide-predict-product-recommendation.md
+        - name: Eksperimenter med Azure Machine Learning
+          href: azure-machine-learning-experiments.md
+    - name: Administrere forudsigelser
+      href: manage-predictions.md
+    - name: Opret segmenter baseret på forudsigelser
+      href: prediction-based-segment.md
+- name: Eksportere indstillinger
+  items:
+    - name: Eksport
       items:
-        - name: Oversigt over datasamling
-          href: audience-insights/data-unification.md
-        - name: Tilknyt objekter og attributter
-          href: audience-insights/map-entities.md
-        - name: Sammenlign objekter
-          href: audience-insights/match-entities.md
-        - name: Flet objekter
-          href: audience-insights/merge-entities.md
-    - name: Dataforbedring
+        - name: Eksportoversigt
+          href: export-destinations.md
+        - name: Aktiv kampagne
+          href: export-active-campaign.md
+        - name: AdRoll
+          href: export-adroll.md
+        - name: Autopilot
+          href: export-autopilot.md
+        - name: Azure Blob Storage
+          href: export-azure-blob-storage.md
+        - name: Azure Data Lake Storage Gen2
+          href: export-azure-data-lake-storage-gen2.md
+        - name: Azure Synapse Analytics
+          href: export-azure-synapse-analytics.md
+        - name: Adobe Campaign Standard
+          href: export-adobe-campaign-standard.md
+        - name: Adobe Experience Platform
+          href: export-adobe-experience-platform.md
+        - name: Braze
+          href: export-braze.md
+        - name: Kampagneovervågning
+          href: export-campaign-monitor.md
+        - name: Constant Contact
+          href: export-constant-contact.md
+        - name: DotDigital
+          href: export-dotdigital.md
+        - name: Dynamics 365 Marketing
+          href: export-dynamics365-marketing.md
+        - name: Dynamics 365-salg
+          href: export-dynamics365-sales.md
+        - name: Facebook Annonceadministrator
+          href: export-facebook.md
+        - name: Google Ads
+          href: export-google-ads.md
+        - name: Iterable
+          href: export-iterable.md
+        - name: Klaviyo
+          href: export-klaviyo.md
+        - name: LinkedIn Ads
+          href: export-linkedin-ads.md
+        - name: LiveRamp
+          href: export-liveramp.md
+        - name: Mailchimp
+          href: export-mailchimp.md
+        - name: Marketo
+          href: export-marketo.md
+        - name: Microsoft Advertising
+          href: export-microsoft-advertising.md
+        - name: Omnisend
+          href: export-omnisend.md
+        - name: RollWorks
+          href: export-rollworks.md
+        - name: Salesforce Marketing Cloud
+          href: export-salesforce.md
+        - name: SendGrid
+          href: export-sendgrid.md
+        - name: SendInBlue
+          href: export-sendinblue.md
+        - name: Snapchat
+          href: export-snapchat.md
+        - name: SFTP
+          href: export-sftp.md
+    - name: Andre anvendelser
       items:
-        - name: Forbedre kundeprofiler
-          href: audience-insights/enrichment-hub.md
-        - name: Brands og interesser
-          href: audience-insights/enrichment-microsoft.md
-        - name: Udvidede adresser
-          href: audience-insights/enrichment-enhanced-addresses.md
-        - name: Forbedrede virksomhedsdata
-          href: audience-insights/enrichment-enhanced-company-data.md
-        - name: Forbedre med Azure Maps
-          href: audience-insights/enrichment-azure-maps.md
-        - name: Forbedring med HERE Technologies
-          href: audience-insights/enrichment-here.md
-        - name: Forbedre med Leadspace
-          href: audience-insights/enrichment-leadspace.md
-        - name: Forbedre med LiveRamp
-          href: audience-insights/enrichment-liveramp.md
-        - name: Forbedre med Experian
-          href: audience-insights/enrichment-experian.md
-        - name: Forbedre med Office 365-data
-          href: audience-insights/enrichment-office.md
-        - name: Forbedring med SFTP-brugerdefineret import
-          href: audience-insights/enrichment-SFTP-custom-import.md
-    - name: Samlede profiler
-      items:
-        - name: Gennemse samlede kundeprofiler
-          href: audience-insights/customer-profiles.md
-        - name: Filtrer samlede kundeprofiler
-          href: audience-insights/search-filter-index.md
-        - name: Definer kundeaktiviteter
-          href: audience-insights/activities.md
-    - name: Segmenter
-      items:
-        - name: Oversigter over segmenter
-          href: audience-insights/segments.md
-        - name: Oprette segmenter
-          href: audience-insights/segment-builder.md
-        - name: Foreslåede segmenter baseret på målinger
-          href: audience-insights/suggested-segments.md
-        - name: Foreslåede segmenter baseret på aktivitet
-          href: audience-insights/suggested-segments-activity.md
-        - name: Få indsigt i segmenter
-          href: audience-insights/segment-insights.md
-        - name: Find lignende kunder
-          href: audience-insights/find-similar-customer-segments.md
-    - name: Målinger
-      items:
-        - name: Målingsoversigt
-          href: audience-insights/measures.md
-        - name: Opret en ny måling
-          href: audience-insights/measure-builder.md
-        - name: Sådan bruger du en måleskabelon
-          href: audience-insights/measure-templates.md
-    - name: Forudsigelser
-      items:
-        - name: Forudsige data ved hjælp af AI
-          items:
-            - name: Oversigt over forudsigelsesmodeller
-              href: audience-insights/predictions-overview.md
-            - name: Forudsige kundens levetidsværdi (CLV)
-              href: audience-insights/predict-customer-lifetime-value.md
-            - name: Forudsige produktanbefalinger
-              href: audience-insights/predict-product-recommendation.md
-            - name: Forudsige abonnementsafgang
-              href: audience-insights/predict-subscription-churn.md
-            - name: Forudsige transaktionsafgang
-              href: audience-insights/predict-transactional-churn.md
-            - name: Analysér synspunkt i kundefeedback
-              href: audience-insights/sentiment-analysis.md
-            - name: Brug brugerdefinerede modeller fra Azure Machine Learning
-              href: audience-insights/custom-models.md
-            - name: Fuldfør delvist manglende data
-              href: audience-insights/predictions.md
-        - name: Eksempel på guides
-          items:
-            - name: Eksempelguide til CLV-forudsigelse
-              href: audience-insights/sample-guide-predict-clv.md
-            - name: Eksempelvejledning til forudsigelse af abonnementsafgang
-              href: audience-insights/sample-guide-predict-subscription-churn.md
-            - name: Eksempelvejledning til forudsigelse af transaktionsafgang
-              href: audience-insights/sample-guide-predict-transactional-churn.md
-            - name: Eksempelvejledning til forudsigelse til produktanbefaling
-              href: audience-insights/sample-guide-predict-product-recommendation.md
-            - name: Eksperimenter med Azure Machine Learning
-              href: audience-insights/azure-machine-learning-experiments.md
-        - name: Administrere forudsigelser
-          href: audience-insights/manage-predictions.md
-        - name: Opret segmenter baseret på forudsigelser
-          href: audience-insights/prediction-based-segment.md
-    - name: Eksportere indstillinger
-      items:
-        - name: Eksport
-          items:
-            - name: Eksportoversigt
-              href: audience-insights/export-destinations.md
-            - name: Aktiv kampagne
-              href: audience-insights/export-active-campaign.md
-            - name: AdRoll
-              href: audience-insights/export-adroll.md
-            - name: Autopilot
-              href: audience-insights/export-autopilot.md
-            - name: Azure Blob Storage
-              href: audience-insights/export-azure-blob-storage.md
-            - name: Azure Data Lake Storage Gen2
-              href: audience-insights/export-azure-data-lake-storage-gen2.md
-            - name: Azure Synapse Analytics
-              href: audience-insights/export-azure-synapse-analytics.md
-            - name: Adobe Campaign Standard
-              href: audience-insights/export-adobe-campaign-standard.md
-            - name: Adobe Experience Platform
-              href: audience-insights/export-adobe-experience-platform.md
-            - name: Braze
-              href: audience-insights/export-braze.md
-            - name: Kampagneovervågning
-              href: audience-insights/export-campaign-monitor.md
-            - name: Constant Contact
-              href: audience-insights/export-constant-contact.md
-            - name: DotDigital
-              href: audience-insights/export-dotdigital.md
-            - name: Dynamics 365 Marketing
-              href: audience-insights/export-dynamics365-marketing.md
-            - name: Dynamics 365-salg
-              href: audience-insights/export-dynamics365-sales.md
-            - name: Facebook Annonceadministrator
-              href: audience-insights/export-facebook.md
-            - name: Google Ads
-              href: audience-insights/export-google-ads.md
-            - name: Iterable
-              href: audience-insights/export-iterable.md
-            - name: Klaviyo
-              href: audience-insights/export-klaviyo.md
-            - name: LinkedIn Ads
-              href: audience-insights/export-linkedin-ads.md
-            - name: LiveRamp
-              href: audience-insights/export-liveramp.md
-            - name: Mailchimp
-              href: audience-insights/export-mailchimp.md
-            - name: Marketo
-              href: audience-insights/export-marketo.md
-            - name: Microsoft Advertising
-              href: audience-insights/export-microsoft-advertising.md
-            - name: Omnisend
-              href: audience-insights/export-omnisend.md
-            - name: RollWorks
-              href: audience-insights/export-rollworks.md
-            - name: Salesforce Marketing Cloud
-              href: audience-insights/export-salesforce.md
-            - name: SendGrid
-              href: audience-insights/export-sendgrid.md
-            - name: SendInBlue
-              href: audience-insights/export-sendinblue.md
-            - name: Snapchat
-              href: audience-insights/export-snapchat.md
-            - name: SFTP
-              href: audience-insights/export-sftp.md
-        - name: Andre anvendelser
-          items:
-            - name: Tilføjelsesprogrammet Kundekort til Dynamics 365
-              href: audience-insights/customer-card-add-in.md
-            - name: Microsoft Teams (robot)
-              href: audience-insights/export-teams-bot.md
-            - name: Power Apps
-              href: audience-insights/export-power-apps.md
-            - name: Power Automate
-              href: audience-insights/export-power-automate.md
-            - name: Power BI
-              href: audience-insights/export-power-bi.md
-    - name: Enheder
-      items:
-        - name: Forstå enheder
-          href: audience-insights/entities.md
-        - name: Gennemgå objektskemaer i Common Data Model
-          href: audience-insights/entity-schemas.md
-        - name: Customer Insights-data i Dataverse
-          href: audience-insights/customer-insights-dataverse.md
-        - name: Opbyg relationer og tilknyttede objekter
-          href: audience-insights/relationships.md
-        - name: Definere semantiske tilknytninger
-          href: audience-insights/semantic-mappings.md
-    - name: Administration
-      items:
-        - name: Opsæt systemkonfiguration
-          href: audience-insights/system.md
-        - name: Tildele brugertilladelser
-          href: audience-insights/permissions.md
-        - name: Oversigt over forbindelser
-          href: audience-insights/connections.md
-        - name: Administrere flere miljøer
-          href: audience-insights/manage-environments.md
-        - name: Bring Your Own Key Vault
-          href: audience-insights/use-azure-key-vault.md
-        - name: Oprette forbindelse til en lagerkonto ved hjælp af tjenestens hovednavn
-          href: audience-insights/connect-service-principal.md
-        - name: Eksport af diagnosticeringslogfiler
-          href: audience-insights/diagnostics.md
-        - name: Tjenestebegrænsninger
-          href: service-limits.md
-        - name: DSR-rettigheder og forespørgsler
-          href: dsr-rights-requests.md
-    - name: API'er
-      items:
-        - name: Gennemgå objektskemaer i Common Data Model
-          href: audience-insights/entity-schemas.md
-        - name: Customer Insights-data i Dataverse
-          href: audience-insights/customer-insights-dataverse.md
-        - name: Arbejde med API'er
-          href: audience-insights/apis.md
-        - name: API-referencer
-          href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
+        - name: Tilføjelsesprogrammet Kundekort til Dynamics 365
+          href: customer-card-add-in.md
+        - name: Microsoft Teams (robot)
+          href: export-teams-bot.md
+        - name: Power Apps
+          href: export-power-apps.md
+        - name: Power Automate
+          href: export-power-automate.md
+        - name: Power BI
+          href: export-power-bi.md
+- name: Enheder
+  items:
+    - name: Forstå enheder
+      href: entities.md
+    - name: Gennemgå objektskemaer i Common Data Model
+      href: entity-schemas.md
+    - name: Customer Insights-data i Dataverse
+      href: customer-insights-dataverse.md
+    - name: Opbyg relationer og tilknyttede objekter
+      href: relationships.md
+    - name: Definere semantiske tilknytninger
+      href: semantic-mappings.md
+- name: Administration
+  items:
+    - name: Opsæt systemkonfiguration
+      href: system.md
+    - name: Konfigurer sikkerhedsindstillinger
+      href: security-overview.md
+    - name: Tildele brugertilladelser
+      href: permissions.md
+    - name: Oversigt over forbindelser
+      href: connections.md
+    - name: Administrere flere miljøer
+      href: manage-environments.md
+    - name: Bring Your Own Key Vault
+      href: use-azure-key-vault.md
+    - name: Oprette forbindelse til en lagerkonto ved hjælp af tjenestens hovednavn
+      href: connect-service-principal.md
+    - name: Eksport af diagnosticeringslogfiler
+      href: diagnostics.md
+    - name: Tjenestebegrænsninger
+      href: service-limits.md
+    - name: DSR-rettigheder og forespørgsler
+      href: dsr-rights-requests.md
+- name: API'er
+  items:
+    - name: Arbejde med API'er
+      href: apis.md
+    - name: API-referencer
+      href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
 - name: Samtykkeadministration (forhåndsversion)
   items:
     - name: Hjælp-hub
@@ -306,10 +302,10 @@
           href: consent-management/set-consent-rules.md
     - name: Administrer samtykkedata
       items:
-        - name: Aktivér samtykkeregler i målgruppeindsigt
-          href: audience-insights/activate-consent.md
-        - name: Administrer standardregler for samtykke for segmenter i målgruppeindsigt
-          href: audience-insights/change-default-consent-rules.md
+        - name: Aktivér samtykkeregler i Customer Insights
+          href: activate-consent.md
+        - name: Administrer standardregler for samtykke i Customer Insights-segmenter
+          href: change-default-consent-rules.md
     - name: Administrer indstillinger og brugere
       items:
         - name: Konfigurer systemindstillinger
@@ -320,7 +316,5 @@
       items:
         - name: Opret forudsigelser med samtykkedata
           href: consent-management/predictions-consent-data.md
-- name: Engagementsindsigt (forhåndsversion)
-  href: engagement-insights/overview.md
 - name: Få support
   href: /power-platform/admin/get-help-support
