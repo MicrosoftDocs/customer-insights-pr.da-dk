@@ -163,7 +163,7 @@ Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abon
 
    - **Kig tilbage-vinduet:** Vælg mindst **365 dage**. Denne indstilling definerer, hvor langt tilbage modellen tjekker en kundens aktivitet som input til deres anbefalinger.
    
-   :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Modelindstillinger for produktanbefalingsmodellen":::.
+   :::image type="content" source="media/product-recommendation-model-preferences.png" alt-text="Modelindstillinger for produktanbefalingsmodellen.":::
 
 1. Vælg **Påkrævede data**, og vælg **Tilføj data** til købshistorik.
 
