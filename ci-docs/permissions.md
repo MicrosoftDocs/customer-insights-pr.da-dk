@@ -12,12 +12,12 @@ searchScope:
 - ci-permissions
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b80f07dfa734f4dd762bd711151a7045f24bed7d
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: 74c7ff7cda8431c04dd34713becefa7e346331b4
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653561"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740896"
 ---
 # <a name="user-permissions"></a>Brugertilladelser
 
@@ -41,7 +41,7 @@ Der findes tre typer roller:
 
 - Alle tilladelser, der er tilgængelige for seeren.
 - Indlæs og transformer data ved hjælp af siden **Datakilder**.
-- Udfyld sektionere *Datasamling* (**Tilknyt**, **Match** og **Flet**), som resulterer i det samlede kundeprofilobjekt.
+- Fuldfør ***Datasamling**, som resulterer i objektet unified customer profile.
 - Definer **Relationer** og **Aktiviteter**.
 - Opret segmenter ved hjælp af siden **Segmenter**.
 - Opret målinger på siden **Målinger**.

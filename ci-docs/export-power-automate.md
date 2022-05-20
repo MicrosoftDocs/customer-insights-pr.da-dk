@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 409792bc3f12fca451ef038e3300758bdf9ecf3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d22c4c785695b23a257a89f1ffa519fdc18b443e
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646337"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741172"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-connector (prøveversion)
 
@@ -25,14 +25,14 @@ Udløs specifikke hændelser, der skal udføres automatisk, når dataene ændres
 
 ## <a name="power-automate-triggers"></a>Power Automate-udløsere
 
-Brug udløsere til at oprette skystrømme og automatisere tilbagevendende opgaver, f.eks. meddelelser eller mere avancerede handlinger. 
+Brug udløsere til at oprette skystrømme og automatisere tilbagevendende opgaver, f.eks. meddelelser eller mere avancerede handlinger.
 
-- Udløses, når en opdatering af datakilde mislykkes. 
+- Udløses, når en opdatering af datakilde mislykkes.
 - Udløses, når en opdatering af datakilde lykkes.
 - Udløses, når en tærskel krydses i et segment. Udløseren er begrænset til krydsning over grænsen.
 - Udløses, når en tærskel krydses i en forretningsmæssig måling. Det er kun forretningsmålinger uden en dimension, der understøttes. Udløseren er begrænset til krydsning over grænsen.
 - Udløser, når en fuld opdatering af (datakilder, segmenter, målinger...) er fuldført.
-- Udløser, når en opdatering af samlingsprocessen (tilknytning, match, fletning) er fuldført.
+- Udløses, når en opdatering af samlingsprocessen er fuldført.
 
 [Konfigurere dine udløsere i Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 

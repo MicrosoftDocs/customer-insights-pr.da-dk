@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: ecc8bb3dbec1d4583c4bf2a58058145343945299
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a460ec87ec85f0614f944d352588d4ca899f8120
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646135"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755443"
 ---
 # <a name="work-with-customer-insights-apis"></a>Arbejd med Customer Insights API'er
 
@@ -25,7 +25,7 @@ Dynamics 365 Customer Insights leverer API'er til at opbygge dine egne applikati
 > [!IMPORTANT]
 > Oplysninger om disse API'er, der er angivet i [Customer Insights API'er](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights). De indeholder yderligere oplysninger om operationer, parametre og svar.
 
-I denne artikel beskrives, hvordan du får adgang til API'erne for Customer Insights, opretter en Azure App Registration og kommer i gang med de tilgængelige klientbiblioteker.
+I denne artikel beskrives, hvordan du kan få adgang til Customer Insights-API'er, oprette en Azure-appregistrering og komme i gang med klientbiblioteker.
 
 ## <a name="get-started-trying-the-customer-insights-apis"></a>Kom i gang med at prøve Customer Insights API'er
 
@@ -83,13 +83,13 @@ Du kan bruge program/klient-id'et til denne app-registrering sammen med Microsof
 
 Du kan finde flere oplysninger om MSAL under [Oversigt over Microsoft-godkendelsesbibliotek (MSAL)](/azure/active-directory/develop/msal-overview).
 
-Du kan finde flere oplysninger om app-registrering i Azure under [Registrere et program](/azure/active-directory/develop/quickstart-register-app.md#register-an-application).
+Du kan finde flere oplysninger om app-registrering i Azure under [Registrere et program](/graph/auth-register-app-v2).
 
 Du kan finde oplysninger om brug af API'er i vores klientbiblioteker under [Klientbiblioteker til Customer Insights](#customer-insights-client-libraries).
 
 ### <a name="server-to-server-application-permissions"></a>Server til server-programtilladelser
 
-[App-registreringsafsnittet](#create-a-new-app-registration-in-the-azure-portal) angiver, hvordan du kan registrere en app, der kræver, at brugeren logger på for at blive godkendt. Få mere at vide om, hvordan du opretter en app-registrering, der ikke kræver brugerinteraktion og kan køres på en server.
+[App-registreringsafsnittet](#create-a-new-app-registration-in-the-azure-portal) angiver, hvordan du kan registrere en app, der kræver, at brugeren logger på for at blive godkendt. Få mere at vide om, hvordan du opretter en app-tilmelding, der ikke kræver brugerkontakt og kan køres på en server.
 
 1. Gå til **API-tilladelser** i din app-registrering i Azure-portalen.
 
@@ -112,6 +112,10 @@ Du kan finde oplysninger om brug af API'er i vores klientbiblioteker under [Klie
    Åbn Customer Insights, gå til **Admin** > **Tilladelser**, og vælg **Tilføj bruger**.
 
 1. Søg efter navnet på din app-registrering, vælg det i søgeresultaterne, og vælg **Gem**.
+
+## <a name="sample-queries"></a>Eksempelforespørgsler
+
+Vi har samlet en kort liste over OData-eksempelforespørgsler for at arbejde med API'er: [OData-forespørgselseksempler](odata-examples.md).
 
 ## <a name="customer-insights-client-libraries"></a>Customer Insights-klientbiblioteker
 
@@ -137,7 +141,7 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
 
 1. Brug [Microsoft-godkendelsesbiblioteket (MSAL)](/azure/active-directory/develop/msal-overview) til at hente en `AccessToken` ved hjælp af en eksisterende [Azure-app-registrering](#create-a-new-app-registration-in-the-azure-portal).
 
-1. Når et token er godkendt og håndteret korrekt, skal du oprette et nyt token eller bruge en eksisterende `HttpClient`, hvor den ekstra **DefaultRequestHeaders "Authorization"** er angivet til **Bearer "adgangstoken"** og **Ocp-Apim-Subscription-Key** angivet til [**abonnementsnøglen** fra Customer Insights-miljøet](#get-started-trying-the-customer-insights-apis).   
+1. Når et token er godkendt og håndteret korrekt, skal du oprette et nyt token eller bruge en eksisterende `HttpClient`, hvor **DefaultRequestHeaders "Authorization"** er angivet til **Bearer "adgangstoken"** og **Ocp-Apim-Subscription-Key** angivet til [**abonnementsnøglen** fra Customer Insights-miljøet](#get-started-trying-the-customer-insights-apis).   
  
    Nulstil overskriften **Godkendelse**, hvis det er relevant. Når tokenet f. eks. er udløbet.
 
@@ -147,7 +151,7 @@ Få mere at vide om, hvordan du kommer i gang med at bruge C#-klientbiblioteker 
 
 1. Foretag opkald med klienten i "udvidelsesmetoder" - f.eks. `GetAllInstancesAsync`. Hvis adgangen til den underliggende `Microsoft.Rest.HttpOperationResponse` er foretrukket, skal du bruge http-meddelelsesmetoder som f.eks. `GetAllInstancesWithHttpMessagesAsync`.
 
-1. Svaret vil sandsynligvis være typen `object`, fordi metoden kan returnere flere typer (f. eks `IList<InstanceInfo>` og `ApiErrorResult`). Hvis du vil kontrollere returtypen, kan du sikkert konvertere objekterne til de responstyper, der er angivet på siden [API-detaljer](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) for den pågældende handling.    
+1. Svaret vil sandsynligvis være typen `object`, fordi metoden kan returnere flere typer (f. eks `IList<InstanceInfo>` og `ApiErrorResult`). Hvis du vil kontrollere returtypen, skal du bruge objekterne i de responstyper, der er angivet på [siden med API-detaljer](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights) for den pågældende handling.    
    
    Hvis der er behov for flere oplysninger om anmodningen, kan du bruge **http-meddelelsesmetoderne** til at få adgang til RAW-svarobjektet.
 

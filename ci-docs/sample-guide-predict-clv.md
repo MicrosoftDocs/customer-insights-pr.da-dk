@@ -1,19 +1,19 @@
 ---
 title: Vejledning til eksempel på forudsigelse af kundens levetidsværdi
 description: Brug denne eksempelvejledning til at afprøve forudsigelsesmodellen for kundens levetidsværdi.
-ms.date: 05/25/2021
-ms.reviewer: mhart
+ms.date: 03/31/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: yashlundia
 ms.author: yalundia
 manager: shellyha
-ms.openlocfilehash: 9f8d1d0f0757d8003ad3859fab75362f3988cd00
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 351946c734f5a1054eb3769b2d9cced3bed48e15
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646297"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740804"
 ---
 # <a name="customer-lifetime-value-clv-prediction-sample-guide"></a>Vejledning til eksempel på forudsigelse af kundens levetidsværdi (CLV)
 
@@ -102,64 +102,7 @@ Gennemse artiklerne [om dataindtag](data-sources.md) og [import af datakilder ve
 
 ## <a name="task-2---data-unification"></a>Opgave 2 - Datasamling
 
-Når vi har indtaget dataene, begynder vi nu datasamlingen for at oprette en samlet kundeprofil. Du kan finde flere oplysninger i [Datasamling](data-unification.md).
-
-### <a name="map"></a>Tilknytning
-
-1. Når du har indsat dataene, skal du knytte kontakterne fra eCommerce- og Loyalty-data til almindelige datatyper. Go to **Data** > **Saml** > **Tilknyt**.
-
-1. Vælg de objekter, der repræsenterer kundeprofilen - **eCommerceContacts** og **loyCustomers**. Vælg derefter **Anvend**.
-
-   ![samle eCommerce- og loyalty-datakilder.](media/unify-ecommerce-loyalty.png)
-
-1. Vælg **ContactId** som primær nøgle for **eCommerceContacts** og **LoyaltyID** som primær nøgle for **loyCustomers**.
-
-   ![Saml LoyaltyId som primær nøgle.](media/unify-loyaltyid.png)
-
-1. Vælg **Gem**.
-
-### <a name="match"></a>Resultat
-
-1. Gå til fanen **Match**, og vælg **Angiv rækkefølge**.
-
-1. På rullelisten **Primær** skal du vælge **eCommerceContacts: e-handel** som den primære kilde og inkludere alle poster.
-
-1. På rullelisten **Entity 2** skal du vælge **loyCustomers: LoyaltyScheme** og medtage alle poster.
-
-   ![Saml og match eCommerce og Loyalty.](media/unify-match-order.png)
-
-1. Vælg **Tilføj regel**
-
-1. Tilføj din første betingelse ved hjælp af FullName.
-
-   - I forbindelse med eCommerceContacts skal du vælge **Fuldt navn** på rullelisten.
-   - I forbindelse med loyCustomers skal du vælge **Fuldt navn** på rullelisten.
-   - Vælg rullelisten **Normaliser**, og vælg **Type (Telefon, Navn, Adresse, ...)**.
-   - Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
-
-1. Angiv navnet **FullName, e-mail** til den nye regel.
-
-   - Tilføj endnu en betingelse for e-mailadressen ved at vælge **Tilføj betingelse**
-   - For enhed eCommerceContacts skal du vælge **E-mail** i rullelisten.
-   - For enhed loyCustomers skal du vælge **E-mail** i rullelisten.
-   - Lad Normaliser være tom.
-   - Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
-
-   ![Saml og match regel for navn og e-mail.](media/unify-match-rule.png)
-
-1. Vælg **Udført**.
-
-1. Vælg **Gem** og **Kør**.
-
-### <a name="merge"></a>Fletning
-
-1. Gå til fanen **Flet**.
-
-1. I **ContactId** for **loyCustomers** skal du ændre visningsnavn til **ContactIdLOYALTY** for at skelne mellem dem og andre id'er, der indsættes.
-
-   ![omdøb contactid fra loyalty-id.](media/unify-merge-contactid.png)
-
-1. Vælg **Gem** og **Kør flettede og downstream-processer**.
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-customer-lifetime-value-prediction"></a>Opgave 3 – Konfigurer værdien for forudsigelse af kundens levetidsværdi
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 42095f369c47553e5ddf5fada54e559202c943a9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3d573a6c83b7f0b0c33e656eb383e20a96856b0b
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646225"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757379"
 ---
 # <a name="export-segment-list-and-other-data-to-azure-blob-storage-preview"></a>Eksport af segmentliste og andre data til Azure Blob Storage (forhåndsversion)
 
@@ -44,7 +44,7 @@ Gem dine Customer Insights-data i Blob Storage, eller brug dem til at overføre 
 Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
 
 > [!IMPORTANT]
-> Hvis du har aktiveret indstillingen for blød sletning for Azure Blob Storage-kontoen, mislykkes eksporten. Slå blød sletning fra for at eksportere data til blobs. Yderligere oplysninger finder du i [Aktiver blød blob-sletning](/azure/storage/blobs/soft-delete-blob-enable.md)
+> Hvis du har aktiveret indstillingen for blød sletning for Azure Blob Storage-kontoen, mislykkes eksporten. Slå blød sletning fra for at eksportere data til blobs. Yderligere oplysninger finder du i [Aktiver blød blob-sletning](/azure/storage/blobs/soft-delete-blob-enable)
 
 1. Gå til **Data** > **Eksport**.
 

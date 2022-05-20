@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 18fc072d129be6b4fc5470b1057f592dc2638216
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646005"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755255"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
 
@@ -27,7 +27,7 @@ Customer Insights sender følgende hændelseslogfiler:
 - **Overvågningshændelser**
   - **APIEvent** - aktiverer sporing af ændringer foretaget via Dynamics 365 Customer Insights-brugergrænsefladen.
 - **Driftshændelser**
-  - **WorkflowEvent** - Arbejdsprocessen gør det muligt at konfigurere [datakilder](data-sources.md), [samle](data-unification.md) og [forbedre](enrichment-hub.md) og til sidst [eksportere](export-destinations.md) data til andre systemer. Alle disse trin kan udføres individuelt (f.eks. udløse en enkelt eksport) eller organiseres (f.eks. opdatering af data fra datakilder, som udløser den samlingsproces, der vil trække yderligere oplysninger ind, og når dataene er eksporteret til et andet system). Du kan finde flere oplysninger i [WorkflowEvent-skema](#workflow-event-schema).
+  - **WorkflowEvent** - Arbejdsprocessen gør det muligt at konfigurere [datakilder](data-sources.md), [samle](data-unification.md) og [forbedre](enrichment-hub.md) og til sidst [eksportere](export-destinations.md) data til andre systemer. Alle disse trin kan udføres individuelt (f.eks. udløse en enkelt eksport). Kan også køres orkestreret (f.eks. dataopdatering fra datakilder, der udløser den enhedsproces, der trækker oplysninger ind, og når dataene er eksporteret til et andet system). Du kan finde flere oplysninger i [WorkflowEvent-skema](#workflow-event-schema).
   - **APIEvent** - alle API-opkald til kundernes forekomst til Dynamics 365 Customer Insights. Du kan finde flere oplysninger i [APIEvent-skema](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Konfigurer diagnosticeringsindstillinger
@@ -182,7 +182,7 @@ API-hændelser og arbejdsproceshændelser har en fælles struktur og detaljer, h
 
 ### <a name="workflow-event-schema"></a>Skema over arbejdsproceshændelse
 
-Arbejdsprocessen indeholder flere trin. [Indtage datakilder](data-sources.md), [samle](data-unification.md), [forbedre](enrichment-hub.md) og [eksportere](export-destinations.md) data. Alle disse trin kan køres individuelt eller orkestreret med følgende processer. 
+Arbejdsprocessen indeholder flere trin. [Indtage datakilder](data-sources.md), [samle](data-unification.md), [forbedre](enrichment-hub.md) og [eksportere](export-destinations.md) data. Alle disse trin kan køres individuelt eller orkestreret med følgende processer.
 
 #### <a name="operation-types"></a>Handlingstyper
 
@@ -215,7 +215,7 @@ Arbejdsprocessen indeholder flere trin. [Indtage datakilder](data-sources.md), [
 | `time`          | Tidsstempel | Obligatorisk          | Tidsstempel for hændelsen (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resourceId`    | String    | Obligatorisk          | ResourceId for den forekomst, der har sendt hændelsen.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
 | `operationName` | String    | Obligatorisk          | Navnet på den handling, der repræsenteres ved denne hændelse. `{OperationType}.[WorkFlow|Task][Started|Completed]`. Se [operationstyper](#operation-types), der kan henvises til. | `Segmentation.WorkflowStarted`,<br> `Segmentation.TaskStarted`, <br> `Segmentation.TaskCompleted`, <br> `Segmentation.WorkflowCompleted`                                 |
-| `category`      | String    | Obligatorisk          | Logkategori for hændelsen. Altid `Operational` for arbejdsproceshændelser                                                                                           | `Operational`                                                                                                                                                            | 
+| `category`      | String    | Obligatorisk          | Logkategori for hændelsen. Altid `Operational` for arbejdsproceshændelser                                                                                           | `Operational`                                                                                                                                                            |
 | `resultType`    | String    | Obligatorisk          | Status for hændelsen. `Running`, `Skipped`, `Successful`, `Failure`                                                                                            |                                                                                                                                                                          |
 | `durationMs`    | Long      | Valgfrit          | Varigheden af handlingen i millisekunder.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valgfrit          | JSON-objekt med flere egenskaber til en bestemt kategori af hændelser.                                                                                        | Se underafsnit [Arbejdsprocesegenskaber](#workflow-properties-schema)                                                                                                       |

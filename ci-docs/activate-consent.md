@@ -1,23 +1,22 @@
 ---
 title: Aktivere samtykkeregler for segmenter
 description: Følg disse trin for at tilknytte samtykkedata og aktivere kontrol af samtykke i Dynamics 365 Customer Insights. En administrator kan også deaktivere kontrol af samtykke.
-ms.date: 11/12/2021
-ms.subservice: audience-insights
+ms.date: 04/27/2022
 ms.topic: how-to
-author: smithy7
-ms.author: smithc
+author: anubhav-t
+ms.author: antando
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: bfa03f4b7b56b300a74ebd04721cd64b893879f1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f82e3a4031fee8bcaa88575cbd68b37385a7fffb
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646046"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755163"
 ---
 # <a name="activate-consent-rules"></a>Aktivér samtykkeregler
 
-[Samtykkecenter (forhåndsversion)](consent-management/overview.md) hjælper dig med at indsamle samtykkedata fra forskellige kilder. Brug objektet samlet *samtykke* til at anvende standardkontrol af samtykke. Når der er importeret data om samtykke i Samtykkecenter, og reglerne er konfigureret for dataene, synkroniseres objektet *Samtykke* automatisk med Dynamics 365 Customer Insights.
+[Samtykkecenter (forhåndsversion)](consent-management/overview.md) hjælper dig med at indsamle samtykkedata fra forskellige kilder. Brug objektet samlet *samtykke* til at anvende standardkontrol af samtykke. Når der er importeret data og tilknytningsreglerne er konfigureret, synkroniseres objektet *Samtykke* automatisk med Dynamics 365 Customer Insights.
 
 ## <a name="enable-consent-checks"></a>Aktivér samtykketjek
 

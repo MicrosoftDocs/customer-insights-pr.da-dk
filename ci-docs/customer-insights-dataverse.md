@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 85995cbd7f797810bfb6ecdc8a24d56542f0b5a9
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 1e629cd218b104b115f74f59a53a14e9d60fcc8a
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646026"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741358"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
@@ -54,7 +54,7 @@ Nogle outputobjekter fra Customer Insights er tilgængelige som tabeller i Datav
 
 ### <a name="customerprofile"></a>Kundeprofil
 
-Denne tabel indeholder den samlede kundeprofil fra Customer Insights. Skemaet for en samlet kundeprofil afhænger af de objekter og attributter, der bruges i fletteprocessen. Et kundeprofilskema indeholder normalt et undersæt af attributterne fra [Common Data Model-definitionen i CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile).
+Denne tabel indeholder den samlede kundeprofil fra Customer Insights. Skemaet for en unified customer profile afhænger af de objekter og attributter, der bruges i data samlingsprocessen. Et kundeprofilskema indeholder normalt et undersæt af attributterne fra [Common Data Model-definitionen i CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile).
 
 ### <a name="alternatekey"></a>AlternateKey
 

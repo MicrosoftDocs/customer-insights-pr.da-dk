@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: e77227e1e353c02cfb13e26a8ecbe0768ba6c0fa
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646075"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741496"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksportér til Azure Synapse Analytics (forhåndsversion)
 
@@ -34,7 +34,7 @@ I Azure:
 
 - Et aktivt Azure-abonnement.
 
-- Hvis du bruger en ny Azure Data Lake Storage Gen2-konto, skal *servicekontoen for Customer Insights* have **Bidragsyder til lager Blob-data**-tilladelser. Få mere at vide om [at oprette forbindelse til en Azure Data Lake Storage Gen2-konto med Azure-tjenesteprincipal for målgruppeindsigt](connect-service-principal.md). Data Lake Storage Gen2 **skal have** [hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace) aktiveret.
+- Hvis du bruger en ny Azure Data Lake Storage Gen2-konto, skal *servicekontoen for Customer Insights* have **Bidragsyder til lager Blob-data**-tilladelser. Få mere at vide om, hvordan du [opretter forbindelse til en Azure Data Lake Storage Gen2-konto med Azure-tjenestekonto til Customer Insights](connect-service-principal.md). Data Lake Storage Gen2 **skal have** [hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace) aktiveret.
 
 - I ressourcegruppen, hvor du finder Azure Synapse workspace, skal *servicekontoen* og *Azure AD-brugeren med administratortilladelser i Customer Insights* tildeles mindst **Læse**-tilladelse. Du kan finde flere oplysninger under [Tildele Azure-roller ved hjælp af Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 

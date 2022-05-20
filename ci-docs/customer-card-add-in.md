@@ -13,16 +13,14 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 2dfa6c643cbe9a8531a085d8ce01b0f64776476f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 8508880bb3274bb491a314a043a5222d4d381073
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646035"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755629"
 ---
 # <a name="customer-card-add-in-preview"></a>Tilføjelsesprogrammet Kundekort (eksempel)
-
-
 
 Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilføjelsesprogrammet Kundekort er installeret i en understøttet Dynamics 365-app, kan du vælge at få vist kundeprofilfelter, indsigt og aktivitetstidslinje. Tilføjelsesprogrammet henter data fra Customer Insights, uden at det påvirker dataene i den tilknyttede Dynamics 365-app.
 
@@ -31,7 +29,7 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
 ## <a name="prerequisites"></a>Forudsætninger
 
 - Tilføjelsesprogrammet fungerer kun med Dynamics 365-modelbaserede apps, f.eks. Sales eller Customer Service, version 9.0 og nyere.
-- Hvis dine Dynamics 365-data skal knyttes til Customer Insights-kundeprofilers, anbefaler vi, at de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse-connectoren](connect-power-query.md). Hvis du bruger en anden metode til at indtage Dynamics 365-kontakter (eller firmaer), skal du kontrollere, at feltet `contactid` (eller `accountid`) er angivet som den [primære nøgle for den pågældende datakilde i tilknytningstrinnene i processen til samling af data](map-entities.md#select-primary-key-and-semantic-type-for-attributes). 
+- Hvis dine Dynamics 365-data skal knyttes til Customer Insights-kundeprofilers, anbefaler vi, at de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse-connectoren](connect-power-query.md). Hvis du bruger en anden metode til at indtage Dynamics 365-kontakter (eller firmaer), skal du kontrollere, at feltet `contactid` (eller `accountid`) er angivet som den [primære nøgle for den pågældende datakilde i tilknytningstrinnene i processen til samling af data](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Alle Dynamics 365-brugere af Kundekort-tilføjelsesprogrammet skal [tilføjes som brugere](permissions.md) i Customer Insights for at se dataene.
 - [Der kræves konfigurerede søge- og filterfunktioner](search-filter-index.md) i Customer Insights for at opslag af data kan fungere.
 - Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i Customer Insights. Nogle data og kontrolelementer er kun tilgængelige i miljøer af bestemte typer. Du får besked i konfigurationen af tilføjelsesprogrammet, hvis et kontrolelement ikke er tilgængeligt på grund af den valgte miljøtype. Få mere at vide om [miljøanvendelser](work-with-business-accounts.md).
@@ -132,16 +130,16 @@ Selv med korrekt konfigurerede id-felter kan kontrolelementerne ikke finde data 
 
 **Løsning:**
 
-1. Kontrollér, at du har konfigureret tilføjelsesprogrammet Kort i henhold til instruktionerne: [Konfiguration af kundekort-tilføjelsesprogrammet](#configure-the-customer-card-add-in) 
+1. Kontrollér, at du har konfigureret tilføjelsesprogrammet Kort i henhold til instruktionerne: [Konfiguration af kundekort-tilføjelsesprogrammet](#configure-the-customer-card-add-in)
 
-1. Gennemse konfigurationen af dataindtagelse. Rediger datakilde til Dynamics 365-systemet, som indeholder kontakt-id'et GUID. Hvis der vises et GUID for kontakt-id'et med store bogstaver i Power Query-editoren, skal du prøve følgende: 
+1. Gennemse konfigurationen af dataindtagelse. Rediger datakilde til Dynamics 365-systemet, som indeholder kontakt-id'et GUID. Hvis der vises et GUID for kontakt-id'et med store bogstaver i Power Query-editoren, skal du prøve følgende trin:
     1. Rediger datakilde for at åbne datakilde i Power Query-editor.
     1. Vælg kolonnen for kontakt-id.
     1. Vælg **Transformér** i overskriftslinjen for at få vist tilgængelige handlinger.
     1. Vælg **små bogstaver**. Kontrollér, om GUID'er i tabellen nu er med små bogstaver.
     1. Gem datakilden.
-    1. Kør dataindtagelse, samling og downstream-processer for at overføre ændringerne til GUID'et. 
+    1. Kør dataindtagelse, samling og downstream-processer for at overføre ændringerne til GUID'et.
 
-Når hele opdateringen er fuldført, skal kontrolelementerne til tilføjelsesprogrammet Til kundekort vise de forventede data. 
+Når systemet har fuldført hele opdateringen, skal kontrolelementerne til tilføjelsesprogrammet Til kundekort vise de forventede data.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

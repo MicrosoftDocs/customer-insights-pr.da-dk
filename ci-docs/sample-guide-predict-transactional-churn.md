@@ -1,19 +1,19 @@
 ---
 title: Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
 description: Brug denne eksempelvejledning til at afprøve transaktionsrelateret standardafgang i en forudsigelsesmodel.
-ms.date: 11/19/2020
+ms.date: 05/11/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 05c221c634b8e0f582a6c6d3f4d90e971aa9707e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 3edbf2a471313379c28db874d7f19c3265a23299
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646362"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8741312"
 ---
 # <a name="transactional-churn-prediction-sample-guide"></a>Eksempelvejledning til transaktionsrelateret forudsigelse af afgang
 
@@ -86,69 +86,13 @@ Gennemse artiklerne [om dataimport](data-sources.md) og [import af datakilder ve
 
 1. Gem datakilden.
 
-
 ## <a name="task-2---data-unification"></a>Opgave 2 - Datasamling
 
-Når dataene er indsat, skal du nu starte **Tilknyt, Match, Flet**-processen for at oprette en samlet kundeprofil. Du kan finde flere oplysninger i [Datasamling](data-unification.md).
-
-### <a name="map"></a>Tilknytning
-
-1. Når du har indsat dataene, skal du knytte kontakterne fra eCommerce- og Loyalty-data til almindelige datatyper. Go to **Data** > **Saml** > **Tilknyt**.
-
-1. Vælg de objekter, der repræsenterer kundeprofilen - **eCommerceContacts** og **loyCustomers**. 
-
-   :::image type="content" source="media/unify-ecommerce-loyalty.PNG" alt-text="samle eCommerce- og loyalty-datakilder.":::
-
-1. Vælg **ContactId** som primær nøgle for **eCommerceContacts** og **LoyaltyID** som primær nøgle for **loyCustomers**.
-
-   :::image type="content" source="media/unify-loyaltyid.PNG" alt-text="Saml LoyaltyId som primær nøgle.":::
-
-### <a name="match"></a>Resultat
-
-1. Gå til fanen **Match**, og vælg **Angiv rækkefølge**.
-
-1. På rullelisten **Primær** skal du vælge **eCommerceContacts: e-handel** som den primære kilde og inkludere alle poster.
-
-1. På rullelisten **Entity 2** skal du vælge **loyCustomers: LoyaltyScheme** og medtage alle poster.
-
-   :::image type="content" source="media/unify-match-order.PNG" alt-text="Saml og match eCommerce og Loyalty.":::
-
-1. Vælg **Opret en ny regel**
-
-1. Tilføj din første betingelse ved hjælp af FullName.
-
-   * I forbindelse med eCommerceContacts skal du vælge **Fuldt navn** på rullelisten.
-   * I forbindelse med loyCustomers skal du vælge **Fuldt navn** på rullelisten.
-   * Vælg **Normaliser**-rullelisten, og vælg **Type (telefon, navn, adresse ...)**.
-   * Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
-
-1. Angiv navnet **FullName, e-mail** til den nye regel.
-
-   * Tilføj endnu en betingelse for e-mailadressen ved at vælge **Tilføj betingelse**
-   * For enhed eCommerceContacts skal du vælge **E-mail** i rullelisten.
-   * For enhed loyCustomers skal du vælge **E-mail** i rullelisten. 
-   * Lad Normaliser være tom. 
-   * Angiv **Præcisionsniveau**: **Basis** og **værdi**: **Høj**.
-
-   :::image type="content" source="media/unify-match-rule.PNG" alt-text="Saml og match regel for navn og e-mail.":::
-
-7. Vælg **Gem** og **Kør**.
-
-### <a name="merge"></a>Fletning
-
-1. Gå til fanen **Flet**.
-
-1. I **ContactId** for **loyCustomers** skal du ændre visningsnavn til **ContactIdLOYALTY** for at skelne mellem dem og andre id'er, der indsættes.
-
-   :::image type="content" source="media/unify-merge-contactid.PNG" alt-text="omdøb contactid fra loyalty-id.":::
-
-1. Vælg **Gem** og **Kør** for at starte fletningsprocessen.
-
-
+[!INCLUDE [sample-guide-unification](includes/sample-guide-unification.md)]
 
 ## <a name="task-3---configure-transaction-churn-prediction"></a>Opgave 3 - Konfiguration af transaktion af forudsigelse af afgang
 
-Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abonnementsafgang. Du kan finde flere oplysninger i artiklen om [Forudsigelse af opsigelse af abonnement](predict-subscription-churn.md). 
+Nu, hvor de samlede kundeprofiler er på plads, kan vi køre forudsigelse af transaktionsafgang. Du kan finde flere oplysninger i artiklen om [Forudsigelse af transaktionsafgang](predict-transactional-churn.md). 
 
 1. Gå til **Intelligens** > **Find**, og vælg at bruge **Model for kundeafgang**.
 
@@ -180,7 +124,7 @@ Når du har samlet kundeprofiler på plads, kan vi nu køre forudsigelse af abon
 
 ## <a name="task-4---review-model-results-and-explanations"></a>Opgave 4 - Gennemse modelresultater og forklaringer
 
-Lad modellen fuldføre med at få oplæring og resultaterne af dataene. Du kan nu gennemgå forklaringer på afgang af abonnementsmodellen. Du kan finde flere oplysninger under [Gennemse en forudsigelsesstatus og resultater](predict-subscription-churn.md#review-a-prediction-status-and-results).
+Lad modellen fuldføre med at få oplæring og resultaterne af dataene. Du kan nu gennemse den forklaringer på kundeafgangsmodellen. Du kan finde flere oplysninger under [Gennemse en forudsigelsesstatus og resultater](predict-transactional-churn.md#review-a-prediction-status-and-results).
 
 ## <a name="task-5---create-a-segment-of-high-churn-risk-customers"></a>Opgave 5 - Opret et segment med kunder med risiko for afgang
 
@@ -192,14 +136,12 @@ Du kan oprette et nyt segment baseret på det objekt, der er oprettet af modelle
 
    :::image type="content" source="media/segment-intelligence.PNG" alt-text="Oprettelse af et segment ved hjælp af model-output.":::
 
-1. Vælg den **OOBSubscriptionChurnPrediction**-slutpunkt, og definer segmentet: 
+1. Vælg **OOBeCommerceChurnPrediction**-slutpunkt, og definer segmentet: 
    - Felt: ChurnScore
    - Operatør: større end
    - Værdi: 0,6
-   
-   :::image type="content" source="media/segment-setup-subs.PNG" alt-text="Opsætning af abonnementsafgang-segment.":::
 
-Du har nu et segment, der opdateres dynamisk, og som identificerer de mange kunder med høj risiko for afgang til denne abonnementsforretning.
+Du har nu et segment, der opdateres dynamisk, og som identificerer kunder med høj risiko.
 
 Du kan finde flere oplysninger under [Oprette og administrere segmenter](segments.md).
 

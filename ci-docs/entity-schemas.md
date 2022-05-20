@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: e155f75ffbc2c1bb228bece1b3e34846df794543
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
+ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646186"
+ms.lasthandoff: 05/15/2022
+ms.locfileid: "8757425"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Objektskema i Common Data Model
 
@@ -23,7 +23,7 @@ ms.locfileid: "8646186"
 
 Denne delte datamodel gør det muligt for programmer og dataintegratorer at samarbejde mere effektivt ved at levere en samlet definition af data. Common Data Model indeholder et rigt metadatasystem med standardobjekter, relationer, hierarkier, egenskaber og meget mere. Det stammer fra Dynamics 365-apps og er open sourced på GitHub med over 260 standardobjekter. Et stort system af interne og eksterne partnere bidrager med branchespecifikke koncepter til Common Data Model.
 
-Flere systemer og platforme implementerer i dag Common Data Model, herunder Power BI-dataflows og Azure Data Services. Det understøttes allerede i Microsoft Dataverse, Dynamics 365, Power Apps, Power BI og kommende Azure-datatjenester, og det akkumulerer værdien direkte mod [Åbn datainitiativ](https://www.microsoft.com/open-data-initiative).
+Flere systemer og platforme implementerer i dag Common Data Model, herunder Power BI-dataflows og Azure Data Services. Det understøttes allerede i Microsoft Dataverse, Dynamics 365, Power Apps, Power BI og kommende Azure-datatjenester, og det akkumulerer værdien direkte mod [Åbn datainitiativ](https://dynamics.microsoft.com/en-us/open-data-initiative/).
 
 ## <a name="customer-insights-entity-schemas"></a>Customer Insights-objektskemaer
 

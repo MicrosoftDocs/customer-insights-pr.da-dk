@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6a1c3791076a7dda4531664ca88632f7f1b914e3
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8645995"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755347"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Forskellige kundeprofiler med Azure Maps (forhåndsversion)
 
@@ -39,7 +39,7 @@ Hvis du vil konfigurere Azure Maps-dataforbedringer, skal følgende forudsætnin
 
 1. Vælg **Næste** for at bekræfte markeringen.
 
-1. Vælg den **Kundedatasæt**, du vil forbedre med lokationsdata fra Azure Maps. Du kan vælge objektet **Kunde** for at forbedre alle dine ensartede kundeprofiler, eller du kan vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+1. Vælg den **Kundedatasæt**, du vil forbedre med lokationsdata fra Azure Maps. Du kan vælge objektet **Kunde** for at forbedre alle dine unified customer profiles, eller du kan vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
 
     :::image type="content" source="media/enrichment-azure-maps-configuration-customer-data-set.png" alt-text="Skærmbillede, når du vælger den kundedatasæt.":::
 
@@ -51,7 +51,7 @@ Hvis du vil konfigurere Azure Maps-dataforbedringer, skal følgende forudsætnin
 
 1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
 
-1. Evaluere, om du vil redigere **Avancerede indstillinger**. Disse funktioner giver maksimal fleksibilitet til håndtering af avancerede brugssager, men standardværdierne vil være passende i de fleste tilfælde:
+1. Evaluere, om du vil redigere **Avancerede indstillinger**. Disse indstillinger giver maksimal fleksibilitet til håndtering af avancerede brugssager, men standardværdierne vil være passende i de fleste tilfælde:
    - **Adressetype**: Standardfunktionsmåden er, at adressen returnerer det bedste adresseoverensstemmelse, selvom den ikke er komplet. Hvis du kun vil have fuldstændige adresser, f.eks. adresser, der indeholder husnummeret, skal alle afkrydsningsfelterne undtagen **Punktadresser** ryddes. 
    - **Sprog**: Adresser returneres som standard på det sprog, som adressen er bestemt til at tilhøre. Hvis du vil anvende et standardiseret adressesprog, skal du vælge sproget i rullemenuen. Hvis du f.eks. vælger **engelsk**, returneres **Copenhagen, Denmark** i stedet for **København, Danmark**.
 
@@ -89,7 +89,7 @@ Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at væ
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 
-Når du gør det muligt for Dynamics 365 Customer Insights at overfører data til Azure Maps, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f.eks. personlige data. Microsoft overfører sådanne data efter din instruktion, men du er ansvarlig for at sikre, at Azure Maps overholder eventuelle forpligtelser til beskyttelse af personlige oplysninger eller sikkerhed, du måtte have. Du kan finde flere oplysninger i [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
+Når du gør det muligt for Dynamics 365 Customer Insights at overfører data til Azure Maps, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f.eks. personlige data. Microsoft kan overføre sådanne data efter dine instruktioner, men du er ansvarlig for at sikre, at Azure Maps overholder alle forpligtelser i forbindelse med sikkerhed eller beskyttelse af personlige oplysninger. Du kan finde flere oplysninger i [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
 Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

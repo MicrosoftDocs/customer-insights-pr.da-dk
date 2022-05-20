@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: cca91f2bbe2fc64554199082a79c1b388a01ab52
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
+ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646304"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "8740712"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fuldfør de delvise data med forudsigelser (frarådet)
 
@@ -37,7 +37,7 @@ Før din organisation kan bruge funktionen til forudsigelser, skal følgende for
 
 1. Din organisation har en forekomst [konfigureret i Microsoft Dataverse](/ai-builder/build-model#prerequisites), og den er i samme organisation som Customer Insights.
 
-2. Dit publikum indsigtsmiljø er knyttet til din Dataverse-instans.
+2. Dit Customer Insights-miljø er knyttet til din Dataverse-forekomst.
 
 Du kan finde flere oplysninger i [Oprette et nyt miljø](create-environment.md).
 

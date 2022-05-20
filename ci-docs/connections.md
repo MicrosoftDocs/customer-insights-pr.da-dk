@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 10704e287960c1a9171031135ff8f78a45b6e965
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d85de28a12565e1a2e36278d0e8b74f6de286b20
+ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646166"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "8755302"
 ---
 # <a name="connections-preview-overview"></a>Oversigt over forbindelser (forhåndsversion)
 
@@ -24,15 +24,15 @@ Forbindelser er nøglen til at gøre det muligt at dele data til og fra Customer
 
 Gå til **Administrator** > **Forbindelser** for at oprette og få vist forbindelser.
 
-Under fanen **Forbindelser** vises alle aktive forbindelser. På listen vises en række for hver forbindelse. 
+Under fanen **Forbindelser** vises alle aktive forbindelser. På listen vises en række for hver forbindelse.
 
 Få en hurtig oversigt, en beskrivelse, og find ud af, hvad du kan gøre med hver enkelt udvidelsesindstilling, under fanen **Opdag**.
 
-### <a name="exports"></a>Eksport
+## <a name="exports"></a>Eksport
 
 Det er kun administratorer, der kan konfigurere nye forbindelser, men de kan give bidragydere adgang til at bruge eksisterende forbindelser. Administratorer kontrollerer, hvor dataene kan gå hen, og bidragyderne definerer nyttelasten og hyppigheden af deres behov. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](#allow-contributors-to-use-a-connection-for-exports).
 
-### <a name="enrichments"></a>Forbedringer
+## <a name="enrichments"></a>Forbedringer
 
 Det er kun administratorer, der kan konfigurere nye forbindelser, men de oprettede forbindelser er altid tilgængelige for både administratorer og bidragydere. Administratorer styrer legitimationsoplysninger og giver samtykke til dataoverførsler. Forbindelserne kan derefter bruges af både administratorer og bidragydere til at hjælpe dig.
 
@@ -46,7 +46,7 @@ Hvis du vil tilføje forbindelser, skal du have [administratortilladelser](permi
 
 1. Vælg **Tilføj forbindelse** for at oprette en ny forbindelse. Vælg i rullemenuen, hvilken type forbindelse du vil oprette.
 
-1. Angiv de nødvendige oplysninger i ruden **Konfigurer forbindelse**. 
+1. Angiv de nødvendige oplysninger i ruden **Konfigurer forbindelse**.
    1. **Visningsnavn** og forbindelsestype beskriver en forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for denne forbindelse.
    1. De nøjagtige felter afhænger af, hvilken tjeneste du opretter forbindelse til. Du kan få mere at vide om detaljer om en bestemt forbindelse ved at skrive artiklen om måltjenesten.
    1. Hvis du [bruger din egen Key Vault](use-azure-key-vault.md) til at gemme hemmeligheder, skal du aktivere **Brug Key Vault** og vælge hemmeligheden på listen.
@@ -77,7 +77,7 @@ Når du konfigurerer eller redigerer en eksportforbindelse, vælger du, hvilke b
 
 ## <a name="remove-a-connection"></a>Fjerne en forbindelse
 
-Hvis den forbindelse, du fjerner, bruges af produkter eller eksport, skal du først ophæve eller fjerne dem. Dialogboksen Fjern fører dig til relevante produktoversigter eller eksporter. 
+Hvis den forbindelse, du fjerner, bruges af forbedringer eller eksporter, skal du først ophæve eller fjerne dem. Dialogboksen Fjern fører dig til relevante produktoversigter eller eksporter.
 
 Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved at føje endnu en forbindelse til dem på siden [Forbedringer](enrichment-hub.md) eller [Eksport](export-destinations.md).
 
@@ -91,7 +91,7 @@ Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved 
 
    1. Hvis der er forbindelser eller eksporter, skal du vælge knappen for at se, hvad der bruger forbindelsen.
       - **Eksport:** Du kan vælge enten at fjerne eller afbryde forbindelsen til eksporten for at kunne fjerne forbindelsen. Hvis en administrator vil afbryde forbindelsen til en eksport, kan den bruge handlingen **Afbryd** forbindelsen. Denne handling er tilgængelig for individuelle og flere valgte eksporter. Hvis du afbryder forbindelsen til eksportkonfigurationen, men den køres først, når der er føjet en anden forbindelse til den.
-      - **Forbedringer:** Du kan vælge enten at fjerne eller deaktivere forbedringerne for at kunne fjerne forbindelsen. 
+      - **Forbedringer:** Du kan vælge enten at fjerne eller deaktivere forbedringerne for at kunne fjerne forbindelsen.
    1. Når forbindelsen ikke har flere afhængigheder, skal du gå tilbage til **Administrator** > **Forbindelser** og prøve at fjerne forbindelsen igen.
 
 1. Bekræft sletningen ved at vælge **Fjern**.
