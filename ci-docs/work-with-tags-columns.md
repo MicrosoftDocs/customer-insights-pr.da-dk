@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 04ae4ffd303a47add15044f313c96a23e5efcd76
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: c0d23a74b5ca68162ee21307705b1f781a7eb97e
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646345"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800552"
 ---
 # <a name="work-with-tags-and-columns"></a>Arbejde med koder og tabeller
 
@@ -37,7 +37,7 @@ Du kan få vist, tilføje og fjerne koder fra et element. Tilføj koder, når du
 
 1. Markér det element, hvis mærker du vil administrere.
 
-1. Vælg **Vis flere (...)**, og vælg **Kode**.
+1. Vælg den lodrette ellipse (&vellip;), og vælg **Mærke**.
 
    :::image type="content" source="media/segments_list_tag.png" alt-text="Valgt segment med rulleliste med indstillinger og tilgængelige indstillinger."lightbox="media/segments_list_tag.png":::
 

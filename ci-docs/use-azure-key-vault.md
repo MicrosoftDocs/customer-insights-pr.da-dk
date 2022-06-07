@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: 9eb06a1190fe4e8012ecd3d6742b8b3f5f4d6349
-ms.sourcegitcommit: cf74b8c20d88eb96e1ac86e18cd44fe27aad5ab9
+ms.openlocfilehash: d4f2d5ebc828053c40e22065f4915c4d0f84153f
+ms.sourcegitcommit: 6ec4626a185892dfb781d3c7af4384f9c13f3723
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/28/2022
-ms.locfileid: "8653470"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "8763572"
 ---
 # <a name="bring-your-own-azure-key-vault-preview"></a>Medbringe din egen Azure Key Vault (forhåndsversion)
 
@@ -89,9 +89,9 @@ Følgende tilladelser tildeles Customer Insights i et sammenkædet Key Vault, hv
 
 | Skriv        | Tilladelser          |
 | ----------- | -------------------- |
-| Nøgle         | [Hent nøgler](/rest/api/keyvault/get-keys), [Hent nøgle](/rest/api/keyvault/get-key)                                 |
-| Hemmelighed      | [Hent hemmeligheder](/rest/api/keyvault/get-secrets), [Hent hemmelighed](/rest/api/keyvault/get-secret)                     |
-| Certifikat | [Hent certifikater](/rest/api/keyvault/get-certificates), [Hent certifikat](/rest/api/keyvault/get-certificate) |
+| Nøgle         | [Hent nøgler](/rest/api/keyvault/keys/get-keys/get-keys), [Hent nøgle](/rest/api/keyvault/keys/get-key/get-key)                                 |
+| Hemmelighed      | [Hent hemmeligheder](/rest/api/keyvault/secrets/get-secrets/get-secrets), [Hent hemmelighed](/rest/api/keyvault/secrets/get-secret/get-secret)                     |
+| Certifikat | [Hent certifikater](/rest/api/keyvault/certificates/get-certificates/get-certificates), [Hent certifikat](/rest/api/keyvault/certificates/get-certificate/get-certificate) |
 
 De foregående værdier er minimumværdierne til visning og læsning under udførelse.
 

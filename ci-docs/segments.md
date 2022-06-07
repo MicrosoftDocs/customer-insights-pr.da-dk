@@ -1,7 +1,7 @@
 ---
 title: Segmenter i Customer Insights
 description: Oversigt over segmenter, og hvordan de oprettes og administreres.
-ms.date: 03/30/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,12 +14,12 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 9791e971387eb7db91ed7c4e4fe76552656013ba
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d616ec8273115203dddb59334a348c66e72fa678
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646280"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800735"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
@@ -58,7 +58,7 @@ Følgende handlinger er tilgængelige, når du vælger et segment:
 - **Vis** segmentoplysningerne, herunder tendensen for antal medlemmer, et eksempel på segmentmedlemmer.
 - **Hent** listen over medlemmer som en .CSV-fil.
 - **Rediger** segmentet for at ændre dets egenskaber.
-- **Opret en dublet** af et segment. Du kan vælge at redigere egenskaberne med det samme eller ganske enkelt gemme dubletten.
+- **Opret en dublet** af et segment. Du kan vælge at redigere egenskaberne med det samme eller gemme dubletten.
 - **Opdater** segmentet, så det indeholder de seneste data.
 - **Aktivér** eller **Deaktiver** segmentet. I forbindelse med inaktive segmenter findes der en definition af segmentet, men den indeholder ikke nogen kunder endnu. Et aktivt segment søger efter kunder, der svarer til segmentdefinitionen. Hvis der er konfigureret en [planlagt opdatering](system.md#schedule-tab), har vises **Status** for inaktive segmenter som **Sprunget over** som tegn på, at en opdatering ikke er forsøgt udført. Når et inaktivt segment aktiveres, opdateres det og inkluderes i de planlagte opdateringer.
   Du kan også bruge **Planlæg senere** i rullemenuen **Aktivér/deaktiver** til at angive fremtidig dato og klokkeslæt for aktivering og deaktivering af et bestemt segment.
@@ -75,7 +75,8 @@ Følgende handlinger er tilgængelige, når du vælger et segment:
 ## <a name="refresh-segments"></a>Opdatere segmenter
 
 Du kan opdatere alle segmenter på én gang ved at vælge **Opdater alle** på siden **Segmenter**, eller du kan opdatere et eller flere segmenter, når du vælger dem, og vælge **Opdater** fra indstillingerne. Du kan også konfigurere en tilbagevendende opdatering i **Admin** > **System** > **Planlæg**. Når der konfigureres en tilbagevendende opdatering, gælder følgende regler:
-- Alle segmenter med typen **Dynamisk** eller **Udvidelse** opdateres automatisk med den indstillede hyppighed. Når opdateringen er fuldført, indikerer **Status**, om der var problemer med opdatering af segmentet. I det **senest opdaterede felt** vises et tidsstempel for den seneste vellykkede opdatering. Hvis der opstår en fejl, skal du vælge fejlen for at få vist detaljer om, hvad der er sket.
+
+- Alle segmenter med typen **Dynamisk** eller **Udvidelse** opdateres automatisk med den indstillede hyppighed. Når opdateringen er fuldført, fortæller **Status**, om der var problemer med opdatering af segmentet. I det **senest opdaterede felt** vises et tidsstempel for den seneste vellykkede opdatering. Hvis der opstår en fejl, skal du vælge fejlen for at få vist detaljer om, hvad der er sket.
 - Segmenter med typen **Statisk** opdateres *ikke* automatisk. I det **senest opdaterede** felt vises et tidsstempel for det seneste tidspunkt, hvor de statiske segmenter blev kørt eller opdateret manuelt.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
@@ -86,7 +87,7 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
 
 1. Gå til siden **Segmenter**.
 
-1. Vælg **Vis mere [...]** for det segment, du vil eksportere.
+1. Vælg den lodrette ellipse (&vellip;) for det segment, du vil eksportere.
 
 1. Vælg **Administrer eksport** fra rullelisten Handlinger.
 
@@ -97,6 +98,26 @@ Du kan eksportere et segment fra segmentsiden eller [eksportsiden](export-destin
    1. Hvis du vil oprette en ny eksport med det valgte segment, skal du vælge **Tilføj eksport**. Du kan finde flere oplysninger om oprettelse af eksport i [Konfigurere en ny eksport](export-destinations.md#set-up-a-new-export).
 
 1. Vælg **Tilbage** for at vende tilbage til hovedsiden for segmenter.
+
+## <a name="track-usage-of-a-segment"></a>Spore brugen af et segment
+
+Hvis du bruger segmenter i apps, som er baseret på den samme Microsoft Dataverse-organisation, der er knyttet til Customer Insights, kan du spore brugen af et segment. I forbindelse med [Customer Insights-segmenter, der bruges i kundekampagneforløb i Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile), informerer systemet dig om brugen af dette segment.
+
+Når du redigerer et segment, der bruges i Customer Insights-miljøet eller i et kundekampagneforløb i Marketing, giver et banner i [segmentgeneratoren](segment-builder.md) dig besked om afhængighederne. Du kan inspicere oplysningerne om afhængigheder direkte fra banneret eller ved at vælge **Brug** i segmentgeneratoren.
+
+I ruden **Segmentbrug** vises detaljerne om brugen af dette segment i Dataverse-baserede apps. I forbindelse med segmenter, der bruges i kundekampagneforløb, kan du finde et link til at inspicere forløbet i Marketing, hvor dette segment bruges. Hvis du har adgangstilladelse til appen Marketing, kan du finde flere oplysninger der.
+
+:::image type="content" source="media/segment-usage-pane.png" alt-text="Sideruden med oplysninger om brugen af segmentet i segmentgeneratoren.":::
+
+Systemet giver dig besked om brugen af et sporet segment, når du forsøger at slette det. Hvis det segment, du vil slette, bruges i et kundekampagneforløb i Marketing, standser forløbet for alle brugere i dette segment. Hvis forløbet er en del af en marketingkampagne, påvirker sletningen selve kampagnen. Du kan dog stadig slette segmentet på trods af advarslerne.
+
+:::image type="content" source="media/segment-usage-delete.png" alt-text="Dialogboksen til bekræftelse af sletning af et segment, når der bruges et segment i et Dataverse-program.":::
+
+### <a name="supported-apps"></a>Understøttede apps
+
+Brug spores i øjeblikket i følgende Dataverse-baserede apps:
+
+- [Kundekampagneforløb i Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile)
 
 ## <a name="view-processing-history-and-segment-members"></a>Se behandlingshistorik og segmentmedlemmer
 
@@ -117,6 +138,5 @@ Den nederste del indeholder en liste over segmentmedlemmerne.
 > Felter, der vises på denne liste, er baseret på attributterne for objekterne i dit segment.
 >
 >Listen er et eksempel på de matchende segmentmedlemmer og viser de første 100 poster i dit segment, så du hurtigt kan evaluere det og gennemgå dets definitioner, hvis det er nødvendigt. Hvis du vil se alle matchende poster, skal du [eksportere segmentet](export-destinations.md).
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

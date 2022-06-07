@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 386198c838929a20e136288fffb1015707654d8d
-ms.sourcegitcommit: 9f256af5c4f7e99305bf09087f7ec05eebeae6a0
+ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "8700930"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833623"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -58,6 +58,7 @@ LiveRamp leverer identitetsløsning til offline og en sammenlægning af kundedat
 Du kan finde flere oplysninger i [Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversion)](enrichment-liveramp.md).
 
 ### <a name="organize-segments-and-measures-with-tags-and-filters"></a>Organisere segmenter og mål med koder og filtre
+
 Hvis din organisation har mange segmenter eller mål, kan det være en udfordring at finde den rette. Med denne nye funktion kan du organisere lister ved hjælp af koder og kolonner. Det hjælper dig med at finde data hurtigt og nemt og tilpasse visningerne.
 
 Du kan finde flere oplysninger under [Arbejde med koder og kolonner](work-with-tags-columns.md).
@@ -65,9 +66,9 @@ Du kan finde flere oplysninger under [Arbejde med koder og kolonner](work-with-t
 ### <a name="enable-data-sharing-with-dataverse-when-using-your-own-storage-account"></a>Aktiver datadeling med Dataverse, når du bruger din egen lagerkonto
 
 Hvis dit miljø bruger Azure Data Lake Storage til at gemme Customer Insights-data, skal datadeling med Microsoft Dataverse bruge ekstra konfiguration.
-Tidligere kunne du kun aktivere datadeling med Dataverse, når dine data blev gemt i vores administrerede datasø. 
+Tidligere kunne du kun aktivere datadeling med Dataverse, når dine data blev gemt i vores administrerede datasø.
 
-Flere oplysninger i [Aktivere datadeling med Dataverse fra din egen Azure Data Lake Storage (Forhåndsversion)](manage-environments.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
+Flere oplysninger i [Aktivere datadeling med Dataverse fra din egen Azure Data Lake Storage (Forhåndsversion)](customer-insights-dataverse.md#enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview).
 
 ### <a name="new-export-destinations-iterable-and-braze"></a>Nye eksportmål: Iterable og Braze
 
@@ -81,7 +82,6 @@ Du kan finde flere oplysninger i [Eksportere segmenter til Iterable (forhåndsve
 
 - Google Ads: Den nye version af Google Ads-eksport-connector forenkler godkendelsesoplevelsen og giver dig nu mulighed for automatisk at oprette nye Google Ads-målgrupper. 
 - Marketo: Den nye version af Marketo-eksporttilslutning understøtter Marketo ID, så du kan undgå duplikering af data, opdatere eksisterende poster og oprette nye poster i Marketo. 
-
 
 ## <a name="february-2022-updates"></a>Februar 2022-opdateringer
 

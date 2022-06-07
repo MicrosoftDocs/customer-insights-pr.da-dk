@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: cdeb48df2172785ed8adad0f21943974ec39d14d
-ms.sourcegitcommit: 94de4dacdb8a7f4bc0f5914e7398622e70b81ff3
+ms.openlocfilehash: 621977068dc49b55f50f00e9762a4a5952d7b453
+ms.sourcegitcommit: ba29fd7c89bdeba7260b4783662d8da8e1e1e30e
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/12/2022
-ms.locfileid: "8743406"
+ms.lasthandoff: 05/18/2022
+ms.locfileid: "8768343"
 ---
 # <a name="explore-customer-insights"></a>Udforsk Customer Insights
 
@@ -28,17 +28,17 @@ På **startsiden** vises en vejledning i konfigurationsprocessen for nøglefunkt
 
 ## <a name="left-side-pane"></a>Venstre siderude
 
-Brug venstre rude til at navigere mellem forskellige områder i Customer Insights. 
+Brug venstre rude til at navigere mellem forskellige områder i Customer Insights.
 
-Hvis du arbejder med forretningskonti og individuel overensstemmelse, kan du vælge dit primære publikum at indstille fokus efter behov. 
+Hvis du arbejder med forretningskonti og individuel overensstemmelse, kan du vælge dit primære publikum at indstille fokus efter behov.
 
 ## <a name="application-header"></a>Programoverskrift
 
-**Miljøvælgeren** viser det miljø, du arbejder i, og du kan oprette eller administrere miljøer som en administrator.
+**Miljøvælgeren** viser det miljø, du arbejder i, og du kan oprette eller administrere miljøer som administrator.
 
 Kontrolelementet for det smilende ikon er **Feedback**. Vælg den for at fortælle os om din oplevelse med Customer Insights. Vi lytter aktivt til din feedback og på forhånd tak for at have givet os besked om, hvad du synes om, og hvordan vi kan forbedre os.
 
-Kontrolelementet **Indstillinger**, repræsenteret ved et tandhjulsikon, giver dig mulighed for at indsamle oplysninger om sessionen for at få Customer Insights og konfigurere globale indstillinger om din Microsoft 365-profil. 
+Kontrolelementet **Indstillinger**, repræsenteret ved et tandhjulsikon, giver dig mulighed for at indsamle oplysninger om sessionen for at få Customer Insights og konfigurere globale indstillinger om din Microsoft 365-profil.
 
 **Hjælp**-indstillinger, der er visualiseret med et spørgsmålstegn, indeholder kontekstafhængige hjælpelinks og andre nyttige ressourcer.
 
@@ -46,7 +46,7 @@ Dit profilbillede åbner **Account manager** for din Microsoft 365-profil. Vælg
 
 ## <a name="getting-started-with-customer-insights-section"></a>Introduktion til sektionen Customer Insights
 
-Dette afsnit indeholder kort, der kan hjælpe dig med at gennemgå processen til konfiguration af dit Customer Insights-miljø. 
+Dette afsnit indeholder kort, der kan hjælpe dig med at gennemgå processen til konfiguration af dit Customer Insights-miljø.
 
 1. Kortet **Tilføj data** kan hjælpe dig med dataimporten. Customer Insights understøtter [flere muligheder for at hente data om kunderne](data-sources.md). Vælg **Tilføj datakilder** for at komme i gang.
 1. Når den første dataimport er fuldført, kan du bruge datakortet **Unify data** til at anvende ensartede data og til at [oprette samlede kundeprofiler](data-unification.md) fra forskellige kilder. 

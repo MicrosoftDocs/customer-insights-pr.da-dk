@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 1a19d83930d667bdca5301dcc5a3ffa5db6a7bdc
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 68c26eb0ad0da787a9f594b4aebe679588b0d6bf
+ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741126"
+ms.lasthandoff: 06/01/2022
+ms.locfileid: "8833532"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights"></a>Introduktion til Dynamics 365 Customer Insights
 
@@ -25,7 +25,7 @@ Customer Insights kan hjælpe dig med at få en større forståelse af dine kund
 
 ## <a name="step-1-create-an-environment"></a>Trin 1: Oprette et miljø
 
-Du skal først oprette et miljø, du kan arbejde i. Hvis din organisation allerede har købt en licens, skal du se [Oprette et miljø](create-environment.md). Hvis du vil starte en prøveversion af Customer Insights, skal du se [Konfigurere et prøvemiljø](trial-signup.md).
+Opret først et miljø, du kan arbejde i. Hvis din organisation allerede har købt en licens, skal du se [Oprette et miljø](create-environment.md). Hvis du vil starte en prøveversion af Customer Insights, skal du se [Konfigurere et prøvemiljø](trial-signup.md).
 
 ## <a name="step-2-explore-customer-insights"></a>Trin 2: Udforske Customer Insights
 
@@ -33,13 +33,13 @@ Første gang du logger på Customer Insights, kan du konfigurere indstillinger o
 
 1. [Log på Customer Insights](https://home.ci.ai.dynamics.com) ved hjælp af din Microsoft Azure Active Directory (AAD) brugerkonto.
 
-1. [Rediger miljøet](manage-environments.md#switch-environments) for at få vist demodata, og udforsk [Customer Insights](home.md).
+1. Rediger miljøet for at få vist demodata, og [udforsk Customer Insights](home.md).
 
 ## <a name="step-3-ingest-unify-and-set-up-relationships-for-your-data"></a>Trin 3: Indtage, samle og konfigurere relationer til dataene
 
-Fælles profiler er grundlaget for at få indsigt og handle ud fra dataene. Hent data ind fra forskellige kilder, og kør processen til samling af data for at kombinere ensartede profiler. Angiv relationer mellem de aktiverede objekter ved hjælp af funktioner til lige muligheder for at føje oplysninger til profilerne.
+Fælles profiler er grundlaget for at få indsigt og handle ud fra dataene. Hent data ind fra forskellige kilder, og kør processen til samling af data for at kombinere ensartede profiler. Angiv relationer mellem de indtagede objekter, og brug forbedringsfunktioner til at føje oplysninger til profilerne.
 
-1. Indtag data ved at oprette datakilder fra flere indstillinger. Vælg mellem [Power Query-forbindelser](connect-power-query.md), en [Common Data Model-mappe](connect-common-data-model.md) eller [Microsoft Dataverse](connect-dataverse-managed-lake.md). 
+1. Indtag data ved at oprette datakilder fra flere indstillinger. Vælg mellem [Power Query-forbindelser](connect-power-query.md), en [Common Data Model-mappe](connect-common-data-model.md) eller [Microsoft Dataverse](connect-dataverse-managed-lake.md).
 
 1. Kør [processen til oprettelse af data](data-unification.md) ved at identificere [kildefelterne](map-entities.md), fjerne [dubletter](remove-duplicates.md), [matche betingelser](match-entities.md) og [samle felter](merge-entities.md).
 
@@ -47,7 +47,7 @@ Fælles profiler er grundlaget for at få indsigt og handle ud fra dataene. Hent
 
 ## <a name="step-4-enhance-unified-profiles-with-predictions-activities-and-measures"></a>Trin 4: Forbedring af ensartede profiler med forudsigelser, aktiviteter og mål
 
-Med ensartede profiles konfigureret, kan du forbedre dine data og yderligere øge de oplysninger, de giver.
+Hvis du har konfigureret samlede profiler, kan du forbedre dine data og øge mængden af oplysninger, de giver.
 
 1. Vælg mellem et udvidet bibliotek med udbydere til forbedring for at [forbedre dine kundedata](enrichment-hub.md).
 
@@ -59,7 +59,7 @@ Med ensartede profiles konfigureret, kan du forbedre dine data og yderligere øg
 
 ## <a name="step-5-create-segments-and-activate-data-through-various-export-options"></a>Trin 5: Oprettelse af segmenter og aktivering af data via forskellige eksportindstillinger
 
-Nu, hvor dataene er fuldstændige og indeholder en lang række oplysninger om kunderne, er det tid til at finde måder, du kan udføre handlinger på de pågældende data på.
+Nu, hvor dataene er fuldstændige og indeholder en lang række oplysninger om kunderne, kan du finde ud af, hvordan du kan arbejde med de pågældende data.
 
 1. [Opret segmenter](segments.md), undersæt af kundebasen for at sikre, at dine handlinger er relevante for målkunderne.
 

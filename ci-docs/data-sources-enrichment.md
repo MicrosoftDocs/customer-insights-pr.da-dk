@@ -1,19 +1,19 @@
 ---
 title: Kilde til berigelse af datakilde
 description: Forbedre datakilder, inden du gennemgår processen til samling af data.
-ms.date: 03/02/2022
+ms.date: 05/20/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: d1e14d2d4e718d71ccbd2afd259a350ad5c9e69a
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1225482c4bf432ed747537b2c9bec9ab0e692a51
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755679"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800274"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Forbedring til datakilder (forhåndsversion)
 
@@ -27,7 +27,7 @@ Du skal have bidragyder- eller administratortilladelse til at oprette eller redi
 
 1. Gå til **Data** > **Datakilder**.
 
-1. Vælg den lodrette ellipse ud for den datakilde, du vil forbedre, og vælg **Forbedre**.
+1. Vælg den lodrette ellipse (&vellip;) ud for den datakilde, du vil forbedre, og vælg **Forbedre**.
 
    :::image type="content" source="media/data_sources_enrich_discover.png" alt-text="-datakildeforbedringsside":::
 
@@ -41,11 +41,12 @@ Følgende forbedringer er i øjeblikket tilgængelig for datakilder. Gennemgå d
 
 - [Udvidede adresser](enrichment-enhanced-addresses.md)
 - [Forbedrede virksomhedsdata](enrichment-enhanced-company-data.md)
+- [Identitetsdata fra LiveRamp](enrichment-liveramp.md)
 
 ## <a name="manage-existing-data-source-enrichments"></a>Administrere eksisterende datakildeforbedringer
 
 Gå til fanen **Mine forbedringer** for at se alle konfigurerede forbedringer.
 
-Vælg en valgmuligheder for at se de tilgængelige indstillinger. Du kan også vælge ellipsen (...) på et listeelement for at se indstillingerne. Hvis du har konfigureret flere forskellige indstillinger, kan du bruge søgefeltet til at finde det hurtigt.
+Vælg en valgmuligheder for at se de tilgængelige indstillinger. Du kan også vælge den lodrette ellipse (&vellip;) på et listeelement for at se indstillingerne. Hvis du har konfigureret flere forskellige indstillinger, kan du bruge søgefeltet til at finde det hurtigt.
 
 Du kan få vist, redigere, køre eller slette en datakildeforbedring. Du kan finde flere oplysninger under [Administrere eksisterende forbedringer](enrichment-hub.md).

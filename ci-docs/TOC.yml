@@ -6,7 +6,9 @@
   href: whats-new-customer-insights.md
 - name: Læringskatalog
   items:
-    - name: Start her
+    - name: Bliv certificeret som Microsoft-specialist inden for kundedataplatform
+      href: /learn/certifications/exams/mb-260?tab=tab-instructor-led
+    - name: Start her med Customer Insights
       href: /learn/modules/get-started-customer-data-platform/
     - name: Indsættelse af data
       href: /learn/modules/ingest-data-customer-insights/
@@ -34,8 +36,6 @@
       href: get-started.md
     - name: Starte med en betalt licens
       href: paid-license.md
-    - name: Opret et nyt miljø
-      href: create-environment.md
     - name: Udforsk Customer Insights
       href: home.md
     - name: Arbejde med koder og tabeller
@@ -198,6 +198,8 @@
           href: export-campaign-monitor.md
         - name: Constant Contact
           href: export-constant-contact.md
+        - name: Criteo
+          href: export-criteo.md
         - name: DotDigital
           href: export-dotdigital.md
         - name: Dynamics 365 Marketing
@@ -254,12 +256,22 @@
       href: entities.md
     - name: Gennemgå objektskemaer i Common Data Model
       href: entity-schemas.md
-    - name: Customer Insights-data i Dataverse
-      href: customer-insights-dataverse.md
     - name: Opbyg relationer og tilknyttede objekter
       href: relationships.md
     - name: Definere semantiske tilknytninger
       href: semantic-mappings.md
+- name: Miljøer
+  items:
+    - name: Opret et nyt miljø
+      href: create-environment.md
+    - name: Opret forbindelse til Microsoft Dataverse
+      href: customer-insights-dataverse.md
+    - name: Brug dit eget Azure Data Lake Storage
+      href: own-data-lake-storage.md
+    - name: Administrere miljøindstillinger
+      href: manage-environments.md
+    - name: Oprette forbindelse til en lagerkonto ved hjælp af tjenestens hovednavn
+      href: connect-service-principal.md
 - name: Administration
   items:
     - name: Opsæt systemkonfiguration
@@ -268,20 +280,12 @@
       href: security-overview.md
     - name: Tildele brugertilladelser
       href: permissions.md
-    - name: Oversigt over forbindelser
-      href: connections.md
-    - name: Administrere flere miljøer
-      href: manage-environments.md
     - name: Bring Your Own Key Vault
       href: use-azure-key-vault.md
-    - name: Oprette forbindelse til en lagerkonto ved hjælp af tjenestens hovednavn
-      href: connect-service-principal.md
     - name: Eksport af diagnosticeringslogfiler
       href: diagnostics.md
-    - name: Tjenestebegrænsninger
-      href: service-limits.md
-    - name: DSR-rettigheder og forespørgsler
-      href: dsr-rights-requests.md
+    - name: Oversigt over forbindelser
+      href: connections.md
 - name: API'er
   items:
     - name: Arbejde med API'er
@@ -324,5 +328,9 @@
       items:
         - name: Opret forudsigelser med samtykkedata
           href: consent-management/predictions-consent-data.md
+- name: Tjenestebegrænsninger
+  href: service-limits.md
+- name: DSR-rettigheder og forespørgsler
+  href: dsr-rights-requests.md
 - name: Få support
   href: /power-platform/admin/get-help-support

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-measure-builder
 - customerInsights
-ms.openlocfilehash: 6370df0287362a5512a837cdb588f5d20ef03d3b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d003d054145343cc2feeefeeee413810df43185a
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646372"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800319"
 ---
 # <a name="use-measure-builder-to-create-measures-from-scratch"></a>Brug målgenerator til at oprette måleenheder fra bunden
 
@@ -88,7 +88,7 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundeattribut, k
 
 1. Hvis du vil tilføje flere beregninger for målingen, skal du vælge **Ny beregning**. Du kan kun bruge objekter på samme objektsti til nye beregninger. Flere beregninger vises som nye kolonner i objektet til måling af output.
 
-1. Vælg **...** i beregningen at **Dupliker**, **Omdøb** eller **Fjern** for en beregning fra en måleenhed.
+1. Vælg den lodrette ellipse (&vellip;) i beregningen for at **duplikere**, **omdøbe** eller **fjerne** en beregning fra en måling.
 
 1. I området **Prøveversion** kan du se dataskemaet for outputobjektet for måleenheden, herunder filtre og dimensioner. Prøveversionen reagerer dynamisk på ændringer i konfigurationen.
 
@@ -158,7 +158,7 @@ Du kan oprette måleenheder på niveau med individuelle kunder (kundemål) eller
    1. Vælg **Relationssti**, og vælg den objektsti, der skal bruges til at identificere målingen. Hvis der kun er en enkelt sti til objektet *Kunde*, vises dette kontrolelement ikke.
    1. Vælg **Udført** for at anvende det valgte.
 
-1. Vælg **...** i beregningen at **Dupliker**, **Omdøb** eller **Fjern** for en beregning fra en måleenhed.
+1. Vælg den lodrette ellipse (&vellip;) i beregningen for at **duplikere**, **omdøbe** eller **fjerne** en beregning fra en måling.
 
 1. I området **Prøveversion** kan du se dataskemaet for outputobjektet for måleenheden, herunder filtre og dimensioner. Prøveversionen reagerer dynamisk på ændringer i konfigurationen.
 

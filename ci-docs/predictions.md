@@ -12,12 +12,12 @@ searchScope:
 - ci-predictions
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: e2cace3547a0b584dbf26ae5eecf86f3b256649f
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 57ef46416db0a11cde9f9d7650a0b502a01bf0ab
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8740712"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800643"
 ---
 # <a name="complete-your-partial-data-with-predictions-deprecated"></a>Fuldfør de delvise data med forudsigelser (frarådet)
 
@@ -95,7 +95,7 @@ Som en del af dette flow vælger du en bestemt attribut til at basere dit segmen
 
 2. Vælg den forudsigelse, du vil gennemse.
 
-3. Vælg ellipsen i kolonnen **Handlinger**, og vælg **Vis**.
+3. Vælg den lodrette ellipse (&vellip;) i kolonnen **Handlinger**, og vælg **Vis**.
 
 4. Der vises en række datapunkter i visningen af din forudsigelse.
    > [!div class="mx-imgBorder"]
@@ -122,7 +122,7 @@ Når du har oprettet en forudsigelse, kan du tilpasse modellen i AI Builder for 
 
 2. Vælg den forudsigelse, som du vil redigere.
 
-3. Vælg ellipsen i kolonnen **Handlinger**, og vælg **Vis**.
+3. Vælg den lodrette ellipse (&vellip;) i kolonnen **Handlinger**, og vælg **Vis**.
 
 4. Vælg **Tilpas i AI Builder**.
 
@@ -139,7 +139,7 @@ Den næste kørsel af forudsigelsen bruger den opdaterede model, du har oprettet
 
 2. Vælg den forudsigelse, du vil slette.
 
-3. Vælg ellipsen i kolonnen **Handlinger**, og vælg **Slet**.
+3. Vælg den lodrette ellipse (&vellip;) i kolonnen **Handlinger**, og vælg **Slet**.
 
 4. Bekræft sletningen.
 
@@ -153,7 +153,7 @@ Hvis du ikke kan fuldføre Dataverse-tilknytningsprocessen på grund af en fejl,
 - App-tilladelser tildeles ikke.
     1. Gå til [https://admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com).
     1. Vælg **Miljøer**.
-    1. Vælg ellipsen ud for det miljø, du vil føje til tilladelsen til, og vælg **Indstillinger**.
+    1. Vælg den lodrette ellipse (&vellip;) ud for det miljø, du vil føje tilladelsen til, og vælg **Indstillinger**.
     1. Udvid **Brugere + tilladelser**, og vælg **Brugere**.
     1. Vælg **+ Ny**, og vælg **Bruger**.
     1. Vælg **Programbruger**, hvis indstillingen ikke allerede er valgt, og angiv følgende oplysninger:

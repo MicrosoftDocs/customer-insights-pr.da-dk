@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: 5b39452d7a4612242739e8000e57217954c71289
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
+ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641509"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "8808539"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-anmodninger (Data Subject Rights) under GDPR
 
@@ -41,7 +41,7 @@ En Customer Insights-administrator kan følge disse trin for at fjerne de kunded
 1. Log på Dynamics 365 Customer Insights.
 2. Gå til **Data** > **Datakilder**
 3. For hver datakilde på listen, der indeholder slettede kundedata:
-   1. Vælg (...), og vælg derefter **Opdater**.
+   1. Vælg den lodrette ellipse (&vellip;), og vælg derefter **Opdater**.
    2. Tjek statussen for datakilden under **Status**. En markering betyder, at opdateringen lykkedes. En advarselstrekant betyder, at noget gik galt. Hvis der vises en advarselstrekant, skal du kontakte D365CI@microsoft.com.
 
 > [!div class="mx-imgBorder"]
@@ -52,7 +52,7 @@ En Customer Insights-administrator kan følge disse trin for at fjerne de kunded
 En Customer Insights-administrator kan følge disse trin for at slette Customer Insights-brugerdata:
 
 1. Log på Dynamics 365 Customer Insights.
-2. Gå til **Admin** > **Tilladelser**.
+2. Gå til **Administration** > **Sikkerhed** > **Tilladelser**.
 3. Markér afkrydsningsfeltet ud for den bruger, der skal slettes.
 4. Vælg **Fjern**.
 

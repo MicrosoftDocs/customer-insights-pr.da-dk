@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 03169f0218dfad55cf20ecaf1c1596c652e5f601
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 15ae772617efa4c64cf79d0bac10a0c3cb28ca30
+ms.sourcegitcommit: a92bf5985263240fd07bad98d8e119b88cf2c9d9
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755255"
+ms.lasthandoff: 05/26/2022
+ms.locfileid: "8807574"
 ---
 # <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
 
@@ -38,7 +38,7 @@ Hvis du vil konfigurere diagnosticering i Customer Insights, skal følgende foru
 
 - Du skal have et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - Du har [administrator](permissions.md#admin)-tilladelser i Customer Insights.
-- Du har rollen **bidragyder** og **brugeradgangsadministrator** for destinationsressourcen på Azure. Ressourcen kan være en Azure-lagerkonto, en Azure-hændelseshub eller et Azure Log Analytics-arbejdsområde. Du kan finde flere oplysninger ved at gå til [Tilføje eller fjerne Azure-rolletildelinger ved hjælp af Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
+- Du har rollen **bidragyder** og **brugeradgangsadministrator** for destinationsressourcen på Azure. Ressourcen kan være en Azure Data Lake Storage-konto, en Azure-hændelseshub eller et Azure Log Analytics-arbejdsområde. Du kan finde flere oplysninger ved at gå til [Tilføje eller fjerne Azure-rolletildelinger ved hjælp af Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Denne tilladelse er nødvendig, når du konfigurerer diagnosticeringsindstillinger i Customer Insights, men den kan ændres, når installationen er fuldført.
 - [Destinationskravene](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) til Azure-lager, Azure-hændelseshub eller Azure Log Analytics opfyldes.
 - Du har som minimum rollen **Læser** i den ressourcegruppe, som ressourcen tilhører.
 

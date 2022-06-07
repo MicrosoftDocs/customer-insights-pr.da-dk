@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 50258365c3134c588aa79ec72c66d0de329e0ff1
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 4db97ec02eb96662d30a8536ea42372f81f318d2
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646185"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800137"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
@@ -76,7 +76,7 @@ Connectorer med et afkrydsningsfelt i kolonnen **Customer Insights (Dataflows)**
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Vælg den lodrette ellipse ud for den datakilde, du vil ændre, og vælg **Rediger** i rullemenuen.
+2. Vælg den lodrette ellipse (&vellip;) ud for den datakilde, du vil ændre, og vælg **Rediger** i rullemenuen.
 
    > [!div class="mx-imgBorder"]
    > ![Indstillingen Rediger.](media/edit-option-data-sources.png "Indstillingen Rediger")

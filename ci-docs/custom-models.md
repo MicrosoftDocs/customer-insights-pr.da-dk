@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: f392c5cc5ac88a971565f0ccaf309ce89ce12660
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: a44d1f2c00c90de3ed5a9425e3a197e109cb28e0
+ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646095"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "8800413"
 ---
 # <a name="custom-machine-learning-models"></a>Brugerdefinerede maskinelle indlæringsmodeller
 
@@ -92,7 +92,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 
 ## <a name="edit-a-workflow"></a>Redigere en arbejdsproces
 
-1. På siden **Brugerdefinerede modeller** vælg den lodrette ellipse i kolonnen **Handlinger** ud for en arbejdsproces, som du tidligere har oprettet, og vælg **Rediger**.
+1. På siden **Brugerdefinerede modeller** skal du vælge den lodrette ellipse (&vellip;) i kolonnen **Handlinger** ud for en arbejdsproces, som du tidligere har oprettet, og vælge **Rediger**.
 
 1. Du kan opdatere arbejdsprocessens genkendelige navn i feltet **Visningsnavn**, men du kan ikke ændre den konfigurerede webtjeneste eller pipeline. Vælg **Næste**.
 
@@ -108,7 +108,7 @@ Forudsigelser indeholder funktioner til oprettelse af bedre kundeoplevelser, for
 
 ## <a name="run-a-workflow"></a>Kørsel af en arbejdsproces
 
-1. På siden **Brugerdefinerede modeller** vælg den lodrette ellipse i kolonnen **Handlinger** ud for en arbejdsproces, som du tidligere har oprettet.
+1. På siden **Brugerdefinerede modeller** skal du vælge den lodrette ellipse (&vellip;) i kolonnen **Handlinger** ud for en arbejdsproces, som du tidligere har oprettet.
 
 1. Vælg **Kør**.
 
@@ -116,7 +116,7 @@ Arbejdsprocessen kører også automatisk sammen med alle planlagte opdateringer.
 
 ## <a name="delete-a-workflow"></a>Slette en arbejdsproces
 
-1. På siden **Brugerdefinerede modeller** vælg den lodrette ellipse i kolonnen **Handlinger** ud for en arbejdsproces, som du tidligere har oprettet.
+1. På siden **Brugerdefinerede modeller** skal du vælge den lodrette ellipse (&vellip;) i kolonnen **Handlinger** ud for en arbejdsproces, som du tidligere har oprettet.
 
 1. Vælg **Slet**, og bekræft sletningen.
 
