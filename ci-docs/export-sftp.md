@@ -1,19 +1,19 @@
 ---
 title: Eksportere data fra Customer Insights til SFTP-værter (indeholder video)
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til en SFTP-lokation.
-ms.date: 03/03/2021
+ms.date: 06/09/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5170ec4ca35ad2a94f02e9d696c44a32da888120
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b56d628c8286ba6697cccc9b002f609aa929951b
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646115"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947177"
 ---
 # <a name="export-segments-and-other-data-to-sftp-preview"></a>Eksportere segmenter og andre data til SFTP (forhåndsversion)
 
@@ -28,8 +28,8 @@ Brug dine kundedata i tredjepartsprogrammer ved at eksportere dem til en SFTP (S
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
 - SFTP-destinationer bag firewalls understøttes i øjeblikket ikke. 
-- Kørslen af en eksport afhænger af systemets ydeevne. Vi anbefaler to CPU-kerner og 1 GB hukommelse som minimal konfiguration af serveren. 
-- Det kan tage 90 minutter at eksportere objekter med op til 100 millioner kundeprofiler, når du bruger den anbefalede minimale konfiguration af to CPU-kerner og 1 GB hukommelse. 
+- Kørslen af en eksport afhænger af systemets ydeevne. Vi anbefaler to CPU-kerner og 1 GB hukommelse som minimal konfiguration af serveren.
+- Det kan tage 90 minutter at eksportere objekter med op til 100 millioner kundeprofiler, når du bruger den anbefalede minimale konfiguration af to CPU-kerner og 1 GB hukommelse.
 
 ## <a name="set-up-connection-to-sftp"></a>Konfigurer forbindelse til SFTP
 
@@ -64,13 +64,17 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 1. Markér de objekter, f.eks. segmenter, du vil eksportere.
 
    > [!NOTE]
-   > Hvert enkelt valgt objekt opdeles i op til fem outputfiler, når de eksporteres. 
+   > Hvert enkelt valgt objekt opdeles i op til fem outputfiler, når de eksporteres.
 
 1. Vælg **Gem**.
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
+Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab).
+Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand).
+
+> [!TIP]
+> Eksport af objekter, der indeholder en stor mængde data, kan føre til flere CSV-filer i den samme mappe for hver eksport. Opdeling af eksport sker af ydelseshensyn for at minimere den tid, det tager at udføre en eksport.
 
 ## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
 

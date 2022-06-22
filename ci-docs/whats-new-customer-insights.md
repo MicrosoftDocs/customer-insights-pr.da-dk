@@ -1,19 +1,19 @@
 ---
-title: Nye og kommende funktioner
+title: Nye og opdaterede funktioner
 description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 05/03/2022
+ms.date: 06/02/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: af79c8369dd608e8ce1c14c50bb9aef3a79b9029
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: d06f8be114f558d7adadf2913107c5fd69686875
+ms.sourcegitcommit: 9dd767051014e06d8d9f2f616e248573f24df4cb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833623"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8843340"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -24,6 +24,37 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
 
+## <a name="may-2022-updates"></a>Opdateringer i maj 2022
+
+Opdateringen i maj 2022 omfatter nye funktioner, opgradering til ydeevne og fejlrettelser.
+
+### <a name="updated-data-unification-experience"></a>Opdateret oplevelse af datas enhed
+
+ Med data unification kan du samle én gang forskellige datakilder i en enkelt datasæt, der giver en ensartet visning af de pågældende data. Data kan være samlet i et enkelt objekt eller flere objekter. Først skal du [vælge objekter og kildefelter](map-entities.md), [fjerne dubletposter](remove-duplicates.md), angive regler for [matchningsbetingelser](match-entities.md) og definere, hvilke [felter der skal inkluderes i de ensartede kundeprofiler](merge-entities.md).
+
+Du kan finde flere oplysninger i [Datasamlingsoversigten](data-unification.md).
+
+### <a name="refreshed-home-page-in-customer-insights"></a>Opdateret startside i Customer Insights
+
+På **Startsiden** vises en vejledning i konfigurationsprocessen for nøglefunktioner og giver dig en oversigt over segmenter, mål og forbedringsdata. Vi har opdateret oplevelsen for at give dig mere relevante oplysninger i overblik.
+
+Du kan finde flere oplysninger i [Udforske Customer Insights](home.md).
+
+### <a name="track-usage-of-a-segment"></a>Spore brugen af et segment
+
+Du kan nu [spore brug af et segment](segments.md#track-usage-of-a-segment) i apps, der er baseret på Dataverse-organisationen, der er knyttet til Customer Insights. I forbindelse med [Customer Insights-segmenter, der bruges i kundekampagneforløb i Dynamics 365 Marketing](/dynamics365/marketing/real-time-marketing-ci-profile), informerer systemet dig om brugen af dette segment.
+
+### <a name="export-to-criteo"></a>Eksportere til Criteo
+
+Criteo er en onlineplatform, der hjælper brugerne med at administrere digitale reklamer. Du kan nu eksportere segmenter af samlede kundeprofiler for at generere kampagner, levere mailmarketing og bruge bestemte kundegrupper med Criteo.
+
+Du kan finde flere oplysninger under [Eksportere segmenter til Criteo (forhåndsversion)](export-criteo.md).
+
+### <a name="refined-documentation-structure-for-environment-creation"></a>Raffineret struktur for dokumentation af miljøoprettelse
+
+Vi har revideret de hjælpedokumenter, der vedrører oprettelse og administration af miljøer i Customer Insights. Artiklerne er nu grupperet under noden Miljøer i indholdsfortegnelsen. De artikler, der oprettes, giver flere vejledninger til de forskellige måder at konfigurere miljøer på og få en mere klar struktur. Hvis du har feedback, du vil dele, skal du fortælle os det via kontrolelementerne mod slutningen af artiklerne i Hjælp.
+
+Du kan finde flere oplysninger i [Sådan: Oprette et nyt miljø](create-environment.md).
 
 ## <a name="april-2022-updates"></a>Opdateringer i april 2022
 

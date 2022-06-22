@@ -1,5 +1,5 @@
 ---
-title: Forbedre kundeprofiler med data fra Microsoft
+title: Forbedre kundeprofiler med data om kunder og interesser fra Microsoft
 description: Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold og stemmeandel.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,25 +12,16 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 5c016a394fdf485057a190d03bfed9ce5481f435
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646145"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953758"
 ---
 # <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Forbedre kundeprofiler med tilhørsforhold og stemmeandel (forhåndsversion)
 
 Brug Microsofts beskyttede data til at forbedre dine kundedata med mærketilhørsforhold, interessetilhørsforhold og stemmeandel (SoV). Disse tilhørsforhold og SoV er baseret på data fra personer med samme demografi som dine kunder. Disse oplysninger hjælper dig med bedre at forstå og segmentere dine kunder ud fra deres tilhørsforhold eller SoV til bestemte mærker og interesser.
-
-Gå til **Data** > **Forbedring** for at [konfigurere og få vist forskellige forbedringer](enrichment-hub.md).
-
-Hvis du vil konfigurere forberinger af mærketilhørsforhold og SoV, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Mærker**.
-
-Hvis du vil konfigurere forberinger af interessetilhørsforhold og SoV, skal du gå til fanen **Opdag** og vælge **Forbedr mine data** i feltet **Interesser**.
-
-   > [!div class="mx-imgBorder"]
-   > ![Brands og interesser-felter.](media/BrandsInterest-tile-Hub.png "Brands og interesse-felter")
 
 ## <a name="how-we-determine-affinities-and-sov"></a>Sådan afgør vi tilhørsforhold og SoV
 
@@ -45,7 +36,6 @@ Vi bruger Microsofts onlinesøgedata til at finde tilhørsforhold og SoV for mæ
 På alle forbedrede kundeprofiler leverer vi to relaterede værdier: tilhørsniveau og tilhørspoint. Du kan bruge disse værdier til at bestemme, hvor stærk tilhørsforholdet er for profilens demografiske segment, for et mærke eller en interesse i forhold til andre demografiske segmenter.
 
 *Tilhørsniveau* består af fire niveauer, og *tilhørspoint* beregnes på en skala på 100 point, der knyttes til tilhørsniveauer.
-
 
 |Tilhørsniveau |Score for tilhørsforhold  |
 |---------|---------|
@@ -64,78 +54,65 @@ SoV beregnes på en skala med 100 point. Den samlede SoV på tværs af alle mær
 
 I øjeblikket understøttes følgende lande-/områdeindstillinger: Australien, Canada (engelsk), Frankrig, Tyskland, Storbritannien og USA (engelsk).
 
-Hvis du vil vælge et land eller område, skal du åbne **Brands-berigelse** eller **Interesseforbedring** og vælge **Skift** ud for **Land/område**. Vælg en indstilling i ruden **Indstillinger for land/område**, og vælg **Anvend**.
+## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
-### <a name="implications-related-to-country-selection"></a>Implikationer i forbindelse med valg af land
+1. Gå til **Data** > **Forbedring**, og vælg fanen **Opdag**.
 
-- Når du [vælger din egne mærker](#define-your-brands-or-interests), viser systemet forslag, der er baseret på det valgte land eller område.
+   - Hvis du vil konfigurere forbedringer af mærketilhørsforhold og SoV, skal du vælge **Forbedr mine data** i feltet **Mærker**.
 
-- Når du [vælger en branche](#define-your-brands-or-interests), får du de mest relevante mærker eller oplysninger baseret på det valgte land eller område.
+   - Hvis du vil konfigurere interessetilhørsforhold og SoV, skal du vælge **Forbedr mine data** i feltet **Interesser**.
 
-- Når vi [forbedrer profiler](#refresh-enrichment), forbedrer vi alle kundeprofiler, som vi får data for de valgte brands og interesser, herunder profiler, der ikke er i det valgte land eller område. Hvis du f.eks. har valgt Tyskland, forbedrer vi profiler i USA, hvis der er tilgængelige data for de valgte virksomheder og interesser i USA.
+   > [!div class="mx-imgBorder"]
+   > ![Brands og interesser-felter.](media/BrandsInterest-tile-Hub.png "Brands og interesse-felter")
 
-## <a name="configure-enrichment"></a>Konfigurere forbedring
+1. Gennemse oversigten, og vælg derefter **Næste**.
 
-En styret oplevelse hjælper dig gennem konfigurationen af forbedringerne. 
+1. Hvis du vil ændre dit land eller område, skal du **Skift** ud for **Land/område**. Vælg et [understøttet land/område](#supported-countriesregions) i ruden **Indstillinger for land/område**, og vælg **Anvend**.
 
-### <a name="define-your-brands-or-interests"></a>Definer dine mærker eller interesser
+   > [!NOTE]
+   > Når du vælger din egne mærker, viser systemet forslag, der er baseret på det valgte land eller område. Når du vælger en branche, får du de mest relevante mærker eller oplysninger baseret på det valgte land eller område.
 
-Vælg op til fem brands eller interesser ved hjælp af en eller begge af disse indstillinger:
+1. Vælg op til fem brands eller interesser ved hjælp af en eller begge af disse indstillinger:
 
-- **Branche**: Vælg din branche på rullelisten, og vælg derefter mellem de bedste mærker eller interesser for den pågældende branche.
-- **Vælg dit eget**: Angiv et brand eller en interesse, der er relevant for din organisation, og vælg derefter mellem de matchende forslag. Hvis du ikke kan se en liste over de brands eller interesser, du leder efter, kan du sende os feedback ved hjælp af linket **Forslag**.
+   - **Branche**: Vælg din branche på rullelisten, og vælg derefter mellem de bedste mærker eller interesser for den pågældende branche.
+   - **Vælg dit eget**: Angiv et brand eller en interesse, der er relevant for din organisation, og vælg derefter mellem de matchende forslag. Hvis du ikke kan se en liste over de brands eller interesser, du leder efter, kan du sende os feedback ved hjælp af linket **Forslag**.
 
-### <a name="review-enrichment-preferences"></a>Gennemse indstillinger for forbedring
+1. Vælg **Næste**, og gennemse præferencerne for standardpræferencer, og opdater dem efter behov.
 
-Gennemse præferencerne for foretrukne indstillinger for standardpræferencer, og opdater dem efter behov.
+   :::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skærmbillede af vinduet med præferencer for forbedringer.":::
 
-:::image type="content" source="media/affinity-enrichment-preferences.png" alt-text="Skærmbillede af vinduet med præferencer for forbedringer.":::
+1. Vælg **Næste**.
 
-### <a name="select-entity-to-enrich"></a>Vælge objekt, der skal forbedres
+1. Vælg **Kundedatasæt**, og vælg den profil eller det segment, du vil forbedre med firmadata fra Microsoft. Objektet *Kunde* forbedrer alle dine kundeprofiler, hvorimod et segment kun forbedrer de kundeprofiler, der findes i dette segment.
 
-Vælg **Forbedret objekt**, og vælg det datasæt, du vil forbedre med data fra Microsoft. Du kan vælge objektet Kunde for at forbedre alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
+1. Vælg **Næste**.
 
-### <a name="map-your-fields"></a>Tilknyt dine felter
+1. Knyt felterne fra det samlede kundeobjekt til Microsoft-dataene.
 
-Tilknyt felter fra det samlede kundeobjekt for at definere det demografiske segment, som systemet skal bruge til forbedring af kundedata. Tilknyt land/område og som minimum attributterne Fødselsdato eller Køn. Du skal desuden tilknytte mindst én by (og område) eller et postnummer. Vælg **Rediger** for at definere tilknytningen af felterne, og vælg **Anvend**, når du er færdig. Vælg **Gem** for at fuldføre felttilknytningen.
+   > [!NOTE]
+   > Der skal som minimum angives attributter af samme værdi som Dato for fødsel eller Køn. Land/område og som minimum By (og Område) eller Postnummer kræves. Det anbefales, at fødselsdatoen konverteres til typen DateTime under dataindtagelse. Alternativt kan det være en streng i [ISO 8601-format](https://www.iso.org/iso-8601-date-and-time-format.html) "yyyy-MM-dd" eller "yyyy-MM-ddTHH:mm:ss".
 
-Følgende formater og værdier understøttes (der skelnes ikke mellem store og små bogstaver i værdierne):
+1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
 
-- **Fødselsdato**: Vi anbefaler, at fødselsdato konverteres til typen DateTime under dataindtagelse. Alternativt kan det være en streng i [ISO 8601-format](https://www.iso.org/iso-8601-date-and-time-format.html) "yyyy-MM-dd" eller "yyyy-MM-ddTHH:mm:ss".
-- **Køn**: mand, kvinde, ukendt.
-- **Postnummer**: Femcifrede postnumre til USA, standardpostnummer alle andre steder.
-- **By**: Bynavn på engelsk.
-- **Område**: Forkortelse på to bogstaver for USA og Canada. Forkortelse på to eller tre bogstaver for Australien. Gælder ikke for Frankrig, Tyskland eller Storbritannien.
-- **Land/område**:
+1. Angiv et Navn til forbedringen. **Output-objektnavnet** udfyldes automatisk.
 
-  - US: Amerikas Forenede Stater, Forenede Stater, USA, Amerika
-  - CA: Canada, CA
-  - GB: Storbritannien, UK, Det Forenede Kongerige, GB, Det Forenede Kongerige Storbritannien og Nordirland, Det Forenede Kongerige Storbritannien
-  - AU: Australien, AU, Commonwealth of Australia
-  - FR: Frankrig, FR, Den Franske Republik
-  - DE: Tyskland, tysk, Deutschland, Allemagne, DE, Forbundsrepublikken Tyskland, Republikken Tyskland
+   :::image type="content" source="media/enrichment-interests-summary.png" alt-text="Siden Gennemse og navngive interesser.":::
 
-## <a name="review-and-name-the-enrichment"></a>Gennemse og navngive forbedringen
+1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg.
 
-Til sidst får du mulighed for at gennemse oplysningerne og angive et navn, der gør det muligt at bruge forbedringen.
+1. Vælg **Kør** for at starte forbedringsprocessen, eller luk for at vende tilbage til siden **Forbedringer**.
 
-:::image type="content" source="media/enrichment-interests-summary.png" alt-text="Siden Gennemse og navngive interesser.":::
-
-## <a name="refresh-enrichment"></a>Opdatere forbedring
-
-Kør forbedringen, når du har konfigureret brands, interesser og felttilknytningen for demografi. Start processen ved at vælge **Kør** på siden for mærke- eller interessekonfiguration. Derudover kan du gøre det muligt for systemet at køre forbedring automatisk som en del af en planlagt opdatering.
-
-Afhængigt af størrelsen på dine kundedata, kan det vare nogle minutter, før en forbedring kan fuldføres.
-
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+   Når vi forbedrer profiler, forbedrer vi alle kundeprofiler, som vi får data for de valgte brands og interesser, herunder profiler, der ikke er i det valgte land eller område. Hvis du f.eks. har valgt Tyskland, forbedrer vi profiler i USA, hvis der er tilgængelige data for de valgte virksomheder og interesser i USA.
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 
-Når du har kørt forbedringen, skal du gå til **Mine forbedringer** for at gennemgå det samlede antal forbedrede kunder og en oversigt over mærker eller interesser i de forbedrede kundeprofiler.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
 :::image type="content" source="media/my-enrichments.png" alt-text="Eksempel på resultater efter kørsel af en forbedringsproces.":::
 
-Du kan finde et diagram med antallet af forbedrede kundeprofiler over tid og eksempler på forbedrede objekter. Gennemse de forbedrede data ved at vælge **Se mere** i diagrammerne **Affinitetsniveau** eller **Del af stemmen**. Forbedrede data for mærker sendes til objekterne **BrandAffinityFromMicrosoft** og **BrandShareOfVoiceFromMicrosoft**. Data for interesser findes i objekterne **InterestAffinityFromMicrosoft** og **InterestShareOfVoiceFromMicrosoft**. Du kan også finde disse objekter på listen i gruppen **Forbedring** i **Data** > **Objekter**.
+Resultaterne omfatter **Tilhørsforholdsniveau** eller **Deling af synspunkter**-diagrammer.
+
+De objekter, der oprettes ud fra de oprettede objekter, er angivet under gruppen **Forbedringer** i **Data** > **Objekter**. Forbedrede data for mærker sendes til objekterne **BrandAffinityFromMicrosoft** og **BrandShareOfVoiceFromMicrosoft**. Data for interesser findes i objekterne **InterestAffinityFromMicrosoft** og **InterestShareOfVoiceFromMicrosoft**.
 
 ## <a name="see-enrichment-data-on-the-customer-card"></a>Se forbedringsdata på kundekortet
 

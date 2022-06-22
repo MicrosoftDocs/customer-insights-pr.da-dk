@@ -1,7 +1,7 @@
 ---
 title: Gennemgang af datasamling
 description: Gennemgå trinene til samling af data, opret unified customer profiles, og gennemse resultaterne
-ms.date: 05/04/2022
+ms.date: 06/02/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4c709dfb55bf079dd2fe99e41adb4c77c2bece4b
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 0f7b2e9af65796c4d304dbd9893a21617e847620
+ms.sourcegitcommit: 760fbac397c738407c7dea59297d54cae19b6f57
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741660"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "8844079"
 ---
 # <a name="review-data-unification"></a>Gennemgang af datasamling
 
@@ -32,11 +32,13 @@ I dette sidste trin i processen til samling vises en oversigt over trinnene i pr
 
 1. Vælg **Rediger** på et af trinene til samling af data for at gennemse og foretage ændringer.
 
-1. Hvis du er tilfreds med dine valg, skal du vælge **Opret kundeprofiler**. Siden **Unify** vises, mens unified customer profile oprettes. Det tager tid at fuldføre algoritmen til samling, og du kan ikke ændre konfigurationen, før den er fuldført.
+1. Hvis du er tilfreds med dine valg, skal du vælge **Opret kundeprofiler**. Siden **Unify** vises, mens unified customer profile oprettes. Alle felter undtagen **kildefelter** viser statussen **Kø** eller **Opdatering**.
 
-   [!INCLUDE [m3-task-details-include](includes/m3-task-details.md)]
+   :::image type="content" source="media/m3_unify_refreshing.png" alt-text="Skærmbillede af siden Unify med felter, der viser Kø eller Opdateres.":::
 
-Når processen til samling er fuldført, vises unified customer profile-objektet, der kaldes *Kunde*, på objektsiden i **Objekter** i sektionen **Profiler**. Ved den første vellykkede kørsel af en samling oprettes objektet samlet *Kunde*. Alle efterfølgende kørsler udvider objektet.
+   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
+
+Det tager tid at fuldføre algoritmen til samling, og du kan ikke ændre konfigurationen, før den er fuldført. Når processen til samling er fuldført, vises unified customer profile-objektet, der kaldes *Kunde*, på objektsiden i **Objekter** i sektionen **Profiler**. Ved den første vellykkede kørsel af en samling oprettes objektet samlet *Kunde*. Alle efterfølgende kørsler udvider objektet.
 
 ## <a name="review-the-results-of-data-unification"></a>Gennemse resultaterne af datasamling
 

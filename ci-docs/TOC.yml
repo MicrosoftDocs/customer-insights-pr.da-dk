@@ -48,14 +48,14 @@
   items:
     - name: Oversigt over datakilder
       href: data-sources.md
+    - name: Opret forbindelse til data i Azure Data Lake Storage
+      href: connect-common-data-model.md
+    - name: Oprette forbindelse til Azure Synapse Analytics
+      href: connect-synapse.md
+    - name: Oprette forbindelse til data i en Microsoft Dataverse-administreret data lake
+      href: connect-dataverse-managed-lake.md
     - name: Tilføje datakilder via Power Query-connectorer
       href: connect-power-query.md
-    - name: Tilføj en Common Data Model-mappe som en datakilde
-      href: connect-common-data-model.md
-    - name: Tilføje Dataverse-administreret datasø
-      href: connect-dataverse-managed-lake.md
-    - name: Tilføje Azure Synapse Analytics
-      href: connect-synapse.md
     - name: Forbedring til datakilder
       href: data-sources-enrichment.md
     - name: Trinvis opdatering af datakilder
@@ -82,27 +82,27 @@
   items:
     - name: Forbedre kundeprofiler
       href: enrichment-hub.md
+    - name: Firmaer fra Office 365-data
+      href: enrichment-office.md
     - name: Brands og interesser
       href: enrichment-microsoft.md
+    - name: Virksomhedsdata fra Dun & Bradstreet
+      href: enrichment-dnb.md
+    - name: Firmadata fra Leadspace
+      href: enrichment-leadspace.md
+    - name: Demografi med Experian
+      href: enrichment-experian.md
     - name: Udvidede adresser
       href: enrichment-enhanced-addresses.md
     - name: Forbedrede virksomhedsdata
       href: enrichment-enhanced-company-data.md
-    - name: Forbedre med Azure Maps
-      href: enrichment-azure-maps.md
-    - name: Forbedre med Dun & Bradstreet
-      href: enrichment-dnb.md
-    - name: Forbedring med HERE Technologies
-      href: enrichment-here.md
-    - name: Forbedre med Leadspace
-      href: enrichment-leadspace.md
-    - name: Forbedre med LiveRamp
+    - name: Identitet med LiveRamp
       href: enrichment-liveramp.md
-    - name: Forbedre med Experian
-      href: enrichment-experian.md
-    - name: Forbedre med Office 365-data
-      href: enrichment-office.md
-    - name: Forbedring med SFTP-brugerdefineret import
+    - name: Lokation fra Azure Maps
+      href: enrichment-azure-maps.md
+    - name: Placering af HERE Technologies
+      href: enrichment-here.md
+    - name: SFTP-brugerdefineret import
       href: enrichment-SFTP-custom-import.md
 - name: Samlede profiler
   items:
@@ -112,6 +112,8 @@
       href: search-filter-index.md
     - name: Definer kundeaktiviteter
       href: activities.md
+    - name: Administration af samtykke til Customer Insights
+      href: consent-management.md
 - name: Segmenter
   items:
     - name: Oversigter over segmenter
@@ -294,40 +296,6 @@
       href: 'https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights'
     - name: OData-eksempeldata
       href: odata-examples.md
-- name: Samtykkeadministration (forhåndsversion)
-  items:
-    - name: Hjælp-hub
-      href: consent-management/index.yml
-    - name: Oversigt over funktioner
-      href: consent-management/overview.md
-    - name: Start her
-      items:
-        - name: Start her
-          href: consent-management/get-started.md
-        - name: Koncepter og terminologi
-          href: consent-management/glossary.md
-    - name: Importér samtykkedata
-      items:
-        - name: Importér samtykkedata
-          href: consent-management/import-consent-data.md
-        - name: Angiv samtykkedata og anvend indstillinger for samtykke
-          href: consent-management/set-consent-rules.md
-    - name: Administrer samtykkedata
-      items:
-        - name: Aktivér samtykkeregler i Customer Insights
-          href: activate-consent.md
-        - name: Administrer standardregler for samtykke i Customer Insights-segmenter
-          href: change-default-consent-rules.md
-    - name: Administrer indstillinger og brugere
-      items:
-        - name: Konfigurer systemindstillinger
-          href: consent-management/system-settings.md
-        - name: Administrer brugere og tilladelser
-          href: consent-management/manage-users.md
-    - name: Brug samtykkedata
-      items:
-        - name: Opret forudsigelser med samtykkedata
-          href: consent-management/predictions-consent-data.md
 - name: Tjenestebegrænsninger
   href: service-limits.md
 - name: DSR-rettigheder og forespørgsler

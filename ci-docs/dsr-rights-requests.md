@@ -1,19 +1,19 @@
 ---
 title: DSR-anmodninger (Data Subject Rights) under GDPR | Microsoft Docs
 description: Reagere på DSR-anmodninger for Dynamics 365 Customer Insights.
-ms.date: 08/11/2021
+ms.date: 05/23/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: af2583295627f98e980adbca4f216b9c34c3cad8
-ms.sourcegitcommit: bf65bc0a54cdab71680e658e1617bee7b2c2bb68
+ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "8808539"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947361"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-anmodninger (Data Subject Rights) under GDPR
 
@@ -77,11 +77,5 @@ En lejeradministrator kan følge disse trin for at eksportere data:
 1. Send en mail til D365CI@microsoft.com med angivelse af brugerens mailadresse i anmodningen. Customer Insights-teamet sender en e-mail til den registrerede lejeradministrators mailadresse og anmoder om bekræftelse på eksport af data.
 2. Acceptér bekræftelsen for at eksportere dataene til den ønskede bruger.
 3. Modtag de eksporterede data via mailadressen for lejeradministratoren.
-
-## <a name="consent-management-preview"></a>Samtykkeadministration (forhåndsversion)
-
-Funktionen til administration af samtykke indsamler ikke brugerdata direkte. Den importerer og behandler kun samtykkedata, der leveres af brugere i andre programmer.
-
-Hvis du vil fjerne samtykkedata om bestemte brugere, skal du fjerne dem i de datakilder, der er tilgængelige for administration af samtykke. Når du har datakilde, slettes de fjernede data også i Samtykkecenter. Programmer, der bruger objektet til samtykke, sletter også data, der er fjernet på kilden efter en [opdatering](system.md#refresh-processes). Vi anbefaler, at du opdaterer datakilder hurtigt efter at have reageret på en forespørgsel om dataanmodning for at fjerne brugerens data fra alle andre processer og programmer.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

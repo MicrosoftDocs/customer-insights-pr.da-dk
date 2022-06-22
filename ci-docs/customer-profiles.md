@@ -1,7 +1,7 @@
 ---
 title: Vis kundeprofiler
 description: Få en kombineret visning af dine samlede kundedata.
-ms.date: 05/13/2022
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 9bb7abc04afe38d73e1df9b252e1864fa6570d7e
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: 1e9e59d7ae6c16ed8b33f2ea482563c3520ab885
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755775"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947039"
 ---
 # <a name="customer-profiles"></a>Kundeprofiler
 
@@ -55,9 +55,9 @@ Du kan filtrere kunderne efter objektfelterne *Kunde*. På samme måde som for s
 
 Vælg et af kundefelterne for at åbne siden **Kundeoplysninger**. Denne visning indeholder en samlet oplysning for den valgte kunde. Kundeoplysninger omfatter følgende indhold:
 
-**Feltet Kundeprofil**: I dette felt vises de forskellige værdier fra det samlede objekt *Kunde*. Hvis et felt ikke har nogen værdi for den valgte kundeprofil, vises det ikke. Feltet er struktureret i sektioner:
+**Feltet Kundeprofil**: I dette felt vises de forskellige værdier fra det samlede objekt *Kunde*. Hvis et felt ikke har nogen værdi for den valgte kundeprofil, vises det ikke undtagen for adressefeltet. Feltet er struktureret i sektioner:
 
-- I første sektion vises et foruddefineret sæt felter efterfulgt af alle de felter, der er en del af søge- og filterindekset. Alle adresserelaterede felter kombineres i en enkelt linje, hvis profilen indeholder sådanne felter.
+- I første sektion vises et foruddefineret sæt felter efterfulgt af alle de felter, der er en del af søge- og filterindekset. Alle adresserelaterede felter kombineres i en enkelt linje, der vises selv hvis profilen ikke indeholder adresseoplysninger.
 - **Kontakter for denne kunde**: I miljøer for forretningskonti kan du se alle relaterede kontakter for denne kunde som anden sektion. Hver kontakt vises med egne felter. Tomme felter er skjulte.
 - **Yderligere felter**: Viser de resterende felter i den valgte kunde undtagen id'er.
 - **Id'er**: Viser alle id'er under deres tilsvarende objektnavn. Felter identificeres som id'er efter semantik, der kategoriserer dem som sådanne.

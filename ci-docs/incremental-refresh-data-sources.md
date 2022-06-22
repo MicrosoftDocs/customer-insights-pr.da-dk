@@ -1,26 +1,26 @@
 ---
-title: Trinvis opdatering for Power Query-baserede datakilder
-description: Opdatere nye og opdaterede data til store datakilder baseret på Power Query.
-ms.date: 12/06/2021
-ms.reviewer: mhart
+title: Trinvis opdatering for Power Query og Azure Data Lake-datakilder
+description: Opdater nye og opdaterede data til store datakilder, der er baseret på Power Query eller Azure Data Lake-datakilder.
+ms.date: 05/30/2022
+ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
-author: adkuppa
-ms.author: adkuppa
+author: mukeshpo
+ms.author: mukeshpo
 manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: 3d21baf9804f300802b066df0183fc8f01abba9a
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: bff27bf7fec2bcb741846ae76bb1f616f459136c
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646328"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9012018"
 ---
-# <a name="incremental-refresh-for-data-sources-based-on-power-query"></a>Trinvis opdatering for Power Query-baserede datakilder
+# <a name="incremental-refresh-for-power-query-and-azure-data-lake-data-sources"></a>Trinvis opdatering for Power Query og Azure Data Lake-datakilder
 
-I denne artikel beskrives, hvordan du kan konfigurere trinvis opdatering for datakilder baseret på Power Query.
+I denne artikel beskrives, hvordan du kan konfigurere trinvis opdatering for datakilder baseret på Power Query eller Azure Data Lake.
 
 Den trinvise opdatering af datakilder giver følgende fordele:
 
@@ -28,13 +28,11 @@ Den trinvise opdatering af datakilder giver følgende fordele:
 - **Større pålidelighed** – Med mindre opdateringer har du ikke brug for at opretholde forbindelser til flygtige kildesystemer i så lang tid, hvilket mindsker risikoen for forbindelsesproblemer.
 - **Reduceret ressourceforbrug** – Opdatering af et undersæt af dine samlede data giver mere effektiv brug af computerressourcer og reducerer det miljømæssige aftryk.
 
-## <a name="configure-incremental-refresh"></a>Konfigurere trinvis opdatering
+## <a name="configure-incremental-refresh-for-data-sources-based-on-power-query"></a>Konfigurere trinvis opdatering for datakilder baseret på Power Query
 
 Customer Insights gør det muligt at opdatere trinvist for datakilder, der importeres via Power Query, der understøtter trinvis indtagelse. F.eks. Azure SQL-databaser med dato- og klokkeslætsfelter, som angiver, hvornår dataposterne sidst blev opdateret.
 
 1. [Opret en ny datakilde baseret på Power Query](connect-power-query.md).
-
-1. Angiv et **Navn** til datakilden.
 
 1. Vælg en datakilde, der understøtter trinvis opdatering, f.eks. [Azure SQL-database](/power-query/connectors/azuresqldatabase).
 
@@ -48,7 +46,7 @@ Customer Insights gør det muligt at opdatere trinvist for datakilder, der impor
 
 1. I **Indstillinger for trinvis opdatering** konfigurerer du den trinvise opdatering for alle de objekter, du har valgt under oprettelsen af datakilden.
 
-   :::image type="content" source="media/incremental-refresh-settings.png" alt-text="Konfigurere objekter i en datakilde til trinvis opdatering.":::
+   :::image type="content" source="media/incremental-refresh-settings.png" alt-text="Konfigurere trinvis opdatering af indstillinger.":::
 
 1. Vælg et objekt, og angiv følgende oplysninger:
 
@@ -58,5 +56,31 @@ Customer Insights gør det muligt at opdatere trinvist for datakilder, der impor
 
 1. Vælg **Gem** for at fuldføre oprettelsen af datakilden. Den indledende dataopdatering vil være en fuld opdatering. Derefter sker den trinvise dataopdatering som konfigureret i forrige trin.
 
+## <a name="configure-incremental-refresh-for-azure-data-lake-data-sources"></a>Konfigurere trinvis opdatering for Azure Data Lake-datakilder
+
+Customer Insights gør det muligt at opdatere trinvist for datakilder, der er knyttet til Azure Data Lake Storage. Hvis du vil bruge trinvis redigering og opdatering for et objekt, skal du konfigurere objektet, når du tilføjer Azure Data Lake-datakilde eller nyere, når du redigerer datakilde. Objektdatamappen skal indeholde følgende mapper:
+
+- **FullData**: Mappen med datafiler indeholder startposter
+- **IncrementalData**: Mappe med mapper til dato/klokkeslæt-hierarki **åååå/mm/dd/tt-format**, der indeholder trinvise opdateringer. **tt** repræsenterer UTC-timen for opdateringerne og indeholder mapperne **Upserts** og **Deletes**. **Upserts** indeholder datafiler med opdateringer af eksisterende poster eller nye poster. **Deletes** indeholder datafiler, hvor poster skal fjernes.
+
+1. Når du tilføjer eller redigerer datakilde, skal du navigere til ruden **Attributter** for objektet.
+
+1. Gennemse attributterne. Kontrollér, at en oprettet eller senest opdateret datoattribut er konfigureret med *datetime* **Dataformat** og en *Calendar.Date* **Semantisk type**. Rediger attributten, hvis det er nødvendigt, og vælg **Udført**.
+
+1. Rediger objektet i ruden **Vælg objekter**. Afkrydsningsfeltet **Trinvis indtagelse** er markeret.
+
+   :::image type="content" source="media/ADLS_inc_refresh.png" alt-text="Konfigurere objekter i en datakilde til trinvis opdatering.":::
+
+   1. Gå til den rodmappe, der indeholder .csv- eller .parquet-filerne, hvor der søges efter fulde data, trinvise data-upserts og trinvise data, som slettes.
+   1. Angiv udvidelsen for de fulde data og begge trinvise filer (\.csv eller \.parquet).
+   1. Vælg **Gem**.
+
+1. I forbindelse med **Seneste opdatering** skal du vælge datotidsstempelattributten.
+
+1. Hvis den **primære nøgle** ikke er valgt, skal du vælge den primære nøgle. Den primære nøgle er en attribut, der er entydig for objektet. Hvis en attribut skal være en gyldig primær nøgle, må den ikke indeholde dubletværdier, manglende værdier eller null-værdier. Strengattributter, heltalsattributter og GUID-datatypeattributter understøttes som primære nøgler.
+
+1. Vælg **Luk** for at gemme og lukke ruden.
+
+1. Fortsæt med at tilføje eller redigere datakilde.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

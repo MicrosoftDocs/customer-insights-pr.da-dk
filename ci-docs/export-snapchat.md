@@ -1,19 +1,19 @@
 ---
 title: Eksport af Customer Insights-data til Snapchat
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Snapchat.
-ms.date: 10/08/2021
+ms.date: 06/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 171b8bf0f4a034c78e872b671602ae7653271da7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: d64b482c322af8632e29ec41d6e34c390c5e646c
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646312"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947269"
 ---
 # <a name="export-segments-to-snapchat-preview"></a>Eksportere segmenter til Snapchat (forhåndsversion)
 
@@ -21,7 +21,8 @@ Eksportér segmenter med ensartede kundeprofiler til Snapchat, og brug dem til m
 
 ## <a name="prerequisites-for-a-connection"></a>Forudsætninger for en forbindelse
 
--   Du har en [Snapchat-forretningskonto](https://business.snapchat.com/), en [Snapchat Ads-konto](https://ads.snapchat.com/) og tilsvarende legitimationsoplysninger.
+-   Du har en [Snapchat-forretningskonto](https://business.snapchat.com/), en [Snapchat Ads-konto](https://ads.snapchat.com/) og tilsvarende legitimationsoplysninger. Du skal som minimum være medlem af en organisationskonto og datastyring for et bestemt annoncekonto. 
+-   Du har mindst én publikum i Snapchat publikum leder af typen SAM (Snap publikum Match). 
 -   Du har [konfigureret segmenter](segments.md) i Customer Insights.
 -   Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
 
@@ -60,7 +61,7 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg en forbindelse i sektionen Snapchat i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
 
-1. Angiv [**Snapchat Audience-id**](https://businesshelp.snapchat.com/s/article/custom-audiences).
+1. Angiv [**Snapchatsegment/publikum-id**](https://businesshelp.snapchat.com/s/article/custom-audiences). Id'et for publikum findes i webadressen, når du har valgt publikum i Snapchat publikum Manager. 
 
 1. Vælg det felt, der indeholder en kundes mailadresse, i feltet **Mail** i sektionen **Datamatching**. Det er obligatorisk at eksportere segmenter til Snapchat.
 

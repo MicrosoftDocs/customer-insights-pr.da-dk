@@ -1,105 +1,186 @@
 ---
 title: Forbind almindelig datamodeldata til en Azure Data Lake-konto
 description: Arbejd med Common Data Model-data ved hjælp af Azure Data Lake Storage.
-ms.date: 05/24/2022
-ms.subservice: audience-insights
+ms.date: 05/30/2022
 ms.topic: how-to
-author: adkuppa
-ms.author: adkuppa
-ms.reviewer: mhart
+author: mukeshpo
+ms.author: mukeshpo
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-data-sources
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: 2e8564950a3269180a85f80fb736d2dcbd1b03b6
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 2ab7ec77252be33f1203959c2a596ddec20425f2
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833349"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011550"
 ---
-# <a name="connect-to-a-common-data-model-folder-using-an-azure-data-lake-account"></a>Tilknyt en Common Data Model med en Azure Data Lake-konto
+# <a name="connect-to-data-in-azure-data-lake-storage"></a>Opret forbindelse til data i Azure Data Lake Storage
 
-Denne artikel indeholder oplysninger om, hvordan du kan oprette data til Dynamics 365 Customer Insights fra mappen Common Data Model ved hjælp af din Azure Data Lake Storage Gen2-konto.
+Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake Storage Gen2-konto. Dataindtagelse kan være fuld eller trinvis.
 
-## <a name="important-considerations"></a>Vigtige overvejelser
+## <a name="prerequisites"></a>Forudsætninger
 
-- Data i Azure Data Lake skal følge Common Data Model-standarden. Andre formater understøttes ikke i øjeblikket.
+- Dataindtagelse understøtter udelukkende Azure Data Lake Storage *Gen2*-firmaer. Du kan ikke bruge Data Lake Storage Gen1-konti til indtagelse af data.
 
-- Dataindsættelse understøtter udelukkende Azure Data Lake *Gen2*-lagerkonti. Du kan ikke bruge Azure Data Lake Gen1-lagerkonti til indsættelse af data.
-
-- Kontoen Azure Data Lake Storage skal have funktionen [Hierarkisk navneområde aktiveret](/azure/storage/blobs/data-lake-storage-namespace).
+- Azure Data Lake Storage-firmaet skal have [aktiveret hierarkisk navneområde](/azure/storage/blobs/data-lake-storage-namespace). Dataene skal gemmes i et hierarkisk mappeformat, der definerer rodmappen og har undermapper til de enkelte objekter. Undermapperne kan have komplette data eller trinvise datamapper.
 
 - Hvis du vil godkende med en Azure-tjenestekonto, skal du sørge for, at den er konfigureret i din lejer. Du kan finde flere oplysninger i [Oprette forbindelse til en Azure Data Lake Storage Gen2-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md).
 
-- Den Azure Data Lake, som du vil oprette forbindelse til og hente data fra, skal være i samme Azure-område som Dynamics 365 Customer Insights-miljøet. Forbindelser til en Common Data Model-mappe fra en Data Lake i et andet Azure-område understøttes ikke. Hvis du vil vide mere om Azure-området i miljøet, skal du gå til **Admin** > **System** > **Om** i Customer Insights.
+- De Azure Data Lake Storage-data, du vil oprette forbindelse fra, skal være i det samme Azure-område som Dynamics 365 Customer Insights-miljøet. Forbindelser til en Common Data Model-mappe fra en Data Lake i et andet Azure-område understøttes ikke. Hvis du vil vide mere om Azure-området i miljøet, skal du gå til **Admin** > **System** > **Om** i Customer Insights.
 
 - Data, der lagres i onlinetjenester, kan gemmes på en anden placering end det sted, hvor dataene behandles eller lagres i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration](https://www.microsoft.com/trust-center).
 
-## <a name="connect-to-a-common-data-model-folder"></a>Opret forbindelse til en Common Data Model-mappe
+- Customer Insights-tjenesteprincipal skal være en af følgende roller for at få adgang til lagerkontoen. Du kan finde flere oplysninger i [Tildele tilladelser til tjenesteprincipalen til at få adgang til lagerkontoen](connect-service-principal.md#grant-permissions-to-the-service-principal-to-access-the-storage-account).
+  - Lager for Blob-datalæser
+  - Lager for Blob-dataejer
+  - Lager for Blob Data-bidragyder
+
+- Data i dit Data Lake-lager skal følge standarden for Common Data Model for lagring af dine data og have et almindeligt datamodelmanifest, der repræsenterer skemaet for datafilerne (*.csv eller *.parquet). Manifestet skal indeholde oplysninger om objekterne, f.eks. objektkolonner og datatyper, samt placeringen og filtypen af datafilen. Du kan finde flere oplysninger i [Common Data Model-manifest](/common-data-model/sdk/manifest). Hvis manifestet ikke findes, kan admin-brugere med dataejeren Storage Blob eller Storage Blob Data-bidragyder definere skemaet, når dataene ændres.
+
+## <a name="connect-to-azure-data-lake-storage"></a>Oprette forbindelse til Azure Data Lake Storage
 
 1. Gå til **Data** > **Datakilder**.
 
 1. Vælg **Tilføj datakilde**.
 
-1. Vælg **Azure data lake storage**, angiv et **Navn** til datakilde, og vælg derefter **Næste**.
+1. Vælg **Azure data lake storage**.
 
-   - Hvis du bliver bedt om det, skal du vælge et af de eksempeldatasæt, der vedrører din branche, og derefter vælge **Næste**.
+   :::image type="content" source="media/data_sources_ADLS.png" alt-text="Dialogboksen til angivelse af forbindelsesoplysninger for Azure Data Lake." lightbox="media/data_sources_ADLS.png":::
 
-1. Du kan vælge mellem at bruge en ressourcebaseret indstilling og en abonnementsbaseret indstilling til godkendelse. Du kan finde flere oplysninger i [Oprette forbindelse til en Azure Data Lake Storage Gen2-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md). Angiv **serveradressen**, vælg **log på**, og vælg derefter **Næste**.
-   > [!div class="mx-imgBorder"]
-   > ![Dialogboks, hvor du kan angive nye forbindelsesdetaljer for Azure Data Lake.](media/enter-new-storage-details.png)
+1. Angiv et **navn** til datakilden og en valgfri **beskrivelse**. Navnet identificerer entydigt datakilde og refereres til i downstreamprocesser og kan ikke ændres.
+
+1. Vælg en af følgende muligheder for at **oprette forbindelse til lagerpladsen ved hjælp af**. Du kan finde flere oplysninger i [Opret forbindelse i Customer Insights til en Azure Data Lake Storage Gen2-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md).
+
+   - **Azure-ressource**: Angiv **ressource-id**. Hvis du vil aktivere data fra en lagerkonto via et Azure Private Link, skal du vælge **Aktivér privat link**. Du kan finde flere oplysninger under [Private Link](security-overview.md#private-links-tab).
+   - **Azure-abonnement**: Vælg **abonnementet**, og vælg derefter **ressourcegruppen** og **lagerkontoen**. Hvis du vil aktivere data fra en lagerkonto via et Azure Private Link, skal du vælge **Aktivér privat link**. Du kan finde flere oplysninger under [Private Link](security-overview.md#private-links-tab).
+  
    > [!NOTE]
-   > Du skal bruge en af følgende roller enten for objektbeholderen på lagerkontoen for at kunne oprette datakilden:
+   > Du skal bruge en af følgende roller enten for objektbeholderen eller lagerkontoen for at kunne oprette datakilden:
    >
    >  - Læser af Blob Data-lager er tilstrækkelig, hvis du vil læse fra en lagerkonto og indtage dataene i Customer Insights. 
-   >  - Bidragyder til eller ejer af lagring af BLOB-data er påkrævet, hvis du vil redigere de manifestfiler direkte i Customer Insights.
-
-1. I dialogboksen **Vælg en Common Data Model-mappe** skal du vælge den model.json- eller manifest.json-fil, du vil importere data fra, og vælg **Næste**.
+   >  - Bidragyder til eller ejer af lagring af BLOB-data er påkrævet, hvis du vil redigere de manifestfiler direkte i Customer Insights.  
+  
+1. Vælg navnet på den **beholder**, der indeholder de data og skemaer (model.json- eller manifest.json-filen), der skal importeres data fra, og vælg **Næste**.
    > [!NOTE]
-   > Alle model.json- eller manifest.json-filer, der er knyttet til andre datakilder i miljøet, vises ikke på listen.
+   > Alle model.json- eller manifest.json-filer, der er knyttet til andre datakilder i miljøet, vises ikke på listen. Men den samme model.json- eller manifest.json-fil kan bruges til datakilder i flere miljøer.
 
-1. Du kan se en liste over tilgængelige objekter i den valgte model.json- eller manifest.json-fil. Gennemse, og vælg på listen over tilgængelige objekter, og vælg derefter **Gem**. Alle de valgte objekter hentes fra den nye datakilde.
-   > [!div class="mx-imgBorder"]
-   > ![Dialogboks, der viser en liste over objekter fra en model.json-fil.](media/review-entities.png)
+1. Hvis du vil oprette et nyt skema, skal du gå til [Opret en ny skemafil](#create-a-new-schema-file).
 
-1. Angiv, hvilke dataobjekter du vil aktivere dataprofilering for, og vælg **Gem**. Dataprofilering muliggør analyser og andre funktioner. Du kan vælge hele objektet, som vælger alle attributter fra objektet, eller selv vælge bestemte attributter. Som standard er intet objekt aktiveret for dataprofilering.
-   > [!div class="mx-imgBorder"]
-   > ![Dialogboks, der viser en dataprofil.](media/dataprofiling-entities.png)
+1. Hvis du vil bruge et eksisterende skema, skal du navigere til den mappe, der indeholder filen model.json eller manifest.cdm.json. Du kan søge efter filen i en mappe.
 
-1. Når du har gemt dine valg, åbnes siden **Datakilder**. Du bør nu kunne se Common Data Model-mappeforbindelsen som en datakilde.
+1. Vælg json-filen, og vælg derefter **Næste**. En liste over tilgængelige objekter vises.
 
-> [!NOTE]
-> En model.json- eller manifest.json-fil kan kun knyttes til én datakilde i det samme miljø. Men den samme model.json- eller manifest.json-fil kan bruges til datakilder i flere miljøer.
+   :::image type="content" source="media/review-entities.png" alt-text="Dialogboksen med en liste over objekter, der skal vælges":::
 
-## <a name="edit-a-common-data-model-folder-data-source"></a>Redigere en datakilde til en Common Data Model-mappe
+1. Vælg de objekter, du vil bruge.
 
-Du kan opdatere adgangsnøglen til den lagerkonto, der indeholder Common Data Model-mappen. Du kan også ændre model.json- eller manifest.json-filen. Hvis du vil oprette forbindelse til en anden objektbeholder fra lagerkontoen eller ændre kontonavnet, skal du [oprette en ny datakildeforbindelse](#connect-to-a-common-data-model-folder).
+   :::image type="content" source="media/ADLS_required.png" alt-text="Dialogboks, der viser Påkrævet til primær nøgle":::
+
+   > [!TIP]
+   > Hvis du vil redigere objekterne i en JSON-redigeringsgrænseflade, skal du vælge **Vis flere** > **Rediger skemafil**. Foretag dine ændringer, og **Gem**.
+
+1. For de valgte objekter, der kræver trinvis indtag, vises **Påkrævet** under **Trinvis opdatering**. For hvert af disse objekter skal du se [Konfigurere en trinvis opdatering for Azure Data Lake-datakilder](incremental-refresh-data-sources.md).
+
+1. I forbindelse med valgte objekter, hvor der ikke er defineret en primær nøgle, vises **Obligatorisk** under **Primær nøgle**. For hvert af disse objekter:
+   1. Vælg **Obligatorisk**. Panelet **Rediger objekt** vises.
+   1. Vælg den **primære nøgle**. Den primære nøgle er en attribut, der er entydig for objektet. Hvis en attribut skal være en gyldig primær nøgle, må den ikke indeholde dubletværdier, manglende værdier eller null-værdier. Strengattributter, heltalsattributter og GUID-datatypeattributter understøttes som primære nøgler.
+   1. Du kan også ændre partitionsmønsteret.
+   1. Vælg **Luk** for at gemme og lukke panelet.
+
+1. Vælg antallet af **attributter** for hvert inkluderet objekt. Siden **Administrer attributter** vises.
+
+   :::image type="content" source="media/dataprofiling-entities.png" alt-text="Dialogboks til valg af dataprofilering.":::
+
+   1. Opret nye attributter, rediger eller slet eksisterende attributter. Du kan ændre navn, dataformat eller tilføje en semantisk type.
+   1. Hvis du vil aktivere analyser og andre funktioner, skal du vælge **dataprofilering** for hele objektet eller for bestemte attributter. Som standard er intet objekt aktiveret for dataprofilering.
+   1. Vælg **Udført**.
+
+1. Vælg **Gem**. Siden **Datakilder** åbnes, der viser de nye datakilde status for **Opdatering**.
+
+### <a name="create-a-new-schema-file"></a>Opret en ny skemafil
+
+1. Vælg **Ny skemafil**.
+
+1. Skriv navnet på filen, og vælg **Gem**.
+
+1. Vælg **Vælg nyt objekt**. Panelet **Nyt objekt** vises.
+
+1. Angiv objektnavnet, og vælg **placeringen af datafiler**.
+   - **Flere .csv- eller .parquet-filer**: Søg efter rodmappen, vælg mønstertypen, og angiv udtrykket.
+   - **Enkelte .csv- eller .parquet-filer**: Gå til .csv- eller .parquet-filen, og markér den.
+
+   :::image type="content" source="media/ADLS_new_entity_location.png" alt-text="Dialogboks til oprettelse af et nyt objekt, hvor placeringen af datafiler er fremhævet.":::
+
+1. Vælg **Gem**.
+
+   :::image type="content" source="media/ADLS_new_entity_define_attributes.png" alt-text="Dialogboks til definition eller automatisk generering af attributter.":::
+
+1. Vælg at **definere attributterne** for at tilføje attributterne manuelt, eller vælg **automatisk at oprette dem**. Hvis du vil definere attributterne, skal du angive et navn, vælge dataformatet og den valgfrie semantiske type. Autogenerede attributter:
+
+   1. Når attributterne er genereret automatisk, skal du vælge **Gennemse attributter**. Siden **Administrer attributter** vises.
+
+   1. Kontroller, at dataformatet er korrekt for hver attribut.
+
+   1. Hvis du vil aktivere analyser og andre funktioner, skal du vælge **dataprofilering** for hele objektet eller for bestemte attributter. Som standard er intet objekt aktiveret for dataprofilering.
+
+      :::image type="content" source="media/dataprofiling-entities.png" alt-text="Dialogboks til valg af dataprofilering.":::
+
+   1. Vælg **Udført**. Siden **Vælg objekter** vises.
+
+1. Fortsæt med at tilføje objekter og attributter, hvis de er relevante.
+
+1. Når alle objekter er tilføjet, skal du vælge **Medtag** for at inkludere objekterne i datakildeindtag.
+
+   :::image type="content" source="media/ADLS_required.png" alt-text="Dialogboks, der viser Påkrævet til primær nøgle":::
+
+1. For de valgte objekter, der kræver trinvis indtag, vises **Påkrævet** under **Trinvis opdatering**. For hvert af disse objekter skal du se [Konfigurere en trinvis opdatering for Azure Data Lake-datakilder](incremental-refresh-data-sources.md).
+
+1. I forbindelse med valgte objekter, hvor der ikke er defineret en primær nøgle, vises **Obligatorisk** under **Primær nøgle**. For hvert af disse objekter:
+   1. Vælg **Obligatorisk**. Panelet **Rediger objekt** vises.
+   1. Vælg den **primære nøgle**. Den primære nøgle er en attribut, der er entydig for objektet. Hvis en attribut skal være en gyldig primær nøgle, må den ikke indeholde dubletværdier, manglende værdier eller null-værdier. Strengattributter, heltalsattributter og GUID-datatypeattributter understøttes som primære nøgler.
+   1. Du kan også ændre partitionsmønsteret.
+   1. Vælg **Luk** for at gemme og lukke panelet.
+
+1. Vælg **Gem**. Siden **Datakilder** åbnes, der viser de nye datakilde status for **Opdatering**.
+
+
+## <a name="edit-an-azure-data-lake-storage-data-source"></a>Rediger Azure Data Lake Storage-datakilde
+
+Du kan opdatere *Kontoen Opret forbindelse til lager ved hjælp af*-indstillingen. Du kan finde flere oplysninger i [Opret forbindelse i Customer Insights til en Azure Data Lake Storage Gen2-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md). Hvis du vil oprette forbindelse til en anden objektbeholder fra lagerkontoen eller ændre kontonavnet, skal du [oprette en ny datakildeforbindelse](#connect-to-azure-data-lake-storage).
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Ud for den datakilde, du vil opdatere, skal du vælge den lodrette ellipse (&vellip;).
+1. Ud for den datakilde, du vil opdatere, og vælg  **Rediger**.
 
-3. Vælg indstillingen **Rediger** på listen.
+   :::image type="content" source="media/data_sources_edit_ADLS.png" alt-text="Dialogboks til redigering af Azure Data Lake-datakilde.":::
 
-4. Du kan også vælge at opdatere **Adgangsnøgle** og vælge **Næste**.
+1. Opdater følgende oplysninger:
 
-   ![Dialogboks til redigering og opdatering af en adgangsnøgle til en eksisterende datakilde.](media/edit-access-key.png)
+   - **Beskrivelse**
+   - **Opret forbindelse til lagerpladsen ved hjælp af** og forbindelsesoplysninger. Du kan ikke ændre **objektbeholder**-oplysninger, når du opdaterer forbindelsen.
+      > [!NOTE]
+      > En af følgende roller skal tildeles lagerkontoen eller -beholderen:
+        > - Lager for Blob-datalæser
+        > - Lager for Blob-dataejer
+        > - Lager for Blob Data-bidragyder
 
-5. Du kan også vælge at opdatere fra en kontonøgleforbindelse til en ressourcebaseret eller en abonnementsbaseret forbindelse. Du kan finde flere oplysninger i [Oprette forbindelse til en Azure Data Lake Storage Gen2-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md). Du kan ikke ændre **objektbeholder**-oplysninger, når du opdaterer forbindelsen.
-   > [!div class="mx-imgBorder"]
+   - **Aktiver privat link** hvis du vil indtage data fra en lagerkonto via et Azure Private Link. Du kan finde flere oplysninger under [Private Link](security-overview.md#private-links-tab).
 
-   > ![Dialogboks, hvor du kan angive forbindelsesdetaljer for Azure Data Lake til en eksisterende lagerkonto.](media/enter-existing-storage-details.png)
+1. Vælg **Næste**.
+1. Opdater følgende:
+   - Naviger til en anden model.json- eller manifest.json-fil med et andet sæt objekter end beholderen.
+   - Hvis du vil føje flere objekter til indtag, skal du vælge **Nyt objekt**.
+   - Hvis du vil fjerne objekter, der allerede er markeret, hvis der ikke er nogen afhængigheder, skal du markere objektet og **Slette**.
+      > [!IMPORTANT]
+      > Hvis der er afhængigheder i den eksisterende model.json- eller manifest.json-fil og i sættet af objekter, vises der en fejlmeddelelse, og du kan ikke vælge en anden model.json- eller manifest.json-fil. Fjern disse afhængigheder, før du ændrer filen model.json eller manifest.json eller opretter en ny datakilde med den model.json- eller manifest.json-fil, du vil bruge for at undgå at fjerne afhængighederne.
+   - Vælg **Rediger** for at ændre placeringen af datafilen eller den primære nøgle.
+   - Hvis du vil ændre trinvise indtagelsesdata, skal du se [Konfigurere en trinvis opdatering af Azure Data Lake-datakilder](incremental-refresh-data-sources.md)
 
-6. Du kan også vælge en anden model.json- eller manifest.json-fil med et andet sæt objekter fra beholderen.
+1. Vælg **Attributter**, der skal tilføjes eller ændres attributter, eller hvis du vil aktivere dataprofilering. Vælg derefter **Udført**.
 
-7. Du kan også vælge yderligere objekter, der skal indsættes. Du kan også fjerne eventuelle objekter, der allerede er valgt, hvis der ikke er afhængigheder.
-
-   > [!IMPORTANT]
-   > Hvis der er afhængigheder i den eksisterende model.json- eller manifest.json-fil og i sættet af objekter, vises der en fejlmeddelelse, og du kan ikke vælge en anden model.json- eller manifest.json-fil. Fjern disse afhængigheder, før du ændrer filen model.json eller manifest.json eller opretter en ny datakilde med den model.json- eller manifest.json-fil, du vil bruge for at undgå at fjerne afhængighederne.
-
-8. Alternativt kan du vælge yderligere attributter eller objekter for at aktivere dataprofilering eller deaktivere allerede markerede.
-
-[!INCLUDE [footer-include](includes/footer-banner.md)]
+1. Klik på **Gem** for at anvende ændringerne og vende tilbage til siden **Datakilder**.

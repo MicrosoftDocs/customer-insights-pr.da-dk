@@ -1,95 +1,95 @@
 ---
 title: Forbedre kundeprofiler med lokationsdata fra Azure Maps
 description: Generelle oplysninger om Azure Maps -førsteparts forbedring.
-ms.date: 08/31/2021
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 6d43dc2ca82c034fbd396d92637e7aea8179df77
-ms.sourcegitcommit: 4ae316c856b8de0f08a4605f73e75a8c2cf51c4e
+ms.openlocfilehash: a806b2d0c791972c967c90694527608b4def9f3f
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "8755347"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953621"
 ---
 # <a name="enrichment-of-customer-profiles-with-azure-maps-preview"></a>Forskellige kundeprofiler med Azure Maps (forhåndsversion)
 
-Azure Maps indeholder lokationsbaserede data og tjenester, der skal levere oplevelser baseret på geografiske data med indbygget lokationsintelligens. Azure Maps-tjenester til indsamling til dataforbedring øger præcisionen af lokationsoplysninger om kunderne. Den medfører funktioner som adresse normalisering og udtrækning af breddegrader og længdegrader til Dynamics 365 Customer Insights.
+Azure Maps leverer lokationsbaserede data og tjenester, der giver oplevelser baseret på geografiske data med indbygget lokationsintelligens. Azure Maps-tjenester til indsamling til dataforbedring øger præcisionen af lokationsoplysninger om kunderne. Den medfører funktioner som adresse normalisering og udtrækning af breddegrader og længdegrader til Dynamics 365 Customer Insights.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-Hvis du vil konfigurere Azure Maps-dataforbedringer, skal følgende forudsætninger være opfyldt:
+- Et aktivt abonnement på Azure Maps. Få et abonnement ved at [tilmelde sig eller få en gratis prøveversion](https://azure.microsoft.com/services/azure-maps/).
 
-- Du skal have et aktivt Azure Maps-abonnement. Du kan få et abonnement ved at [tilmelde dig eller få en gratis prøveversion](https://azure.microsoft.com/services/azure-maps/).
-
-- En Azure Maps-[forbindelse](connections.md) er tilgængelig, *eller* du har [administrator](permissions.md#admin)-tilladelser og en aktiv Azure Maps API-nøgle.
-
-## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
-
-1. Gå til **Data** > **Forbedring**. 
-
-1. Vælg **Forbedre mine data** i feltet **Placering**.
-
-   :::image type="content" source="media/azure-maps-tile.png" alt-text="Azure Maps-felt.":::
-
-1. Vælg en [værdi](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen tilgængelig Azure Maps-forbindelse. Hvis du er en administrator, kan du [konfigurere forbindelsen til Azure Maps](#configure-the-connection-for-azure-maps). 
-
-1. Vælg **Næste** for at bekræfte markeringen.
-
-1. Vælg den **Kundedatasæt**, du vil forbedre med lokationsdata fra Azure Maps. Du kan vælge objektet **Kunde** for at forbedre alle dine unified customer profiles, eller du kan vælge et segmentobjekt for kun at forbedre de kundeprofiler, der findes i dette segment.
-
-    :::image type="content" source="media/enrichment-azure-maps-configuration-customer-data-set.png" alt-text="Skærmbillede, når du vælger den kundedatasæt.":::
-
-1. Vælg, om du vil knytte felter til den primære og/eller sekundære adresse. Du kan angive en felttilknytning for begge adresser og forbedre profilerne for begge adresser separat&mdash;f.eks.for en privatadresse og en forretningsadresse. Vælg **Næste**.
-
-1. Definér, hvilke felter fra dine ensartede profiler der skal bruges til at søge efter tilsvarende lokationsdata fra Azure Maps. Felterne **Gade 1** og **Postnummer** kræves for den valgte primære eller sekundære adresse. Du kan opnå en mere nøjagtig overensstemmelse ved at tilføje flere felter.
-
-   :::image type="content" source="media/enrichment-azure-maps-configuration.png" alt-text="Azure Maps-forbedret konfigurationsside.":::
-
-1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
-
-1. Evaluere, om du vil redigere **Avancerede indstillinger**. Disse indstillinger giver maksimal fleksibilitet til håndtering af avancerede brugssager, men standardværdierne vil være passende i de fleste tilfælde:
-   - **Adressetype**: Standardfunktionsmåden er, at adressen returnerer det bedste adresseoverensstemmelse, selvom den ikke er komplet. Hvis du kun vil have fuldstændige adresser, f.eks. adresser, der indeholder husnummeret, skal alle afkrydsningsfelterne undtagen **Punktadresser** ryddes. 
-   - **Sprog**: Adresser returneres som standard på det sprog, som adressen er bestemt til at tilhøre. Hvis du vil anvende et standardiseret adressesprog, skal du vælge sproget i rullemenuen. Hvis du f.eks. vælger **engelsk**, returneres **Copenhagen, Denmark** i stedet for **København, Danmark**.
-
-1. Angiv et Navn til forbedringen.
-
-1. Gennemse indstillingerne, og vælg derefter **Gem forbedringer**.
+- En Azure Maps-[forbindelse](connections.md) [konfigureres](#configure-the-connection-for-azure-maps) af en administrator.
 
 ## <a name="configure-the-connection-for-azure-maps"></a>Konfiguration af forbindelsen til Azure Maps
 
-Du skal være en administrator i Customer Insights for at konfigurere forbindelser. Vælg **Tilføj forbindelse**, når du konfigurerer en forbedring, eller gå til **Administration** > **Forbindelser**, og vælg **Konfigurer** i feltet Azure Maps.
+Du skal være en [administrator](permissions.md#admin) i Customer Insights og have en aktiv Azure Maps API-nøgle.
 
-1. Angiv et **visningsnavn** til forbindelsen i feltet visningsnavn.
+1. Vælg **Tilføj forbindelse**, når du konfigurerer en forbedring, eller gå til **Administration** > **Forbindelser**, og vælg **Konfigurer** i feltet Azure Maps.
 
-1. Angiv en gyldig API-nøgle til Azure Maps.
+   :::image type="content" source="media/enrichment-azure-maps-connection.png" alt-text="Azure Maps-forbindelseskonfigurationsside.":::
 
-1. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**
+1. Angiv et navn til forbindelsen og en gyldig Azure Maps API-nøgle.
 
-1. Vælg **Kontroller** for at validere konfigurationen.
+1. Gennemse og giv dit samtykke til [Beskyttelse af personlige oplysninger og overholdelse af data](#data-privacy-and-compliance) ved at vælge **Jeg accepterer**.
 
-1. Vælg **Gem**, når verifikationen er fuldført.
+1. Vælg **Kontrollér** for at konfigurationen er valideret, og vælg derefter **Gem**.
 
-:::image type="content" source="media/enrichment-azure-maps-connection.png" alt-text="Azure Maps-forbindelseskonfigurationsside.":::
+### <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
+
+Når du gør det muligt for Dynamics 365 Customer Insights at overfører data til Azure Maps, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f.eks. personlige data. Microsoft kan overføre sådanne data efter dine instruktioner, men du er ansvarlig for at sikre, at Azure Maps overholder alle forpligtelser i forbindelse med sikkerhed eller beskyttelse af personlige oplysninger. Du kan finde flere oplysninger i [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
+Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
+
+## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
+
+1. Gå til **Data** > **Forbedring**, og vælg fanen **Opdag**.
+
+1. Vælg **Enrich my data** i feltet **Lokation** fra feltet Microsoft Azure Maps.
+
+   :::image type="content" source="media/azure-maps-tile.png" alt-text="Azure Maps-felt.":::
+
+1. Gennemse oversigten, og vælg derefter **Næste**.
+
+1. Vælg forbindelsen. Kontakt en administrator, hvis der ikke er nogen forbindelse.
+
+1. Vælg **Næste**.
+
+1. Vælg **Kundedatasæt**, og vælg den profil eller det segment, du vil forbedre med firmadata fra Microsoft. Objektet *Kunde* forbedrer alle dine kundeprofiler, hvorimod et segment kun forbedrer de kundeprofiler, der findes i dette segment.
+
+1. Definer, hvilken type felter fra dine ensartede profiler der skal bruges til matchning: den primære og/eller sekundære adresse. Du kan angive en felttilknytning for begge adresser og forbedre profilerne for begge adresser separat. Det kan f.eks. være en privatadresse og en forretningsadresse. Vælg **Næste**.
+
+1. Knyt felterne til lokationsdataene fra Azure Maps. Felterne **Gade 1** og **postnummer** er obligatoriske for den valgte primære og/eller sekundære adresse. Tilføj flere felter for at opnå en mere nøjagtig overensstemmelse.
+
+   :::image type="content" source="media/enrichment-azure-maps-attributes.png" alt-text="Attributtilknytning i Azure Maps.":::
+
+1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
+
+1. Gennemse **Avancerede indstillinger,** der giver maksimal fleksibilitet til håndtering af avancerede brugsmønstre. Følgende standardværdier behøver dog som regel ikke at blive ændret.
+
+   - **Adressetyper**: Bedste adresse svarer til returneringer, selvom den ikke er komplet. Hvis du kun vil have fuldstændige adresser, f.eks. adresser, der indeholder husnummeret, skal alle afkrydsningsfelterne undtagen **Punktadresser** ryddes.
+   - **Sprog**: Adresser returneres til det sprog, der er baseret på adresseområdet. Hvis du vil anvende et standardiseret adressesprog, skal du vælge sproget i rullemenuen. Hvis du f.eks. vælger **engelsk**, returneres **Copenhagen, Denmark** i stedet for **København, Danmark**.
+   - **Maksimalt antal resultater**: Antal resultater pr. adresse.
+
+1. Vælg **Næste**.
+
+1. Angiv et **Navn** til forbedringen og **outputobjektnavn**.
+
+1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg.
+
+1. Vælg **Kør** for at starte forbedringsprocessen, eller luk for at vende tilbage til siden **Forbedringer**.
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 
-Hvis du vil starte forbedringsprocessen, skal du vælge **Kør** fra kommandolinjen. Du kan også lade systemet køre forbedring automatisk som en del af en [planlagt opdatering](system.md#schedule-tab). Behandlingstiden afhænger af størrelsen på dine kundedata og API-svartider.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Når processen til forbedring af kundeoplevelsen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under **Mine forbedringer**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler.
-
-Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at vælge **Vis forbedrede data**.
+**Antal kunder, der er forbedret med felt** angiver en detailudledning i dækningen af hvert enkelt forbedret felt.
 
 ## <a name="next-steps"></a>Næste trin
 
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
-
-Når du gør det muligt for Dynamics 365 Customer Insights at overfører data til Azure Maps, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f.eks. personlige data. Microsoft kan overføre sådanne data efter dine instruktioner, men du er ansvarlig for at sikre, at Azure Maps overholder alle forpligtelser i forbindelse med sikkerhed eller beskyttelse af personlige oplysninger. Du kan finde flere oplysninger i [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

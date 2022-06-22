@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 795eaa3598257f5188070f6ea02d04e4423b66eb
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 6dfaa09cd80498e9a4e4dea6a07ce6e9d29105e2
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833551"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011604"
 ---
 # <a name="how-to-create-a-new-environment"></a>Sådan opretter du et nyt miljø
 
@@ -67,6 +67,7 @@ Du kan vælge mellem to muligheder:
 ## <a name="step-3-connect-to-microsoft-dataverse"></a>Trin 3: Opret forbindelse til Microsoft Dataverse
 
 Med **Microsoft Dataverse**-trinnet kan du forbinde Customer Insights til dit Dataverse-miljø. Del data med Dataverse for at bruge dem med virksomhedsprogrammer, der er baseret på Dataverse, for eksempel Dynamics 365 Marketing eller modelbaserede programmer i Power Apps.
+
 
 Lad dette felt være tomt, hvis du ikke har dit eget Dataverse-miljø. Vi opretter et til dig.
 

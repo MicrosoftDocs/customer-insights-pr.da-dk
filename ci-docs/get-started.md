@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 68c26eb0ad0da787a9f594b4aebe679588b0d6bf
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 1c925110f40319df77940d1c32f24a99504d6ec6
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833532"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011972"
 ---
 # <a name="get-started-with-dynamics-365-customer-insights"></a>Introduktion til Dynamics 365 Customer Insights
 
@@ -39,7 +39,7 @@ Første gang du logger på Customer Insights, kan du konfigurere indstillinger o
 
 Fælles profiler er grundlaget for at få indsigt og handle ud fra dataene. Hent data ind fra forskellige kilder, og kør processen til samling af data for at kombinere ensartede profiler. Angiv relationer mellem de indtagede objekter, og brug forbedringsfunktioner til at føje oplysninger til profilerne.
 
-1. Indtag data ved at oprette datakilder fra flere indstillinger. Vælg mellem [Power Query-forbindelser](connect-power-query.md), en [Common Data Model-mappe](connect-common-data-model.md) eller [Microsoft Dataverse](connect-dataverse-managed-lake.md).
+1. Indtag data ved at oprette datakilder fra flere indstillinger. Vælg mellem [Azure Data Lake Storage, herunder Common Data Model](connect-common-data-model.md), [Azure Synapse Analytics](connect-synapse.md), [Microsoft Dataverse](connect-dataverse-managed-lake.md) eller  [Power Query-connectorer](connect-power-query.md).
 
 1. Kør [processen til oprettelse af data](data-unification.md) ved at identificere [kildefelterne](map-entities.md), fjerne [dubletter](remove-duplicates.md), [matche betingelser](match-entities.md) og [samle felter](merge-entities.md).
 

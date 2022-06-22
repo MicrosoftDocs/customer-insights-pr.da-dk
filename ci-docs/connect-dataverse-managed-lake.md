@@ -7,20 +7,20 @@ ms.topic: how-to
 author: adkuppa
 ms.author: adkuppa
 manager: shellyha
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: 7140e9254108bc6f0d518b3ccf4b10fc33cde115
-ms.sourcegitcommit: b515120bebd2638f2639004422cee3cff42fbdf7
+ms.openlocfilehash: c470956b0453ac2558ed85acdeebba120a0ca55d
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "8800161"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011696"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Oprette forbindelse til data i en Microsoft Dataverse-administreret data lake
 
-Denne artikel indeholder oplysninger om, hvordan Dataverse-brugere hurtigt kan oprette forbindelse til analytiske objekter i et Microsoft Dataverse-administreret område. 
+Microsoft Dataverse-brugerne kan hurtigt oprette forbindelse til analytiske objekter i et Microsoft Dataverse-administreret system.
 
 > [!NOTE]
 > Du skal være administrator i Dataverse-organisationen for at kunne fortsætte og få vist listen over objekter i det administrerede område.
@@ -32,40 +32,34 @@ Denne artikel indeholder oplysninger om, hvordan Dataverse-brugere hurtigt kan o
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Opret forbindelse til Dataverse-administreret sø
 
-1. Gå til **Data** > **Datakilder** i Customer Insights.
+1. Gå til **Data** > **Datakilder**.
 
-2. Vælg **Tilføj datakilde**.
+1. Vælg **Tilføj datakilde**.
 
-3. Vælg **Microsoft Dataverse**, og vælg **Næste**.
+1. Vælg **Microsoft Dataverse**.
 
-4. Angiv et **Navn** til datakilden, og vælg derefter **Næste**. 
+1. Angiv et **navn** til datakilden og en valgfri **beskrivelse**.
 
-5. Angiv organisationens Dataverse-**serveradresse**, og vælg **log på**.
+1. Angiv organisationens Dataverse-**serveradresse**, og vælg **log på**.
 
-   :::image type="content" source="media/ingest-dataverse-server-address.png" alt-text="Skærmbillede i datatrin, hvor en bruger kan angive Dataverse URL-adressen til miljøet.":::
-
-6. Vælg de tabeller, du vil bruge som objekter i Customer Insights, på den tilgængelige liste.    
+1. Vælg de tabeller, du vil bruge som objekter i Customer Insights, på den tilgængelige liste.
 
    > [!NOTE]
    > Hvis nogle tabeller allerede er valgt, kan de bruges af andre Dynamics 365-programmer (f.eks. Dynamics 365 Sales Insights eller Customer Service Insights). Du kan ikke ændre markeringen. Disse tabeller er tilgængelige som objekter, når datakilde oprettes.
 
-   :::image type="content" source="media/select-dataverse-entities.png" alt-text="Dialogboks, der viser en liste over objekter i Dataverse-miljøet.":::
+    :::image type="content" source="media/select-dataverse-entities.png" alt-text="Dialogboks, der viser en liste over objekter i Dataverse-miljøet.":::
 
-7. Gem indstillingen for at starte synkroniseringen af de valgte tabeller fra Dataverse. Du kan finde den netop tilføjede forbindelse på siden **-datakilder**. Den sættes i kø til opdatering og viser objektantal som 0, indtil alle de valgte tabeller synkroniseres.
+1. Gem indstillingen for at starte synkroniseringen af de valgte tabeller fra Dataverse. Du kan finde den netop tilføjede forbindelse på siden **-datakilder**. Den sættes i kø til opdatering og viser objektantal som 0, indtil alle de valgte tabeller synkroniseres.
 
 Kun én datakilde af et miljø kan bruge samme Dataverse administrerede Data Lake samtidig.
 
 ## <a name="edit-a-dataverse-managed-lake-data-source"></a>Redigere en Dataverse-administreret sø-datakilde
 
-Du kan kun redigere objekt-valget, efter du har oprettet datakilden. Hvis du f.eks. har tilføjet yderligere objekter i Dataverse, og du også vil importere dem.    
+Du kan kun redigere objekt-valget, efter du har oprettet datakilden. Hvis du f.eks. har tilføjet yderligere objekter i Dataverse, og du også vil importere dem.
 Hvis du vil oprette forbindelse til en anden Dataverse-data lake, [skal du oprette en ny datakilde](#connect-to-a-dataverse-managed-lake).
 
 1. Gå til **Data** > **Datakilder**.
 
-2. Ud for den datakilde, du vil opdatere, skal du vælge den lodrette ellipse (&vellip;).
+1. Ud for den datakilde, du vil opdatere, og vælg **Rediger**.
 
-3. Vælg indstillingen **Rediger** på listen.
-
-4. Vælg yderligere objekter på listen med tilgængelige objekter, og vælg **Gem**.
-
-[!INCLUDE [footer-include](includes/footer-banner.md)]
+1. Vælg yderligere objekter på listen med tilgængelige objekter, og vælg **Gem**.

@@ -3,17 +3,17 @@ title: Bruge din egen Azure Data Lake Storage Gen2-konto
 author: mukeshpo
 description: Få mere at vide om kravene for at bruge din egen Azure Data Lake Storage-konto til at gemme Customer Insights-data.
 ms.author: mukeshpo
-ms.date: 05/30/2022
+ms.date: 06/08/2022
 ms.topic: conceptual
 ms.manager: shellyha
 ms.custom: intro-internal
 ms.reviewer: mhart
-ms.openlocfilehash: 9fcd7645e34bf310ac3a1b98a0dd9a60598b19dc
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 5acb58906c1a9db54337f3b4dc2ab7891db7954e
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833917"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011926"
 ---
 # <a name="use-your-own-azure-data-lake-storage-gen2-account"></a>Bruge din egen Azure Data Lake Storage Gen2-konto
 
@@ -37,6 +37,7 @@ Når du opretter et nyt miljø, skal du sikre dig, at Data Lake Storage-kontoen 
 1. Vælg, hvordan du vil **oprette forbindelse til dit lager**. Du kan vælge mellem en ressourcebaseret mulighed og en abonnementsbaseret mulighed for godkendelse. Du kan finde flere oplysninger i [Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenesteprincipal](connect-service-principal.md).
    - I forbindelse med **Azure-abonnement** skal du vælge det **abonnement**, den **ressourcegruppe** og den **lagerkonto**, der indeholder `customerinsights`-objektbeholderen.
    - For **Firmanøgle** skal du angive **Firmanavn** og **Firmanøgle** for Data Lake Storage-kontoen. Hvis du bruger denne godkendelsesmetode, bliver du informeret, hvis organisationen udskifter nøglerne. Du skal [opdatere miljøkonfigurationen](manage-environments.md#edit-an-existing-environment) med den nye nøgle, når den udskiftes.
+1. Vælg, om du vil bruge Azure Private Link til at oprette forbindelse til lagerkontoen og [oprette forbindelse til privat link](security-overview.md#private-links-tab) med en proces i to trin.
 
 Når systemprocesser, for eksempel dataindtagelse, er fuldført, oprettes der tilsvarende mapper på lagerkontoen. Datafiler og *model.json*-filer oprettes og føjes til mapper baseret på procesnavnet.
 

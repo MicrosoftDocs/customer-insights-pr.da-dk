@@ -6,19 +6,19 @@ ms.author: mhart
 ms.date: 04/12/2022
 ms.topic: overview
 ms.manager: shellyha
-ms.openlocfilehash: 4d5b4ec61614877c26468ffe8d07f2448b43bac6
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 820d295a95e1536be1ffcbebc5ca153c10ad60ea
+ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641893"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "8947085"
 ---
 # <a name="product-overview-for-dynamics-365-customer-insights"></a>Produktoversigt for Dynamics 365 Customer Insights
 
 [Dynamics 365 Customer Insights](https://dynamics.microsoft.com/ai/customer-insights/) er Microsofts CDP (Customer Data Platform), der hjælper med at levere tilpassede kundeoplevelser. Programmet giver et overblik over kunderne med uovertrufne indsigtsfulde erfaringer. Få den mest omfattende visning af kunderne ved at samle kundedata med driftsdata og IoT-data i realtid. Forbedre kundeprofiler med første og tredjeparts datakilder. 
 
 Customer Insights hjælper dig med at transformere din forretning til en kundefokuseret organisation ved at give dine marketing-, salgs- og servicemedarbejdere mulighed for at tilpasse 1:1-interaktioner på én gang. Nøglefærdig integration med Microsoft og tredjepartsprogrammer kan bruges til at aktivere indsigt i realtid for at skabe meningsfulde handlinger.
- 
+
 Opret forbindelse mellem data fra transaktionsbaserede, adfærdsbaserede og demografiske datakilder for at oprette 360-graders kundevisninger. Få den indbyggede indsigt med forudindstillede AI-modeller eller hurtigt opbygge, teste og implementere brugerdefinerede AI/ML-modeller ved hjælp af avancerede analyseløsninger uden begrænsninger.
 
 Bevare fuld kontrol over kundedataene for at sikre det højeste dataniveau og overholdelse med en selvbetjenings-CDP på virksomhedsniveau baseret på Microsoft Azure. Support af generel forordning om databeskyttelse (GDPR) og andre krav til beskyttelse af personlige oplysninger og branchestandarder via indbyggede værktøjer til beskyttelse af personlige oplysninger, sikkerhed og samtykkestyring.

@@ -1,7 +1,7 @@
 ---
 title: Udvidelse af forbedring af adresser (indeholder video)
 description: Udvid og normaliser adresseoplysninger om kundeprofiler med Microsofts modeller.
-ms.date: 01/19/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: b4fef3b5e30e1cac4e5cb4401498f2f0981a409e
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8645986"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953804"
 ---
 # <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Udvidelse af kundeprofiler med forbedrede adresser
 
@@ -53,17 +53,17 @@ Adresseoplysningerne kan være i et format, der ikke er standardformat, og indeh
 
 ### <a name="limitations"></a>Begrænsninger
 
-Forbedrede adresser fungerer kun sammen med de værdier, der allerede findes i dine adressedata, der er indtaget. Modellen gør ikke dette: 
+Forbedrede adresser fungerer kun med de værdier, der allerede findes i de adresserede adressedata. Modellen gør ikke dette:
 
 1. Kontrollerer, om adressen er en gyldig adresse.
 2. Kontrollerer, om nogen af værdierne, f.eks. postnumre eller gadenavne, er gyldige.
 3. Skifter værdier, der ikke genkendes.
 
-Modellen bruger maskinel indlæringsbaserede teknikker til at forbedre adresser. Selvom vi anvender en høj tillidstærskel for, hvornår modellen ændrer en inputværdi, som med enhver maskinlæringsbaseret model, er 100 procent nøjagtighed ikke garanteret.
+Modellen bruger maskinel indlæringsbaserede teknikker til at forbedre adresser. Som med enhver anden model, der er baseret på maskinel indlæring, er 100 % præcision ikke sikker.
 
 ## <a name="supported-countries-or-regions"></a>Understøttede lande eller områder
 
-Vi understøtter i øjeblikket forbedrede adresser i disse lande eller områder: 
+Vi understøtter i øjeblikket forbedrede adresser i disse lande eller områder:
 
 - Australien
 - Canada
@@ -74,50 +74,46 @@ Vi understøtter i øjeblikket forbedrede adresser i disse lande eller områder:
 - Storbritannien
 - USA
 
-Adresser skal indeholde en værdi for land/område. Vi behandler ikke adresser for lande eller områder, der ikke understøttes, og adresser, der ikke har angivet noget land eller område.
-
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 
-1. Gå til **Data** > **Forbedring**.
+1. Gå til **Data** > **Forbedring**, og vælg fanen **Opdag**.
 
 1. Vælg **Forbedr mine data** på feltet **Udvidede adresser**.
 
    :::image type="content" source="media/enhanced-addresses-tile.png" alt-text="Skærmbillede af feltet Udvidede adresser.":::
 
-1. Vælg **Kundedatasæt**, og vælg det objekt, der indeholder de adresser, du vil forbedre. Du kan vælge objektet *Kunde* for at forbedre adresser i alle dine kundeprofiler eller vælge et segmentobjekt for kun at forbedre adresser i kundeprofiler, der er indeholdt i det pågældende segment.
+1. Gennemse oversigten, og vælg derefter **Næste**.
+
+1. Vælg **Kundedatasæt**, og vælg den profil eller det segment, du vil forbedre. Objektet *Kunde* forbedrer alle dine kundeprofiler, hvorimod et segment kun forbedrer de kundeprofiler, der findes i dette segment.
 
 1. Vælg, hvordan adresser formateres i dit datasæt. Vælg **Adresse med en enkelt attribut**, hvis adresserne i dataene bruger et enkelt felt. Vælg **Multiattributadresse**, hvis adresserne i dataene bruger mere end et enkelt datafelt.
+
+1. Vælg **Næste**, og tilknyt adressefelterne fra det samlede kundeobjekt.
+
+    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Udvidet side til tilknytning af adressefelt.":::
 
    > [!NOTE]
    > Land/område er obligatorisk i både single-attribute- og multiple-attribute-adresser. Adresser, der ikke indeholder gyldige eller understøttede værdier for land/område, vil ikke blive forbedret.
 
-1.  Tilknyt adressefelterne fra dit samlede kundeobjekt.
-
-    :::image type="content" source="media/enhanced-address-mapping.png" alt-text="Udvidet side til tilknytning af adressefelt.":::
-
 1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
 
-1. Angiv et navn til forbedringen og outputobjektet.
+1. Angiv et **Navn** til forbedringen og **outputobjektet**.
 
 1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg.
 
 ## <a name="enrichment-results"></a>Forbedringsresultater
 
-Hvis du vil starte forbedringsprocessen, skal du vælge **Kør** fra kommandolinjen. Du kan også lade systemet køre forbedring automatisk som en del af en [planlagt opdatering](system.md#schedule-tab). Behandlingstiden afhænger af størrelsen på dine kundedata.
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-Når forbedringsprocessen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under **Mine forbedringer**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler.
-
-Du kan se et eksempel på de forbedrede data i **Forbedrede kunders forhåndsversion**-feltet. Vælg **Se mere**, og vælg fanen **Data** for at få adgang til en detaljeret visning af hver enkelt forbedret profil.
+**Antal kunder, der er forbedret med felt** angiver en detailudledning i dækningen af hvert enkelt forbedret felt.
 
 ### <a name="overview-card"></a>Oversigtskort
 
-Oversigtskortet viser detaljer om dækningen af forbedringen. 
+Kortet **Ændringer i oversigtskort** viser detaljer om dækningen af forbedringen:
 
-* **Adresser behandlet og ændret**: Antallet af kundeprofiler med adresser, der blev forbedret.
-
-* **Adresser behandlet og ikke ændret**: Antallet af kundeprofiler med adresser, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
-
-* **Adresser ikke behandlet og ikke ændret**: Antallet af kundeprofiler med adresser, der ikke blev genkendt. Som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
+- **Adresser behandlet og ændret**: Antallet af kundeprofiler med adresser, der blev forbedret.
+- **Adresser behandlet og ikke ændret**: Antallet af kundeprofiler med adresser, der blev genkendt, men ikke ændret. Det sker typisk, når inputdataene er gyldige og ikke kan ændres via forbedringen.
+- **Adresser ikke behandlet og ikke ændret**: Antallet af kundeprofiler med adresser, der ikke blev genkendt. Som regel for inputdata, der er ugyldige eller ikke understøttes af forbedringen.
 
 ## <a name="next-steps"></a>Næste trin
 

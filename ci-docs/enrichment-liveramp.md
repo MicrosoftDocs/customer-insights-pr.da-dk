@@ -1,95 +1,93 @@
 ---
 title: Forbedring af LiveRamp-identifikationsdata
 description: Forbedre kundeprofiler med LiveRamp-data.
-ms.date: 03/02/2022
+ms.date: 06/10/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 0727818f6df565d9a031966a68d521ae7167e484
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: e8a130865267b57c89157b44be3d4bba3dc2fb4e
+ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646086"
+ms.lasthandoff: 06/13/2022
+ms.locfileid: "8953988"
 ---
-# <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversion) 
+# <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversion)
 
-LiveRamp leverer deterministisk identitetsløsning til offline og en sammenlægning af kundedata. Du kan knytte personlige id'er i kundedataene til AbiliTec-identitetsgrafen og modtage AbiliTec-id'er. Du kan derefter bruge disse id'er til at opnå en bedre samling af kundedata. 
+LiveRamp leverer deterministisk identitetsløsning til offline og en sammenlægning af kundedata. Du kan knytte personlige id'er i kundedataene til AbiliTec-identitetsgrafen og modtage AbiliTec-id'er. Du kan derefter bruge disse id'er til at opnå en bedre samling af kundedata.
 
-## <a name="prerequisites"></a>Forudsætninger 
+## <a name="supported-countriesregions"></a>Understøttede lande/områder
 
-Hvis du vil konfigurere forbedringen, skal følgende forudsætninger være opfyldt: 
+I øjeblikket understøtter vi kun forbedring af kundeprofiler med LiveRamp-data i USA.
 
-- Du skal have et aktivt LiveRamp-abonnement. Hvis du vil have et abonnement, skal du kontakte dit LiveRamp-firmateam eller [dynamics@liveramp.com](mailto:dynamics@liveramp.com) for at få flere oplysninger.   
+## <a name="prerequisites"></a>Forudsætninger
 
-- Et aktivt AbiliTec-abonnement med et klient-id og en hemmelighed til at få adgang til API'en. Du kan finde flere oplysninger i [AbiliTec API Udvikler-hub](https://developers.liveramp.com/abilitec-api/). 
+- Et aktivt LiveRamp-abonnement. Hvis du vil have et abonnement, skal du kontakte dit LiveRamp-firmateam eller [dynamics@liveramp.com](mailto:dynamics@liveramp.com) for at få flere oplysninger.
 
-## <a name="supported-countriesregions"></a>Understøttede lande/områder 
+- Et aktivt AbiliTec-abonnement med et klient-id og en hemmelighed til at få adgang til API'en. Du kan finde flere oplysninger i [AbiliTec API Udvikler-hub](https://developers.liveramp.com/abilitec-api/).
 
-I øjeblikket understøtter vi kun forbedring af kundeprofiler med LiveRamp-data i USA. 
+- En LiveRamp [forbindelse](connections.md) er [konfigureret](#configure-the-connection-for-liveramp) af en administrator.
 
-## <a name="configure-the-enrichment"></a>Konfiguration af forbedring 
+## <a name="configure-the-connection-for-liveramp"></a>Konfiguration af forbindelsen til LiveRamp
 
-1. Gå til **Data** > **Forbedring**, og vælg fanen **Opdag**. 
+Du skal være en [administrator](permissions.md#admin) i Customer Insights og have et aktivt LiveRamp-klient-id og en hemmelighed.
 
-1. Vælg **Forbedring af data** i feltet **Identitet**. 
+1. Vælg **Tilføj forbindelse**, når du konfigurerer en forbedring, eller gå til **Admin** > **Forbindelser**, og vælg **Konfigurer** i feltet LiveRamp.
+
+   :::image type="content" source="media/liveramp-connection.png" alt-text="Konfigurationsruden til at konfigurere forbindelsen til tjenesten LiveRamp AbiliTec. ":::
+
+1. Angiv et navn til forbindelsen og et gyldigt LiveRamp-klient-id samt en hemmelighed.
+
+1. Gennemse og giv dit samtykke til [Beskyttelse af personlige oplysninger og overholdelse af data](#data-privacy-and-compliance) ved at vælge **Jeg accepterer**.
+
+1. Vælg **Kontrollér** for at konfigurationen er valideret, og vælg derefter **Gem**.
+
+### <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
+
+Når du aktiverer Dynamics 365 Customer Insights for at overføre data til LiveRamp, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data efter din instruktion, men du er ansvarlig for at sikre, at LiveRamp overholder eventuelle forpligtelser til beskyttelse af personlige oplysninger eller sikkerhed, du måtte have. Du kan finde yderligere oplysninger ved at gennemse [Erklæring om beskyttelse af personlige oplysninger i Microsoft](https://go.microsoft.com/fwlink/?linkid=396732). Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
+
+## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
+
+1. Gå til **Data** > **Forbedring**, og vælg fanen **Opdag**.
+
+1. Vælg **Forbedring af data** i feltet **Identitet** fra feltet LiveRamp.
 
    :::image type="content" source="media/liveramp-tile.png" alt-text="Identitetsfelt i oversigtssiden for forbedring. ":::
 
-1. Vælg en [værdi](connections.md) på rullelisten. Kontakt en administrator, hvis der ikke er nogen forbindelse. Hvis du er en administrator, kan du oprette forbindelse ved at vælge **Tilføj forbindelse**. Vælg **LiveRamp** på rullelisten. 
+1. Gennemse oversigten, og vælg derefter **Næste**.
 
-1. Vælg **Næste**, og vælg det **Kundedatasæt**, du vil forbedre med identitetsdata fra LiveRamp. Du kan vælge objektet *Kunde* for at forbedre alle dine kundeprofiler eller vælge et *segment*-objekt for kun at forbedre de kundeprofiler, der findes i dette segment. 
+1. Vælg forbindelsen. Kontakt en administrator, hvis en ikke er tilgængelig.
 
-1. Vælg **Næste**, og definer, hvilken type felter fra dine ensartede profiler der skal bruges til at søge efter tilsvarende identitetsdata fra LiveRamp. Mindst ét af felterne **Navn og adresse**, **Telefon** eller **E-mail** er obligatorisk. 
+1. Vælg **Næste**.
 
-   > [!TIP]
-   > Jo flere nøgle-id'er og felter, du tilknytter, jo større er sandsynligheden for en højere overensstemmelseshastighed 
+1. Vælg **Kundedatasæt**, og vælg den profil eller det segment, du vil forbedre med identitetsdata fra LiveRamp. Objektet *Kunde* forbedrer alle dine kundeprofiler, hvorimod et segment kun forbedrer de kundeprofiler, der findes i dette segment.
 
-1. Tilknyt felterne fra det unified *Customer*-objekt, der skal bruges til matchning, med LiveRamps AbiliTec-identitetsgraf. 
+1. Definer, hvilken type felter fra dine ensartede profiler der skal bruges til at matche identitetsdata fra LiveRamp. Mindst ét af felterne **Navn og adresse**, **Telefon** eller **E-mail** er obligatorisk. Tilføj andre felter for at opnå en mere nøjagtig overensstemmelse. Vælg **Næste**.
+
+1. Knyt felterne til identifikationsdataene fra LiveRamp.
 
    :::image type="content" source="media/liveramp-data-mapping.png" alt-text="Indstillinger for datatilknytning for LiveRamp-forbedring.":::
 
-1. Når du har fuldført felttilknytningen, skal du vælge **Næste**. 
+1. Når du har fuldført felttilknytningen, skal du vælge **Næste**.
 
-1. Angiv et **Navn** til forbedringen og **outputobjektet**. 
+1. Angiv et **Navn** til forbedringen og **outputobjektnavn**.
 
-1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg. 
+1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg.
 
-## <a name="configure-the-connection-for-liveramp"></a>Konfiguration af forbindelsen til LiveRamp 
+1. Vælg **Kør** for at starte forbedringsprocessen, eller luk for at vende tilbage til siden **Forbedringer**.
 
-Du skal være en administrator for at [konfigurere forbindelser](connections.md). Vælg **Tilføj forbindelse**, når du konfigurerer forbedringen, eller gå til **Admin** > **Forbindelser**, og vælg **Konfigurer** i feltet **LiveRamp**. 
+## <a name="enrichment-results"></a>Forbedringsresultater
 
-:::image type="content" source="media/liveramp-connection.png" alt-text="Konfigurationsruden til at konfigurere forbindelsen til tjenesten LiveRamp AbiliTec. ":::
+[!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 
-1. Ved **Visningsnavn** skal du angive navnet på forbindelsen. 
-
-1. Angiv et gyldigt LiveRamp-klient-id og en hemmelighed. 
-
-1. Gennemgå og giv dit samtykke til **Beskyttelse af personlige data og overholdelse af angivne standarder** ved at markere afkrydsningsfeltet **Jeg accepterer**. 
-
-1. Vælg **Kontroller** for at validere konfigurationen. 
-
-1. Vælg **Gem** for at fuldføre forbindelsen. 
-
-## <a name="enrichment-results"></a>Forbedringsresultater 
-
-Hvis du vil starte forbedringsprocessen, skal du vælge Kør fra kommandolinjen. Du kan også lade systemet køre forbedring automatisk som en del af en  [planlagt opdatering](system.md#schedule-tab). Behandlingstiden afhænger af størrelsen på dine kundedata. 
-
-Når processen til forbedring af kundeoplevelsen er fuldført, kan du gennemgå de netop forbedrede kundeprofildata under  **Arbejde**. Derudover kan du finde tidspunktet for den seneste opdatering og antallet af forbedrede profiler. 
-
-Du kan få adgang til en detaljeret visning af hver forbedrede profil ved at vælge  **Vis forbedrede** data. 
+**Antal kunder, der er forbedret med felt** angiver en detailudledning i dækningen af hvert enkelt forbedret felt.
 
 ## <a name="next-steps"></a>Næste trin
 
-Byg oven over dine forbedrede kundedata. Brug AbiliTec-id'er til at samle kundeprofiler i en personbaseret visning. 
+Byg oven over dine forbedrede kundedata. Brug AbiliTec-id'er til at samle kundeprofiler i en personbaseret visning.
 [!INCLUDE [next-steps-enrichment](includes/next-steps-enrichment.md)]
-
-## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder 
-
-Når du aktiverer Dynamics 365 Customer Insights for at overføre data til LiveRamp, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data efter din instruktion, men du er ansvarlig for at sikre, at LiveRamp overholder eventuelle forpligtelser til beskyttelse af personlige oplysninger eller sikkerhed, du måtte have. Du kan finde yderligere oplysninger ved at gennemse [Erklæring om beskyttelse af personlige oplysninger i Microsoft](https://go.microsoft.com/fwlink/?linkid=396732). Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet. 
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

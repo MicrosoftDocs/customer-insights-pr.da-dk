@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-security
 - customerInsights
-ms.openlocfilehash: b18d1f42b9510ebf23f0666322819865d132173b
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 36ad957f59b23df6ee83d9d90898ef03ddfd320a
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833378"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011834"
 ---
 # <a name="connect-to-an-azure-data-lake-storage-account-by-using-an-azure-service-principal"></a>Oprette forbindelse til en Azure Data Lake Storage-konto ved hjælp af en Azure-tjenestekonto
 
@@ -51,7 +51,13 @@ Før du opretter en ny servicekonto til Customer Insights, skal du kontrollere, 
 
 ## <a name="grant-permissions-to-the-service-principal-to-access-the-storage-account"></a>Giv tilladelser til den pågældende tjenestekonto for at få adgang til lagerkontoen
 
-Gå til Azure-portalen for at give tilladelser til servicekontoen for den lagerkonto, du vil bruge i Customer Insights.
+Gå til Azure-portalen for at give tilladelser til servicekontoen for den lagerkonto, du vil bruge i Customer Insights. En af følgende roller skal tildeles lagerkontoen eller -beholderen:
+
+|Legitimationsoplysninger|Krav|
+|----------|------------|
+|Aktuel bruger logget på|**Rolle**: Storage Blob Data Læser, Storage Blob bidragyder Eller Storage Blob Owner.<br>**Niveau**: Der kan tildeles tilladelser til lagerkontoen eller beholderen.</br>|
+|Customer Insights-tjenestens hovednavn<br>Brug Azure Data Lake Storage som en datakilde</br>|Indstilling 1<ul><li>**Rolle**: Storage Blob Data Læser, Storage Blob Data     Bidragyder Eller Storage Blob Data-ejer.</li><li>**Niveau**: Der bør tildeles tilladelser til lagerkontoen.</li></ul>Mulighed 2 *(uden deling af tjenestens hovedadgang til lagerkontoen)*<ul><li>**Rolle 1**: Storage Blob Data Læser, Storage Blob Data Bidragyder eller Storage Blob Data-ejer.</li><li>**Niveau**: Der bør tildeles tilladelser til beholderen.</li><li>**Rolle 2**: Storage Blob-datadelegator.</li><li>**Niveau**: Der bør tildeles tilladelser til lagerkontoen.</li></ul>|
+|Customer Insights-tjenestens hovednavn <br>Brug Azure Data Lake Storage som output eller destination</br>|Indstilling 1<ul><li>**Rolle**: Storage Blob Data Læser, Storage Blob bidragyder eller Storage Blob Owner.</li><li>**Niveau**: Der bør tildeles tilladelser til lagerkontoen.</li></ul>Mulighed 2 *(uden deling af tjenestens hovedadgang til lagerkontoen)*<ul><li>**Rolle**: Storage Blob Data Læser, Storage Blob bidragyder eller Storage Blob Owner.</li><li>**Niveau**: Der bør tildeles tilladelser til beholderen.</li><li>**Rolle 2**: Storage Blob-delegator.</li><li>**Niveau**: Der bør tildeles tilladelser til lagerkontoen.</li></ul>|
 
 1. Gå til [Azure Admin-portalen](https://portal.azure.com), og log på organisationen.
 
@@ -62,7 +68,7 @@ Gå til Azure-portalen for at give tilladelser til servicekontoen for den lagerk
    :::image type="content" source="media/ADLS-SP-AddRoleAssignment.png" alt-text="Skærmbillede, der viser Azure-portalen, mens du tilføjer en rolletildeling.":::
 
 1. Angiv følgende egenskaber i ruden **Tilføj rolletildeling**:
-   - Rolle: **Storage Blob Data-bidragyder**
+   - Rolle: Storage Blob Data Læser, Storage Blob Data Bidragyder eller Storage Blob Data-ejer baseret på legitimationsoplysninger ovenfor.
    - Tildel adgang til: **bruger, gruppe eller tjenestekonto**
    - Vælg medlemmer: **Dynamics 365 AI til Customer Insights** (den [tjenesteprincipal](#create-a-new-service-principal), du fandt tidligere i denne procedure)
 

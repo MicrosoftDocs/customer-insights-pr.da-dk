@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: c0db75afdde91bbd60fbece77eb2660a38b84860
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 46a67e58f79029246029e2d06789525c2131f100
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833761"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011880"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Ofte stillede spørgsmål om Dynamics 365 Customer Insights-prøveversion
 
@@ -66,7 +66,7 @@ Hvis du kun bruger Customer Insights, kan du også kopiere dataene fra et prøve
 
 Når du har logget på den betalte forekomst af Customer Insights for første gang, bliver du bedt om at oprette et nyt miljø. I denne proces kan du vælge at kopiere konfigurationen fra et eksisterende miljø og overføre de fleste indstillinger. Hvis du har ovennævnte tilladelser, vises prøveversionsmiljøet på denne liste. Du kan finde flere oplysninger under [Kopiere miljøkonfigurationen](create-environment.md#copy-the-environment-configuration).
 
-### <a name="what-are-the-trial-limits-and-quotas"></a>Hvad er prøveversionsgrænserne og -kvoterne?
+### <a name="what-are-the-trial-limits-and-quotas"></a>Hvad er prøveversionens grænser og kvoter?
 
 - Du kan ikke bruge din egen Azure Data Lake Storage-konto til at gemme outputdata i en prøveversion af Customer Insights. Du kan dog oprette data fra en Data Lake Storage-konto.
 - Du kan gemme op til 3 GB data i Dataverse-miljøet, der bliver klargjort automatisk, når du starter en Customer Insights-prøveversion.

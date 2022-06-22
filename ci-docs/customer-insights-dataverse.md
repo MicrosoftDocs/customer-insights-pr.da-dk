@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 3848e143bc7cb2f345bc698a274b92148ef00669
-ms.sourcegitcommit: f5af5613afd9c3f2f0695e2d62d225f0b504f033
+ms.openlocfilehash: 252723b8c174cb1ec488388c26fd2a1d398e9002
+ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "8833669"
+ms.lasthandoff: 06/14/2022
+ms.locfileid: "9011513"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
 Customer Insights giver dig mulighed for at gøre outputobjekter tilgængelige som [Microsoft Dataverse](/powerapps/maker/data-platform/data-platform-intro). Denne integration muliggør nem datadeling og brugerdefineret udvikling gennem en tilgang med næste ingen kode/ingen kode. [Outputobjekterne](#output-entities) er tilgængelige som tabeller i et Dataverse-miljø. Du kan bruge dataene til et hvilket som helst andet program baseret på Dataverse-tabeller. Disse tabeller muliggør scenarier som automatiserede arbejdsprocesser via Power Automate eller opbygning af apps med Power Apps.
 
-Hvis du opretter forbindelse til Dataverse-miljøet, kan du også [indtage data fra det lokale miljø datakilder ved hjælp af Power Platform-dataflow og gateways](data-sources.md#add-data-from-on-premises-data-sources).
+Hvis du opretter forbindelse til Dataverse-miljøet, kan du også [indtage data fra det lokale miljø datakilder ved hjælp af Power Platform-dataflow og gateways](connect-power-query.md#add-data-from-on-premises-data-sources).
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -123,7 +123,7 @@ Nogle outputobjekter fra Customer Insights er tilgængelige som tabeller i Datav
 
 ### <a name="customerprofile"></a>Kundeprofil
 
-Denne tabel indeholder den samlede kundeprofil fra Customer Insights. Skemaet for en unified customer profile afhænger af de objekter og attributter, der bruges i data samlingsprocessen. Et kundeprofilskema indeholder normalt et undersæt af attributterne fra [Common Data Model-definitionen i CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile).
+Denne tabel indeholder unified customer profile fra Customer Insights. Skemaet for en unified customer profile afhænger af de objekter og attributter, der bruges i data samlingsprocessen. Et kundeprofilskema indeholder normalt et undersæt af attributterne fra [Common Data Model-definitionen i CustomerProfile](/common-data-model/schema/core/applicationcommon/foundationcommon/crmcommon/solutions/customerinsights/customerprofile).
 
 ### <a name="alternatekey"></a>AlternateKey
 
