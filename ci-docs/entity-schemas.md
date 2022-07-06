@@ -1,5 +1,5 @@
 ---
-title: Skemaer til Customer Insights-objekt i Common Data Model
+title: Objektskema i Common Data Model
 description: Arbejd med objekter i Common Data Model.
 ms.date: 08/13/2021
 ms.reviewer: mhart
@@ -8,16 +8,14 @@ ms.topic: conceptual
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 33a0562854e97b9ac5218e060f965996305627fd
-ms.sourcegitcommit: d45c00a5f6cb106714366af81e8070e7f53654b3
+ms.openlocfilehash: 92d37fc0950fefcb5c2a5d26214a469d3693980d
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/15/2022
-ms.locfileid: "8757425"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054747"
 ---
 # <a name="entity-schemas-in-common-data-model"></a>Objektskema i Common Data Model
-
-
 
 [Common Data Model](/common-data-model/) er en erklærende specifikation og en definition for standardobjekter, der repræsenterer ofte anvendte koncepter og aktiviteter på tværs af forretnings og produktivitets-applikationer. Denne model også udvidet med observations- og analysedata. Common Data Model giver forretningsobjekter, der er veldefinerede, modulopbyggede og kan udvides, f.eks. Konto, Afdeling, Sag, Kontakt, Kundeemne, Salgsmulighed og Produkt — samt interaktioner med leverandører, arbejdere og kunder — såsom aktiviteter og serviceniveauaftaler. Alle kan bygge videre på og udvide Common Data Model-definitioner for at registrere flere forretningsspecifikke ideer.
 

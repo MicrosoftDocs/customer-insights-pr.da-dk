@@ -1,5 +1,5 @@
 ---
-title: Forbedre kundeprofiler med data fra Microsoft Office 365
+title: Forbedre kundeprofiler med data fra Microsoft Office 365 (forhåndsversion)
 description: Brug beskyttede data fra Microsoft Office for at forbedre dine kundeprofiler med engagementsdata.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahl
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 7192b7680e73a581dd603de174c57b20bec996dd
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 75762afb70814c8a81c1574ee7ea1553a2048737
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8954126"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055667"
 ---
-# <a name="enrich-customer-profiles-with-engagement-data-preview"></a>Forbedre kundeprofiler med engagementsdata (prøveversion)
+# <a name="enrich-customer-profiles-with-data-from-microsoft-office-365-preview"></a>Forbedre kundeprofiler med data fra Microsoft Office 365 (forhåndsversion)
 
 Brug data fra Microsoft Office 365 til at forbedre dine kundekontoprofiler med indsigt i engagementer via Office 365-apps. Engagementsdataene består af mail- og mødeaktivitet, der aggregeres på kontoniveau. F.eks. antallet af mails fra et forretningskonto eller antallet af møder med kontoen. Der er ingen data om de enkelte brugere tilgængelige.
 
@@ -75,7 +75,7 @@ Vælg **Kør** for at starte forbedringsprocessen.
 
 [!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
-## <a name="enrichment-results"></a>Forbedringsresultater
+## <a name="view-enrichment-results"></a>Vise forbedringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)] Dette er objektet *Office*. *Office_UserEntity* indeholder Active Directory-ip-adresserne for de e-mail-adresser, du har valgt under konfigurationen af forbedringen.
 

@@ -1,5 +1,5 @@
 ---
-title: Tilmeld dig en gratis prøveversion - Dynamics 365 Customer Insights
+title: Tilmeld dig en gratis Dynamics 365 Customer Insights-prøveversion
 description: Få mere at vide om, hvordan du hurtigt tilmelder dig og starter en gratis prøveversion af Customer Insights. Udforsk appen, og find yderligere undervisningsressourcer.
 author: m-hartmann
 ms.author: mhart
@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-setup
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 2f27dd4fd9df679696d72f2eccde262de3e4afc4
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 73f12745f76ef65afcc565ffb972e755073a2834
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8641709"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081067"
 ---
 # <a name="sign-up-for-a-free-dynamics-365-customer-insights-trial"></a>Tilmeld dig en gratis Dynamics 365 Customer Insights-prøveversion
 
@@ -34,7 +34,7 @@ Dit prøveversionsmiljø indeholder de samme funktioner som den betalte version.
 - [Start her med Customer Insights.](get-started.md)
 - [Tilføj flere brugere, og tildel tilladelser.](permissions.md)
 - [Gennemgå datakilderne](data-sources.md) og kør dem gennem [processen til enhed af data](data-unification.md) for at få [ensartede kundeprofiler](customer-profiles.md).
-- [Forbedr de ensartede kundeprofiler](enrichment-hub.md) eller [kør intelligente modeller](predictions-overview.md).
+- [Forbedr unified customer profiles](enrichment-hub.md) eller [kør intelligente modeller](predictions-overview.md).
 - Opret [segmenter](segments.md) for at gruppere kunder og [målingers](measures.md) til gennemgangs-nøgletal.
 - Opret [forbindelser](connections.md) og [eksporter](export-destinations.md) for at behandle undersæt af dataene i andre programmer.
 

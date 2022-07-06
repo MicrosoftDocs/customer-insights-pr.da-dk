@@ -1,5 +1,5 @@
 ---
-title: Indtag data fra Azure Synapse Analytics
+title: Tilslut en Azure Synapse-datakilde (forhåndsversion)
 description: Brug en database i Azure Synapse som en datakilde i Dynamics 365 Customer Insights.
 ms.date: 03/25/2022
 ms.reviewer: v-wendysmith
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: 6f94cdbcc203fc4518544f7a945bd80e871b36c1
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011420"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052692"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Tilslut en Azure Synapse Analytics-datakilde (forhåndsversion)
 
@@ -59,7 +59,7 @@ Du kan finde flere oplysninger under [Oversigt over Azure Synapse](/azure/synaps
 
 1. Vælg en [tilgængelig forbindelse](connections.md) til Azure Synapse Analytics eller oprette en ny.
 
-1. Vælg en **Database** fra det arbejdsområde, der er forbundet i den valgte Azure Synapse Analytics-forbindelse, og vælg **Næste**.
+1. Vælg en **Database** fra det arbejdsområde, der er forbundet i den valgte Azure Synapse Analytics-forbindelse, og vælg **Næste**. I øjeblikket understøtter vi kun databasetypen *Lake database*.
 
 1. Vælg de objekter, der skal oprettes i den forbundne database og vælg **Næste**.
 

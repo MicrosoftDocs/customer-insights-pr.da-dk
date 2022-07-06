@@ -1,5 +1,5 @@
 ---
-title: Forbedring af virksomhedsprofiler med Dun & Bradstreet
+title: Forbedring af virksomhedsprofiler med Dun & Bradstreet (forhåndsversion)
 description: Generelle oplysninger om tredjepartsforbedringer i Dun & Bradstreet.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -9,14 +9,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b1038970b6aee3bbdd7f79cc457f79aaf1c38222
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 51f2e4e46aa25d10502d0feb5ea42eb7d2d637b9
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953884"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081086"
 ---
-# <a name="enrichment-of-company-profiles-with-dun--bradstreet-preview"></a>Forbedring af virksomhedsprofiler med Dun & Bradstreet (Forhåndsversion)
+# <a name="enrich-company-profiles-with-dun--bradstreet-preview"></a>Forbedring af virksomhedsprofiler med Dun & Bradstreet (forhåndsversion)
 
 Dun & Bradstreet leverer kommercielle data, analyser og indsigt til virksomheder. Den gør det muligt for kunder, der har en samlet kundeprofil for virksomheder, at forbedre deres data. Forbedringer omfatter attributter, herunder DUNS-nummer, virksomhedsstørrelse, adresse, branche og mere.
 
@@ -102,7 +102,7 @@ Vi understøtter i øjeblikket følgende lande/område-indstillinger: Canada (en
 
 1. Vælg **Kør** for at starte forbedringsprocessen, eller luk for at vende tilbage til siden **Forbedringer**.
 
-## <a name="enrichment-results"></a>Forbedringsresultater
+## <a name="view-enrichment-results"></a>Vise forbedringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Udvidelse af forbedring af adresser (indeholder video)
+title: Forbedre kundeprofiler med forbedrede adresser (indeholder video)
 description: Udvid og normaliser adresseoplysninger om kundeprofiler med Microsofts modeller.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -14,14 +14,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: f6279b9bb721d99d66f73e8dc839a92f1ad90140
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 01f1c917c75e932cc69f4c7251e57524fc859dce
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953804"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9080967"
 ---
-# <a name="enrichment-of-customer-profiles-with-enhanced-addresses"></a>Udvidelse af kundeprofiler med forbedrede adresser
+# <a name="enrich-customer-profiles-with-enhanced-addresses"></a>Forbedre kundeprofiler med forbedrede adresser
 
 Adresser i dine data kan være ustrukturerede, ufuldstændige eller forkerte. Brug Microsofts modeller til at normalisere og forbedre dine adresser i [Common Data Model-formatet](/common-data-model/schema/core/applicationcommon/address) for at opnå større nøjagtighed og indsigt.
 
@@ -101,7 +101,7 @@ Vi understøtter i øjeblikket forbedrede adresser i disse lande eller områder:
 
 1. Vælg **Gem valgmuligheder**, når du har gennemset dine valg.
 
-## <a name="enrichment-results"></a>Forbedringsresultater
+## <a name="view-enrichment-results"></a>Vise forbedringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

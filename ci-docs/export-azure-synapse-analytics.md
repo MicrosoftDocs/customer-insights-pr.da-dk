@@ -1,21 +1,21 @@
 ---
-title: Eksporter Customer Insights-data til Azure Synapse Analytics
+title: Eksportere data til Azure Synapse Analytics (forhåndsversion)
 description: Du kan lære, hvordan du kan konfigurere forbindelsen til Azure Synapse Analytics.
-ms.date: 04/11/2022
+ms.date: 06/29/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 772fe0978362ccd829077a8133e2a3e74043f3f8
-ms.sourcegitcommit: 6a5f4312a2bb808c40830863f26620daf65b921d
+ms.openlocfilehash: 60bacb313e0426564310f3c1339bf3b732e17489
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "8741496"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081143"
 ---
-# <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksportér til Azure Synapse Analytics (forhåndsversion)
+# <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksportere data til Azure Synapse Analytics (forhåndsversion)
 
 Azure Synapse er en analysetjeneste, der accelererer tiden til at få indsigt på tværs af data warehouses og big data-systemer. Du kan indtage og bruge dine Customer Insights-data i [Azure Synapse](/azure/synapse-analytics/overview-what-is).
 
@@ -72,13 +72,13 @@ Du kan konfigurere denne eksport, hvis du har adgang til en forbindelse af denne
 
 1. Vælg **Forbindelse til eksport**-feltet, vælg en forbindelse i sektionen **Azure Synapse Analytics**. Hvis du ikke kan se dette sektionsnavn, er der ingen [forbindelser](connections.md) af denne type tilgængelige for dig.
 
-1. Angiv et genkendeligt **Vist navn** til eksport og et **Databasenavn**.
+1. Angiv et genkendeligt **Vist navn** til eksport og et **Databasenavn**. I eksporten oprettes der en ny [Azure Synapse lake database](/azure/synapse-analytics/database-designer/concepts-lake-database) i det arbejdsområde, der er defineret i forbindelsen.
 
 1. Vælg, hvilke objekter du vil eksportere til Azure Synapse Analytics.
    > [!NOTE]
    > Datakilder, der er baseret på en [fælles datamodelmappe](connect-common-data-model.md), understøttes ikke.
 
-2. Vælg **Gem**.
+1. Vælg **Gem**.
 
 Når du gemmer en eksport, køres eksporten ikke med det samme.
 

@@ -1,5 +1,5 @@
 ---
-title: Eksportere Customer Insights-data til Azure Data Lake Storage Gen2
+title: Eksportere data til Azure Data Lake Storage Gen2 (forhåndsversion)
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen til Azure Data Lake Storage Gen2.
 ms.date: 10/06/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: 22eee11666752459a1750d728c4e254ab0c59e58
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: c2446fba425203d2910b82134b73543a73c7ecf8
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947223"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081103"
 ---
-# <a name="export-segment-list-and-other-data-to-azure-data-lake-storage-gen2-preview"></a>Eksportere segmentliste og andre data til Azure Data Lake Storage Gen2 (forhåndsversion)
+# <a name="export-data-to-azure-data-lake-storage-gen2-preview"></a>Eksportere data til Azure Data Lake Storage Gen2 (forhåndsversion)
 
 Gem dine Customer Insights-data i en Data Lake Storage Gen2-konto, eller brug den til at overføre dine data til andre programmer.
 

@@ -13,16 +13,16 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: 3e1b1ce00eeda1cead9ba05beae65b6903d0b9cf
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646402"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9055207"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Forudsigelse af kundens levetidsværdi (CLV)
 
-Potentiel værdi (omsætning), som de enkelte aktive kunder henter ind i virksomheden via en defineret fremtidig tidsperiode. Du kan bruge denne funktion til at nå forskellige mål: 
+Potentiel værdi (omsætning), som de enkelte aktive kunder henter ind i virksomheden via en defineret fremtidig tidsperiode. Du kan bruge denne funktion til at nå forskellige mål:
 - Identificere kunder af høj værdi, og bearbejde denne indsigt
 - Oprette strategiske kundesegmenter baseret på deres potentielle værdi til at køre tilpassede kampagner med målrettede salgs-, marketing- og supportindsatser
 - Vejlede i produktudvikling ved at fokusere på funktioner, der øger kundeværdien
@@ -200,7 +200,7 @@ Der findes tre primære sektioner med data på resultatsiden.
   I ruden **Bedømmelse** vises flere detaljer om AI-modelydeevnen og den grundlæggende model. I den grundlæggende model bruges en ikke-AI-baseret metode til at beregne kundens levetidsværdi, primært på baggrund af historiske indkøb foretaget af kunder.     
   Den standardformel, der bruges til at beregne CLV efter basismodellen:    
 
-  _**CLV for hver kunde** = Gennemsnitlig månedligt køb foretaget af kunden i vinduet med aktive kunder *Antal måneder i CLV-forudsigelse perioden* Samlet tilbageholdelseshastighed for alle kunder*_
+  _**CLV for hver kunde** = Gennemsnitlig månedligt køb foretaget af kunden i vinduet med aktive kunder * Antal måneder i CLV-forudsigelsesperioden * Samlet tilbageholdelseshastighed for alle kunder*_
 
   AI-modellen sammenlignes med den oprindelige model, der er baseret på to modelydeevnemetrikværdier.
   

@@ -11,14 +11,14 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: eeabd889f7b694f8d809894169a3cdc068acc340
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646056"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051676"
 ---
-# <a name="use-a-template-to-build-a-measure"></a>Bruge en skabelon til at oprette en måleenhed
+# <a name="create-measures-from-templates"></a>Oprette målinger fra skabeloner
 
 Du kan bruge foruddefinerede skabeloner med almindeligt anvendte [foranstaltninger](measures.md) til at oprette dem. Detaljerede beskrivelser af skabelonerne og en styret oplevelse hjælper dig med at oprette effektive måleenheder. Skabeloner bygger på tilknyttede data fra objektet *Unified Activity*. Sørg derfor for, at du har konfigureret [kundeaktiviteter](activities.md), før du opretter en måleenhed ud fra en skabelon.
 

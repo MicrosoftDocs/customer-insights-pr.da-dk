@@ -1,5 +1,5 @@
 ---
-title: Forbedre kundeprofiler med data om kunder og interesser fra Microsoft
+title: Forbedre kundeprofiler med data om kunder og interesser fra Microsoft (forhåndsversion)
 description: Brug beskyttede data fra Microsoft til at forbedre dine kundedata med tilhørsforhold og stemmeandel.
 ms.date: 03/02/2022
 ms.reviewer: mhart
@@ -12,14 +12,14 @@ searchScope:
 - ci-enrichments
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 61262980cafdcd130430e200e466ce7da6cc4d07
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: e1827adca10a3b193c02a20c4abccacf73194a77
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953758"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081111"
 ---
-# <a name="enrich-customer-profiles-with-affinities-and-share-of-voice-preview"></a>Forbedre kundeprofiler med tilhørsforhold og stemmeandel (forhåndsversion)
+# <a name="enrich-customer-profiles-with-brands-and-interests-data-from-microsoft-preview"></a>Forbedre kundeprofiler med data om kunder og interesser fra Microsoft (forhåndsversion)
 
 Brug Microsofts beskyttede data til at forbedre dine kundedata med mærketilhørsforhold, interessetilhørsforhold og stemmeandel (SoV). Disse tilhørsforhold og SoV er baseret på data fra personer med samme demografi som dine kunder. Disse oplysninger hjælper dig med bedre at forstå og segmentere dine kunder ud fra deres tilhørsforhold eller SoV til bestemte mærker og interesser.
 
@@ -104,7 +104,7 @@ I øjeblikket understøttes følgende lande-/områdeindstillinger: Australien, C
 
    Når vi forbedrer profiler, forbedrer vi alle kundeprofiler, som vi får data for de valgte brands og interesser, herunder profiler, der ikke er i det valgte land eller område. Hvis du f.eks. har valgt Tyskland, forbedrer vi profiler i USA, hvis der er tilgængelige data for de valgte virksomheder og interesser i USA.
 
-## <a name="enrichment-results"></a>Forbedringsresultater
+## <a name="view-enrichment-results"></a>Vise forbedringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

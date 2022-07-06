@@ -1,5 +1,5 @@
 ---
-title: Eksporter Customer Insights-data til Adobe Campaign Standard
+title: Eksportere Customer Insights-segmenter til Adobe Campaign Standard (forhåndsversion)
 description: Få mere at vide om, hvordan du bruger Customer Insights-segmenter i Adobe Campaign Standard.
 ms.date: 03/29/2021
 ms.reviewer: mhart
@@ -8,24 +8,24 @@ ms.topic: conceptual
 author: stefanie-msft
 ms.author: antando
 manager: shellyha
-ms.openlocfilehash: 2a62d2f889f199222eeb8cc969fce62fa89fa6f0
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 9915591cd969bf825f5d1669de43ed4f9953f898
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646235"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081036"
 ---
-# <a name="use-customer-insights-segments-in-adobe-campaign-standard-preview"></a>Brug af Customer Insights-segmenter i Adobe Campaign Standard (forhåndsversion)
+# <a name="export-customer-insights-segments-to-adobe-campaign-standard-preview"></a>Eksportere Customer Insights-segmenter til Adobe Campaign Standard (forhåndsversion)
 
-Som bruger Dynamics 365 Customer Insights har du muligvis oprettet segmenter for at gøre marketingkampagnerne mere effektive ved at målrette relevante målgrupper. Hvis du vil bruge et segment fra Customer Insights i Adobe Experience Platform og programmer som Adobe Campaign Standard, skal du følge et par trin, der beskrives i denne artikel.
+Som bruger af Dynamics 365 Customer Insights har du muligvis oprettet segmenter for at gøre marketingkampagnerne mere effektive ved at målrette relevante målgrupper. Hvis du vil bruge et segment fra Customer Insights i Adobe Experience Platform og programmer som Adobe Campaign Standard, skal du følge et par trin, der beskrives i denne artikel.
 
 :::image type="content" source="media/ACS-flow.png" alt-text="Procesdiagram over de trin, der beskrives i denne artikel.":::
 
 ## <a name="prerequisites"></a>Forudsætninger
 
--   Dynamics 365 Customer Insights-licens
--   Adobe Campaign Standard-licens
--   Azure Blob Storage-konto
+- Dynamics 365 Customer Insights-licens
+- Adobe Campaign Standard-licens
+- Azure Blob Storage-konto
 
 ## <a name="campaign-overview"></a>Kampagneoversigt
 

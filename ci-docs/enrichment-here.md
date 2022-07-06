@@ -1,5 +1,5 @@
 ---
-title: Forbedring ved hjælp af tredjepartsforbedringer HERE Technologies
+title: Forbedre kundeprofiler med HERE Technologies (forhåndsversion)
 description: Generelle oplysninger om HERE Technologies-forbedringer.
 ms.date: 06/10/2022
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 171ead92427924083a13e2a3d52e7a7da417c801
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: d88085b6be156dd1c895e9e5b38cc9d77acbdb95
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/13/2022
-ms.locfileid: "8953666"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9052044"
 ---
-# <a name="enrichment-of-customer-profiles-with-here-technologies-preview"></a>Tilsætning af kundeprofiler ved hjælp af HERE Technologies (prøveversion)
+# <a name="enrich-customer-profiles-with-here-technologies-preview"></a>Forbedre kundeprofiler med HERE Technologies (forhåndsversion)
 
 HERE Technologies er en lokationsplatformsvirksomhed, der leverer geografiske data og tjenester, der er centreret. HERE Technologies' tjenester til indsamling af data forbedrer præcisionen af lokationsoplysninger om kunderne. Det giver adresse normalisering, breddegrad og længdegrad og meget mere.
 
@@ -72,7 +72,7 @@ Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne
 
 1. Vælg **Kør** for at starte forbedringsprocessen, eller luk for at vende tilbage til siden **Forbedringer**.
 
-## <a name="enrichment-results"></a>Forbedringsresultater
+## <a name="view-enrichment-results"></a>Vise forbedringsresultater
 
 [!INCLUDE [enrichment-results](includes/enrichment-results.md)]
 

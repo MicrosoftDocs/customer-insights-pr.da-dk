@@ -1,5 +1,5 @@
 ---
-title: Eksporter Customer Insights-data til ActiveCampaign
+title: Eksportér segmenter til ActiveCampaign
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til ActiveCampaign.
 ms.date: 10/08/2021
 ms.reviewer: mhart
@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 5d15b9bf7383d06070ac92d7a729fc6e6e00c9d7
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: eb6f2bb69bb30c319e17390562b3f33512f33ff1
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646215"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9054701"
 ---
 # <a name="export-segments-to-activecampaign-preview"></a>Eksporter segmenter til ActiveCampaign (forhåndsversion)
 
@@ -21,9 +21,9 @@ Eksporter segmenter af samlede kundeprofiler til ActiveCampaign, og brug dem til
 
 ## <a name="prerequisites"></a>Forudsætninger
 
--   Du har en [ActiveCampaign-konto](https://www.activecampaign.com/) og tilsvarende administratorlegitimationsoplysninger.
--   Du har [konfigureret segmenter](segments.md) i Customer Insights.
--   Samlede debitorprofiler i de eksporterede segmenter indeholder et felt med en mailadresse.
+- Du har en [ActiveCampaign-konto](https://www.activecampaign.com/) og tilsvarende administratorlegitimationsoplysninger.
+- Du har [konfigureret segmenter](segments.md) i Customer Insights.
+- Samlede debitorprofiler i de eksporterede segmenter indeholder et felt med en mailadresse.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 

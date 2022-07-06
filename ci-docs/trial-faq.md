@@ -1,5 +1,5 @@
 ---
-title: Ofte stillede spørgsmål om prøveversion - Dynamics 365 Customer Insights
+title: Ofte stillede spørgsmål om Dynamics 365 Customer Insights-prøveversion
 description: Løsninger på almindelige spørgsmål i forbindelse med konfiguration og administration af Customer Insights-prøveversion. Få mere at vide om, hvordan du løser platform- og appspecifikke problemer.
 author: m-hartmann
 ms.author: mhart
@@ -8,12 +8,12 @@ ms.topic: get-started
 ms.custom: template-trial-faq
 ms.reviewer: jeffhar
 manager: shellyha
-ms.openlocfilehash: 46a67e58f79029246029e2d06789525c2131f100
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: 41f112466d54c9923d0daf7c55d343f9b5c81d98
+ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9011880"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9051492"
 ---
 # <a name="dynamics-365-customer-insights-trial-faq"></a>Ofte stillede spørgsmål om Dynamics 365 Customer Insights-prøveversion
 

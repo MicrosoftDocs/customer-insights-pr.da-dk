@@ -1,5 +1,5 @@
 ---
-title: Eksportere data fra Customer Insights til Facebook Annoncestyring (indeholder video)
+title: Eksportér segmenter til Facebook Ads Manager (forhåndsversion) (indeholder video)
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til Facebook Ads Manager.
 ms.date: 04/15/2021
 ms.reviewer: mhart
@@ -8,14 +8,14 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f610ab1af83bfd512ec1861e7dc76ebb2eecfcbb
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 782abd7d69166b9c81ac25c4d7e191bdeb03a887
+ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646382"
+ms.lasthandoff: 06/29/2022
+ms.locfileid: "9081172"
 ---
-# <a name="export-segments-list-to-facebook-ads-manager-preview"></a>Eksport af segmentliste til Facebook Ads Manager (forhåndsversion)
+# <a name="export-segments-to-facebook-ads-manager-preview"></a>Eksportér segmenter til Facebook Ads Manager (forhåndsversion)
 
 Eksportér segmenter af samlede kundeprofiler til Facebook Annonceadministrator for at oprette kampagner på Facebook og Instagram.
 
