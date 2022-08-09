@@ -1,19 +1,19 @@
 ---
 title: Power Automate-connectorer (forhåndsversion)| Microsoft Docs
 description: Oprette flows i Microsoft Power Automate fra Dynamics 365 Customer Insights.
-ms.date: 06/24/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 29a861dad926072f6f849d738d868f0f3b9306be
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: f87bd6db7143294a264813f6c5c7d7963f303628
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081057"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196111"
 ---
 # <a name="power-automate-connector-preview"></a>Power Automate-connector (prøveversion)
 
@@ -21,18 +21,18 @@ Udløs specifikke hændelser, der skal udføres automatisk, når dataene ændres
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Du kan foretage op til 100 opkald pr. 60 sekunder. Du kan kalde API-slutpunkt flere gange ved hjælp af $skip parameteren. [Få mere at vide om $skip parameter](/connectors/customerinsights/#get-items-from-an-entity).
+- Du kan foretage op til 100 opkald pr. 60 sekunder. Du kan bruge [$skip-parameter](/connectors/customerinsights/#get-items-from-an-entity) til at kalde API-slutpunkt flere gange.
 
 ## <a name="power-automate-triggers"></a>Power Automate-udløsere
 
-Brug udløsere til at oprette skystrømme og automatisere tilbagevendende opgaver, f.eks. meddelelser eller mere avancerede handlinger.
+Brug udløsere til at oprette skystrømme og automatisere tilbagevendende opgaver, f.eks. meddelelser eller mere avancerede handlinger. Brug udløsere, når:
 
-- Udløses, når en opdatering af datakilde mislykkes.
-- Udløses, når en opdatering af datakilde lykkes.
-- Udløses, når en tærskel krydses i et segment. Udløseren er begrænset til krydsning over grænsen.
-- Udløses, når en tærskel krydses i en forretningsmæssig måling. Det er kun forretningsmålinger uden en dimension, der understøttes. Udløseren er begrænset til krydsning over grænsen.
-- Udløser, når en fuld opdatering af (datakilder, segmenter, målinger...) er fuldført.
-- Udløses, når en opdatering af samlingsprocessen er fuldført.
+- En datakilde mislykkedes, når.
+- En datakildeopdatering lykkedes.
+- En tærskel krydses i et segment. Udløseren er begrænset til krydsning over grænsen.
+- En tærskel krydses i en forretningsmæssig måling. Det er kun forretningsmålinger uden en dimension, der understøttes. Udløseren er begrænset til krydsning over grænsen.
+- En fuldstændig planlagt opdatering er fuldført. Denne udløser fungerer ikke i forbindelse med manuelt påbegyndte opdateringer.
+- En opdatering af samlingsprocessen er fuldført.
 
 [Konfigurere dine udløsere i Power Automate.](https://flow.microsoft.com/connectors/shared_customerinsights/dynamics-365-customer-insights-connector/)
 
@@ -42,7 +42,7 @@ Power Automate-connectoren giver andre handlinger end de tilgængelige udløsere
 
 ## <a name="create-a-power-automate-flow"></a>Oprette et Power Automate-flow
 
-1. Gå til **Administration** > **Eksportdestinationer**.
+1. Gå til **Administrator** > **Forbindelser**.
 
 1. På feltet **Power Automate** skal du vælge **Konfigurer**.
 
@@ -53,7 +53,5 @@ Power Automate-connectoren giver andre handlinger end de tilgængelige udløsere
 Eksempler på, hvordan du bruger flow: 
 - Sende en meddelelse til en Microsoft Teams-kanal, hvis en datakilde ikke kan opdateres. 
 - Send en mail til dataejerne, når en grænseværdi for et segment overskrides.
-
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -11,16 +11,14 @@ manager: shellyha
 searchScope:
 - ci-map
 - customerInsights
-ms.openlocfilehash: 0dbc3b2c75365e94758a1b6330e8cb557e6bd768
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 766e688cb80c50a0d620943f87b76eb84a2fb89a
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081006"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139476"
 ---
 # <a name="data-unification-overview"></a>Oversigt over datasamling
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 Når du har [konfigureret datakilderne](data-sources.md), kan du samle dataene. Med data unification kan du samle én gang forskellige datakilder i en enkelt datasæt, der giver en ensartet visning af de pågældende data. For individuelle brugere (B-til-C), hvor dataene er centreret omkring de enkelte brugere, giver en enhed en ensartet visning af kunderne. For virksomhedskonti (B-til-B), hvor dataene er centreret omkring de konti, giver en enhed en ensartet visning af dine konti.
 

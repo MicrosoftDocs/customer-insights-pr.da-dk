@@ -1,19 +1,19 @@
 ---
 title: Nyheder i Dynamics 365 Customer Insights
 description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 06/02/2022
+ms.date: 06/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 4b5b95d1774d22827b3c08c2b6ccbb7858f1b04b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f3ae0fe6631ee7c8d79664528be383ec53e93fe8
+ms.sourcegitcommit: 92e5a798ca75c7f10aa5025a9bbd2ffb4d4ae7d2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054011"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "9114239"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -23,6 +23,34 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="june-2022-updates"></a>Opdateringringer i juni 2022
+
+Opdateringen i juni 2022 omfatter nye funktioner, opgradering til ydeevne og fejlrettelser.
+
+### <a name="updated-user-experience-for-data-sources-and-data-ingestion"></a>Opdateret brugeroplevelse for datakilder og dataindtag
+
+Import af data fra en lang række datakilder er grundlaget for at beskytte dine kundedata i Dynamics 365 Customer Insights. Vi har revideret brugeroplevelsen i forbindelse med import og forbindelse mellem datakilder. Denne opdatering gør det nemmere for dig at få adgang til Customer Insights med data.
+
+Du kan finde flere oplysninger i [Datakildeoversigten](data-sources.md).
+
+### <a name="export-to-inmobi"></a>Eksportér til InMobi
+
+InMobi hjælper virksomheder med at forstå, identificere, engagere sig og lære at arbejde hurtigt. Du kan eksportere segmenter og andre data til InMobi-tjenesten via Azure Blob Storage-konti.
+
+Du kan finde flere oplysninger under [Eksportere segmenter til InMobi (forhåndsversion)](export-inmobi.md)
+
+### <a name="lockbox-support-in-customer-insights"></a>Lockbox-support i Customer Insights
+
+Customer Lockbox indeholder en brugergrænseflade, hvor du kan gennemse og godkende (eller afvise) anmodninger om dataadgang. Disse anmodninger opstår, når der skal bruges dataadgang til kundedata for at afslutte en supportsag.
+
+Du kan se flere oplysninger i [Sikker adgang til kundedata ved hjælp af Customer Lockbox (forhåndsversion)](security-overview.md#securely-access-customer-data-with-customer-lockbox-preview).
+
+### <a name="connect-to-your-data-using-azure-private-link"></a>Oprette forbindelse til dine data ved hjælp af Azure Private Link
+
+Azure Private Link lader dig oprette forbindelse fra Customer Insights til Azure Data Lake Storage-kontoen via en slutpunkt i dit private slutpunkt i dit virtuelle netværk. I forbindelse med data i en lagerkonto, der ikke er tilgængeligt for det offentlige internet, aktiverer Privat link forbindelsen til det pågældende begrænsede netværk.
+
+Du kan finde flere oplysninger under [Brug privat link i Customer Insights](security-overview.md#private-links-tab).
 
 ## <a name="may-2022-updates"></a>Opdateringer i maj 2022
 

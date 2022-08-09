@@ -11,18 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-schedule
 - customerInsights
-ms.openlocfilehash: bff27bf7fec2bcb741846ae76bb1f616f459136c
-ms.sourcegitcommit: 5e26cbb6d2258074471505af2da515818327cf2c
+ms.openlocfilehash: de39743eb8728fac34e417724c5f73bf44309c89
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "9012018"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207130"
 ---
 # <a name="incremental-refresh-for-power-query-and-azure-data-lake-data-sources"></a>Trinvis opdatering for Power Query og Azure Data Lake-datakilder
 
-I denne artikel beskrives, hvordan du kan konfigurere trinvis opdatering for datakilder baseret på Power Query eller Azure Data Lake.
-
-Den trinvise opdatering af datakilder giver følgende fordele:
+Trinvis opdatering af datakilder i Power Query eller Azure Data Lake giver følgende fordele:
 
 - **Hurtigere opdateringer** – Kun data, der er ændret, opdateres. Du kan f.eks. nøjes med at opdatere de seneste fem dage i et historisk datasæt.
 - **Større pålidelighed** – Med mindre opdateringer har du ikke brug for at opretholde forbindelser til flygtige kildesystemer i så lang tid, hvilket mindsker risikoen for forbindelsesproblemer.
@@ -73,6 +71,7 @@ Customer Insights gør det muligt at opdatere trinvist for datakilder, der er kn
 
    1. Gå til den rodmappe, der indeholder .csv- eller .parquet-filerne, hvor der søges efter fulde data, trinvise data-upserts og trinvise data, som slettes.
    1. Angiv udvidelsen for de fulde data og begge trinvise filer (\.csv eller \.parquet).
+   1. I .csv-filer skal du markere kolonneafgrænseren, og hvis første række i filen skal være en kolonneoverskrift.
    1. Vælg **Gem**.
 
 1. I forbindelse med **Seneste opdatering** skal du vælge datotidsstempelattributten.

@@ -1,7 +1,7 @@
 ---
 title: Oprette forbindelse til data i en Microsoft Dataverse-administreret data lake
 description: Importere data fra en Microsoft Dataverse-administreret data lake.
-ms.date: 05/18/2022
+ms.date: 07/26/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: adkuppa
@@ -11,24 +11,25 @@ ms.reviewer: v-wendysmith
 searchScope:
 - ci-dataverse
 - customerInsights
-ms.openlocfilehash: 9ae0b964d8d39835715b7ddadc712e2338b855af
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: b21150a1c51bdad35250cae7fde7f38a014ec876
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080987"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206946"
 ---
 # <a name="connect-to-data-in-a-microsoft-dataverse-managed-data-lake"></a>Oprette forbindelse til data i en Microsoft Dataverse-administreret data lake
 
-Microsoft Dataverse-brugerne kan hurtigt oprette forbindelse til analytiske objekter i et Microsoft Dataverse-administreret system.
+Microsoft Dataverse-brugerne kan hurtigt oprette forbindelse til analytiske objekter i et Microsoft Dataverse-administreret system. Kun én datakilde af et miljø kan bruge samme Dataverse administrerede Data Lake samtidig.
 
 > [!NOTE]
 > Du skal være administrator i Dataverse-organisationen for at kunne fortsætte og få vist listen over objekter i det administrerede område.
 
-## <a name="important-considerations"></a>Vigtige overvejelser
+## <a name="prerequisites"></a>Forudsætninger
 
-1. Data, der gemmes i onlinetjenester, f.eks. Azure Data Lake Storage, gemmes på en anden placering end der, hvor dataene behandles eller gemmes i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration](https://www.microsoft.com/trust-center).
-2. Kun Dataverse-objekter, hvor [ændringssporing](/power-platform/admin/enable-change-tracking-control-data-synchronization) er aktiveret og synlige. Disse objekter kan eksporteres til de administrerede Dataverse-datasø og bruges i Customer Insights. Standardtabellerne har Dataverse-ændringssporing aktiveret som standard. Du skal slå sporing af ændringer til for brugerdefinerede tabeller. Hvis du vil kontrollere, om en Dataverse-tabel er aktiveret til sporing af ændringer, skal du gå til [Power Apps](https://make.powerapps.com) > **Data** > **Tabeller**. Find tabellen med interesse, og vælg den. Gå til **Indstillinger** > **Avancerede indstillinger**, og gennemse indstillingen **Spor ændringer**.
+- Data, der gemmes i onlinetjenester, f.eks. Azure Data Lake Storage, gemmes på en anden placering end der, hvor dataene behandles eller gemmes i Dynamics 365 Customer Insights.Ved at importere eller oprette forbindelse til data, der er gemt i onlinetjenester, accepterer du, at data kan overføres til og gemmes sammen med Dynamics 365 Customer Insights. [Få mere at vide på Microsofts center for sikkerhed og rettighedsadministration](https://www.microsoft.com/trust-center).
+
+- Kun Dataverse-objekter, hvor [ændringssporing](/power-platform/admin/enable-change-tracking-control-data-synchronization) er aktiveret og synlige. Disse objekter kan eksporteres til de administrerede Dataverse-datasø og bruges i Customer Insights. Standardtabellerne har Dataverse-ændringssporing aktiveret som standard. Du skal slå sporing af ændringer til for brugerdefinerede tabeller. Hvis du vil kontrollere, om en Dataverse-tabel er aktiveret til sporing af ændringer, skal du gå til [Power Apps](https://make.powerapps.com) > **Data** > **Tabeller**. Find tabellen med interesse, og vælg den. Gå til **Indstillinger** > **Avancerede indstillinger**, og gennemse indstillingen **Spor ændringer**.
 
 ## <a name="connect-to-a-dataverse-managed-lake"></a>Opret forbindelse til Dataverse-administreret sø
 
@@ -51,7 +52,9 @@ Microsoft Dataverse-brugerne kan hurtigt oprette forbindelse til analytiske obje
 
 1. Gem indstillingen for at starte synkroniseringen af de valgte tabeller fra Dataverse. Du kan finde den netop tilføjede forbindelse på siden **-datakilder**. Den sættes i kø til opdatering og viser objektantal som 0, indtil alle de valgte tabeller synkroniseres.
 
-Kun én datakilde af et miljø kan bruge samme Dataverse administrerede Data Lake samtidig.
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden [**Objekter**](entities.md).
 
 ## <a name="edit-a-dataverse-managed-lake-data-source"></a>Redigere en Dataverse-administreret sø-datakilde
 
@@ -62,4 +65,10 @@ Hvis du vil oprette forbindelse til en anden Dataverse-data lake, [skal du opret
 
 1. Ud for den datakilde, du vil opdatere, og vælg **Rediger**.
 
-1. Vælg yderligere objekter på listen med tilgængelige objekter, og vælg **Gem**.
+1. Vælg yderligere objekter på listen med tilgængelige objekter.
+
+1. Klik på **Gem** for at anvende ændringerne og vende tilbage til siden **Datakilder**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: b58532a541ee22a5e34d0af1a3334ccbd53627b2
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 3f23fe7177f931db3e3179970915d0cd3c736f87
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081037"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196203"
 ---
 # <a name="enrich-company-profiles-with-leadspace-preview"></a>Forbedre virksomhedsprofiler med Leadspace (forhåndsversion)
 
@@ -54,7 +54,7 @@ Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne
 
 1. Gennemse oversigten, og vælg derefter **Næste**.
 
-1. Vælg forbindelsen. Kontakt en administrator, hvis en ikke er tilgængelig.
+1. Vælg forbindelsen. Kontakt en administrator, hvis der ikke er nogen forbindelse.
 
 1. Vælg **Næste**.
 

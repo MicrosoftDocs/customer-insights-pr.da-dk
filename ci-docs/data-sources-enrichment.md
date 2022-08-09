@@ -8,12 +8,12 @@ author: NimrodMagen
 ms.author: nimagen
 ms.reviewer: v-wendysmith
 manager: shellyha
-ms.openlocfilehash: fb97b721cc82ccd23cfd1df74a0712b8fc277b8a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 98e9e330e7ef9cf085caa94a506fa788cebdd67b
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080977"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207176"
 ---
 # <a name="enrichment-for-data-sources-preview"></a>Forbedring til datakilder (forhåndsversion)
 
@@ -21,9 +21,9 @@ Brug data fra kilder som Microsoft og andre partnere til at forbedre dine kunded
 
 ## <a name="enrich-a-data-source"></a>Forbedre en datakilde
 
-Du skal have bidragyder- eller administratortilladelse til at oprette eller redigere forbedringer. Du kan finde flere oplysninger under [Tilladelser](permissions.md).  
+Du skal have bidragyder- eller administrator-[tilladelser](permissions.md) til at oprette eller redigere forbedringer.  
 
-1. Gå til **Data** > **Samle**. Vælg det objekt, du vil forbedre, og vælg én attribut som primær nøgle for objektet. Du kan finde flere oplysninger under [Vælg primær nøgle](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Gå til **Data** > **Samle**. Vælg det objekt, du vil forbedre, og vælg én attribut som [primær nøgle](map-entities.md#select-primary-key-and-semantic-type-for-attributes) for objektet.
 
 1. Gå til **Data** > **Datakilder**.
 
@@ -47,8 +47,8 @@ Følgende forbedringer er i øjeblikket tilgængelig for datakilder. Gennemgå d
 
 ## <a name="manage-existing-data-source-enrichments"></a>Administrere eksisterende datakildeforbedringer
 
-Gå til fanen **Mine forbedringer** for at se alle konfigurerede forbedringer.
+Gå til **Data** > **Forbedring**. Under fanen **Mine forbedringer** kan du se de konfigurerede forbedringer, deres status, antallet af forbedrede kunder og den sidste gang dataene blev opdateret. Du kan sortere listen over forbedringer efter en hvilken som helst kolonne eller bruge søgefeltet til at søge efter de ønsker, der skal håndteres.
 
-Vælg en valgmuligheder for at se de tilgængelige indstillinger. Du kan også vælge den lodrette ellipse (&vellip;) på et listeelement for at se indstillingerne. Hvis du har konfigureret flere forskellige indstillinger, kan du bruge søgefeltet til at finde det hurtigt.
+Vælg en valgmuligheder for at se de tilgængelige indstillinger. Du kan også vælge den lodrette ellipse (&vellip;) på et listeelement for at se indstillingerne.
 
-Du kan få vist, redigere, køre eller slette en datakildeforbedring. Du kan finde flere oplysninger under [Administrere eksisterende forbedringer](enrichment-hub.md).
+Du kan få vist, redigere, køre eller slette en datakildeforbedring. Du kan finde flere oplysninger under [Administrere eksisterende forbedringer](enrichment-hub.md#manage-existing-enrichments).

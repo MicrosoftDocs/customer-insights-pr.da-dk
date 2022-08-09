@@ -11,25 +11,24 @@ manager: shellyha
 searchScope:
 - ci-measure-template
 - customerInsights
-ms.openlocfilehash: f6bcdfc45a49c36f22d6ebc6e919f43b27f899d8
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6dc7fce78d10ba91de4b2abf54c6c6ab1c919d3a
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051676"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170766"
 ---
 # <a name="create-measures-from-templates"></a>Oprette målinger fra skabeloner
 
-Du kan bruge foruddefinerede skabeloner med almindeligt anvendte [foranstaltninger](measures.md) til at oprette dem. Detaljerede beskrivelser af skabelonerne og en styret oplevelse hjælper dig med at oprette effektive måleenheder. Skabeloner bygger på tilknyttede data fra objektet *Unified Activity*. Sørg derfor for, at du har konfigureret [kundeaktiviteter](activities.md), før du opretter en måleenhed ud fra en skabelon.
+Brug foruddefinerede skabeloner med almindeligt anvendte [foranstaltninger](measures.md) til at oprette dem. Skabeloner bygger på tilknyttede data fra objektet *Unified Activity*. Sørg derfor for, at du har konfigureret [kundeaktiviteter](activities.md), før du opretter en måleenhed ud fra en skabelon.
 
-Hvis du vil oprette brugerdefinerede mål, kan du gå til [Brug af målergenerator til at oprette mål fra bunden](measure-builder.md).
+Måling af skabeloner understøttes kun i miljøer for **individuelle kunder**. Hvis du vil oprette brugerdefinerede mål eller oprette målinger for B to B, kan du gå til [Brug af målergenerator](measure-builder.md).
 
-# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
-
-Tilgængelige måleskabeloner. 
+Tilgængelige måleskabeloner.
 - Gennemsnitlig transaktionsværdi (ATV)
 - Samlet transaktionsværdi
 - Gennemsnitlig dagsomsætning
+- Gennemsnitlig månedlig omsætning
 - Gennemsnitlig åromsætning
 - Antal transaktioner
 - Optjente loyalitetspoint
@@ -63,15 +62,16 @@ Tilgængelige måleskabeloner.
 
 1. I næste afsnit skal du vælge **Tilføj data** for at vælge aktiviteterne og tilknytte de tilhørende data fra objektet *Unified Activity*.
 
-    1. Trin 1 af 2: Vælg den type objekt, du vil bruge under **Aktivitetstype**. I forbindelse med **Aktiviteter** skal du markere de objekter, du vil tilknytte.
-    1. Trin 2 af 2: Vælg attributten fra objektet *Unified Activity* for den komponent, der kræves af formlen. I forbindelse med gennemsnitlig transaktionsværdi er det f.eks. den attribut, der repræsenterer transaktionsværdien. I forbindelse med **Aktivitetstidsstempel** skal du vælge attributten fra objektet Unified Activity, der repræsenterer dato og klokkeslæt for aktiviteten.
-   
-1. Når datatilknytningen er vellykket, kan du se status som **Fuldført** og navnet på de tilknyttede aktiviteter og attributter.
+    1. Trin 1 af 2: Vælg den type objekt, du vil bruge under **Aktivitetstype**. I forbindelse med **Aktiviteter** skal du markere de objekter, du vil tilknytte, og vælge **Næste**.
+    1. Trin 2 af 2: Vælg attributten fra objektet *Unified Activity* for den komponent, der kræves af formlen. I forbindelse med gennemsnitlig transaktionsværdi er det f.eks. den attribut, der repræsenterer transaktionsværdien. I forbindelse med **Aktivitetstidsstempel** skal du vælge attributten fra objektet *Unified Activity*, der repræsenterer dato og klokkeslæt for aktiviteten.
+    1. Vælg **Gem**.
 
-1. Du kan nu vælge **Kør** for at beregne resultaterne af målingen. Hvis du vil finjustere den senere, skal du vælge **Gem kladde**.
+    Når datatilknytningen er vellykket, kan du se status som **Fuldført** og navnet på de tilknyttede aktiviteter og attributter.
 
-# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
+1. Du kan nu vælge **Kør** for at beregne resultaterne af målingen. Vælg **Gem kladde**, hvis du vil bevare den aktuelle konfiguration og køre målingen senere. Siden **Målinger** vises.
 
-Denne funktion er kun tilgængelig for målinger, der er oprettet i miljøer med individuelle kunder som primær målgruppe.
+## <a name="next-step"></a>Næste trin
 
----
+Brug eksisterende mål til at oprette [et kundesegment](segments.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

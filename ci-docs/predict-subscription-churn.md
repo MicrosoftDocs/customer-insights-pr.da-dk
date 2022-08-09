@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: 415cd5d675512b4f434998afaa8265c8e45c562b
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: 72aa38242df21181f142833db03c825574455986
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646393"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171042"
 ---
 # <a name="subscription-churn-prediction"></a>Forudsigelse af abonnementsafgang
 
@@ -121,7 +121,7 @@ Forudsigelse af abonnementsafgang hjælper dig med at forudsige, om der er risik
    - **Forudsigelsesnavn:** Navnet på forudsigelsen, der blev angivet under oprettelsen.
    - **Forudsigelsestype:** Den type model, der bruges til forudsigelsen
    - **Outputobjekt:** Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.    
-     I outputobjektet er *ChurnScore* den anslåede sandsynlighed for kundeafgang, og *IsChurn* er en binær etiket baseret på *ChurnScore* med en tærskelværdi på 0,5. Standardgrænsen fungerer muligvis ikke i dit scenarie. [Opret et nyt segment](segments.md#create-a-new-segment) med din foretrukne grænseværdi.
+     I outputobjektet er *ChurnScore* den anslåede sandsynlighed for kundeafgang, og *IsChurn* er en binær etiket baseret på *ChurnScore* med en tærskelværdi på 0,5. Standardgrænsen fungerer muligvis ikke i dit scenarie. [Opret et nyt segment](segments.md#create-a-segment) med din foretrukne grænseværdi.
    - **Forudsagt felt:** Dette felt udfyldes kun for visse typer forudsigelser og bruges ikke i abonnementets afgangsforudsigelse.
    - **Status:** Den aktuelle status for forudsigelsens kørsel.
         - **Sat i kø:** Forudsigelsen venter i øjeblikket på, at andre processer skal køre.

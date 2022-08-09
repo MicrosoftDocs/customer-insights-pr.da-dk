@@ -8,12 +8,12 @@ ms.topic: how-to
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: e55ca8c6926fa0bda05aaf52fd799ca25f7f585f
-ms.sourcegitcommit: b7dbcd5627c2ebfbcfe65589991c159ba290d377
+ms.openlocfilehash: b8216b5a739964fdfff8cad7e6d6d7ce3f5308b5
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "8646473"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9171088"
 ---
 # <a name="transaction-churn-prediction"></a>Forudsigelse af transaktionsafgang
 
@@ -240,7 +240,7 @@ Tilføj en liste over de forretningskunder og konti, du vil bruge som benchmarks
    - **Forudsigelsesnavn**: Navnet på den forudsigelse, der blev angivet under oprettelsen.
    - **Forudsigelsestype**: Den modeltype, der bruges til forudsigelse
    - **Outputobjekt**: Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Du kan finde et objekt med dette navn på **Data** > **Objekter**.
-     I outputobjektet er *ChurnScore* den anslåede sandsynlighed for kundeafgang, og *IsChurn* er en binær etiket baseret på *ChurnScore* med en tærskelværdi på 0,5. Standardgrænsen fungerer muligvis ikke i dit scenarie. [Opret et nyt segment](segments.md#create-a-new-segment) med din foretrukne grænseværdi.
+     I outputobjektet er *ChurnScore* den anslåede sandsynlighed for kundeafgang, og *IsChurn* er en binær etiket baseret på *ChurnScore* med en tærskelværdi på 0,5. Standardgrænsen fungerer muligvis ikke i dit scenarie. [Opret et nyt segment](segments.md#create-a-segment) med din foretrukne grænseværdi.
      Ikke alle kunder er nødvendigvis aktive kunder. Nogle af dem har måske ikke haft nogen aktivitet i lang tid og betragtes som allerede som afgåede baseret på din afgangsdefinition. Det er ikke nyttigt at forudsige afgangsrisiko for kunder, der allerede er afgået, da de ikke er den interessante målgruppe.
    - **Forudsagt felt**: Dette felt udfyldes kun i forbindelse med visse typer forudsigelser og bruges ikke i forudsigelse af kundeafgang.
    - **Status**: Status for forudsigelseskørslen

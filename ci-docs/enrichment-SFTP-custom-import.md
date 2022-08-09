@@ -8,12 +8,12 @@ ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 88fc366ab9478c3b67034af794e237ff4573da7c
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 81ef6c62240e26cb5c9475e6306e08edc7e5eb31
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081027"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195789"
 ---
 # <a name="enrich-customer-profiles-with-sftp-custom-import-preview"></a>Forbedre kundeprofiler med SFTP brugerdefineret import (forhåndsversion)
 
@@ -104,7 +104,7 @@ Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne
 
 1. Gennemse oversigten, og vælg derefter **Næste**.
 
-1. Vælg forbindelsen. Kontakt en administrator, hvis en ikke er tilgængelig.
+1. Vælg forbindelsen. Kontakt en administrator, hvis der ikke er nogen forbindelse.
 
 1. Vælg **Kundedatasæt**, og vælg den profil eller det segment, du vil forbedre. Objektet *Kunde* forbedrer alle dine kundeprofiler, hvorimod et segment kun forbedrer de kundeprofiler, der findes i dette segment.
 

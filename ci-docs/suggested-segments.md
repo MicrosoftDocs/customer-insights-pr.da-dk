@@ -1,5 +1,5 @@
 ---
-title: Foreslåede segmenter (prøveversion)
+title: Foreslåede segmenter baseret på målinger (forhåndsversion)
 description: Lad maskinel indlæring hjælpe dig med at finde nye og interessante segmenter baseret på kundeattributter.
 ms.date: 10/15/2021
 ms.reviewer: mhart
@@ -11,31 +11,33 @@ manager: shellyha
 searchScope:
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: 9229bef1c5df06de973aa671ca70c6c8462d51cf
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e3f504827029afa12c65ec6f065a62606aaa823f
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081119"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170950"
 ---
-# <a name="suggested-segments-preview"></a>Foreslåede segmenter (prøveversion)
+# <a name="suggested-segments-based-on-measures-preview"></a>Foreslåede segmenter baseret på målinger (forhåndsversion)
 
-Oplev interessante segmenter af dine kunder ved hjælp af en AI-model. Denne maskinel indlæring-drevne funktion foreslår segmenter baseret på målpunkter eller kundeattributter. Det kan hjælpe med at forbedre dine KPI'er eller bedre forstå attributternes indflydelse i forbindelse med andre attributter. 
+Oplev interessante segmenter af dine kunder ved hjælp af en AI-model. Denne maskinel indlæring-drevne funktion foreslår segmenter baseret på målpunkter eller kundeattributter. Det kan hjælpe med at forbedre dine KPI'er eller bedre forstå attributternes indflydelse i forbindelse med andre attributter.
 
 > [!NOTE]
-> Den foreslåede segmentfunktion bruger automatiserede midler til at evaluere data og foretage forudsigelser baseret på disse data og har derfor evnen til at blive brugt som en metode til profilering, da dette udtryk er defineret i den generelle databeskyttelsesforordning ("GDPR"). Din brug af denne funktion til at behandle data kan være underlagt GDPR eller andre love eller bestemmelser. Du er ansvarlig for at sikre, at brugen af Dynamics 365 Customer Insights, herunder denne funktion, overholder alle gældende love og bestemmelser, herunder lovgivning vedrørende beskyttelse af personlige oplysninger, personlige data, biometriske data, databeskyttelse og fortrolighed i kommunikationen.
+> Find lignende kunder bruger automatiserede metoder til at evaluere data og foretage forudsigelser på baggrund af disse data. Det har derfor mulighed for at bruges som en metode til profilering, da denne betegnelse er defineret i den generelle databeskyttelsesforordning ("GDPR"). Din brug af denne funktion til at behandle data kan være underlagt GDPR eller andre love eller bestemmelser. Du er ansvarlig for at sikre, at brugen af Dynamics 365 Customer Insights, herunder denne funktion, overholder alle gældende love og bestemmelser, herunder lovgivning vedrørende beskyttelse af personlige oplysninger, personlige data, biometriske data, databeskyttelse og fortrolighed i kommunikationen.
 
 :::image type="content" source="media/suggested-segments.png" alt-text="Foreslået side med segmenter, der viser detaljer om et forslag i en siderude.":::
 
 ## <a name="suggested-segments-to-improve-your-kpis"></a>Foreslåede segmenter for at forbedre dine KPI'er
 
-Som bruger af Customer Insights har du sandsynligvis oprettet en række [foranstaltninger](measures.md), der kan hjælpe dig med at spore nøgletal. Det er vigtigt at forstå, hvordan visse attributter påvirker denne KPI for at oprette segmenter og køre en meget målrettet kampagne.   
+Hvis du bruger [målinger oprettet](measures.md) for at spore dine nøgletal, kan du oprette segmenter for at få vist indflydelse på nøgletallet. Du kan bruge disse oplysninger til at køre en yderst målrettet kampagne.
+
 Du sporer f.eks. en måling, der hedder *TotalSpendPerCustomer*. Som virksomhed vil du gerne se dette antal vokse. Hvis du vælger et målpunkt som primær attribut, kan du vælge de attributter, du vil vurdere for indflydelse. Lad os sige *medlemsniveau*, *medlemsperiode* og *beskæftigelse*. Customer Insights kan derefter foreslå et segment, der fortæller dig, hvem der er den største indflydelse af den pågældende måling. For eksempel er *Bogholdere*, der er *Gold*-medlemmer, og som har været hos din virksomhed i *mindst fem år*, den største influencer af *TotalSpendPerCustomer*. Du får en anslået segmentstørrelse for hvert forslag. Du kan bruge disse oplysninger til at oprette kampagner for målgrupperne.
 
 ## <a name="understand-what-influences-a-customer-attribute"></a>Forstå, hvad der påvirker en kundeattribut
 
-Du kan vælge en kundeattribut i stedet for et målpunkt som den primære attribut. Baseret på dit valg til at påvirke attributter opretter AI-modellen en række forslag, der viser, hvordan de valgte attributter påvirker den primære attribut.   
-Du kan f.eks. vælge *Belønningsmedlem (Ja/Nej)* som den primære attribut. *Ansættelse*, *Beskæftigelse* og *Antal supportbilletter* angives som andre attributter, der påvirker. AI-modellen kunne foreslå segmenter, der angiver, at de fleste it-fagfolk med ansættelse over to år er belønningsmedlemmer. Et andet forslag kunne fremhæve, at revisorer med fastansættelse over et år og færre end tre supportbilletter er belønningsmedlemmer. 
+Du kan vælge en kundeattribut i stedet for et målpunkt som den primære attribut. Baseret på dit valg til at påvirke attributter opretter AI-modellen en række forslag, der viser, hvordan de valgte attributter påvirker den primære attribut.
+
+Du kan f.eks. vælge *Belønningsmedlem (Ja/Nej)* som den primære attribut. *Ansættelse*, *Beskæftigelse* og *Antal supportbilletter* angives som andre attributter, der påvirker. AI-modellen kunne foreslå segmenter, der angiver, at de fleste it-fagfolk med ansættelse over to år er belønningsmedlemmer. Et andet forslag kunne fremhæve, at revisorer med fastansættelse over et år og færre end tre supportbilletter er belønningsmedlemmer.
 
 ## <a name="artificial-intelligence-usage"></a>Brug af kunstig intelligens
 
@@ -58,53 +60,36 @@ En kategorisk attribut som *kundetilfredshed* som den primære attribut resulter
 
 ## <a name="generate-suggested-segments"></a>Generér foreslåede målgrupper
 
-1. Gå til **Segmenter**
+1. Gå til **Segmenter**, og vælg fanen **Forslag (forhåndsversion)**.
 
-1. Vælg fanen **Forslag (prøveversion)**.
+1. Vælg **Søg efter nye forslag**, og vælg **Forbedring af en måleenhed/metrikværdi**. Vælg **Start**.
 
-1. Vælg **Få nye forslag** til at starte den guidede oplevelse.
+   :::image type="content" source="media/suggested-segments-measure.png" alt-text="Valg af en bedre måleenhed i de foreslåede segmenter.":::
 
-1. Du kan vælge en kundeattribut i stedet for en primær attribut og vælge **Næste**.
+1. Du kan vælge en kundeattribut eller måling i stedet for en primær attribut og vælge **Næste**.
 
-   :::image type="content" source="media/suggested-segments-primary-attribute.png" alt-text="Vælge den primære attribut til forslag til de foreslåede segmenter.":::
+1. Vælg de attributter, der påvirker, og vælg **Kør**.
 
-1. Vælg de attributter, der påvirker, og vælg **Gem**.
-   
    > [!TIP]
    > Hvis du vælger flere attributter, forbedres chancerne for at evaluere, hvordan de påvirker den primære attribut. Medtag ikke attributter, der ikke har nogen indflydelse på den primære attribut. Hvis alle dine kunder f.eks. kommer fra et bestemt land, skal du ikke medtage attributten *land*, da den ikke har nogen indflydelse på outputtet.
 
-1. Afhængigt af antallet af kundeprofiler og udvalgte attributter kan det tage et par minutter at behandle de valgte attributter. 
+Afhængigt af antallet af kundeprofiler og udvalgte attributter kan det tage et par minutter at behandle de valgte attributter.
 
-## <a name="view-details-of-a-suggested-segment"></a>Vise oplysninger om foreslået segment
+## <a name="manage-suggested-segments"></a>Administrere foreslåede segmenter
 
-Når AI-modellen har genereret forslagene, finder du dem angivet på **Segmenter** > **Forslag (prøveversion)**.
- 
-Vælg et foreslået segment for at gennemgå detaljerne i dette forslag. Du kan også gennemse de attributværdier eller -regler, som AI-modellen lærte at foreslå den valgte målgruppe.
+Gå til **Segmenter**, og vælg fanen **Forslag (forhåndsversion**). Vælg et foreslået **segment i sektionen Forslag til** attributbaserede segmenter for at få vist tilgængelige handlinger.
 
-## <a name="save-a-suggestion-as-a-segment"></a>Gemme et forslag som et segment
-
-1. Gå til **Segmenter** > **Forslag (prøveversion)**.
-
-1. Vælg det segment, du vil gemme. 
-
-1. Vælg **Gem som segment** i sideruden. 
-
-1. Når målgruppen er gemt, vises den på listen over målgrupper under fanen **Alle segmenter**. Den kan nu [opdateres, redigeres eller slettes som ethvert andet segment](segments.md).
-
-## <a name="refresh-or-edit-a-set-of-suggestions"></a>Opdatere eller redigere et sæt forslag
-
-1. Gå til **Segmenter** > **Forslag (prøveversion)**.
-
-1. Vælg **Opdater forslag** for at opdatere forslagene, mens du bevarer konfigurerede attributter. Eller vælg **Rediger attributter** for at redigere de konfigurerede attributter. Systemet kører AI-modellen igen, opretter segmentforslag baseret på de seneste data og erstatter de aktuelle forslag.
+- **Vis** de foreslåede segmentdetaljer og attributværdier eller -regler, som AI-modellen lærte.
+- **Gem som segment** forslag som et segment. Den vises under fanen **Alle segmenter** og kan [opdateres, redigeres eller slettes](segments.md).
+- **Rediger attributter,** og rediger de konfigurerede attributter, som erstatter de aktuelle forslag.
+- **Opdater forslag** for at opdatere forslagene, mens du bevarer konfigurerede attributter.
 
 ## <a name="limitations"></a>Begrænsninger
 
 1. Uoverensstemmelse i anslået segmentstørrelse: Hvis du vælger en primær attribut, der indeholder tomme værdier, kan det påvirke den anslåede segmentstørrelse i forslagene til segment. Når et sådant segment gemmes, kan den faktiske segmentstørrelse være forskellig fra det oprindelige estimat.
- 
+
 2. Primære booleske attributter af typen fungerer ikke: I øjeblikket understøtter vi kun streng- og numeriske datatyper som den primære attribut.
 
 3. Foreslåede segmenter er ikke så markante: Husk på, at de valgte attributter og distributionen af værdierne for disse attributter påvirker resultaterne. Du kan ændre dine attributter, der påvirker, eller endda din primære attribut, for at få forskellige resultater.
-
-
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -21,12 +21,12 @@ searchScope:
 - ci-measure-template
 - ci-permissions
 - customerInsights
-ms.openlocfilehash: 5477798a8b9e0771d390e403379b7447eb7baddd
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e622e5fa0b5738e31db1c668d95312adbc4f7d36
+ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081087"
+ms.lasthandoff: 07/21/2022
+ms.locfileid: "9183546"
 ---
 # <a name="relationships-between-entities-and-entity-paths"></a>Forhold mellem objekter og objektstier
 
@@ -34,7 +34,7 @@ Relationer forbinde objekter og definere en graf over dine data, når objekter d
 
 Der findes tre typer relationer: 
 - Systemrelationer, som ikke kan redigeres. Disse oprettes af systemet som del af datasamlingen
-- Nedarvede relationer, som ikke kan redigeres. Disse oprettes automatisk ud fra indtagelse af datakilder 
+- Nedarvede relationer, som ikke kan redigeres. Disse oprettes automatisk ud fra indtagelse af datakilder
 - Brugerdefinerede relationer, der kan redigeres. Disse oprettes og konfigureres af brugere
 
 ## <a name="non-editable-system-relationships"></a>Systemrelationer, der ikke kan redigeres
@@ -74,62 +74,59 @@ Relationen består af et *kildeobjekt*, der indeholder fremmednøglen, og et *de
      > [!NOTE]
      > Mange-til-mange-relationer kan oprettes ved hjælp af to mange-til-en-relationer og et sammenkædningsobjekt, der forbinder kildeobjektet og destinationsobjektet.
 
-   - **Målkardinalitet**: Vælg kardinaliteten for målobjektposterne. 
-   - **Kildenøglefelt**: Feltet med fremmednøglen i kildeobjektet. Eksempel: SupportCase kan bruge CaseID som et fremmednøgle-felt.
+   - **Målkardinalitet**: Vælg kardinaliteten for målobjektposterne.
+   - **Kildenøglefelt**: Feltet med fremmednøglen i kildeobjektet. Eksempel: SupportCase kan bruge **CaseID** som et fremmednøgle-felt.
    - **Målnøglefelt**: Nøglefeltet for målobjektet. Eksempel: Kunde kan bruge nøglefeltet **CustomerID**.
 
 4. Vælg **Gem** for at oprette den brugerdefinerede relation.
 
 ## <a name="set-up-account-hierarchies"></a>Konfigurere kontohierarkier
 
-Miljøer, der er konfigureret til at bruge forretningskonti som primær målgruppe, kan konfigurere kontohierarkier for relaterede forretningskonti. Det kan f.eks. være en virksomhed, der har separate afdelinger. 
+Miljøer, der er konfigureret til at bruge forretningskonti som primær målgruppe, kan konfigurere kontohierarkier for relaterede forretningskonti. Det kan f.eks. være en virksomhed, der har separate afdelinger.
 
 Organisationer kan oprette kontohierarkier for bedre at administrere konti og deres relationer med hinanden. Customer Insights understøtter hierarkier for overordnede og underordnede konti, der allerede findes i kundedata, der er indtaget. Det kan f.eks. være konti fra Dynamics 365 Sales. Disse hierarkier kan konfigureres på siden **Relationer**.
 
 1. Gå til **Data** > **Relationer**.
 1. Vælg fanen **Kontohierarki**.
-1. Vælg **Nyt kontohierarki**. 
-1. Angiv et navn til hierarkiet i ruden **Kontohierarki**. Der oprettes et navn til outputobjektet. Du kan ændre navnet på outputobjektet.
+1. Vælg **Nyt kontohierarki**.
+1. Angiv et navn til hierarkiet i ruden **Kontohierarki**. Der oprettes et navn til outputobjektet, men du kan ændre det.
 1. Vælg det objekt, der indeholder kontohierarkiet. Det findes som regel i det samme objekt, som indeholder kontiene.
-1. Vælg **Konto-id** og **Overordnet konto-id** fra det valgte objekt 
-1. Vælg **Gem** for at anvende indstillingerne og færdiggøre kontohierarkiet.
+1. Vælg **Konto UID** og **Overordnet UID** fra det valgte objekt.
+1. Vælg **Gem** for at afslutte kontohierarkiet.
 
-## <a name="view-relationships"></a>Vise relationer
+## <a name="manage-existing-relationships"></a>Administrer eksisterende relationer
 
-På siden Relationer vises alle de relationer, der er oprettet. Hver række repræsenterer en relation, som også indeholder oplysninger om kildeobjektet, målobjektet og kardinaliteten. 
+Gå til siden **Relationer** for at få vist alle de Relationer, der er oprettet, deres kildeobjekt, destinationsobjektet og lighederne.
 
 :::image type="content" source="media/relationships-list.png" alt-text="Liste over relationer og indstillinger på handlingslinjen på siden Relationer.":::
 
-Denne side indeholder et sæt indstillinger for eksisterende og nye relationer: 
-- **Ny relation**: [Opret en brugerdefineret relation](#create-a-custom-relationship).
-- **Visualisering**: [Udforsk relationens visualiseringsfunktion](#explore-the-relationship-visualizer) for at få vist et netværksdiagram over de eksisterende relationer og deres kardinalitet.
-- **Filtrer efter**: Vælg den type relationer, der skal vises på listen.
-- **Søg efter relationer**: Brug en tekstbaseret søgning på egenskaberne for relationerne.
+Brug indstillingerne **Filtrer efter** eller **Søg relationer** for at finde en bestemt relation. Hvis du vil et se netværksdiagram over de eksisterende relationer og deres kardinalitet, skal du vælge [**Visualiser**](#explore-the-relationship-visualizer).
+
+Vælg en relation for at få vist tilgængelige handlinger:
+- **Rediger**: Opdater egenskaber for brugerdefinerede relationer i redigeringsruden, og gem ændringerne.
+- **Slet**: Slet brugerdefinerede relationer.
+- **Vis**: Få vist systemoprettede og nedarvede relationer.
 
 ### <a name="explore-the-relationship-visualizer"></a>Udforsk relationens visualiseringsfunktion
 
 Relationens visualiseringsfunktion viser et netværksdiagram over de eksisterende relationer mellem tilsluttede objekter og deres kardinalitet. Relationsstien visualiseres også.
 
-Hvis du vil tilpasse visningen, kan du ændre felternes placering ved at trække dem på lærredet.
-
 :::image type="content" source="media/relationship-visualizer.png" alt-text="Skærmbillede af netværksdiagrammet for relationens visualiseringsfunktion med forbindelser mellem relaterede objekter.":::
 
-Tilgængelige indstillinger: 
+Hvis du vil tilpasse visningen, kan du ændre felternes placering ved at trække dem på lærredet. Andre muligheder omfatter: 
 - **Eksporter som billede**: Gem den aktuelle visning som en billedfil.
 - **Skift til vandret/lodret layout**: Skift justering af enhederne og relationer.
 - **Rediger**: Opdater egenskaber for brugerdefinerede relationer i redigeringsruden, og gem ændringerne.
 
 ## <a name="relationship-paths"></a>Relationsstier
 
-En relationssti beskriver de objekter, der er knyttet til relationer mellem et kildeobjekt og et destinationsobjekt. Det bruges, når du opretter et segment eller en måleenhed, der omfatter andre objekter end objektet for den samlede profil, og der er flere indstillinger, du kan bruge til at oprette forbindelse til objektet for den samlede profil. 
-
-En relationssti giver det system, relationer har adgang til, oplysninger om adgang til det samlede profilobjekt. Forskellige relationsstier kan give forskellige resultater.
+En relationssti beskriver de objekter, der er knyttet til relationer mellem et kildeobjekt og et destinationsobjekt. Det bruges, når du opretter et segment eller en måleenhed, der omfatter andre objekter end objektet for den samlede profil, og der er flere indstillinger, du kan bruge til at oprette forbindelse til objektet for den samlede profil. Forskellige relationsstier kan give forskellige resultater.
 
 Objektenheden indeholder f.eks. *eCommerce_eCommercePurchases* følgende relationer til objektet *Kunde* i den samlede profil:
 
 - eCommerce_eCommercePurchases > kunde
 - eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > kunde
-- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kunde 
+- eCommerce_eCommercePurchases > eCommerce_eCommerceContacts > POS_posPurchases > loyaltyScheme_loyCustomers > kunde
 
 En relationssti bestemmer, hvilke objekter du kan bruge, når du opretter regler for mål eller segmenter. Hvis du vælger indstillingen med overensstemmelsesforløbet for relationer, giver det højst sandsynligt færre resultater, da de tilsvarende poster skal være en del af alle objekter. I dette eksempel skal en kunde have købt varer via e-handel (eCommerce_eCommercePurchases) på et salgspunkt (POS_posPurchases) og deltage i vores loyalitetsprogram (loyaltyScheme_loyCustomers). Når du vælger den første indstilling, får du sandsynligvis flere resultater, fordi kunderne kun skal findes i ét yderligere objekt.
 
@@ -155,7 +152,7 @@ En relation klassificeres som en **indirekte relation**, når et kildeobjekt er 
 
 #### <a name="multi-hop-relationship"></a>Multi-hop-relation
 
-En *multi-hop-relation* er en et *indirekte relation*, der bruges til at tilknytte et kildeobjekt til et destinationsobjekt via et eller flere objekter.
+En **multi-hop-relation** er en et *indirekte relation*, der bruges til at tilknytte et kildeobjekt til et destinationsobjekt via et eller flere objekter.
 
 Hvis et aktivitetsobjekt kaldet *eCommerce_eCommercePurchasesWest* f.eks. opretter forbindelse til et mellemliggende objekt, der kaldes *eCommerce_eCommercePurchasesEast* og derefter opretter forbindelse til et målobjekt, der kaldes *eCommerce_eCommerceContacts*, er det en multi-hop-relation.
 
@@ -168,16 +165,6 @@ Multi-hop-relation og relation med flere forbindelser kan bruges sammen til at o
 Hvis et aktivitetsobjekt kaldet *eCommerce_eCommercePurchasesWest* f.eks. opretter forbindelse til et mellemliggende objekt, der kaldes *eCommerce_eCommercePurchasesEast* og derefter opretter forbindelse til to målobjekter, både *eCommerce_eCommerceContacts* og *loyaltyScheme_loyCustomers*, er det en multi-hop-relation, relation med flere forbindelser.
 
 :::image type="content" source="media/multi-hop_multi-path_relationship.png" alt-text="Kildeobjektet opretter direkte forbindelse til ét destinationsobjekt og opretter forbindelse til et andet målobjekt via et mellemobjekt.":::
-
-## <a name="manage-existing-relationships"></a>Administrer eksisterende relationer 
-
-På siden Relationer repræsenteres hver relation af en række. 
-
-Vælg en relation, og vælg en af følgende indstillinger: 
- 
-- **Rediger**: Opdater egenskaber for brugerdefinerede relationer i redigeringsruden, og gem ændringerne.
-- **Slet**: Slet brugerdefinerede relationer.
-- **Vis**: Få vist systemoprettede og nedarvede relationer. 
 
 ## <a name="next-step"></a>Næste trin
 

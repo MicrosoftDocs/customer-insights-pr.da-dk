@@ -1,7 +1,7 @@
 ---
 title: Oversigt over datakilder
 description: Få mere at vide om, hvordan du importerer eller indtager data fra forskellige kilder.
-ms.date: 05/18/2022
+ms.date: 07/26/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,20 +12,20 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: fbe44f655bdbc20ef7f0956022395e2dcb570adf
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6ab97c535454e84c1bb18aca00bca2568eb65a2a
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051446"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207084"
 ---
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
 Dynamics 365 Customer Insights angiver forbindelser til data fra et bredt sæt kilder. Oprettelse af forbindelse til en datakilde kaldes ofte processen for *dataindtagelse*. Når du har slettet dataene, kan du [samle](data-unification.md), generere indsigt og aktivere dataene til udvikling af personlige erfaringer.
 
-## <a name="add-data-sources"></a>Tilføj datakilder
+## <a name="add-or-edit-data-sources"></a>Tilføj eller rediger datakilder
 
-Du kan vedhæfte eller importere datakilder til Customer Insights. Linkene nedenfor indeholder instruktioner i tilføjelse af datakilder.
+Du kan vedhæfte eller importere datakilder til Customer Insights. Linkene nedenfor indeholder instruktioner i tilføjelse og redigering af datakilder.
 
 **Vedhæft en datakilde**
 
@@ -50,13 +50,18 @@ Hvis dit miljø er konfigureret til at bruge Customer Insights-lager, og du brug
 
 Hvis der ikke bruges Power Platform-dataflows i miljøet, indeholder siden **Datakilder** kun en liste over alle datakilder. Igen sektioner at vise.
 
-Gå til **Data** > **Datakilder** for at få vist navnet på hver enkelt datakilde, dens status, og sidste gang dataene blev opdateret for den pågældende kilde. Du kan sortere listen over datakilder efter alle kolonner.
+## <a name="manage-existing-data-sources"></a>Administrere eksisterende datakilder
 
-:::image type="content" source="media/configure-data-datasource-added.png" alt-text="Datakilde er tilføjet.":::
+Gå til **Data** > **Datakilder** for at få vist navnet på hver enkelt datakilde, dens status, og sidste gang dataene blev opdateret for den pågældende kilde. Du kan sortere listen over datakilder efter en hvilken som helst kolonne eller bruge søgefeltet til at søge efter de datakilder, der skal håndteres.
 
-[!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+Vælg en datakilde for at få vist tilgængelige handlinger.
 
-Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden **Objekter**. Du kan finde flere oplysninger under [Objekter](entities.md).
+:::image type="content" source="media/data_sources_showmore.png" alt-text="Datakilde er tilføjet.":::
+
+- [**Rediger**](#add-or-edit-data-sources) datakilden for at ændre dets egenskaber.
+- [**Opdater**](#refresh-data-sources) datakilden, så den indeholder de seneste data.
+- [**Forbedre**](data-sources-enrichment.md) datakilden før samling.
+- **Slet** datakilden. En datakilde kan kun slettes, hvis dataene ikke bruges i nogen behandling, f.eks. samling, indsigt, aktiveringer eller eksport.
 
 ## <a name="refresh-data-sources"></a>Opdatér datakilder
 
@@ -64,23 +69,12 @@ Datakilder kan opdateres automatisk i en automatisk planlægning eller opdateres
 
 Gå til **Administration** > **system** > [**Plan**](system.md#schedule-tab) for at konfigurere systemplanlagte opdateringer af de opdaterede datakilder.
 
-Benyt følgende fremgangsmåde for at opdatere en datakilde efter behov:
+Opdater en datakilde efter behov:
 
 1. Gå til **Data** > **Datakilder**.
 
-1. Vælg den lodrette ellipse (&vellip;) ud for den datakilde, du vil opdatere, og vælg **Opdater** i rullemenuen. Datakilden er nu udløst for at få en manuel opdatering. Hvis du opdaterer en datakilde, opdateres både objektskemaet og dataene for alle de objekter, der er angivet i datakilden.
+1. Vælg den datakilde, du vil opdatere, og vælg **Opdater**. Datakilden er nu udløst for at få en manuel opdatering. Hvis du opdaterer en datakilde, opdateres både objektskemaet og dataene for alle de objekter, der er angivet i datakilden.
 
-1. Vælg **Stop opdatering**, hvis du vil annullere en eksisterende opdatering, og datakilden nulstilles til seneste opdateringsstatus.
-
-## <a name="delete-a-data-source"></a>Slette en datakilde
-
-En datakilde kan kun slettes, hvis dataene ikke bruges i nogen behandling, f.eks. samling, indsigt, aktiveringer eller eksport.
-
-1. Gå til **Data** > **Datakilder**.
-
-2. Vælg den lodrette ellipse (&vellip;) ud for den datakilde, du vil fjerne, og vælg **Slet** i rullemenuen.
-
-3. Bekræft sletningen.
-
+1. Vælg status for at åbne ruden **Statusdetaljer** og få vist status for opgaverne. Hvis du vil annullere jobbet, skal du vælge **Annuller job** nederst i ruden.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

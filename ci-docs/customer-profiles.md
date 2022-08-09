@@ -1,5 +1,5 @@
 ---
-title: Kundeprofiler
+title: Vis kundeprofiler
 description: Få vist de samlede kundedata, herunder brug af søge- og filterdata
 ms.date: 06/08/2022
 ms.reviewer: mhart
@@ -14,63 +14,83 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 279c8e1291c6449005d593244f1979e871610a77
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 6cdf47e6997f230811dcb0f2cf5542f3a6db2367
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052182"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188086"
 ---
-# <a name="customer-profiles"></a>Kundeprofiler
+# <a name="view-customer-profiles"></a>Vis kundeprofiler
 
-På siden **Kunder** vises en samlet visning af dine samlede kundeprofiler. Kundeprofilerne er tilgængelige, når du har [oprettet det samlede kundeobjekt](data-unification.md). På siden kan du søge efter kunder og definere indekset for den pågældende søgning.
+Kundeprofiler er tilgængelige, når du [opretter det samlede *Kunde*-objekt](data-unification.md). På siden **Kunder** vises en samlet visning af dine samlede kundeprofiler. Kunder kan være enkeltpersoner eller organisationer.
 
-Kunder kan være enkeltpersoner eller organisationer. Hver kundeprofil repræsenteres ved et felt. Brug kontrolelementerne for sideinddeling til at hente flere poster. På kortet vises felter fra objektet *Kunde* som defineret i **Indeks for søgning og filtrering**. Rækkefølgen af felterne i de enkelte kort udvælges af systemet.
-
-Vælg et felt for at få vist data for den valgte kunde på en dedikeret side med navnet [Kundeoplysninger](customer-profiles.md#customer-details-page).
-
-> [!div class="mx-imgBorder"]
-> ![Siden Kunder, der viser resultatfelter](media/customers-page-result-tiles-B2C.png "Siden Kunder, der viser resultatfelter")
+Gå til siden **Kunder** for at få vist dine kunder og deres profiler. Hver kundeprofil repræsenteres ved et felt. Brug kontrolelementerne for sideinddeling til at hente flere poster. På kortet vises felter fra objektet *Kunde* som defineret i **Indeks for søgning og filtrering**. Rækkefølgen af felterne i de enkelte kort udvælges af systemet.
 
 > [!NOTE]
 > Hvis du ikke kan se felterne, når du vælger **Kunder** under navigation, skal din administrator [definere mindst én søgbar attribut](search-filter-index.md) i **Indeks for søgning og filtrering**.
 
+:::image type="content" source="media/customers-page-result-tiles-B2C.png" alt-text="Siden Kunder, der viser resultatfelter.":::
+
+Vælg en af følgende handlinger:
+- [Vis Kundeoplysninger](#view-customer-details)
+- [Administrere søge- og filterindekset](search-filter-index.md) (kun administratorer)
+- [Filtrere kunder](#filter-customers)
+- **Udvide kort** eller **skjule kort** for at udvide eller skjule de oplysninger, der vises i kundefelt
+- **Sortere efter** en bestemt attribut
+- [Søge efter kunder](#search-for-customers)
+
+  > [!NOTE]
+  > Hvis en administrator skal bruge søge- og filterfunktionen, skal de attributter, der kan søges i, konfigureres, og de felter, der kan filtreres, ved hjælp af søge- og filterindekset.
+
 ## <a name="search-for-customers"></a>Søge efter kunder
 
-Søg efter kunder ved at angive et navn eller en anden attribut i søgefeltet. Søgningen fungerer kun inden for objektet *Kunde*, der oprettes under processen til datasamling.
+Søg efter kunder ved at angive et navn eller en anden attribut i **Søg kunder**. De attributter, der kan søges i, defineres af administratoren og kommer fra det samlede *kunde*-objekt.
 
-Som administrator kan du konfigurere søgbare attributter på siden **Indeks for søgning og filtrering**. Du kan finde flere oplysninger i [Administrere indeks for søgning og filtrering](search-filter-index.md).
+> [!NOTE]
+> **Streng** er den eneste datatype, der medtages i søgningen. Brug den i feltet **Søg efter kunder** på siden Kunder til at søge efter kunder.
 
 ## <a name="filter-customers"></a>Filtrere kunder
 
-Du kan filtrere kunderne efter objektfelterne *Kunde*. På samme måde som for søgning skal administratoren først definere felterne som filtrerbare på siden **Indeks for søgning og filtrering**.
+Filtrer kunderne efter objektfelterne *Kunde*. Felter, der kan filtreres, defineres af administratoren.
 
-1. Vælg **Vis filtre** på siden **Kunder**.
+1. Vælg **Vis filtre** på siden **Kunder**. Filterruden vises.
 
 1. Markér afkrydsningsfelterne ud for de attributter, som du vil filtrere kunder efter.
 
-1. Fjern dine filtre ved at vælge **Ryd filtre** på siden **Kunder**.
+1. Fjern alle filtre ved at markere **Ryd filtre**, eller fjern markeringen i et afkrydsningsfelt ud for den valgte attribut.
 
-## <a name="customer-details-page"></a>Siden Kundeoplysninger
+1. Vælg **Skjul filtre** for at lukke filterruden.
 
-Vælg et af kundefelterne for at åbne siden **Kundeoplysninger**. Denne visning indeholder en samlet oplysning for den valgte kunde. Kundeoplysninger omfatter følgende indhold:
+1. Vælg **Gem filtre som segment** for at gemme filterresultaterne som et [segment](segments.md).
+   1. Angiv et navn til segmentet.
+   1. Vælg **Gem** for at gemme segmentet.
+   1. Vælg, om du vil køre segmentet nu, ved at vælge **Aktivér** eller kør det **senere**.
 
-**Feltet Kundeprofil**: I dette felt vises de forskellige værdier fra det samlede objekt *Kunde*. Hvis et felt ikke har nogen værdi for den valgte kundeprofil, vises det ikke undtagen for adressefeltet. Feltet er struktureret i sektioner:
+## <a name="view-customer-details"></a>Vis Kundeoplysninger
+
+Vælg en kunderude for at få vist detaljer for en bestemt kunde på siden **kunder**.
+
+:::image type="content" source="media/customers-details-B2C.png" alt-text="Siden Kundeoplysninger.":::
+
+Kundeoplysninger indeholder:
+
+**Feltet Kundeprofil**: viser de forskellige værdier fra det samlede objekt *Kunde*. Hvis et felt ikke har nogen værdi for den valgte kundeprofil, vises det ikke undtagen for adressefeltet. Feltet er struktureret i sektioner:
 
 - I første sektion vises et foruddefineret sæt felter efterfulgt af alle de felter, der er en del af søge- og filterindekset. Alle adresserelaterede felter kombineres i en enkelt linje, der vises selv hvis profilen ikke indeholder adresseoplysninger.
-- **Kontakter for denne kunde**: I miljøer for forretningskonti kan du se alle relaterede kontakter for denne kunde som anden sektion. Hver kontakt vises med egne felter. Tomme felter er skjulte.
-- **Yderligere felter**: Viser de resterende felter i den valgte kunde undtagen id'er.
-- **Id'er**: Viser alle id'er under deres tilsvarende objektnavn. Felter identificeres som id'er efter semantik, der kategoriserer dem som sådanne.
+- **Kontaktpersoner til denne kunde** vises i miljøer for forretningskonti. Hver kontakt vises med egne felter. Tomme felter er skjulte.
+- **Yderligere felter**: viser de resterende felter i den valgte kunde undtagen id'er.
+- **Id'er**: viser alle id'er under deres tilsvarende objektnavn. Felter identificeres som id efter semantik.
 
-**Aktivitetstidslinje**: Viser data, hvis du har konfigureret aktiviteter. Tidslinjevisningen indeholder kronologisk sorterede aktiviteter for den valgte kunde og starter med den seneste aktivitet. Du kan finde flere oplysninger i [Kundeaktiviteter](activities.md).
+**Aktivitetstidslinje** viser data, hvis du har konfigureret [aktiviteter](activities.md). Tidslinjevisningen indeholder kronologisk sorterede aktiviteter for den valgte kunde og starter med den seneste aktivitet.
 
 **Indsigt**:
 
-- **Målinger**: Viser, om du har konfigureret en eller flere målinger for kundeattributten. De indeholder beregnede nøgletal omkring dine kunder på de enkelte kundeniveauer. Du kan finde flere oplysninger ved at gå til [Definere og administrere målinger](measures.md).
+- **Måling**: viser, om du har konfigureret [kundeattributmålinger](measures.md). De indeholder beregnede nøgletal omkring dine kunder på de enkelte kundeniveauer.
 
-- **Potentielle interesser, potentielle brands**: Viser, om du har konfigureret et brand eller en forbedring af interessetilhørsforhold. Den repræsenterer potentielle interesser og tilhørsforhold for brands, der er baseret på andre kunder, hvis profil svarer til den valgte kundeprofil. Du kan finde flere oplysninger ved at gå til [Forbedre kundeprofiler med brand- og interessetilhørsforhold](enrichment-microsoft.md).
+- **Potentielle interesser, potentielle brands** viser, om du har konfigureret et [brand eller en forbedring af interessetilhørsforhold](enrichment-microsoft.md). Den repræsenterer potentielle interesser og tilhørsforhold for brands, der er baseret på andre kunder, hvis profil svarer til den valgte kundeprofil.
 
-Vælg **Tilbage til kunder** for at vende tilbage til søgesiden for kunder.
+Vælg **Returner til kunder** for at vende tilbage til **Kunder**.
 
 ## <a name="next-steps"></a>Næste trin
 

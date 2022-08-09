@@ -1,7 +1,7 @@
 ---
 title: Tilknyt en Common Data Model med en Azure Data Lake-konto
 description: Arbejd med Common Data Model-data ved hjælp af Azure Data Lake Storage.
-ms.date: 05/30/2022
+ms.date: 07/27/2022
 ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b1cdcb46df17d722ad49d361ae4c7ab34c83eeb1
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081016"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206992"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Opret forbindelse til data i Azure Data Lake Storage
 
@@ -82,7 +82,7 @@ Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake
    :::image type="content" source="media/ADLS_required.png" alt-text="Dialogboks, der viser Påkrævet til primær nøgle":::
 
    > [!TIP]
-   > Hvis du vil redigere objekterne i en JSON-redigeringsgrænseflade, skal du vælge **Vis flere** > **Rediger skemafil**. Foretag dine ændringer, og **Gem**.
+   > Hvis du vil redigere et objekt i en JSON-redigeringsgrænseflade, skal du vælge objektet og derefter **Rediger skemafil**. Foretag dine ændringer, og **Gem**.
 
 1. For de valgte objekter, der kræver trinvis indtag, vises **Påkrævet** under **Trinvis opdatering**. For hvert af disse objekter skal du se [Konfigurere en trinvis opdatering for Azure Data Lake-datakilder](incremental-refresh-data-sources.md).
 
@@ -101,6 +101,10 @@ Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake
    1. Vælg **Udført**.
 
 1. Vælg **Gem**. Siden **Datakilder** åbnes, der viser de nye datakilde status for **Opdatering**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden [**Objekter**](entities.md).
 
 ### <a name="create-a-new-schema-file"></a>Opret en ny skemafil
 
@@ -148,6 +152,9 @@ Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake
 
 1. Vælg **Gem**. Siden **Datakilder** åbnes, der viser de nye datakilde status for **Opdatering**.
 
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden [**Objekter**](entities.md).
 
 ## <a name="edit-an-azure-data-lake-storage-data-source"></a>Rediger Azure Data Lake Storage-datakilde
 
@@ -179,8 +186,16 @@ Du kan opdatere *Kontoen Opret forbindelse til lager ved hjælp af*-indstillinge
       > [!IMPORTANT]
       > Hvis der er afhængigheder i den eksisterende model.json- eller manifest.json-fil og i sættet af objekter, vises der en fejlmeddelelse, og du kan ikke vælge en anden model.json- eller manifest.json-fil. Fjern disse afhængigheder, før du ændrer filen model.json eller manifest.json eller opretter en ny datakilde med den model.json- eller manifest.json-fil, du vil bruge for at undgå at fjerne afhængighederne.
    - Vælg **Rediger** for at ændre placeringen af datafilen eller den primære nøgle.
-   - Hvis du vil ændre trinvise indtagelsesdata, skal du se [Konfigurere en trinvis opdatering af Azure Data Lake-datakilder](incremental-refresh-data-sources.md)
+   - Hvis du vil ændre trinvise indtagelsesdata, skal du se [Konfigurere en trinvis opdatering af Azure Data Lake-datakilder](incremental-refresh-data-sources.md).
+   - Du skal kun ændre objektnavnet, så det stemmer overens med objektnavnet i .json-filen.
+
+     > [!NOTE]
+     > Bevar altid objektnavnet i Customer Insights på samme måde som objektnavnet i filen model.json eller manifest.json efter skrivning. I Customer Insights valideres alle objektnavne med model.json eller manifest.json under alle systemopdateringer. Hvis et objektnavn ændres enten i Customer Insights eller uden for, opstår der en fejl, fordi Customer Insights ikke kan finde det nye objektnavn i .json-filen. Hvis et utilsigtet objektnavn blev ændret ved et uheld, skal du redigere objektnavnet i Customer Insights, så det stemmer overens med navnet i .json-filen.
 
 1. Vælg **Attributter**, der skal tilføjes eller ændres attributter, eller hvis du vil aktivere dataprofilering. Vælg derefter **Udført**.
 
 1. Klik på **Gem** for at anvende ændringerne og vende tilbage til siden **Datakilder**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: wimohabb
 manager: shellyha
-ms.openlocfilehash: c71305ab835b0f4f75adcce716e795959f898e47
-ms.sourcegitcommit: 8e9f0a9693fd8d91ad0227735ff03688fef5406f
+ms.openlocfilehash: 6c6ce49c18de3a09d28138316d893e6842919042
+ms.sourcegitcommit: ff0f4b5664d995870c91adb87c7d3780a582efca
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "8947361"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "9146688"
 ---
 # <a name="data-subject-rights-dsr-requests-under-gdpr"></a>DSR-anmodninger (Data Subject Rights) under GDPR
 
@@ -31,18 +31,22 @@ Vi forpligter os til at hjælpe vores kunder med at leve op til deres GDPR-krav.
 
 Customer Insights indeholder følgende funktioner i produktet, hvor du kan slette personlige data for en bestemt kunde eller bruger:
 
-- **Administrere sletteanmodninger om kundedata**: Kundedata i Customer Insights indtages fra oprindelige datakilder uden for Customer Insights. Alle GDPR-sletteanmodninger skal udføres i den oprindelige datakilde.
+- **Administrere sletteanmodninger om kundedata**: Kundedata i Customer Insights indtages fra oprindelige datakilder uden for Customer Insights. udfør GDPR-sletteanmodninger i den oprindelige datakilde først.
 - **Administrér sletteanmodninger om Customer Insights-brugerdata**: Data til brugere er oprettet af Customer Insights. Alle GDPR-sletteanmodninger skal udføres i Customer Insights.
 
 ##### <a name="manage-requests-to-delete-customer-data"></a>Administrere sletteanmodninger for kundedata
 
-En Customer Insights-administrator kan følge disse trin for at fjerne de kundedata, der er blevet slettet i datakilden:
+En Customer Insights-administrator kan følge disse trin for at fjerne de kundedata, der er blevet slettet i datakilden. Kontrollér, at sletningsanmodningen blev udført i din datakilde, før du fortsætter med de trin, der er angivet nedenfor. 
 
 1. Log på Dynamics 365 Customer Insights.
-2. Gå til **Data** > **Datakilder**
-3. For hver datakilde på listen, der indeholder slettede kundedata:
+1. Gå til **Data** > **Datakilder**
+1. For hver datakilde på listen, der indeholder slettede kundedata:
    1. Vælg den lodrette ellipse (&vellip;), og vælg derefter **Opdater**.
-   2. Tjek statussen for datakilden under **Status**. En markering betyder, at opdateringen lykkedes. En advarselstrekant betyder, at noget gik galt. Hvis der vises en advarselstrekant, skal du kontakte D365CI@microsoft.com.
+   1. Tjek statussen for datakilden under **Status**. En markering betyder, at opdateringen lykkedes. En advarselstrekant betyder, at noget gik galt. Hvis der vises en advarselstrekant, skal du kontakte D365CI@microsoft.com.
+1. Efter en vellykket opdatering af datakilder skal du også køre downstreamopdateringen. Især hvis du ikke har planlagt en tilbagevendende fuldstændig opdatering af Customer Insights. 
+
+> [!IMPORTANT]
+> Statiske segmenter er ikke inkluderet i en fuldstændig opdatering eller kører downstreamopdateringer efter en anmodning om sletning. Du kan sikre, at kundedata også fjernes fra statiske segmenter, ved at oprette de statiske segmenter igen med de opdaterede kildedata.
 
 > [!div class="mx-imgBorder"]
 > ![Håndtere GDPR-sletteanmodninger for kundedata.](media/gdpr-data-sources.png "Håndtere GDPR-sletteanmodninger for kundedata")
@@ -77,5 +81,10 @@ En lejeradministrator kan følge disse trin for at eksportere data:
 1. Send en mail til D365CI@microsoft.com med angivelse af brugerens mailadresse i anmodningen. Customer Insights-teamet sender en e-mail til den registrerede lejeradministrators mailadresse og anmoder om bekræftelse på eksport af data.
 2. Acceptér bekræftelsen for at eksportere dataene til den ønskede bruger.
 3. Modtag de eksporterede data via mailadressen for lejeradministratoren.
+
+### <a name="data-deletion-handling-in-dynamics-365-customer-insights"></a>Håndtering af datasletning i Dynamics 365 Customer Insights
+
+1. Data slettes (datapartitioner og data øjebliksbilleder), hvis datapartitioner og databilleder er inaktive i mere end 30 dage, hvilket betyder, at de er erstattet af en ny datapartition og et nyt øjebliksbillede via en opdatering af datakilder.
+2. Ikke alle data og øjebliksbilleder slettes. Den nyeste datapartition og det nyeste øjebliksbillede af data er pr. definition aktive, fordi de bruges i Customer Insights. For de nyeste data er det uden betydning, om datakilderne ikke er blevet opdateret inden for de seneste 30 dage.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

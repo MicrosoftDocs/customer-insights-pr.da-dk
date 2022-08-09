@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 54ba9f4e9baeb4b7021bb8c20a706bbb6eb1529f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
+ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081213"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "9121555"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>Eksempler på OData-forespørgsler til API'er for Customer Insights
 
@@ -23,7 +23,7 @@ Denne artikel indeholder nogle ofte anmodede eksempler på forespørgsler, der k
 
 Du skal ændre forespørgselseksempler, så de fungerer i destinationsmiljøerne: 
 
-- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}` hvor {instanceId} er GUID'et for det Customer Insights-miljø, du vil forespørge om. Du kan bruge handlingen [ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) til at finde {InstanceId}, du har adgang til.
+- {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` hvor {instanceId} er GUID'et for det Customer Insights-miljø, du vil forespørge om. Du kan bruge handlingen [ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) til at finde {InstanceId}, du har adgang til.
 - {CID}: GUID for en ensartet kundepost. Eksempel: `ce759201f786d590bf2134bff576c369`.
 - {AlternateKey}: Id for den primære nøgle for en kundepost i en datakilde. Eksempel: `CNTID_1002`
 - {DSname}: Streng med objektnavnet på en datakilde, der får adgang til Customer Insights. Eksempel: `Website_contacts`.
@@ -39,9 +39,10 @@ Følgende tabel indeholder et sæt eksempelforespørgsler for objektet *Kunde*.
 |Alternativ nøgle    | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} eq '{AlternateKey}'`         |  Alternative nøgler bliver ved med at være i objektet Samlet kunde       |
 |Markér   | `{serviceRoot}/Customer?$select=CustomerId,FullName&$filter=customerid eq '1'`        |         |
 |Om    | `{serviceRoot}/Customer?$filter=CustomerId in ('{CID1}',’{CID2}’)`        |         |
-|Alternativ nøgle + In   | `Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
+|Alternativ nøgle + In   | `{serviceRoot}/Customer?$filter={DSname_EntityName_PrimaryKeyColumnName} in ('{AlternateKey}','{AlternateKey}')`         |         |
 |Søge  | `{serviceRoot}/Customer?$top=10&$skip=0&$search="string"`        |   Returnerer de 10 bedste resultater for en søgestreng      |
 |Segmentmedlemskab  | `{serviceRoot}/Customer?select=*&$filter=IsMemberOfSegment('{SegmentName}')&$top=10`     | Returnerer et antal rækker fra segmenteringsobjektet.      |
+|Medlemskab af et segment for en kunde | `{serviceRoot}/Customer?$filter=CustomerId eq '{CID}'&IsMemberOfSegment('{SegmentName}')`     | Returnerer kundeprofilen, hvis kunden er medlem af det givne segment     |
 
 ## <a name="unified-activity"></a>Samlet aktivitet
 

@@ -1,7 +1,7 @@
 ---
 title: Oprette forbindelse til en Power Query-datakilde (indeholder video)
 description: Indtag data via en Power Query-connector (indeholder video).
-ms.date: 06/13/2022
+ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6736b253e3a7e652f92f61bc44bfb31ca69be31a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 7af51ed04fbd28149ea501c58e6fe71b5fa6d4b6
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080996"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9207038"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
@@ -41,22 +41,29 @@ Tilføjelse af datakilder baseret på Power Query-connectorer følger generelt d
 
 1. Angiv de nødvendige detaljer i **Forbindelsesindstillinger** for den valgte connector, og vælg **Næste** for at få vist en prøveversion af dataene.
 
-1. Vælg **Transformer data**. I dette trin skal du føje objekter til din datakilde. Objekter er datasæt. Hvis du har en database, der indeholder flere datasæt, er de enkelte datasæt sit eget objekt.
+1. Vælg **Transformer data**.
 
 1. Dialogboksen **Power Query - Rediger forespørgsler** giver dig mulighed for at gennemse og finjustere dataene. De objekter, som systemerne har identificeret i den valgte datakilde, vises i venstre rude.
 
    :::image type="content" source="media/data-manager-configure-edit-queries.png" alt-text="Dialogboksen Rediger forespørgsler":::
 
-1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. De enkelte transformeringer er angivet under **Anvendte trin**. Power Query indeholder mange foruddefinerede transformationsindstillinger. Du kan finde flere oplysninger under [Power Query Transformationer](/power-query/power-query-what-is-power-query#transformations).
+1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. De enkelte transformeringer er angivet under **Anvendte trin**. Power Query indeholder mange [foruddefinerede transformationsindstillinger](/power-query/power-query-what-is-power-query#transformations).
 
    Det anbefales, at du bruger følgende transformationer:
 
    - Hvis du indtager data fra en CSV-fil, indeholder den første række ofte overskrifter. Gå til **Transformér**, og vælg **Brug første række som overskrifter**.
    - Kontrollér, at datatypen er angivet korrekt. I forbindelse med datofelter kan du f.eks. vælge en datotype.
 
-1. Hvis du vil føje flere objekter til datakilde i dialogboksen **Rediger forespørgsler**, skal du gå til **Startside** og vælge **Hent data**. Gentag trin 6-10, indtil du har tilføjet alle objekter for denne datakilde.
+1. Hvis du vil føje flere objekter til datakilde i dialogboksen **Rediger forespørgsler**, skal du gå til **Startside** og vælge **Hent data**. Gentag trin 5-10, indtil du har tilføjet alle objekter for denne datakilde. Hvis du har en database, der indeholder flere datasæt, er de enkelte datasæt sit eget objekt.
 
 1. Vælg **Gem**. Siden **Datakilder** åbnes, der viser de nye datakilde status for **Opdatering**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden [**Objekter**](entities.md).
+
+> [!CAUTION]
+> En datakilde baseret på Power Query opretter et [dataflow i Dataverse](/power-query/dataflows/overview-dataflows-across-power-platform-dynamics-365). Du skal ikke ændre navnet på et dataflow i Power Platform administration, der bruges i Customer Insights. Når du omdøber et dataflow, opstår der problemer med referencerne mellem Customer Insights-datakilde og Dataverse-dataflowet.
 
 ### <a name="available-power-query-data-sources"></a>Tilgængelige Power Query-datakilder
 
@@ -74,11 +81,13 @@ Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, o
 
 > [!IMPORTANT]
 > Kontrollér, at dine gateways er opdateret til den nyeste version. Du kan installere en opdatering og omkonfigurere en gateway fra en prompt, der vises direkte på gatewayskærmbilledet, eller [hente den nyeste version](https://powerapps.microsoft.com/downloads/). Hvis du ikke bruger den nyeste gatewayversion, lykkes opdateringen af dataflowet ikke, og fejlmeddelelser som **Nøgleordet understøttes ikke: konfigurationsegenskaber. Parameternavn: nøgleord**.
+>
+> Fejl i det lokale miljø i Customer Insights skyldes ofte konfigurationsproblemer. Du kan finde flere oplysninger om, hvordan du foretager fejlfinding af problemer med datagateways, under [Foretage fejlfinding af datagatewayen i det lokale miljø](/data-integration/gateway/service-gateway-tshoot).
 
 ## <a name="edit-power-query-data-sources"></a>Rediger Power Query-datakilder
 
 > [!NOTE]
-> Det er måske ikke muligt at foretage ændringer af datakilder, der i øjeblikket bruges i en af appens processer (f.eks *segmentering*, *match* eller *fletning*).
+> Det er måske ikke muligt at foretage ændringer af datakilder, der i øjeblikket bruges i en af appens processer (f.eks. segmentering eller datasamling).
 >
 > På siden **Indstillinger** kan du spore status for hver af de aktive processer. Når en proces er fuldført, kan du vende tilbage til siden **Datakilder** og foretage ændringerne.
 
@@ -86,8 +95,10 @@ Datagateways fra et eksisterende Power BI- eller Power Apps-miljø er synlige, o
 
 1. Ud for den datakilde, du vil opdatere, og vælg **Rediger**.
 
-   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
 1. Anvend ændringer og transformationer i dialogboksen **Power Query – Rediger forespørgsler** som beskrevet i sektionen [Opret en ny datakilde](#create-a-new-data-source).
 
-1. Vælg **Gem** i Power Query, når du har fuldført dine rettelser, for at gemme ændringerne.
+1. Vælg **Gem** for at anvende ændringerne og vende tilbage til siden **Datakilder**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

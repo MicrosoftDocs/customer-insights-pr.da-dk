@@ -1,19 +1,19 @@
 ---
 title: Eksportere segmenter til LinkedIn Ads (forhåndsversion)
 description: Få mere at vide om, hvordan du konfigurerer forbindelsen og eksporterer til LinkedIn Ads.
-ms.date: 10/08/2021
+ms.date: 07/25/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: e6ad3901f7b8dc1ae8edc54c0b09a99b01be34cd
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: d1a9ae985043398f4bc38163be26ecf0c3c8e2ba
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9050849"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196801"
 ---
 # <a name="export-segments-to-linkedin-ads-preview"></a>Eksportere segmenter til LinkedIn Ads (forhåndsversion)
 
@@ -21,32 +21,33 @@ Eksportere segmenter af samlede kundeprofiler til LinkedIn Ads for at oprette ma
 
 ## <a name="prerequisites"></a>Forudsætninger
 
--   Du har en [LinkedIn Campaign Manager-konto](https://business.linkedin.com/marketing-solutions/ads) og tilsvarende administratorlegitimationsoplysninger.
--   Du har [konfigureret segmenter](segments.md) i Customer Insights.
--   Debitorprofiler i de udlæste målgrupper indeholder et felt med en mailadresse.
+- En [LinkedIn Campaign Manager-konto](https://business.linkedin.com/marketing-solutions/ads) og tilhørende administratorlegitimationsoplysninger.
+- En [LinkedIn Campaign Manager -konto-id](https://www.linkedin.com/help/lms/answer/a424270).
+- [Konfigurerede segmenter](segments.md) i Customer Insights.
+- Samlede kundeprofiler i de eksporterede segmenter indeholder felter, der repræsenterer en e-mailadresse.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
-- Dit segment i Customer Insights skal indeholde mindst 300 entydige profiler. 
-- Du kan eksportere op til 100.000 kundeprofiler pr. eksport til LinkedIn-annoncer.
-- Eksport til LinkedIn Ads er begrænset til segmenter.
-- Det kan tage op til 10 minutter at eksportere op til 100.000 kundeprofiler til LinkedIn-annoncer. 
+- Du kan eksportere op til 100.000 kundeprofiler pr. eksport til LinkedIn Ads, og det kan tage op til 10 minutter at fuldføre den.
+- Kun segmenter. Et segment skal indeholde mindst 300 unikke profiler.
 
-## <a name="set-up-the-connection-to-linkedin-ads"></a>Konfigurer forbindelsen til LinkedIn Ads
+## <a name="set-up-connection-to-linkedin-ads"></a>Konfigurer forbindelsen til LinkedIn Ads
+
+[!INCLUDE [export-connection-include](includes/export-connection-admn.md)]
 
 1. Gå til **Administrator** > **Forbindelser**.
 
-1. Vælg **Tilføj forbindelse**, og vælg **LinkedIn Ads** for at konfigurere forbindelsen.
+1. Vælg **Tilføj forbindelseconnection**, og vælg **LinkedIn Ads**.
 
 1. Giv din forbindelse et genkendeligt navn i feltet **Vist navn**. Visningsnavn og forbindelsestype beskriver denne forbindelse. Det anbefales, at du vælger et navn, der forklarer formålet med og målet for forbindelsen.
 
-1. Vælg, hvem der kan bruge denne forbindelse. Hvis du ikke kan gøre noget, er standarden Administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
+1. Vælg, hvem der kan bruge denne forbindelse. Som standard er det kun administratorer. Du kan finde flere oplysninger under [Tillad bidragydere at bruge en forbindelse til eksport](connections.md#allow-contributors-to-use-a-connection-for-exports).
 
-1. Angiv dit [LinkedIn Campaign Manager-konto-id](https://www.linkedin.com/help/lms/answer/a424270).
+1. Angiv din LinkedIn Campaign Manager Konto-id.
 
-1. Vælg **Jeg accepterer** for at bekræfte **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
+1. Gennemse [Beskyttelse af personlige data og overholdelse af angivne standarder](connections.md#data-privacy-and-compliance), og vælg **Jeg accepterer**.
 
-1. Vælg **Opret** forbindelse for at initialisere forbindelsen til Kampagneovervågning.
+1. Vælg **Opret forbindelse** for at initialisere forbindelsen.
 
 1. Vælg **Godkend med LinkedIn**, og angiv administratoroplysningerne for LinkedIn Campaign Manager.
 
@@ -56,29 +57,26 @@ Eksportere segmenter af samlede kundeprofiler til LinkedIn Ads for at oprette ma
 
 ## <a name="configure-an-export"></a>Konfigurere en eksport
 
-Du kan konfigurere en eksport, hvis du har adgang til en forbindelse af denne type. Du kan finde flere oplysninger i [Tilladelser, der kræves for at konfigurere en eksport](export-destinations.md#set-up-a-new-export).
+[!INCLUDE [export-permission-include](includes/export-permission.md)]
 
 1. Gå til **Data** > **Eksport**.
 
-1. Vælg **Tilføj destination** for at oprette en ny eksport.
+1. Vælg **Tilføj eksport**.
 
-1. Vælg en forbindelse i sektionen LinkedIn Ads i feltet **Forbindelse til eksport**. Hvis du ikke kan se dette sektionsnavn, er der ingen forbindelser af denne type tilgængelige for dig.
+1. Vælg en forbindelse i sektionen LinkedIn Ads i feltet **Forbindelse til eksport**. Kontakt en administrator, hvis der ikke er nogen forbindelse.
 
-1. Vælg, om du vil eksportere data for at udføre [målretning efter kontakt](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) eller [målretning efter virksomheder](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) på LinkedIn. 
+1. Angiv et navn for eksporten.
 
-1. Vælg mindst ét felt, der repræsenterer en kundes mailadresse, Apple-annonce-id, Google-annonce-id, Google-bruger-id eller for- og efternavn, i sektionen **Datamatching** for kontaktmålretning. Hvis du vælger firmamålretning, skal du vælge mindst ét felt, der repræsenterer firmanavn, maildomæne, URL-adresse til LinkedIn-side, lagersymbol eller websted. Der kan vælges flere felter for at definere eksporten yderligere. 
+1. Vælg, om du vil eksportere data for at udføre [målretning efter kontakt](https://business.linkedin.com/marketing-solutions/ad-targeting/contact-targeting) eller [målretning efter virksomheder](https://business.linkedin.com/marketing-solutions/ad-targeting/account-targeting) på LinkedIn.
 
-1. Vælg de segmenter, du vil eksportere. De matchede målgrupper i LinkedIn Campaign Manager oprettes automatisk med navnet på de segmenter, du har valgt at eksportere. Hvert segment resulterer i en separat afstemt målgruppe. 
+1. Vælg mindst ét felt, der repræsenterer en kundes mailadresse, Apple-annonce-id, Google-annonce-id, Google-bruger-id eller for- og efternavn, i sektionen **Datamatching** for kontaktmålretning. Hvis du vælger firmamålretning, skal du vælge mindst ét felt, der repræsenterer firmanavn, maildomæne, URL-adresse til LinkedIn-side, lagersymbol eller websted.
+
+1. Der kan også vælges flere felter for at definere eksporten yderligere. Vælg **Tilføj attribut** for at tilknytte disse felter.
+
+1. Vælg de segmenter, du vil eksportere. De matchede målgrupper i LinkedIn Campaign Manager oprettes automatisk med navnet på de segmenter, du har valgt at eksportere. Hvert segment resulterer i en separat afstemt målgruppe.
 
 1. Vælg **Gem**.
 
-Når du gemmer en eksport, køres eksporten ikke med det samme.
+[!INCLUDE [export-saving-include](includes/export-saving.md)]
 
-Eksporten kører med alle [planlagte opdateringer](system.md#schedule-tab). Du kan også [eksportere data efter behov](export-destinations.md#run-exports-on-demand). 
-
-
-## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
-
-Når du aktiverer Dynamics 365 Customer Insights til at overføre data til LinkedIn Ads, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder følsomme data som f.eks. personlige data. Microsoft overfører sådanne data efter din instruktion, men du er ansvarlig for at sikre, at LinkedIn Ads overholder eventuelle forpligtelser til beskyttelse af personlige oplysninger eller sikkerhed, du måtte have. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
-
-Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne eksportdestination for at stoppe brugen af denne funktionalitet.
+[!INCLUDE [footer-include](includes/footer-banner.md)]

@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-connections
 - customerInsights
-ms.openlocfilehash: a8b4b8a9bdcf7cf43c47a67d547405dd20dad60d
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a0bc5dd4100b462a26660a0c51fda1fe92b6bb9
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080976"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195167"
 ---
 # <a name="connections-preview-overview"></a>Oversigt over forbindelser (forhåndsversion)
 
@@ -27,6 +27,12 @@ Gå til **Administrator** > **Forbindelser** for at oprette og få vist forbinde
 Under fanen **Forbindelser** vises alle aktive forbindelser. På listen vises en række for hver forbindelse.
 
 Få en hurtig oversigt, en beskrivelse, og find ud af, hvad du kan gøre med hver enkelt udvidelsesindstilling, under fanen **Opdag**.
+
+## <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
+
+Når du gør det muligt for Dynamics 365 Customer Insights at overføre data til tredjepart eller andre Microsoft-produkter, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder følsomme data som f.eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at tredjeparten overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
+
+Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne forbindelsen for at afslutte brugen af denne funktionalitet.
 
 ## <a name="exports"></a>Eksport
 
@@ -41,8 +47,6 @@ Det er kun administratorer, der kan konfigurere nye forbindelser, men de oprette
 Hvis du vil tilføje forbindelser, skal du have [administratortilladelser](permissions.md). Hvis du opretter forbindelse til andre Microsoft-tjenester, antages det, at begge tjenester findes i den samme organisation.
 
 1. Gå til **Administrator** > **Forbindelser** (forhåndsversion).
-
-1. Gå til fanen **Forbindelser**.
 
 1. Vælg **Tilføj forbindelse** for at oprette en ny forbindelse. Vælg i rullemenuen, hvilken type forbindelse du vil oprette.
 
@@ -99,3 +103,5 @@ Fritliggende produkter og eksporter bliver inaktive. Du kan genaktivere dem ved 
 ## <a name="set-up-connections-with-secrets-managed-by-your-own-key-vault"></a>Konfigurere forbindelser med hemmeligheder, der administreres af din egen Key Vault
 
 Nogle forbindelser har brug for hemmeligheder som API-nøgler eller adgangskoder. Nogle forbindelser understøtter hemmeligheder, der er gemt i din egen Key Vault. Få mere at vide om understøttede forbindelser, og hvordan du konfigurerer [din egen Key Vault til Customer Insights](use-azure-key-vault.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

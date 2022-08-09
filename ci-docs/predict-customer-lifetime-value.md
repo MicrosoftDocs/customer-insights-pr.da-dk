@@ -1,7 +1,7 @@
 ---
 title: Forudsigelse af kundens levetidsværdi (CLV)
 description: Indtægtskilde for aktive kunder i fremtiden.
-ms.date: 02/05/2021
+ms.date: 07/21/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,21 +13,22 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: ea7acd1ddbb0eb8d66fb82018637a85b6ffb369b
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
+ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9055207"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9186433"
 ---
 # <a name="customer-lifetime-value-clv-prediction"></a>Forudsigelse af kundens levetidsværdi (CLV)
 
 Potentiel værdi (omsætning), som de enkelte aktive kunder henter ind i virksomheden via en defineret fremtidig tidsperiode. Du kan bruge denne funktion til at nå forskellige mål:
+
 - Identificere kunder af høj værdi, og bearbejde denne indsigt
 - Oprette strategiske kundesegmenter baseret på deres potentielle værdi til at køre tilpassede kampagner med målrettede salgs-, marketing- og supportindsatser
 - Vejlede i produktudvikling ved at fokusere på funktioner, der øger kundeværdien
 - Optimere salgs- eller marketingstrategien og tildeling af budget mere nøjagtigt til kundekontakt
-- Genkende og belønne kunder med høj værdi via loyalitets- eller præmierprogrammer 
+- Genkende og belønne kunder med høj værdi via loyalitets- eller præmierprogrammer
 
 ## <a name="prerequisites"></a>Forudsætninger
 
@@ -35,7 +36,7 @@ Før du går i gang, skal du overveje, hvad CLV betyder for din virksomhed. I ø
 
 Da det ikke tager lang tid at konfigurere og køre en CLV-model, kan du overveje at oprette flere modeller med forskellige inputindstillinger og sammenligne modelresultater for at se, hvilket modelscenarie der passer bedst til dine forretningsbehov.
 
-###  <a name="data-requirements"></a>Datakrav
+### <a name="data-requirements"></a>Datakrav
 
 Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis modelydeevnen skal øges. Jo flere data modellen kan behandle, jo mere nøjagtige forudsigelse bliver. Vi opfordrer dig derfor til at bruge flere kundeaktivitetsdata, hvis de bliver tilgængelige.
 
@@ -52,11 +53,12 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
     - Webaktiviteter: oversigt over besøg på websted, e-mail-oversigt
     - Loyalitetsaktiviteter: akkumulerede loyalitetspoint og oversigt over loyalitetspræmier
     - Kundeservice oversigt over logfiler, serviceopkald, klager eller returneringer
+    - Kundeprofil-id
 - Data om kundeaktiviteter (valgfri):
     - Aktivitets-id'er, der skal skelne mellem aktiviteter af samme type
     - Kunde-id'er, der knytter aktiviteter til dine kunder
     - Aktivitetsoplysninger, der indeholder navnet på og datoen for aktiviteten
-    - Det semantiske dataskema for aktiviteter omfatter: 
+    - Det semantiske dataskema for aktiviteter omfatter:
         - **Primær nøgle**: Et entydigt id for en aktivitet
         - **Tidsstempel**: Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle
         - **Hændelse (aktivitetsnavn)**: Navnet på den hændelse, du vil bruge
@@ -66,7 +68,7 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
     - Tilstrækkelige historiske data: Mindst et års transaktionsdata. Helst to til tre års transaktionsdata for at forudsige CLV i et år.
     - Flere køb pr. kunde: Ideelt set mindst to til tre transaktioner pr. kunde-id, helst på tværs af flere datoer.
     - Antal kunder: Mindst 100 forskellige kunder, helst mere end 10.000 kunder. Modellen kan ikke bruges af færre end 100 kunder og med utilstrækkelige historiske data
-    - Datafuldstændighed: Mindre end 20 % manglende værdier i obligatoriske felter i inputdataene   
+    - Datafuldstændighed: Mindre end 20 % manglende værdier i obligatoriske felter i inputdataene
 
 > [!NOTE]
 > - Modellen kræver kundernes transaktionsoversigt. Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købs/transaktionsobjekter, kan du oprette dem sammen i Power Query, før dataindtagelse går i gang.
@@ -122,11 +124,11 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
 
 1. Vælg **Næste**.
 
-### <a name="add-optional-data"></a>Tilføj valgfrie data
+### <a name="add-optional-activity-data"></a>Tilføj ekstra aktivitetsdata
 
-Data, der afspejler vigtige kundeinteraktioner (f.eks. web-, kundeservice- og hændelseslogfiler), føjer kontekst til transaktionsposter. Flere mønstre, der findes i kundeaktivitetsdataene, kan gøre forudsigelserne mere nøjagtige. 
+Data, der afspejler vigtige kundeinteraktioner (f.eks. web-, kundeservice- og hændelseslogfiler), føjer kontekst til transaktionsposter. Flere mønstre, der findes i kundeaktivitetsdataene, kan gøre forudsigelserne mere nøjagtige.
 
-1. Vælg **Tilføj data** i trinnet **Flere data (valgfrit)**. Vælg det kundeaktivitetsobjekt, der indeholder oplysninger om kundeaktiviteten, som beskrevet i [forudsætninger](#prerequisites).
+1. Vælg **Tilføj data** under **Boost modelindsigt med flere aktivitetsdata** i trinnet **Flere data (valgfrit**). Vælg det kundeaktivitetsobjekt, der indeholder oplysninger om kundeaktiviteten, som beskrevet i [forudsætninger](#prerequisites).
 
 1. Tilknyt de semantiske felter til attributter i objektet kundeaktivitet, og vælg **Næste**.
 
@@ -135,15 +137,34 @@ Data, der afspejler vigtige kundeinteraktioner (f.eks. web-, kundeservice- og h�
 1. Vælg en aktivitetstype, der svarer til den type kundeaktivitet, du tilføjer. Vælg mellem eksisterende aktivitetstyper, eller tilføj en ny aktivitetstype.
 
 1. Konfigurer relationen fra kundeaktivitetsobjektet til *Kunde*-objektet.
-    
+
     1. Vælg det felt, der identificerer kunden i objektet kundeaktivitetsoversigt. Det kan relateres direkte til det primære kunde-id for *Kunde*-objektet.
     1. Vælg det *Kundeobjekt*, der stemmer overens med dit primære *Kundeobjekt*.
     1. Angiv et navn, der beskriver relationen.
 
    :::image type="content" source="media/clv-additional-data.png" alt-text="Billede af trinnet i konfigurationsforløbet for at tilføje flere data og konfigurere aktiviteten med udfyldte eksempler.":::
 
-1. Vælg **Gem**.    
+1. Vælg **Gem**.
     Tilføj flere data, hvis du vil medtage andre kundeaktiviteter.
+
+1. Tilføj valgfrie kundedata, eller vælg **Næste**.
+
+### <a name="add-optional-customer-data"></a>Tilføje yderligere data (valgfrit)
+
+Vælg mellem 18 almindeligt anvendte kundeprofilattributter, der skal inkluderes som input til modellen. Disse attributter kan føre til mere personlige, relevante og brugbare modelresultater for dine sager i forbindelse med forretningsbrug.
+
+Contoso Coffee ønsker f.eks., at kundernes levetidsværdi skal nå ud til kunder med høj værdi med et personligt tilbud, der relaterer sig til lanceringen af deres nye maskiner. Contoso bruger CLV-modellen og tilføjer alle 18 kundeprofilattributter for at se, hvilke faktorer der påvirker deres kunder med den højeste værdi. Kundernes placering er den mest effektive faktor for disse kunder.
+Med disse oplysninger organiserer de en lokal begivenhed for lanceringen af maskinerne og er partner med lokale leverandører for at få tilpassede tilbud og en særlig oplevelse ved arrangementet. Uden disse oplysninger har Contoso måske kun sendt generiske marketingmails og ikke fået mulighed for at tilpasse til dette lokale segment af deres kunder af høj værdi.
+
+1. Vælg **Tilføj data** under **Boost modelindsigt med endnu flere kundedata** i trinnet **Flere data (valgfrit**).
+
+1. For **Objekt** skal du vælge **Customer: CustomerInsights** for at vælge den ensartede tabel over kundeprofiler, der knyttes til kundeattributdata. Vælg **System.Customer.CustomerId** for **Kunde-id**.
+
+1. Tilknyt flere felter, hvis dataene er tilgængelige i dine ensartede kundeprofiler.
+
+   :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Eksempel på tilknyttede felter til kundeprofildata.":::
+
+1. Vælg **Gem,** når du har tilknytningen af de attributter, som modellen skal bruge til at hjælpe kundernes levetid med at anvende værdier for levetid.
 
 1. Vælg **Næste**.
 

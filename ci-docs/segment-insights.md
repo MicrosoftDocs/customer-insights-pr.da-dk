@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: e90bdc523c3f8857c150ccba9d81f055d39f9feb
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: ccb33594a3a92e87d307f3300c77772ef8b4a82f
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9051584"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170996"
 ---
 # <a name="segment-insights-preview"></a>Segmentindsigter (prøveversion)
 
@@ -43,26 +43,25 @@ Du kan også analysere, hvordan overlapningen ændres for bestemte attributter.
 
 ### <a name="view-and-optimize-an-overlap-analysis"></a>Se og optimere en overlapningsanalyse
 
-Når analysen er fuldført, kan du finde oplysninger om denne indsigt i **Segmenter** > **Indsigt (prøveversion)**.
+1. Når analysen er fuldført, kan du finde oplysninger om denne indsigt i **Segmenter** > **Indsigt (prøveversion)**.
 
-> [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-overlap.png" alt-text="Oplysninger om indsigt i segmentoverlapning.":::
+   :::image type="content" source="media/segment-overlap.png" alt-text="Oplysninger om indsigt i segmentoverlapning.":::
 
-Vælg en indsigt for at få vist analyseresultaterne:
+1. Vælg en indsigt for at få vist analyseresultaterne:
 
-- Antallet af medlemmer, der overlapper de segmenter, der er valgt til analyse.
-- Antallet af medlemmer, der er inkluderet i en af segmenterne, men ikke i resten af segmenterne.
-- Hvis du har valgt felter, mens du konfigurerede overlapningsanalysen, kan du finde dem under de tilhørende faner. Du kan bruge filter-rullelisten til at vælge et hvilket som helst attributniveau, og tabellen nederst viser de tilsvarende data.
+   - Antallet af medlemmer, der overlapper de segmenter, der er valgt til analyse.
+   - Antallet af medlemmer, der er inkluderet i en af segmenterne, men ikke i resten af segmenterne.
+   - Hvis du har valgt felter, mens du konfigurerede overlapningsanalysen, kan du finde dem under de tilhørende faner. Du kan bruge filter-rullelisten til at vælge et hvilket som helst attributniveau, og tabellen nederst viser de tilsvarende data.
 
 ## <a name="segment-differentiators"></a>Segmentdifferentieringer
 
-Segmentdifferentieringer hjælper dig med at finde ud af, hvad der adskiller et segment fra resten af kunderne eller fra et andet segment. Du skal blot vælge et segment, hvorefter systemet identificerer de profilattributter og målinger, der adskiller det valgte segment.
+Segmentdifferentieringer hjælper dig med at finde ud af, hvad der adskiller et segment fra resten af kunderne eller fra et andet segment. Vælg et segment, hvorefter systemet identificerer de profilattributter og målinger, der adskiller det valgte segment.
 
 ### <a name="run-a-differentiator-analysis"></a>Køre en differentieringsanalyse
 
 1. Gå til **Segmenter**, og vælg fanen **Indsigt (prøveversion)**.
 
-1. Vælg **Ny**, og vælg indstillingen **Overlap** i ruden **Vælg indsigtstype**.
+1. Vælg **Ny**, og vælg indstillingen **Dfferentiering** i ruden **Vælg indsigtstype**.
 
 1. Vælg det segment, du vil analysere som **Primært segment**, og vælg **Næste**.
 
@@ -70,29 +69,29 @@ Segmentdifferentieringer hjælper dig med at finde ud af, hvad der adskiller et 
 
 1. Du kan også vælge et eller flere interesseområder for at fokusere analysen på bestemte attributter og vælge **Næste**.
 
-1. Giv dig et navn til din overlapningsanalyse, et valgfrit vist navn og en beskrivelse.
+1. Giv dig et navn til din differentieringsanalyse, et valgfrit vist navn og en beskrivelse.
 
-1. Vælg **Gem** for at starte analysen. Overlapningsanalysen er klar, når status ændres fra Opdaterer til Gennemført.
+1. Vælg **Gem** for at starte analysen. differentieringsanalysen er klar, når status ændres fra Opdaterer til Gennemført.
 
 ### <a name="view-and-optimize-a-differentiators-analysis"></a>Se og optimere en differentieringsanalyse
 
-Når analysen er fuldført, kan du finde oplysninger om denne indsigt i **Segmenter** > **Indsigt (prøveversion)**.
+1. Når analysen er fuldført, kan du gå til **Segmenter** > **Indsigt (forhåndsversion)**.
 
-> [!div class="mx-imgBorder"]
-> :::image type="content" source="media/segment-differentiators.png" alt-text="Oplysninger om indsigt i segmentdifferentiering.":::
+   :::image type="content" source="media/segment-differentiators.png" alt-text="Oplysninger om indsigt i segmentdifferentiering.":::
 
-Vælg en indsigt for at få vist analyseresultaterne. En differentieringsanalyse indeholder to faner. Fanen **Attributter** indeholder en liste over profilattributter, der opfattes som en differentiering. Fanen **Målinger** viser differentieringer. Der findes følgende oplysninger under de enkelte faner:
+1. Vælg en indsigt for at få vist analyseresultaterne. En differentieringsanalyse indeholder to faner. Fanen **Attributter** indeholder en liste over profilattributter, der opfattes som en differentiering. Fanen **Målinger** viser differentieringer. Der findes følgende oplysninger under de enkelte faner:
 
-- Rangeret liste over differentieringer, sorteret efter differencescore.
-- **Differencescore** for hver differentiering. Differencescoren repræsenterer graden af forskel på en attribut mellem to segmenter. Jo højere differencescore, desto mere er attributterne forskellige for de to segmenter. Vælg en score for at åbne ruden **Differencescore** med fordelingen af værdier for den pågældende attribut.
+   - Rangeret liste over differentieringer, sorteret efter differencescore.
+   - **Differencescore** for hver differentiering. Differencescoren repræsenterer graden af forskel på en attribut mellem to segmenter. Jo højere differencescore, desto mere er attributterne forskellige for de to segmenter. Vælg en score for at åbne ruden **Differencescore** med fordelingen af værdier for den pågældende attribut.
 
 ## <a name="manage-segment-insights"></a>Administrere segmentindsigt
 
-Du kan bruge følgende indstillinger i indsigten fra kommandolinjen:
+Gå til **Segment** > **Indsigt (forhåndsversion)** for at få vist din målgruppeindsigt og administrere dem. Vælg en segmentindsigt for at få vist tilgængelige handlinger.
 
-- **Tilbage** for at returnere til listen over indsigt
-- **Opdater** for at køre analysen igen
-- **Slet** for at fjerne denne indsigt
-
+- **Få vist** indsigtsanalysen
+- **Rediger** indsigten for at ændre dets egenskaber
+- **Opdater** indsigten for at køre analysen igen
+- **Omdøb** indsigten
+- **Slet** indsigten
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

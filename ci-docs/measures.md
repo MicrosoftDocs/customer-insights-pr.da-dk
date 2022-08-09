@@ -14,43 +14,56 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: 880c06bffcfa269151d96cb4c597eed4832fc61b
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081203"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170813"
 ---
 # <a name="measures-overview"></a>Målingsoversigt
 
-Foranstaltninger hjælper dig med at få en bedre forståelse af kundernes adfærd og virksomhedens præstation. De ser på relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå en enkelt kundes købsoversigt eller måle firmaets samlede salg for at forstå den *samlede omsætning i hele virksomheden*.  
+Foranstaltninger hjælper dig med at få en bedre forståelse af kundernes adfærd og virksomhedens præstation. De ser på relevante værdier fra [ensartede profiler](data-unification.md). En virksomhed vil f.eks. se det *samlede forbrug pr. kunde* for at forstå en enkelt kundes købsoversigt eller måle firmaets samlede salg for at forstå den *samlede omsætning i hele virksomheden*.
 
-Målinger oprettes [ved hjælp af målegeneratoren](measure-builder.md), en platform til dataforespørgsel med forskellige operatorer og simple tilknytningsindstillinger. Du kan filtrere dataene, gruppere resultater, registrere [objektrelationsstier](relationships.md) og gennemse outputtet. Du kan [bruge foruddefinerede skabeloner](measure-templates.md) til effektivt at konfigurere almindeligt anvendte foranstaltninger.
+Opret målinger til at planlægge forretningsaktiviteter ved at forespørge om kundedata og udtrække indsigt. Hvis du f.eks. opretter et mål for det *samlede forbrug pr. kunde* og det *samlede afkast pr. kunde*, kan du identificere en gruppe kunder med et højt forbrug, men et højt afkast. Derefter kan du [oprette et segment](segments.md) baseret på disse foranstaltninger for at opnå de bedste handlinger.
 
-Brug målegeneratoren til at planlægge forretningsaktiviteter ved at forespørge om kundedata og udtrække indsigt. Hvis du f.eks. opretter et mål for det *samlede forbrug pr. kunde* og det *samlede afkast pr. kunde*, kan du identificere en gruppe kunder med et højt forbrug, men et højt afkast. Du kan [oprette et segment](segments.md) baseret på disse foranstaltninger for at opnå de bedste handlinger.
+## <a name="create-a-measure"></a>Oprette en måling
 
-## <a name="manage-your-measures"></a>Administrere dine målinger
+Vælg, hvordan du vil oprette en måleenhed på baggrund af publikum.
 
-Du kan finde listen over mål på siden **Målinger**.
+# <a name="individual-consumers-b-to-c"></a>[Individuelle forbrugere (B-til-C)](#tab/b2c)
 
-Du kan finde oplysninger om målingstype, oprettelsesdato, status og tilstand. Når du vælger et mål på listen, kan du gennemse outputtet og hente en CSV-fil.
+- Fra bunden med måleværktøj: [Opbyg dine egne](measure-builder.md).
+- [Brug foruddefinerede skabeloner](measure-templates.md) med almindeligt anvendte foranstaltninger.
+
+# <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
+
+Fra bunden med måleværktøj: [Opbyg dine egne](measure-builder.md).
+
+---
+
+## <a name="manage-existing-measures"></a>Administrere eksisterende målinger
+
+Gå til siden **Målinger** for at få vist de mål, du har oprettet, deres status, måletype og sidste gang dataene blev opdateret. Du kan sortere listen over målinger efter en hvilken som helst kolonne eller bruge søgefeltet til at søge efter de målinger, der skal håndteres.
+
+Vælg en måling for at få vist tilgængelige handlinger. Vælg en målingsnavn på listen, kan du gennemse outputtet og hente en CSV-fil.
 
 :::image type="content" source="media/measures-actions.png" alt-text="Handlinger til administration af enkelte målinger."lightbox="media/measures-actions.png":::
 
-Følgende handlinger er tilgængelige, når du vælger en måleenhed:
-
-- **Rediger** konfigurationen af målingen.
-- **Dupliker** en måling. Du kan vælge at redigere egenskaberne med det samme eller ganske enkelt gemme dubletten.
-- **Opdater** målingen på baggrund af de seneste data. Hvis du vil opdatere alle målingerne på én gang, skal du markere alle målinger og derefter **Opdater**.
+- **Rediger** målingen for at ændre dets egenskaber.
+- **Opdater** målingen, så den indeholder de seneste data.
 - **Omdøb** målingen.
-- **Aktivere** eller **deaktivere**. Inaktive målinger opdateres ikke under en [planlagt opdatering](system.md#schedule-tab).
-- **Kode** til [administration af koder](work-with-tags-columns.md#manage-tags) for segmentet.
+- **Aktivér** eller **Deaktiver** målingen. Inaktive målinger kan ikke opdateres under en [planlagt opdatering](system.md#schedule-tab) og har **Status** angivet som **Sprunget over** som tegn på, at en opdatering ikke er forsøgt udført.
+- **Kode** til [administration af koder](work-with-tags-columns.md#manage-tags) for måling.
 - **Slet** målingen.
+- **Kolonner** til [tilpasning af de kolonner](work-with-tags-columns.md#customize-columns), der vises.
+- **Filtrer** til [filter på koder](work-with-tags-columns.md#filter-on-tags).
+- **Søgenavn** til at søge efter målingsnavn.
+
+## <a name="refresh-measures"></a>Måling blev opdateret
+
+Målinger kan opdateres automatisk i en automatisk planlægning eller opdateres manuelt efter behov. Hvis du manuelt vil opdatere en eller flere målinger, skal du vælge dem og vælge **Opdater**. Hvis du vil [planlægge en automatisk opdatering](system.md#schedule-tab), skal du gå til **Administrator** > **System** > **Plan**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
-
-## <a name="next-step"></a>Næste trin
-
-Du kan bruge eksisterende mål til at oprette [et kundesegment](segments.md).
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

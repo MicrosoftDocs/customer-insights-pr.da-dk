@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 39d68011df9e4341244af627bb71f4e3635256bb
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081222"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9195651"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (forhåndsversion)
 

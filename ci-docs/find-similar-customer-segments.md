@@ -12,69 +12,59 @@ searchScope:
 - ci-segment-builder
 - ci-segment-insights
 - customerInsights
-ms.openlocfilehash: d58b2e424fd81ad691db4b2576bdf5655038ed89
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 09fe36a4da45d114cbfccf8dad1e7b80b4b7e320
+ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9054794"
+ms.lasthandoff: 07/18/2022
+ms.locfileid: "9170720"
 ---
 # <a name="find-similar-customers-with-ai-preview"></a>Find kunder, der ligner hinanden med AI (forhåndsversion)
 
-Denne funktion giver dig mulighed for at finde lignende kunder i kundebasen ved hjælp af kunstig intelligens. Du skal have oprettet mindst ét segment for at bruge denne funktion. Hvis du udvider kriterierne for et eksisterende segment, får du hjælp til at finde de kunder, der ligner dette segment.
+Find lignende kunder i kundebasen ved hjælp af kunstig intelligens. Du skal have oprettet mindst ét segment for at bruge denne funktion. Hvis du udvider kriterierne for et eksisterende segment, får du hjælp til at finde de kunder, der ligner dette segment.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWOFou]
 
 > [!NOTE]
-> *Find lignende kunder* bruger automatiserede metoder til at evaluere data og foretage forudsigelser på baggrund af disse data, og de kan derfor bruges som en metode til profilering, som dette udtryk er defineret i generel forordning om databeskyttelse ("GDPR"). Kundens brug af denne funktion til behandling af data kan være underlagt GDPR eller andre love eller bestemmelser. Du er ansvarlig for at sikre, at brugen af Dynamics 365 Customer Insights, herunder forudsigelser, overholder alle gældende love og bestemmelser, herunder lovgivning vedrørende beskyttelse af personlige oplysninger, personlige data, biometriske data, databeskyttelse og fortrolighed i kommunikationen.
+> *Find lignende kunder bruger* automatiserede metoder til at evaluere data og foretage forudsigelser på baggrund af disse data. Det har derfor mulighed for at bruges som en metode til profilering, da denne betegnelse er defineret i den generelle databeskyttelsesforordning ("GDPR"). Kundens brug af denne funktion til behandling af data kan være underlagt GDPR eller andre love eller bestemmelser. Du er ansvarlig for at sikre, at brugen af Dynamics 365 Customer Insights, herunder forudsigelser, overholder alle gældende love og bestemmelser, herunder lovgivning vedrørende beskyttelse af personlige oplysninger, personlige data, biometriske data, databeskyttelse og fortrolighed i kommunikationen.
 
-## <a name="finding-similar-customers"></a>Finde lignende kunder
+## <a name="find-similar-customers"></a>Find lignende kunder
 
 1. Gå til **Segmenter**, og vælg det segment, som du vil basere dit nye segment på. Det er *kildesegmentet*.
 
-1. Vælg **Find lignende kunder** på handlingslinjen .
+1. Vælg **Find lignende kunder**.
 
 1. Gennemgå det foreslåede navn på det nye segment, og rediger det, hvis det er nødvendigt.
 
 1. Du kan også føje [koder](work-with-tags-columns.md#manage-tags) til det nye segment.
 
-1. Gennemgå de felter, der definerer det nye segment. I disse felter defineres det udgangspunkt, som systemet vil bruge til at finde lignende kunder i et kildesegment. Systemet vil som standard vælge anbefalede felter.
+1. Gennemgå de felter, der definerer det nye segment. I disse felter defineres det udgangspunkt, som systemet vil bruge til at finde lignende kunder i et kildesegment. Systemet vil som standard vælge anbefalede felter. Tilføj flere betingelser, hvis det er nødvendigt.
   Felter, der kan reducere modellens ydeevne drastisk, udelukkes automatisk:
   
    - Felter med følgende datatyper: StringType, BooleanType, CharType, LongType, IntType, DoubleType, FloatType, ShortType
    - Felter med en kardinalitet (antallet af elementer i et felt) på mindre end 2 eller mere end 30
 
-1. Vælg, om du vil medtage **Alle kunder** eller kun kunder i et **Bestemt eksisterende segment** i det nye segment.
+1. Vælg, om du vil medtage **Alle kunder** undtagen kildesegmentet, eller kun kunder i et **anderledes segment** i det nye segment.
 
 1. Systemet foreslår som standard kun 20 % af målgruppens størrelse i outputtet. Rediger denne tærskel efter behov. Hvis tærskelværdien øges, reduceres præcisionen.
 
 1. Inkluder kunder i kildesegmentet ved at markere afkrydsningsfeltet **Medtag medlemmer fra kildesegmentet ud over kunder med lignende attributter**.
 
-1. Vælg **Kør** nederst på siden for at starte en binær klassificeringsopgave (en metode til maskinel indlæring), som analyserer datasættet.
+1. Vælg **Kør** nederst på siden for at starte en [binær klassificeringsopgave](#about-similarity-scores) (en metode til maskinel indlæring), som analyserer datasættet.
 
 ## <a name="view-the-similar-segment"></a>Se det lignende segment
 
-Når du har behandlet det lignende segment, vil du finde det nye segment på siden **Segmenter**.
+Når du har behandlet det lignende segment, vil du finde det nye segment på siden **Segmenter** med typen **Udvidelse**.
 
-> [!div class="mx-imgBorder"]
-> ![Lignende kundesegment.](media/expanded-segment.png "Lignende kundesegment")
+Vælg **Vis for** at se resultatdistribution på tværs af [lighedspoint](#about-similarity-scores) og lighedspointværdier under **Forhåndsversion af medlemmer af segment**.
 
-Vælg **Vis** på handlingslinjen for at åbne segmentoplysningerne. Denne visning indeholder oplysninger om resultatfordelingen på tværs af [lighedsscorer](#about-similarity-scores). Du kan også finde værdierne for lighedsscore i **Eksempel på segmentmedlemmer**.
+:::image type="content" source="media/expanded-segment.png" alt-text="Lignende kundesegment.":::
 
-## <a name="use-the-output-of-a-similar-segment"></a>Bruge output af et lignende segment
+## <a name="manage-a-similar-segment"></a>Administrere lignende segment
 
-Du kan [arbejde med outputtet af et lignende segment](segments.md) på samme måde som med andre segmenter. Du kan f.eks. eksportere segmentet eller oprette en måling.
+[Arbejde med og administrere et lignende segment](segments.md#manage-existing-segments) på samme måde som med andre segmenter. Du kan f.eks. eksportere segmentet eller oprette en måling.
 
-## <a name="refresh-and-edit-a-similar-segment"></a>Opdatere og redigere et lignende segment
-
-Hvis du vil opdatere et lignende segment, skal du vælge det på siden **Segmenter** og vælge **Opdater** på handlingslinjen.
-
-Hvis du redigerer et lignende segment, behandles dataene igen. Det tidligere oprettede segment opdateres med nye data.
-Hvis du vil redigere et lignende segment, skal du vælge det på siden **Segmenter** og vælge **Rediger** på handlingslinjen. Anvend ændringerne, og vælg **Kør** for at starte behandlingen.
-
-## <a name="delete-a-similar-segment"></a>Slette et lignende segment
-
-Vælg segmentet på siden **Segmenter**, og vælg **Slet** på handlingslinjen. Bekræft sletningen.
+Redigere, opdatere, omdøbe, downloade og slette et lignende segment. Redigeres et lignende segment, behandles dataene igen. Det tidligere oprettede segment opdateres med nye data.
 
 ## <a name="about-similarity-scores"></a>Om lighedsscore
 

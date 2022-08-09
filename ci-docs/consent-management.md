@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: 77b09b6eb0a916e724542d503d96d19c5581aca1
-ms.sourcegitcommit: 27c5473eecd851263e60b2b6c96f6c0a99d68acb
+ms.openlocfilehash: 99fe24cb47a8c20f629182d9a1c6adfd36a1eaf7
+ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/14/2022
-ms.locfileid: "8947494"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "9188040"
 ---
 # <a name="use-customer-consent"></a>Brug kundesamtykke
 
@@ -50,13 +50,13 @@ Eksempeltabel over en simpel database med samtykke med flere muligheder for samt
 
 ## <a name="import-and-unify-consent-data"></a>Importere og samle samtykkedata
 
-Du kan importere samtykkedata på samme måde, som andre datakilder importeres til Customer Insights. Du kan finde flere oplysninger om understøttede datakilder, og hvordan du importerer dem, i [Oversigt over datakilder](data-sources.md).
+Importer samtykkedata på samme måde, som andre datakilder importeres til Customer Insights. Du kan finde flere oplysninger om understøttede datakilder, og hvordan du importerer dem, i [Oversigt over datakilder](data-sources.md).
 
 Du kan finde flere oplysninger om, hvordan du gør datakilder ens, i [oversigten over datasamling](data-unification.md).
 
 ## <a name="use-consent-data"></a>Brug samtykkedata
 
-Når dine samtykkedata er en del af dine ensartede kundeprofiler, kan du bruge dem i Customer Insights. Du kan f.eks. oprette et segment med en regel, der sikrer, at du hædrer dine kunders præferencer med hensyn til beskyttelse af personlige oplysninger og databeskyttelse. Regler, der understøtter indstillinger for samtykke, bruges til at udelukke brugere fra et segment baseret på profilattributter. Tilføjelse af en regel til et segment, der udelukker kundeprofiler, som ikke har givet samtykke til kontakt.
+Når dine samtykkedata er en del af dine ensartede kundeprofiler, kan du bruge dem i Customer Insights. Du kan f.eks. oprette et segment med en regel, der sikrer, at du hædrer dine kunders præferencer med hensyn til beskyttelse af personlige oplysninger og databeskyttelse. Regler, der understøtter indstillinger for samtykke, bruges til at udelukke brugere fra et segment baseret på profilattributter. Tilføj en regel til et segment, der udelukker kundeprofiler, som ikke har givet samtykke til kontakt.
 
 Hvis der henvises til eksempeltabellen ovenfor, kan et segment indeholde denne regel:`Consent option=Newsletter & Consent value=True`. Denne konfiguration resulterer i et segment, der hædrer kontaktpersonindstillinger for at sende et nyhedsbrev.
 
@@ -71,3 +71,5 @@ Det er vigtigt at holde dine kunders samtykkestatus opdateret. Den planlagte opd
 Med andre ord: Sørg for, at de kildedata, der importeres til Customer Insights, altid har de nyeste oplysninger.
 
 Du kan finde flere oplysninger i [Opdatere segmenter manuelt](segments.md#refresh-segments) eller konfigurere [en planlagt opdatering](system.md#schedule-tab).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

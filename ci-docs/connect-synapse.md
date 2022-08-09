@@ -1,7 +1,7 @@
 ---
 title: Tilslut en Azure Synapse-datakilde (forhåndsversion)
 description: Brug en database i Azure Synapse som en datakilde i Dynamics 365 Customer Insights.
-ms.date: 03/25/2022
+ms.date: 07/26/2022
 ms.reviewer: v-wendysmith
 ms.service: customer-insights
 ms.subservice: audience-insights
@@ -9,12 +9,12 @@ ms.topic: how-to
 author: mukeshpo
 ms.author: mukeshpo
 manager: shellyha
-ms.openlocfilehash: c4ae65613a02df38a30f907dae72d413bf1a702f
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 54247fbcdc27f6ed8314e0755164083eb461aa64
+ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052692"
+ms.lasthandoff: 07/28/2022
+ms.locfileid: "9206900"
 ---
 # <a name="connect-an-azure-synapse-analytics-data-source-preview"></a>Tilslut en Azure Synapse Analytics-datakilde (forhåndsversion)
 
@@ -66,3 +66,9 @@ Du kan finde flere oplysninger under [Oversigt over Azure Synapse](/azure/synaps
 1. Du kan også vælge dataobjekterne for at tillade dataprofilering.
 
 1. Vælg **Gem** for at anvende det valgte, og start indtaget af data fra den nyoprettede datakilde, der er knyttet til databasetabellerne i Azure Synapse Analytics. Siden **Datakilder** åbnes, der viser de nye datakilde status for **Opdatering**.
+
+   [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+Det kan tage tid at indlæse data. Når opdateringen er gennemført, kan de indtagne data gennemses fra siden [**Objekter**](entities.md).
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

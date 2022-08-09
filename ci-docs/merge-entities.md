@@ -14,16 +14,14 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: ceb2724ad490c1ba44fd9b7ff2be04721892fca4
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
+ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081163"
+ms.lasthandoff: 07/12/2022
+ms.locfileid: "9139650"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Samle kundefelter for data samling
-
-[!INCLUDE [m3-prod-trial-note](includes/m3-prod-trial-note.md)]
 
 I dette trin af processen til samling skal du vælge og udelukke attributter, der skal flettes i objektet for den samlede profil. Hvis tre objekter f.eks. indeholder e-maildata, kan det være en god ide at bevare alle tre separate mailfelter eller flette dem sammen i et enkelt e-mailfelt for den samlede profil. Nogle attributter kombineres automatisk af systemet. Du kan oprette stabilt og entydigt kunde-id og gruppere relaterede profiler i en klynge.
 

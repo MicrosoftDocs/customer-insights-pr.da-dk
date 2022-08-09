@@ -8,12 +8,12 @@ ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 334440493c50448005ec90d0cfac11358d677b73
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
+ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9080997"
+ms.lasthandoff: 07/27/2022
+ms.locfileid: "9196341"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversion)
 
@@ -59,7 +59,7 @@ Når du aktiverer Dynamics 365 Customer Insights for at overføre data til LiveR
 
 1. Gennemse oversigten, og vælg derefter **Næste**.
 
-1. Vælg forbindelsen. Kontakt en administrator, hvis en ikke er tilgængelig.
+1. Vælg forbindelsen. Kontakt en administrator, hvis der ikke er nogen forbindelse.
 
 1. Vælg **Næste**.
 
