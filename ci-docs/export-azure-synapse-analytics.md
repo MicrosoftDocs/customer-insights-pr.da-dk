@@ -8,12 +8,12 @@ ms.topic: how-to
 author: stefanie-msft
 ms.author: sthe
 manager: shellyha
-ms.openlocfilehash: f9c9ee55f2874ae1dcaf82f2ff17ed0fbbb7804d
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0e953cfff12df433d033717d58b28c2834468916
+ms.sourcegitcommit: 086f75136132d561cd78a4c2cb1e1933e2301f32
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196387"
+ms.lasthandoff: 08/11/2022
+ms.locfileid: "9259837"
 ---
 # <a name="export-data-to-azure-synapse-analytics-preview"></a>Eksportere data til Azure Synapse Analytics (forhåndsversion)
 
@@ -24,7 +24,7 @@ Azure Synapse er en analysetjeneste, der accelererer tiden til at få indsigt p�
 > [!NOTE]
 > Sørg for at angive alle **rolletildelinger** som beskrevet.
 
-- I Customer Insights skal du Azure Active Directory (AD)-brugerkonto have en [Administratorrolle](permissions.md#assign-roles-and-permissions).
+- I Customer Insights skal du Azure Active Directory (AD)-brugerkonto have en [Administratorrolle](permissions.md#add-users).
 
 I Azure:
 
@@ -39,6 +39,8 @@ I Azure:
 - Den *[Azure Synapse workspace-styrede identitet](/azure/synapse-analytics/security/synapse-workspace-managed-identity)* skal have **Bidragyder til Storage Blob-data**-tilladelser til den Azure Data Lake Storage Gen2-konto, hvor dataene er placeret og sammenkædet med Azure Synapse-arbejdsområdet. Få mere at vide om at [bruge Azure-portalen til at tildele en Azure-rolle for at få adgang til BLOB- og kødata](/azure/storage/common/storage-auth-aad-rbac-portal) og [Bidragyder til Storage Blob-data-tilladelser](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor).
 
 - I Azure Synapse workspace skal *servicekontoen for Customer Insights* have **Synapse Administrator** [rolletildelt](/azure/synapse-analytics/security/how-to-set-up-access-control).
+
+- Hvis dit Customer Insights-miljø gemmer data i dit eget [Azure Data Lake Storage](own-data-lake-storage.md), skal den bruger, der opretter forbindelsen til Azure Synapse Analytics, som minimum have den indbyggede **Læser-rolle** i kontoen Data Lake-lager. Du kan finde flere oplysninger under [Tildele Azure-roller ved hjælp af Azure-portalen](/azure/role-based-access-control/role-assignments-portal).
 
 ## <a name="set-up-connection-to-azure-synapse"></a>Konfigurer forbindelse til Azure Synapse
 

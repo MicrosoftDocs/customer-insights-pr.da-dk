@@ -1,19 +1,19 @@
 ---
 title: Forbedre virksomhedsprofiler med Leadspace (forhåndsversion)
 description: Generelle oplysninger om Leadspace-tilsætning af tredjepart.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: 3f23fe7177f931db3e3179970915d0cd3c736f87
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: f45fabc036775e11fc439f69513678d0607729d0
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196203"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237943"
 ---
 # <a name="enrich-company-profiles-with-leadspace-preview"></a>Forbedre virksomhedsprofiler med Leadspace (forhåndsversion)
 
@@ -35,14 +35,9 @@ Du skal være en [administrator](permissions.md#admin) i Customer Insights og ha
 
 1. Angiv et navn til forbindelsen og et gyldigt Leadspace-token.
 
-1. Gennemse og giv dit samtykke til [Beskyttelse af personlige oplysninger og overholdelse af data](#data-privacy-and-compliance) ved at vælge **Jeg accepterer**.
+1. Gennemse [Beskyttelse af personlige data og overholdelse af angivne standarder](connections.md#data-privacy-and-compliance), og vælg **Jeg accepterer**.
 
 1. Vælg **Kontrollér** for at konfigurationen er valideret, og vælg derefter **Gem**.
-
-### <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
-
-Når du aktiverer Dynamics 365 Customer Insights for at overføre data til Leadspace, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data til din instruktion, men du er ansvarlig for at sikre, at Leadspace overholder eventuelle krav til beskyttelse af personlige oplysninger eller sikkerhed. Du kan finde flere oplysninger på [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 

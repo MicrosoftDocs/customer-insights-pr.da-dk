@@ -11,16 +11,16 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: ff99721bef0004bc8cae1ec14ff9df16cbb0682e
-ms.sourcegitcommit: ece8ff732490ecd3b3421ab273f331e6fd46a7f7
+ms.openlocfilehash: 8e3477750d82f965dc2d62174fb35554d9447b7b
+ms.sourcegitcommit: 52eca81c36e93d553140f5a37cf6013aaa42623a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/19/2022
-ms.locfileid: "9173789"
+ms.lasthandoff: 08/03/2022
+ms.locfileid: "9224288"
 ---
 # <a name="personalize-your-experiences-with-data-about-known-and-unknown-users"></a>Tilpas dine erfaringer med data om kendte og ukendte brugere
 
-Det er ikke en ny udfordring at administrere kundedata, men det bliver sværere for brugerne at navigere i de forskellige digitale kanaler. En bruger, der er kendt (godkendt) på én kanal, bliver ukendt (ikke-godkendt) i en anden, hvis den ikke er logget på. Problemet er ofte, at brugere, der ikke er identificeret (ukendt), ikke har et fælles id. Den kan bruges til at tilknytte beskrivende profilattributter og oprette ensartede kundeprofiler. Customer Insights hjælper med at løse dette problem ved at indtage data fra sporingsmetoder på kildesystemerne. Samlede ukendte og kendte profiler giver organisationer et komplet overblik over opdaterede profiler og deres historiske transaktioner, funktionsmåder og demografi. Den går endda et skridt videre ved at levere en identitetsløsning, der giver dig mulighed for at samle kundeaktivitet på tværs af flere kanaler, herunder dit websted, køb i forretningen, loyalitetsprogrammer osv.
+Det er ikke en ny udfordring at administrere kundedata, men det bliver sværere for brugerne at navigere i de forskellige digitale kanaler. En bruger, der er kendt (godkendt) på én kanal, bliver ukendt (ikke-godkendt) i en anden, hvis den ikke er logget på. Problemet er ofte, at brugere, der ikke er identificeret (ukendt), ikke har et fælles id. Den kan bruges til at tilknytte beskrivende profilattributter og oprette ensartede kundeprofiler. Customer Insights hjælper med at løse dette problem ved at indtage data fra sporingsmetoder på kildesystemerne. Ved at samle ukendte og kendte profiler får organisationer et komplet overblik over opdaterede profiler og deres historiske transaktioner, funktionsmåder og demografi. Den går endda et skridt videre ved at levere en identitetsløsning, der giver dig mulighed for at samle kundeaktivitet på tværs af flere kanaler, herunder dit websted, køb i forretningen, loyalitetsprogrammer osv.
 
 ## <a name="sample-scenario"></a>Eksempelscenarie
 

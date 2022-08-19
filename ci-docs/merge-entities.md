@@ -14,12 +14,12 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 4a19b753e7a5979fe72d7e96bc4452d7795c2d48
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
+ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139650"
+ms.lasthandoff: 08/01/2022
+ms.locfileid: "9213575"
 ---
 # <a name="unify-customer-fields-for-data-unification"></a>Samle kundefelter for data samling
 
@@ -58,6 +58,9 @@ I dette trin af processen til samling skal du vælge og udelukke attributter, de
 
 1. Angiv, hvordan felterne skal kombineres eller flettes fra en af tre indstillinger:
     - **Betydning**: Identificerer vinderværdien på baggrund af den rangordnede betydning, der er angivet for de deltagende felter. Dette er standardfletteindstillingen. Vælg **Flyt op/ned** for at angive prioritetsranglisten.
+
+      > [!NOTE]
+      > I Customer Insights bruges den første værdi, der ikke er null. De givne objekter A, B og C lige i den rækkefølge bruges, hvis A.Name og B.Name er null, anvendes værdien fra C.Name.
 
       :::image type="content" source="media/importance-merge-option.png" alt-text="Indstillingen Prioritet i dialogboksen med brevfletningsfelter.":::
 

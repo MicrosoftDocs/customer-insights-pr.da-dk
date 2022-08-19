@@ -1,19 +1,19 @@
 ---
 title: Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversion)
 description: Forbedre kundeprofiler med LiveRamp-data.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: kishorem-ms
 ms.author: kishorem
 manager: shellyha
-ms.openlocfilehash: 49bf558209ca91ab9d8db945862a57adccee1f6b
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 0aa6dc144602741b87843a5373779855ee3e334c
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196341"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9237805"
 ---
 # <a name="enrich-customer-profiles-with-identity-data-from-liveramp-preview"></a>Forbedre kundeprofiler med identitetsdata fra LiveRamp (forhåndsversion)
 
@@ -41,13 +41,9 @@ Du skal være en [administrator](permissions.md#admin) i Customer Insights og ha
 
 1. Angiv et navn til forbindelsen og et gyldigt LiveRamp-klient-id samt en hemmelighed.
 
-1. Gennemse og giv dit samtykke til [Beskyttelse af personlige oplysninger og overholdelse af data](#data-privacy-and-compliance) ved at vælge **Jeg accepterer**.
+1. Gennemse [Beskyttelse af personlige data og overholdelse af angivne standarder](connections.md#data-privacy-and-compliance), og vælg **Jeg accepterer**.
 
 1. Vælg **Kontrollér** for at konfigurationen er valideret, og vælg derefter **Gem**.
-
-### <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
-
-Når du aktiverer Dynamics 365 Customer Insights for at overføre data til LiveRamp, tillader du overførsel af data uden for overholdelsesgrænsen for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f. eks. personlige data. Microsoft overfører sådanne data efter din instruktion, men du er ansvarlig for at sikre, at LiveRamp overholder eventuelle forpligtelser til beskyttelse af personlige oplysninger eller sikkerhed, du måtte have. Du kan finde yderligere oplysninger ved at gennemse [Erklæring om beskyttelse af personlige oplysninger i Microsoft](https://go.microsoft.com/fwlink/?linkid=396732). Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 

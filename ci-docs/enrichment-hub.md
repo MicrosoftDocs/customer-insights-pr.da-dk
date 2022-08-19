@@ -14,12 +14,12 @@ searchScope:
 - ci-enrichment-details
 - ci-enrichment-wizard
 - customerInsights
-ms.openlocfilehash: 6b6daab480db5e37830ff58b71dcdd3bbdbe46da
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 0c2a900190b4ab6e93098d05a2fd66bcd2b847fd
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053857"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245872"
 ---
 # <a name="data-enrichment-preview-overview"></a>Oversigt over dataforbedring (forhåndsversion)
 
@@ -76,7 +76,7 @@ Vælg en forbedring for at få vist tilgængelige handlinger.
 - **Vis** oplysninger om forbedringer med antallet af forbedrede kundeprofiler.
 - **Rediger** konfigurationen af forbedringen.
 - [**Kør**](#run-or-refresh-enrichments) forbedringen for at opdatere kundeprofiler med de nyeste data. Kør flere forbedringer på én gang ved at vælge dem på listen.
-- **Aktiver** eller **Deaktiver** en forbedring. Inaktive forbedringer bliver ikke opdateret under en [planlagt opdatering](system.md#schedule-tab).
+- **Aktiver** eller **Deaktiver** en forbedring. Inaktive forbedringer bliver ikke opdateret under en [planlagt opdatering](schedule-refresh.md).
 - **Slet** forbedringen.
 
 Du kan også oprette [segmenter](segments.md) eller [mål](measures.md) ud fra forbedringer.
@@ -85,7 +85,7 @@ Du kan også oprette [segmenter](segments.md) eller [mål](measures.md) ud fra f
 
 Når programmet er kørt, kan det opdateres automatisk eller opdateres manuelt efter behov.
 
-1. Hvis du manuelt vil opdatere en eller flere indstillinger, skal du vælge dem og vælge **Kør**. Hvis du vil [planlægge en automatisk opdatering](system.md#schedule-tab), skal du gå til **Administrator** > **System** > **Plan**. Behandlingstiden afhænger af størrelsen på dine kundedata.
+1. Hvis du manuelt vil opdatere en eller flere indstillinger, skal du vælge dem og vælge **Kør**. Hvis du vil [planlægge en automatisk opdatering](schedule-refresh.md), skal du gå til **Administrator** > **System** > **Plan**. Behandlingstiden afhænger af størrelsen på dine kundedata.
 
 1. Du kan også [se status for procesforløbet](#see-the-progress-of-the-enrichment-process).
 
@@ -102,6 +102,8 @@ Du kan finde detaljer om, hvordan en forbedring behandles, herunder status for d
 1. Udvid sektionen **Forbedringer** i ruden **Statusdetaljer**.
 1. Vælg **Se detaljer** under den status, du vil have vist.
 1. Vælg **Vis detaljer** i ruden med **opgavedetaljer** for at se de processer, der er involveret i opdatering af forbedringen og status.
+
+[!INCLUDE [progress-details-pane](includes/progress-details-pane.md)]
 
 ## <a name="view-enrichment-results"></a>Vise forbedringsresultater
 

@@ -11,18 +11,18 @@ manager: shellyha
 searchScope:
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 403cc9dbd3bddcf67f59b5cb0be936af4d268fc2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 2652e0868f5cc514ab6df9c150a9183cf95ae589
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195651"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9246101"
 ---
 # <a name="real-time-data-ingestion-preview"></a>Dataindtagelse i realtid (forhåndsversion)
 
 I næsten realtidsfunktionalitet kan du se i løbet af få sekunder de seneste interaktioner, som dine kunder har foretaget med dine produkter eller servicer.
 
-[Planlagte opdateringer](system.md#schedule-tab) omfatter et stort antal poster og flere komplekse handlinger. For det første hentes data fra datakilden. Herefter bliver dataene samlet og derefter forbedret med yderligere oplysninger. Enhver kørsel af denne proces kan tage fra få minutter til flere timer.
+[Planlagte opdateringer](schedule-refresh.md) omfatter et stort antal poster og flere komplekse handlinger. For det første hentes data fra datakilden. Herefter bliver dataene samlet og derefter forbedret med yderligere oplysninger. Enhver kørsel af denne proces kan tage fra få minutter til flere timer.
 
 Realtidsfunktionen leverer data med det samme til forbrug, indtil den efterfølgende planlagte opdatering henter disse data fra datakilden.
 
@@ -85,7 +85,7 @@ Du kan finde oplysninger om denne API, herunder parametre og svar, i afsnittet *
 
 ## <a name="understand-your-real-time-usage-with-telemetry"></a>Forstå dit realtidsforbrug med telemetri
 
-Få et overblik over omfanget af anmodninger til API i realtid og oplysninger om de problemer, der kan opstå i systemet. Du kan få [adgang til telemetri i realtid](system.md#api-usage-tab). 
+Få et overblik over omfanget af anmodninger til API i realtid og oplysninger om de problemer, der kan opstå i systemet. Du kan få [adgang til telemetri i realtid](system.md#view-api-usage). 
 
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

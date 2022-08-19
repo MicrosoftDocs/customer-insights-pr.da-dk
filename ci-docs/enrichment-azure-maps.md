@@ -1,19 +1,19 @@
 ---
 title: Forbedre kundeprofiler med lokationsdata fra Azure Maps (forhåndsversion)
 description: Generelle oplysninger om Azure Maps -førsteparts forbedring.
-ms.date: 06/10/2022
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
 author: jodahlMSFT
 ms.author: jodahl
 manager: shellyha
-ms.openlocfilehash: dfadc08f67beac3fded1a97e557ee9e1880664e0
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: f14b4fc20a9a1d8842f42f9e0e656b3d8dcddcf4
+ms.sourcegitcommit: b1d06fe26934f12f0c5ed13e8ef1d37e52e67cc7
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052600"
+ms.lasthandoff: 08/08/2022
+ms.locfileid: "9238035"
 ---
 # <a name="enrich-customer-profiles-with-location-data-from-azure-maps-preview"></a>Forbedre kundeprofiler med lokationsdata fra Azure Maps (forhåndsversion)
 
@@ -35,14 +35,9 @@ Du skal være en [administrator](permissions.md#admin) i Customer Insights og ha
 
 1. Angiv et navn til forbindelsen og en gyldig Azure Maps API-nøgle.
 
-1. Gennemse og giv dit samtykke til [Beskyttelse af personlige oplysninger og overholdelse af data](#data-privacy-and-compliance) ved at vælge **Jeg accepterer**.
+1. Gennemse [Beskyttelse af personlige data og overholdelse af angivne standarder](connections.md#data-privacy-and-compliance), og vælg **Jeg accepterer**.
 
 1. Vælg **Kontrollér** for at konfigurationen er valideret, og vælg derefter **Gem**.
-
-### <a name="data-privacy-and-compliance"></a>Beskyttelse af personlige oplysninger og overholdelse af angivne standarder
-
-Når du gør det muligt for Dynamics 365 Customer Insights at overfører data til Azure Maps, tillader du overførsel af data uden for grænsen for overholdelse for Dynamics 365 Customer Insights, herunder potentielt følsomme data, f.eks. personlige data. Microsoft kan overføre sådanne data efter dine instruktioner, men du er ansvarlig for at sikre, at Azure Maps overholder alle forpligtelser i forbindelse med sikkerhed eller beskyttelse af personlige oplysninger. Du kan finde flere oplysninger i [Microsofts erklæring om beskyttelse af personlige oplysninger](https://go.microsoft.com/fwlink/?linkid=396732).
-Din Dynamics 365 Customer Insights-administrator kan til enhver tid fjerne denne forbedring for at afslutte brugen af denne funktionalitet.
 
 ## <a name="configure-the-enrichment"></a>Konfiguration af forbedring
 

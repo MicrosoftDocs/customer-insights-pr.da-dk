@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: 1af7f018abd412c833ff22b3880f0e4508ff4953
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139568"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245587"
 ---
 # <a name="update-the-unification-settings"></a>Opdater samlingsindstillingerne
 
@@ -42,7 +42,7 @@ Hvis du vil gennemse eller ændre indstillingerne for samling, når der er opret
    :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skærmbillede af siden Data Unify, hvor indstillingerne Unify er fremhævet.":::
 
    - Hvis du vil evaluere kvaliteten af matchning-betingelserne (uden at deduplikere og matche regler) uden at opdatere den samlede profil, skal du se [Kørsel af matching-betingelser](#run-matching-conditions). Indstillingen **Kør kun matching betingelser** vises ikke for det enkelte objekt.
-   - [Foren kundeprofiler](#run-updates-to-the-unified-customer-profile) for at køre mach af betingelser of opdatere unified customer profile-objektet, uden at det påvirker afhængigheder (f.eks. afhængigheder, segmenter eller mål). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](system.md#schedule-tab).
+   - [Foren kundeprofiler](#run-updates-to-the-unified-customer-profile) for at køre mach af betingelser of opdatere unified customer profile-objektet, uden at det påvirker afhængigheder (f.eks. afhængigheder, segmenter eller mål). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](schedule-refresh.md).
    - [Foren kundeprofiler og afhængigheder](#run-updates-to-the-unified-customer-profile) for at køre mach af betingelser of opdatere unified customer profile-objektet og alle afhængigheder (f.eks. afhængigheder, segmenter eller mål). Alle processer køres automatisk igen.
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
@@ -154,7 +154,7 @@ Kør matchningsbetingelser kører kun regler for duplikering og overensstemmelse
 
 1. På siden **Data** > **Unify** vælges:
 
-   - **Foren kundeprofiler**: Kører mach af betingelser of opdateringer af unified customer profile-objektet, uden at det påvirker afhængigheder (f.eks. afhængigheder, segmenter eller mål). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](system.md#schedule-tab).
+   - **Foren kundeprofiler**: Kører mach af betingelser of opdateringer af unified customer profile-objektet, uden at det påvirker afhængigheder (f.eks. afhængigheder, segmenter eller mål). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](schedule-refresh.md).
 
    - **Unify kundeprofiler og afhængigheder**: Kører matchende betingelser og opdateringer af den samlede profil og alle afhængigheder. Alle processer køres automatisk igen. Når alle downstream-processer er fuldført, afspejler kundeprofilen de opdaterede data.
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: m-hartmann
 ms.author: mhart
 manager: shellyha
-ms.openlocfilehash: a180f6462452d9830d0daa150a35a9d0acad925a
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 42abfb305efaccaeef48e32f2cc69f3d36fbe73d
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081142"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245458"
 ---
 # <a name="manage-predictions"></a>Administrere forudsigelser
 
@@ -58,7 +58,7 @@ Følgende kolonner i rapporten indeholder nyttige oplysninger til forbedring af 
 
 ## <a name="refresh-a-prediction"></a>Opdatere en forudsigelse
 
-Forudsigelser opdateres automatisk efter den samme [tidsplan, som dataene opdateres i](system.md#schedule-tab), som de er konfigureret i indstillinger. Du kan også opdatere dem manuelt.
+Forudsigelser opdateres automatisk efter den samme [tidsplan, som dataene opdateres i](schedule-refresh.md), som de er konfigureret i indstillinger. Du kan også opdatere dem manuelt.
 
 1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
 

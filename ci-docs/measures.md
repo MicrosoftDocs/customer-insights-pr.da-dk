@@ -14,12 +14,12 @@ searchScope:
 - ci-measure-template
 - ci-enrichment-details
 - customerInsights
-ms.openlocfilehash: ead57ccbdcaf9f86ee54d1f15de71a63f2e1081b
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 99368a7ab2e8d7b3e53c04fbf25bb23bd2e550a9
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170813"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245366"
 ---
 # <a name="measures-overview"></a>Målingsoversigt
 
@@ -53,7 +53,7 @@ Vælg en måling for at få vist tilgængelige handlinger. Vælg en målingsnavn
 - **Rediger** målingen for at ændre dets egenskaber.
 - **Opdater** målingen, så den indeholder de seneste data.
 - **Omdøb** målingen.
-- **Aktivér** eller **Deaktiver** målingen. Inaktive målinger kan ikke opdateres under en [planlagt opdatering](system.md#schedule-tab) og har **Status** angivet som **Sprunget over** som tegn på, at en opdatering ikke er forsøgt udført.
+- **Aktivér** eller **Deaktiver** målingen. Inaktive målinger kan ikke opdateres under en [planlagt opdatering](schedule-refresh.md) og har **Status** angivet som **Sprunget over** som tegn på, at en opdatering ikke er forsøgt udført.
 - **Kode** til [administration af koder](work-with-tags-columns.md#manage-tags) for måling.
 - **Slet** målingen.
 - **Kolonner** til [tilpasning af de kolonner](work-with-tags-columns.md#customize-columns), der vises.
@@ -62,7 +62,7 @@ Vælg en måling for at få vist tilgængelige handlinger. Vælg en målingsnavn
 
 ## <a name="refresh-measures"></a>Måling blev opdateret
 
-Målinger kan opdateres automatisk i en automatisk planlægning eller opdateres manuelt efter behov. Hvis du manuelt vil opdatere en eller flere målinger, skal du vælge dem og vælge **Opdater**. Hvis du vil [planlægge en automatisk opdatering](system.md#schedule-tab), skal du gå til **Administrator** > **System** > **Plan**.
+Målinger kan opdateres automatisk i en automatisk planlægning eller opdateres manuelt efter behov. Hvis du manuelt vil opdatere en eller flere målinger, skal du vælge dem og vælge **Opdater**. Hvis du vil [planlægge en automatisk opdatering](schedule-refresh.md), skal du gå til **Administrator** > **System** > **Plan**.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

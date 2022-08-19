@@ -12,12 +12,12 @@ ms.custom: intro-internal
 searchScope:
 - ci-home
 - customerInsights
-ms.openlocfilehash: 33c8910b7a4dd8723c0d62f2e28228cd2d8df4b7
-ms.sourcegitcommit: 5716025eb4828425ca237377b02a892de8689f4a
+ms.openlocfilehash: 875cbbd095dfd239ab83c1c80db28ea7c0a04ed0
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "9142812"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245550"
 ---
 # <a name="how-to-create-a-new-environment"></a>Sådan opretter du et nyt miljø
 
@@ -48,7 +48,7 @@ I trinnet **Grundlæggende oplysninger** skal du vælge, om du vil oprette et mi
 
 Angiv følgende oplysninger:
 
-- **Navn**: Navnet på dette miljø. Dette felt er allerede udfyldt, hvis du har kopieret et eksisterende miljø, men du kan ændre det.
+- **Navn**: Navnet på dette miljø. Dette felt er allerede udfyldt, hvis du har kopieret et eksisterende miljø, men du kan ændre det. Hvis du har mere end ét arbejdsmiljø, skal du give hver en let identificerbar visningsnavn.
 - **Vælg din forretning**: Vælg den primære målgruppe til det nye miljø. Du kan arbejde med individuelle firmaer (B-til-C) eller [forretningskonti](work-with-business-accounts.md) (B-til-B). Hvis din organisation primært gør forretninger med enkeltpersoner, for eksempel en forhandler eller en cafe, skal du vælge individuelle forbrugere. Hvis din primære målgruppe er andre virksomheder, for eksempel en bilproducent eller en papirvirksomhed, skal du vælge virksomhedskonti.
 - **Type**: Vælg, om du vil oprette et produktions- eller sandkassemiljø. Sandkassemiljøer tillader ikke planlagt dataopdatering og er beregnet til forudimplementering og test. Sandkassemiljøer bruger samme primære målgruppe som det produktionsmiljø, der i øjeblikket er valgt.
 - **Område**: Det område, hvor tjenesten er installeret og har sin vært. Hvis du vil [bruge din egen Azure Data Lake Storage-konto](own-data-lake-storage.md) eller [oprette forbindelse til en eksisterende Microsoft Dataverse-organisation](customer-insights-dataverse.md), skal Customer Insights-miljøet være i samme område.

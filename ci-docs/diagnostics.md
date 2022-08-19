@@ -1,7 +1,7 @@
 ---
-title: Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
+title: Eksport af diagnosticeringslogfiler (forhåndsversion)
 description: Få mere at vide om, hvordan du sender logge til Microsoft Azure-overvågning.
-ms.date: 12/14/2021
+ms.date: 08/08/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: article
@@ -11,87 +11,56 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 8c72df7054a682244215bbee54968d6aef4bbf59
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9052646"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245918"
 ---
-# <a name="log-forwarding-in-dynamics-365-customer-insights-with-azure-monitor-preview"></a>Log på videresendelse i Dynamics 365 Customer Insights med Azure Monitor (forhåndsversion)
+# <a name="export-diagnostic-logs-preview"></a>Eksport af diagnosticeringslogfiler (forhåndsversion)
 
-Dynamics 365 Customer Insights leverer en direkte integration med Azure Monitor. Med Azure Monitor-ressourcelogfiler kan du overvåge og sende logge til [Azure-datalager](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) eller streame dem til [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
+Videresende logfiler fra Customer Insights ved hjælp af Azure Monitor. Med Azure Monitor-ressourcelogfiler kan du overvåge og sende logge til [Azure-datalager](https://azure.microsoft.com/services/storage/), [Azure Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) eller streame dem til [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/).
 
 Customer Insights sender følgende hændelseslogfiler:
 
 - **Overvågningshændelser**
-  - **APIEvent** - aktiverer sporing af ændringer foretaget via Dynamics 365 Customer Insights-brugergrænsefladen.
+  - **APIEvent** - aktiverer sporing af ændringer via Dynamics 365 Customer Insights-brugergrænsefladen.
 - **Driftshændelser**
-  - **WorkflowEvent** - Arbejdsprocessen gør det muligt at konfigurere [datakilder](data-sources.md), [samle](data-unification.md) og [forbedre](enrichment-hub.md) og til sidst [eksportere](export-destinations.md) data til andre systemer. Alle disse trin kan udføres individuelt (f.eks. udløse en enkelt eksport). Kan også køres orkestreret (f.eks. dataopdatering fra datakilder, der udløser den enhedsproces, der trækker oplysninger ind, og når dataene er eksporteret til et andet system). Du kan finde flere oplysninger i [WorkflowEvent-skema](#workflow-event-schema).
-  - **APIEvent** - alle API-opkald til kundernes forekomst til Dynamics 365 Customer Insights. Du kan finde flere oplysninger i [APIEvent-skema](#api-event-schema).
+  - **WorkflowEvent** - gør det muligt at konfigurere [datakilder](data-sources.md), [samle](data-unification.md) og [forbedre](enrichment-hub.md) og til sidst [eksportere](export-destinations.md) data til andre systemer. Disse trin kan udføres individuelt (f.eks. udløse en enkelt eksport). De kan også køres orkestreret (f.eks. dataopdatering fra datakilder, der udløser den enhedsproces, der trækker oplysninger ind, og når dataene er eksporteret til et andet system). Du kan finde flere oplysninger i [WorkflowEvent-skema](#workflow-event-schema).
+  - **APIEvent** - sender alle API-opkald til kundernes forekomst til Dynamics 365 Customer Insights. Du kan finde flere oplysninger i [APIEvent-skema](#api-event-schema).
 
 ## <a name="set-up-the-diagnostic-settings"></a>Konfigurer diagnosticeringsindstillinger
 
 ### <a name="prerequisites"></a>Forudsætninger
 
-Hvis du vil konfigurere diagnosticering i Customer Insights, skal følgende forudsætninger være opfyldt:
-
-- Du skal have et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
-- Du har [administrator](permissions.md#admin)-tilladelser i Customer Insights.
-- Du har rollen **bidragyder** og **brugeradgangsadministrator** for destinationsressourcen på Azure. Ressourcen kan være en Azure Data Lake Storage-konto, en Azure-hændelseshub eller et Azure Log Analytics-arbejdsområde. Du kan finde flere oplysninger ved at gå til [Tilføje eller fjerne Azure-rolletildelinger ved hjælp af Azure-portalen](/azure/role-based-access-control/role-assignments-portal). Denne tilladelse er nødvendig, når du konfigurerer diagnosticeringsindstillinger i Customer Insights, men den kan ændres, når installationen er fuldført.
+- Et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
+- [Administrator](permissions.md#admin)-tilladelser i Customer Insights.
+- [Rollen som bidragyder og brugeradgangsadministrator](/azure/role-based-access-control/role-assignments-portal) for destinationsressourcen på Azure. Ressourcen kan være en Azure Data Lake Storage-konto, en Azure-hændelseshub eller et Azure Log Analytics-arbejdsområde. Denne tilladelse er nødvendig, når du konfigurerer diagnosticeringsindstillinger i Customer Insights, men den kan ændres, når installationen er fuldført.
 - [Destinationskravene](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) til Azure-lager, Azure-hændelseshub eller Azure Log Analytics opfyldes.
 - Du har som minimum rollen **Læser** i den ressourcegruppe, som ressourcen tilhører.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Konfigurere diagnosticeringsværktøjet med Azure Monitor
 
-1. I Customer Insights skal du vælge **System** > **Diagnostisering** for at se de diagnosticeringsdestinationer, der har konfigureret denne forekomst.
+1. Gå i Customer Insights til **Administration** > **System**, og vælg fanen **Diagnosticering**.
 
 1. Vælg **Tilføj destination**.
 
-   > [!div class="mx-imgBorder"]
-   > ![Diagnosticeringsforbindelse](media/diagnostics-pane.png "Diagnosticeringsforbindelse")
+   :::image type="content" source="media/diagnostics-pane.png" alt-text="Diagnosticeringsforbindelse.":::
 
 1. Angiv et navn i feltet **Navn til diagnosticering af destination**.
 
-1. Vælg **Lejer** til Azure-abonnement med destinationsressourcen, og vælg **Log på**.
-
 1. Vælg **Ressourcetypen** (lagerkonto, hændelseshub eller loganalyser).
 
-1. Vælg **Abonnement** for destinationskilden.
+1. Vælg **Abonnement**, **Ressourcegruppe** og **Ressource** for destinationsressourcen. Se [Konfiguration på destinationsressourcen](#configuration-on-the-destination-resource) for at få tilladelse og logoplysninger.
 
-1. Vælg **Ressourcegruppe** for destinationsressourcen.
-
-1. Vælg **Ressource**.
-
-1. Bekræft erklæringen **Beskyttelse af personlige oplysninger og overholdelse af angivne standarder**.
+1. Gennemse [Beskyttelse af personlige data og overholdelse af angivne standarder](connections.md#data-privacy-and-compliance), og vælg **Jeg accepterer**.
 
 1. Vælg **Opret forbindelse til systemet** for at oprette forbindelse til destinationsressourcen. Loggene begynder at blive vist på destinationen efter 15 minutter, hvis API'en er i brug og genererer hændelser.
 
-### <a name="remove-a-destination"></a>Fjern en destination
-
-1. gå til **System** > **Diagnonsticering**.
-
-1. Vælg diagnosticeringsdestinationen på listen.
-
-1. I kolonnen **Handlinger** vælges ikonet **Slet**.
-
-1. Bekræft sletningen for at standse videresendelse af logfilen. Ressourcen i Azure-abonnementet slettes ikke. Du kan vælge linket i kolonnen **Handlinger** for at åbne Azure-portalen for den valgte ressource og slette den der.
-
-## <a name="log-categories-and-event-schemas"></a>Logkategorier og hændelsesskemaer
-
-Aktuelt understøttes [API-hændelser](apis.md) og arbejdsproceshændelser, og følgende kategorier og skemaer gælder.
-Logskemaet følger det [almindelige Azure Monitor-skema](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
-
-### <a name="categories"></a>Kategorier
-
-Customer Insights indeholder to kategorier:
-
-- **Overvågningshændelser**: [API-hændelser](#api-event-schema), der sporer konfigurationsændringerne i tjenesten. `POST|PUT|DELETE|PATCH`-handlinger i denne kategori.
-- **Driftsmæssige hændelser**: [API-hændelser](#api-event-schema) eller [arbejdsproceshændelser](#workflow-event-schema), der oprettes under brug af tjenesten.  F.eks. `GET`-forespørgsler eller udførelseshændelser for en arbejdsproces.
-
 ## <a name="configuration-on-the-destination-resource"></a>Konfiguration på destinationsressourcen
 
-Afhængigt af dit valg af ressourcetype anvendes følgende trin automatisk:
+Afhængigt af dit valg af ressourcetype indtræffer følgende ændringer automatisk:
 
 ### <a name="storage-account"></a>Storage account
 
@@ -116,9 +85,34 @@ Customer Insights-servicechefen får tilladelsen **Loganalyse bidragyder** på r
 
 Udvid **overvågningsløsning** i vinduet **Forespørgsler**, og find de eksempelforespørgsler, der findes ved at søge efter `CIEvents`.
 
+## <a name="remove-a-diagnostics-destination"></a>Fjern en destination for diagnosticering
+
+1. Gå til **Administration** > **System**, og vælg fanen **Diagnosticering**.
+
+1. Vælg diagnosticeringsdestinationen på listen.
+
+   > [!TIP]
+   > Når destinationen fjernes, stoppes videresendelsen af logfilen, men ressourcen slettes ikke i Azure-abonnementet. Du kan slette ressourcen i Azure, vælge linket i kolonnen **Handlinger** for at åbne Azure-portalen for den valgte ressource og slette den der. Slet derefter diagnosticeringsdestinationen.
+
+1. I kolonnen **Handlinger** vælges ikonet **Slet**.
+
+1. Bekræft sletningen for at fjerne destinationen og stoppe videresendelse af loggen.
+
+## <a name="log-categories-and-event-schemas"></a>Logkategorier og hændelsesskemaer
+
+Aktuelt understøttes [API-hændelser](apis.md) og arbejdsproceshændelser, og følgende kategorier og skemaer gælder.
+Logskemaet følger det [almindelige Azure Monitor-skema](/azure/azure-monitor/platform/resource-logs-schema#top-level-common-schema).
+
+### <a name="categories"></a>Kategorier
+
+Customer Insights indeholder to kategorier:
+
+- **Overvågningshændelser**: [API-hændelser](#api-event-schema), der sporer konfigurationsændringerne i tjenesten. `POST|PUT|DELETE|PATCH`-handlinger i denne kategori.
+- **Driftsmæssige hændelser**: [API-hændelser](#api-event-schema) eller [arbejdsproceshændelser](#workflow-event-schema), der oprettes under brug af tjenesten.  F.eks. `GET`-forespørgsler eller udførelseshændelser for en arbejdsproces.
+
 ## <a name="event-schemas"></a>Hændelsesskemaer
 
-API-hændelser og arbejdsproceshændelser har en fælles struktur og detaljer, hvor de er forskellige, se [API-hændelsesskema](#api-event-schema) eller [arbejdsproceshændelsesskema](#workflow-event-schema).
+API-hændelser og arbejdsproceshændelser har en fælles struktur, men med nogle få forskelle. Du kan finde flere oplysninger i [API-hændelsesskema](#api-event-schema) eller [Workflow-hændelsesskema](#workflow-event-schema).
 
 ### <a name="api-event-schema"></a>API-hændelsesskema
 
@@ -220,7 +214,6 @@ Arbejdsprocessen indeholder flere trin. [Indtage datakilder](data-sources.md), [
 | `durationMs`    | Long      | Valgfrit          | Varigheden af handlingen i millisekunder.                                                                                                                    | `133`                                                                                                                                                                    |
 | `properties`    | String    | Valgfrit          | JSON-objekt med flere egenskaber til en bestemt kategori af hændelser.                                                                                        | Se underafsnit [Arbejdsprocesegenskaber](#workflow-properties-schema)                                                                                                       |
 | `level`         | String    | Obligatorisk          | Begivenhedens forskellige niveauer.                                                                                                                                  | `Informational`, `Warning` eller `Error`                                                                                                                                   |
-|                 |
 
 #### <a name="workflow-properties-schema"></a>Skema for arbejdsprocesegenskaber
 
@@ -247,3 +240,5 @@ Arbejdsproceshændelser har følgende egenskaber.
 | `properties.additionalInfo.AffectedEntities` | Nr.       | Ja  | Valgfrit. Kun for `Export`-OperationType. Indeholder en liste over konfigurerede objekter i eksporten.                                                                                                                                                            |
 | `properties.additionalInfo.MessageCode`      | Nr.       | Ja  | Valgfrit. Kun for `Export`-OperationType. Detaljeret meddelelse om eksporten.                                                                                                                                                                                 |
 | `properties.additionalInfo.entityCount`      | Nr.       | Ja  | Valgfrit. Kun for `Segmentation`-OperationType. Angiver det samlede antal medlemmer, som segmentet har.                                                                                                                                                    |
+
+[!INCLUDE [footer-include](includes/footer-banner.md)]

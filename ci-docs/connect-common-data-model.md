@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: e071bf9364b44a92d81c9ff2269ff4e8654010aa
-ms.sourcegitcommit: 5807b7d8c822925b727b099713a74ce2cb7897ba
+ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
+ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/28/2022
-ms.locfileid: "9206992"
+ms.lasthandoff: 08/10/2022
+ms.locfileid: "9245780"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Opret forbindelse til data i Azure Data Lake Storage
 
@@ -56,8 +56,8 @@ Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake
 
 1. Vælg en af følgende muligheder for at **oprette forbindelse til lagerpladsen ved hjælp af**. Du kan finde flere oplysninger i [Opret forbindelse i Customer Insights til en Azure Data Lake Storage Gen2-konto ved hjælp af en Azure-tjenestekonto](connect-service-principal.md).
 
-   - **Azure-ressource**: Angiv **ressource-id**. Hvis du vil aktivere data fra en lagerkonto via et Azure Private Link, skal du vælge **Aktivér privat link**. Du kan finde flere oplysninger under [Private Link](security-overview.md#private-links-tab).
-   - **Azure-abonnement**: Vælg **abonnementet**, og vælg derefter **ressourcegruppen** og **lagerkontoen**. Hvis du vil aktivere data fra en lagerkonto via et Azure Private Link, skal du vælge **Aktivér privat link**. Du kan finde flere oplysninger under [Private Link](security-overview.md#private-links-tab).
+   - **Azure-ressource**: Angiv **ressource-id**. Hvis du vil aktivere data fra en lagerkonto via et Azure Private Link, skal du vælge **Aktivér privat link**. Du kan finde flere oplysninger under [Private Link](security-overview.md#set-up-an-azure-private-link).
+   - **Azure-abonnement**: Vælg **abonnementet**, og vælg derefter **ressourcegruppen** og **lagerkontoen**. Hvis du vil aktivere data fra en lagerkonto via et Azure Private Link, skal du vælge **Aktivér privat link**. Du kan finde flere oplysninger under [Private Link](security-overview.md#set-up-an-azure-private-link).
   
    > [!NOTE]
    > Du skal bruge en af følgende roller enten for objektbeholderen eller lagerkontoen for at kunne oprette datakilden:
@@ -176,7 +176,7 @@ Du kan opdatere *Kontoen Opret forbindelse til lager ved hjælp af*-indstillinge
         > - Lager for Blob-dataejer
         > - Lager for Blob Data-bidragyder
 
-   - **Aktiver privat link** hvis du vil indtage data fra en lagerkonto via et Azure Private Link. Du kan finde flere oplysninger under [Private Link](security-overview.md#private-links-tab).
+   - **Aktiver privat link** hvis du vil indtage data fra en lagerkonto via et Azure Private Link. Du kan finde flere oplysninger under [Private Link](security-overview.md#set-up-an-azure-private-link).
 
 1. Vælg **Næste**.
 1. Opdater følgende:
