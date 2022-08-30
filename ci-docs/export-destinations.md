@@ -1,7 +1,7 @@
 ---
 title: Eksportoversigt (forhåndsversion)
 description: Administrer dataeksport til at dele data.
-ms.date: 07/25/2022
+ms.date: 08/12/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: overview
@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: fd234aff9021ded76d8226bf2f15e035cf75e7db
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245320"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304052"
 ---
 # <a name="exports-preview-overview"></a>Eksportoversigt (forhåndsversion)
 
@@ -27,8 +27,8 @@ ms.locfileid: "9245320"
 
 Der findes to hovedtyper af eksport:  
 
-- **Eksport af dataoutput** eksportere alle objekttyper, der er tilgængelige i Customer Insights. De objekter, du vælger til eksport, eksporteres med alle datafelter, metadata, skemaer og tilknytningsdetaljer.
-- **Segmenteksport**: eksportere segmentobjekter fra Customer Insights. Segmenter repræsenterer en liste over kundeprofiler. Når du konfigurerer eksporten, skal du vælge de inkluderede datafelter, afhængigt af det målsystem du eksporterer data til.
+- **Eksport af dataoutput** giver dig mulighed for at eksportere alle objekttyper, der er tilgængelige i Customer Insights. De objekter, du vælger til eksport, eksporteres med alle datafelter, metadata, skemaer og tilknytningsdetaljer.
+- Med **segmenteksport** kan du eksportere segmentobjekter fra Customer Insights. I forbindelse med individuelle forbrugere (B-til-C) repræsenterer segmenter en liste over kundeprofiler. For forretninger (B-til-B) [kan segmenter repræsentere en liste over firmaer eller kontakter](segment-builder.md#create-a-new-segment-with-segment-builder). Når du konfigurerer eksporten, skal du vælge de inkluderede datafelter, afhængigt af det målsystem du eksporterer data til.
 
 ### <a name="export-segments"></a>Eksportere segmenter
 
@@ -38,14 +38,15 @@ De fleste eksportmuligheder understøtter begge typer miljøer. Der er særlige 
 **Segmenteksport i miljøer for individuelle forbrugere (B-til-C)**  
 - Segmenter i konteksten af miljøer for individuelle kunder bygger på objektet *samlet kundeprofil*. Alle de segmenter, der opfylder kravene i destinationssystemerne (f.eks. en mailadresse), kan eksporteres.
 
-**Segmenteksportmiljøer for forretningskonti (B-til-B)**  
-- Segmenter i konteksten af miljøer for forretningskonti bygger på *firma*-objektet. Hvis du vil eksportere firmasegmenter, som de er, skal destinationssystemet understøtte firmasegmenter. Det er tilfældet for [LinkedIn](export-linkedin-ads.md), når du vælger **firma**-indstillingen, mens du definerer eksporten.
-- Alle andre destinationssystemer kræver felter fra kontaktobjektet. Hvis du vil sikre, at firmasegmenter kan hente data fra relaterede kontakter, skal din segmentdefinition projicere attributter for kontaktobjektet. Få mere at vide om, hvordan du [konfigurerer segmenter og projektattributter](segment-builder.md).
+**Segmenteksporter i miljøer for forretningskonti (B-til-B)**  
+- Segmenter i konteksten af miljøer for forretningskonti bygger på *firma*-objektet eller *kontakt*-objektet. Hvis du vil eksportere firmasegmenter, som de er, skal destinationssystemet understøtte firmasegmenter. Det er tilfældet for [LinkedIn](export-linkedin-ads.md), når du vælger **firma**-indstillingen, mens du definerer eksporten.
+- Alle andre destinationssystemer kræver felter fra kontaktobjektet.
+- Med to segmenttyper (kontakter og firmaer) identificerer Customer Insights automatisk, hvilken type segmenter der er berettiget til eksport, baseret på destinationssystemet. I forbindelse med et kontaktfokuseret destinationssystem som Mailchimp kan du f.eks. kun bruge Customer Insights til at vælge de kontaktsegmenter, der skal eksporteres.
 
 **Begrænsninger for segmenteksport**  
 - Tredjeparters destinationssystemer kan begrænse antallet af kundeprofiler, du kan eksportere. 
 - For individuelle kunder kan du se det faktiske antal segmentmedlemmer, når du vælger et segment til eksport. Du får en advarsel, hvis et segment er for stort. 
-- I forbindelse med forretningskonti kan du se antallet af firmaer i et segment. Men antallet af kontakter, der kan projiceres, vises ikke. I visse tilfælde kan det medføre, at det eksporterede segment rent faktisk indeholder flere kundeprofiler, end destinationssystemet accepterer. Hvis grænserne for destinationssystemers resultater overskrides, springes eksporten over.
+- I forbindelse med forretningskonti kan du se antallet af firmaer eller kontakter, afhængigt af segmentet. Du får en advarsel, hvis segmentet er for stort. Hvis grænserne for destinationssystemers resultater overskrides, springes eksporten over.
 
 ## <a name="set-up-a-new-export"></a>Konfigurer en ny eksport
 
@@ -110,6 +111,20 @@ Hvis du vil eksportere data uden at vente på en planlagt opdatering, skal du g�
 
 - Hvis du vil køre alle eksporter, skal du vælge **Kør alle** på kommandolinjen. Denne handling kører kun eksporter, der har en aktiv tidsplan. Hvis du vil køre en eksport, der ikke er aktiv, skal du køre en enkelt eksport.
 - Hvis du vil køre en enkelt eksport, skal du markere den på listen og vælge **Kør** på kommandolinjen.
+
+## <a name="troubleshooting"></a>Fejlfinding
+
+### <a name="segment-not-eligible-for-export"></a>Segment, der ikke er berettiget til eksport
+
+**Problemet** I et forretningsmiljø mislykkes eksporten med fejlmeddelelsen "Følgende segment er ikke berettiget til denne eksportdestination: '{segmentnavn}'. Vælg kun segmenter af typen ContactProfile, og prøv igen."
+
+**Løsning** Customer Insights-miljøer for forretningskonti blev opdateret, så de både understøtter kontaktsegmenter og firmasegmenter. På grund af denne ændring fungerer eksport, hvor der er brug for kontaktoplysninger, kun med segmenter baseret på kontakter.
+
+1. [Opret et segment på baggrund af kontakter](segment-builder.md), der svarer til det tidligere anvendte segment.
+
+1. Når kontaktsegmentet er kørt, skal du redigere den pågældende eksport og vælge det nye segment.
+
+1. Vælg **Gem** for at gemme konfigurationen eller **Gem og kør** for at teste eksporten med det samme.
 
 [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
 

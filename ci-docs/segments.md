@@ -1,7 +1,7 @@
 ---
 title: Oversigter over segmenter
 description: Oversigt over segmenter, og hvordan de oprettes og administreres.
-ms.date: 05/20/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: JimsonChalissery
@@ -14,18 +14,18 @@ searchScope:
 - ci-segments
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: 195a7c733f047c24f9f47a151c1cb623fe34d055
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d4de3a6af6bc7d54305a23e3fbd3cc95d464d352
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246286"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304788"
 ---
 # <a name="segments-overview"></a>Oversigter over segmenter
 
 Med segmenter kan du gruppere dine kunder baseret på demografiske, transaktionsrelaterede eller adfærdsattributter. Du kan bruge segmenter til at målrette kampagnefremstød, salgsaktiviteter og kundesupporthandlinger for at nå dine forretningsmæssige mål.
 
-Kundeprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* af et segment. Der gælder nogle [tjenestebegrænsninger](/dynamics365/customer-insights/service-limits).
+Kunde- eller kontaktprofiler, der matcher filtrene i en segmentdefinition, kaldes *medlemmer* af et segment. Der gælder nogle [tjenestebegrænsninger](/dynamics365/customer-insights/service-limits).
 
 ## <a name="create-a-segment"></a>Opret et segment
 
@@ -41,13 +41,19 @@ Vælg, hvordan du vil oprette et segment på baggrund af publikum.
 
 # <a name="business-accounts-b-to-b"></a>[Virksomhedskonti (B-til-B)](#tab/b2b)
 
-- Simple eller komplekse segmenter med segmentgenerator: [Byg din egen](segment-builder.md)
+Segment af firmaer eller segmenter af kontakter (forhåndsversion) med segmentgenerator: [Byg dit eget](segment-builder.md)
+
+> [!NOTE]
+> De fleste eksportmål kræver kontaktoplysninger i forbindelse med marketing. Opret derfor kontaktsegmenter, der kan bruges til disse eksporter.
 
 ---
 
 ## <a name="manage-existing-segments"></a>Administrere eksisterende segmenter
 
-Gå til siden **Segmenter** for at få vist de segmenter, du har oprettet, deres status, tilstand og antallet af medlemmer samt sidste gang dataene blev opdateret. Du kan sortere listen over segmenter efter en hvilken som helst kolonne eller bruge det segment der skal håndteres.
+Gå til siden **Segmenter** for at se de segmenter, du har oprettet, deres status og tilstand, og sidste gang dataene blev opdateret. Du kan sortere listen over segmenter efter en hvilken som helst kolonne eller bruge det segment der skal håndteres.
+
+> [!TIP]
+> I B-til-B-miljøer identificerer kolonnen **Publikumstype**, om et segment er baseret på firmaer eller kontakter.
 
 Vælg et segment for at få vist tilgængelige handlinger.
 
@@ -82,7 +88,7 @@ Den nederste del indeholder en liste over segmentmedlemmerne.
 > [!NOTE]
 > Felter, der vises på denne liste, er baseret på attributterne for objekterne i dit segment.
 >
->Listen er et eksempel på de matchende segmentmedlemmer og viser de første 100 poster i dit segment, så du hurtigt kan evaluere det og gennemgå dets definitioner, hvis det er nødvendigt. Hvis du vil se alle matchende poster, skal du [eksportere segmentet](export-destinations.md).
+> Listen er et eksempel på de matchende segmentmedlemmer og viser de første 100 poster i dit segment, så du hurtigt kan evaluere det og gennemgå dets definitioner, hvis det er nødvendigt. Hvis du vil se alle matchende poster, skal du vælge **Se mere**, der åbner siden [**Objekter**](entities.md) eller [eksporterer segmentet](export-destinations.md).
 
 ## <a name="refresh-segments"></a>Opdatere segmenter
 

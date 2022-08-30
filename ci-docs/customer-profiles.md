@@ -14,12 +14,12 @@ searchScope:
 - ci-activities
 - ci-activities-wizard
 - customerInsights
-ms.openlocfilehash: 6cdf47e6997f230811dcb0f2cf5542f3a6db2367
-ms.sourcegitcommit: c45c3e044034bf866b0662f80a59166cee4ababe
+ms.openlocfilehash: 0c8edfd8f45ce7770d568811df2b38be1b04e73a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9188086"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303776"
 ---
 # <a name="view-customer-profiles"></a>Vis kundeprofiler
 
@@ -78,7 +78,7 @@ Kundeoplysninger indeholder:
 **Feltet Kundeprofil**: viser de forskellige værdier fra det samlede objekt *Kunde*. Hvis et felt ikke har nogen værdi for den valgte kundeprofil, vises det ikke undtagen for adressefeltet. Feltet er struktureret i sektioner:
 
 - I første sektion vises et foruddefineret sæt felter efterfulgt af alle de felter, der er en del af søge- og filterindekset. Alle adresserelaterede felter kombineres i en enkelt linje, der vises selv hvis profilen ikke indeholder adresseoplysninger.
-- **Kontaktpersoner til denne kunde** vises i miljøer for forretningskonti. Hver kontakt vises med egne felter. Tomme felter er skjulte.
+- **Kontakter for denne kunde** vises i miljøer for forretningskonti (B-til-B). Hver kontakt vises med egne felter. Tomme felter er skjulte.
 - **Yderligere felter**: viser de resterende felter i den valgte kunde undtagen id'er.
 - **Id'er**: viser alle id'er under deres tilsvarende objektnavn. Felter identificeres som id efter semantik.
 

@@ -1,9 +1,9 @@
 ---
 title: Semantiske tilknytninger (forhåndsversion)
 description: Oversigt over semantiske tilknytninger, og hvordan de bruges.
-ms.date: 12/01/2021
+ms.date: 08/12/2022
 ms.subservice: audience-insights
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 ms.topic: conceptual
 author: CadeSanthaMSFT
 ms.author: cadesantha
@@ -11,18 +11,19 @@ manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - customerInsights
-ms.openlocfilehash: 7c9588ac7a132ca6f43cf26ea3a744109a0dd2b8
-ms.sourcegitcommit: ad74ace653db9a25fce4343adef7db1c9b0d8904
+ms.openlocfilehash: 8780c11c8b091717349f0fd75a36b99c3a63ab49
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/21/2022
-ms.locfileid: "9183624"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303869"
 ---
 # <a name="semantic-mappings-preview"></a>Semantiske tilknytninger (forhåndsversion)
 
-Med semantiske tilknytninger kan du knytte ikke-aktivitetsdataene til foruddefinerede skemaer. Disse skemaer hjælper Customer Insights til bedre at forstå dine dataattributter. Semantisk tilknytning og de medfølgende data muliggør ny indsigt og funktioner i Customer Insights. Hvis du vil knytte aktivitetsdataene til skemaerne, skal du gennemgå dokumentationen til [aktiviteter](activities.md).
+> [!NOTE]
+> Siden **Semantiske tilknytninger** er kun tilgængelig i forretningsmiljøer (B-til-B), hvor der allerede er oprettet kontaktprofiler ved hjælp af denne side. Du kan fortsætte med at oprette og administrere de enkelte kontaktprofiler på siden **Semantiske tilknytninger**. Eller du kan [samle kontaktdataene](data-unification-contacts.md) for at fjerne dubletter, identificere matcher på tværs af objekter og oprette én samlet kontaktprofil. Du kan derefter bruge den samlede kontaktprofil til at oprette aktiviteter på kontaktniveau.
 
-**Semantiske tilknytninger er i øjeblikket aktiveret for miljøer baseret på forretningskonti**. *ContactProfile* er den eneste semantiske tilknytningstype, der i øjeblikket er tilgængelig i Customer Insights.
+Med semantiske tilknytninger kan du knytte ikke-aktivitetsdataene til foruddefinerede skemaer. Disse skemaer hjælper Customer Insights til bedre at forstå dine dataattributter. Semantisk tilknytning og de medfølgende data muliggør ny indsigt og funktioner i Customer Insights. Hvis du vil knytte aktivitetsdataene til skemaerne, skal du gennemgå dokumentationen til [aktiviteter](activities.md).
 
 ## <a name="define-a-contactprofile-semantic-entity-mapping"></a>Definere en semantisk objekttilknytning af ContactProfile
 
@@ -87,41 +88,5 @@ Vælg en semantisk tilknytning for at få vist tilgængelige handlinger.
 - **Opdater** den semantiske tilknytning, så den indeholder de seneste data. Hvis du opdaterer en bestemt semantisk tilknytning, opdateres alle semantiske tilknytninger af samme type.
 - **Omdøb** den semantiske tilknytning. Vælg **Gem**.
 - **Slet** den semantiske tilknytning. Du kan slette mere end én semantisk tilknytning på én gang ved at vælge de semantiske tilknytninger og sletteikonet. Bekræft sletningen ved at vælge **Slet**.
-
-## <a name="use-a-contactprofile-semantic-entity-mapping-to-create-contact-level-activities"></a>Brug en semantisk objekttilknytning af ContactProfile til at oprette aktiviteter på kontaktniveau
-
-Når du har oprettet en semantisk objekttilknytning af *ContactProfile*, kan du registrere kontaktaktiviteter. Det giver dig mulighed for på aktivitetstidslinjen at se, hvilken kontaktperson der var ansvarlig for hver enkelt aktivitet, på aktivitetstidslinjen. De fleste trin følger den typiske konfiguration af aktivitetstilknytning.
-
-   > [!NOTE]
-   > Hvis aktiviteter på kontaktniveau skal fungere, skal du have attributterne **AccountID** og **ContactID** for hver post i aktivitetsdataene.
-
-1. [Definer en *ContactProfile*-semantisk objekttilknytning](#define-a-contactprofile-semantic-entity-mapping), og kør den semantiske tilknytning.
-
-1. Gå til **Data** > **Aktiviteter**.
-
-1. Vælg **Tilføj aktivitet** for at oprette en ny aktivitet.
-
-1. Navngive aktiviteten, vælge kildeaktivitetsobjektet og vælge den primære nøgle til aktivitetsobjektet.
-
-1. I trinnet med **Relationer** kan du oprette en relation mellem aktivitetskildedataene og firmaer ved at bruge kontaktdataene som et objekt, der gør det nemt at anvende dem. Du kan finde flere oplysninger ved at gå til [direkte og indirekte relationsstier](relationships.md#relationship-paths).
-   - Eksempel på relation for en aktivitet, der kaldes *Køb*:
-      - **Køber kildeaktivitetsdata** > **Kontaktdata** på attributten **ContactID**
-      - **Kontaktdata** > **Kontodata** på attributten **AccountID**
-
-   :::image type="content" source="media/Contact_Activities1.png" alt-text="Eksempel på konfiguration af relation.":::
-
-1. Når du har konfigureret Relationer, skal du vælge **Næste** og fuldføre konfigurationen af aktivitetstilknytningen. Du kan finde detaljerede oplysninger om oprettelse af en aktivitet i [definere en aktivitet](activities.md).
-
-1. Kør aktivitetstilknytningerne.
-
-1. Når der er kørt en aktivitetstilknytning på kontaktniveau, skal du vælge **Kunder**. Dine aktiviteter på kontaktniveau er nu synlige på din kundetidslinje.
-
-   :::image type="content" source="media/Contact_Activities2.png" alt-text="Slutresultat efter konfiguration af kontaktaktiviteter":::
-
-### <a name="contact-level-activity-timeline-filtering"></a>Filtrering af aktivitetstidslinje på kontaktniveau
-
-Den indeholder deres ide eller navne, afhængigt af din *ContactProfile*-konfiguration, for de aktiviteter, de har handlet på. Du kan filtrere aktiviteter efter kontaktpersoner på tidslinjen for at se bestemte kontakter, du er interesseret i. Du kan også se alle de aktiviteter, der ikke er tildelt til en bestemt kontakt, ved at vælge **Aktiviteter, der ikke er knyttet til en kontaktperson**.
-
-:::image type="content" source="media/Contact_Activities3.png" alt-text="De filtreringsindstillinger, der er tilgængelige for aktiviteter på kontaktniveau.":::
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

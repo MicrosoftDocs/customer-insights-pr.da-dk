@@ -2,7 +2,7 @@
 title: Samle kundefelter for data samling
 description: Flet objekter for at oprette samlede kundeprofiler.
 recommendations: false
-ms.date: 05/04/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,18 +14,18 @@ searchScope:
 - ci-match
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a6f29c4985ee274207d122fb1bd76d97b98613b6
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 7ebd6ab8fa6ae141f33295a5d7723e96c8dc70ca
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213575"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304006"
 ---
-# <a name="unify-customer-fields-for-data-unification"></a>Samle kundefelter for data samling
+# <a name="unify-customer-fields"></a>Unify customer-felter
 
-I dette trin af processen til samling skal du vælge og udelukke attributter, der skal flettes i objektet for den samlede profil. Hvis tre objekter f.eks. indeholder e-maildata, kan det være en god ide at bevare alle tre separate mailfelter eller flette dem sammen i et enkelt e-mailfelt for den samlede profil. Nogle attributter kombineres automatisk af systemet. Du kan oprette stabilt og entydigt kunde-id og gruppere relaterede profiler i en klynge.
+I dette trin af processen til samling skal du vælge og udelukke attributter, der skal flettes i objektet for den samlede profil. Hvis tre objekter f.eks. indeholder e-maildata, kan det være en god ide at bevare alle tre separate mailfelter eller flette dem sammen i et enkelt e-mailfelt for den samlede profil. Nogle attributter kombineres automatisk af systemet. Du kan oprette stabile og entydige kunde-id'er. For enkeltkunder kan du gruppere relaterede profiler i en klynge.
 
-:::image type="content" source="media/m3_unify.png" alt-text="Siden Flet i processen til datasamling, der viser en tabel med flettede felter, der definerer den samlede kundeprofil.":::
+:::image type="content" source="media/m3_unify.png" alt-text="Siden Samle kundefelter i processen til datasamling, der viser en tabel med flettede felter, der definerer den samlede kundeprofil.":::
 
 ## <a name="review-and-update-the-customer-fields"></a>Gennemse og opdater kundefelter
 
@@ -47,7 +47,7 @@ I dette trin af processen til samling skal du vælge og udelukke attributter, de
 
 1. Du kan også [generere n konfiguration af kunde-id](#configure-customer-id-generation).
 
-1. Alternativt kan du [gruppere profiler i husstande eller klynger](#group-profiles-into-households-or-clusters).
+1. Alternativt kan du for B-til-C [gruppere profiler i husstande eller klynger](#group-profiles-into-households-or-clusters).
 
 > [!div class="nextstepaction"]
 > [Næste trin: Gennemse samling](review-unification.md)
@@ -161,7 +161,7 @@ Hvis du konfigurerer et stabilt kunde-id, kan du undgå denne funktionsmåde.
 
 ## <a name="group-profiles-into-households-or-clusters"></a>Gruppere profiler i husstande eller klynger
 
-Du kan definere regler til gruppering af relaterede profiler i en klynge. Der findes i øjeblikket to typer klynger – husstandsklynger og brugerdefinerede klynger. Systemet vælger automatisk en husstand med foruddefinerede regler, hvis objektet *Kunde* indeholder de semantiske felter *Person.LastName* og *Location.Address*. Du kan også oprette en klynge med dine egne regler og betingelser ligesom [matchregler](match-entities.md#define-rules-for-match-pairs).
+For enkeltkunder kan du definere regler til gruppering af relaterede profiler i en klynge. Der findes i øjeblikket to typer klynger – husstandsklynger og brugerdefinerede klynger. Systemet vælger automatisk en husstand med foruddefinerede regler, hvis objektet *Kunde* indeholder de semantiske felter *Person.LastName* og *Location.Address*. Du kan også oprette en klynge med dine egne regler og betingelser ligesom [matchregler](match-entities.md#define-rules-for-match-pairs).
 
 1. Vælg **Avanceret** > **Opret en klynge**.
 

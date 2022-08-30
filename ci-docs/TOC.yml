@@ -76,7 +76,9 @@
       href: merge-entities.md
     - name: Gennemgang af datasamling
       href: review-unification.md
-    - name: Opdater samlingsindstillingerne
+    - name: Oprette en samlet kontaktprofil
+      href: data-unification-contacts.md
+    - name: Opdatere samlingsindstillinger
       href: data-unification-update.md
 - name: Dataforbedring
   items:

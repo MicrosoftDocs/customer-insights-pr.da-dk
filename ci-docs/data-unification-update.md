@@ -1,11 +1,11 @@
 ---
-title: Opdater samlingsindstillingerne
-description: Opdater regler for dubletter, regler for overensstemmelse eller ensartede felter i indstillingerne for samling.
-ms.date: 06/01/2022
+title: Opdatere samlingsindstillingerne for kunde, firma eller kontakt
+description: Opdater regler for dubletter, matchregler eller samlede felter i indstillingerne for kunde- eller firmasamling.
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
-author: v-wendysmith
-ms.author: mukeshpo
+author: Scott-Stabbert
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
@@ -13,20 +13,26 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: a7cf06c07e4b95b848a55dfe5fe0b09397fe744e
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245587"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304328"
 ---
-# <a name="update-the-unification-settings"></a>Opdater samlingsindstillingerne
+# <a name="update-unification-settings"></a>Opdatere samlingsindstillinger
 
 Hvis du vil gennemse eller ændre indstillingerne for samling, når der er oprettet en unified profil, skal du udføre følgende trin.
 
 1. Gå til **Data** > **Samle**.
 
-   :::image type="content" source="media/m3_unified.png" alt-text="Skærmbillede af siden Data Unify, når dataene er samlet.":::
+   For de enkelte kunder (B-til-C) viser siden **Samle** antallet af samlede kundeprofiler og felter for hvert samlingstrin.
+
+   :::image type="content" source="media/m3_unified.png" alt-text="Skærmbillede af siden Data Unify, når dataene er samlet." lightbox="media/m3_unified.png":::
+
+   For forretningskonti (B-til-B) viser siden **Samle** antallet af samlede firmaprofiler og felter for hvert firmasamlingstrin. Hvis kontakter er samlet, vises antallet af samlede kontaktprofiler og felter for hver af trinene i den samlede kontakt. Vælg det relevante felt under **Foren firmaer** eller **Foren kontakter (forhåndsversion)**, afhængigt af hvad du vil opdatere.
+
+   :::image type="content" source="media/b2b_unified.png" alt-text="Skærmbillede af siden Samle data, når firma- og kontaktdata er samlet." lightbox="media/b2b_unified.png":::
 
    > [!TIP]
    > Feltet **Matching betingelser** vises kun, hvis der er valgt flere objekter.
@@ -36,14 +42,14 @@ Hvis du vil gennemse eller ændre indstillingerne for samling, når der er opret
    - [Dublerede poster](#manage-deduplication-rules) for at administrere regler for dubletter eller flette indstillinger.
    - [Tilsvarende betingelser](#manage-match-rules) for opdatering af matchning-regler på tværs af to eller flere objekter.
    - [Ensartede kundefelter](#manage-unified-fields) for at felter kan kombineres eller udelades. Du kan også gruppere relaterede profiler i klynger.
+   - [Semantiske felter](#manage-semantic-fields-for-unified-contacts) til administration af semantiske typer for samlede kontaktfelter.
+   - [Relationer](#manage-contact-and-account-relationships) til at administrere relationen mellem kontakt og firma.
 
 1. Når du har foretaget ændringerne, skal du vælge den næste indstilling:
 
-   :::image type="content" source="media/m3_run_match_merge.png" alt-text="Skærmbillede af siden Data Unify, hvor indstillingerne Unify er fremhævet.":::
-
    - Hvis du vil evaluere kvaliteten af matchning-betingelserne (uden at deduplikere og matche regler) uden at opdatere den samlede profil, skal du se [Kørsel af matching-betingelser](#run-matching-conditions). Indstillingen **Kør kun matching betingelser** vises ikke for det enkelte objekt.
-   - [Foren kundeprofiler](#run-updates-to-the-unified-customer-profile) for at køre mach af betingelser of opdatere unified customer profile-objektet, uden at det påvirker afhængigheder (f.eks. afhængigheder, segmenter eller mål). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](schedule-refresh.md).
-   - [Foren kundeprofiler og afhængigheder](#run-updates-to-the-unified-customer-profile) for at køre mach af betingelser of opdatere unified customer profile-objektet og alle afhængigheder (f.eks. afhængigheder, segmenter eller mål). Alle processer køres automatisk igen.
+   - [Foren profiler](#run-updates-to-the-unified-profile) for at køre mach af betingelser of opdatere det forenede profilobjekt, uden at det påvirker afhængigheder (f.eks. forbedringer, segmenter eller målinger). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](schedule-refresh.md).
+   - [Foren profiler og afhængigheder](#run-updates-to-the-unified-profile) for at køre match af betingelser, opdatere det forenede profilobjekt og opdatere alle afhængigheder (f.eks. forbedringer, segmenter eller målinger). Alle processer køres automatisk igen. I B-til-B køres samling på både firma- og kontaktpersonobjekter, og der opdateres forenede profiler.
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
 
@@ -55,11 +61,11 @@ Du kan ikke fjerne en attribut eller et objekt, hvis de allerede er blevet samle
 
    Antallet af tilknyttede og ikke-tilknyttede felter vises.
 
-1. Vælg **Vælg objekter og felter** for at tilføje andre attributter eller objekter. Brug søgning eller rulning til at søge efter og vælge de ønskede attributter og objekter. Vælg **Anvend**.
+1. Vælg **Vælg objekter og felter** for at tilføje andre attributter eller objekter.
 
-1. Du kan også ændre den primære nøgle for et objekt, attributtyperne og skifte **Intelligent tilknytning** til eller fra. Du kan finde flere oplysninger i [Vælge primær nøgle og semantisk type for attributter](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
+1. Du kan også ændre den primære nøgle for et objekt, attributtyperne og skifte **Intelligent tilknytning** til eller fra. Du kan finde flere oplysninger i [Vælg kildefelter](map-entities.md).
 
-1. Vælg **Næste** for at foretage ændringer af regler for duplikering, eller vælg **Gem og luk**, og vend tilbage til [Opdater indstillingerne for samling](#update-the-unification-settings).
+1. Vælg **Næste** for at foretage ændringer af regler for duplikering, eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings).
 
 ## <a name="manage-deduplication-rules"></a>Administrere deduplikeringsregler
 
@@ -69,7 +75,7 @@ Du kan ikke fjerne en attribut eller et objekt, hvis de allerede er blevet samle
 
    Antallet af Dublerede poster, der blev fundet, vises under **Dubletter**. Kolonnen **Poster, der er dubleret** viser, hvilke objekter der indeholder dubletposter, og procentdelen af duplikerede poster.
 
-1. Hvis du har tilføjet et forbedret objekt, skal du vælge **Brug forbedrede objekter**. Du kan finde flere oplysninger i [Forbedring til datakilder](data-sources-enrichment.md).
+1. Hvis du vil bruge et forbedret objekt, skal du vælge **Brug forbedrede objekter**. Du kan finde flere oplysninger i [Forbedring til datakilder](data-sources-enrichment.md).
 
 1. Du kan administrere regler for duplikering ved at vælge en af følgende indstillinger:
    - **Opret en ny regel**: Vælg **Tilføj regel** under det relevante objekt. Du kan finde flere oplysninger i [Definition af deduplikeringsregler](remove-duplicates.md#define-deduplication-rules).
@@ -83,11 +89,9 @@ Du kan ikke fjerne en attribut eller et objekt, hvis de allerede er blevet samle
    1. Vælg **Rediger indstillingerne for fletning**, og rediger indstillingen **Post, der skal bevares**.
    1. Hvis du vil ændre indstillingerne for fletning for individuelle attributter for et objekt, skal du vælge **Avanceret** og foretage de nødvendige ændringer.
 
-      :::image type="content" source="media/m3_adv_merge.png" alt-text="Skærmbillede af indstillinger for avanceret fletning, der viser den nyeste e-mail og den mest fuldstændige adresse":::
-
    1. Vælg **Udført**.
 
-1. Vælg **Næste** for at foretage ændringer af betingelser for matching, eller vælg **Gem og luk**, og vend tilbage til [Opdater indstillingerne for samling](#update-the-unification-settings).
+1. Vælg **Næste** for at foretage ændringer af betingelser for matching, eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings).
 
 ## <a name="manage-match-rules"></a>Administrere matchregler
 
@@ -102,7 +106,7 @@ Du kan omkonfigurere og finjustere de fleste af matchparametrene. Du kan ikke ti
    - **Matchede og ikke-matchede poster** fremhæver, hvor mange entydige poster der er tilbage efter behandling af matchreglerne.
    - **Kun matchede poster** viser kun antallet af matches på tværs af alle dine matchpar.
 
-1. Du kan få vist resultaterne af alle regler og deres pointtal ved at vælge **Vis sidste kørsel**. Resultaterne vises, herunder de alternative kontakt-ID'er. Du kan hente resultaterne.
+1. Du kan få vist resultaterne af alle regler og deres pointtal ved at vælge **Vis sidste kørsel**. Resultaterne vises, herunder de alternative kontakt-id'er. Du kan hente resultaterne.
 
 1. Hvis du vil have vist resultaterne og pointtal for en bestemt regel, skal du vælge reglen og derefter **Forhåndsversion**. Resultaterne vises. Du kan hente resultaterne.
 
@@ -120,7 +124,7 @@ Du kan omkonfigurere og finjustere de fleste af matchparametrene. Du kan ikke ti
    - **Dupliker en regel**: Markér reglen, og derefter **Dupliker** for at oprette en lignende regel med ændringer.
    - **Slet en regel**: Markér reglen, og derefter **Slet**.
 
-1. Vælg **Næste** for at foretage ændringer af samlede felter, eller vælg **Gem og luk**, og vend tilbage til [Opdater indstillingerne for samling](#update-the-unification-settings).
+1. Vælg **Næste** for at foretage ændringer af samlede felter, eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings).
 
 ## <a name="manage-unified-fields"></a>Administrere samlede felter
 
@@ -130,7 +134,28 @@ Du kan omkonfigurere og finjustere de fleste af matchparametrene. Du kan ikke ti
 
 1. Gennemse de kombinerede og udelukkede felter, og foretag eventuelle ændringer efter behov. Tilføjelse eller redigering af CustomerID-nøglen eller gruppeprofiler i klynger. Du kan finde flere oplysninger i [Unify customer fields](merge-entities.md).
 
-1. Vælg **Næste** for at gennemse indstillingerne for samling og [opdatere den samlede profil og afhængighederne](#run-updates-to-the-unified-customer-profile), eller vælg **Gem og luk**, og vend tilbage til [Opdater indstillingerne for samling](#update-the-unification-settings) for at foretage flere ændringer.
+1. Vælg **Næste** for at gennemse og [opdatere den samlede profil og afhængighederne](#run-updates-to-the-unified-profile) for kunder eller firmaer. Eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings) for at foretage flere ændringer.
+
+   For kontakter skal du vælge **Næste** for at administrere semantiske felter. Eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings) for at foretage flere ændringer.
+
+## <a name="manage-semantic-fields-for-unified-contacts"></a>Administrere semantiske felter for samlede kontakter
+
+1. Vælg **Rediger** i feltet **Semantiske felter**.
+
+1. Hvis du vil ændre den semantiske type for et samlet felt, skal du vælge en ny type. Du kan finde flere oplysninger under [Definere de semantiske felter for samlede kontakter](data-unification-contacts.md#define-the-semantic-fields-for-unified-contacts).
+
+1. Vælg **Næste** for at administrere relationen mellem firma og kontakt, eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings).
+
+## <a name="manage-contact-and-account-relationships"></a>Administrere firma- og kontaktrelationer
+
+1. Vælg **Rediger** på feltet **Relationer**.
+
+1. Hvis du vil ændre kontakt- og firmarelationen, skal du ændre en af følgende oplysninger:
+
+   - **Fremmed nøgle fra kontaktobjekt**: Vælg den attribut, der opretter forbindelse mellem kontaktobjektet og firmaet.
+   - **Til firmaobjekt**: Vælg det firmaobjekt, der er knyttet til kontakten.
+
+1. Vælg **Næste** for at gennemse indstillingerne for samling og [opdatere den samlede profil og afhængighederne](#run-updates-to-the-unified-profile), eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings) for at foretage flere ændringer.
 
 ## <a name="run-matching-conditions"></a>Køre matchende betingelser
 
@@ -148,18 +173,15 @@ Kør matchningsbetingelser kører kun regler for duplikering og overensstemmelse
 
 1. Hvis du vil foretage ændringer, skal du se [Administrere regler for duplikering](#manage-deduplication-rules) eller [Administrere matching-regler](#manage-match-rules).
 
-1. Kør match-processen igen, eller [kør opdateringer til kundeprofilen](#run-updates-to-the-unified-customer-profile).
+1. Kør match-processen igen, eller [kør opdateringer til profilen](#run-updates-to-the-unified-profile).
 
-## <a name="run-updates-to-the-unified-customer-profile"></a>Kør opdateringer til unified customer profile
+## <a name="run-updates-to-the-unified-profile"></a>Køre opdateringer til den samlede profil
 
-1. På siden **Data** > **Unify** vælges:
+- Hvis du vil køre matchningsbetingelser og opdatere det samlede profilobjekt, *uden* at det påvirker afhængigheder (f.eks. kundekort, forbedringer, segmenter eller mål), skal du vælge **Foren kundeprofiler**. For firmaer skal du vælge **Foren firmaer** > **Foren profiler**. For kontakter skal du vælge **Foren kontakter (forhåndsversion)** > **Foren profiler**. Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](schedule-refresh.md).
+- Hvis du vil køre matchende betingelser, opdatere den samlede profil og køre alle afhængigheder, skal du vælge **Foren kundeprofiler og afhængigheder**. Alle processer køres automatisk igen. For firmaer og kontakter skal du vælge **Foren firmaer** > **Foren profiler og afhængigheder**. Matchningsbetingelserne køres for både firmaer og kontakter, hvor begge samlede profiler opdateres, og alle andre afhængigheder køres.
 
-   - **Foren kundeprofiler**: Kører mach af betingelser of opdateringer af unified customer profile-objektet, uden at det påvirker afhængigheder (f.eks. afhængigheder, segmenter eller mål). Afhængige processer køres ikke, men opdateres som [defineret i opdateringsplanen](schedule-refresh.md).
+Alle felter undtagen **Kildefelter** viser statussen **I kø** eller **Opdaterer**.
 
-   - **Unify kundeprofiler og afhængigheder**: Kører matchende betingelser og opdateringer af den samlede profil og alle afhængigheder. Alle processer køres automatisk igen. Når alle downstream-processer er fuldført, afspejler kundeprofilen de opdaterede data.
+[!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
 
-   Felterne **Dublerede poster**, **Matchende betingelser** og **Unified customer-felter** viser status **Sat i kø** eller **Opdaterer**.
-
-   [!INCLUDE [progress-details-pane-include](includes/progress-details-pane.md)]
-
-Resultaterne af en vellykket kørsel vises på siden **Unify**, der viser antallet af samlede kundeprofiler.
+Resultaterne af en vellykket kørsel vises på siden **Foren**, der viser antallet af samlede profiler.

@@ -6,19 +6,19 @@ ms.date: 08/01/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
-ms.author: mukeshpo
+ms.author: sstabbert
 ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-map
 - ci-match
 - customerInsights
-ms.openlocfilehash: 7f4829cfc14af623f724c6594e834f3fac1c15a9
-ms.sourcegitcommit: 10dcfc32eaf8ec0903be96136dca7bb4e250276a
+ms.openlocfilehash: 3f84c1c149f0befcbe489ccdd8a666ce6d5d798a
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/01/2022
-ms.locfileid: "9213620"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304466"
 ---
 # <a name="remove-duplicates-before-unifying-data"></a>Fjerne dubletter, før du forener data
 
@@ -47,7 +47,7 @@ Hvis du har forbedret objekter på datakildeniveau for at forbedre resultaterne 
 
 1. Vælg et objekt på siden **Dublerede poster**, og vælg **Tilføj regel** for at definere reglerne for deduplikering.
 
-   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Skærmbillede af sider med dublerede poster med Vis mere fremhævet":::
+   :::image type="content" source="media/m3_duplicates_showmore.png" alt-text="Skærmbillede af siden Dublerede poster, hvor objektet er fremhævet, og Tilføj regel vises"  lightbox="media/m3_duplicates_showmore.png":::
 
    1. Angiv følgende oplysninger i ruden **Tilføj regel**:
       - **Vælg felt**: Vælg på listen over tilgængelige felter fra det objekt, du vil søge efter dubletter for. Vælg felter, der sandsynligvis er entydige for hver enkelt kunde. Det kan f.eks. være en mailadresse eller en kombination af navn, by og telefonnummer.
@@ -80,9 +80,9 @@ Hvis du har forbedret objekter på datakildeniveau for at forbedre resultaterne 
       - **Flest udfyldte**: Identificerer posten med de fleste udfyldte attributfelter som vinderposten. Dette er standardfletteindstillingen.
       - **Nyeste**: Identificerer vinderposten baseret på de nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
       - **Mindst nyeste**: Identificerer vinderposten baseret på de mindst nyeste. Kræver en dato eller et numerisk felt for at definere nyeste.
-      
+
       Hvis der opstår problemer, er vinderposten den post, der har værdien MAKS (PK) eller den større primære nøgle.
-      
+
    1. Du kan også definere indstillinger for fletning for individuelle attributter for et objekt ved at vælge **Avanceret** nederst i ruden. Du kan f.eks. vælge at bevare den nyeste e-mail og den mest fuldstændige adresse fra forskellige poster. Udvid objektet for at se alle attributterne, og definer, hvilken indstilling der skal bruges til de enkelte attributter. Hvis du vælger en rekursbaseret indstilling, skal du også angive et dato/klokkeslætsfelt, der definerer rekursen.
 
       :::image type="content" source="media/m3_adv_merge.png" alt-text="Ruden med indstillinger for avanceret fletning viser den nyeste e-mail og den fuldstændige adresse":::
@@ -96,18 +96,5 @@ Hvis du har forbedret objekter på datakildeniveau for at forbedre resultaterne 
 
 > [!div class="nextstepaction"]
 > [Næste trin for flere objekter: Matching betingelser](match-entities.md)
-
-## <a name="deduplication-output-as-an-entity"></a>Deduplikere output som et objekt
-
-Under duplikeringsprocessen oprettes der et nyt duplikeret objekt for hvert af kildeobjekterne. Disse objekter findes sammen med **ConflationMatchPairs:CustomerInsights** i afsnittet **System** på siden **Objekter** med navnet **Deduplication_DataSource_Entity**.
-
-Et deduplikeret outputobjekt indeholder følgende oplysninger:
-
-- Id'er / nøgler
-  - Primær nøgle og felter med alternativt id. Alternativt id-felt består af alle de alternative id'er, der er identificeret for en post.
-  - Deduplication_GroupId-felt vises den gruppe eller klynge, der er identificeret i et objekt, og som grupperer alle lignende poster på baggrund af de angivne felter med deduplikering. Det bruges til systembehandlingsformål. Hvis der ikke er angivet nogen regler for manuel deduplikering, og der gælder systemdefinerede regler for deduplikering, kan feltet muligvis ikke findes i outputobjektet.
-  - Deduplication_WinnerId: Dette felt indeholder vinder-id fra de identificerede grupper eller klynger. Hvis Deduplication_WinnerId er den samme som værdien for den primære nøgle for en post, betyder det, at posten er vinderposten.
-- Felter, der bruges til at definere reglerne for deduplikering.
-- Felterne Regel og Resultat angiver, hvilke af de duplikeringsregler der blev anvendt, og det antal point, der returneres af den tilsvarende algoritme.
 
 [!INCLUDE[footer-include](includes/footer-banner.md)]

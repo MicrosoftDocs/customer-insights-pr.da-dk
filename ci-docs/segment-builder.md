@@ -1,7 +1,7 @@
 ---
 title: Opret komplekse segmenter med segmentgenerator
 description: Brug segmentopbygger for at oprette komplekse segmenter af kunder efter grupper, hvor de er baseret på forskellige attributter.
-ms.date: 03/25/2022
+ms.date: 08/12/2022
 ms.subservice: audience-insights
 ms.topic: how-to
 author: JimsonChalissery
@@ -13,19 +13,19 @@ searchScope:
 - ci-segment-builder
 - ci-segment-details
 - customerInsights
-ms.openlocfilehash: cde373cd65e296675e1b3c92f3024e1093853842
-ms.sourcegitcommit: 8a28e9458b857adf8e90e25e43b9bc422ebbb2cd
+ms.openlocfilehash: 7f691fd0b2ea76a2960d5adf766a4b166f02ebb4
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/18/2022
-ms.locfileid: "9170628"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304742"
 ---
 # <a name="create-complex-segments-with-segment-builder"></a>Opret komplekse segmenter med segmentgenerator
 
-Definer komplekse filtre omkring det samlede kundeobjekt og dets tilknyttede objekter. Hvert enkelt segment vil efter behandling oprette et sæt kundeposter, som du kan eksportere og udføre handlinger på.
+Definer komplekse filtre omkring det samlede kunde- eller kontaktobjekt og dets tilknyttede objekter. Hvert enkelt segment opretter efter behandling et sæt kunde- eller kontaktposter, som du kan eksportere og udføre handlinger på.
 
 > [!TIP]
-> Segmenter, der er baseret på **individuelle kunder**, indeholder automatisk tilgængelige kontaktoplysninger for segmentmedlemmer. I miljøer for **forretningskonti** er segmenter baseret på konti (virksomheder eller datterselskaber). Hvis du vil medtage kontaktoplysninger i et segment, skal du bruge funktionen **Projektattributter** i segmentgeneratoren. Kontrollér, at kontaktpersonens datakilder er [semantisk knyttet til objektet ContactProfile](semantic-mappings.md#define-a-contactprofile-semantic-entity-mapping).
+> Segmenter, der er baseret på **individuelle kunder**, indeholder automatisk tilgængelige kontaktoplysninger for segmentmedlemmer. Hvis i **forretningskonti** har [samlet](data-unification.md) både firmaer og kontakter , skal du vælge, om segmentet er baseret på firmaer eller forretningskontakter. Hvis du vil eksportere til en destination, hvor der forventes kontaktoplysninger, skal du bruge et kontaktsegment. Hvis du vil eksportere til en destination, hvor der forventes firmaoplysninger, skal du bruge et firmasegment.
 
 ## <a name="segment-builder"></a>Segmentgenerator
 
@@ -57,6 +57,11 @@ Eksemplet ovenfor illustrerer segmenteringsfunktionaliteten. Vi har defineret et
 
 1. Vælg **Ny** > **opbyg din egen**. Du kan definere eller oprette regler på siden Segmentgenerator. En regel består af en eller flere betingelser, der definerer et sæt kunder.
 
+   > [!NOTE]
+   > I miljøer, der er baseret på forretningskonti, skal du vælge **Nyt** > **Segment af firmaer** eller **Segment af kontakter (forhåndsversion)** på baggrund af den type segment, du vil oprette. Hvis der er defineret et [firmahierarki](relationships.md#set-up-account-hierarchies), og du vil oprette regler til filtrering af data på baggrund af underordnede og overordnede relationer, skal du vælge **Brug hierarki? (forhåndsversion)**, vælge hierarkiet og derefter **Anvend**.
+   >
+   > :::image type="content" source="media/segment_acct_hierarchy.png" alt-text="Rude med segmentvalg af firmahierarki.":::
+
 1. Vælg **Rediger detaljer** ud for Ikke-navngivet segment. Angiv et navn til segmentet, og opdater det foreslåede **Navn på outputobjekt** for segmentet. Du kan også føje en beskrivelse og [koder](work-with-tags-columns.md#manage-tags) til segmentet.
 
    :::image type="content" source="media/segments_edit_details.png" alt-text="Dialogboksen Rediger detaljer.":::
@@ -65,11 +70,11 @@ Eksemplet ovenfor illustrerer segmenteringsfunktionaliteten. Vi har defineret et
    - Gennemse listen over tilgængelige objekter og attributter i ruden **Føj til regel**, og vælg ikonet **+** ud for den attribut, der skal tilføjes. Vælg, om du vil føje attributten til en eksisterende regel eller bruge den til at oprette en ny regel.
    - Skriv navnet på attributten i regelafsnittet for at få vist tilsvarende forslag.
 
-1. Vælg operatorerne for at angive de tilsvarende værdier for betingelsen. Attributten kan have en af fire datatyper som værdi: numerisk, streng, dato eller boolesk. Afhængigt af datatypen af attributten er der forskellige operatorer, der kan angive betingelsen. For segmenter med forretningskonti er der to tilgængelige specialoperatører til at inkludere potentielle hierarkier mellem de konti, der er indtaget. Brug operatorerne *underordnet af* og *overordnet af* til at medtage relaterede konti.
+1. Vælg operatorerne for at angive de tilsvarende værdier for betingelsen. Attributten kan have en af fire datatyper som værdi: numerisk, streng, dato eller boolesk. Afhængigt af datatypen af attributten er der forskellige operatorer, der kan angive betingelsen.
 
 1. Vælg **Tilføj betingelse** for at føje flere betingelser til en regel. Hvis du vil oprette en regel under den aktuelle regel, skal du vælge **Tilføj underregel**.
 
-1. Hvis der i en regel bruges andre objekter end *kundeobjektet*, skal du vælge **Angiv relationssti** for at knytte det valgte objekt til det samlede kundeobjekt. Hvis der kun er én mulig relationssti, vælges den automatisk af systemet. Forskellige [relationsstier](relationships.md#relationship-paths) kan give forskellige resultater. Alle regler kan have sin egen relationssti.
+1. Hvis en regel bruger andre objekter end objektet *Kunde* (eller objektet *ContactProfile* for B-til-B), skal du vælge **Angiv relationssti** for at knytte det valgte objekt til det samlede kundeobjekt. Hvis der kun er én mulig relationssti, vælges den automatisk af systemet. Forskellige [relationsstier](relationships.md#relationship-paths) kan give forskellige resultater. Alle regler kan have sin egen relationssti.
 
    :::image type="content" source="media/relationship-path.png" alt-text="Mulig relationssti, når du opretter en regel baseret på et objekt, der er knyttet til det samlede kundeobjekt.":::
 
@@ -92,24 +97,22 @@ Eksemplet ovenfor illustrerer segmenteringsfunktionaliteten. Vi har defineret et
       - **Overlapning** overlapper de to grupper. Kun data, *der er fælles* for begge grupper, forbliver i den samlede gruppe.
       - **Undtagen** kombinerer de to grupper. Kun data i gruppe A, *der ikke er fælles* for data i gruppe B, bevares.
 
-1. Som standard opretter segmenter det outputobjekt, der automatisk indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Hvis et segment er baseret på andre objekter end *Customer*-objektet, kan du vælge **Projektattributter** for at føje flere attributter fra disse objekter til outputobjektet.
-
-   > [!IMPORTANT]
-   > I forbindelse med segmenter baseret på forretningskonti skal der medtages detaljer om en eller flere kontakter for hver konto fra objektet *ContactProfile* i dette segment, så segmentet kan aktiveres eller eksporteres til de steder, hvor der kræves kontaktoplysninger. Du kan finde flere oplysninger om objektet *ContactProfile* under [Semantiske tilknytninger](semantic-mappings.md).
-   > Et eksempelresultat for et segment, der er baseret på forretningskonti med projektattributter for kontakter, kunne se sådan ud:
-   >
-   > |Id  |Firmanavn  |Indtægt  |Navn på kontakt  | Kontaktrolle|
-   > |---------|---------|---------|---------|---|
-   > |10021     | Contoso | 100.000 | [Abbie Moss, Ruth Soto]  | [CEO, projektstyring]
-
-   :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på projicerede attributter, der er valgt i sideruden, og som skal føjes til outputobjektet.":::
-  
+1. Som standard opretter segmenter det outputobjekt, der automatisk indeholder alle attributter af kundeprofiler, som stemmer overens med de definerede filtre. Når du bruger objektet *ContactProfile* i B-til-B, medtages firma-id'et automatisk. Hvis et segment er baseret på andre objekter end *Kunde*-objektet eller til at medtage flere attributter fra *ContactProfile*, skal du vælge **Projektattributter** for at føje flere attributter fra disse objekter til outputobjektet.
+ 
    Eksempel: Et segment er baseret på et objekt, der indeholder indkøbsdata, som er relateret til objektet *Kunde*. Segmentet søger efter alle kunder fra Spanien, der har købt varer i det indeværende år. Du kan vælge at føje attributter som varers pris eller købsdatoen til alle tilsvarende kundeposter i outputobjektet. Disse oplysninger kan være nyttige, hvis du vil analysere sammenhængene mellem overensstemmelse og det samlede forbrug.
 
+   :::image type="content" source="media/segments-project-attributes.png" alt-text="Eksempel på projicerede attributter, der er valgt i sideruden, og som skal føjes til outputobjektet.":::
+ 
+   Et eksempelresultat for et segment, der er baseret på forretningskonti med projektattributter for kontakter, kunne se sådan ud:
+
+   |Id  |Firmanavn  |Indtægt  |Navn på kontakt  | Kontaktrolle|
+   |---------|---------|---------|---------|---|
+   |10021     | Contoso | 100.000 | [Abbie Moss, Ruth Soto]  | [CEO, projektstyring]
+
    > [!NOTE]
-   > - **Projektattributter** fungerer kun for objekter, der har en en til mange-relation til kundeobjektet. En kunde kan f.eks. have flere abonnementer.
-   > - Hvis den attribut, du vil projektere, er mere end ét hop væk fra objektet *Kunde*, som defineret af relationen, skal den pågældende attribut bruges i alle regler i den segmentforespørgsel, du er ved at oprette.
-   > - Hvis den attribut, du vil projektere, kun er ét hop væk fra objektet *Kunde*, skal den pågældende attribut ikke nødvendigvis findes i alle regler i den segmentforespørgsel, du er ved at oprette.
+   > - **Projektattributter** fungerer kun for objekter, der har en en til mange-relation til objektet *Kunde* eller *ContactProfile*. En kunde kan f.eks. have flere abonnementer.
+   > - Hvis den attribut, du vil projektere, er mere end ét hop væk fra objektet *Kunde* eller *ContactProfile*, som defineret af relationen, skal den pågældende attribut bruges i alle regler i den segmentforespørgsel, du er ved at oprette.
+   > - Hvis den attribut, du vil projektere, kun er ét hop væk fra objektet *Kunde* eller *ContactProfile*, skal den pågældende attribut ikke nødvendigvis findes i alle regler i den segmentforespørgsel, du er ved at oprette.
    > - **Projekterede attributter** anvendes, når der bruges faste operatorer.
 
 1. Vælg **Kør** for at oprette segmentet. Vælg **Gem**, hvis du vil bevare den aktuelle konfiguration og køre segmentet senere. Gå til siden **Segmenter**.

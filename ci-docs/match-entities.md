@@ -2,7 +2,7 @@
 title: Matche betingelser for data samling
 description: Sammenlign objekter for at oprette samlede kundeprofiler.
 recommendations: false
-ms.date: 05/05/2022
+ms.date: 07/27/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: e3e4e37d5b4c9caf2520a789d5f78ef33b491793
-ms.sourcegitcommit: 3c5b0b40b2b45e420015bbdd228ce0e610245e6f
+ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/12/2022
-ms.locfileid: "9139690"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9304650"
 ---
 # <a name="match-conditions-for-data-unification"></a>Matche betingelser for data samling
 
@@ -27,6 +27,8 @@ I dette trin i en samling defineres match-rækkefølgen og reglerne for matching
 
 > [!NOTE]
 > Når du har oprettet match-vilkårene og valgt **Næste**, kan du ikke fjerne et valgt objekt eller en valgt attribut. Vælg om nødvendigt **Tilbage** for at gennemse de valgte objekter og attributter, inden du fortsætter.
+
+[!INCLUDE [m3-first-run-note](includes/m3-first-run-note.md)]
 
 ## <a name="include-enriched-entities-preview"></a>Medtag forbedrede objekter (forhåndsversion)
 
@@ -43,16 +45,16 @@ Hvis du har forbedret objekter på datakildeniveau for at forbedre resultaterne 
 Hvert match samler to eller flere objekter i ét samlet konsolideret objekt. Samtidig opbevares de entydige kundeposter. Overensstemmelsesrækkefølgen angiver den rækkefølge, som systemet forsøger at matche posterne i.
 
 > [!IMPORTANT]
-> Det første objekt på listen kaldes det primære objekt. Det primære objekt fungerer som udgangspunkt for dine ensartede profiler datasæt. Der føjes flere objekter, der er valgt, til dette objekt.
+> Det første objekt kaldes det primære objekt, der tjener som udgangspunkt for dine samlede profiler. Der føjes flere objekter, der er valgt, til dette objekt.
 >
 > Vigtige overvejelser:
 >
 > - Vælg det objekt, der har de mest fuldstændige og pålidelige profildata om kunderne, som det primære objekt.
 > - Vælg det objekt, der har flere attributter til fælles med andre objekter (f.eks. navn, telefonnummer eller e-mailadresse) som det primære objekt.
 
-1. På siden **Matching betingelser** kan du bruge pilene op og pil ned for at flytte objekterne i den ønskede rækkefølge eller trække og slippe dem. Du kan f.eks. vælge **Contacts:eCommerce** som det primære objekt og **CustomerLoyalty:Loyalty** som sekundære objekt.
+1. På siden **Matching betingelser** kan du bruge pilene op og pil ned for at flytte objekterne i den ønskede rækkefølge eller trække og slippe dem. Du kan f.eks. vælge **eCommerceCustomers** som det primære objekt og **loyCustomers** som det sekundære objekt.
 
-1. Hvis du have alle poster i objektet som en entydig kunde, uanset om der findes et match, skal du vælge **Inkludér alle poster**. Alle poster i dette objekt, der ikke stemmer overens med poster i andre objekter, medtages i den samlede profil. Poster, der ikke stemmer overens, kaldes singletoner.
+1. Hvis du have alle poster i objektet som en entydig kunde, uanset om der findes et match, skal du vælge **Inkludér alle poster**. Alle poster i dette objekt, der ikke stemmer overens med poster i noget andet objekt, medtages i den samlede profil. Poster, der ikke stemmer overens, kaldes singletoner.
   
 Det primære objekt *Contacts:eCommerce* matches med det næste objekt *CustomerLoyalty:Loyalty*. Det datasæt resultat fra første matchtrin sammenholdes med følgende objekt, hvis du har mere end to objekter.
 
@@ -70,7 +72,7 @@ Advarslen ud for et objektnavn betyder, at der ikke er defineret en match-regel 
 
    :::image type="content" source="media/m3_add_rule.png" alt-text="Skærmbillede af ruden Tilføj regel.":::
 
-   - **Vælg Objekt/felt (første række)**: Vælg et relateret objekt og en attribut for at angive en postegenskab, der sandsynligvis er entydig for en kunde. Et eksempel er et telefonnummer eller en mailadresse. Undgå matchning efter aktivitetstypeattributter. Et købs-id vil f.eks. højst sandsynligt ikke findes i andre posttyper.
+   - **Vælg Objekt/felt (første række)**: Vælg et objekt og en attribut, der sandsynligvis er entydig for en kunde. Et eksempel er et telefonnummer eller en mailadresse. Undgå matchning efter aktivitetstypeattributter. Et købs-id vil f.eks. højst sandsynligt ikke findes i andre posttyper.
 
    - **Vælg Objekt/felt (anden række)**: Vælg en attribut, der er relateret til attributten for det objekt, der er angivet i første række.
 
@@ -116,7 +118,7 @@ Matchregler repræsenterer sæt af betingelser. Hvis du vil matche objekter efte
 
 ### <a name="add-exceptions-to-a-rule"></a>Føje undtagelser til en regel
 
-I de fleste tilfælde fører objektets matching til entydige kundeprofiler med samlede data. Hvis du dynamisk vil håndtere sjældne tilfælde af falsk positive og false negativer, kan du definere undtagelser for en overensstemmelsesregel. Undtagelser anvendes efter behandling af overensstemmelsesreglerne og undgå matchning af alle poster, der opfylder undtagelseskriterierne.
+I de fleste tilfælde fører objektets matching til entydige kundeprofiler med samlede data. Hvis du vil håndtere sjældne tilfælde af falske positive og falske negative, kan du definere undtagelser for en matchregel. Undtagelser anvendes efter behandling af overensstemmelsesreglerne og undgå matchning af alle poster, der opfylder undtagelseskriterierne.
 
 Hvis din matchregel f.eks. kombinerer efternavn, by og fødselsdato, identificerer systemet de samme efternavn, der lever i samme bybillede som den samme profil. Du kan angive en undtagelse, der ikke stemmer overens med profilerne, hvis fornavn i de objekter, du kombinerer, ikke er de samme.
 
@@ -130,11 +132,11 @@ Hvis din matchregel f.eks. kombinerer efternavn, by og fødselsdato, identificer
 
 Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken. Der findes følgende fire indstillinger:
 
-|Mulighed  |Description |Eksempel  |
+|Mulighed  |Beskrivelse |Eksempel  |
 |---------|---------|---------|
 |Match altid     | Definerer værdier, der altid sammenholdes.         |  Du skal altid matche *Mike* og *MikeR*.       |
 |Match aldrig     | Definerer værdier, der aldrig matcher.        | Du skal aldrig matche *John* og *Jonathan*.        |
-|Brugerdefineret tilsidesætter     | Definerer værdier, som systemet altid skal ignorere i match-fasen. |  Ignorer værdierne *11111* og *Ukendt* under match.        |
+|Omgå            | Definerer værdier, som systemet altid skal ignorere i match-fasen. |  Ignorer værdierne *11111* og *Ukendt* under match.        |
 |Aliastilknytning    | Definition af værdier, som skal overvejes som den samme værdi i systemet.         | Overvej, om *Joe* skal være lig *Joseph*.        |
 
 1. Vælg **Brugerdefineret**.

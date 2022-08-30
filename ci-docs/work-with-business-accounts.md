@@ -4,21 +4,21 @@ description: Få mere at vide om forretningskonti som primær målgruppe i Dynam
 ms.date: 10/19/2021
 ms.subservice: audience-insights
 ms.topic: conceptual
-author: m-hartmann
+author: v-wendysmith
 ms.custom: intro-internal
 ms.author: wimohabb
-ms.reviewer: mhart
+ms.reviewer: v-wendysmith
 manager: shellyha
 searchScope:
 - ci-semantic-mapping
 - ci-connections
 - customerInsights
-ms.openlocfilehash: 9bf91671b744198b2f37391edc7abf58eca3c820
-ms.sourcegitcommit: a97d31a647a5d259140a1baaeef8c6ea10b8cbde
+ms.openlocfilehash: abb77a720ab737520a905b0c93b65573e669109f
+ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9053106"
+ms.lasthandoff: 08/16/2022
+ms.locfileid: "9303909"
 ---
 # <a name="work-with-business-accounts"></a>Arbejde med forretningskonti
 
@@ -30,7 +30,7 @@ Administratorer kan [oprette et miljø i en eksisterende organisation](create-en
 
 Du kan derefter [indtage data](data-sources.md) for forretningskonti og relaterede kontakter som datakilder fra alle understøttede kilder.
 
-Når dataene er blevet samlet, skal du [angive kontohierarkier](relationships.md#set-up-account-hierarchies) som en del af relationskonfigurationen. Du kan også [konfigurere semantiske tilknytninger](semantic-mappings.md) for at oprette forbindelse mellem kontakt- og kontoobjekter. 
+ [Foren](data-unification.md) dine firmadata efterfulgt af kontaktdataene for at oprette forbindelse mellem kontakt- og firmaobjekter.
 
 ## <a name="switch-between-primary-target-audience"></a>Skifte mellem primær målgruppe
 
@@ -43,11 +43,12 @@ Hvis organisationen vedligeholder miljøer for individuelle kunder og forretning
 - [Aktiviteter](activities.md): Understøtter konti og relaterede kontakter for at oprette aktiviteter og vise dem på en tidslinje.
 - [Relationer](relationships.md): Guiden Aktivitet hjælper med at oprette relationer mellem objekterne, så kontovisningen kan vise alle aktiviteter fra kontakter. Kontakter kan bore op for at vise kontaktvisning, og hierarkier kan bruges til sammenlægning af kontoaktiviteter.
 - [Målinger](measures.md): Understøtter målinger, der er oprettet fra målergeneratoren med én beregning. En valgfri indstilling gør det muligt at akkumulere underordnede firmaer under oprettelse af målinger.
-- [Segmenter](segments.md): Understøtter segmenter, der er oprettet fra bunden med segmentgeneratoren. Nye operatorer gør det muligt at indarbejde kontohierarki ved opbygning af segmenter.
+- [Segmenter](segments.md): Understøtter segmenter, der er oprettet fra bunden med segmentgeneratoren. Segmenter kan være baseret på firmaer eller kontakter.
 - [Dataindtagelse](data-sources.md): Alle funktioner i dette område er de samme for forretningskonti og individuelle kunder.
-- [Datasamling](data-unification.md): Alle funktioner i dette område er de samme for forretningskonti og individuelle kunder.
+- B-til-B-datasamling ligner meget B-til-C-datasamling, men har et ekstra trin til at samle kontakter efter firmasamling. Se [Virksomhedskonti (B-til-B)](data-unification.md).
 - [Forbedring](enrichment-hub.md): Visse forbedringstyper er kun tilgængelige for individuelle kundescenarier, mens andre kun er tilgængelige for forretningskonti.
 - [Forudsigelser og indbyggede modeller](predictions-overview.md): Forudsigelse af transaktionsafgang indeholder ekstra trin til forretningskonti. Andre forudsigelser er kun tilgængelige for individuelle kunder.
 - [Aktivering og eksport](export-destinations.md): Eksport er tilgængelig for forretningskonti og individuelle kunder. Visse eksporter kræver, at ekstra konfigurations- og kontaktoplysninger projekteres i de underliggende segmenter, så de kan anvendes på forretningskonti.
 - [Systemindstillinger](system.md) og [brugeradministration](permissions.md): Alle funktioner i dette område er de samme for forretningskonti og individuelle kunder.
 
+[!INCLUDE [footer-include](includes/footer-banner.md)]
