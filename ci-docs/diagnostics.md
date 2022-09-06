@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: 60b039173fd938482c782c7394420d4951c222a7
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: c573c46fda895d36d29712e75fe28b261c9b399a
+ms.sourcegitcommit: 0b5bfe0145dbd325fa518df4561d6a0a9a352264
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245918"
+ms.lasthandoff: 08/25/2022
+ms.locfileid: "9352794"
 ---
 # <a name="export-diagnostic-logs-preview"></a>Eksport af diagnosticeringslogfiler (forhåndsversion)
 
@@ -36,8 +36,8 @@ Customer Insights sender følgende hændelseslogfiler:
 
 - Et aktivt [Azure-abonnement](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - [Administrator](permissions.md#admin)-tilladelser i Customer Insights.
+- En gyldig ressource på Azure, der følger [destinationskravene](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) til Azure Storage, Azure-hændelseshub eller Azure Log Analytics.
 - [Rollen som bidragyder og brugeradgangsadministrator](/azure/role-based-access-control/role-assignments-portal) for destinationsressourcen på Azure. Ressourcen kan være en Azure Data Lake Storage-konto, en Azure-hændelseshub eller et Azure Log Analytics-arbejdsområde. Denne tilladelse er nødvendig, når du konfigurerer diagnosticeringsindstillinger i Customer Insights, men den kan ændres, når installationen er fuldført.
-- [Destinationskravene](/azure/azure-monitor/platform/diagnostic-settings#destination-requirements) til Azure-lager, Azure-hændelseshub eller Azure Log Analytics opfyldes.
 - Du har som minimum rollen **Læser** i den ressourcegruppe, som ressourcen tilhører.
 
 ### <a name="set-up-diagnostics-with-azure-monitor"></a>Konfigurere diagnosticeringsværktøjet med Azure Monitor
@@ -116,7 +116,7 @@ API-hændelser og arbejdsproceshændelser har en fælles struktur, men med nogle
 
 ### <a name="api-event-schema"></a>API-hændelsesskema
 
-| Felt             | DataType  | Påkrævet/valgfrit | Description       | Eksempel        |
+| Felt             | DataType  | Påkrævet/valgfrit | Beskrivelse       | Eksempel        |
 | ----------------- | --------- | ----------------- | --------------------- | ------------------------ |
 | `time`            | Tidsstempel | Obligatorisk          | Tidsstempel for hændelsen (UTC)       | `2020-09-08T09:48:14.8050869Z`         |
 | `resourceId`      | String    | Obligatorisk          | ResourceId for den forekomst, der har sendt hændelsen         | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX`  |
@@ -151,7 +151,7 @@ API-hændelser og arbejdsproceshændelser har en fælles struktur, men med nogle
 }  
 ```
 
-| Felt                         | Description                                                                                                                          |
+| Felt                         | Beskrivelse                                                                                                                          |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `Authorization.UserRole`      | Tildelt rolle for brugeren eller appen. Du kan finde flere oplysninger i [brugertilladelser](permissions.md).                                     |
 | `Authorization.RequiredRoles` | Nødvendige roller for at udføre handlingen. `Admin`-rollen er tillades til alle handlinger.                                                    |
@@ -161,7 +161,7 @@ API-hændelser og arbejdsproceshændelser har en fælles struktur, men med nogle
 
 [API-hændelser](apis.md) har følgende egenskaber.
 
-| Felt                        | Description                                                                                                            |
+| Felt                        | Beskrivelse                                                                                                            |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `properties.eventType`       | Altid `ApiEvent`-markering af loghændelsen som API-hændelse.                                                                 |
 | `properties.userAgent`       | Browseragent, der sender anmodningen eller `unknown`.                                                                        |
@@ -204,7 +204,7 @@ Arbejdsprocessen indeholder flere trin. [Indtage datakilder](data-sources.md), [
 
 #### <a name="field-description"></a>Feltbeskrivelse
 
-| Felt           | DataType  | Påkrævet/valgfrit | Description                                                                                                                                                   | Eksempel                                                                                                                                                                  |
+| Felt           | DataType  | Påkrævet/valgfrit | Beskrivelse                                                                                                                                                   | Eksempel                                                                                                                                                                  |
 | --------------- | --------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `time`          | Tidsstempel | Obligatorisk          | Tidsstempel for hændelsen (UTC).                                                                                                                                 | `2020-09-08T09:48:14.8050869Z`                                                                                                                                           |
 | `resourceId`    | String    | Obligatorisk          | ResourceId for den forekomst, der har sendt hændelsen.                                                                                                            | `/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX/RESOURCEGROUPS/<RESOURCEGROUPNAME>/`<br>`PROVIDERS/MICROSOFT.D365CUSTOMERINSIGHTS/`<br>`INSTANCES/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX` |
@@ -219,7 +219,7 @@ Arbejdsprocessen indeholder flere trin. [Indtage datakilder](data-sources.md), [
 
 Arbejdsproceshændelser har følgende egenskaber.
 
-| Felt              | Workflow | Opgave | Description            |
+| Felt              | Workflow | Opgave | Beskrivelse            |
 | ------------------------------- | -------- | ---- | ----------- |
 | `properties.eventType`                       | Ja      | Ja  | Altid `WorkflowEvent`-markering af loghændelsen som arbejdsproceshændelse.                                                                                                                                                                                                |
 | `properties.workflowJobId`                   | Ja      | Ja  | Id for kørslen af arbejdsprocessen. Alle arbejdsproces- og opgavehændelser i arbejdsproceskørslen har samme `workflowJobId`.                                                                                                                                   |

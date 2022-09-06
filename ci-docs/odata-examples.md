@@ -1,27 +1,27 @@
 ---
 title: Eksempler på OData-forespørgsler til API'er for Customer Insights
 description: Almindeligt anvendte eksempler på OData (Open Data Protocol) til at forespørge om Customer Insights-API'er til gennemgang af data.
-ms.date: 05/25/2022
+ms.date: 08/30/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: mhart
 manager: shellyha
-ms.openlocfilehash: 8843fc04e4e6eaba0019d932c54f62561ffbdb92
-ms.sourcegitcommit: f3c12ad445d5f91a88f91a7bbc40790ebcfaa826
+ms.openlocfilehash: 26e56a3bab01ba55284a52e72efbcbfbaadaad6f
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "9121555"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387195"
 ---
 # <a name="odata-query-examples-for-customer-insights-apis"></a>Eksempler på OData-forespørgsler til API'er for Customer Insights
 
 OData (Open Data Protocol) er en dataadgangsprotokol, der er baseret på kerneprotokoller som HTTP. Der bruges almindeligt accepterede metoder, f.eks. REST til internettet. Der findes forskellige typer biblioteker og værktøjer, der kan bruges til at forbruge OData-tjenester.
 
-Denne artikel indeholder nogle ofte anmodede eksempler på forespørgsler, der kan hjælpe dig med at oprette dine egne implementeringer baseret på [Customer Insights-API'er](apis.md).
+Du kan se nogle ofte anmodede eksempler på forespørgsler, der kan hjælpe dig med at oprette dine egne implementeringer baseret på [Customer Insights-API'er](apis.md).
 
-Du skal ændre forespørgselseksempler, så de fungerer i destinationsmiljøerne: 
+Du skal ændre forespørgselseksemplerne, så de fungerer i destinationsmiljøerne:
 
 - {serviceRoot}: `https://api.ci.ai.dynamics.com/v1/instances/{instanceId}/data` hvor {instanceId} er GUID'et for det Customer Insights-miljø, du vil forespørge om. Du kan bruge handlingen [ListAllInstances](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances) til at finde {InstanceId}, du har adgang til.
 - {CID}: GUID for en ensartet kundepost. Eksempel: `ce759201f786d590bf2134bff576c369`.
@@ -31,7 +31,7 @@ Du skal ændre forespørgselseksempler, så de fungerer i destinationsmiljøerne
 
 ## <a name="customer"></a>Kunde
 
-Følgende tabel indeholder et sæt eksempelforespørgsler for objektet *Kunde*.
+Eksempelforespørgsler for objektet *Kunde*.
 
 |Forespørgselstype |Eksempel  | Bemærk  |
 |---------|---------|---------|
@@ -46,7 +46,7 @@ Følgende tabel indeholder et sæt eksempelforespørgsler for objektet *Kunde*.
 
 ## <a name="unified-activity"></a>Samlet aktivitet
 
-Følgende tabel indeholder et sæt eksempelforespørgsler for objektet *UnifiedActivity*.
+Eksempelforespørgsler for objektet *UnifiedActivity*.
 
 |Forespørgselstype |Eksempel  | Bemærk  |
 |---------|---------|---------|
@@ -59,7 +59,7 @@ Følgende tabel indeholder et sæt eksempelforespørgsler for objektet *UnifiedA
 
 ## <a name="other-examples"></a>Andre eksempler
 
-Følgende tabel indeholder et sæt eksempelforespørgsler for andre objekter.
+Eksempelforespørgsler for andre objekter.
 
 |Forespørgselstype |Eksempel  | Bemærk  |
 |---------|---------|---------|

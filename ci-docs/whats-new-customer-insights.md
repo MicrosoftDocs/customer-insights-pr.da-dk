@@ -1,19 +1,19 @@
 ---
 title: Nyheder i Dynamics 365 Customer Insights
 description: Oplysninger om nye funktioner, forbedringer og rettelser i forbindelse med fejl.
-ms.date: 08/03/2022
+ms.date: 08/31/2022
 ms.subservice: audience-insights
 ms.topic: conceptual
 author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: a9bb254736ae70589afb267bf0a60206a18a3385
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
+ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246004"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "9387287"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -23,6 +23,24 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="august-2022-updates"></a>Opdateringer fra august 2022
+
+Opdateringerne i august 2022 omfatter nye funktioner, opgradering til ydeevne og fejlrettelser.
+
+### <a name="contact-unification-in-b-to-b-environments"></a>Kontaktsamling i B-til-B-miljøer
+
+B-til-B-miljøer i Customer Insights understøtter nu en forbedret oplevelse af datasamling.
+
+Du kan nu samle kontakter i tillæg til firmaer for at få en komplet oversigt over dine forretningskontakter. Samlede kontakter knyttes til samlede firmaer og vises nu på kundekortene. 
+
+Du kan finde flere oplysninger under [Oprette en samlet kontaktprofil](data-unification-contacts.md).
+
+### <a name="create-and-export-of-segments-based-on-unified-contacts"></a>Oprette og eksportere segmenter baseret på samlede kontakter
+
+Takket være den nye kontaktsamling kan du oprette kontaktsegmenter ved hjælp af kriterier fra kontakter, firmaer eller begge dele. Disse segmenter kan eksporteres til aktivering i andre tjenester.
+
+Du kan finde flere oplysninger i [Oversigt over eksport](export-destinations.md).
 
 ## <a name="july-2022-updates"></a>Opdateringer i juli 2022
 
