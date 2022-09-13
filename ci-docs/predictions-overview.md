@@ -8,12 +8,12 @@ ms.topic: overview
 author: zacookmsft
 ms.author: zacook
 manager: shellyha
-ms.openlocfilehash: a87af80fa713a1ac70493345c0c920e416692b0f
-ms.sourcegitcommit: dca46afb9e23ba87a0ff59a1776c1d139e209a32
+ms.openlocfilehash: 32240c8c43751d8514d38b392f23ef4138d50ee2
+ms.sourcegitcommit: 3c7cdfc8bd83ca236e4777240e08a541dc955d34
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 06/29/2022
-ms.locfileid: "9081202"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "9411824"
 ---
 # <a name="predictions-overview"></a>Oversigt over forudsigelser
 
@@ -39,14 +39,11 @@ Den nemmeste måde at starte med at forudsige data på er foruddefinerede modell
 
 > [!TIP]
 > Vi anbefaler, at du jævnligt opdaterer standardmodeller med opdaterede data for at sikre, at de giver en nøjagtig oplysninger om din sag i forbindelse med forretningsbrug. Data opdateres ad hoc,når systemet opdaterer nye eller opdaterede datakilder. I dette tilfælde vil modellerne dog kun score igen og fortsætte med at bruge de eksisterende træningsdata.
-> 
+>
 > Du kan konfigurere en **opdateringsplan** ved at angive den model, der skal planlægges igen, i konfigurationsoplevelsen. Modellen træner igen og scorer igen denne plan, som du kan ændre når som helst.
-
 
 ## <a name="azure-machine-learning-integration"></a>Azure Machine Learning-integration
 
 Hvis en organisation allerede bruger scenarier til maskinel indlæring, som er baseret på Azure Machine Learning-eksperimenter, hjælper de brugerdefinerede modelfunktioner i Customer Insights med at samle brikkerne. Opret arbejdsprocesser, der hjælper dig med at vælge de data, du vil generere indsigt fra, og knyt resultaterne til dine samlede kundeprofiler. Du kan finde flere oplysninger i [Tilpasse modeller til maskinel indlæring](custom-models.md).
 
-## <a name="ai-builder-prediction"></a>AI Builder-forudsigelse
-
-Nogle gange er datasættene ufuldstændige, og nogle værdier mangler. Customer Insights kan hjælpe med at forudsige manglende værdier for kundeobjektet og segmenterne. Du kan finde flere oplysninger under [Fuldføre delvise data med forudsigelser](predictions.md).
+[!INCLUDE [footer-include](includes/footer-banner.md)]

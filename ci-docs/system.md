@@ -14,12 +14,12 @@ searchScope:
 - ci-system-general
 - ci-system-api-usage
 - customerInsights
-ms.openlocfilehash: 2498814a3d2e6330124fb97c036b9b310bcf1f7a
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: 6e60bf7c18939a29f660e06989e262deeb59a39b
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9246240"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9395994"
 ---
 # <a name="view-system-configuration"></a>Vis systemkonfiguration
 
@@ -38,12 +38,6 @@ Vis detaljer om brugen af API i realtid, og se, hvilke hændelser der er sket i 
    - **API-kald** - et diagram, der visualiserer det samlede antal kald til API'en i den valgte tidsramme.
    - **Dataoverførsel** - et diagram, der viser den mængde data, der er overført via API'en i den valgte tidsramme.
    - **Handlinger** - en tabel med rækker for hver tilgængelig API-handling og oplysninger om brugen af handlingerne. Vælg et handlingsnavn for at gå til [API-referencen](https://developer.ci.ai.dynamics.com/api-details#api=CustomerInsights&operation=Get-all-instances).
-
-   Handlinger, der bruger [dataindtag i realtid](real-time-data-ingestion.md), indeholder et kikkert-symbol for at få vist brugen af API i realtid.
-
-   1. Vælg kikkerten for at åbne en rude **Brug af realtids-API** med detaljer om forbrug for handlingen.
-   1. **Vælg en tidsramme** for visning.
-   1. Brug feltet **Gruppe efter** for at vælge, hvordan dine interaktioner i realtid skal vises bedst. Grupper dataene efter **API-metode**, **kvalificeret navn på objekt** (indtaget objekt), **oprettet af** (kilden for hændelsen), **resultat** (vellykket eller mislykket) eller **fejlkoder**. Dataene er tilgængelige som et historikdiagram og en tabel.
 
 ## <a name="view-system-information"></a>Vis systemoplysninger
 

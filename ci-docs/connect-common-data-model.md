@@ -12,12 +12,12 @@ searchScope:
 - ci-create-data-source
 - ci-attach-cdm
 - customerInsights
-ms.openlocfilehash: b237c291bb4dd22ca22ab2cdd8b6293490aa83e1
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: d79b2d34e425e123224209814fef6e367c77c813
+ms.sourcegitcommit: d7054a900f8c316804b6751e855e0fba4364914b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245780"
+ms.lasthandoff: 09/02/2022
+ms.locfileid: "9396039"
 ---
 # <a name="connect-to-data-in-azure-data-lake-storage"></a>Opret forbindelse til data i Azure Data Lake Storage
 
@@ -39,6 +39,8 @@ Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake
   - Lager for Blob-datalæser
   - Lager for Blob-dataejer
   - Lager for Blob Data-bidragyder
+
+- Den bruger, der konfigurerer datakildeforbindelsen, skal have mindst Storage Blob Data-bidragyde-tilladelser til lagerkontoen.
 
 - Data i dit Data Lake-lager skal følge standarden for Common Data Model for lagring af dine data og have et almindeligt datamodelmanifest, der repræsenterer skemaet for datafilerne (*.csv eller *.parquet). Manifestet skal indeholde oplysninger om objekterne, f.eks. objektkolonner og datatyper, samt placeringen og filtypen af datafilen. Du kan finde flere oplysninger i [Common Data Model-manifest](/common-data-model/sdk/manifest). Hvis manifestet ikke findes, kan admin-brugere med dataejeren Storage Blob eller Storage Blob Data-bidragyder definere skemaet, når dataene ændres.
 
@@ -62,7 +64,7 @@ Indtag data til Dynamics 365 Customer Insights ved hjælp af din Azure Data Lake
    > [!NOTE]
    > Du skal bruge en af følgende roller enten for objektbeholderen eller lagerkontoen for at kunne oprette datakilden:
    >
-   >  - Læser af Blob Data-lager er tilstrækkelig, hvis du vil læse fra en lagerkonto og indtage dataene i Customer Insights. 
+   >  - Læser af Blob Data-lager er tilstrækkelig, hvis du vil læse fra en lagerkonto og indtage dataene i Customer Insights.
    >  - Bidragyder til eller ejer af lagring af BLOB-data er påkrævet, hvis du vil redigere de manifestfiler direkte i Customer Insights.  
   
 1. Vælg navnet på den **beholder**, der indeholder de data og skemaer (model.json- eller manifest.json-filen), der skal importeres data fra, og vælg **Næste**.

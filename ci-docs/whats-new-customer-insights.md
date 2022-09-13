@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 1e734464cec1f66428c3a2a2e403437a2a9d8500
-ms.sourcegitcommit: 624b27bb65a0de1970dc1ac436643b493f0a31cf
+ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
+ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "9387287"
+ms.lasthandoff: 09/06/2022
+ms.locfileid: "9409350"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -41,6 +41,14 @@ Du kan finde flere oplysninger under [Oprette en samlet kontaktprofil](data-unif
 Takket være den nye kontaktsamling kan du oprette kontaktsegmenter ved hjælp af kriterier fra kontakter, firmaer eller begge dele. Disse segmenter kan eksporteres til aktivering i andre tjenester.
 
 Du kan finde flere oplysninger i [Oversigt over eksport](export-destinations.md).
+
+### <a name="deployment-regions-aligned-with-microsoft-dataverse"></a>Installationsområder justeret med Microsoft Dataverse
+
+Når du opretter et nyt Customer Insights-miljø, kan du vælge det område, hvor tjenesten skal installeres og have en vært. Vi har opdateret områdevalget, så det er i overensstemmelse med Microsoft Dataverse og Power Platform.
+
+Du kan nu nemt vælge det samme område som dit eksisterende Microsoft Dataverse-miljø eller din Azure Data Lake Storage-konto (hvis du vælger denne indstilling), afhængigt af tilgængeligheden af Customer Insights i det pågældende område.
+
+Du kan finde flere oplysninger i [Oprette et nyt miljø](create-environment.md) og [Produkttilgængelighed efter geografisk område](https://dynamics.microsoft.com/availability-reports/).
 
 ## <a name="july-2022-updates"></a>Opdateringer i juli 2022
 

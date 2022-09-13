@@ -1,7 +1,7 @@
 ---
 title: Opdatere samlingsindstillingerne for kunde, firma eller kontakt
 description: Opdater regler for dubletter, matchregler eller samlede felter i indstillingerne for kunde- eller firmasamling.
-ms.date: 08/12/2022
+ms.date: 08/26/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: Scott-Stabbert
@@ -13,12 +13,12 @@ searchScope:
 - ci-merge
 - ci-relationships
 - customerInsights
-ms.openlocfilehash: f2c14c169f5973b5f400989b9eeea593eba09182
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: e893e66fd7691b9703d51ed8f87cfad63880cc3b
+ms.sourcegitcommit: 560c4ee16376a9c6fdd7860988ce2d2440194fa5
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304328"
+ms.lasthandoff: 09/01/2022
+ms.locfileid: "9392464"
 ---
 # <a name="update-unification-settings"></a>Opdatere samlingsindstillinger
 
@@ -38,7 +38,7 @@ Hvis du vil gennemse eller ændre indstillingerne for samling, når der er opret
    > Feltet **Matching betingelser** vises kun, hvis der er valgt flere objekter.
 
 1. Vælg, hvad du vil opdatere:
-   - [Kildefelter](#edit-source-fields) til tilføjelse af objekter eller attributter eller ændring af attributtyper.
+   - [Kildefelter](#edit-source-fields) til tilføjelse af objekter eller attributter eller ændring af attributtyper. Hvis du vil fjerne en attribut, skal du se [Fjerne et forenet felt](#remove-a-unified-field). Hvis du vil fjerne et objekt, skal du se [Fjerne et forenet objekt](#remove-a-unified-entity).
    - [Dublerede poster](#manage-deduplication-rules) for at administrere regler for dubletter eller flette indstillinger.
    - [Tilsvarende betingelser](#manage-match-rules) for opdatering af matchning-regler på tværs af to eller flere objekter.
    - [Ensartede kundefelter](#manage-unified-fields) for at felter kan kombineres eller udelades. Du kan også gruppere relaterede profiler i klynger.
@@ -53,8 +53,6 @@ Hvis du vil gennemse eller ændre indstillingerne for samling, når der er opret
 
 ## <a name="edit-source-fields"></a>Rediger kildefelter
 
-Du kan ikke fjerne en attribut eller et objekt, hvis de allerede er blevet samlet.
-
 1. Vælg **Rediger** i ruden **Kildefelter**.
 
    :::image type="content" source="media/m3_source_edit.png" alt-text="Skærmbillede af side med kildefelter, der viser antallet af primære nøgler, tilknyttede og ikke-tilknyttede felter":::
@@ -66,6 +64,80 @@ Du kan ikke fjerne en attribut eller et objekt, hvis de allerede er blevet samle
 1. Du kan også ændre den primære nøgle for et objekt, attributtyperne og skifte **Intelligent tilknytning** til eller fra. Du kan finde flere oplysninger i [Vælg kildefelter](map-entities.md).
 
 1. Vælg **Næste** for at foretage ændringer af regler for duplikering, eller vælg **Gem og luk**, og vend tilbage til [Opdatere samlingsindstillinger](#update-unification-settings).
+
+### <a name="remove-a-unified-field"></a>Fjerne et forenet felt
+
+Hvis du vil fjerne et felt, der er blevet forenet, skal feltet fjernes fra alle afhængigheder, f.eks. segmenter, mål, forbedringer eller relationer.
+
+1. Når alle afhængigheder for feltet er fjernet, skal du gå til **Data** > **Foren**.
+
+1. Vælg **Rediger** i ruden **Samlede kundefelter**.
+
+1. Markér alle forekomster af feltet, og vælg derefter **Udelad**.
+
+   :::image type="content" source="media/m3_remove_attribute1.png" alt-text="Skærmbillede af siden Samlede kundefelter, der viser markerede felter og knappen Udelad":::
+
+1. Vælg **Udført** for at bekræfte, og vælg derefter **Gem og luk**.
+
+   > [!TIP]
+   > Hvis du får vist meddelelsen "En forening kunne ikke gemmes. Den angivne ressource kan ikke ændres eller slettes pga. downstream-afhængigheder". bruges feltet stadig i en downstream-afhængighed.
+
+1. Hvis feltet bruges i en regel for dubletposter eller matchbetingelser, skal du udføre følgende trin. Ellers skal du gå til det næste trin.
+   1. Vælg **Rediger** i ruden **Dublerede poster**.
+   1. Fjern feltet fra alle de regler, det eventuelt bruges i, og vælg derefter **Næste**.
+   1. Fjern feltet fra alle de regler, det eventuelt bruges i, på siden **Matchende betingelser**, og vælg derefter **Gem og luk**.
+   1. Vælg **Foren** > **Foren kundeprofiler og afhængigheder**. Vent, indtil foreningen er fuldført, før du går videre til næste trin.
+
+1. Vælg **Rediger** i ruden **Kildefelter**.
+
+1. Markér **Vælg objekter og felter**, og fjern markeringen i afkrydsningsfeltet ud for hver forekomst af feltet.
+
+   :::image type="content" source="media/m3_remove_attribute2.png" alt-text="Skærmbillede af dialogboksen Vælg objekter og felter, hvor der vises afkrydsningsfelter uden markering":::
+
+1. Vælg **Anvend**.
+
+1. Vælg **Gem og luk**.
+
+1. Vælg **Foren** > **Foren kundeprofiler og afhængigheder** for at opdatere den samlede profil.
+
+### <a name="remove-a-unified-entity"></a>Fjerne et forenet objekt
+
+Hvis du vil fjerne et objekt, der er blevet forenet, skal objektet fjernes fra alle afhængigheder, f.eks. segmenter, mål, forbedringer eller relationer.
+
+1. Når alle afhængigheder for objektet er fjernet, skal du gå til **Data** > **Foren**.
+
+1. Vælg **Rediger** i ruden **Samlede kundefelter**.
+
+1. Vælg alle felterne for objektet, og vælg derefter **Udelad**.
+
+   :::image type="content" source="media/m3_remove_entity1.png" alt-text="Skærmbillede af Samlede kundefelter med alle felter for et objekt og knappen Udelad":::
+
+1. Vælg **Udført** for at bekræfte, og vælg derefter **Gem og luk**.
+
+   > [!TIP]
+   > Hvis du får vist meddelelsen "En forening kunne ikke gemmes. Den angivne ressource kan ikke ændres eller slettes pga. downstream-afhængigheder", bruges objektet stadig i en downstream-afhængighed.
+
+1. Vælg **Rediger** i ruden **Dublerede poster**.
+
+1. Fjern alle eventuelle regler fra objektet, og vælg derefter **Næste**.
+
+1. Vælg objektet på siden **Matchende betingelser**, og vælg derefter **Slet**.
+
+   :::image type="content" source="media/m3_remove_entity2.png" alt-text="Skærmbillede af Matchende betingelser med objektet valgt og knappen Slet":::
+
+1. Vælg **Gem og luk**.
+
+1. Vælg **Rediger** i ruden **Kildefelter**.
+
+1. Markér **Vælg objekter og felter**, og fjern markeringen i afkrydsningsfeltet ud for objektet.
+
+   :::image type="content" source="media/m3_remove_entity3.png" alt-text="Skærmbillede af dialogboksen Vælg objekter og felter med objektafkrydsningsfelt uden markering":::
+
+1. Vælg **Anvend**.
+
+1. Vælg **Gem og luk**.
+
+1. Vælg **Foren** > **Foren kundeprofiler og afhængigheder** for at opdatere den samlede profil.
 
 ## <a name="manage-deduplication-rules"></a>Administrere deduplikeringsregler
 
