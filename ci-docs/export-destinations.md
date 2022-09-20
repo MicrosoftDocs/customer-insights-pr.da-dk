@@ -12,12 +12,12 @@ searchScope:
 - ci-export
 - ci-connections
 - customerInsights
-ms.openlocfilehash: c580b6c01e1b4ac6b095733193d86ebd0b4005f2
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: 44f58d694b9bd35a8d8c04d487d40743291e0566
+ms.sourcegitcommit: ef3e17134d44d2731605381ea0385dbc5aef6120
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304052"
+ms.lasthandoff: 09/09/2022
+ms.locfileid: "9460183"
 ---
 # <a name="exports-preview-overview"></a>Eksportoversigt (forhåndsversion)
 
@@ -81,6 +81,11 @@ Vælg en eksport for at få vist tilgængelige handlinger.
 ## <a name="schedule-and-run-exports"></a>Planlæg, og kør eksport
 
 Hver eksport, du konfigurerer, har en opdateringsplan. Under en opdatering søger systemet efter nye eller opdaterede data, der skal medtages i en eksport. Eksport køres som standard som del af alle [planlagte systemopdateringer](schedule-refresh.md). Du kan tilpasse opdateringsplanen, eller slå den fra for at køre eksporten manuelt.
+
+> [!TIP]
+> Minimer behandlingstiden for segmenteksporter ved hjælp af følgende bedste praksis:
+> - Distribuer segmentobjekter på tværs af flere eksporter.
+> - Undgå at planlægge alle eksporter på én gang. Lad der gå 30 minutter eller en time mellem det planlagte tidspunkt for hver eksport.
 
 Eksportplaner afhænger af miljøets tilstand. Hvis der er opdateringer i gang om [afhængigheder](system.md#refresh-processes), når en planlagt eksport skal starte, fuldfører systemet først opdateringerne og kører derefter eksporten. Du kan få vist, hvornår en eksport sidst blev opdateret i kolonnen **Opdateret**.
 

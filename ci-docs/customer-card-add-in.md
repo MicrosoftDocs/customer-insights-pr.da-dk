@@ -13,12 +13,12 @@ searchScope:
 - ci-search-filter
 - ci-customer-card
 - customerInsights
-ms.openlocfilehash: 8b3b6a0d54b80d7df454e9dc925f14cc3c39684c
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 65fd80cc563b8b3b8c8874b66f179f8b0c7a19f0
+ms.sourcegitcommit: fe33cc76d015232ff8737f77193f44f2b884bb6b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9194916"
+ms.lasthandoff: 09/13/2022
+ms.locfileid: "9473635"
 ---
 # <a name="customer-card-add-in-for-dynamics-365-apps-preview"></a>Tilføjelsesprogram til kundekort for Dynamics 365-apps (forhåndsversion)
 
@@ -32,7 +32,8 @@ Få en 360-grads visning af dine kunder direkte i Dynamics 365-apps. Når tilfø
 - Hvis dine Dynamics 365-data skal knyttes til Customer Insights-kundeprofilers, anbefaler vi, at de [indtages fra Dynamics 365-appen ved hjælp af Microsoft Dataverse-connectoren](connect-power-query.md). Hvis du bruger en anden metode til at indtage Dynamics 365-kontakter (eller firmaer), skal du kontrollere, at feltet `contactid` (eller `accountid`) er angivet som den [primære nøgle for den pågældende datakilde i tilknytningstrinnene i processen til samling af data](map-entities.md#select-primary-key-and-semantic-type-for-attributes).
 - Alle Dynamics 365-brugere af Kundekort-tilføjelsesprogrammet skal [tilføjes som brugere](permissions.md) i Customer Insights for at se dataene.
 - [Konfigurerede søge- og filtreringsfunktioner](search-filter-index.md) i Customer Insights.
-- Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i Customer Insights. Nogle data og kontrolelementer er kun tilgængelige i miljøer af bestemte typer. Du får besked i konfigurationen af tilføjelsesprogrammet, hvis et kontrolelement ikke er tilgængeligt på grund af den valgte miljøtype. Få mere at vide om [miljøanvendelser](work-with-business-accounts.md).
+- Nogle data og kontrolelementer er kun tilgængelige i miljøer af bestemte typer. Du får besked i konfigurationen af tilføjelsesprogrammet, hvis et kontrolelement ikke er tilgængeligt på grund af den valgte miljøtype. Denne fejl vises i kontrolelementet, når den gengives. Få mere at vide om [miljøanvendelser](work-with-business-accounts.md).
+- Hvert tilføjelsesprograms kontrolelement afhænger af specifikke data i Customer Insights.
   - **Kontrolelementet Måling**: kræver [konfigurerede kundeattributmålinger](measures.md).
   - **Intelligenskontrol**: kræver data genereret ved hjælp af [forudsigelser eller brugerdefinerede modeller](predictions-overview.md).
   - **Kontrolelementet Kundeoplysninger**: viser alle felter fra profilen er tilgængelige i den samlede kundeprofil.
