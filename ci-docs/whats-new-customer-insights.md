@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: acba06cba5fb5cbf0bca5aeb30b603003555fc32
-ms.sourcegitcommit: 3ab8f1c0ba5874095a19f0b6367b9a4432f72ed1
+ms.openlocfilehash: 2a386d65a5e285d471e9cafc45f247e7b4ae23bb
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/06/2022
-ms.locfileid: "9409350"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609585"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -228,9 +228,9 @@ Du kan finde flere oplysninger i [Skifte ejer af et miljø](manage-environments.
 
 ### <a name="data-preparation-process-lists-corruption-reason-for-corrupted-records"></a>Dataforberedelsesprocessen indeholder årsagen til årsagen til, at dataforberedelsen er blevet beskadiget
 
-Forberedelse af data viser nu årsagen til, at alle felter med beskadigede data er beskadiget. Oplysningerne gives på de enkelte postniveauer for at lette identifikationen. 
+Forberedelse af data viser nu årsagen til, at alle felter med beskadigede data er beskadiget. Oplysningerne gives på de enkelte postniveauer for at lette identifikationen.
 
-Du kan finde flere oplysninger i [Ødelagte datakilder](entities.md#corrupted-data-sources).
+Du kan finde flere oplysninger i [Beskadigede datakilder](data-sources.md#corrupt-data-sources).
 
 ### <a name="end-of-preview-for-reporting-features-in-the-engagement-insights-capability"></a>Afslutning af forhåndsversion for rapporteringsfunktioner i funktionen engagementsindsigt
 

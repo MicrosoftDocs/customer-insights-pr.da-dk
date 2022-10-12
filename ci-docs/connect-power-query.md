@@ -1,7 +1,7 @@
 ---
 title: Oprette forbindelse til en Power Query-datakilde (indeholder video)
 description: Indtag data via en Power Query-connector (indeholder video).
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.reviewer: v-wendysmith
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 6a25e332bafab414c9def4e1e6b461139dd24ea6
-ms.sourcegitcommit: dfba60e17ae6dc1e2e3830e6365e2c1f87230afd
+ms.openlocfilehash: 4cc7e57dfb0f8d050e91adc441c24e849882f5d8
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "9463258"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9609869"
 ---
 # <a name="connect-to-a-power-query-data-source"></a>Oprette forbindelse til en Power Query-datakilde
 
@@ -43,16 +43,17 @@ Tilføjelse af datakilder baseret på Power Query-connectorer følger generelt d
 
 1. Vælg **Transformer data**.
 
-1. Dialogboksen **Power Query - Rediger forespørgsler** giver dig mulighed for at gennemse og finjustere dataene. De objekter, som systemerne har identificeret i den valgte datakilde, vises i venstre rude.
+1. Gennemse og finjuster dine data på siden **Power Query – Rediger forespørgsler**. De objekter, som systemerne har identificeret i den valgte datakilde, vises i venstre rude.
 
    :::image type="content" source="media/data-manager-configure-edit-queries.png" alt-text="Dialogboksen Rediger forespørgsler":::
 
-1. Du kan også transformere dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. De enkelte transformeringer er angivet under **Anvendte trin**. Power Query indeholder mange [foruddefinerede transformationsindstillinger](/power-query/power-query-what-is-power-query#transformations).
+1. Transformer dine data. Vælg et objekt, der skal redigeres eller transformeres. Brug indstillingerne i Power Query-vinduet til at anvende transformationer. De enkelte transformeringer er angivet under **Anvendte trin**. Power Query indeholder mange [foruddefinerede transformationsindstillinger](/power-query/power-query-what-is-power-query#transformations).
 
-   Det anbefales, at du bruger følgende transformationer:
-
-   - Hvis du indtager data fra en CSV-fil, indeholder den første række ofte overskrifter. Gå til **Transformér**, og vælg **Brug første række som overskrifter**.
-   - Kontrollér, at datatypen er angivet korrekt. I forbindelse med datofelter kan du f.eks. vælge en datotype.
+   > [!IMPORTANT]
+   > Det anbefales, at du bruger følgende transformationer:
+   >
+   > - Hvis du indtager data fra en CSV-fil, indeholder den første række ofte overskrifter. Gå til **Transformér**, og vælg **Brug første række som overskrifter**.
+   > - Kontrollér, at datatypen er angivet korrekt og stemmer overens med dataene. I forbindelse med datofelter kan du f.eks. vælge en datotype.
 
 1. Hvis du vil føje flere objekter til datakilde i dialogboksen **Rediger forespørgsler**, skal du gå til **Startside** og vælge **Hent data**. Gentag trin 5-10, indtil du har tilføjet alle objekter for denne datakilde. Hvis du har en database, der indeholder flere datasæt, er de enkelte datasæt sit eget objekt.
 
@@ -102,5 +103,51 @@ Datagateways fra et eksisterende Power BI-eller Power Apps-miljø vil være synl
 1. Vælg **Gem** for at anvende ændringerne og vende tilbage til siden **Datakilder**.
 
    [!INCLUDE [progress-details-include](includes/progress-details-pane.md)]
+
+## <a name="common-reasons-for-ingestion-errors-or-corrupt-data"></a>Almindelige årsager til indtagelsesfejl eller beskadigede data
+
+### <a name="data-type-does-not-match-data"></a>Datatypen stemmer ikke overens med data
+
+Den mest almindelige uoverensstemmelse mellem datatyper opstår, når et datofelt ikke er angivet til det korrekte datoformat.
+
+Dataene kan repareres ved kilden og indtages igen. Du kan også reparere transformeringen i Customer Insights. Sådan reparerer du transformeringen:
+
+1. Gå til **Data** > **Datakilder**.
+
+1. Ud for datakilden med de beskadigede data skal du vælge knappen **Rediger**.
+
+1. Vælg **Næste**.
+
+1. Vælg de enkelte forespørgsler, og søg efter transformeringer i "Anvendte trin", der er forkerte, eller datokolonner, der ikke er transformeret med et datoformat.
+
+   :::image type="content" source="media/PQ_corruped_date.png" alt-text="Power Query – Redigering, der viser forkert datoformat":::
+
+1. Rediger datatypen, så den stemmer overens med dataene.
+
+1. Vælg **Gem**. Denne datakilde er opdateret.
+
+## <a name="troubleshoot-ppdf-power-query-based-data-source-refresh-issues"></a>Fejlfinding af problemer med opdatering af PPDF Power Query-baserede datakilder
+
+Hvis dataene er forældede, eller der vises fejlmeddelelser, efter at en datakilde er opdateret, skal du udføre følgende trin:
+
+1. Naviger til [Power Platform](https://make.powerapps.com).
+
+1. Vælg **Miljø** for din forekomst af Customer Insights.
+
+1. Naviger til **Dataflow**.
+
+1. I forbindelse med det dataflow, der svarer til datakilden i Customer Insights, skal du vælge den lodrette ellipse (&vellip;) og derefter vælge **Vis opdateringsoversigt**.
+
+1. Hvis **Status** for dataflowet er **Vellykket**, er ejerskabet til den Power Query-baserede datakilde muligvis ændret:
+
+   1. Gennemse opdateringsplanen fra opdateringsoversigten.
+   1. Angiv den nye ejers tidsplan, og gem indstillingerne.
+
+1. Hvis **Status** for dataflowet er **Mislykket**:
+
+   1. Hent filen med opdateringsoversigten.
+   1. Gennemse den hentede fil for at finde årsagen til fejlen.
+   1. Hvis fejlen ikke kan løses, skal du vælge **?** for at åbne en supportanmodning. Inkluder den hentede fil med opdateringsoversigten.
+
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

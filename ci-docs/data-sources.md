@@ -1,7 +1,7 @@
 ---
 title: Oversigt over datakilder
 description: Få mere at vide om, hvordan du importerer eller indtager data fra forskellige kilder.
-ms.date: 07/26/2022
+ms.date: 09/29/2022
 ms.subservice: audience-insights
 ms.topic: overview
 author: mukeshpo
@@ -12,12 +12,12 @@ searchScope:
 - ci-data-sources
 - ci-create-data-source
 - customerInsights
-ms.openlocfilehash: 591353bf1ba2f9ca05ddd137e1cf29dc0b0fba97
-ms.sourcegitcommit: 49394c7216db1ec7b754db6014b651177e82ae5b
+ms.openlocfilehash: f89da3cf5b56e367bd673740f80cd82ec0907b28
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/10/2022
-ms.locfileid: "9245642"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610045"
 ---
 # <a name="data-sources-overview"></a>Oversigt over datakilder
 
@@ -65,7 +65,9 @@ Vælg en datakilde for at få vist tilgængelige handlinger.
 
 ## <a name="refresh-data-sources"></a>Opdatér datakilder
 
-Datakilder kan opdateres automatisk i en automatisk planlægning eller opdateres manuelt efter behov. [Lokale datakilder](connect-power-query.md#add-data-from-on-premises-data-sources) opdaterer efter deres egne planer, som konfigureres under skrivning af data. I forbindelse med tilknyttede datakilder forbruger dataindtag de nyeste data, der er tilgængelige fra datakilde.
+Datakilder kan opdateres automatisk i en automatisk planlægning eller opdateres manuelt efter behov. [Lokale datakilder](connect-power-query.md#add-data-from-on-premises-data-sources) opdaterer efter deres egne planer, som konfigureres under skrivning af data. Du kan finde tip til fejlfinding i [Fejlfinding af problemer med opdatering af PPDF Power Query-baserede datakilder](connect-power-query.md#troubleshoot-ppdf-power-query-based-data-source-refresh-issues).
+
+I forbindelse med tilknyttede datakilder forbruger dataindtag de nyeste data, der er tilgængelige fra datakilde.
 
 Gå til **Administration** > **system** > [**Plan**](schedule-refresh.md) for at konfigurere systemplanlagte opdateringer af de opdaterede datakilder.
 
@@ -76,5 +78,37 @@ Opdater en datakilde efter behov:
 1. Vælg den datakilde, du vil opdatere, og vælg **Opdater**. Datakilden er nu udløst for at få en manuel opdatering. Hvis du opdaterer en datakilde, opdateres både objektskemaet og dataene for alle de objekter, der er angivet i datakilden.
 
 1. Vælg status for at åbne ruden **Statusdetaljer** og få vist status for opgaverne. Hvis du vil annullere jobbet, skal du vælge **Annuller job** nederst i ruden.
+
+## <a name="corrupt-data-sources"></a>Beskadigede datakilder
+
+Data, der indtages, kan have beskadigede poster, som kan forårsage, at dataindtagelsesprocessen fuldføres med fejl eller advarsler.
+
+> [!NOTE]
+> Hvis dataindtagelse fuldføres med fejl, springes efterfølgende behandling (f.eks. oprettelse af en enhed eller aktivitet), der udnytter denne datakilde, over. Hvis indtagelse fuldføres med advarsler, fortsætter den efterfølgende behandling, men nogle af posterne medtages muligvis ikke.
+
+Disse fejl kan ses i opgavedetaljerne.
+
+:::image type="content" source="media/corrupt-task-error.png" alt-text="Opgavedetaljer, der viser beskadigede data.":::
+
+Beskadigede poster vises i systemoprettede objekter.
+
+### <a name="fix-corrupt-data"></a>Reparere beskadigede data
+
+1. Du kan få vist beskadigede data ved at gå til **Data** > **Objekter** og søge efter de beskadigede objekter i sektionen **System**. Navngivningsskemaet for beskadigede objekter: 'DataSourceName_EntityName_corrupt'.
+
+1. Vælg et beskadiget objekt og derefter fanen **Data**.
+
+1. Identificer de beskadigede felter i en post og årsagen.
+
+   :::image type="content" source="media/corruption-reason.png" alt-text="Årsag til beskadigelse." lightbox="media/corruption-reason.png":::
+
+   > [!NOTE]
+   > **Data** > **Objekter** viser kun en del af de beskadigede poster. Hvis du vil have vist alle de beskadigede poster, skal du eksportere filerne til en objektbeholder på lagerkontoen ved hjælp af [eksportprocessen i Customer Insights](export-destinations.md). Hvis du har brugt din egen lagerkonto, kan du også kigge på Customer Insights-mappen i lagerkontoen.
+
+1. Reparer de beskadigede data. For Azure Data Lake-datakilder kan du f.eks. [reparere dataene i Data Lake Storage eller opdatere datatyperne i manifest-/model.json-filen](connect-common-data-model.md#common-reasons-for-ingestion-errors-or-corrupt-data). I forbindelse med Power Query-datakilder skal du reparere dataene i kildefilen og [rette datatypen i transformeringstrinnet](connect-power-query.md#data-type-does-not-match-data) på siden **Power Query – Rediger forespørgsler**.
+
+Efter den næste opdatering af datakilde overføres de korrigerede poster til Customer Insights og overføres til downstreamprocesser.
+
+Datatypen er f.eks. angivet som 'dato' i kolonnen 'fødselsdag'. En kundepost har fødselsdag angivet som '01/01/1977'. Denne post markeres som beskadiget af systemet. Skift fødselsdagen i kildesystemet til '1977'. Efter en automatiseret opdatering af datakilder har feltet nu et gyldigt format, og posten fjernes fra det beskadigede objekt.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

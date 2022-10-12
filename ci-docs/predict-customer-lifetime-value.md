@@ -1,7 +1,7 @@
 ---
-title: Forudsigelse af kundens levetidsværdi (CLV)
+title: Forudsige kundens levetidsværdi (CLV)
 description: Indtægtskilde for aktive kunder i fremtiden.
-ms.date: 07/21/2022
+ms.date: 09/30/2022
 ms.reviewer: mhart
 ms.subservice: audience-insights
 ms.topic: how-to
@@ -13,74 +13,63 @@ searchScope:
 - ci-create-prediction
 - ci-custom-models
 - customerInsights
-ms.openlocfilehash: b6f6665d906cc96688efe84035336f64d2a39303
-ms.sourcegitcommit: 80d8436d8c940f1267e6f26b221b8d7ce02ed26b
+ms.openlocfilehash: f27462ac327027e50e23387ac9f75a671db9a86d
+ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "9186433"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "9610367"
 ---
-# <a name="customer-lifetime-value-clv-prediction"></a>Forudsigelse af kundens levetidsværdi (CLV)
+# <a name="predict-customer-lifetime-value-clv"></a>Forudsige kundens levetidsværdi (CLV)
 
-Potentiel værdi (omsætning), som de enkelte aktive kunder henter ind i virksomheden via en defineret fremtidig tidsperiode. Du kan bruge denne funktion til at nå forskellige mål:
+Potentiel værdi (omsætning), som de enkelte aktive kunder henter ind i virksomheden via en defineret fremtidig tidsperiode. Denne forudsigelse hjælper dig med at:
 
-- Identificere kunder af høj værdi, og bearbejde denne indsigt
-- Oprette strategiske kundesegmenter baseret på deres potentielle værdi til at køre tilpassede kampagner med målrettede salgs-, marketing- og supportindsatser
-- Vejlede i produktudvikling ved at fokusere på funktioner, der øger kundeværdien
-- Optimere salgs- eller marketingstrategien og tildeling af budget mere nøjagtigt til kundekontakt
-- Genkende og belønne kunder med høj værdi via loyalitets- eller præmierprogrammer
+- Identificere kunder af høj værdi, og bearbejde denne indsigt.
+- Oprette strategiske kundesegmenter baseret på deres potentielle værdi for at køre tilpassede kampagner med målrettede salgs-, marketing- og supportindsatser.
+- Vejlede i produktudvikling ved at fokusere på funktioner, der øger kundeværdien.
+- Optimere salgs- eller marketingstrategien og tildeling af budget mere nøjagtigt til kundekontakt.
+- Genkende og belønne kunder med høj værdi via loyalitets- eller præmieprogrammer.
+
+Find ud af, hvad CLV betyder for virksomheden. Vi understøtter transaktionsbaseret CLV-forudsigelse. En kundes samlede værdi er baseret på oversigten over forretningstransaktioner. Overvej at oprette flere modeller med forskellige inputindstillinger og sammenligne modelresultater for at se, hvilket modelscenarie der passer bedst til dine forretningsbehov.
+
+> [!TIP]
+> Prøv CLV-forudsigelse ved hjælp af eksempeldata: [Vejledning til eksempel på forudsigelse af kundens levetidsværdi (CLV)](sample-guide-predict-clv.md).
 
 ## <a name="prerequisites"></a>Forudsætninger
 
-Før du går i gang, skal du overveje, hvad CLV betyder for din virksomhed. I øjeblikket understøtter vi transaktionsbaseret CLV-forudsigelse. En kundes samlede værdi er baseret på oversigten over forretningstransaktioner. Hvis du vil forudsigelse, skal du som minimum have [Bidragyder](permissions.md)-tilladelser.
-
-Da det ikke tager lang tid at konfigurere og køre en CLV-model, kan du overveje at oprette flere modeller med forskellige inputindstillinger og sammenligne modelresultater for at se, hvilket modelscenarie der passer bedst til dine forretningsbehov.
-
-### <a name="data-requirements"></a>Datakrav
-
-Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis modelydeevnen skal øges. Jo flere data modellen kan behandle, jo mere nøjagtige forudsigelse bliver. Vi opfordrer dig derfor til at bruge flere kundeaktivitetsdata, hvis de bliver tilgængelige.
-
-- Kunde-id: Entydigt id, der skal svare til transaktioner med en enkelt kunde
-
-- Transaktionshistorik: Historisk transaktionslog med nedenstående semantiske dataskema
-    - **Transaktions-id**: Entydigt id for hver transaktion
-    - **Transaktionsdato**: Dato og helst et tidsstempel for hver transaktion
-    - **Transaktionsbeløb**: Pengeværdi (f.eks. omsætning eller avance) for hver transaktion
-    - **Etiket, der er tildelt til returneringer** (valgfrit): Boolesk værdi, der angiver, om transaktionen er en returvare 
-    - **Produkt-id** (valgfrit): Produkt-id for det produkt, der er involveret i transaktionen
-
-- Yderligere data (valgfrit), f.eks.
-    - Webaktiviteter: oversigt over besøg på websted, e-mail-oversigt
-    - Loyalitetsaktiviteter: akkumulerede loyalitetspoint og oversigt over loyalitetspræmier
-    - Kundeservice oversigt over logfiler, serviceopkald, klager eller returneringer
-    - Kundeprofil-id
-- Data om kundeaktiviteter (valgfri):
-    - Aktivitets-id'er, der skal skelne mellem aktiviteter af samme type
-    - Kunde-id'er, der knytter aktiviteter til dine kunder
-    - Aktivitetsoplysninger, der indeholder navnet på og datoen for aktiviteten
-    - Det semantiske dataskema for aktiviteter omfatter:
-        - **Primær nøgle**: Et entydigt id for en aktivitet
-        - **Tidsstempel**: Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle
-        - **Hændelse (aktivitetsnavn)**: Navnet på den hændelse, du vil bruge
-        - **Detaljer (beløb eller værdi)**: Detaljer om kundeaktiviteten
-
-- Forslåede datakarakteristika:
-    - Tilstrækkelige historiske data: Mindst et års transaktionsdata. Helst to til tre års transaktionsdata for at forudsige CLV i et år.
-    - Flere køb pr. kunde: Ideelt set mindst to til tre transaktioner pr. kunde-id, helst på tværs af flere datoer.
-    - Antal kunder: Mindst 100 forskellige kunder, helst mere end 10.000 kunder. Modellen kan ikke bruges af færre end 100 kunder og med utilstrækkelige historiske data
-    - Datafuldstændighed: Mindre end 20 % manglende værdier i obligatoriske felter i inputdataene
+- Mindst [Bidragyder](permissions.md)-tilladelser
+- Mindst 100 unikke kunder, helst mere end 10.000 kunder
+- Kunde-id: et entydigt id, der skal svare til transaktioner med en enkelt kunde
+- Mindst et års transaktionshistorik, helst to til tre år. Ideelt set mindst to til tre transaktioner pr. kunde-id, helst på tværs af flere datoer. Transaktionshistorikken skal omfatte:
+  - **Transaktions-id**: Entydigt id for hver transaktion
+  - **Transaktionsdato**: Dato eller tidsstempel for hver transaktion
+  - **Transaktionsbeløb**: Pengeværdi (f.eks. omsætning eller avance) for hver transaktion
+  - **Etiket, der er tildelt til returneringer**: Boolesk sand/falsk-værdi, der angiver, om transaktionen er en returvare
+  - **Produkt-id**: Produkt-id for det produkt, der er involveret i transaktionen
+- Data om kundeaktiviteter:
+  - **Primær nøgle**: Entydigt id for en aktivitet
+  - **Tidsstempel**: Dato og klokkeslæt for hændelsen, der identificeres af den primære nøgle
+  - **Hændelse (aktivitetsnavn):** Navnet på den hændelse, du vil bruge
+  - **Detaljer (beløb eller værdi)**: Detaljer om kundeaktiviteten
+- Yderligere data, f.eks.:
+  - Webaktiviteter: Oversigt over besøg på websted eller mailoversigt
+  - Loyalitetsaktiviteter: Akkumulerede loyalitetspoint og oversigt over loyalitetspræmier
+  - Kundeservice oversigt over logfiler: Serviceopkald, klager eller returneringer
+  - Kundeprofil-id
+- Mindre end 20 % manglende værdier i obligatoriske felter
 
 > [!NOTE]
-> - Modellen kræver kundernes transaktionsoversigt. Der kan i øjeblikket kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købs/transaktionsobjekter, kan du oprette dem sammen i Power Query, før dataindtagelse går i gang.
-> - Hvis du vil have flere kundeaktivitetsdata (valgfrit), kan du dog tilføje lige så mange kundeaktivitetsobjekter, som du ønsker, til overvejelse af modellen.
+> Der kan kun konfigureres ét transaktionsoversigtsobjekt. Hvis der er flere købs- eller transaktionsobjekter, kan du samle dem i Power Query, før dataindtagelse går i gang.
 
 ## <a name="create-a-customer-lifetime-value-prediction"></a>Oprette kundens levetidsværdi (CLV) forudsigelse
 
+Du kan når som helst vælge **Gem kladde** for at gemme forudsigelsen som en kladde. Kladdeforudsigelsen vises under fanen **Mine forudsigelser**.
+
 1. Gå til **Intelligens** > **Forudsigelser**.
 
-1. Vælg feltet **Kundens levetidsværdi**, og vælg **Brug model**. 
+1. Gå til fanen **Opret**, og vælg **Brug model** i feltet **Kundens levetidsværdi**.
 
-1. Vælg **Kom i gang** i ruden **Værdi for kundes levetid**.
+1. Vælg **Start her**.
 
 1. **Navngive denne model** og **navnet på outputobjektet** for at skelne mellem dem fra andre modeller eller objekter.
 
@@ -88,66 +77,56 @@ Følgende data kræves, og hvor de er markeret valgfri, anbefales det, hvis mode
 
 ### <a name="define-model-preferences"></a>Definere modelindstillinger
 
-1. Angiv en **Forudsigelsesperiode** for at definere, hvor langt i fremtiden CLV skal være.    
-   Enheden angives som standard som måneder. Du kan ændre det til år, så du kommer længere ud i fremtiden.
+1. Angiv en **Forudsigelsesperiode** for at definere, hvor langt i fremtiden CLV skal være. Enheden angives som standard som måneder.
 
    > [!TIP]
-   > Hvis du vil sammenligne CLV nøjagtigt for den tidsperiode, du angiver, skal du have en tilsvarende periode med historiske data. Hvis du f.eks. vil forudsige CLV for de næste 12 måneder, anbefales det, at du har mindst 18-24 måneders historiske data.
+   > Hvis du vil forudsige CLV nøjagtigt for den angivne tidsperiode, skal der angives en sammenligningsperiode med historiske data. Hvis du f.eks. vil forudsige CLV for de næste 12 måneder, skal du have mindst 18-24 måneders historiske data.
 
-1. Angiv, hvad **Aktive kunder** betyder for virksomheden. Angiv den tidsramme, hvor en kunde skal have haft mindst én transaktion, for at blive fundet aktiv. Modellen ønsker kun at bruge CLV til aktive kunder. 
+1. Angiv den tidsramme, hvor en kunde skal have haft mindst én transaktion, for at blive fundet aktiv. Modellen forudsiger kun CLV for **Aktive kunder**.
    - **Lad model beregne købsinterval (anbefales)**: I modellen analyseres dataene, og en tidsperiode bestemmes på baggrund af historiske køb.
-   - **Angiv intervallet manuelt**: Hvis du har en bestemt forretningsdefinition for en aktiv kunde, skal du vælge denne indstilling og angive tidsperiode efter behov.
+   - **Angiv intervallet manuelt**: Tidsperiode for din definition af en aktiv kunde.
 
-1. Definer percentil for **Kunder af høj værdi** for at aktivere modellen til at levere resultater, der svarer til virksomhedens definition.
-    - **Modelberegning (anbefales)**: I modellen analyseres dine data, og det bestemmes, hvad en kunde med høj værdi kan have for virksomheden på baggrund af kundernes transaktionsoversigt. I modellen bruges en heuristikregel (der er inspireret af reglen 80/20 eller pareto-princippet) til at finde proportionen med kunder af høj værdi. Den procentdel af kunderne, der har givet en samlet omsætning på 80 % for virksomheden i den historiske periode, betragtes som kunder af høj værdi. Mindre end 30-40 procent af kunderne bidrager som regel til en samlet omsætning på procent. Dette antal kan dog variere, afhængigt af virksomhed og branche.    
-    - **Procent af aktive kunder i top**: Definer kunder af høj værdi for virksomheden som en percentil af de mest aktive betalende kunder. Du kan f.eks. bruge denne indstilling til at definere kunder af høj værdi som de øverste 20 % af de fremtidige betalende kunder.
+1. Definer percentilen for **Kunde med høj værdi**.
+    - **Modelberegning (anbefales)**: Modellen bruger en 80/20-regel. Den procentdel af kunderne, der har givet en samlet omsætning på 80 % for virksomheden i den historiske periode, betragtes som kunder af høj værdi. Mindre end 30-40 procent af kunderne bidrager som regel til en samlet omsætning på procent. Dette antal kan dog variere, afhængigt af virksomhed og branche.
+    - **Procent af aktive kunder i top**: Specifik percentil for en kunde af høj værdi. Du kan f.eks. angive **25** for at definere kunder af høj værdi som de øverste 25 % af de fremtidige betalende kunder.
 
     Hvis virksomheden definerer kunder af høj værdi på en anden måde, skal du [fortælle os det, som vi gerne vil høre](https://go.microsoft.com/fwlink/?linkid=2074172).
 
-1. Vælg **Næste** for at fortsætte til næste trin.
+1. Vælg **Næste**.
 
 ### <a name="add-required-data"></a>Tilføj påkrævede data
 
-1. I trinnet **Påkrævede data** skal du vælge **Tilføj data** for **Kundetransaktionshistorik** vælge, hvilket objekt der indeholder de transaktionshistorikoplysninger, der beskrives i [forudsætninger](#prerequisites).
+1. Vælg **Tilføj data** for **Kundetransaktionshistorik**.
 
-1. Tilknyt de semantiske felter til attributter i objektet indkøbsoversigt, og vælg **Næste**.
+1. Vælg den semantiske aktivitetstype, **SalesOrder** eller **SalesOrderLine**, der indeholder transaktionshistorikken. Hvis aktiviteten ikke er blevet konfigureret, skal du vælge **her** og oprette den.
 
-   :::image type="content" source="media/clv-add-customer-data-mapping.png" alt-text="Billede af konfigurationstrinnet til tilknytning af dataattributter for de påkrævede data.":::
- 
-1. Hvis nedenstående felter ikke er udfyldt, skal du konfigurere relationen fra dit indkøbsoversigtsobjekt til objektet *Kunde* og vælge **Gem**.
-    1. Vælg transaktionshistorikobjekt.
-    1. Vælg det felt, der identificerer en kunde i objektet indkøbsoversigt. Det skal relateres til kundeobjektets primære kunde-id.
-    1. Vælg objektet, der svarer til det primære kundeobjekt.
-    1. Angiv et navn, der beskriver relationen.
+1. Hvis aktivitetsattributterne blev semantically tilknyttet under **Aktiviteter**, da aktiviteten blev oprettet, skal du vælge de specifikke attributter eller det objekt, beregningen skal fokusere på. Hvis der ikke blev udført en semantisk tilknytning, skal du vælge **Rediger** og tilknytte dataene.
+  
+   :::image type="content" source="media/CLV-add-required.PNG" alt-text="Tilføje påkrævede data for CLV-modellen":::
 
-      :::image type="content" source="media/clv-add-customer-data-relationship.png" alt-text="Billede af konfigurationstrinnet for at definere relationen til kundeobjektet.":::
+1. Vælg **Næste**, og gennemse de attributter, der kræves til denne model.
 
-1. Vælg **Næste**.
+1. Vælg **Gem**.
+
+1. Tilføj flere aktiviteter, eller vælg **Næste**.
 
 ### <a name="add-optional-activity-data"></a>Tilføj ekstra aktivitetsdata
 
 Data, der afspejler vigtige kundeinteraktioner (f.eks. web-, kundeservice- og hændelseslogfiler), føjer kontekst til transaktionsposter. Flere mønstre, der findes i kundeaktivitetsdataene, kan gøre forudsigelserne mere nøjagtige.
 
-1. Vælg **Tilføj data** under **Boost modelindsigt med flere aktivitetsdata** i trinnet **Flere data (valgfrit**). Vælg det kundeaktivitetsobjekt, der indeholder oplysninger om kundeaktiviteten, som beskrevet i [forudsætninger](#prerequisites).
+1. Vælg **Tilføj data** under **Gør modelindsigten stærkere med yderligere aktivitetsdata**.
 
-1. Tilknyt de semantiske felter til attributter i objektet kundeaktivitet, og vælg **Næste**.
+1. Vælg en aktivitetstype, der svarer til den type kundeaktivitet, du tilføjer. Hvis aktiviteten ikke er blevet konfigureret, skal du vælge **her** og oprette den.
 
-   :::image type="content" source="media/clv-additional-data-mapping.png" alt-text="Billede af konfigurationstrinnet til tilknytning af felter for yderligere data.":::
+1. Hvis aktivitetsattributterne blev tilknyttet under **Aktiviteter**, da aktiviteten blev oprettet, skal du vælge de specifikke attributter eller det objekt, beregningen skal fokusere på. Hvis der ikke blev udført en tilknytning, skal du vælge **Rediger** og tilknytte dataene.
 
-1. Vælg en aktivitetstype, der svarer til den type kundeaktivitet, du tilføjer. Vælg mellem eksisterende aktivitetstyper, eller tilføj en ny aktivitetstype.
-
-1. Konfigurer relationen fra kundeaktivitetsobjektet til *Kunde*-objektet.
-
-    1. Vælg det felt, der identificerer kunden i objektet kundeaktivitetsoversigt. Det kan relateres direkte til det primære kunde-id for *Kunde*-objektet.
-    1. Vælg det *Kundeobjekt*, der stemmer overens med dit primære *Kundeobjekt*.
-    1. Angiv et navn, der beskriver relationen.
-
-   :::image type="content" source="media/clv-additional-data.png" alt-text="Billede af trinnet i konfigurationsforløbet for at tilføje flere data og konfigurere aktiviteten med udfyldte eksempler.":::
+1. Vælg **Næste**, og gennemse de attributter, der kræves til denne model.
 
 1. Vælg **Gem**.
-    Tilføj flere data, hvis du vil medtage andre kundeaktiviteter.
 
-1. Tilføj valgfrie kundedata, eller vælg **Næste**.
+1. Vælg **Næste**.
+
+1. [Tilføj valgfrie kundedata](#add-optional-customer-data), eller vælg **Næste**, og gå til [Indstille opdateringsplan](#set-update-schedule).
 
 ### <a name="add-optional-customer-data"></a>Tilføje yderligere data (valgfrit)
 
@@ -156,91 +135,79 @@ Vælg mellem 18 almindeligt anvendte kundeprofilattributter, der skal inkluderes
 Contoso Coffee ønsker f.eks., at kundernes levetidsværdi skal nå ud til kunder med høj værdi med et personligt tilbud, der relaterer sig til lanceringen af deres nye maskiner. Contoso bruger CLV-modellen og tilføjer alle 18 kundeprofilattributter for at se, hvilke faktorer der påvirker deres kunder med den højeste værdi. Kundernes placering er den mest effektive faktor for disse kunder.
 Med disse oplysninger organiserer de en lokal begivenhed for lanceringen af maskinerne og er partner med lokale leverandører for at få tilpassede tilbud og en særlig oplevelse ved arrangementet. Uden disse oplysninger har Contoso måske kun sendt generiske marketingmails og ikke fået mulighed for at tilpasse til dette lokale segment af deres kunder af høj værdi.
 
-1. Vælg **Tilføj data** under **Boost modelindsigt med endnu flere kundedata** i trinnet **Flere data (valgfrit**).
+1. Vælg **Tilføj data** under **Gør modelindsigten stærkere med yderligere kundedata**.
 
-1. For **Objekt** skal du vælge **Customer: CustomerInsights** for at vælge den ensartede tabel over kundeprofiler, der knyttes til kundeattributdata. Vælg **System.Customer.CustomerId** for **Kunde-id**.
+1. For **Objekt** skal du vælge **Kunde: CustomerInsights** for at vælge den samlede kundeprofil, der knyttes til kundeattributdata. Vælg **System.Customer.CustomerId** for **Kunde-id**.
 
 1. Tilknyt flere felter, hvis dataene er tilgængelige i dine ensartede kundeprofiler.
 
    :::image type="content" source="media/clv-optional-customer-profile-mapping.png" alt-text="Eksempel på tilknyttede felter til kundeprofildata.":::
 
-1. Vælg **Gem,** når du har tilknytningen af de attributter, som modellen skal bruge til at hjælpe kundernes levetid med at anvende værdier for levetid.
+1. Vælg **Gem**.
 
 1. Vælg **Næste**.
 
 ### <a name="set-update-schedule"></a>Indstil opdateringsplan
 
-1. I trinnet til **planlægning af dataopdatering** skal du vælge, hvor ofte modellen skal omformere sig på baggrund af de nyeste data. Denne indstilling er vigtig for at opdatere præcisionen af forudsigelser, når nye data vises i Customer Insights. De fleste virksomheder kan omskole én gang om måneden og opnå en god præcision af deres forudsigelse.
+1. Vælg, hvor ofte modellen skal gentrænes på baggrund af de nyeste data. Denne indstilling er vigtig, hvis du vil opdatere nøjagtigheden af forudsigelser, efterhånden som nye data indtages til Customer Insights. De fleste virksomheder kan omskole én gang om måneden og opnå en god præcision af deres forudsigelse.
 
 1. Vælg **Næste**.
 
 ### <a name="review-and-run-the-model-configuration"></a>Gennemse og kør modelkonfigurationen
 
-1. I trinnet **Gennemse modeldetaljer** skal du validere konfigurationen forudsigelse. Du kan gå tilbage til en hvilken som helst del af forudsigelseskonfigurationen ved at vælge **Rediger** under den viste værdi. Du kan også vælge et konfigurationstrin fra statusindikatoren.
+I trinnet **Gennemse og kør** vises en oversigt over konfigurationen, og her kan du foretage ændringer, før du opretter forudsigelsen.
 
-1. Hvis alle værdier er konfigureret korrekt, skal du vælge **Gem og kør** for at starte kørsel af modellen. Under fanen **Mine forudsigelser** kan du se status for den forudsigelsesproces. Det kan tage flere timer, før processen er fuldført, afhængigt af mængden af data, der bruges i forudsigelsen.
+1. Vælg **Rediger** på et af trinnene for at gennemse og foretage ændringer.
 
-## <a name="review-prediction-status-and-results"></a>Gennemse forudsigelsesstatus og resultater
+1. Hvis du er tilfreds med dine valg, skal du vælge **Gem og kør** for at starte kørsel af modellen. Vælg **Udført**. Fanen **Mine forudsigelser** vises, mens forudsigelse oprettes. Det kan tage flere timer, før processen er fuldført, afhængigt af mængden af data, der bruges i forudsigelsen.
 
-### <a name="review-prediction-status"></a>Gennemse forudsigelsesstatus
+[!INCLUDE [progress-details](includes/progress-details-pane.md)]
 
-1.  Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-2.  Vælg den forudsigelse, du vil gennemse.
+## <a name="view-prediction-results"></a>Få vist forudsigelsesresultater
 
-- **Forudsigelsesnavn**: Navnet på den forudsigelse, der blev angivet under oprettelsen.
-- **Forudsigelsestype**: Den modeltype, der bruges til forudsigelse
-- **Outputobjekt**: Navnet på det objekt, som outputtet af forudsigelsen skal gemmes i. Gå til **Data** > **Objekter** for at finde objektet med dette navn.
-- **Forventet felt**: Dette felt udfyldes kun i forbindelse med visse typer forudsigelser og bruges ikke forudsigelse af værdi for kundelevetid.
-- **Status**: Status for forudsigelseskørslen
-    - **I kø**: Forudsigelse venter på, at andre processer fuldføres.
-    - **Opdatering**: Forudsigelse kører i øjeblikket for at producere resultater, der vil blive overført til outputenheden.
-    - **Mislykket**: Forudsigelse kunne ikke køres. Du kan finde flere oplysninger i [logfilerne](manage-predictions.md#troubleshoot-a-failed-prediction).
-    - **Lykkedes**: Forudsigelse blev fuldført. Vælg **Vis** under de lodrette ellipser for at gennemse de forudsigelse resultater.
-- **Redigeret**: Den dato, hvor konfigurationen af forudsigelse blev ændret.
-- **Sidst opdateret**: Den dato, hvor forudsigelsen opdaterede resultater i outputenheden.
+1. Gå til **Intelligens** > **Forudsigelser**.
 
-### <a name="review-prediction-results"></a>Gennemse forudsigelsesresultater
-
-1. Gå til **Intelligens** > **Forudsigelser**, og vælg fanen **Mine forudsigelser**.
-
-1. Vælg den forudsigelse du vil gennemse resultaterne for.
+1. Under fanen **Mine forudsigelser** skal du vælge den forudsigelse, du vil have vist.
 
 Der findes tre primære sektioner med data på resultatsiden.
 
-- **Præstation i uddannelsesmodellen**: A, B eller C er mulige grader. Denne grad angiver resultaterne for objektet forudsigelse kan hjælpe dig med at træffe beslutning om at bruge de resultater, der er gemt i outputobjektet. Vælg **Få mere at vide om denne score** for bedre at forstå de underliggende målepunkter for modelresultater, og hvordan den endelige modelresultatkvalitet blev afledt.
+- **Ydeevne for træning af model**: Klassificeringerne A, B eller C angiver resultatet af forudsigelsen og kan hjælpe dig med at træffe beslutning om at bruge de resultater, der er gemt i outputobjektet.
   
   :::image type="content" source="media/clv-model-score.png" alt-text="Billede af feltet med oplysninger om modelpoint med vurderingen A.":::
 
-  Ved hjælp af definitionen af kunder med høj værdi, der blev leveret, mens forudsigelse konfigureres, vurderer systemet, hvordan AI-modellen præsterede i forhold til en basismodel.    
+  Customer Insights vurderer, hvordan AI-modellen præsterede under forudsigelse af kunder af høj værdi i forhold til den oprindelige model.
 
   Vurderingerne bestemmes ud fra følgende regler:
   - **A** når modellen nøjagtigt har forudsagt mindst 5 % flere kunder med høj værdi i forhold til den oprindelige model.
   - **B** når modellen nøjagtigt har forudsagt 0-5 % flere kunder med høj værdi i forhold til den oprindelige model.
   - **C** når modellen nøjagtigt har forudsagt færre kunder med høj værdi i forhold til den oprindelige model.
-
-  I ruden **Bedømmelse** vises flere detaljer om AI-modelydeevnen og den grundlæggende model. I den grundlæggende model bruges en ikke-AI-baseret metode til at beregne kundens levetidsværdi, primært på baggrund af historiske indkøb foretaget af kunder.     
-  Den standardformel, der bruges til at beregne CLV efter basismodellen:    
-
-  _**CLV for hver kunde** = Gennemsnitlig månedligt køb foretaget af kunden i vinduet med aktive kunder * Antal måneder i CLV-forudsigelsesperioden * Samlet tilbageholdelseshastighed for alle kunder*_
-
-  AI-modellen sammenlignes med den oprindelige model, der er baseret på to modelydeevnemetrikværdier.
   
-  - **Succesfrekvens, der spår kunder med stor værdi**
+  Vælg [**Få mere at vide om denne score**](#learn-about-the-score) for at åbne ruden **Modelbedømmelse**, som viser flere detaljer om AI-modelydeevnen og den grundlæggende model. Det hjælper dig med at forstå de underliggende målepunkter for modelresultater, og hvordan klassificeringen af det endelige modelresultat blev afledt. I den grundlæggende model bruges en ikke-AI-baseret metode til at beregne kundens levetidsværdi, primært på baggrund af historiske indkøb foretaget af kunder.
 
-    Se forskellen i, hvordan kunder med høj værdi bruger AI-modellen i forhold til den oprindelige model. En succesrate på 84 procent betyder f.eks., at AI-modellen kunne registrere 84 procent nøjagtigt ud af alle kunder i uddannelsesdataene. Derefter sammenlignes denne succesrate med succesprocenten for den oprindelige model for at rapportere den relative ændring. Denne værdi bruges til at tildele modellen en vurdering.
+- **Værdi af kunder efter percentil**: Kunder med lav værdi og høj værdi vises i et diagram. Hold musen hen over søjlerne i histogrammet for at se antallet af kunder i de enkelte grupper og den gennemsnitlige CLV for den pågældende gruppe. Du kan også [oprette kundesegmenter](prediction-based-segment.md) baseret på deres CLV-forudsigelser.
+  
+   :::image type="content" source="media/CLV-value-percent.png" alt-text="Værdi af kunder efter percentil for CLV-model":::
 
-  - **Fejlmetrikværdier**
-    
-    En anden metrikværdi giver dig mulighed for at gennemgå modellens overordnede ydeevne med hensyn til fejl i forbindelse med fremtidigt arbejde. Vi bruger den overordnede måling (Root Mean Squared Error) til at vurdere denne fejl. RMSE er en standardmåde at måle fejlen i en model på, når data, der skal anvendes, anvendes. AI-modellens RMSE sammenlignes med den RMSE i basismodellen, og den relative forskel rapporteres.
+- **De fleste faktorer, der påvirker indflydelsen**: Der tages forskellige faktorer i betragtning, når du opretter forudsigelse CLV baseret på de inputdata, der leveres til AI-modellen. Hver af faktorerne får beregnet deres betydning for de samlede forudsigelser, som en model opretter. Brug disse faktorer til at validere dine forudsigelsesresultater. Disse faktorer giver også større indsigt i de faktorer, der gør det muligt at vælge CLV på tværs af alle dine kunder.
+  
+   :::image type="content" source="media/CLV-influence-factors.png" alt-text="Mest indflydelsesrige faktorer for CLV-model":::
 
-  AI-modellen prioriterer den nøjagtige rangering af kunder efter den værdi, de tilfører din virksomhed. Så kun succesprocenten for kunder med høj værdi bruges til at opnå den endelige modelkvalitet. RMSE-målingen er følsom over for afvigende værdier. I scenarier, hvor du har en lille procentdel af kunder med utroligt høje indkøbsværdier, giver den overordnede RMSE-måling måske ikke det fulde billede af modelydeevnen.   
+### <a name="learn-about-the-score"></a>Få mere at vide om scoren
 
-- **Kundeværdi efter percentil**: Ved hjælp af din definition af kunder med høj værdi grupperes kunderne i lave værdier og høj værdi baseret på deres CLV-forudsigelser og vises i et diagram. Hvis du holder musen hen over søjlerne i hist hover, kan du se antallet af kunder i de enkelte grupper og den gennemsnitlige CLV for den pågældende gruppe. Disse data kan være en hjælp, hvis du [vil oprette kundesegmenter](segments.md) baseret på deres CLV-forudsigelser.
+Den standardformel, der bruges til at beregne CLV efter basismodellen:
 
-- **De fleste faktorer, der påvirker indflydelsen**: Der tages forskellige faktorer i betragtning, når du opretter forudsigelse CLV baseret på de inputdata, der leveres til AI-modellen. Hver af faktorerne får beregnet deres betydning for de samlede forudsigelser, som en model opretter. Du kan bruge disse faktorer til at validere dine forudsigelsesresultater. Disse faktorer giver også større indsigt i de faktorer, der gør det muligt at vælge CLV på tværs af alle dine kunder.
+ _**CLV for hver kunde** = Gennemsnitlig månedligt køb foretaget af kunden i vinduet med aktive kunder * Antal måneder i CLV-forudsigelsesperioden * Samlet tilbageholdelseshastighed for alle kunder_
 
-## <a name="manage-predictions"></a>Administrere forudsigelser
+AI-modellen sammenlignes med den oprindelige model, der er baseret på to modelydeevnemetrikværdier.
+  
+- **Succesfrekvens, der spår kunder med stor værdi**
 
-Det er muligt at optimere, foretage fejlfinding, opdatere eller slette forudsigelser. Gennemgå en rapport om dataanvendelighed for at finde ud af, hvordan du gør en forudsigelse hurtigere og mere pålidelig. Du kan finde flere oplysninger under [Administrere forudsigelser](manage-predictions.md).
+  Se forskellen i, hvordan kunder med høj værdi bruger AI-modellen i forhold til den oprindelige model. En succesrate på 84 procent betyder f.eks., at AI-modellen kunne registrere 84 procent nøjagtigt ud af alle kunder i uddannelsesdataene. Derefter sammenlignes denne succesrate med succesprocenten for den oprindelige model for at rapportere den relative ændring. Denne værdi bruges til at tildele modellen en vurdering.
+
+- **Fejlmetrikværdier**
+
+  Se modellens overordnede ydeevne med hensyn til fejl i forbindelse med forudsigelse af fremtidige værdier. Vi bruger den overordnede måling (Root Mean Squared Error) til at vurdere denne fejl. RMSE er en standardmåde at måle fejlen i en model på, når data, der skal anvendes, anvendes. AI-modellens RMSE sammenlignes med den RMSE i basismodellen, og den relative forskel rapporteres.
+
+AI-modellen prioriterer den nøjagtige rangering af kunder efter den værdi, de tilfører din virksomhed. Så kun succesprocenten for kunder med høj værdi bruges til at opnå den endelige modelkvalitet. RMSE-målingen er følsom over for afvigende værdier. I scenarier, hvor du har en lille procentdel af kunder med utroligt høje indkøbsværdier, giver den overordnede RMSE-måling måske ikke det fulde billede af modelydeevnen.
 
 [!INCLUDE [footer-include](includes/footer-banner.md)]

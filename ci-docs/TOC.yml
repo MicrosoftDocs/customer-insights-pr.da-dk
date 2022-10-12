@@ -162,6 +162,8 @@
           href: sentiment-analysis.md
         - name: Brug brugerdefinerede modeller fra Azure Machine Learning
           href: custom-models.md
+        - name: Opret segmenter baseret på forudsigelser
+          href: prediction-based-segment.md
     - name: Eksempel på guides
       items:
         - name: Eksempelguide til CLV-forudsigelse
@@ -174,10 +176,6 @@
           href: sample-guide-predict-product-recommendation.md
         - name: Eksperimenter med Azure Machine Learning
           href: azure-machine-learning-experiments.md
-    - name: Administrere forudsigelser
-      href: manage-predictions.md
-    - name: Opret segmenter baseret på forudsigelser
-      href: prediction-based-segment.md
 - name: Eksportere indstillinger
   items:
     - name: Eksport
