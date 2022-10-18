@@ -8,12 +8,12 @@ author: m-hartmann
 ms.author: mhart
 ms.reviewer: skumm
 manager: shellyha
-ms.openlocfilehash: 2a386d65a5e285d471e9cafc45f247e7b4ae23bb
-ms.sourcegitcommit: be341cb69329e507f527409ac4636c18742777d2
+ms.openlocfilehash: dcee60a73e0c32278553253040478c31e45237ae
+ms.sourcegitcommit: 618ef15b434de0a68213383b6521ce2a60753afb
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/30/2022
-ms.locfileid: "9609585"
+ms.lasthandoff: 10/07/2022
+ms.locfileid: "9638344"
 ---
 # <a name="whats-new-in-dynamics-365-customer-insights"></a>Nyheder i Dynamics 365 Customer Insights
 
@@ -23,6 +23,28 @@ Vi udruller opdateringerne område for område. Så visse geografiske områder k
 
 > [!TIP]
 > Hvis du vil sende og stemme på populære ønsker og produktforslag, skal du gå til [Dynamics 365-portalen for programideer](https://experience.dynamics.com/ideas/categories/?forum=79a8c474-4e35-e911-a971-000d3a4f3343&forumName=Dynamics%20365%20Customer%20Insights).
+
+## <a name="september-2022-updates"></a>Opdateringer fra september 2022
+
+Opdateringerne i september 2022 indeholder nye funktioner, ydeevneopgraderinger og fejlrettelser.
+
+### <a name="export-data-to-hubspot"></a>Eksportér data til HubSpot
+
+Eksportér segmenter med ensartede kundeprofiler til HubSpot, og brug dem til mailmarketing.
+
+Du kan finde flere oplysninger under [Eksportere segmenter til HubSpot](export-hubspot.md).
+
+### <a name="remove-a-unified-field-or-entity-from-data-unification"></a>Fjerne et samlet felt eller objekt fra datasamling
+
+Du kan fjerne felter og objekter fra processen til datasamling.
+
+Der er flere oplysninger under [Fjerne et forenet felt](data-unification-update.md#remove-a-unified-field).
+
+### <a name="manage-unknown-customer-profiles"></a>Administrere ukendte kundeprofiler
+
+Personlig tilpasning, der er let at huske, afhænger af, om dine kundedata er uddybende og fuldstændige, og Customer Insights hjælper dig med at nå disse mål. Du kan administrere kundeprofiler for brugere, du ikke har andre oplysninger end et id for.
+
+Du kan finde flere oplysninger under [Administrere ukendte profiler med Customer Insights](manage-unknown-profiles.md).
 
 ## <a name="august-2022-updates"></a>Opdateringer fra august 2022
 
