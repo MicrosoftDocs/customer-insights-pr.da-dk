@@ -11,12 +11,12 @@ manager: shellyha
 searchScope:
 - ci-system-diagnostic
 - customerInsights
-ms.openlocfilehash: dfa63110fc5291f2b63aebf588d6fdd20ed4ab67
-ms.sourcegitcommit: 134aac66e3e0b77b2e96a595d6acbb91bf9afda2
+ms.openlocfilehash: 9433c411a2c7eb0db137c6392578993d47be82a2
+ms.sourcegitcommit: 8559ca47a22d1d7cd9be13531c2eaf0c1083942b
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "9424302"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "9671244"
 ---
 # <a name="work-with-customer-insights-data-in-microsoft-dataverse"></a>Arbejde med Customer Insights-data i Microsoft Dataverse
 
@@ -63,6 +63,9 @@ I **Microsoft Dataverse**-trinnet kan du knytte Customer Insights til dit Datave
 ## <a name="enable-data-sharing-with-dataverse-from-your-own-azure-data-lake-storage-preview"></a>Aktivere datadeling med Dataverse fra dit eget Azure Data Lake Storage (forhåndsversion)
 
 I [din egen Azure Data Lake Storage-konto](own-data-lake-storage.md), skal du få bekræftet, at den bruger, der konfigurerer Customer Insights-miljøet, som minimum har **Læser af Blob Data-lager**-tilladelser til `customerinsights`-objektbeholderen i lagerkontoen.
+
+> [!NOTE]
+> Datadeling er kun relevant, hvis du bruger din egen Azure Data Lake Storage-konto. Denne indstilling er ikke tilgængelig, hvis Customer Insights-miljøet bruger standardlageret Dataverse.
 
 ### <a name="limitations"></a>Begrænsninger
 
