@@ -2,7 +2,7 @@
 title: Matche betingelser for data samling
 description: Sammenlign objekter for at oprette samlede kundeprofiler.
 recommendations: false
-ms.date: 07/27/2022
+ms.date: 10/07/2022
 ms.subservice: audience-insights
 ms.topic: tutorial
 author: v-wendysmith
@@ -14,12 +14,12 @@ searchScope:
 - ci-merge
 - ci-map
 - customerInsights
-ms.openlocfilehash: eaa3409aaa7541dc88953336942e43afaf6511c6
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: bbd2c5f441b85460250c11f02358ea67260278d6
+ms.sourcegitcommit: 52ea58c872b10f1e6f9d120be93df93cca1a12dd
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304650"
+ms.lasthandoff: 10/26/2022
+ms.locfileid: "9721514"
 ---
 # <a name="match-conditions-for-data-unification"></a>Matche betingelser for data samling
 
@@ -130,12 +130,12 @@ Hvis din matchregel f.eks. kombinerer efternavn, by og fødselsdato, identificer
 
 ### <a name="specify-custom-match-conditions"></a>Angive brugerdefinerede matchbetingelser
 
-Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken. Der findes følgende fire indstillinger:
+Angiv betingelser, der tilsidesætter standardoverensstemmelseslogikken. Der findes følgende fire indstillinger:
 
-|Mulighed  |Beskrivelse |Eksempel  |
+|Mulighed  |Description |Eksempel  |
 |---------|---------|---------|
-|Match altid     | Definerer værdier, der altid sammenholdes.         |  Du skal altid matche *Mike* og *MikeR*.       |
-|Match aldrig     | Definerer værdier, der aldrig matcher.        | Du skal aldrig matche *John* og *Jonathan*.        |
+|Match altid     | Definerer værdier for de primære nøgler, der altid sammenholdes.         |  Afstem altid rækken med den primære nøgle *12345* og rækken med den primære nøgle *54321*.       |
+|Match aldrig     | Definerer værdier for de primære nøgler, der aldrig matcher.        | Afstem aldrig rækken med den primære nøgle *12345* og rækken med den primære nøgle *54321*.        |
 |Omgå            | Definerer værdier, som systemet altid skal ignorere i match-fasen. |  Ignorer værdierne *11111* og *Ukendt* under match.        |
 |Aliastilknytning    | Definition af værdier, som skal overvejes som den samme værdi i systemet.         | Overvej, om *Joe* skal være lig *Joseph*.        |
 
@@ -143,17 +143,18 @@ Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken.
 
    :::image type="content" source="media/m3_match_custom.png" alt-text="Knappen Brugerdefineret":::
 
-1. Vælg **Brugerdefineret type,** og vælg **Hent skabelon**. Du skal bruge en separat skabelon for hver enkelt matchindstilling.
+1. Vælg **Brugerdefineret type,** og vælg **Hent skabelon**. Omdøb skabelonen uden at bruge mellemrum. Brug en separat skabelon for hver enkelt matchindstilling.
 
-1. Åbn den hentede skabelonfil, og udfyld detaljerne. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
-    - Entity1: Salg
-    - Entity1Key: 12345
-    - Entity2: Kontakt
-    - Entity2Key: 34567
+1. Åbn den hentede skabelonfil, og udfyld detaljerne. Skabelonen indeholder felter til angivelse af det objekt og de primære nøgleværdier for objektet, der skal bruges i det brugerdefinerede match. Objektnavne skelner mellem store og små bogstaver. Hvis din primære nøgle *12345* fra objektet *Salg* f.eks. altid skal matche den primære nøgle *34567* fra objektet *Kontakt*, skal du udfylde skabelonen:
+   - Entity1: Salg
+   - Entity1Key: 12345
+   - Entity2: Kontakt
+   - Entity2Key: 34567
 
    Den samme skabelonfil kan angive brugerdefinerede matchposter fra flere objekter.
 
-   Hvis du vil angive brugerdefineret matchning for deduplikering for et objekt, skal du angive det samme objekt som både Objekt1 og Objekt2 og angive de forskellige værdier for primære nøgler.
+   > [!NOTE]
+   > Hvis du vil angive brugerdefineret matchning for deduplikering for et objekt, skal du angive det samme objekt som både Objekt1 og Objekt2 og angive de forskellige værdier for primære nøgler. Du skal definere mindst én regel for dublet til objektet for at bruge brugerdefineret matchning.
 
 1. Når du har tilføjet alle tilsidesættelser, skal du gemme skabelonfilen.
 
@@ -169,6 +170,8 @@ Du kan angive betingelser, der tilsidesætter standardoverensstemmelseslogikken.
    - For **Omgå** eller **Aliastilknytning** skal du vælge **Rediger** for en eksisterende match-regel eller oprette en ny regel. Vælg indstillingen **Brugerdefineret bypass** eller **Alias-tilknytning** på rullelisten Normaliseringer, og vælg **Udført**.
 
 1. Vælg **Udført** i ruden **Brugerdefineret** for at anvende den brugerdefinerede match-konfiguration.
+
+   Alle skabelonfiler, der oprettes, er deres datakilde. Hvis der registreres poster, hvor der er brug for en særlig tilpasning, skal du opdatere de datakilde. Opdateringen bruges under den næste samlingsproces. Du kan f.eks. identificere personer med næsten det samme navn, der findes på den samme adresse, som er blevet flettet sammen som én person. Opdater datakilde for at identificere dem som separate, entydige poster.
 
 > [!div class="nextstepaction"]
 > [Næste trin: Unify felter](merge-entities.md)
