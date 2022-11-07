@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 0281be288b2c4d9e5da7ad8e2ed25f7b51b8498e
-ms.sourcegitcommit: f959c85871777e5f4eab289e91b2fd114cd72153
+ms.openlocfilehash: b34f1d54fa499f6c6b80fa547a8aaf61af3b35a1
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "9588901"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9725347"
 ---
 # <a name="export-segments-to-hubspot-preview"></a>Eksportere segmenter til HubSpot (forhåndsversion)
 
@@ -27,6 +27,7 @@ Eksportér segmenter med ensartede kundeprofiler til HubSpot, og brug dem til ma
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Op til 100.000 kundeprofiler pr. eksport til HubSpot, som kan tage op til 15 minutter at gennemføre. Antallet af kundeprofiler, du kan eksportere til HubSpot, er begrænset og afhænger af din kontrakt med HubSpot.
 - Kun segmenter.
 

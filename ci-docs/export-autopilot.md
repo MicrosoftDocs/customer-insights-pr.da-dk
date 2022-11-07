@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 449d2c5e32697e4a5d2c9dff4a5a1cbdb26aeb4d
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: b4b14ba9de2c7e20175fac664a705f2212a411fd
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195053"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724750"
 ---
 # <a name="export-segments-to-autopilot-preview"></a>Eksportér segmenter til Autopilot (forhåndsversion)
 
@@ -28,6 +28,7 @@ Eksportér segmenter med ensartede kundeprofiler til Autopilot, og brug dem til 
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Det kan tage op til et par timer at eksportere op til 100.000 kundeprofiler til Autopilot. Antallet af kundeprofiler, du kan eksportere til Autopilot, afhænger af din kontrakt med Autopilot.
 - Kun segmenter.
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: cabaea84e31f8fe97bc558a8dca8d93bc40f43b7
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 8f3e3378dce9177c6645b91140884ae135540243
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196065"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724979"
 ---
 # <a name="export-segments-to-dotdigital-preview"></a>Eksporter segmenter til DotDigital (forhåndsversion)
 
@@ -28,6 +28,7 @@ Eksportér segmenter af Unified-kundeprofiler til DotDigital-adressekartotekerne
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Op til 1 millioner kundeprofiler pr. eksport til DotDigital, som kan tage op til tre timer at fuldføre på grund af begrænsninger på udbydersiden. Antallet af kundeprofiler, du kan eksportere til DotDigital, afhænger af din kontrakt med DotDigital.
 - Kun segmenter.
 

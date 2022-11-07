@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 01be1a075db0da05dc5536aea8a33093f9a2ea13
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: c7a4b1be1c959d70fad929b56452169b40e5b592
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195007"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724580"
 ---
 # <a name="export-segments-to-facebook-ads-manager-preview"></a>Eksportér segmenter til Facebook Ads Manager (forhåndsversion)
 
@@ -25,11 +25,13 @@ Eksportér segmenter af samlede kundeprofiler til Facebook Annonceadministrator 
 
 - En [Facebook-reklamekonto](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account), der omfatter en [Facebook -virksomhedskonto](https://business.facebook.com/).
 - Administratorrettigheder til [Facebook-reklamekonto](https://www.facebook.com/business/learn/lessons/step-by-step-ads-manager-account).
+- Vilkår for brugerdefinerede målgrupper skal accepteres af den bruger, der konfigurerer forbindelsen til Customer Insights.
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
 - Op til 10 million kundeprofiler pr. eksport til Facebook-reklameadministrator, og det kan tage op til 90 minutter at fuldføre den.
 - Kun segmenter.
+- Integration af Facebook-reklamer understøtter ikke brugere med mere end 25 reklamekonti.
 - Kun Facebook *‑kundelistetypen* i [brugerdefinerede](https://www.facebook.com/business/help/744354708981227?id=2469097953376494) målgrupper.
   > [!NOTE]
   > I visse tilfælde kan du se brugerdefinerede målgrupper af forskellige typer på rullelisten. Hvis du vælger en anden type end *kundeliste*, lykkes eksporten ikke.

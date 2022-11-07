@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 3c04fc26dc690cf32b45913257e82b9a0f617185
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 82303c7bcb269ee68419c9639ee743e13451f273
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9196295"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724541"
 ---
 # <a name="export-segments-to-campaign-monitor-preview"></a>Eksport segmenter til kampagneovervågning (forhåndsversion)
 
@@ -29,6 +29,7 @@ Eksportér segmenter med ensartede kundeprofiler til Kampagneovervågning, og br
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Det kan tage op til 20 minutter at fuldføre op til 1 million kundeprofiler til Campaign Monitor. Antallet af kundeprofiler, du kan eksportere til Campaign Monitor, afhænger af din kontrakt med Campaign Monitor.
 - Kun segmenter.
 

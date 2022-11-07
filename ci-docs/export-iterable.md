@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: ccf10b6e3a28a75f9d1bd3d8da3bf870ebc2b1b2
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 69e2bd207c98fc2530620018bf95dd869d1798f6
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195422"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724475"
 ---
 # <a name="export-segments-to-iterable-preview"></a>Eksportere segmenter til Iterable (forhåndsversion)
 
@@ -28,6 +28,7 @@ Eksportér segmenter med ensartede kundeprofiler til Iterable, og brug dem til m
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Op til 1 million kundeprofiler til Iterable kan tage op til 30 minutter at fuldføre. Antallet af kundeprofiler, du kan eksportere til Iterable, afhænger af din kontrakt med Iterable.
 - Kun segmenter.
 

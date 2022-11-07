@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: 8110eab199920ab8fc2ea15678139faf264a242a
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: 81adad4caf2d4c6f792bf920b29fc7c67eef42b0
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195743"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724671"
 ---
 # <a name="export-segments-to-adroll-preview"></a>Eksporter segmentlister til AdRoll (forhåndsversion)
 
@@ -28,6 +28,7 @@ Eksportér segmenter med ensartede kundeprofiler til AdRoll, og brug dem til rek
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Det kan tage op til 10 minutter at eksportere op til 250.000 kundeprofiler til AdRoll. Antallet af kundeprofiler, du kan eksportere til AdRoll, afhænger af din kontrakt med AdRoll.
 - Kun segmenter. Et segment skal indeholde mindst 100 kundeprofiler.
 

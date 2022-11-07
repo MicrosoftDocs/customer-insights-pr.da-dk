@@ -1,12 +1,12 @@
 ---
 title: Kunde- eller forretningskontaktaktiviteter
 description: Definer kunde- eller forretningskontaktaktiviteter, og se dem på en tidslinje for kundeprofiler.
-ms.date: 08/12/2022
+ms.date: 10/26/2022
 ms.subservice: audience-insights
 ms.reviewer: v-wendysmith
 ms.topic: conceptual
-author: CadeSanthaMSFT
-ms.author: cadesantha
+author: srivas15
+ms.author: shsri
 manager: shellyha
 searchScope:
 - ci-entities
@@ -17,12 +17,12 @@ searchScope:
 - ci-measures
 - ci-segment-suggestions
 - customerInsights
-ms.openlocfilehash: bbb8bc30d079273bc935181c628915bb3c02d982
-ms.sourcegitcommit: 267c317e10166146c9ac2c30560c479c9a005845
+ms.openlocfilehash: d8caa477278f04c3a0a95ced15f4bea2a22aa8cd
+ms.sourcegitcommit: da6a2d189edacc8f2c0f2abedcb28245f26fe74c
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 08/16/2022
-ms.locfileid: "9304098"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9723774"
 ---
 # <a name="customer-or-business-contact-activities"></a>Kunde- eller forretningskontaktaktiviteter
 
@@ -41,6 +41,9 @@ Et objekt skal have mindst én attribut af typen **Dato** for at blive medtaget 
    - **Aktivitetsnavn**: Vælg et navn til aktiviteten.
    - **Objektet Aktivitet**: Vælg et objekt, der indeholder transaktions- eller aktivitetsdata.
    - **Primær nøgle**: Vælg det felt, der entydigt identificerer en post. Den må ikke indeholde dublerede værdier, tomme værdier eller manglende værdier.
+
+     > [!NOTE]
+     > Den primære nøgle for hver række skal være den samme på tværs opdateringer af datakilder. Hvis den primære nøgle for en række opdateres under opdatering af en datakilde, oprettes der dubletter i outputaktivitetsobjektet. 
 
    :::image type="content" source="media/Activity_Wizard1.PNG" alt-text="Konfigurer aktivitetsdataene med navn, objekt og primær nøgle.":::
 
@@ -132,7 +135,15 @@ I forbindelse med forretningskonti (B-til-B) skal du bruge objektet *ContactProf
 
 1. Vælg **Tilføj aktivitet**.
 
-1. Navngive aktiviteten, vælge kildeaktivitetsobjektet og vælge den primære nøgle til aktivitetsobjektet.
+1. Skriv følgende oplysninger i trinnet **Aktivitetsdata**.
+
+   - **Aktivitetsnavn**: Vælg et navn til aktiviteten.
+   - **Objektet Aktivitet**: Vælg et objekt, der indeholder transaktions- eller aktivitetsdata.
+   - **Primær nøgle**: Vælg det felt, der entydigt identificerer en post. Den må ikke indeholde dublerede værdier, tomme værdier eller manglende værdier.
+
+     > [!NOTE]
+     > Den primære nøgle for hver række skal være den samme på tværs opdateringer af datakilder. Hvis den primære nøgle for en række opdateres under opdatering af en datakilde, oprettes der dubletter i outputaktivitetsobjektet. 
+
 
 1. I trinnet med **Relationer** kan du oprette en relation mellem aktivitetskildedataene og firmaer ved at bruge kontaktdataene som et objekt, der gør det nemt at anvende dem. Du kan finde flere oplysninger ved at gå til [direkte og indirekte relationsstier](relationships.md#relationship-paths).
    - Eksempel på relation for en aktivitet, der kaldes *Køb*:

@@ -8,12 +8,12 @@ ms.topic: how-to
 author: pkieffer
 ms.author: philk
 manager: shellyha
-ms.openlocfilehash: f57cdfbb24df8a8ffa1670b426d50dbba2c5f40f
-ms.sourcegitcommit: 594081c82ca385f7143b3416378533aaf2d6d0d3
+ms.openlocfilehash: cba40b74b86a40fc41db856760c9361b755a8864
+ms.sourcegitcommit: c3ae7e7e0c9566f9479ba71a26afc5a17fb589c2
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 07/27/2022
-ms.locfileid: "9195237"
+ms.lasthandoff: 10/27/2022
+ms.locfileid: "9724933"
 ---
 # <a name="export-segments-to-marketo-preview"></a>Eksportér segmenter til Marketo (forhåndsversion)
 
@@ -29,6 +29,7 @@ Eksportér segmenter fra de samlede brugerprofiler til at generere kampagner, le
 
 ## <a name="known-limitations"></a>Kendte begrænsninger
 
+- Private Link i kombination med BYOS (Bring your own storage) understøttes ikke.
 - Op til 1 million kundeprofiler pr. eksport til Marketo, og det kan tage op til 3 timer at fuldføre den. Antallet af kundeprofiler, du kan eksportere til Marketo, afhænger af din kontrakt med Marketo.
 - Kun segmenter.
 
