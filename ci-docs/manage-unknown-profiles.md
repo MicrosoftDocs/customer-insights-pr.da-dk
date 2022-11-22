@@ -8,22 +8,22 @@ ms.topic: conceptual
 author: andtapia
 ms.author: andreatapia
 manager: shellyha
-ms.openlocfilehash: d7e5050ee5832df5ecf40a352f7ea8d42830fa45
-ms.sourcegitcommit: f6b6a4c4ce9cf12e449488b24aab80a2cbfe0c47
+ms.openlocfilehash: 0e12f64a22b93d117009fb8aee76d02a7583e699
+ms.sourcegitcommit: 24627d53dcdf607baaab1cc3c299a3584c386173
 ms.translationtype: HT
 ms.contentlocale: da-DK
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "9556389"
+ms.lasthandoff: 11/15/2022
+ms.locfileid: "9776814"
 ---
 # <a name="manage-unknown-profiles-with-customer-insights"></a>Administrere ukendte profiler med Customer Insights
 
-Internetbrugere er ofte uidentificerede og anonyme online. Hvis de ikke er logget på, fordi de bruger forskellige enheder eller kanaler, gælder det endda for de mest loyale kunder. Da tredjepartscookies sandsynligvis snart forsvinder, er det vigtigt at administrere brugerindstillinger baseret på førstepartsdata for at opnå personligt tilpassede oplevelser. For mange mærker er kendte eller godkendte brugere i mindretal til trods for de stigende kundeforventninger til personlig tilpasning. Det er godt for virksomheder at vide, hvem deres kunder er, på baggrund af pålidelige, detaljerede og ensartede data.
+Internetbrugere er ofte uidentificerede eller anonyme online. Selv de mest loyale kunder kan være "ukendt", hvis de ikke er logget på på tværs af forskellige enheder. For mange mærker er kendte eller godkendte brugere i mindretal til trods for de stigende kundeforventninger til personlig tilpasning. Da tredjepartscookies er tvivlsomme i fremtiden, er det vigtigt i stedet at administrere brugerindstillinger baseret på førstepartsdata for at opnå personligt tilpassede oplevelser.
 
-Personlig tilpasning, der er let at huske, afhænger af, om dine kundedata er uddybende og fuldstændige, og Customer Insights hjælper dig med at nå disse mål. Du behøver ikke at begrænse eller stoppe brugen af de data, der er indsamlet i starten af kundekampagneforløbet. Med Customer Insights kan du bruge dine egne data til at oprette en kundeprofil for ukendte brugere. Du kan derefter bruge den pågældende profil til yderligere handlinger, selvom der mangler kontaktoplysninger. Importér førstepartsdata fra kilder, f.eks. web-, mobil- eller CRM-systemer, til Customer Insights for at forbedre kundeprofiler løbende. Efterhånden som du ensretter flere interaktioner, kan du [gøre den *ukendte* kunde til en *kendt* kunde](unknown-to-known.md).
+Mindeværdig personlig tilpasning afhænger af, hvor godt du kender dine kunder, og Customer Insights hjælper dig med at gøre det ved at spore alle dine kunder.  Du behøver ikke at begrænse eller stoppe brugen af de data, der er indsamlet i starten af kundekampagneforløbet. Med Customer Insights kan du bruge dine egne data til at oprette en kundeprofil for ukendte brugere. Du kan derefter bruge den pågældende profil til yderligere handlinger, selvom der mangler kontaktoplysninger. Importér førstepartsdata fra kilder, f.eks. web-, mobil- eller CRM-systemer, til Customer Insights for at forbedre kundeprofiler løbende. Efterhånden som du ensretter flere interaktioner, kan du [gøre den *ukendte* kunde til en *kendt* kunde](unknown-to-known.md).
 
 ## <a name="sample-scenario"></a>Eksempelscenarie
 
-E-handel har været den hurtigst voksende kanal de seneste ti år. Antag, at en bruger bruger sin mobilenhed til at gennemse e-handelswebstedet. På webstedet tildeles den besøgende "mobile_guest123" som et entydigt id, og du begynder at indsamle adfærdsaktiviteter på baggrund af deres onlineaktivitet. Det kan f.eks. være, hvilke sider de har besøgt, hvor meget tid de har brugt på de pågældende sider, eller hvilke links de har klikket på. Du kender ikke deres navn eller mailadresse, men disse data kan hjælpe dig med at give meningsfyldt indsigt i denne specifikke bruger. Du kan til gengæld bruge denne indsigt, næste gang brugeren besøger webstedet. Forespørg Customer Insights efter "mobile_guest123" for at hente brugerens segmentliste, f.eks. "organisk", "mobilkunder med forudbestilling", "kunder med høj værdi" osv., eller hente profilen for at oprette personlige weboplevelser. Du kan også eksportere dataene til et hvilket som helst aktiveringssystem for at gøre det samme.
+Antag, at en bruger bruger sin mobilenhed til at gennemse e-handelswebstedet. På webstedet tildeles den besøgende "mobile_guest123" som et entydigt id, og du begynder at indsamle adfærdsaktiviteter på baggrund af deres onlineaktivitet. Det kan f.eks. være, hvilke sider de har besøgt, hvor meget tid de har brugt på de pågældende sider, eller hvilke links de har klikket på. Du kender ikke deres navn eller mailadresse, men disse data kan hjælpe dig med at give meningsfyldt indsigt i denne specifikke bruger. Du kan til gengæld bruge denne indsigt, næste gang brugeren besøger webstedet. Forespørg Customer Insights efter "mobile_guest123" for at hente brugerens segmentliste, f.eks. "organisk", "mobilkunder med forudbestilling", "kunder med høj værdi" osv., eller hente profilen for at oprette personlige weboplevelser. Du kan også eksportere dataene til et hvilket som helst aktiveringssystem for at gøre det samme.
 
 ## <a name="prerequisites"></a>Forudsætninger
 
